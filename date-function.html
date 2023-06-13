@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date-Fun</title>
+  </head>
+  <body>
+    <script>
+      <!-- let data = [
+        { name: "kush", age: 12 },
+        { name: "tej", age: 10 },
+        { name: "smit", age: 18 },
+        { name: "ram", age: 20 },
+      ]; -->
+      let date = new Date("2023-02-12");
+      let gettime = date.getTime();
+      console.log(date);
+      console.log(
+        "gettime",
+        gettime,
+        date.getDate(),
+        date.getFullYear(),
+        date.toISOString()
+      );
+
+      console.log(
+        "gettime",
+        gettime,
+        date.getDate(),
+        "-",
+        date.getMonth(),
+        "-",
+        date.getFullYear()
+      );
+    </script>
+  </body>
+</html>
