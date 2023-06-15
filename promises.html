@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <script>
+      let promise = new Promise(function (resolve, reject) {
+        reject("not works");
+        console.log("---->");
+        setTimeout(() => {
+          console.log("promise called ");
+          resolve("done");
+        }, 5000);
+      });
+      promise
+        .then((res) => {
+          console.log("======>");
+        })
+        .catch((err) => console.log("ERR->", err));
+    </script>
+  </body>
+</html>
+
+
+function fun1(a, b) {
+  //function fun1(a, b, callback) {
+  // a=5 b = 10 callback= fun2
+  let c = a + b;
+  // c = a+b  : 5+10 = 15
+  setTimeout(function () {
+    return c; // fun2(c)
+  }, 1000);
+}

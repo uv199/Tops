@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date-Fun</title>
+  </head>
+  <body>
+    <script>
+
+      let arr = [0, 1, 2];
+      // {0:0}{1:1}
+      //let newArr = arr.slice(1, 4);
+      arr.splice(1, 0, 1, 2);
+
+      // console.log(typeof arr);
+      //console.log(newArr);
+      console.log("splice", arr);
+      // map
+      let mapArr = arr.map((e, i) => {
+        let c = e + 1;
+        console.log("e->", e, i);
+      });
+
+      // reducer
+      let redArr = arr.reduce((lastEle, e) => {
+        console.log("--->", lastEle, e);
+        let c = lastEle + e;
+        console.log("c", c);
+        return c; // you can also pass static value
+      });
+      console.log(redArr);
+    </script>
+  </body>
+</html>

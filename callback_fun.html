@@ -9,33 +9,33 @@
   <body>
     <h1 id="print"></h1>
     <script>
-
-        /*
+      /*
 
 
     fun1(5,5, (error, value)=>{
     if(err)
     })
 
-    db.student.find({age:18},(err,res)=>{
+    let fun2/cb = (err,res)=>{
         if(err) console
         else{
             store res
         }
-    })
+    }
+
+    db.find({name:1},fun2/cb)
 
         */
       function fun1(a, b, callback) {
-        // a=5 b = 10 callback= fun2
         let c = a + b;
-        // c = a+b  : 5+10 = 15
+        // c = a+b  : 5+10 = 15 callback = fun2()
         setTimeout(function () {
-          return callback(c); // fun2(c)
+          return callback(c);
         }, 1000);
       }
 
       function fun2(value) {
-        // value = c : 15
+        // value = 15
         document.getElementById("print").innerHTML = value;
       }
 

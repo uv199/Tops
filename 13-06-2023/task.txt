@@ -10,3 +10,7 @@
 - total age of all person
 - count how many people in the array (without use of length method)
 - give new array which have only person who have age gretter then 18
+
+
+
+
