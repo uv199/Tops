@@ -5,6 +5,8 @@
         { name: "smit", age: 18 },
         { name: "ram", age: 20 },
       ];
+
+
 - print only name of person
   with use of map
 - total age of all person
