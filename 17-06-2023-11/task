@@ -1,0 +1,17 @@
+
+// f1() => {name:''}
+// f2()=> { name :'', age:''}
+// f3()=> { name :'', age:'',add:''}
+
+// function f1(){
+//   var = object store  ={}
+//   function f2 (obj){
+//      update a obj
+//      function f3 (obj){
+//  update obj
+//       console .log(final obj)
+//      }
+//   }
+// }
+
+// do it in promise callback and in try-catch

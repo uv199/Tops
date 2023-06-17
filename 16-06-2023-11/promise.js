@@ -16,17 +16,28 @@ let promise = new Promise((resolve, reject) => {
   // console.log('res')
 });
 
-promise
-  .then((res) => {
-    console.log("res :", res);
-    return res + "okay";
-  })
-  .then((res2) => {
-    console.log("res2", res2);
-  })
-  .catch((err) => {
-    console.log("err", err);
-  });
+// promise
+//   .then((res) => {
+//     console.log("res :", res);
+//     return res + "okay";
+//   })
+//   .then((res2) => {
+//     console.log("res2", res2);
+//   })
+//   .catch((err) => {
+//     console.log("err", err);
+//   });
+
+// let fun1 = () => {
+//   setTimeout(() => {
+//     return "okay";
+//   }, 5000);
+// };
+
+
+
+let value = fun1();
+console.log(value);
 
 // mainFun(fun1)
 // fun1 (fun2)
@@ -60,7 +71,7 @@ promise
 // f(f1);
 
 // arr.find((ele)=>{
-  // ele
+// ele
 //   res.find((ele)=>{
 // res.filter((ele)=>{
 
