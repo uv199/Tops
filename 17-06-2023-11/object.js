@@ -56,11 +56,10 @@ console.log("fun :", typeof prDetails);
 let addArr = ["concat", "concat"];
 let addArr2 = ["concat2", "concat2"];
 // let concatArr = arr.concat(addArr, addArr2);
-let concatArr = [...addArr,addArr2]
+let concatArr = [...addArr, addArr2];
 
 console.log("concat arr : ", concatArr);
 
 // let add =  addArr.sort()
 // add = add.toString()
 // addArr.sort().toString()
-

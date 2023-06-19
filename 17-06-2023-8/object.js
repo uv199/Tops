@@ -28,7 +28,7 @@ prDetails.name = "monu";
 console.log("obj2 :", obj2);
 console.log("obj3 :", obj3);
 
-// console.log("prDetails :", prDetails);
+// console.log("prDetails :", prDetails); 
 // console.log("prDetails :", prDetails.name);
 // console.log("add :", prDetails.add);
 // console.log("city :", prDetails.add.city);
