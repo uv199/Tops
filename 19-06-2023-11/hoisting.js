@@ -12,3 +12,7 @@ function fun1() {
 
 console.log("fun1() :", fun1());
 
+let a = [1, 2, 3];
+
+let sorted = a.toSorted();
+console.log("sorted  :", sorted);
