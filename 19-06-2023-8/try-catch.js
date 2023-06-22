@@ -9,13 +9,22 @@
 let fun0 = () => {
   return [1];
 };
+let f = 20;
+// let fun1 = (a) => {
 
-// let fun1 = (val) => {
 //   setTimeout(() => {
 //     throw new Error("throw new err");
 //   }, 1000);
 // };
+//
 
+// function name(params) {
+// }
+// onj ={
+//   a:10,
+//   b:10,
+// }
+fun1(obj);
 let fun1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     reject("throw new err");

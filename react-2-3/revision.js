@@ -35,3 +35,14 @@ console.log("key", obj.a);
 console.log("key", Object.keys(obj));
 console.log("value", Object.values(obj));
 console.log("entities", Object.entries(obj));
+
+let xy = 10;
+
+if (xy === 10) {
+  console.log("-->if");
+} else {
+  console.log("-->else");
+}
+
+// condition ? sachu : khotu
+(xy === 10) ? console.log("-->if"): console.log("-->else");
