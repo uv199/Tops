@@ -1,0 +1,25 @@
+-> make one array who have value from 1 to 10
+
+1. print 9th and 10th element of array
+2. print every element of array by map reduce and for loop
+3. change a value of 6th element with 100
+4. print a array till element value not gratter then 100
+5. add 1 in every element of an array
+6. add one 0 in start of array
+7. add one 99 in end of array
+8. remove 1 element from start of  array
+9. remove 1 element from end of  array
+10. do sum of all value of an array with use of map, reduce and for-loop
+11. sort a array in acending decending
+12. reverce an array with use of method
+13. reverce an array with use of for-loop
+
+___________________________________________________________________________________
+task-2
+[1,2,3,6,7,9,3,56,8]
+
+1. give all value which can devided by 2
+2. give all value above 3 by use of filter
+3. give index of 56
+4. give true/false result when check given vale is exists in array or not 
+5.

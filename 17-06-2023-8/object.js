@@ -5,15 +5,17 @@ let prDetails = {
   name: "sinu",
   surname: "patel",
   age: 10,
-  //   add: {
-  //     city: "surat",
-  //   },
-  //   vehical: ["passion", "unicon", { a: 10 }],
-  //   fun1: (x) => {
-  //     console.log("x", x);
-  //     return x;
-  //   },
+  add: {
+    city: "surat",
+  },
+  vehical: ["passion", "unicon", { a: 10 }],
+  fun1: (x) => {
+    console.log("x", x);
+    return x;
+  },
 };
+
+console.log(x);
 
 let obj2 = prDetails; // it will refrence
 let obj3 = {};
@@ -28,7 +30,7 @@ prDetails.name = "monu";
 console.log("obj2 :", obj2);
 console.log("obj3 :", obj3);
 
-// console.log("prDetails :", prDetails); 
+// console.log("prDetails :", prDetails);
 // console.log("prDetails :", prDetails.name);
 // console.log("add :", prDetails.add);
 // console.log("city :", prDetails.add.city);
