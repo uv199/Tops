@@ -16,5 +16,12 @@ console.log(" name, ...data :", name, data);
 
 function sum(a, b, ...c) {
   console.log(a, b, c);
+  let total = a + b;
+  console.log('total :', total);
+  c.map((e) => {
+    total += e;
+  });
+  return total;
 }
-sum(1, 2, 3, 4, 5, 6, 7);
+let mno = sum(1, 2, 3, 4, 5, 6, 7);
+console.log("mno :", mno);

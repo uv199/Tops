@@ -1,4 +1,4 @@
--> Want to re-use variable name so which variable mathod should i use
+-> Want to re-use variable name so which variable declare mathod should i use
 
 ------------------------------------------------------------------------------------------
 
@@ -21,6 +21,7 @@ const m
       console.log(x) ___________________ point-x1
       console.log(y) ___________________ point-y1
       console.log(z) ___________________ point-z1
+      console.log(m) ___________________ 
 } 
 
 console.log(x) ___________________ point-x2
