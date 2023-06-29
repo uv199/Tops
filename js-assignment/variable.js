@@ -1,8 +1,9 @@
--> Want to re-use variable name so which variable declare mathod should i use
+/*
+-> Want to re-use variable name so which variable declare method should i use
 
 ------------------------------------------------------------------------------------------
 
--> give the list which variavble name not works in js
+-> give the list which variable name not works in js
 1. let a=0
 2. let "a"=0
 3. let 'a'=0
@@ -15,9 +16,9 @@ var y = 100
 const z = 100
 const m
 {
-      x= 90 
-      y= 90 
-      z= 90 
+      x= 90
+      y= 90
+      z= 90
       console.log(x) ___________________ point-x1
       console.log(y) ___________________ point-y1
       console.log(z) ___________________ point-z1
@@ -63,3 +64,19 @@ what will print at z2-_______
 
 ------------------------------------------------------------------------------------------
 
+*/
+
+
+// {
+
+//       const a = 10
+//       {
+//          const  a=5
+//       {
+
+// {}
+
+//       }
+//       }
+      
+// }
