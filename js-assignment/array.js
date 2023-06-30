@@ -69,19 +69,19 @@ by use of map, loop
 
 // console.log("data1 :", data1);
 
-let arr = ["i", "am", "urvish"]; // ==> want ['urvish','am','i']
-let revArr = [];
-arr.reduce((last, e) => {
-  //   console.log("e :", e);
-  //   console.log("last :", last);
-  last ? revArr.unshift(e, last) : revArr.unshift(e);
-  //   last ? revArr.unshift(e, last) : revArr.unshift(e);
-});
+// let arr = ["i", "am", "urvish"]; // ==> want ['urvish','am','i']
+// let revArr = [];
+// arr.reduce((last, e) => {
+//   //   console.log("e :", e);
+//   //   console.log("last :", last);
+//   last ? revArr.unshift(e, last) : revArr.unshift(e);
+//   //   last ? revArr.unshift(e, last) : revArr.unshift(e);
+// });
 // arr.reduce((last, e) => {
 //   revArr.unshift(e);
 // }, 0);
 
-console.log("revArr :", revArr);
+// console.log("revArr :", revArr);
 
 // [1,2,4,6,9,3,4,6]
 
@@ -100,3 +100,18 @@ console.log("revArr :", revArr);
 // for (i = 0; i < arr.length; i++) {
 //   arr[i] = arr[i].split("").reverse().join("");
 // }
+
+// ['i','am', 'urvish'] ==> want ['hsivru','ma','i']
+
+let reversArr = ["urvish", "am", "i"];
+let ansArr = [];
+for (let i = 0; i < reversArr.length; i++) {
+  let p1 = reversArr[i].split(""); // => ['a','m']
+  console.log("p1 :", p1);
+  let p2 = p1.reverse(); // =>['m','a']
+  console.log("p2 :", p2);
+  let p3 = p2.join(""); // => "ma"
+  console.log("p3 :", p3);
+  ansArr.push(p3); // push in new array ["am"]
+}
+console.log("ansArr :", ansArr);

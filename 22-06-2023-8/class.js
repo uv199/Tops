@@ -36,7 +36,6 @@ class Person {
   get name() {
     return this.x;
   }
-
   set set_name(x) {
     this.x = x;
   }
@@ -55,8 +54,9 @@ console.log("abc =", abc.sum());
 abc.x;
 console.log("abc.x :", abc.x);
 
-abc.set_name=90
+abc.set_name = 90;
 console.log("abc.x :", abc.x);
 
 // Person.sub();
 // console.log("Person.sum() :", Person.sum());
+
