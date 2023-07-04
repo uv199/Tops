@@ -18,4 +18,29 @@ x:10
 
 obj.y = 20 -->
 
+let abc = "test"
+
+
+[
+    [1,2,3,4],
+    [1,2,3,4,5,6]
+]
+
+math 
+console.log(Math.floor(12.5)) // 12
+console.log(Math.round(12.5))
+for(){
+    for(){
+
+    }
+    "row"
++`{i}`}
+
+[1,2]
+[2,3] //delete
+[3,4]
+[[0,1],2,3,undei,5]
 */
+try {
+} catch (error) {}
+

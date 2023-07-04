@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=" />
+    <title>callback fun</title>
+  </head>
+
+  <body>
+    <h1 id="print"></h1>
+    <script>
+      /*
+
+
+    fun1(5,5, (error, value)=>{
+    if(err)
+    })
+
+    db.student.find({age:18},(err,res)=>{
+        if(err) console
+        else{
+            store res
+        }
+    })
+
+        */
+
+      var a3;
+      let a2;
+      const a = "test";
+      function fun1(a, b, callback) {
+        let a2;
+        const a = "test";
+        // a=5 b = 10 callback= fun2
+        let c = a + b;
+        // c = a+b  : 5+10 = 15
+        setTimeout(function () {
+          return callback(c); // fun2(c)
+        }, 1000);
+      }
+
+      function fun2(value) {
+        // value = c : 15
+        document.getElementById("print").innerHTML = value;
+      }
+
+      fun1(5, 10, fun2);
+    </script>
+  </body>
+</html>

@@ -5,7 +5,9 @@
 -> badha family ni vehicale details like me jeni id apu aa family ni
 
 */
-
+get_family_name
+getFamilyName
+GetFamilyName
 // let familyDetails ={
 //     name :"hiralal",
 //     age:12,
@@ -17,7 +19,7 @@
 //         dob:
 //         vehicales:[{name: number:}]
 //         son:[{}]
-//     }]
+//     },]
 
 // }
 

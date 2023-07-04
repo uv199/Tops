@@ -18,7 +18,7 @@ class class_A extends com {
 
 class class_B extends com {
   //   print() {
-  //     console.log("ptint-->");
+  //     console.log("print-->");
   //   }
   find() {
     console.log("find-->", this.name);
