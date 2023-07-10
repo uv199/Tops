@@ -3,10 +3,11 @@
 2. state na name par thi city na name
 3. me apela hoy aa charactor thi vadhare  charactor hoy te city na name
 4. city list which has population more then i gave
-5. acending decending population wise 
+5. acending decending population wise
   */
 
 const data = require("./in.json");
+
 function getCityByStateName(state) {
   let filterData = data.filter((e) => {
     //   console.log("e :", e.state_name);
