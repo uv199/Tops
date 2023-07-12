@@ -40,3 +40,12 @@
   }
 }
 // console.log("m :", m); // give err
+
+// {
+//   {
+//     var abc = 100;
+//   }
+
+//   var abc = 120;
+//   console.log(abc);
+// }
