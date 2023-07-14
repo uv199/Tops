@@ -26,7 +26,7 @@ console.log("arr :", arr);
 // console.log("nArr :", nArr);
 
 // sort(func) – sorts the array in-place, then returns it.
-// arr.sort();
+// arr.sort((a,b )=> a-b);
 // console.log("arr :", arr);
 
 // reverse() – reverses the array in-place, then returns it.
@@ -57,24 +57,3 @@ console.log("arr :", arr);
 //   console.log("e", e.n);
 //   console.log("e", Object.values(e));
 // });
-
-// test
-function name(params) {
-  console.log("");
-  return "test";
-}
-
-let fun = () => "test";
-
-const a = name();
-const a1 = fun();
-console.log("a  :", a);
-console.log("a1  :", a1);
-setTimeout(() => {
-  console.log("test");
-}, 2000);
-setInterval(() => {
-  console.log("test--->");
-}, 2000);
-
-clearInterval();

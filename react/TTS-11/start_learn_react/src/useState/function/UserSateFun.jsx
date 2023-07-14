@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// export default function UserSate() {
+// export default function UserSateFun() {
 //   const [count1, SetCount1] = useState(0);
 //   // let [count1, SetCount1] = useState(0);  // give error - have to give diffrent name
 //   const [No, setNo] = useState(0);
@@ -8,13 +8,13 @@ import React, { useState } from "react";
 //   // let x = 0;
 //   // function count(params) {
 //   //   x++;
-//   //   console.log("🚀 ~ file: UserSate.jsx:7 ~ count ~ x:", x);
+//   //   console.log("🚀 ~ file: UserSateFun.jsx:7 ~ count ~ x:", x);
 //   // }
 
 //   function countState(params) {
 //     SetCount1(count1 + 2); // count= count+1
 //     // SetCount1()
-//     console.log("🚀 ~ file: UserSate.jsx:7 ~ count ~ x:");
+//     console.log("🚀 ~ file: UserSateFun.jsx:7 ~ count ~ x:");
 //   }
 //   return (
 //     <div>
@@ -32,14 +32,14 @@ import React, { useState } from "react";
 // }
 
 // -----------------------------------------------------------------------------
-export default function UserSate() {
+export default function UserSateFun() {
   const [name1, SetName1] = useState("---");
   let name = "---";
   function fun(e) {
     SetName1(e.target.value);
-    console.log("🚀 ~ file: UserSate.jsx:37 ~ UserSate ~ name1:", name1);
+    console.log("🚀 ~ file: UserSateFun.jsx:37 ~ UserSateFun ~ name1:", name1);
     // name = e.target.value;
-    // console.log("🚀 ~ file: UserSate.jsx:40 ~ fun ~ name:", name);
+    // console.log("🚀 ~ file: UserSateFun.jsx:40 ~ fun ~ name:", name);
   }
   return (
     <div>

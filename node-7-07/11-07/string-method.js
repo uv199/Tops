@@ -30,6 +30,8 @@ console.log("str :", str[3]);
 // let sub = str.substr(1, 4);
 // console.log("sub :", sub);
 
+// hello
+
 // slice() 	It is used to fetch the part of the given string. It allows us to assign positive as well negative index.
 // let x = str.slice(0, -4);
 // console.log("x  :", x);

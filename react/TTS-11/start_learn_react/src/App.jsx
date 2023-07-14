@@ -6,7 +6,8 @@ import "./App.css";
 import Body from "./class comp/Body";
 import ClassCom from "./class comp/ClassCom";
 import FunCom from "./functionalComponent/FunCom";
-import UserSate from "./useState/UserSate";
+import UserSateClass from "./useState/class/UserSateClass";
+import UserSateFun from "./useState/function/UserSateFun";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <Body />
       <ClassCom />
       <FunCom /> */}
-      <UserSate />
+      <UserSateClass />
+      <UserSateFun />
     </div>
   );
 }
