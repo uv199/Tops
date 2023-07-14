@@ -31,7 +31,8 @@ console.log("=====>otp", otp);
 let x1 = otp.toFixed(4);
 
 let o = Math.random().toFixed(1) * 10;
-console.log("🚀 ~ file: math.js:34 ~ o:", o);
 console.log("=====>x1", x1 * 10000);
 let arr = ["j1", "j2", "j3", "j4", "j5", "j6", "j7", "j8", "j9", "j10"];
 console.log("------- arr[o]:", arr[o]);
+
+let Arr=[{}]
