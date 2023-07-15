@@ -4,28 +4,23 @@ class UserSateClass extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
+      no: 0,
+      name: "my name ",
     };
-    this.no = 0;
+    // this.x = 20;
   }
-  fun(params) {
-    console.log(
-      "🚀 ~ file: UserSateClass.jsx:15 ~ UserSateClass ~ fun ~ no:",
-      this.no,
-      "a ? a.b ? a.b.c : undefined : undefined "
-    );
-    this.setState({ count: this.state.count++ });
-    console.log("---->", this.state.count);
-    this.no = this.no + 1;
+  clickme() {
+    console.log("----", this.state.no);
+    this.setState({ no: this.state.no + 1 });
+    this.setState({ name: this.state.name + "nihar" });
   }
   render() {
     return (
       <div>
-        <button onClick={() => this.fun()}>click me</button>
-        <div>{this.no}</div>;<div>{this.state.count}</div>;
+        <h1>{this.state.no}</h1>
+        <h1>{this.state.name}</h1>
+        <button onClick={() => this.clickme()}>Please click me</button>
       </div>
-      // 5+ +"5"
-      // 5+"5"
     );
   }
 }
