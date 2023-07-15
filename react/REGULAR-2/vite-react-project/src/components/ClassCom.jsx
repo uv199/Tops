@@ -1,19 +1,15 @@
-// import React, { Component } from 'react';
+import React from "react";
 
-// class ClassCom extends Component {
-//     render() {
-//         return (
-//             <div>
 
-//             </div>
-//         );
-//     }
-// }
+class ClassCom extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>test jalpa</h1>
+      </div>
+    );
+  }
+}
 
-// export default ClassCom;
+export default ClassCom;
 
-// import React from "react";
-
-// class ClassCom extends React.Component {
-
-// }
