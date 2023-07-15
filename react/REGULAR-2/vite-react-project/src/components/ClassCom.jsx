@@ -1,10 +1,10 @@
 import React from "react";
-
+import "./classcom.css";
 
 class ClassCom extends React.Component {
   render() {
     return (
-      <div>
+      <div className="name">
         <h1>test jalpa</h1>
       </div>
     );
@@ -12,4 +12,3 @@ class ClassCom extends React.Component {
 }
 
 export default ClassCom;
-

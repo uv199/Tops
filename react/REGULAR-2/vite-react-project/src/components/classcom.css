@@ -1,0 +1,9 @@
+.name {
+  height: 20vh;
+  width: 100vw;
+  background-color: rgb(173, 119, 119);
+  color: rgb(41, 27, 27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
