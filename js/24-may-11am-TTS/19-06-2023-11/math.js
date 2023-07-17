@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 let max = Math.max(1, 3, 4, 10);
 let arr = [15, 2, 40];
 console.log("max :", Math.max(...arr));
@@ -13,6 +13,6 @@ console.log("max :", Math.random());
 let x = 12.4444;
 console.log("max :", x.toFixed(6));
 
-x = 'test'
-b = x
-console.log('x :', x);
+x = "test";
+b = x;
+console.log("x :", x);
