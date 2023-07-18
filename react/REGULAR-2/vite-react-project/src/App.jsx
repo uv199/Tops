@@ -1,74 +1,78 @@
+// package
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
+// file
 import "./App.css";
+import ClassCom from "./components/ClassCom";
+import ClassCom2 from "./components/ClassCom2";
+import FunCom from "./components/FunCom";
+import FunCom2 from "./components/FunCom2";
+import UseStateFun from "./uses_state/UseStateFun";
+import UseStateClass from "./uses_state/UseStateClass";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <h1>head</h1>
-        <h2>head</h2>
-        <h3>head</h3>
-        <h4>head</h4>
-        <h5>head</h5>
-        <h6>head</h6>
+    <div className="container">
+      {/* ----------------------------component--------------------------  */}
+      {/* <ClassCom />
+      <ClassCom2 />
+      <FunCom />
+      <FunCom2 /> */}
+
+      {/* ----------------------------use-state--------------------------  */}
+      {/* <UseStateFun /> */}
+      {/* <UseStateClass /> */}
+      {/* myname */}
+      {/* myName
+      MyName
+      my_name */}
+      <div className="head_container">
+        <div className="head_logo">
+          <h1>Tops</h1>
+        </div>
+        <div className="head_list">
+          <h2>home</h2>
+          <h2>about</h2>
+          <h2>service</h2>
+        </div>
       </div>
-      
-      <p>
-        hdskjahk <br /> jdshjbr
-      </p>
-      <hr />
-      <marquee direction="down" height="100" width="200" bgcolor="white">
-        Scrolling text
-      </marquee>
 
-      <br />
-      <label>text</label>
-      <label>text</label>
-      <input type="text" />
-      <br />
-      <label>button</label>
-      <input type="button" />
-      <br />
-      <label>color</label>
-      <input type="color" />
-      <br />
-      <label>email</label>
-      <input type="email" />
-      <input type="checkbox" />
-      <input type="radio" />
-      <input type="file" />
-      <input type="number" />
-      <input type="password" />
-
-      <button>click me</button>
-      <p></p>
-
-      <table>
-        <tr>
-          <th>name</th>
-          <th>no</th>
-        </tr>
-        <tr>
-          <td>urvish</td>
-          <td>100</td>
-        </tr>
-        <tr>
-          <td>test</td>
-          <td>100</td>
-        </tr>
-      </table>
-
-      <form>
-        <label htmlFor="name">please enter name</label>
-        <input type="text" id="name" />
-        <label htmlFor="no">please enter no</label>
-        <input type="number" id="no" />
-      </form>
-    </>
+      <div className="body_container">
+        <div className="content_1">
+          <h1>
+            Serving you <br />
+            since 1989.
+          </h1>
+          <p>
+            Acme Outdoors is an outdoor and adventure <br /> shop located in the
+            Boathouse District in <br />
+            Oklahoma City.
+          </p>
+          <button>Shop merch</button>
+        </div>
+        <div className="container_2">
+          <div className="sub1_con_2">
+            <p className="sub_title">
+              WAYS TO SUPPORT{" "}
+              <span className="title_1">
+                Support Acme Outdoors.
+                {/* <b>Support Acme Outdoors.</b> */}
+              </span>
+            </p>
+            <p>
+              COVID-19 has forced us to close our retail space, but we need{" "}
+              <br />
+              support from patrons like yourself now more than ever. Below,
+              we’ve
+              <br /> listed the best ways to help us through this season.
+            </p>
+          </div>
+          <div className="sub2_con_2">sub2</div>_1
+        </div>
+      </div>
+    </div>
   );
 }
 

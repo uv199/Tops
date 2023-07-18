@@ -11,6 +11,8 @@ import UserSateFun from "./useState/function/UseSateFun";
 import UseSateFun from "./useState/function/UseSateFun";
 import StateProject from "./useState/StateProject";
 import Project2 from "./useState/Project2";
+import FunProps from "./props/FunProps";
+import FunPropsChnage from "./props/FunPropsChnage";
 
 function App() {
   return (
@@ -24,7 +26,13 @@ function App() {
       {/* <UserSateClass /> */}
       {/* <UserSateFun /> */}
       {/* <StateProject /> */}
-      <Project2 />
+      {/* <Project2 /> */}
+
+      {/*------------------Props------------------ */}
+      {/* <FunProps name={"urvish"} age={20} /> */}
+      <FunProps name={"urvish"} />
+      {/* <FunProps obj={{ x: 10, y: 10 }} /> */}
+      <FunPropsChnage name={"urvish"} />
     </div>
   );
 }

@@ -36,3 +36,10 @@ let data = {
     },
   ],
 };
+
+/*
+1. gradfather name
+2. grandfathers 2nd son's name
+3. grandfathers 1st sons -> 1st child name
+4. grandfathers 3rd sons -> 1st vehical details
+*/
