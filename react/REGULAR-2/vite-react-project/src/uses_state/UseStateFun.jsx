@@ -3,6 +3,7 @@ import "./usestatefun.css";
 
 export default function UseStateFun() {
   let [count, setCount] = useState(0);
+
   // let [a, setA] = useState(0);
 
   // step 1 only for understand why we use usestate

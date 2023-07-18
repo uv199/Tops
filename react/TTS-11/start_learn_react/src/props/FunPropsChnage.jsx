@@ -5,7 +5,6 @@ export default function FunPropsChnage(props) {
 
   function chnageNameFun() {
     let upperCashName = chnageName?.toUpperCase();
-
     setChnageName(upperCashName);
   }
 
