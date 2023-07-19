@@ -12,6 +12,7 @@ import UseStateClass from "./uses_state/UseStateClass";
 import StateProject1 from "./uses_state/StateProject1";
 import StateProject2 from "./uses_state/StateProject2";
 import ConditionalRen from "./ConditionalRendaring_map/ConditionalRen";
+import LifeCycleMethod from "./life_cycle_method/LifeCycleMethod";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +32,10 @@ function App() {
       {/* <StateProject2 /> */}
 
       {/* ----------------------------conditional rendaring--------------------------  */}
-      <ConditionalRen />
+      {/* <ConditionalRen /> */}
+
+      {/* ----------------------------Life Cycle Method--------------------------  */}
+      <LifeCycleMethod />
     </div>
   );
 }
