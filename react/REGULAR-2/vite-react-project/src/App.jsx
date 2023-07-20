@@ -11,14 +11,19 @@ import UseStateFun from "./uses_state/UseStateFun";
 import UseStateClass from "./uses_state/UseStateClass";
 import StateProject1 from "./uses_state/StateProject1";
 import StateProject2 from "./uses_state/StateProject2";
-import ConditionalRen from "./ConditionalRendaring_map/ConditionalRen";
+import ConditionalRen from "./ConditionalRendaring_Fragment/ConditionalRen";
 import LifeCycleMethod from "./life_cycle_method/LifeCycleMethod";
-import ConRenProject1 from "./ConditionalRendaring_map/ConRenProject1";
+import ConRenProject1 from "./ConditionalRendaring_Fragment/ConRenProject1";
 import PropsFun from "./Props/PropsFun";
+import PropsClass from "./Props/PropsClass";
+import PropsProject1 from "./Props/PropsProject1";
+import FragmentCom from "./ConditionalRendaring_Fragment/FragmentCom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [isPass, setIsPass] = useState("pass");
+  function chnageInput(params) {
+    setIsPass("email");
+  }
   return (
     <div className="container">
       {/* ----------------------------component--------------------------  */}
@@ -34,17 +39,23 @@ function App() {
       {/* <StateProject2 /> */}
 
       {/* ----------------------------conditional rendaring--------------------------  */}
-      {/* <ConditionalRen /> */}
+      {/* <ConditionalRen  /> */}
       {/* <ConRenProject1 /> */}
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
       {/* <LifeCycleMethod /> */}
 
       {/* ----------------------------Props--------------------------  */}
-      <PropsFun name={"urvish"} age={20} />
+      {/* <PropsFun name={"urvish"} age={20} /> */}
       {/* <PropsFun name={"tejash"} age={10} />
       <PropsFun data={{ name: "test", age: 30 }} />
       <PropsFun arr={[1, 2, 3, 4]} /> */}
+      {/* <PropsClass name={"urvish"} /> */}
+      <PropsProject1 inputType={isPass} />
+      <button onClick={() => chnageInput()}>chnage input</button>
+
+      {/* ----------------------------Fragment--------------------------  */}
+      {/* <FragmentCom /> */}
     </div>
   );
 }
