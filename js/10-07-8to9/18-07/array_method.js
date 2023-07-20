@@ -64,6 +64,7 @@ console.log(" ~ arr:", arr);
 
 // sort(func) – sorts the array in-place, then returns it.
 let arr2 = [1, 12, 3, 11, 5, 6, 7, 8, 9];
+arr2.sort((a, b) => b - a);
 
-arr2.sort();
+// arr2.sort();
 console.log("arr2:", arr2);

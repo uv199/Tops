@@ -13,10 +13,15 @@ import StateProject from "./useState/StateProject";
 import Project2 from "./useState/Project2";
 import FunProps from "./props/FunProps";
 import FunPropsChnage from "./props/FunPropsChnage";
+import ClassProps from "./props/ClassProps";
+import PropsDestructuring from "./props/PropsDestructuring";
+import FragmentCom from "./ConditionalRen-map-fragment/FragmentCom";
+import ConditionalRen from "./ConditionalRen-map-fragment/ConditionalRen";
+import MapKey from "./ConditionalRen-map-fragment/MapKey";
 
 function App() {
   return (
-    <div>
+    <div className="App_div">
       {/*------------------ component ------------------ */}
       {/* <Body />
       <ClassCom />
@@ -30,9 +35,18 @@ function App() {
 
       {/*------------------Props------------------ */}
       {/* <FunProps name={"urvish"} age={20} /> */}
-      <FunProps name={"urvish"} />
+      {/* <FunProps name={"urvish"} /> */}
       {/* <FunProps obj={{ x: 10, y: 10 }} /> */}
-      <FunPropsChnage name={"urvish"} />
+      {/* <FunPropsChnage name={"urvish"} /> */}
+      {/* <ClassProps name={"what happen"} /> */}
+      {/* <PropsDestructuring name={"urvish"} age={25} /> */}
+      {/*------------------Fragment------------------ */}
+      {/* <FragmentCom /> */}
+      {/*------------------Conditional-Rendaring------------------ */}
+      {/* <ConditionalRen isMale={"email"} isYoung={true} />
+      <ConditionalRen isMale={false} /> */}
+      {/*------------------Map------------------ */}
+      <MapKey />
     </div>
   );
 }

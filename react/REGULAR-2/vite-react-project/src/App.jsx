@@ -13,6 +13,8 @@ import StateProject1 from "./uses_state/StateProject1";
 import StateProject2 from "./uses_state/StateProject2";
 import ConditionalRen from "./ConditionalRendaring_map/ConditionalRen";
 import LifeCycleMethod from "./life_cycle_method/LifeCycleMethod";
+import ConRenProject1 from "./ConditionalRendaring_map/ConRenProject1";
+import PropsFun from "./Props/PropsFun";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,9 +35,16 @@ function App() {
 
       {/* ----------------------------conditional rendaring--------------------------  */}
       {/* <ConditionalRen /> */}
+      {/* <ConRenProject1 /> */}
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
-      <LifeCycleMethod />
+      {/* <LifeCycleMethod /> */}
+
+      {/* ----------------------------Props--------------------------  */}
+      <PropsFun name={"urvish"} age={20} />
+      {/* <PropsFun name={"tejash"} age={10} />
+      <PropsFun data={{ name: "test", age: 30 }} />
+      <PropsFun arr={[1, 2, 3, 4]} /> */}
     </div>
   );
 }
