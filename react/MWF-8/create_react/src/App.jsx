@@ -1,16 +1,17 @@
 import React from "react";
 import "./App.css";
-import FunState from "./user_state/FunState";
-import ClassState from "./user_state/ClassState";
-import StateProject1 from "./user_state/StateProject1";
-import StateProject2 from "./user_state/StateProject2";
-import FunProps from "./props/FunProps";
-import ClassProps from "./props/ClassProps";
-import ConditionalRendaring from "./conditionRend-Map/ConditionalRendaring";
-import MapLoop from "./conditionRend-Map/MapLoop";
-import FragmentTest from "./Fragment/FragmentTest";
-import ListKey from "./List/ListKey";
-import Map from "./map/Map";
+import FunState from "./3.user_state/FunState";
+import ClassState from "./3.user_state/ClassState";
+import StateProject1 from "./3.user_state/StateProject1";
+import StateProject2 from "./3.user_state/StateProject2";
+import FunProps from "./4.props/FunProps";
+import ClassProps from "./4.props/ClassProps";
+import ConditionalRendaring from "./5.conditionRend-Map/ConditionalRendaring";
+import MapLoop from "./5.conditionRend-Map/MapLoop";
+import FragmentTest from "./7.Fragment/FragmentTest";
+import ListKey from "./8.List/ListKey";
+import Map from "./6.map/Map";
+import InputCom from "./9.input/InputCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -40,7 +41,10 @@ function App() {
       {/* <ListKey /> */}
 
       {/* ------------------Map--------------------- */}
-      <Map />
+      {/* <Map /> */}
+
+      {/* ------------------Input--------------------- */}
+      <InputCom />
     </div>
   );
 }

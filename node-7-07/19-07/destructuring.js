@@ -23,3 +23,5 @@ let arr = [10, 20, 30];
 
 let [a, b, c, d] = arr;
 console.log("🚀 ~ file: destructuring.js:25 ~ a, b, c:", a, b, c, d);
+
+
