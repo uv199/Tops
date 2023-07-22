@@ -7,7 +7,9 @@ export default function ConditionalRen(props) {
       {props.isYoung ? <h2>Yes he is Young</h2> : <h2> No he is not Young</h2>}
     </>
   ) : (
+    <>
     <h1>Yes, She is a girl.</h1>
+    </>
   );
 }
 

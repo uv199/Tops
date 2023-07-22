@@ -46,3 +46,15 @@ console.log("str1:", str1);
 // how to check array are same or not
 
 console.log([1, 2] == [1, 2]);
+
+let x = 0 || null || undefined || false;
+
+console.log("!x:", !x); // its give true
+console.log("x:", x); // its give false
+
+let A = [];
+let Obj = {};
+if (arr.length > 0) {
+}
+if (Obj) {
+}

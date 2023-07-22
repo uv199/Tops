@@ -18,6 +18,8 @@ import PropsDestructuring from "./props/PropsDestructuring";
 import FragmentCom from "./ConditionalRen-map-fragment/FragmentCom";
 import ConditionalRen from "./ConditionalRen-map-fragment/ConditionalRen";
 import MapKey from "./ConditionalRen-map-fragment/MapKey";
+import MapCom from "./ConditionalRen-map-fragment/MapCom";
+import BootStrapCom from "./BootStrap/BootStrapCom";
 
 function App() {
   return (
@@ -40,13 +42,20 @@ function App() {
       {/* <FunPropsChnage name={"urvish"} /> */}
       {/* <ClassProps name={"what happen"} /> */}
       {/* <PropsDestructuring name={"urvish"} age={25} /> */}
+
       {/*------------------Fragment------------------ */}
       {/* <FragmentCom /> */}
+
       {/*------------------Conditional-Rendaring------------------ */}
-      {/* <ConditionalRen isMale={"email"} isYoung={true} />
-      <ConditionalRen isMale={false} /> */}
+      {/* <ConditionalRen isMale={"email"} isYoung={true} /> */}
+      {/* <ConditionalRen isMale={false} /> */}
+
       {/*------------------Map------------------ */}
-      <MapKey />
+      {/* <MapKey /> */}
+      {/* <MapCom /> */}
+
+      {/*------------------Bootstrap------------------ */}
+      <BootStrapCom />
     </div>
   );
 }

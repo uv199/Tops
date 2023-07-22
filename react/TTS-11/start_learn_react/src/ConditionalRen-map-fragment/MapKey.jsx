@@ -5,10 +5,11 @@ export default function MapKey() {
   let arr = ["uv", "meet", "yash", "dobariya"];
   return (
     <>
-      {arr.map((e, i) => {
+      {/* {arr.map((e, i) => {
         // return <FunCom />;
         return <h1 key={i}>{e}</h1>;
-      })}
+      })} */}
+   
     </>
   );
 }

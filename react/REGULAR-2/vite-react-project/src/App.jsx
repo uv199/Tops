@@ -3,21 +3,26 @@ import { useState } from "react";
 
 // file
 import "./App.css";
-import ClassCom from "./components/ClassCom";
-import ClassCom2 from "./components/ClassCom2";
-import FunCom from "./components/FunCom";
-import FunCom2 from "./components/FunCom2";
-import UseStateFun from "./uses_state/UseStateFun";
-import UseStateClass from "./uses_state/UseStateClass";
-import StateProject1 from "./uses_state/StateProject1";
-import StateProject2 from "./uses_state/StateProject2";
-import ConditionalRen from "./ConditionalRendaring_Fragment/ConditionalRen";
+import ClassCom from "./1.components/ClassCom";
+import ClassCom2 from "./1.components/ClassCom2";
+import FunCom from "./1.components/FunCom";
+import FunCom2 from "./1.components/FunCom2";
+import UseStateFun from "./2.uses_state/UseStateFun";
+import UseStateClass from "./2.uses_state/UseStateClass";
+import StateProject1 from "./2.uses_state/StateProject1";
+import StateProject2 from "./2.uses_state/StateProject2";
+import ConditionalRen from "./4.ConditionalRendaring_Fragment/ConditionalRen";
 import LifeCycleMethod from "./life_cycle_method/LifeCycleMethod";
-import ConRenProject1 from "./ConditionalRendaring_Fragment/ConRenProject1";
-import PropsFun from "./Props/PropsFun";
-import PropsClass from "./Props/PropsClass";
-import PropsProject1 from "./Props/PropsProject1";
-import FragmentCom from "./ConditionalRendaring_Fragment/FragmentCom";
+import ConRenProject1 from "./4.ConditionalRendaring_Fragment/ConRenProject1";
+import PropsFun from "./3.Props/PropsFun";
+import PropsClass from "./3.Props/PropsClass";
+import PropsProject1 from "./3.Props/PropsProject1";
+import FragmentCom from "./4.ConditionalRendaring_Fragment/FragmentCom";
+import MapFun_key from "./5.Map-key/MapFun_key";
+import MapFun_key_2 from "./5.Map-key/MapFun_key_2";
+import InputCom from "./6.Input/InputCom";
+// or less ideally
+import { Button } from "react-bootstrap";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -51,11 +56,21 @@ function App() {
       <PropsFun data={{ name: "test", age: 30 }} />
       <PropsFun arr={[1, 2, 3, 4]} /> */}
       {/* <PropsClass name={"urvish"} /> */}
-      <PropsProject1 inputType={isPass} />
-      <button onClick={() => chnageInput()}>chnage input</button>
+      {/* <PropsProject1 inputType={isPass} />
+      <button onClick={() => chnageInput()}>chnage input</button> */}
 
-      {/* ----------------------------Fragment--------------------------  */}
+      {/* ---------------------------- Fragment --------------------------  */}
       {/* <FragmentCom /> */}
+
+      {/* ---------------------------- Map --------------------------  */}
+      {/* <MapFun_key /> */}
+      {/* <MapFun_key_2 /> */}
+
+      {/* ---------------------------- Input --------------------------  */}
+      {/* <InputCom /> */}
+      <Button type="button" class="btn btn-dark">
+        Dark
+      </Button>
     </div>
   );
 }
