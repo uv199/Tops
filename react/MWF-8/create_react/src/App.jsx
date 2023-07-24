@@ -12,6 +12,7 @@ import FragmentTest from "./7.Fragment/FragmentTest";
 import ListKey from "./8.List/ListKey";
 import Map from "./6.map/Map";
 import InputCom from "./9.input/InputCom";
+import MultipleInputCom from "./9.input/MultipleInputCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -45,6 +46,7 @@ function App() {
 
       {/* ------------------Input--------------------- */}
       <InputCom />
+      {/* <MultipleInputCom /> */}
     </div>
   );
 }

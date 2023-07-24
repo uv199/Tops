@@ -7,12 +7,10 @@ export default function FunState() {
 
   function updateCount(params) {
     x++;
-    console.log("🚀 ~ file: FunState.jsx:7 ~ updateCount ~ x:", x);
   }
   function updateState(params) {
     setCount((pre) => pre + 1); // count= count++
     // setCount(count + 1); // count= count + 1
-    console.log("🚀 ~ file: FunState.jsx:13 ~ updateState ~ count:", count);
   }
 
   return (
@@ -27,3 +25,11 @@ export default function FunState() {
     </div>
   );
 }
+/*\
+let x = ""{}[]
+let [name, setName] = useState(""/{}/[]/null/undefined/10/true)
+name = "test"; // not acceptable
+sdetName("test") // you can chnage state value by doing this 
+->  our componenet will be re-render When states value chnaged (count)
+->  we chnage varibale value -> componennt will never re-render 
+*/

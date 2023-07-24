@@ -36,3 +36,22 @@ class ClassState extends Component {
 }
 
 export default ClassState;
+
+/*
+in class component we will make state in contructur method
+like -  
+constructor() {
+    super();
+    // this.state= 10; // its not acceptable must give object or null value
+    this.state = {
+      count: 10,
+    };
+  }
+-> we must declare super()at top of constructor method
+-> we must provide a object or null value to state 
+-> we will use state like this - this.state.(keyName) ->  ex. this.state.count => 10
+-> we can make only one state we cants use this.state multiple time
+
+we can chnage value of state like this - this.setState({ keyName: 'value' })
+- ex. this.setState({count: 50}) => now this.state.count => 50
+*/
