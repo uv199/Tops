@@ -23,6 +23,7 @@ import MapFun_key_2 from "./5.Map-key/MapFun_key_2";
 import InputCom from "./6.Input/InputCom";
 // or less ideally
 import { Button } from "react-bootstrap";
+import MultipleInputCom from "./6.Input/MultipleInputCom";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -68,9 +69,7 @@ function App() {
 
       {/* ---------------------------- Input --------------------------  */}
       {/* <InputCom /> */}
-      <Button type="button" class="btn btn-dark">
-        Dark
-      </Button>
+      <MultipleInputCom />
     </div>
   );
 }

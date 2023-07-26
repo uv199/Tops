@@ -1,0 +1,7 @@
+{
+  "name": "urvihs",
+  "version": 20,
+  "arr": [12, "test"],
+  "obj": { "test": "test" },
+  "bol": true
+}

@@ -28,7 +28,6 @@ export default function InputCom() {
   );
 }
 
-
 // let arr =[1,2,3]
 
 // let narr = [...arr,4]
