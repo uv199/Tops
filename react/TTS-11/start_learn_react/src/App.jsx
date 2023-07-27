@@ -20,6 +20,9 @@ import ConditionalRen from "./ConditionalRen-map-fragment/ConditionalRen";
 import MapKey from "./ConditionalRen-map-fragment/MapKey";
 import MapCom from "./ConditionalRen-map-fragment/MapCom";
 import BootStrapCom from "./BootStrap/BootStrapCom";
+import InputCom from "./input/InputCom";
+import PropsFunRep from "./repeatclass/PropsFunRep";
+import PropsClassRep from "./repeatclass/PropsClassRep";
 
 function App() {
   return (
@@ -55,9 +58,22 @@ function App() {
       {/* <MapCom /> */}
 
       {/*------------------Bootstrap------------------ */}
-      <BootStrapCom />
+      {/* <BootStrapCom /> */}
+
+      {/*------------------Input------------------ */}
+      <InputCom />
+
+      {/*------------------props rep------------------ */}
+      {/* <PropsFunRep name={"urvish"} age={20} />
+      <PropsFunRep name={"patel"} />
+      <PropsClassRep age={"00000"} /> */}
     </div>
   );
 }
 
 export default App;
+
+// function name(props) {
+//   props.name
+// }
+// name(name="test")

@@ -36,7 +36,10 @@
   width: 100vw;
 }
 .content_1 {
-  margin-left: 8%;
+  background-image: url("https://images.pexels.com/photos/673803/pexels-photo-673803.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 .sub1_con_2 {
@@ -103,4 +106,36 @@
 .content_3 {
   display: flex;
   justify-content: right;
+  background-image: url("https://images.pexels.com/photos/673803/pexels-photo-673803.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.cardDertails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.iconImage {
+  height: 65px;
+  width: 130px;
+  margin-right: 10%;
+}
+
+.topFooter {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.card_image {
+  height: 100vh;
+  width: 100vh;
+  background-image: url("https://images.pexels.com/photos/673803/pexels-photo-673803.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
