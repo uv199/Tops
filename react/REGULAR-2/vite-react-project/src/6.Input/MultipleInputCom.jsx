@@ -9,15 +9,12 @@ export default function MultipleInputCom() {
 
   // to get data from input and store them in data state
   function getData(e) {
-    console.log("----", e.target.name);
     setData({ ...data, [e.target.name]: e?.target?.value });
-    console.log("data:", data);
   }
 
   // to cleate input feild
   function handlerSubmit() {
     setArrData([...arrData, data]);
-    console.log("🚀 ~ rrData:", arrData);
     setData({ email: "", password: "", name: "" });
   }
   return (

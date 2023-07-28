@@ -24,7 +24,7 @@ import InputCom from "./6.Input/InputCom";
 // or less ideally
 import { Button } from "react-bootstrap";
 import MultipleInputCom from "./6.Input/MultipleInputCom";
-import UpdateComCycle from "./life_cycle_method/UpdateComCycle";
+import Delete from "./6.Input/Delete";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -68,10 +68,15 @@ function App() {
       {/* ---------------------------- Input --------------------------  */}
       {/* <InputCom /> */}
       {/* <MultipleInputCom /> */}
+      <Delete />
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
-      {/* <UpdateComCycle name={"Urvish"} />  */}
-      {false ? <LifeCycleMethod /> : null}
+
+      {/* <LifeCycleMethod /> */}
+
+      {/*  componentWillUnmount  will call when component is removeds here we will remove by use of ternary opt */}
+      {/* {false ? <LifeCycleMethod /> : null} */}
+      {/* {true ? <LifeCycleMethod /> : null} */}
     </div>
   );
 }

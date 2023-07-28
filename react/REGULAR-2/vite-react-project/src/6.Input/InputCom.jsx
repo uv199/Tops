@@ -4,14 +4,12 @@ export default function InputCom() {
   let [name, setName] = useState("");
   let [arr, setArr] = useState([]);
   function getName(e) {
-    // console.log("---", e?.target?.value);
     setName(e?.target?.value);
   }
 
   function addName(params) {
     setArr([...arr, name]); // add name in array and also copy old array
     setName(""); // for do input empty on click of add btn
-    // console.log("arr:", arr);
   }
   return (
     <>
