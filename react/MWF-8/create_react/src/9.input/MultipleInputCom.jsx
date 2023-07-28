@@ -1,37 +1,119 @@
 import React, { useState } from "react";
-// state key name, input name must be same
+import "./input.css";
+import { Table } from "react-bootstrap";
+
+// Note = state key name, input name must be same
 export default function MultipleInputCom() {
-  let [userData, setUserData] = useState({
-    name: "",
+  let [user, setUser] = useState({
     email: "",
-    address: "",
+    password: "",
+    name: "",
   });
 
+  let [userData, setUserData] = useState([]);
+
+  // to get data from input
   function getData(e) {
-    // console.log("------>", e.target.name);
-    setUserData({ ...userData, [e?.target?.name]: e?.target?.value });
-    console.log("------>", userData);
+    console.log("---->", e.target.name);
+    //...user -> for get old objects data
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  // add object(user state) into array(userData)
+  function submitHandler() {
+    setUserData([...userData, user]);
+    setUser({
+      email: "",
+      password: "",
+      name: "",
+    });
   }
   return (
     <>
-      <label htmlFor="name">Last Name : </label>
-      <input
-        type="text"
-        placeholder="please enter your last name"
-        id="name"
-        name="name"
-        onChange={(e) => getData(e)}
-      />
-      <label htmlFor="email">Email : </label>
-      <input type="email" placeholder="please enter your email" id="email" />
-      <label htmlFor="add">Address : </label>
-      <input type="text" placeholder="please enter your address" id="add" />
-
-      <h1>
-        {userData?.name}
-        {userData?.email}
-        {userData?.address}
-      </h1>
+      <div className="inputForm">
+        <label htmlFor="email">Email : </label>
+        <input
+          value={user.email}
+          type="email"
+          onChange={(e) => getData(e)}
+          name="email"
+          placeholder="please enter your email"
+          id="email"
+        />
+        <label htmlFor="pass">Password : </label>
+        <input
+          value={user.password}
+          type="text"
+          name="password"
+          onChange={(e) => getData(e)}
+          placeholder="please enter your Password"
+          id="pass"
+        />
+        <label htmlFor="pass">Password : </label>
+        <input
+          value={user.name}
+          type="text"
+          name="name"
+          onChange={(e) => getData(e)}
+          placeholder="please enter your Name"
+          id="pass"
+        />
+        <button onClick={() => submitHandler()}>Submit</button>
+      </div>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Sr.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userData.map((e, i) => {
+            return (
+              <tr key={i}>
+                <td>{i + 1}</td>
+                <td>{e.name}</td>
+                <td>{e.email}</td>
+                <td>{e.password}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
     </>
   );
 }
+
+/*
+
+let obj={
+  a:20,
+  b:40
+}
+obj.a
+obj.b
+
+let x = "b"
+obj[x] => 40
+
+let y = "a"
+obj[y] => 20
+
+
+
+arr = [{
+  a:20,
+  b:40
+},{
+  a:20,
+  b:40
+},{
+  a:20,
+  b:40
+}]
+arr.map((e)=>{
+
+})
+*/

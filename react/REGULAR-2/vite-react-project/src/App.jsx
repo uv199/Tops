@@ -24,6 +24,7 @@ import InputCom from "./6.Input/InputCom";
 // or less ideally
 import { Button } from "react-bootstrap";
 import MultipleInputCom from "./6.Input/MultipleInputCom";
+import UpdateComCycle from "./life_cycle_method/UpdateComCycle";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -48,9 +49,6 @@ function App() {
       {/* <ConditionalRen  /> */}
       {/* <ConRenProject1 /> */}
 
-      {/* ----------------------------Life Cycle Method--------------------------  */}
-      {/* <LifeCycleMethod /> */}
-
       {/* ----------------------------Props--------------------------  */}
       {/* <PropsFun name={"urvish"} age={20} /> */}
       {/* <PropsFun name={"tejash"} age={10} />
@@ -69,7 +67,11 @@ function App() {
 
       {/* ---------------------------- Input --------------------------  */}
       {/* <InputCom /> */}
-      <MultipleInputCom />
+      {/* <MultipleInputCom /> */}
+
+      {/* ----------------------------Life Cycle Method--------------------------  */}
+      {/* <UpdateComCycle name={"Urvish"} />  */}
+      {false ? <LifeCycleMethod /> : null}
     </div>
   );
 }

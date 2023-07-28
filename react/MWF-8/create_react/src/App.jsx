@@ -13,6 +13,7 @@ import ListKey from "./8.List/ListKey";
 import Map from "./6.map/Map";
 import InputCom from "./9.input/InputCom";
 import MultipleInputCom from "./9.input/MultipleInputCom";
+import BootStrapCom from "./10.bootStrap/BootStrapCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -45,8 +46,11 @@ function App() {
       {/* <Map /> */}
 
       {/* ------------------Input--------------------- */}
-      <InputCom />
-      {/* <MultipleInputCom /> */}
+      {/* <InputCom /> */}
+      <MultipleInputCom />
+
+      {/* ------------------Boot-Strap--------------------- */}
+      {/* <BootStrapCom /> */}
     </div>
   );
 }

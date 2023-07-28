@@ -1,39 +1,45 @@
 import React, { Component } from "react";
 
-class LifeCycleMethods extends Component {
-  constructor(props) {
-    super(props);
-    console.log("constructor---->");
+export default class LifeCycleMethod extends Component {
+  constructor() {
+    super();
     this.state = {
       count: 0,
     };
+    {
+      console.log("========constructor========>");
+    }
   }
-
   componentDidMount() {
-    console.log("Component has been mounted.");
+    {
+      console.log("========componentDidMount========>");
+    }
   }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log("Component updated:", prevState.count, "->", this.state.count);
+  componentDidUpdate() {
+    {
+      console.log("========componentDidUpdate========>");
+    }
+  }
+  incFun() {
+    this.setState({ count: this.state.count + 1 });
   }
 
   componentWillUnmount() {
-    console.log("Component will unmount.");
+    {
+      console.log("========componentWillUnmount========>");
+    }
   }
-
-  handleIncrement = () => {
-    this.setState((prevState) => ({ count: prevState.count + 1 }));
-  };
-
   render() {
-    console.log("render---->");
+    {
+      console.log("========render========>");
+    }
+
     return (
-      <div>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
-      </div>
+      <>
+        <h1>heding</h1>
+        <h1>{this.state.count}</h1>
+        <button onClick={() => this.incFun()}>Incri</button>
+      </>
     );
   }
 }
-
-export default LifeCycleMethods;
