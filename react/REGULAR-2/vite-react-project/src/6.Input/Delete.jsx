@@ -26,11 +26,9 @@ export default function Delete() {
     //     return i !== index;
     //   })
     // );
-
   }
   return (
-<>
-      <h1>{name}</h1>
+    <>
       <label htmlFor="name">Name : </label>
       <input type="text" id="name" onChange={(e) => getName(e)} value={name} />
       <button onClick={() => addName()}>Add Name</button>
@@ -56,8 +54,7 @@ export default function Delete() {
               ))}
             </tbody>
           </Table>
-        ) : null
-        }
+        ) : null}
       </div>
     </>
   );

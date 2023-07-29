@@ -63,12 +63,28 @@ function finddata(id) {
     return e.id === id;
   });
 
-  if (!matchData){ return "data not found";}
-  else {
-
-      return matchData;
+  // console.log("🚀 ~ file: task.js:67 ~ finddata ~ matchData:", matchData);
+  if (!matchData) {
+    return "data not found";
+  } else {
+    return matchData.vehicalDetails;
   }
 }
 
-let data = finddata();
+let data = finddata(10);
 console.log("finddata:", data);
+
+[
+  {
+    name: "Gopi Thakkar",
+    age: 33,
+  },
+  {
+    name: "Karshan Thakkar",
+    age: 30,
+  },
+  {
+    name: "Radhika Thakkar",
+    age: 29,
+  },
+];

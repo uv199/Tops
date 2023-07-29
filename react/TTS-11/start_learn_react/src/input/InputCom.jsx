@@ -26,7 +26,7 @@ export default function InputCom() {
         <input
           onChange={(e) => getData(e)}
           type="text"
-          value={name}
+          value={name} // to blank value of input
           id="name"
           placeholder="Please enter your name"
         />

@@ -23,6 +23,7 @@ import BootStrapCom from "./BootStrap/BootStrapCom";
 import InputCom from "./input/InputCom";
 import PropsFunRep from "./repeatclass/PropsFunRep";
 import PropsClassRep from "./repeatclass/PropsClassRep";
+import Delete from "./input/Delete";
 
 function App() {
   return (
@@ -61,7 +62,8 @@ function App() {
       {/* <BootStrapCom /> */}
 
       {/*------------------Input------------------ */}
-      <InputCom />
+      {/* <InputCom /> */}
+      <Delete />
 
       {/*------------------props rep------------------ */}
       {/* <PropsFunRep name={"urvish"} age={20} />
