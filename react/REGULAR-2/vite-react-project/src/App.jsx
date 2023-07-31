@@ -25,6 +25,7 @@ import InputCom from "./6.Input/InputCom";
 import { Button } from "react-bootstrap";
 import MultipleInputCom from "./6.Input/MultipleInputCom";
 import Delete from "./6.Input/Delete";
+import UpdateCom from "./6.Input/UpdateCom";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -68,7 +69,8 @@ function App() {
       {/* ---------------------------- Input --------------------------  */}
       {/* <InputCom /> */}
       {/* <MultipleInputCom /> */}
-      <Delete />
+      {/* <Delete /> */}
+      <UpdateCom />
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
