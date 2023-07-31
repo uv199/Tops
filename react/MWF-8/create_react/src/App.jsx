@@ -14,6 +14,8 @@ import Map from "./6.map/Map";
 import InputCom from "./9.input/InputCom";
 import MultipleInputCom from "./9.input/MultipleInputCom";
 import BootStrapCom from "./10.bootStrap/BootStrapCom";
+import DeleteCom from "./9.input/DeleteCom";
+import UpdateCom from "./9.input/UpdateCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -47,7 +49,9 @@ function App() {
 
       {/* ------------------Input--------------------- */}
       {/* <InputCom /> */}
-      <MultipleInputCom />
+      {/* <MultipleInputCom /> */}
+      {/* <DeleteCom /> */}
+      <UpdateCom />
 
       {/* ------------------Boot-Strap--------------------- */}
       {/* <BootStrapCom /> */}

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 
-export default function DeleteCom() {
+export default function UpdateCom() {
   let [firstName, setFirstName] = useState("");
   let [data, setData] = useState([]);
+  let [isUpdate, setIsUpdate] = useState(false);
+  let [index, setIndex] = useState(null);
 
   //to get data from input
   function getData(e) {
@@ -11,27 +13,33 @@ export default function DeleteCom() {
   }
 
   // to add data in array
-  function addData(params) {
-    setData([...data, firstName]);
-    setFirstName("");
+  function addData() {
+    if (isUpdate) {
+      data.splice(index, 1, firstName);
+      setData([...data]);
+      setFirstName("");
+      setIsUpdate(false);
+    } else {
+      setData([...data, firstName]);
+      setFirstName("");
+    }
   }
 
   // to remove data from array (delete)
   function deleteHandler(index) {
-    // by splice
-    // data.splice(index, 1);
-    // setData([...data]);
+    data.splice(index, 1);
+    setData([...data]);
+  }
 
-    // by filter
-    let arr = data.filter((e, i) => {
-      return i !== index;
-    });
-    setData(arr);
+  // update
+  function updateHandler(ele, index) {
+    setIsUpdate(true);
+    setFirstName(ele);
+    setIndex(index);
   }
   return (
     <>
-      <h1>Delete Event</h1>
-
+      <h1>Update Event</h1>
       <label htmlFor="fn">First Name : </label>
       <Form.Control
         className="w-25"
@@ -42,7 +50,7 @@ export default function DeleteCom() {
         placeholder="Large text"
       />
       <Button className="mt-2" onClick={() => addData()} variant="primary">
-        Add Name
+        {isUpdate ? "Update" : "Add Name"}
       </Button>
       <h1>{firstName}</h1>
       <div>
@@ -64,6 +72,13 @@ export default function DeleteCom() {
                     <td>
                       <Button variant="danger" onClick={() => deleteHandler(i)}>
                         Delete
+                      </Button>
+                      <Button
+                        className="ms-2"
+                        variant="info"
+                        onClick={() => updateHandler(e, i)}
+                      >
+                        Update
                       </Button>
                     </td>
                   </tr>

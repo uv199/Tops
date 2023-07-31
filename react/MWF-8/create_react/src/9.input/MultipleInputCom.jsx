@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./input.css";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 
 // Note = state key name, input name must be same
 export default function MultipleInputCom() {
@@ -58,9 +58,15 @@ export default function MultipleInputCom() {
           placeholder="please enter your Name"
           id="pass"
         />
-        <button onClick={() => submitHandler()}>Submit</button>
+        <Button
+          className="mt-2"
+          onClick={() => submitHandler()}
+          variant="primary"
+        >
+          Submit
+        </Button>
       </div>
-      <Table striped bordered hover>
+      <Table className="mt-5" striped bordered hover>
         <thead>
           <tr>
             <th>Sr.</th>

@@ -33,6 +33,10 @@ export default function Delete() {
     setArr([...x]);
   }
 
+  function updateHandler(e) {
+    setName(e);
+  }
+
   return (
     <>
       <div className="inputDiv">
@@ -65,6 +69,9 @@ export default function Delete() {
                     <td>
                       <Button variant="danger" onClick={() => deleteHandler(i)}>
                         Delete
+                      </Button>
+                      <Button variant="danger" onClick={() => updateHandler(e)}>
+                        update
                       </Button>
                     </td>
                   </tr>
