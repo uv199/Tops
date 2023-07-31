@@ -26,6 +26,7 @@ import { Button } from "react-bootstrap";
 import MultipleInputCom from "./6.Input/MultipleInputCom";
 import Delete from "./6.Input/Delete";
 import UpdateCom from "./6.Input/UpdateCom";
+import PopModel from "./6.Input/PopModel";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -70,7 +71,7 @@ function App() {
       {/* <InputCom /> */}
       {/* <MultipleInputCom /> */}
       {/* <Delete /> */}
-      <UpdateCom />
+      {/* <UpdateCom /> */}
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
@@ -79,6 +80,9 @@ function App() {
       {/*  componentWillUnmount  will call when component is removeds here we will remove by use of ternary opt */}
       {/* {false ? <LifeCycleMethod /> : null} */}
       {/* {true ? <LifeCycleMethod /> : null} */}
+
+      {/* ----------------------------Pop-Model--------------------------  */}
+      <PopModel />
     </div>
   );
 }

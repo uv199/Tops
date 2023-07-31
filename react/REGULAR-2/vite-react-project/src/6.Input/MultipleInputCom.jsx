@@ -17,6 +17,7 @@ export default function MultipleInputCom() {
     setArrData([...arrData, data]);
     setData({ email: "", password: "", name: "" });
   }
+
   return (
     <>
       <div className="inputDiv">
