@@ -1,0 +1,11 @@
+{
+  "name": "urvish",
+  "test": [1, "test"],
+  "age": 30,
+  "city": {
+    "a": "name"
+  },
+  "boo": null,
+  "mno": true,
+  "data": "undefined"
+}

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import "./input.css";
 
-export default function Delete() {
+export default function Update() {
   let [name, setName] = useState("");
   let [arr, setArr] = useState([]);
+  let [ind, setInd] = useState(null);
 
   // to get input value
   function getData(e) {
@@ -18,27 +19,32 @@ export default function Delete() {
   }
 
   // to delete data from array
-
   function deleteHandler(index) {
     // with use of splice
-    // console.log("index:", index);
-    // arr.splice(index, 1);
-    // setArr([...arr]);
-
-    // with use of filter
-
-    let x = arr.filter((e, i) => {
-      return i !== index;
-    });
-    setArr([...x]);
+    arr.splice(index, 1);
+    setArr([...arr]);
   }
 
+  function updateFun(index, data) {
+    setName(data);
+    setInd(index);
+  }
+
+  function updateChnage() {
+    arr.splice(ind, 1, name);
+    setArr([...arr]);
+    setName("");
+    setInd(null)
+  }
+
+  //to delete all data
   function deleteAll() {
     setArr([]);
   }
 
   return (
     <>
+      <h1>Update</h1>
       <div className="inputDiv">
         <label htmlFor="name">Name : </label>
         <input
@@ -48,9 +54,22 @@ export default function Delete() {
           id="name"
           placeholder="Please enter your name"
         />
-        <Button className="mt-2" onClick={() => addData()} variant="primary">
-          Add Name
-        </Button>
+        <div className="d-inline">
+          <Button
+            className="mt-2 me-3"
+            onClick={() => addData()}
+            variant="primary"
+          >
+            Add Name
+          </Button>
+          <Button
+            onClick={() => updateChnage()}
+            className="mt-2"
+            variant="success"
+          >
+            Save Chnages
+          </Button>
+        </div>
         <Button
           className="mt-2 mb-2"
           onClick={() => deleteAll()}
@@ -81,7 +100,7 @@ export default function Delete() {
                       >
                         Delete
                       </Button>
-                      <Button variant="danger" onClick={() => updateHandler(e)}>
+                      <Button variant="info" onClick={() => updateFun(i, e)}>
                         update
                       </Button>
                     </td>

@@ -24,6 +24,8 @@ import InputCom from "./input/InputCom";
 import PropsFunRep from "./repeatclass/PropsFunRep";
 import PropsClassRep from "./repeatclass/PropsClassRep";
 import Delete from "./input/Delete";
+import Update from "./input/Update";
+import TestUpdate from "./input/TestUpdate";
 
 function App() {
   return (
@@ -63,7 +65,9 @@ function App() {
 
       {/*------------------Input------------------ */}
       {/* <InputCom /> */}
-      <Delete />
+      {/* <Delete /> */}
+      {/* <Update /> */}
+      <TestUpdate/>
 
       {/*------------------props rep------------------ */}
       {/* <PropsFunRep name={"urvish"} age={20} />
