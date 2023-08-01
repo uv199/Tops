@@ -27,7 +27,6 @@ export default function NewUpdate() {
     setIndex(index);
   }
   function updateInArray() {
-    console.log("=======>", ind);
     if (ind || ind === 0) {
       console.log("----->");
       arr.splice(ind, 1, name);
@@ -38,6 +37,7 @@ export default function NewUpdate() {
       alert("please select sme data");
     }
   }
+
   return (
     <>
       <Form className="border border-dark p-4 rounded mb-3">
