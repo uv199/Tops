@@ -20,17 +20,16 @@ export default function TestUpdate() {
   }
 
   function update(index, data) {
-    console.log("------>", index, data);
-    setName(data);
-    setInd(index);
+    setName(data); // to desplay data in input
+    setInd(index); // for use index in updateInArray method
   }
 
   function updateInArray() {
     if (ind || ind === 0) {
-      arr.splice(ind, 1, name);
-      setArr([...arr]);
-      setName("");
-      setInd(null);
+      arr.splice(ind, 1, name); // remove old ele and add new ele in array
+      setArr([...arr]); // set new array
+      setName(""); // to blank input
+      setInd(null); // to set null
     } else {
       alert("Select any record");
     }

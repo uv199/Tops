@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 
-export default function UpdateCom() {
+export default function NewUpdate() {
   let [name, setName] = useState("");
   let [arr, setArr] = useState([]);
-  let [isNew, setIsNew] = useState(true);
-  let [ind, setInd] = useState(null); // we have to give null because 0 is already available in array as index
+  let [ind, setIndex] = useState(null);
 
   function getName(e) {
     setName(e?.target?.value);
@@ -16,13 +15,6 @@ export default function UpdateCom() {
     setName(""); // for do input empty on click of add btn
   }
 
-  function updateData() {
-    arr.splice(ind, 1, name);
-    setArr([...arr]);
-    setName("");
-    setIsNew(true);
-  }
-
   // remove event
   function handleDelete(index) {
     // by splice
@@ -30,11 +22,21 @@ export default function UpdateCom() {
     setArr([...arr]);
   }
 
-  // for update
   function handleUpdate(index, data) {
     setName(data);
-    setIsNew(false);
-    setInd(index);
+    setIndex(index);
+  }
+  function updateInArray() {
+    console.log("=======>", ind);
+    if (ind || ind === 0) {
+      console.log("----->");
+      arr.splice(ind, 1, name);
+      setArr([...arr]);
+      setName("");
+      setIndex(null);
+    } else {
+      alert("please select sme data");
+    }
   }
   return (
     <>
@@ -48,18 +50,21 @@ export default function UpdateCom() {
             value={name}
           />
         </Form.Group>
-        {isNew ? (
-          <Button onClick={() => addName()} variant="success">
-            Add
-          </Button>
-        ) : (
-          <Button onClick={() => updateData()} variant="primary">
-            Update
-          </Button>
-        )}
+
+        <Button onClick={() => addName()} variant="success">
+          Add
+        </Button>
+        <Button
+          className="ms-2"
+          onClick={() => updateInArray()}
+          variant="primary"
+        >
+          Update
+        </Button>
       </Form>
 
       <div>
+        <h1>{ind}</h1>
         {arr.length > 0 ? (
           <>
             <h1> Data Table</h1>

@@ -27,7 +27,6 @@ export default function PopModel() {
                 value={name}
               />
             </Form.Group>
-           
           </Form>
         </Modal.Body>
         <Modal.Footer>

@@ -27,6 +27,7 @@ import MultipleInputCom from "./6.Input/MultipleInputCom";
 import Delete from "./6.Input/Delete";
 import UpdateCom from "./6.Input/UpdateCom";
 import PopModel from "./6.Input/PopModel";
+import NewUpdate from "./6.Input/NewUpdate";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -72,6 +73,7 @@ function App() {
       {/* <MultipleInputCom /> */}
       {/* <Delete /> */}
       {/* <UpdateCom /> */}
+      <NewUpdate />
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
@@ -82,7 +84,7 @@ function App() {
       {/* {true ? <LifeCycleMethod /> : null} */}
 
       {/* ----------------------------Pop-Model--------------------------  */}
-      <PopModel />
+      {/* <PopModel /> */}
     </div>
   );
 }
