@@ -26,9 +26,9 @@ export default function NewUpdate() {
     setName(data);
     setIndex(index);
   }
+
   function updateInArray() {
-    if (ind || ind === 0) {
-      console.log("----->");
+    if (ind || ind === 0) { // ind null/undefined/0/false
       arr.splice(ind, 1, name);
       setArr([...arr]);
       setName("");

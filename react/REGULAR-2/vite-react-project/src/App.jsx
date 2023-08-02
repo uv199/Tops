@@ -12,7 +12,7 @@ import UseStateClass from "./2.uses_state/UseStateClass";
 import StateProject1 from "./2.uses_state/StateProject1";
 import StateProject2 from "./2.uses_state/StateProject2";
 import ConditionalRen from "./4.ConditionalRendaring_Fragment/ConditionalRen";
-import LifeCycleMethod from "./life_cycle_method/LifeCycleMethod";
+import LifeCycleMethod from "./7.life_cycle_method/LifeCycleMethod";
 import ConRenProject1 from "./4.ConditionalRendaring_Fragment/ConRenProject1";
 import PropsFun from "./3.Props/PropsFun";
 import PropsClass from "./3.Props/PropsClass";
@@ -28,6 +28,7 @@ import Delete from "./6.Input/Delete";
 import UpdateCom from "./6.Input/UpdateCom";
 import PopModel from "./6.Input/PopModel";
 import NewUpdate from "./6.Input/NewUpdate";
+import ApiCom from "./8.API/ApiCom";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -73,7 +74,7 @@ function App() {
       {/* <MultipleInputCom /> */}
       {/* <Delete /> */}
       {/* <UpdateCom /> */}
-      <NewUpdate />
+      {/* <NewUpdate /> */}
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
@@ -85,6 +86,9 @@ function App() {
 
       {/* ----------------------------Pop-Model--------------------------  */}
       {/* <PopModel /> */}
+
+      {/* ----------------------------API--------------------------  */}
+      <ApiCom />
     </div>
   );
 }
