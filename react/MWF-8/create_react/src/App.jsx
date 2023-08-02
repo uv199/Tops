@@ -16,6 +16,8 @@ import MultipleInputCom from "./9.input/MultipleInputCom";
 import BootStrapCom from "./10.bootStrap/BootStrapCom";
 import DeleteCom from "./9.input/DeleteCom";
 import UpdateCom from "./9.input/UpdateCom";
+import UpdateTest from "./9.input/UpdateTest";
+import ApiCom from "./API/ApiCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -51,10 +53,14 @@ function App() {
       {/* <InputCom /> */}
       {/* <MultipleInputCom /> */}
       {/* <DeleteCom /> */}
-      <UpdateCom />
+      {/* <UpdateCom /> */}
+      <UpdateTest />
 
       {/* ------------------Boot-Strap--------------------- */}
       {/* <BootStrapCom /> */}
+
+      {/* ------------------ApiCom--------------------- */}
+      {/* <ApiCom /> */}
     </div>
   );
 }
