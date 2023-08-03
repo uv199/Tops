@@ -26,6 +26,7 @@ import PropsClassRep from "./repeatclass/PropsClassRep";
 import Delete from "./input/Delete";
 import Update from "./input/Update";
 import TestUpdate from "./input/TestUpdate";
+import MultiInput from "./input/MultiInput";
 
 function App() {
   return (
@@ -67,7 +68,8 @@ function App() {
       {/* <InputCom /> */}
       {/* <Delete /> */}
       {/* <Update /> */}
-      <TestUpdate/>
+      {/* <TestUpdate/> */}
+      <MultiInput />
 
       {/*------------------props rep------------------ */}
       {/* <PropsFunRep name={"urvish"} age={20} />

@@ -34,7 +34,7 @@ export default function Update() {
     arr.splice(ind, 1, name);
     setArr([...arr]);
     setName("");
-    setInd(null)
+    setInd(null);
   }
 
   //to delete all data

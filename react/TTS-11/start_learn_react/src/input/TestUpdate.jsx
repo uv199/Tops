@@ -15,8 +15,12 @@ export default function TestUpdate() {
 
   // to add input value to array
   function addData() {
-    setArr([...arr, name]);
-    setName("");
+    if (name.length > 0) {
+      setArr([...arr, name]);
+      setName("");
+    } else {
+      alert("please add some data");
+    }
   }
 
   function update(index, data) {
@@ -26,6 +30,7 @@ export default function TestUpdate() {
 
   function updateInArray() {
     if (ind || ind === 0) {
+      // ind => null/und/false/0
       arr.splice(ind, 1, name); // remove old ele and add new ele in array
       setArr([...arr]); // set new array
       setName(""); // to blank input
