@@ -1,6 +1,6 @@
 // import React, { Component } from 'react'
 
-// export default class ClassCom extends Component {
+// export default class ClassCom extends  {
 //   render() {
 //     return (
 //       <div>ClassCom</div>

@@ -29,6 +29,8 @@ import UpdateCom from "./6.Input/UpdateCom";
 import PopModel from "./6.Input/PopModel";
 import NewUpdate from "./6.Input/NewUpdate";
 import ApiCom from "./8.API/ApiCom";
+import LayoutCom from "./9.ANTD/LayoutCom";
+import LocalStorage from "./10.localstorage/LocalStorage";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -36,7 +38,7 @@ function App() {
     setIsPass("email");
   }
   return (
-    <div className="container">
+    <div>
       {/* ----------------------------component--------------------------  */}
       {/* <ClassCom />
       <ClassCom2 />
@@ -88,7 +90,11 @@ function App() {
       {/* <PopModel /> */}
 
       {/* ----------------------------API--------------------------  */}
-      <ApiCom />
+      {/* <ApiCom /> */}
+      {/* ----------------------------Antd--------------------------  */}
+      {/* <LayoutCom /> */}
+      {/* ----------------------------LocalStorage--------------------------  */}
+      <LocalStorage />
     </div>
   );
 }

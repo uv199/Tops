@@ -13,6 +13,7 @@ export default function ApiCom() {
     })
       .then((response) => {
         setData(response.data);
+        // console.log(response);
       })
       .catch((e) => {
         alert(e.message);

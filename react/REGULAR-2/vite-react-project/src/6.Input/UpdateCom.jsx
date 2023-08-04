@@ -38,28 +38,28 @@ export default function UpdateCom() {
   }
   return (
     <>
-      <Form className="border border-dark p-4 rounded mb-3">
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Sonu Patel"
-            onChange={(e) => getName(e)}
-            value={name}
-          />
-        </Form.Group>
-        {isNew ? (
-          <Button onClick={() => addName()} variant="success">
-            Add
-          </Button>
-        ) : (
-          <Button onClick={() => updateData()} variant="primary">
-            Update
-          </Button>
-        )}
-      </Form>
+      <div className="w-50  p-2">
+        <Form className="border border-dark p-4 rounded mb-3">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Sonu Patel"
+              onChange={(e) => getName(e)}
+              value={name}
+            />
+          </Form.Group>
+          {isNew ? (
+            <Button onClick={() => addName()} variant="success">
+              Add
+            </Button>
+          ) : (
+            <Button onClick={() => updateData()} variant="primary">
+              Update
+            </Button>
+          )}
+        </Form>
 
-      <div>
         {arr.length > 0 ? (
           <>
             <h1> Data Table</h1>

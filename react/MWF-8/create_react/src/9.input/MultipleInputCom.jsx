@@ -42,6 +42,7 @@ export default function MultipleInputCom() {
         />
         <label htmlFor="pass">Password : </label>
         <input
+          required={true}
           value={user.password}
           type="text"
           name="password"

@@ -17,7 +17,9 @@ import BootStrapCom from "./10.bootStrap/BootStrapCom";
 import DeleteCom from "./9.input/DeleteCom";
 import UpdateCom from "./9.input/UpdateCom";
 import UpdateTest from "./9.input/UpdateTest";
-import ApiCom from "./API/ApiCom";
+import ApiCom from "./11.API/ApiCom";
+import LifeCycleMethod from "./12.lifeCycle/LifeCycleMethod";
+import LayoutAntd from "./Antd/LayoutAntd";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -29,38 +31,32 @@ function App() {
       {/* <ClassState /> */}
       {/* <StateProject1 /> */}
       {/* <StateProject2 /> */}
-
       {/* ------------------Props--------------------- */}
       {/* <FunProps name={"urvish"} />
       <FunProps name={"tejash"} /> */}
       {/* <ClassProps name={"urvish"} />
       <ClassProps name={"Patel"} /> */}
-
       {/* ------------------Conditional render / Map --------------------- */}
       {/* <ConditionalRendaring /> */}
       {/* <MapLoop /> */}
-
       {/* ------------------Fragment --------------------- */}
       {/* <FragmentTest /> */}
-
       {/* ------------------List --------------------- */}
       {/* <ListKey /> */}
-
       {/* ------------------Map--------------------- */}
       {/* <Map /> */}
-
       {/* ------------------Input--------------------- */}
       {/* <InputCom /> */}
       {/* <MultipleInputCom /> */}
       {/* <DeleteCom /> */}
       {/* <UpdateCom /> */}
-      <UpdateTest />
-
+      {/* <UpdateTest /> */}
       {/* ------------------Boot-Strap--------------------- */}
       {/* <BootStrapCom /> */}
-
       {/* ------------------ApiCom--------------------- */}
-      {/* <ApiCom /> */}
+      {/* <ApiCom /> */} // TODO have to explain post and more
+      {/* ------------------LifeCycleMethod--------------------- */}
+      {/* <LifeCycleMethod /> */}
     </div>
   );
 }
