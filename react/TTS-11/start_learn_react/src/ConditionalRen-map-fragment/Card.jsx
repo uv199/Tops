@@ -4,7 +4,7 @@ import "./card.css";
 export default function Card(props) {
   return (
     <>
-      <div className="card">
+      <div className="card m-3">
         <img className="card_img" src={props?.cardData?.img} alt="image" />
         <div className="crad_con">
           <h3>Product Name : {props?.cardData?.productName}</h3>

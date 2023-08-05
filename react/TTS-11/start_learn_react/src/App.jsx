@@ -27,10 +27,12 @@ import Delete from "./input/Delete";
 import Update from "./input/Update";
 import TestUpdate from "./input/TestUpdate";
 import MultiInput from "./input/MultiInput";
+import LifeCycleMethod from "./LifecycleMethod/LifeCycleMethod";
+import AntdLayout from "./Antd/AntdLayout";
 
 function App() {
   return (
-    <div className="App_div">
+    <div className="App_div w-100">
       {/*------------------ component ------------------ */}
       {/* <Body />
       <ClassCom />
@@ -69,12 +71,18 @@ function App() {
       {/* <Delete /> */}
       {/* <Update /> */}
       {/* <TestUpdate/> */}
-      <MultiInput />
+      {/* <MultiInput /> */}
 
       {/*------------------props rep------------------ */}
       {/* <PropsFunRep name={"urvish"} age={20} />
       <PropsFunRep name={"patel"} />
       <PropsClassRep age={"00000"} /> */}
+
+      {/*------------------LifeCycleMethod------------------ */}
+      {/* <LifeCycleMethod /> */}
+
+      {/*------------------AntdLayout------------------ */}
+      <AntdLayout />
     </div>
   );
 }
