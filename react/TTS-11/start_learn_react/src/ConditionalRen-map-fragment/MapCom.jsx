@@ -25,9 +25,7 @@ let data = [
 export default function MapCom() {
   return (
     <>
-      <div
-        className="d-flex flex-wrap"
-      >
+      <div className="d-flex flex-wrap">
         {data.map((e, i) => {
           return <Card cardData={e} key={i} />;
         })}

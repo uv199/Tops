@@ -6,13 +6,13 @@ export default function LocalStorage() {
   function getName(e) {
     setName(e?.target?.value);
   }
+
   useEffect(() => {
-    console.log("====>");
-    let data = localStorage.getItem("arrData");
-    console.log("useEffect ~ data:", typeof data);
-    let normalData = JSON.parse(data);
-    console.log(" normalData:", normalData);
-    setArr([...normalData]);
+    // console.log("--before--", arr);
+    let dataFromLocalStorage = localStorage.getItem("arrData");
+    let normalData = JSON.parse(dataFromLocalStorage);
+    setArr(normalData); // state take some time to set
+    // console.log("--after--", arr);
   }, []);
 
   function addName(params) {
@@ -20,6 +20,7 @@ export default function LocalStorage() {
     setName(""); // for do input empty on click of add btn
     localStorage.setItem("arrData", JSON.stringify([...arr, name]));
   }
+
   return (
     <>
       <h1>{name}</h1>

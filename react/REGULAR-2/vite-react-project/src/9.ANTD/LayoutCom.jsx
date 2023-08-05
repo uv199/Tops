@@ -4,7 +4,7 @@ import ApiCom from "../8.API/ApiCom";
 import MultipleInputCom from "../6.Input/MultipleInputCom";
 import UpdateCom from "../6.Input/UpdateCom";
 const { Header, Content, Footer } = Layout;
-const data = ["Home", "About", "Contact"];
+const data = ["Home", "About", "Contact", "Help"];
 
 const LayoutCom = () => {
   const {
@@ -13,6 +13,26 @@ const LayoutCom = () => {
   return (
     <Layout className="layout">
       <Header
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div className="demo-logo" />
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={["2"]}
+          items={["Home", "About", "Contact", "Help"].map((e, index) => {
+            const key = index + 1;
+            return {
+              key,
+              label: `${e}`,
+            };
+          })}
+        />
+      </Header>
+      {/* <Header
         style={{
           display: "flex",
           width: "100vw",
@@ -32,7 +52,7 @@ const LayoutCom = () => {
             };
           })}
         />
-      </Header>
+      </Header> */}
       <Content
         style={{
           padding: "0 50px",

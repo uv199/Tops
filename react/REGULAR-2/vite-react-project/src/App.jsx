@@ -31,6 +31,8 @@ import NewUpdate from "./6.Input/NewUpdate";
 import ApiCom from "./8.API/ApiCom";
 import LayoutCom from "./9.ANTD/LayoutCom";
 import LocalStorage from "./10.localstorage/LocalStorage";
+import UseEffects from "./HOOKS/UseEffects";
+import ProjectLayout from "./0.Project/ProjectLayout";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -94,7 +96,11 @@ function App() {
       {/* ----------------------------Antd--------------------------  */}
       {/* <LayoutCom /> */}
       {/* ----------------------------LocalStorage--------------------------  */}
-      <LocalStorage />
+      {/* <LocalStorage /> */}
+      {/* ----------------------------Hooks--------------------------  */}
+      {/* <UseEffects /> */}
+      {/* ----------------------------ProjectLayout--------------------------  */}
+      <ProjectLayout />
     </div>
   );
 }
