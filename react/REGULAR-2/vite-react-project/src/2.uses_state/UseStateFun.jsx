@@ -11,7 +11,7 @@ export default function UseStateFun() {
   // step 2 call this functin on click of onlick method
   function inc(params) {
     x++;
-    // console.log("x:", x);
+    console.log("x:", x);
   }
 
   function incCount(params) {
@@ -22,10 +22,12 @@ export default function UseStateFun() {
 
   return (
     <div>
+      <h1>variable</h1>
       <h1 className="count">{x}</h1>
       <button onClick={() => inc()}>increment</button>
       <hr />
 
+      <h1>state</h1>
       {/* -------------------use state ------------------------- */}
       <h1 className="count">{count}</h1>
       <button onClick={() => incCount()}>increment</button>

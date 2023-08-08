@@ -9,7 +9,8 @@ export default function ApiCom() {
   function callApi() {
     axios({
       method: "get",
-      url: "https://jsonplaceholder.typicode.com/users",
+      url: "http://192.168.0.94:3000/user/getAll",
+      // url: "https://jsonplaceholder.typicode.com/users",
     })
       .then((response) => {
         setData(response.data);

@@ -15,6 +15,7 @@ const LayoutCom = () => {
       <Header
         style={{
           display: "flex",
+          width: "100vw",
           alignItems: "center",
         }}
       >

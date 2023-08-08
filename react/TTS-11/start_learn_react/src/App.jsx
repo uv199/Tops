@@ -29,6 +29,8 @@ import TestUpdate from "./input/TestUpdate";
 import MultiInput from "./input/MultiInput";
 import LifeCycleMethod from "./LifecycleMethod/LifeCycleMethod";
 import AntdLayout from "./Antd/AntdLayout";
+import LocalStorage from "./Localstorage/LOcalStorage";
+import UseEffectCom from "./HOOKS/UseEffectCom";
 
 function App() {
   return (
@@ -82,7 +84,13 @@ function App() {
       {/* <LifeCycleMethod /> */}
 
       {/*------------------AntdLayout------------------ */}
-      <AntdLayout />
+      {/* <AntdLayout /> */}
+
+      {/*------------------LocalStorage------------------ */}
+      {/* <LocalStorage /> */}
+      
+      {/*------------------HOOKs------------------ */}
+      <UseEffectCom />
     </div>
   );
 }

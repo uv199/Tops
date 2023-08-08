@@ -31,8 +31,9 @@ import NewUpdate from "./6.Input/NewUpdate";
 import ApiCom from "./8.API/ApiCom";
 import LayoutCom from "./9.ANTD/LayoutCom";
 import LocalStorage from "./10.localstorage/LocalStorage";
-import UseEffects from "./HOOKS/UseEffects";
+import UseEffects from "./11.HOOKS/UseEffects";
 import ProjectLayout from "./0.Project/ProjectLayout";
+import ApiCrud from "./12.API_CRUD/ApiCrud";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -100,7 +101,10 @@ function App() {
       {/* ----------------------------Hooks--------------------------  */}
       {/* <UseEffects /> */}
       {/* ----------------------------ProjectLayout--------------------------  */}
-      <ProjectLayout />
+      {/* <ProjectLayout /> */}
+
+      {/* ----------------------------API-CRUD--------------------------  */}
+      <ApiCrud />
     </div>
   );
 }

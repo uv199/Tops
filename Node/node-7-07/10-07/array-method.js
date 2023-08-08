@@ -55,3 +55,17 @@ let arr3 = [14, 15];
 // let x = Array.isArray(arr);
 // let x = Array.isArray(str);
 // console.log("x :", x);
+
+let a = {
+  m: "Delhi",
+  n: 50,
+  o: 70,
+};
+
+(e.m) ===(input)
+
+
+let x = "m"
+a[x]
+a.n
+a.o
