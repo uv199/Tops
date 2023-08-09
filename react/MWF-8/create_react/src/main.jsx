@@ -7,7 +7,7 @@ import LayoutAntd from "./Antd/LayoutAntd.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <LayoutAntd />
+    <App />
+    {/* <LayoutAntd /> */}
   </React.StrictMode>
 );

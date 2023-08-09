@@ -34,6 +34,8 @@ import LocalStorage from "./10.localstorage/LocalStorage";
 import UseEffects from "./11.HOOKS/UseEffects";
 import ProjectLayout from "./0.Project/ProjectLayout";
 import ApiCrud from "./12.API_CRUD/ApiCrud";
+import ContaxtCom from "./11.HOOKS/contaxt/ContaxtCom";
+import ProMain from "./3.Props/PropsLifting/ProMain";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -66,6 +68,8 @@ function App() {
       {/* <PropsClass name={"urvish"} /> */}
       {/* <PropsProject1 inputType={isPass} />
       <button onClick={() => chnageInput()}>chnage input</button> */}
+
+      <ProMain />
 
       {/* ---------------------------- Fragment --------------------------  */}
       {/* <FragmentCom /> */}
@@ -100,11 +104,12 @@ function App() {
       {/* <LocalStorage /> */}
       {/* ----------------------------Hooks--------------------------  */}
       {/* <UseEffects /> */}
+      {/* <ContaxtCom /> */}
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 
       {/* ----------------------------API-CRUD--------------------------  */}
-      <ApiCrud />
+      {/* <ApiCrud /> */}
     </div>
   );
 }

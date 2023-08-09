@@ -20,12 +20,16 @@ import UpdateTest from "./9.input/UpdateTest";
 import ApiCom from "./11.API/ApiCom";
 import LifeCycleMethod from "./12.lifeCycle/LifeCycleMethod";
 import LayoutAntd from "./Antd/LayoutAntd";
+import UseEffectCom from "./14.HOOKS/UseEffectCom";
+import LocalstorageCom from "./15.Local-Storage/LocalstorageCom";
+import HeaderOne from "./Antd/HeaderOne";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
 
   return (
     <div className="test-1">
+      <HeaderOne />
       {/* ------------------userState--------------------- */}
       {/* <FunState /> */}
       {/* <ClassState /> */}
@@ -57,6 +61,10 @@ function App() {
       {/* <ApiCom /> */} // TODO have to explain post and more
       {/* ------------------LifeCycleMethod--------------------- */}
       {/* <LifeCycleMethod /> */}
+      {/* ------------------Local storage--------------------- */}
+      {/* <LocalstorageCom /> */}
+      {/* ------------------Hook--------------------- */}
+      <UseEffectCom />
     </div>
   );
 }
