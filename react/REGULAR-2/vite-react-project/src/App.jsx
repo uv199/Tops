@@ -36,6 +36,7 @@ import ProjectLayout from "./0.Project/ProjectLayout";
 import ApiCrud from "./12.API_CRUD/ApiCrud";
 import ContaxtCom from "./11.HOOKS/contaxt/ContaxtCom";
 import ProMain from "./3.Props/PropsLifting/ProMain";
+import SearchText from "./6.Input/SearchText";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -69,7 +70,7 @@ function App() {
       {/* <PropsProject1 inputType={isPass} />
       <button onClick={() => chnageInput()}>chnage input</button> */}
 
-      <ProMain />
+      {/* <ProMain /> */}
 
       {/* ---------------------------- Fragment --------------------------  */}
       {/* <FragmentCom /> */}
@@ -84,6 +85,7 @@ function App() {
       {/* <Delete /> */}
       {/* <UpdateCom /> */}
       {/* <NewUpdate /> */}
+      <SearchText />
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
