@@ -31,6 +31,8 @@ import LifeCycleMethod from "./LifecycleMethod/LifeCycleMethod";
 import AntdLayout from "./Antd/AntdLayout";
 import LocalStorage from "./Localstorage/LOcalStorage";
 import UseEffectCom from "./HOOKS/UseEffectCom";
+import ApiCom from "./API/ApiCom";
+import ApiCom2 from "./API/ApiCom2";
 
 function App() {
   return (
@@ -88,9 +90,12 @@ function App() {
 
       {/*------------------LocalStorage------------------ */}
       {/* <LocalStorage /> */}
-      
+
       {/*------------------HOOKs------------------ */}
-      <UseEffectCom />
+      {/* <UseEffectCom /> */}
+      {/*------------------ApiCom------------------ */}
+      {/* <ApiCom /> */}
+      <ApiCom2 />
     </div>
   );
 }

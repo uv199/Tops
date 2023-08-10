@@ -60,3 +60,6 @@ fun(1, 2, 3, 4, 5, 6, 7);
 
 // let { a, b, ...x } = obj;
 // console.log(" ~ a, b, x:", a, b, x);
+
+// let str = "urvish patel";
+// console.log("🚀 ~ file: class.js:2 ~ str:", [...str]);
