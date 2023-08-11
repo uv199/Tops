@@ -1,3 +1,4 @@
+import { Search } from "lucide-react";
 import React, { useState } from "react";
 import {
   Collapse,
@@ -15,16 +16,17 @@ import {
 } from "reactstrap";
 
 function Example(args) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div>
       <Navbar expand={"lg"} style={{ backgroundColor: "lightcoral" }}>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarBrand style={{ color: "white" }} href="/">
+          SH<span style={{ color: "black" }}>Oe</span>S CO
+          <span style={{ color: "black" }}>Mp</span>ANY
+        </NavbarBrand>
+
+        <Collapse navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink href="">Home</NavLink>
@@ -39,6 +41,17 @@ function Example(args) {
               <NavLink href="">Kids</NavLink>
             </NavItem>
           </Nav>
+          <input
+            style={{
+              outline: "none",
+              color: "#7c6e6e",
+            }}
+            className="border-0 rounded-1 p-1 w-25 ps-2 "
+            type="text"
+            placeholder="Search your text here....! "
+            onChange={(e) => setSearchText(e?.target?.value)}
+          />
+          <Search className="ms-2 me-5" color="#fff" />
         </Collapse>
       </Navbar>
     </div>

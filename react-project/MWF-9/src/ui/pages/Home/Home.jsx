@@ -3,6 +3,7 @@ import { Breadcrumb, Layout, Menu, theme } from "antd";
 import HeaderCom from "../../components/HeaderCom";
 import FooterCom from "../../components/FooterCom";
 import CardCom from "../../components/CardCom";
+import HomeContetnt from "./HomeContetnt";
 const { Header, Content, Footer } = Layout;
 const Home = () => {
   const {
@@ -19,7 +20,7 @@ const Home = () => {
             background: colorBgContainer,
           }}
         >
-          <CardCom />
+          <HomeContetnt />
         </div>
       </Content>
 

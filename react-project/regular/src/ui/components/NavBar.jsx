@@ -14,23 +14,12 @@ import {
 } from "reactstrap";
 import { ShoppingCart } from "lucide-react";
 
-export default function NavBar(args) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+export default function NavBar({ setSearchText }) {
   return (
     <>
-      {/* <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      > */}
-
       <Navbar
         style={{ backgroundColor: "#9F86B5", color: "white" }}
         className="d-flex flex-column "
-        {...args}
       >
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <Nav className=" d-flex flex-row me-auto" navbar>
@@ -52,14 +41,11 @@ export default function NavBar(args) {
         <input
           className="border border-light rounded w-30 me-2 p-1 ps-2"
           type="text"
-          name=""
-          id=""
+          onChange={(e) => setSearchText(e?.target?.value)}
           placeholder="Search your text here...!"
         />
         <Search color="#524E56" />
       </Navbar>
-
-      {/* </Header> */}
     </>
   );
 }

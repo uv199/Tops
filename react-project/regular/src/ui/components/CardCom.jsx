@@ -10,8 +10,7 @@ import {
 
 import { ShoppingBag, Heart } from "lucide-react";
 
-export default function CardCom(props) {
-  console.log("---->", props.data);
+export default function CardCom({ data }) {
   return (
     <>
       <Card
@@ -20,20 +19,22 @@ export default function CardCom(props) {
           width: "18rem",
           border: "1px solid lightgray",
           borderRadius: "10px",
+          height: "80vh",
         }}
       >
         <img
           style={{
             borderRadius: "10px",
             margin: "5px",
+            height: "50vh",
           }}
           alt="Sample"
-          src={props?.data?.img}
+          src={data?.imageURL}
         />
         <CardBody>
-          <CardTitle tag="h5">{props?.data?.name}</CardTitle>
+          <CardTitle tag="h5">{data?.name}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
-            $ {props?.data?.price}
+            $ {data?.price}
           </CardSubtitle>
           {/* <CardText>
             Some quick example text to build on the card title and make up the
