@@ -10,8 +10,10 @@ export default function LocalStorage() {
   useEffect(() => {
     // console.log("--before--", arr);
     let dataFromLocalStorage = localStorage.getItem("arrData");
+    // if (dataFromLocalStorage) {
     let normalData = JSON.parse(dataFromLocalStorage);
     setArr(normalData); // state take some time to set
+    // }
     // console.log("--after--", arr);
   }, []);
 

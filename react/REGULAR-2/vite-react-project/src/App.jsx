@@ -85,7 +85,7 @@ function App() {
       {/* <Delete /> */}
       {/* <UpdateCom /> */}
       {/* <NewUpdate /> */}
-      <SearchText />
+      {/* <SearchText /> */}
 
       {/* ----------------------------Life Cycle Method--------------------------  */}
 
