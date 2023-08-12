@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      {/* <HomeCom /> */}
-      <Women />
+      <HomeCom />
+      {/* <Women /> */}
     </>
   );
 }

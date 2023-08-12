@@ -3,6 +3,7 @@ import HeaderCom from "../../components/HeaderCom";
 import FooterCom from "../../components/FooterCom";
 import Data from "../../../utils/shoseData.json";
 import CardCom from "../../components/CardCom";
+import fs from "fs";
 
 export default function Women() {
   const [shoesData, setshoesData] = useState([]);
@@ -10,6 +11,7 @@ export default function Women() {
     let filterData = Data?.filter?.((e) => e?.gender === "WOMEN");
     setshoesData(filterData);
   }, []);
+
   return (
     <>
       <HeaderCom />

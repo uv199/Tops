@@ -106,7 +106,7 @@ function App() {
       {/* <LocalStorage /> */}
       {/* ----------------------------Hooks--------------------------  */}
       {/* <UseEffects /> */}
-      {/* <ContaxtCom /> */}
+      <ContaxtCom />
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 

@@ -1,6 +1,6 @@
 import { Menu } from "antd/lib";
 import { Header } from "antd/lib/layout/layout";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Search } from "lucide-react";
 import {
   Navbar,
@@ -13,10 +13,8 @@ import {
   Input,
 } from "reactstrap";
 import { ShoppingCart } from "lucide-react";
-import { Searchcontext } from "../../App";
 
-export default function NavBar() {
-  const searchCon = useContext(Searchcontext);
+export default function NavBar({ setSearchText }) {
   return (
     <>
       <Navbar
@@ -43,7 +41,7 @@ export default function NavBar() {
         <input
           className="border border-light rounded w-30 me-2 p-1 ps-2"
           type="text"
-          onChange={(e) => searchCon.setSearchText(e?.target?.value)}
+          onChange={(e) => setSearchText(e?.target?.value)}
           placeholder="Search your text here...!"
         />
         <Search color="#524E56" />

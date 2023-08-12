@@ -1,16 +1,18 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import ComA from "./ComA";
 import ComB from "./ComB";
 
-export const CountContext = createContext();
+export const nameContext = createContext();
 
 export default function ContaxtCom() {
+  let [data, setData] = useState("urvish");
   return (
     <>
-      <CountContext.Provider value={"urvish"}>
+      <h1>main component</h1>
+      <nameContext.Provider value={{ data, setData }}>
         <ComA />
-        <ComB />
-      </CountContext.Provider>
+        <ComB value="test" />
+      </nameContext.Provider>
     </>
   );
 }

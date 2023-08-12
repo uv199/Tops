@@ -20,8 +20,8 @@ export default function Women() {
     <>
       <NavBar setSearchText={setSearchText} />
       <div className="d-flex flex-wrap" style={{ width: "100vw" }}>
-        {filterData.map((e, i) => {
-          return <CardCom key={i} data={e} />;
+        {filterData.map((e) => {
+          return <CardCom data={e} />;
         })}
       </div>
     </>
