@@ -2,11 +2,11 @@ const express = require("express");
 const userRouter = require("./routers/user");
 const app = express();
 
-// app.get("/user/urvish", (req, res) => {
-//   console.log("urvish patel");
-//   //   console.log(res);
-//   res.send("you called api urvish---");
-// });
+app.get("/user/urvish", (req, res) => {
+  console.log("urvish patel");
+  //   console.log(res);
+  res.send("you called api urvish---");
+});
 
 // app.get("/user/sanket", (req, res) => {
 //   console.log("sanket -- patel");
