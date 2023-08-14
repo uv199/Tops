@@ -17,5 +17,5 @@ let x = 10;
 // task2();
 
 (function name(params) {
-  console.log("testb ");
+  console.log("testb----- ");
 })();

@@ -37,6 +37,7 @@ import ApiCrud from "./12.API_CRUD/ApiCrud";
 import ContaxtCom from "./11.HOOKS/contaxt/ContaxtCom";
 import ProMain from "./3.Props/PropsLifting/ProMain";
 import SearchText from "./6.Input/SearchText";
+import SearchData from "./doubt/search/SearchData";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -106,12 +107,14 @@ function App() {
       {/* <LocalStorage /> */}
       {/* ----------------------------Hooks--------------------------  */}
       {/* <UseEffects /> */}
-      <ContaxtCom />
+      {/* <ContaxtCom /> */}
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 
       {/* ----------------------------API-CRUD--------------------------  */}
       {/* <ApiCrud /> */}
+      {/* ----------------------------DOubt--------------------------  */}
+      <SearchData />
     </div>
   );
 }
