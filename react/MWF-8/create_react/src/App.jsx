@@ -22,14 +22,14 @@ import LifeCycleMethod from "./12.lifeCycle/LifeCycleMethod";
 import LayoutAntd from "./Antd/LayoutAntd";
 import UseEffectCom from "./14.HOOKS/UseEffectCom";
 import LocalstorageCom from "./15.Local-Storage/LocalstorageCom";
-import HeaderOne from "./Antd/HeaderOne";
+import ContexCom from "./14.HOOKS/contex/ContexCom";
+import RadioCom from "./9.input/RadioCom";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
 
   return (
     <div className="test-1">
-      <HeaderOne />
       {/* ------------------userState--------------------- */}
       {/* <FunState /> */}
       {/* <ClassState /> */}
@@ -55,6 +55,7 @@ function App() {
       {/* <DeleteCom /> */}
       {/* <UpdateCom /> */}
       {/* <UpdateTest /> */}
+      <RadioCom />
       {/* ------------------Boot-Strap--------------------- */}
       {/* <BootStrapCom /> */}
       {/* ------------------ApiCom--------------------- */}
@@ -64,7 +65,8 @@ function App() {
       {/* ------------------Local storage--------------------- */}
       {/* <LocalstorageCom /> */}
       {/* ------------------Hook--------------------- */}
-      <UseEffectCom />
+      {/* <UseEffectCom /> */}
+      {/* <ContexCom /> */}
     </div>
   );
 }

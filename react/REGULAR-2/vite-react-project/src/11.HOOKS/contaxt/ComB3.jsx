@@ -9,7 +9,7 @@ export default function ComB3(props) {
       <h1>Com-B3</h1>
       <h1>My Name is {props.value}</h1>
       <h1>My Name is {data.data}</h1>
-      <input type="text" onChange={(e)=>data.setData(e.target.value)}/>
+      <input type="text" onChange={(e) => data.setData(e.target.value)} />
     </>
   );
 }
