@@ -33,6 +33,7 @@ import LocalStorage from "./Localstorage/LOcalStorage";
 import UseEffectCom from "./HOOKS/UseEffectCom";
 import ApiCom from "./API/ApiCom";
 import ApiCom2 from "./API/ApiCom2";
+import ContexCom from "./HOOKS/Context/ContexCom";
 
 function App() {
   return (
@@ -93,9 +94,10 @@ function App() {
 
       {/*------------------HOOKs------------------ */}
       {/* <UseEffectCom /> */}
+      <ContexCom />
       {/*------------------ApiCom------------------ */}
       {/* <ApiCom /> */}
-      <ApiCom2 />
+      {/* <ApiCom2 /> */}
     </div>
   );
 }
