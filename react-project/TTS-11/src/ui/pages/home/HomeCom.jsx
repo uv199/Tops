@@ -24,7 +24,7 @@ const HomeCom = () => {
   return (
     <Layout className="layout">
       <HeaderCom setSearchText={setSearchText} />
-      <Content>
+   
         <div
           className=" d-flex flex-wrap "
           style={{
@@ -37,7 +37,6 @@ const HomeCom = () => {
             return <CardCom data={e} />;
           })}
         </div>
-      </Content>
       <FooterCom />
     </Layout>
   );

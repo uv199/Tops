@@ -17,7 +17,6 @@ export default function LoginForm() {
       <input {...register("name", { required: true })} />
       {errors.name && <span>This field is required</span>}
       <input type="submit" />
-
       <input type="" />
     </form>
   );

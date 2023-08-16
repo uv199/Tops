@@ -4,13 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Home from "./ui/pages/Home/Home";
 import LoginForm from "./ui/components/LoginForm";
+import Women from "./ui/pages/women/Women";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
       <Home />
+      {/* <Women /> */}
       {/* <LoginForm /> */}
     </>
   );

@@ -1,25 +1,27 @@
-const express = require("express");
-const userRouter = require("./routers/user");
+import express from "express";
+import userRouter from "./routers/user";
+import { dbConnection } from "./db";
+import User from "./models/user";
+
 const app = express();
 
-app.get("/user/urvish", (req, res) => {
-  console.log("urvish patel");
-  //   console.log(res);
-  res.send("you called api urvish---");
-});
-
-// app.get("/user/sanket", (req, res) => {
-//   console.log("sanket -- patel");
-//   //   console.log(res);
-//   res.send("you called api- sanket");
-// });
-
-app.get("/", (req, res) => {
-  res.send("you first api called - sanket");
+app.get("/create/urvish", (req, res) => {
+  res.send("you first api called ---- sanket");
+  User.create({
+    name: "urvish",
+    email: "urvish@gmail.com",
+    number: "tetsg9546412",
+  })
+    .then((res) => {
+      console.log("----res----", res);
+    })
+    .catch((err) => {
+      console.log("----err----", err);
+    });
 });
 
 app.use("/user", userRouter);
-
 app.listen(3000, () => {
+  dbConnection();
   console.log(`your server is running on http://localhost:3000/`);
 });

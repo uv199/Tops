@@ -15,9 +15,7 @@ import {
   NavbarText,
 } from "reactstrap";
 
-function Example(args) {
-  const [searchText, setSearchText] = useState("");
-
+function HeaderCom(props) {
   return (
     <div>
       <Navbar expand={"lg"} style={{ backgroundColor: "lightcoral" }}>
@@ -49,7 +47,7 @@ function Example(args) {
             className="border-0 rounded-1 p-1 w-25 ps-2 "
             type="text"
             placeholder="Search your text here....! "
-            onChange={(e) => setSearchText(e?.target?.value)}
+            onChange={(e) => props?.setSearchText(e?.target?.value)}
           />
           <Search className="ms-2 me-5" color="#fff" />
         </Collapse>
@@ -58,4 +56,4 @@ function Example(args) {
   );
 }
 
-export default Example;
+export default HeaderCom;

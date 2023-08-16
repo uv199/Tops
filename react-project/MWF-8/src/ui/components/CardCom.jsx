@@ -11,7 +11,7 @@ export default function CardCom(props) {
           width: "18rem",
         }}
       >
-        <img alt="Sample" src={props?.data?.img} />
+        <img alt="Sample" src={props?.data?.imageURL} />
         <CardBody>
           <CardTitle tag="h5">{props?.data?.name}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
