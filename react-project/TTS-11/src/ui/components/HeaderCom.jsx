@@ -1,6 +1,6 @@
 import { Layout, Menu, theme } from "antd";
 const { Header } = Layout;
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -17,8 +17,12 @@ import {
 } from "reactstrap";
 import { ShoppingCart, Search } from "lucide-react";
 
-export default function HeaderCom({ setSearchText }) {
+import { SearchContext } from "../../App";
+
+export default function HeaderCom(props) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const data = useContext(SearchContext);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -43,18 +47,22 @@ export default function HeaderCom({ setSearchText }) {
                 </NavItem>
               </Nav>
               <ShoppingCart className="me-3" color="#685e5e" />
-              <input
-                style={{
-                  outline: "none",
-                  border: " 1px solid #918888",
-                }}
-                onChange={(e) => setSearchText(e?.target?.value)}
-                className="rounded-1  w-25 p-1 ps-2 me-3"
-                placeholder="Search your text here....!"
-                type="text"
-              />
+              {props?.searchBarShow && (
+                <>
+                  <input
+                    style={{
+                      outline: "none",
+                      border: " 1px solid #918888",
+                    }}
+                    onChange={(e) => data?.setSearchTxt(e?.target?.value)}
+                    className="rounded-1  w-25 p-1 ps-2 me-3"
+                    placeholder="Search your text here....!"
+                    type="text"
+                  />
+                  <Search color="#685e5e" />
+                </>
+              )}
             </Collapse>
-            <Search color="#685e5e" />
           </Navbar>
         </div>
         {/* </Header> */}

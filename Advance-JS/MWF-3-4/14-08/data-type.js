@@ -25,3 +25,8 @@ arrrr[2];
 obj.arr;
 obj.object.arr[2];
 console.log(" obj.object.arr[2];:", obj.object.arr[2]);
+
+[
+  { name: "uv", age: 123 },
+  { name: "test", age: 30 },
+];

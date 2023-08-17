@@ -34,6 +34,7 @@ import UseEffectCom from "./HOOKS/UseEffectCom";
 import ApiCom from "./API/ApiCom";
 import ApiCom2 from "./API/ApiCom2";
 import ContexCom from "./HOOKS/Context/ContexCom";
+import UseRefCom from "./HOOKS/userRef/UseRefCom";
 
 function App() {
   return (
@@ -94,7 +95,9 @@ function App() {
 
       {/*------------------HOOKs------------------ */}
       {/* <UseEffectCom /> */}
-      <ContexCom />
+      {/* <ContexCom /> */}
+      <UseRefCom />
+
       {/*------------------ApiCom------------------ */}
       {/* <ApiCom /> */}
       {/* <ApiCom2 /> */}

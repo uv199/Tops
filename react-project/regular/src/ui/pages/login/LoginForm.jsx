@@ -26,7 +26,7 @@ export default function LoginForm() {
     let isMatch = arr.find((e) => {
       return e.email === data.email;
     });
-    if (isMatch) {
+    if (isMatch ) {
       if (isMatch.pass !== data?.password) {
         toast.error("Password is Wrong");
       } else {

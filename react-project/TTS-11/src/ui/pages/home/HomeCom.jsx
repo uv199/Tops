@@ -1,42 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
-const { Content, Footer } = Layout;
+import { Layout } from "antd";
 import shoseData from "../../../utils/shoseData.json";
 
 import HeaderCom from "../../components/HeaderCom";
 import FooterCom from "../../components/FooterCom";
 import CardCom from "../../components/CardCom";
-const HomeCom = () => {
+const HomeCom = (props) => {
   let [data, setData] = useState(shoseData);
-  let [searchText, setSearchText] = useState("");
+  let [topFive, setTopFive] = useState([]);
 
   useEffect(() => {
-    console.log("setSearchText", searchText);
-    let filterdData = shoseData.filter((e) => {
-      return e?.name?.toLowerCase?.()?.includes?.(searchText?.toLowerCase?.());
-    });
-    setData(filterdData);
-  }, [searchText]);
+    if (props.searchTxt.length > 0) {
+      console.log("----->----");
+      let filterdData = shoseData.filter((e) => {
+        return e?.name
+          ?.toLowerCase?.()
+          ?.includes?.(props?.searchTxt?.toLowerCase?.());
+      });
+      setData(filterdData);
+    } else {
+      setData(shoseData);
+    }
+  }, [props?.searchTxt]);
 
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  useEffect(() => {
+    shoseData.sort((a, b) => b.rating - a.rating);
+    setTopFive(shoseData.slice(0, 5));
+  }, []);
   return (
     <Layout className="layout">
-      <HeaderCom setSearchText={setSearchText} />
-   
-        <div
-          className=" d-flex flex-wrap "
-          style={{
-            padding: "10px",
-            gap: "10px",
-            background: colorBgContainer,
-          }}
-        >
-          {data?.map?.((e) => {
-            return <CardCom data={e} />;
-          })}
-        </div>
+      <HeaderCom searchBarShow={false} />
+
+      <div
+        className=" d-flex flex-wrap "
+        style={{
+          padding: "10px",
+          gap: "10px",
+        }}
+      >
+        <h1>top five</h1>
+        {topFive?.map?.((e, i) => {
+          return <CardCom key={i} data={e} />;
+        })}
+        {data?.map?.((e, i) => {
+          return <CardCom key={i} data={e} />;
+        })}
+      </div>
       <FooterCom />
     </Layout>
   );

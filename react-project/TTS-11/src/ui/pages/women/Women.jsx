@@ -5,16 +5,22 @@ import Data from "../../../utils/shoseData.json";
 import CardCom from "../../components/CardCom";
 import fs from "fs";
 
-export default function Women() {
+export default function Women({ searchTxt }) {
   const [shoesData, setshoesData] = useState([]);
   useEffect(() => {
-    let filterData = Data?.filter?.((e) => e?.gender === "WOMEN");
+    let filterData = Data?.filter?.((e) => {
+      return (
+        e?.gender === "WOMEN" &&
+        e?.name?.toLowerCase?.()?.includes(searchTxt.toLowerCase())
+      );
+    });
+
     setshoesData(filterData);
-  }, []);
+  }, [searchTxt]);
 
   return (
     <>
-      <HeaderCom />
+      <HeaderCom searchBarShow={true} />
       <div
         className=" d-flex flex-wrap "
         style={{
