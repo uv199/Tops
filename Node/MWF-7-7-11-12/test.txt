@@ -1,1 +1,5 @@
-hello urvish
+create -> 
+update ->
+delete -> 
+getById ->
+getAll -> 

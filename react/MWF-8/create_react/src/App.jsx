@@ -20,11 +20,13 @@ import UpdateTest from "./9.input/UpdateTest";
 import ApiCom from "./11.API/ApiCom";
 import LifeCycleMethod from "./12.lifeCycle/LifeCycleMethod";
 import LayoutAntd from "./Antd/LayoutAntd";
-import UseEffectCom from "./14.HOOKS/UseEffectCom";
+import UseEffectCom from "./14.HOOKS/useEffect/UseEffectCom";
 import LocalstorageCom from "./15.Local-Storage/LocalstorageCom";
 import ContexCom from "./14.HOOKS/contex/ContexCom";
 import RadioCom from "./9.input/RadioCom";
-import UseRefCom from "./14.HOOKS/UseRefCom";
+import UseRefCom from "./14.HOOKS/useRef/UseRefCom";
+import UseReducerCom from "./14.HOOKS/useReducer/UseReducerCom";
+import UseRedCom2 from "./14.HOOKS/useReducer/UseRedCom2";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -60,7 +62,8 @@ function App() {
       {/* ------------------Boot-Strap--------------------- */}
       {/* <BootStrapCom /> */}
       {/* ------------------ApiCom--------------------- */}
-      {/* <ApiCom /> */} // TODO have to explain post and more
+      {/* <ApiCom /> */}
+      {/*  TODO have to explain post and more */}
       {/* ------------------LifeCycleMethod--------------------- */}
       {/* <LifeCycleMethod /> */}
       {/* ------------------Local storage--------------------- */}
@@ -68,7 +71,9 @@ function App() {
       {/* ------------------Hook--------------------- */}
       {/* <UseEffectCom /> */}
       {/* <ContexCom /> */}
-      <UseRefCom />
+      {/* <UseRefCom /> */}
+      {/* <UseReducerCom /> */}
+      <UseRedCom2 />
     </div>
   );
 }

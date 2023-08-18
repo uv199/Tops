@@ -5,20 +5,7 @@ import User from "./models/user";
 
 const app = express();
 
-app.get("/create/urvish", (req, res) => {
-  res.send("you first api called ---- sanket");
-  User.create({
-    name: "urvish",
-    email: "urvish@gmail.com",
-    number: "tetsg9546412",
-  })
-    .then((res) => {
-      console.log("----res----", res);
-    })
-    .catch((err) => {
-      console.log("----err----", err);
-    });
-});
+app.use(express.json());
 
 app.use("/user", userRouter);
 app.listen(3000, () => {

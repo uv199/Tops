@@ -7,12 +7,11 @@ import LoginForm from "./ui/components/LoginForm";
 import Women from "./ui/pages/women/Women";
 
 function App() {
-
   return (
     <>
-      <Home />
+      {/* <Home /> */}
       {/* <Women /> */}
-      {/* <LoginForm /> */}
+      <LoginForm />
     </>
   );
 }
