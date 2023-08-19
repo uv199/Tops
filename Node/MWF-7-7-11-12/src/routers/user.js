@@ -5,6 +5,7 @@ const userRouter = express.Router();
 
 // userRouter.get("/sanket", (req, res) => {
 userRouter.post("/create", (req, res) => {
+  console.log("🚀 ~ file: user.js:9 ~ userRouter.post ~ req?.body:", req?.body);
   User.create(req?.body)
     .then((resData) => {
       res.send(resData);
