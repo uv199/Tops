@@ -2,34 +2,43 @@ import React from "react";
 import Home from "./Home";
 import Service from "./Service";
 import About from "./About";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { HomeIcon } from "lucide-react";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import HeadCom from "./HeadCom";
+import "./index.css";
+import Page404 from "./Page404";
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
+        {/* <HeadCom /> */}
         <ul>
           <li>
-            <Link to={"/"}>
-              <HomeIcon color="#b92727" />
-            </Link>
+            <NavLink to={"/home"}>home</NavLink>
           </li>
           <li>
-            <Link style={{ color: "red", textDecoration: "none" }} to="/about">
-              about
-            </Link>
+            <NavLink to={"/service"}>Service</NavLink>
           </li>
           <li>
-            <Link style={{ textDecoration: "none" }} to="/service">
-              service
-            </Link>
+            <NavLink to={"/about"}>About</NavLink>
           </li>
         </ul>
+        {/* <ul>
+          <li>
+            <Link to={"/home"}>home</Link>
+          </li>
+          <li>
+            <Link to={"/service"}>Service</Link>
+          </li>
+          <li>
+            <Link to={"/about"}>About</Link>
+          </li>
+        </ul> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/service" element={<Service />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -33,9 +33,10 @@ export default function Router() {
           </li>
         </ul>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/service" element={<Service />} />
+          <Route exact path="/test" element={<Home />}>
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/service" element={<Service />} />
+          </Route>
           <Route exact path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
