@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -14,8 +14,11 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import { SearchContext } from "../../App";
 
 function HeaderCom(props) {
+  // const serachCont = useContext(SearchContext);
+  const { setSearchText } = useContext(SearchContext);
   return (
     <div>
       <Navbar expand={"lg"} style={{ backgroundColor: "lightcoral" }}>
@@ -47,7 +50,8 @@ function HeaderCom(props) {
             className="border-0 rounded-1 p-1 w-25 ps-2 "
             type="text"
             placeholder="Search your text here....! "
-            onChange={(e) => props?.setSearchText(e?.target?.value)}
+            // onChange={(e) => serachCont?.setSearchText(e?.target?.value)} // if you can't destructure a object
+            onChange={(e) => setSearchText(e?.target?.value)}
           />
           <Search className="ms-2 me-5" color="#fff" />
         </Collapse>

@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardCom from "../../components/CardCom";
 import ShoseData from "../../../utils/shose.json";
 
-export default function HomeContetnt(props) {
+import { SearchContext } from "../../../App";
+
+export default function HomeContetnt() {
+  // const searchCon = useContext(SearchContext);
+  const { searchText } = useContext(SearchContext);
   const [Data, setData] = useState(ShoseData);
   useEffect(() => {
     let filteredData = ShoseData.filter((e) => {
-      return e?.name
-        ?.toLowerCase?.()
-        ?.includes?.(props?.searchText?.toLowerCase?.());
+      return e?.name?.toLowerCase?.()?.includes?.(searchText?.toLowerCase?.());
     });
     setData(filteredData);
-  }, [props?.searchText]);
+  }, [searchText]);
   return (
     <>
       <div

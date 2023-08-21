@@ -35,73 +35,83 @@ import ApiCom from "./API/ApiCom";
 import ApiCom2 from "./API/ApiCom2";
 import ContexCom from "./HOOKS/Context/ContexCom";
 import UseRefCom from "./HOOKS/userRef/UseRefCom";
+import UseReducer from "./HOOKS/useReducer/UseReducer";
+import UseReducer2 from "./HOOKS/useReducer/UserReducer2";
+import Router from "./router/Router";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App_div w-100">
-      {/*------------------ component ------------------ */}
-      {/* <Body />
+    <BrowserRouter>
+      <div className="App_div w-100">
+        {/*------------------ component ------------------ */}
+        {/* <Body />
       <ClassCom />
       <FunCom /> */}
 
-      {/*------------------ state------------------ */}
-      {/* <UserSateClass /> */}
-      {/* <UserSateFun /> */}
-      {/* <StateProject /> */}
-      {/* <Project2 /> */}
+        {/*------------------ state------------------ */}
+        {/* <UserSateClass /> */}
+        {/* <UserSateFun /> */}
+        {/* <StateProject /> */}
+        {/* <Project2 /> */}
 
-      {/*------------------Props------------------ */}
-      {/* <FunProps name={"urvish"} age={20} /> */}
-      {/* <FunProps name={"urvish"} /> */}
-      {/* <FunProps obj={{ x: 10, y: 10 }} /> */}
-      {/* <FunPropsChnage name={"urvish"} /> */}
-      {/* <ClassProps name={"what happen"} /> */}
-      {/* <PropsDestructuring name={"urvish"} age={25} /> */}
+        {/*------------------Props------------------ */}
+        {/* <FunProps name={"urvish"} age={20} /> */}
+        {/* <FunProps name={"urvish"} /> */}
+        {/* <FunProps obj={{ x: 10, y: 10 }} /> */}
+        {/* <FunPropsChnage name={"urvish"} /> */}
+        {/* <ClassProps name={"what happen"} /> */}
+        {/* <PropsDestructuring name={"urvish"} age={25} /> */}
 
-      {/*------------------Fragment------------------ */}
-      {/* <FragmentCom /> */}
+        {/*------------------Fragment------------------ */}
+        {/* <FragmentCom /> */}
 
-      {/*------------------Conditional-Rendaring------------------ */}
-      {/* <ConditionalRen isMale={"email"} isYoung={true} /> */}
-      {/* <ConditionalRen isMale={false} /> */}
+        {/*------------------Conditional-Rendaring------------------ */}
+        {/* <ConditionalRen isMale={"email"} isYoung={true} /> */}
+        {/* <ConditionalRen isMale={false} /> */}
 
-      {/*------------------Map------------------ */}
-      {/* <MapKey /> */}
-      {/* <MapCom /> */}
+        {/*------------------Map------------------ */}
+        {/* <MapKey /> */}
+        {/* <MapCom /> */}
 
-      {/*------------------Bootstrap------------------ */}
-      {/* <BootStrapCom /> */}
+        {/*------------------Bootstrap------------------ */}
+        {/* <BootStrapCom /> */}
 
-      {/*------------------Input------------------ */}
-      {/* <InputCom /> */}
-      {/* <Delete /> */}
-      {/* <Update /> */}
-      {/* <TestUpdate/> */}
-      {/* <MultiInput /> */}
+        {/*------------------Input------------------ */}
+        {/* <InputCom /> */}
+        {/* <Delete /> */}
+        {/* <Update /> */}
+        {/* <TestUpdate/> */}
+        {/* <MultiInput /> */}
 
-      {/*------------------props rep------------------ */}
-      {/* <PropsFunRep name={"urvish"} age={20} />
+        {/*------------------props rep------------------ */}
+        {/* <PropsFunRep name={"urvish"} age={20} />
       <PropsFunRep name={"patel"} />
       <PropsClassRep age={"00000"} /> */}
 
-      {/*------------------LifeCycleMethod------------------ */}
-      {/* <LifeCycleMethod /> */}
+        {/*------------------LifeCycleMethod------------------ */}
+        {/* <LifeCycleMethod /> */}
 
-      {/*------------------AntdLayout------------------ */}
-      {/* <AntdLayout /> */}
+        {/*------------------AntdLayout------------------ */}
+        {/* <AntdLayout /> */}
 
-      {/*------------------LocalStorage------------------ */}
-      {/* <LocalStorage /> */}
+        {/*------------------LocalStorage------------------ */}
+        {/* <LocalStorage /> */}
 
-      {/*------------------HOOKs------------------ */}
-      {/* <UseEffectCom /> */}
-      {/* <ContexCom /> */}
-      <UseRefCom />
+        {/*------------------HOOKs------------------ */}
+        {/* <UseEffectCom /> */}
+        {/* <ContexCom /> */}
+        {/* <UseRefCom /> */}
+        {/* <UseReducer /> */}
+        {/* <UseReducer2 /> */}
 
-      {/*------------------ApiCom------------------ */}
-      {/* <ApiCom /> */}
-      {/* <ApiCom2 /> */}
-    </div>
+        {/*------------------ApiCom------------------ */}
+        {/* <ApiCom /> */}
+        {/* <ApiCom2 /> */}
+        {/*------------------Router------------------ */}
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 

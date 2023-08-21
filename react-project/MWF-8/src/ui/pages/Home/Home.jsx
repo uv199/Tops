@@ -4,12 +4,10 @@ import HeaderCom from "../../components/HeaderCom";
 import FooterCom from "../../components/FooterCom";
 import HomeContetnt from "./HomeContetnt";
 const Home = () => {
-  const [searchText, setSearchText] = useState("");
-
   return (
     <Layout className="layout">
-      <HeaderCom setSearchText={setSearchText} />
-      <HomeContetnt searchText={searchText} />
+      <HeaderCom />
+      <HomeContetnt />
       <FooterCom />
     </Layout>
   );

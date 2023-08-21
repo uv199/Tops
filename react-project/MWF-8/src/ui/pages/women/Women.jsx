@@ -1,31 +1,22 @@
-import React, { useState } from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+// import modules
+import React from "react";
+import { Layout, theme } from "antd";
+
+// import files
 import HeaderCom from "../../components/HeaderCom";
 import FooterCom from "../../components/FooterCom";
-import CardCom from "../../components/CardCom";
 import WomenContetnt from "./WomenContetnt";
-const { Header, Content, Footer } = Layout;
+
 const Women = () => {
-  const [searchText, setSearchText] = useState("");
+  // useStates --->
 
   const {
     token: { colorBgContainer },
-  } = theme.useToken();
-  console.log("-------", searchText);
+  } = theme.useTosken();
   return (
     <Layout className="layout">
-      <HeaderCom setSearchText={setSearchText} />
-      <Content>
-        <div
-          className="site-layout-content"
-          style={{
-            background: colorBgContainer,
-          }}
-        >
-          <WomenContetnt searchText={searchText} />
-        </div>
-      </Content>
-
+      <HeaderCom />
+      <WomenContetnt />
       <FooterCom />
     </Layout>
   );
