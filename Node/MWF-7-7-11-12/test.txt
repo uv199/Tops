@@ -1,5 +1,0 @@
-create -> 
-update ->
-delete -> 
-getById ->
-getAll -> 

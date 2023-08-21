@@ -3,48 +3,62 @@ import User from "../models/user";
 
 const userRouter = express.Router();
 
-// userRouter.get("/sanket", (req, res) => {
-userRouter.post("/create", (req, res) => {
-  console.log("🚀 ~ file: user.js:9 ~ userRouter.post ~ req?.body:", req?.body);
-  User.create(req?.body)
-    .then((resData) => {
-      res.send(resData);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-});
-
-userRouter.get("/allUser", (req, res) => {
-  User.find()
-    .then((userRes) => {
-      res.status(200).send(userRes);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-});
-userRouter.get("/getUsers", async (req, res) => {
-  try {
-    let data = await User.findOne({ name: "urvish" });
-    // throw new Error("somthing went wrong ...?");
-    if (data.length > 0) {
-      res.send(data);
+// Get ALl User
+userRouter.get("/getAll", (req, res) => {
+  User.find({}).then((resData) => {
+    if (resData.length > 0) {
+      res.send({ status: "200", data: resData })
     } else {
-      res.send("data not Found...!");
+      throw new Error("Data not found")
+    }
+  }).catch((err) => {
+    res.send({ status: "400", mesage: err.message })
+  })
+})
+
+// Get User By Id
+// have to pass id in params
+userRouter.get("/getUserById/:id", async (req, res) => {
+  let id = req?.params?.id
+  try {
+    let matchUser = await User.findById(id)
+    console.log(" matchUser:", matchUser)
+    if (matchUser) {
+      res.send({ status: 200, data: matchUser })
+    } else {
+      res.send("Data not found...!")
+
     }
   } catch (error) {
-    console.log("test");
-    res.status(400).send(error.message);
+    res.send({ status: "400", mesage: err.message })
   }
-});
-export default userRouter;
+})
 
-// teacher : name,email,password,add,classTeacher:id,subject,salary,gender
-// student : name,email,password,add,classTeacher:id,subject,fees,gender
-// admin : name,email,password,add
-// class : name,div,teacher:id,monitor:id,studentcount,
+// Create user 
+userRouter.post("/create", (req, res) => {
+  let input = req?.body
+  User.create(input).then((resData) => {
+    res.send({ status: 200, data: resData })
+  }).catch((err) => {
+    res.send({ status: 400, message: err.message })
+  })
+})
 
-// user : name,email,password,add,classTeacher:id,subject,salary,gender,fees type : "admin/teacher/stuident" // usertype:id
-userType: "";
-//class : name,div,teacher:id,monitor:id,studentcount,
+// Update User
+userRouter.put(`/update/:id`, (req, res) => {
+  let id = req?.params?.id
+  let data = req?.body
+  User.findByIdAndUpdate(id, {
+	 "name": "sanket1",
+  "email": "sanket1@gmail.com",
+	"address": {
+			"add": "A/308 tapti avenue",
+			"city": "Surat"
+	}
+}, { new: true }).then((resData) => {
+    res.send({ status: 200, data: resData })
+  }).catch((err) => {
+    res.send({ status: 400, message: err.message })
+  })
+})
+export default userRouter

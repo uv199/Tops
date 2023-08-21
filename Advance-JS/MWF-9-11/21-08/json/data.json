@@ -1,0 +1,6 @@
+{
+  "name": "test",
+  "age": 25,
+  "arr": [1, 2, 3, 4, "str"],
+  "obj": { "test": "val" }
+}
