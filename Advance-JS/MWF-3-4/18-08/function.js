@@ -31,14 +31,16 @@ let x = fatArrowFun();
 console.log("🚀 ~ file: function.js:27 ~ x:", x);
 
 */
-normal();
-function normal(params) {
-  console.log("--->normal");
-}
+// normal();
+// function normal(params) {
+//   console.log("--->normal");
+// }
 fatArrowFun();
 let fatArrowFun = () => {
   console.log("--->fatArrowFun");
 };
+// function fun1(params) console.log("---->")
+// fun1()
 
 
-
+// let fatArrowFun = () => { return console.log("--->fatArrowFun"); };

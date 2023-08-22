@@ -2,10 +2,12 @@ import React from "react";
 import Home from "./Home";
 import Service from "./Service";
 import About from "./About";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import HeadCom from "./HeadCom";
 import "./index.css";
 import Page404 from "./Page404";
+import BikeService from "./BikeService";
+import CarService from "./CarService";
 
 export default function Router() {
   return (
@@ -14,7 +16,7 @@ export default function Router() {
         {/* <HeadCom /> */}
         <ul>
           <li>
-            <NavLink to={"/home"}>home</NavLink>
+            <NavLink to={"/"}>home</NavLink>
           </li>
           <li>
             <NavLink to={"/service"}>Service</NavLink>
@@ -23,21 +25,15 @@ export default function Router() {
             <NavLink to={"/about"}>About</NavLink>
           </li>
         </ul>
-        {/* <ul>
-          <li>
-            <Link to={"/home"}>home</Link>
-          </li>
-          <li>
-            <Link to={"/service"}>Service</Link>
-          </li>
-          <li>
-            <Link to={"/about"}>About</Link>
-          </li>
-        </ul> */}
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/service" element={<Service />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* nested route */}
+          <Route path="/service">
+            <Route index element={<Service />} />
+            <Route path="bike" element={<BikeService />} />
+            <Route path="car" element={<CarService />} />
+          </Route>
           <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>

@@ -39,6 +39,7 @@ import UseReducer from "./HOOKS/useReducer/UseReducer";
 import UseReducer2 from "./HOOKS/useReducer/UserReducer2";
 import Router from "./router/Router";
 import { BrowserRouter } from "react-router-dom";
+import RouterRev from "./router/navigation-rev/RouterRev";
 
 function App() {
   return (
@@ -109,7 +110,8 @@ function App() {
         {/* <ApiCom /> */}
         {/* <ApiCom2 /> */}
         {/*------------------Router------------------ */}
-        <Router />
+        {/* <Router /> */}
+        <RouterRev />
       </div>
     </BrowserRouter>
   );

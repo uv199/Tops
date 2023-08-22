@@ -23,19 +23,20 @@ export default function Router() {
         </ul> */}
         <ul>
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/test"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/about"}>About</NavLink>
+            <NavLink to={"/test/about"}>About</NavLink>
           </li>
           <li>
-            <NavLink to={"/service"}>Service</NavLink>
+            <NavLink to={"test/service"}>Service</NavLink>
           </li>
         </ul>
         <Routes>
-          <Route exact path="/test" element={<Home />}>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/service" element={<Service />} />
+          <Route path="/test">
+            <Route exact index element={<Home />} />
+            <Route exact path="about" element={<About />} />
+            <Route exact path="service" element={<Service />} />
           </Route>
           <Route exact path="*" element={<Page404 />} />
         </Routes>

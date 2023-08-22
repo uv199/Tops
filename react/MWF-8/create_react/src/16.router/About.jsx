@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export default function About() {
+  let navigate = useNavigate();
   return (
     <>
       <h1>About Page</h1>
-      <Outlet />
+      <button onClick={() => navigate("/test/home")}>home</button>
+      <button onClick={() => navigate(-1)}>back</button>
     </>
   );
 }
