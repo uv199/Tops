@@ -1,0 +1,1085 @@
+/*
+Theme Name: Ministore
+Theme URI: 
+Author: 
+Author URI: 
+Description: Ministore is specially designed product packaged for Ministore by Moksha.
+Version: 
+*/
+
+/*--------------------------------------------------------------
+This is main CSS file that contains custom style rules used in this template
+--------------------------------------------------------------*/
+
+/*------------------------------------*\
+    Table of contents
+\*------------------------------------*/
+
+/*------------------------------------------------
+
+CSS STRUCTURE:
+
+    
+/*--------------------------------------------------------------
+/** 1. VARIABLES
+--------------------------------------------------------------*/
+:root {
+  --accent-color: #0d0d0d;
+  --bs-gray-100: #f3f3f3;
+  --bs-gray-200: #e7e5e2;
+  --bs-primary: #787d62;
+  --bs-secondary: #F6F5F2;
+  --bs-primary-rgb: 120, 125, 98;
+  --bs-body-bg-rgb: 246, 245, 242;
+  --bs-light: #fff;
+  --bs-dark: #000;
+  --navbar-color-color: #131814;
+  --swiper-theme-color: #787d62 !important;
+  --swiper-pagination-color: #787d62 !important;
+
+}
+
+/* on mobile devices below 600px
+ */
+@media screen and (max-width: 600px) {
+  :root {
+    --header-height: 100px;
+    --header-height-min: 80px;
+  }
+}
+
+/* Fonts */
+:root {
+  --body-font: "Poppins", sans-serif;
+  --heading-font: "Cinzel", sans-serif;
+}
+
+/*----------------------------------------------*/
+/* 1 GENERAL TYPOGRAPHY */
+/*----------------------------------------------*/
+
+/* 1.1 General Styles
+/*----------------------------------------------*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+ul.inner-list li {
+  font-size: 1.2em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: var(--bs-dark);
+  text-decoration: none;
+  transition: 0.3s color ease-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--bs-primary);
+}
+
+.form-control:focus,
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/*------------ Background Color -----------*/
+.bg-secondary {
+  background: var(--bs-secondary) !important;
+}
+
+.bg-dark {
+  background: var(--bs-dark) !important;
+}
+
+.bg-light {
+  background: var(--bs-light) !important;
+}
+
+.bg-gray-1 {
+  background-color: var(--bs-gray-100) !important;
+}
+
+/* - Section Padding
+--------------------------------------------------------------*/
+.padding-small {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.padding-medium {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.padding-large {
+  padding-top: 7em;
+  padding-bottom: 7em;
+}
+
+/* - Section margin
+--------------------------------------------------------------*/
+.margin-small {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.margin-medium {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.margin-large {
+  margin-top: 7em;
+  margin-bottom: 7em;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .margin-small,
+  .margin-medium,
+  .margin-large {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+/* - Section Title
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--heading-font);
+}
+
+/* - Section width
+--------------------------------------------------------------*/
+.container-fluid {
+  max-width: 1540px;
+}
+
+/*--------------------------------------------------------------
+/** 2.10 Buttons
+--------------------------------------------------------------*/
+/* - Button Sizes
+------------------------------------------------------------- */
+.btn.btn-small {
+  padding: 0.8em 1.8em;
+  font-size: 0.65em;
+}
+
+.btn.btn-medium {
+  padding: 1.1em 2.8em;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+.btn.btn-large {
+  padding: 2.4em 5.1em;
+  font-size: 1.8em;
+}
+
+/* - Button Shapes
+------------------------------------------------------------- */
+.btn.btn-rounded,
+.btn.btn-rounded::after {
+  border-radius: 6px;
+}
+
+.btn.btn-pill,
+.btn.btn-pill::after {
+  border-radius: 2em;
+}
+
+/* button outline */
+.btn.btn-outline-dark,
+.btn.btn-outline-light,
+.btn.btn-outline-accent {
+  background: transparent;
+  text-shadow: none;
+  box-shadow: none;
+  border: 1px solid;
+}
+
+.btn.btn-outline-dark:hover::after,
+.btn.btn-outline-light:hover::after {
+  background-color: transparent;
+}
+
+.btn.btn-outline-dark {
+  border-color: rgba(0, 0, 0, 1);
+  color: var(--bs-dark);
+}
+
+.btn.btn-outline-dark:hover {
+  background: var(--bs-dark);
+  color: var(--bs-light);
+}
+
+.btn.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--bs-light);
+}
+
+.btn.btn-outline-light:hover {
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border-color: var(--bs-primary);
+}
+
+.btn.btn-outline-gray {
+  background: transparent;
+  border-color: var(--gray-color-600);
+  color: var(--bs-dark);
+}
+
+.btn.btn-outline-gray:hover {
+  border-color: var(--bs-dark);
+  color: var(--bs-dark) !important;
+}
+
+.btn.btn-outline-accent {
+  background: transparent;
+  border-color: var(--accent-color);
+  color: var(--bs-dark);
+}
+
+.btn.btn-outline-accent:hover {
+  border-color: var(--bs-dark);
+  color: var(--bs-dark) !important;
+}
+
+.btn.btn-full {
+  display: block;
+  margin: .85em 0;
+  width: 100%;
+  letter-spacing: 0.12em;
+}
+
+/* no border radius */
+.btn-rounded-none,
+.btn-rounded-none::after {
+  border-radius: 0;
+}
+
+/* - Buttons Color Scheme
+------------------------------------------------------------- */
+.btn.btn-normal {
+  border: none;
+  color: var(--bs-dark);
+  text-decoration: underline;
+}
+
+.btn.btn-normal:hover {
+  text-decoration: none;
+}
+
+.btn.btn-accent {
+  color: var(--bs-light);
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.btn.btn-accent:hover {
+  color: var(--bs-light) !important;
+  background-color: var(--bs-primary);
+}
+
+.btn.btn-black {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+  border: none;
+}
+
+.btn.btn-black:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+
+.btn.btn-light {
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+  border: none;
+}
+
+.btn.btn-light:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+
+.btn.btn-primary {
+  background: var(--bs-primary);
+  color: var(--bs-light);
+  border: none;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+
+/* - Buttons Aligns
+------------------------------------------------------------- */
+.btn-left {
+  text-align: left;
+  display: block;
+}
+
+.btn-center {
+  text-align: center;
+  display: block;
+}
+
+.btn-right {
+  text-align: right;
+  display: block;
+}
+
+/*----------------------------------------------*/
+/* 2 SITE STRUCTURE */
+/*----------------------------------------------*/
+
+/*----- 6.1 Preloader
+--------------------------------------------------------------*/
+*#preloader {
+  width:100%;
+  height:100%;  
+  position:fixed;
+  z-index:20;
+  background:#ece7e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border: 9px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+
+/* - Text Effect
+------------------------------------------------------------- */
+.pseudo-text-effect {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.5s;
+  display: block;
+}
+
+.pseudo-text-effect::after {
+  content: attr(data-after);
+  display: inline-block;
+  transform: translateY(100%);
+  position: absolute;
+  left: 0;
+  transition: inherit;
+  color: var(--bs-dark);
+}
+
+.pseudo-text-effect>span {
+  display: inline-block;
+  transform: translateY(0%);
+  transition: inherit;
+}
+
+.pseudo-text-effect:hover>span {
+  transform: translateY(-100%);
+}
+
+.pseudo-text-effect:hover::after {
+  transform: translateY(0%);
+}
+
+/*--------------------------------------------------------------
+/** Jarallax
+--------------------------------------------------------------*/
+.jarallax {
+  position: relative;
+  z-index: 0;
+  min-height: 510px;
+}
+
+.jarallax>.jarallax-img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.jarallax-img {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax img.jarallax-img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: auto !important;
+  z-index: -100;
+}
+
+@media screen and ( max-width: 991px ) {
+  .jarallax {
+    min-height: 280px;
+  }
+}
+
+/*--- Image hover Effects
+-----------------------------------------------*/
+.image-zoom-effect {
+  overflow: hidden;
+}
+
+.image-zoom-effect .image-holder {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-zoom-effect:hover .image-holder {
+  transform: scale(0.95);
+}
+
+.image-zoom-effect img {
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.image-zoom-effect:hover img {
+  transform: scale(1.1);
+}
+
+/* Link Effect
+------------------------------------------------------------- */
+.link-effect {
+  cursor: pointer;
+}
+
+.link-effect a {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.5s;
+  display: block;
+}
+
+.link-effect a::after {
+  content: attr(data-after);
+  display: inline-block;
+  transform: translateY(100%);
+  position: absolute;
+  left: 0;
+  font-size: 1rem;
+  text-align: inherit;
+  text-transform: uppercase;
+  transition: inherit;
+}
+
+.link-effect a>span {
+  display: inline-block;
+  transform: translateY(0%);
+  transition: inherit;
+}
+
+.link-effect:hover a>span {
+  transform: translateY(-100%);
+}
+
+.link-effect:hover a::after {
+  transform: translateY(0%);
+}
+
+/* Social Link Hover
+------------------------------------------------------------- */
+.icon-box-effect {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.icon-box-effect .social-links libutton {
+  position: relative;
+  bottom: 80px;
+  opacity: 0;
+  display: inline-block;
+  margin: 7px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+}
+
+.icon-box-effect .social-links button:hover {
+  background-color: var(--bs-primary);
+}
+
+.icon-box-effect .social-links svg {
+  color: var(--light-color);
+  animation-name: rotate-icon;
+}
+
+.icon-box-effect .social-links button:nth-child(1) {
+  transition: 1.0s;
+}
+
+.icon-box-effect .social-links button:nth-child(2) {
+  transition: 1.2s;
+}
+
+.icon-box-effect .social-links button:nth-child(3) {
+  transition: 1.5s;
+}
+
+.icon-box-effect .social-links button:nth-child(4) {
+  transition: 1.8s;
+}
+
+.icon-box-effect .social-links button:nth-child(5) {
+  transition: 2.4s;
+}
+
+.icon-box-effect:hover>.product-card .social-links button {
+  bottom: 200px;
+  opacity: 1;
+}
+
+/*  Image Overlay
+------------------------------------------------------------- */
+/* .text-box {
+  width: 100%;
+  
+} */
+.image-overlay {
+  cursor: pointer;
+}
+
+.image-overlay .product-image {
+  overflow: hidden;
+}
+
+.image-overlay .product-image img {
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.box-slide {
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  color: var(--bs-dark);
+  transition: transform 0.6s ease-in-out;
+}
+
+.image-overlay:hover .box-slide {
+  transform: translateY(0%);
+}
+
+.image-overlay:hover img {
+  transform: translateY(-10%);
+}
+
+/* Button Hover Effects 2
+------------------------------------------------------------- */
+.btn.btn-arrow {
+  color: var(--bs-light);
+  background-color: var(--bs-primary);
+  border-radius: 0;
+}
+
+.btn.btn-arrow.btn-bg-light {
+  color: var(--bs-dark);
+  background-color: var(--bs-light);
+}
+
+.btn.btn-arrow.outline-dark {
+  color: var(--bs-dark);
+  background-color: transparent;
+  border: 1px solid var(--bs-dark);
+}
+
+.btn.btn-arrow.btn-normal {
+  color: var(--bs-dark);
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.btn.btn-arrow span {
+  display: inline-block;
+  transition: all 300ms ease-out;
+  will-change: transform;
+}
+
+.btn.btn-arrow:hover span {
+  transform: translate3d(-7px, 0, 0);
+}
+
+.btn.btn-arrow svg {
+  position: absolute;
+  top: 32px;
+  right: 21px;
+  transform: translateY(-50%);
+  transition: all 300ms ease-out;
+  will-change: right, opacity;
+}
+
+.btn.btn-arrow:hover svg {
+  opacity: 0;
+  right: 0;
+}
+
+.btn svg.icon-arrow {
+  width: 25px;
+  height: 25px;
+}
+
+/* - Search Bar
+------------------------------------------------------------- */
+.search-box {
+  background: var(--bs-light);
+  height: 0px;
+  transition: height 0.3s ease-out;
+}
+
+.search-box.active {
+  height: 90px;
+}
+
+.close-button {
+  top: 20px;
+  right: 120px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.search-box input.search-input {
+  width: 50%;
+  height: 30px;
+  min-width: 420px;
+  border-radius: 80px;
+  border-color: rgb(0 0 0 / 25%);
+}
+
+.search-box .search-wrap svg {
+  color: var(--bs-primary);
+}
+
+.search-box svg.search {
+  margin-left: -50px;
+}
+
+/* - Sticky
+------------------------------------------------------------- */
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* 1. Header
+/*----------------------------------------------*/
+.site-header {
+  z-index: 10;
+  transition: background 0.3s ease-out;
+}
+
+.navbar-nav .nav-item a.nav-link {
+  color: var(--accent-color);
+}
+
+.navbar-nav .nav-item a.nav-link.active,
+.navbar-nav .nav-item a.nav-link:focus,
+.navbar-nav .nav-item a.nav-link:hover {
+  color: var(--bs-primary);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: var(--bs-secondary);
+}
+
+/*------------ Offcanvas -------------- */
+#header-nav .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+#header-nav .offcanvas.show {
+  z-index: 9999;
+  background-color: var(--bs-light);
+}
+
+#header-nav .offcanvas-end {
+  width: 500px;
+}
+
+.offcanvas.show .nav-item a.nav-link {
+  font-size: 2em;
+}
+
+.offcanvas.show .offcanvas-body .navbar-nav {
+  align-items: unset !important;
+  padding-left: 20px;
+}
+
+/*------------ Top User Icons -----------*/
+.site-header .user-items svg {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+  #navbar .user-items {
+    display: none;
+  }
+}
+
+/* 2. Billboard
+/*----------------------------------------------*/
+/*------------Swiper Arrow -----------*/
+.banner-content p {
+  width: 50%;
+}
+
+#billboard .swiper-pagination {
+  left: -730px;
+  bottom: 160px;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  cursor: pointer;
+  border-color: transparent;
+  transition: border-color 0.3s ease-out;
+}
+
+.swiper-pagination .swiper-pagination-bullet::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50px;
+  border: 1px solid #4a4a4a;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 10px !important;
+}
+
+.swiper-pagination span.swiper-pagination-bullet.swiper-pagination-bullet-active:after,
+.swiper-pagination span.swiper-pagination-bullet:hover:after {
+  transform: scale(2);
+}
+
+@media only screen and (max-width: 1200px) {
+  #billboard .banner-content {
+    background-color: rgba(246, 245, 242, 0.5);
+    height: 100%;
+  }
+
+  .banner-content h1.display-1 {
+    font-size: 4.5em;
+  }
+
+  .banner-content p {
+    width: 90%;
+  }
+
+  #billboard .swiper-pagination {
+    right: 0;
+    bottom: 60px;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-content h1.display-1 {
+    font-size: 3.5em;
+  }
+}
+
+/* 3. Icon Box - Company Services
+/*----------------------------------------------*/
+.icon-box-icon.pe-3.pb-3 {
+  border: 1px solid var(--bs-primary);
+  border-radius: 50%;
+}
+
+.icon-box .icon-box-icon svg {
+  width: 50px;
+  height: 50px;
+  color: var(--bs-primary);
+}
+
+.icon-box .icon-box-content {
+  width: 60%;
+}
+
+.icon-box-content h3.card-title {
+  font-size: 1.5em;
+}
+
+/* 4. Featured Product
+/*----------------------------------------------*/
+.product-store .swiper-horizontal>.swiper-pagination-bullets,
+.product-store .swiper-pagination-bullets.swiper-pagination-horizontal,
+.product-store .swiper-pagination-custom,
+.product-store .swiper-pagination-fraction {
+  position: relative !important;
+}
+
+/* 5. Testimonial
+/*----------------------------------------------*/
+.review-item blockquote {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.review-content .swiper-arrow {
+  top: 50%;
+  bottom: 0;
+  z-index: 2;
+  border: 1px solid var(--bs-gray-400);
+  color: var(--bs-gray-400);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: 0.4s ease-in-out;
+}
+
+.review-content .swiper-arrow:hover {
+  border: 1px solid var(--bs-dark);
+  color: var(--bs-dark);
+}
+
+.review-content .swiper-arrow.swiper-arrow-prev {
+  left: -80px;
+}
+
+.review-content .swiper-arrow.swiper-arrow-next {
+  right: -80px;
+}
+
+.review-content .quotation svg.quote {
+  color: var(--bs-gray-200);
+}
+
+#testimonials .swiper-pagination {
+  display: none;
+}
+
+@media only screen and (max-width: 901px) {
+  #testimonials .swiper-pagination {
+    display: block;
+    bottom: 60px;
+  }
+
+  .review-content .swiper-arrow {
+    display: none !important;
+  }
+}
+
+/* 6. collections
+/*----------------------------------------------*/
+
+/* 7. Subscribe
+/*----------------------------------------------*/
+.subscribe-content input,
+.subscribe-content button {
+  height: 65px;
+}
+
+/* 9. Brand Collection
+/*----------------------------------------------*/
+#brand-collection a img {
+  opacity: 0.3;
+  transition: opacity 0.3s ease-out;
+}
+#brand-collection a:hover img {
+  opacity: 1;
+}
+
+/* 10. Blog Page
+/*----------------------------------------------*/
+.sidebar .widget-search-bar form {
+  height: 50px;
+}
+
+.sidebar .widget-search-bar form .search-field {
+  width: 100%;
+}
+
+.sidebar .widget-search-bar .search-icon {
+  width: 60px;
+}
+
+/* 10. Shop Page
+/*----------------------------------------------*/
+.product-grid .product-card .cart-concern {
+  bottom: -20px;
+  left: 0;
+  opacity: 0;
+  transition: 0.9s all;
+}
+
+.product-grid .product-card:hover .cart-concern {
+  bottom: 0;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* 11. Single Product Page
+/*----------------------------------------------*/
+/* product-thumbnail-slider */
+.product-thumbnail-slider {
+  height: 790px;
+}
+
+/* product-info */
+.rating-container .rating svg {
+  color: var(--bs-yellow);
+}
+
+.product-quantity .input-group button.btn-number {
+  width: 100%;
+  height: 100%;
+}
+
+/* product-tabs */
+.product-tabs .nav-tabs .nav-item.show .nav-link,
+.product-tabs .nav-tabs .nav-link:hover,
+.product-tabs .nav-tabs .nav-link.active {
+  background-color: var(--bs-primary);
+  color: var(--bs-light) !important;
+}
+
+/* 12. FAQs Page
+/*----------------------------------------------*/
+.accordion .accordion-button::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.accordion .accordion-button:not(.collapsed)::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='minus' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+  transform: rotate(0deg);
+}
+
+/* 13. Blog Page
+/*----------------------------------------------*/
+.pagination .page-link {
+  color: var(--bs-primary);
+  background-color: var(--bs-light);
+  border: 1px solid var(--bs-primary);
+}
+
+.pagination .page-item.active .page-link {
+  color: var(--bs-light);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.pagination .page-item a.page-link {
+  height: 40px;
+}
+
+.pagination .page-item a.page-link:hover,
+.pagination .page-item a.page-link:focus {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+}

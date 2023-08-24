@@ -1,5 +1,6 @@
 import express from "express";
 import User from "../models/user";
+import jwt from "jsonwebtoken"
 
 const userRouter = express.Router();
 
@@ -16,6 +17,26 @@ userRouter.get("/getAll", (req, res) => {
   })
 })
 
+userRouter.post("/signin", async (req, res) => {
+  let { email, password } = req?.body
+  try {
+    const matchUser = await User.findOne({ email })
+    if (matchUser) {
+      if (matchUser.password !== password) {
+        res.send("email or password not match....!")
+      } else {
+        let token = jwt.sign({ email: matchUser.email, city: "stu" }, "12345teghsg")
+        res.send({ status: 200, data: matchUser, token })
+      }
+    } else {
+      res.send("Match user not found....!")
+    }
+
+  } catch (error) {
+    console.log("🚀 ~ file: user.js:39 ~ userRouter.post ~ error:", error)
+    res.send({ status: 400, error: error.mesage })
+  }
+})
 // Get User By Id
 // have to pass id in params
 userRouter.get("/getUserById/:id", async (req, res) => {
@@ -48,17 +69,20 @@ userRouter.post("/create", (req, res) => {
 userRouter.put(`/update/:id`, (req, res) => {
   let id = req?.params?.id
   let data = req?.body
-  User.findByIdAndUpdate(id, {
-	 "name": "sanket1",
-  "email": "sanket1@gmail.com",
-	"address": {
-			"add": "A/308 tapti avenue",
-			"city": "Surat"
-	}
-}, { new: true }).then((resData) => {
+  if (data.address) {
+    for (const key in data.address) {
+      data[`address.${key}`] = data.address[key]
+    }
+    delete data.address
+  }
+
+  User.findByIdAndUpdate(id, data, { new: true }).then((resData) => {
     res.send({ status: 200, data: resData })
   }).catch((err) => {
     res.send({ status: 400, message: err.message })
   })
 })
+
+
 export default userRouter
+

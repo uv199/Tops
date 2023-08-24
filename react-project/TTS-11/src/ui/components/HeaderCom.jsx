@@ -1,72 +1,78 @@
-import { Layout, Menu, theme } from "antd";
-const { Header } = Layout;
-import React, { useContext, useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from "reactstrap";
-import { ShoppingCart, Search } from "lucide-react";
+import React from "react";
 
-import { SearchContext } from "../../App";
-
-export default function HeaderCom(props) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const data = useContext(SearchContext);
-
-  const toggle = () => setIsOpen(!isOpen);
+export default function HeaderCom() {
   return (
     <>
-      <div>
-        <div>
-          <Navbar expand={"lg"}>
-            <NavbarBrand href="/">
-              Sne<span className="text-danger">Ke</span>Rs
-            </NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-              <Nav className="me-auto" navbar>
-                <NavItem>
-                  <NavLink href="">Women</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="">Men</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="">Kids</NavLink>
-                </NavItem>
-              </Nav>
-              <ShoppingCart className="me-3" color="#685e5e" />
-              {props?.searchBarShow && (
-                <>
-                  <input
-                    style={{
-                      outline: "none",
-                      border: " 1px solid #918888",
-                    }}
-                    onChange={(e) => data?.setSearchTxt(e?.target?.value)}
-                    className="rounded-1  w-25 p-1 ps-2 me-3"
-                    placeholder="Search your text here....!"
-                    type="text"
-                  />
-                  <Search color="#685e5e" />
-                </>
-              )}
-            </Collapse>
-          </Navbar>
+      <nav
+        className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+        arial-label="Furni navigation bar"
+      >
+        <div className="container">
+          <a className="navbar-brand" href="index.html">
+            Furni<span>.</span>
+          </a>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsFurni"
+            aria-controls="navbarsFurni"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarsFurni">
+            <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li className="nav-item active">
+                <a className="nav-link" href="index.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="shop.html">
+                  Shop
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="about.html">
+                  About us
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="services.html">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="blog.html">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="contact.html">
+                  Contact us
+                </a>
+              </li>
+            </ul>
+
+            <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+              <li>
+                <a className="nav-link" href="#">
+                  <img src="images/user.svg" />
+                </a>
+              </li>
+              <li>
+                <a className="nav-link" href="cart.html">
+                  <img src="images/cart.svg" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/* </Header> */}
-      </div>
+      </nav>
     </>
   );
 }

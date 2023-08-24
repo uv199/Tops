@@ -5,6 +5,8 @@ import Service from "./Service";
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import Page404 from "./Page404";
 import "./index.css";
+import CarServise from "./CarServise";
+import BikeService from "./BikeService";
 
 export default function Router() {
   return (
@@ -23,20 +25,22 @@ export default function Router() {
         </ul> */}
         <ul>
           <li>
-            <NavLink to={"/test"}>Home</NavLink>
+            <NavLink to={"/home"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/test/about"}>About</NavLink>
+            <NavLink to={"/about"}>About</NavLink>
           </li>
           <li>
-            <NavLink to={"test/service"}>Service</NavLink>
+            <NavLink to={"/service"}>Service</NavLink>
           </li>
         </ul>
         <Routes>
-          <Route path="/test">
-            <Route exact index element={<Home />} />
-            <Route exact path="about" element={<About />} />
-            <Route exact path="service" element={<Service />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/service">
+            <Route index element={<Service />} />
+            <Route exact path="car" element={<CarServise />} />
+            <Route exact path="bike" element={<BikeService />} />
           </Route>
           <Route exact path="*" element={<Page404 />} />
         </Routes>

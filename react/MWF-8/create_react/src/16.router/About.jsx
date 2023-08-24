@@ -6,7 +6,6 @@ export default function About() {
   return (
     <>
       <h1>About Page</h1>
-      <button onClick={() => navigate("/test/home")}>home</button>
       <button onClick={() => navigate(-1)}>back</button>
     </>
   );

@@ -5,6 +5,8 @@ import "./App.css";
 import Home from "./ui/pages/Home/Home";
 import LoginForm from "./ui/components/LoginForm";
 import Women from "./ui/pages/women/Women";
+import Head from "./ui/components/Head";
+import Foot from "./ui/components/Foot";
 
 export const SearchContext = createContext();
 function App() {
@@ -14,10 +16,13 @@ function App() {
     <>
       {/* <h1>{searchText}</h1> */}
       <SearchContext.Provider value={{ setSearchText, searchText }}>
-        <Home />
-        <Women />
+        {/* <Home />
+        <Women /> */}
+        <Head />
+          <Foot />
       </SearchContext.Provider>
-      <LoginForm />
+
+      {/* <LoginForm /> */}
     </>
   );
 }

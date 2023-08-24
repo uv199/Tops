@@ -19,9 +19,9 @@ export default function Router() {
         <li>
           <NavLink to={"/about"}>about</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to={"/home"}>home2</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to={"/service"}>service</NavLink>
         </li>
@@ -46,7 +46,8 @@ export default function Router() {
         <Route path="*" element={<Error404 />} />
         <Route path="/home" element={<Home2 />} />
         <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />}>
+        <Route path="/service">
+          <Route index element={<Service />} />
           <Route path="car" element={<CarService />} />
           <Route path="bike" element={<BikeService />} />
         </Route>

@@ -37,3 +37,8 @@ console.log("🚀 ~ file: array.js:38 ~ inc:", inc)
 
 */
 
+let A = [1, 2, 3, 12, 34]
+// A.sort((a, b) => a - b)
+let compare = (a, b) => a - b
+A.sort(compare)
+console.log("🚀 ~ file: array.js:41 ~ A:", A)
