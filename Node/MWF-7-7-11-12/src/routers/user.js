@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../models/user";
 import jwt from "jsonwebtoken"
+import bycrypt from "bcrypt"
 
 const userRouter = express.Router();
 
@@ -22,7 +23,8 @@ userRouter.post("/signin", async (req, res) => {
   try {
     const matchUser = await User.findOne({ email })
     if (matchUser) {
-      if (matchUser.password !== password) {
+      let isMatchPass = await bycrypt.compare(password, matchUser.password)
+      if (!isMatchPass) {
         res.send("email or password not match....!")
       } else {
         let token = jwt.sign({ email: matchUser.email, city: "stu" }, "12345teghsg")
@@ -33,7 +35,7 @@ userRouter.post("/signin", async (req, res) => {
     }
 
   } catch (error) {
-    console.log("🚀 ~ file: user.js:39 ~ userRouter.post ~ error:", error)
+
     res.send({ status: 400, error: error.mesage })
   }
 })
@@ -56,8 +58,9 @@ userRouter.get("/getUserById/:id", async (req, res) => {
 })
 
 // Create user 
-userRouter.post("/create", (req, res) => {
+userRouter.post("/create", async (req, res) => {
   let input = req?.body
+  input.password = await bycrypt.hash(input?.password, 8)
   User.create(input).then((resData) => {
     res.send({ status: 200, data: resData })
   }).catch((err) => {
@@ -86,3 +89,12 @@ userRouter.put(`/update/:id`, (req, res) => {
 
 export default userRouter
 
+
+// let x = {
+//   a: 30,
+//   b: 30,
+// }
+// let x = {
+//   a: { test: "test" },
+//   b: 30,
+// }

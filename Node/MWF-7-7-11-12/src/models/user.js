@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
 import validator from "validator"
 
-let validatEail = (email) => {
+let emailValidate = (email) => {
   return validator.isEmail(email)
-}
-let passsValidate = (password) => {
-  return validator.isStrongPassword(password)
 }
 let userSchema = mongoose.Schema({
   name: {
@@ -14,12 +11,11 @@ let userSchema = mongoose.Schema({
   email: {
     type: String,
     required: true,
-    validate: [validatEail, "email is not ----"]
+    validate: [emailValidate, "Email is not acceptable"]
   },
   number: String,
   password: {
     required: true,
-    validate: [passsValidate, "please enter strong pass"],
     type: String
   },
   age: Number,
