@@ -4,7 +4,8 @@ import validator from "validator"
 let emailValidate = (email) => {
   return validator.isEmail(email)
 }
-let userSchema = mongoose.Schema({
+let userSchema = mongoose.Schema(
+  {
   name: {
     type: String,
   },
@@ -25,7 +26,7 @@ let userSchema = mongoose.Schema({
     state: String,
     pinCode: String
   },
-});
+}, { timestamps: true });
 
 
 export default mongoose.model("user", userSchema);

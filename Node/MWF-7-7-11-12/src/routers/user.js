@@ -35,7 +35,6 @@ userRouter.post("/signin", async (req, res) => {
     }
 
   } catch (error) {
-
     res.send({ status: 400, error: error.mesage })
   }
 })
