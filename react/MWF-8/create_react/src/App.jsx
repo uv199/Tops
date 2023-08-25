@@ -28,6 +28,7 @@ import UseRefCom from "./14.HOOKS/useRef/UseRefCom";
 import UseReducerCom from "./14.HOOKS/useReducer/UseReducerCom";
 import UseRedCom2 from "./14.HOOKS/useReducer/UseRedCom2";
 import Router from "./16.router/Router";
+import RouterPro from "./17.protectedRoute/Router";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -76,7 +77,8 @@ function App() {
       {/* <UseReducerCom /> */}
       {/* <UseRedCom2 /> */}
       {/* ------------------Router--------------------- */}
-      <Router />
+      {/* <Router /> */}
+      <RouterPro />
     </div>
   );
 }
