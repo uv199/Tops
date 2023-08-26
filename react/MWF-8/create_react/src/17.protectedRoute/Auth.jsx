@@ -1,8 +1,9 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 export default function Auth({ children }) {
+  let [user, setUser] = useState();
   let navigate = useNavigate();
   const getUser = () => {
     return localStorage.getItem("user");
@@ -16,12 +17,12 @@ export default function Auth({ children }) {
     navigate("/login");
   };
   return (
-    <AuthContext.Provider value={{ login, logOut, getUser }}>
+    <AuthContext.Provider value={{ login, logOut, user }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
-// export const authUser = () => {
-//   return useContext(AuthContext);
-// };
+export const authUser = () => {
+  return useContext(AuthContext);
+};

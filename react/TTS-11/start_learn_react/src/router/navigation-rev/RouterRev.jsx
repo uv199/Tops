@@ -9,6 +9,7 @@ import {
   Link,
   NavLink,
   useNavigate,
+  Navigate,
 } from "react-router-dom";
 import "./index.css";
 

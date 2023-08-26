@@ -10,10 +10,13 @@ import "./App.css";
 import Body from "./0.Task/components/Body";
 import ClassState from "./4.State/ClassState";
 import FunState from "./4.State/FunState";
+import ProposCom from "./5.props/ProposCom";
+import FragmantCom from "./6.fragmant/FragmantCom";
+import CondCom from "./7.conditionalRendaring/CondCom";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       {/* <--------------------Task-------------------------> */}
       {/* <HeaderCom />
       <Body />
@@ -27,7 +30,13 @@ function App() {
       <Accordian /> */}
       {/* <--------------------State-------------------------> */}
       {/* <ClassState /> */}
-      <FunState />
+      {/* <FunState /> */}
+      {/* <--------------------Props-------------------------> */}
+      {/* <ProposCom /> */}
+      {/* <--------------------Fragmant-------------------------> */}
+      {/* <FragmantCom /> */}
+      {/* <--------------------Conditional-rendaring-------------------------> */}
+      <CondCom />
     </div>
   );
 }

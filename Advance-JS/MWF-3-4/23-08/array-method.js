@@ -36,14 +36,22 @@ let x = arr.forEach((e) => {
 let x = arr.map((e, i) => {
     return e + 2
 })
-*/
 let A = [1, 2, 3, 4]
 let total = A.reduce((lastReturnValue, e, i) => {
     console.log("lastReturnValue, e, i:", lastReturnValue, e,)
     return e + lastReturnValue
-
+    
 })
 
 let len = A.length
 console.log("🚀 ~ file: array-method.js:48 ~ len:", len)
 console.log("🚀 ~ file: array-method.js:46 ~ total ~ total:", total)
+
+
+*/
+
+
+let join = arr.join("----")
+let tostr = arr.toString()
+console.log("~ tostr:", tostr)
+console.log("~ join:", join)

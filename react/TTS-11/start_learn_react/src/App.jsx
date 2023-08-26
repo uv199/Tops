@@ -41,6 +41,7 @@ import Router from "./router/Router";
 import { BrowserRouter } from "react-router-dom";
 import RouterRev from "./router/navigation-rev/RouterRev";
 import PrvRouter from "./protectedRoute/rev/Router";
+import PrvRouterContext from "./proRoute/Router";
 
 function App() {
   return (
@@ -112,8 +113,9 @@ function App() {
         {/* <ApiCom2 /> */}
         {/*------------------Router------------------ */}
         {/* <Router /> */}
-        <PrvRouter />
+        {/* <PrvRouter /> */}
         {/* <RouterRev /> */}
+        <PrvRouterContext />
       </div>
     </BrowserRouter>
   );
