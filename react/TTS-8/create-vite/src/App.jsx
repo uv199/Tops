@@ -13,6 +13,9 @@ import FunState from "./4.State/FunState";
 import ProposCom from "./5.props/ProposCom";
 import FragmantCom from "./6.fragmant/FragmantCom";
 import CondCom from "./7.conditionalRendaring/CondCom";
+import MapKeyCom from "./8.map-key/MapKeyCom";
+import ColorCom from "./0.Task/ColorBox/ColorCom";
+import ColorCom2 from "./0.Task/ColorBox/ColorCom2";
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
       {/* <HeaderCom />
       <Body />
       <FotterCom /> */}
+      {/* <ColorCom /> */}
+      <ColorCom2 />
       {/* <--------------------Component-------------------------> */}
       {/* <FunCom />0 */}
       {/* <ClassCom /> */}
@@ -36,7 +41,9 @@ function App() {
       {/* <--------------------Fragmant-------------------------> */}
       {/* <FragmantCom /> */}
       {/* <--------------------Conditional-rendaring-------------------------> */}
-      <CondCom />
+      {/* <CondCom /> */}
+      {/* <--------------------Map And Key-------------------------> */}
+      {/* <MapKeyCom />s */}
     </div>
   );
 }

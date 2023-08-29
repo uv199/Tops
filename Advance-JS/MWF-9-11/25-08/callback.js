@@ -20,6 +20,7 @@ function fun2(cb) {
     console.log("--Patel--")
     cb()
 }
+
 function fun3() {
     console.log("--2000--")
 }

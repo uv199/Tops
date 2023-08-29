@@ -59,7 +59,7 @@ userRouter.get("/getUserById/:id", async (req, res) => {
 // Create user 
 userRouter.post("/create", async (req, res) => {
   let input = req?.body
-  input.password = await bycrypt.hash(input?.password, 8)
+  // input.password = await bycrypt.hash(input?.password, 8)
   User.create(input).then((resData) => {
     res.send({ status: 200, data: resData })
   }).catch((err) => {
@@ -68,7 +68,7 @@ userRouter.post("/create", async (req, res) => {
 })
 
 // Update User
-userRouter.put(`/update/:id`, (req, res) => {
+userRouter.post(`/update/:id`, (req, res) => {
   let id = req?.params?.id
   let data = req?.body
   if (data.address) {
@@ -77,14 +77,27 @@ userRouter.put(`/update/:id`, (req, res) => {
     }
     delete data.address
   }
-
-  User.findByIdAndUpdate(id, data, { new: true }).then((resData) => {
+  let password = data.password
+  delete data.password
+  User.findByIdAndUpdate(id, data, { new: true }).then(async (resData) => {
+    resData.password = password
+    await resData.save()
     res.send({ status: 200, data: resData })
   }).catch((err) => {
     res.send({ status: 400, message: err.message })
   })
 })
 
+userRouter.post('/reset_password', async (req, res) => {
+  const user = await User.findOne({ email: req?.body?.email })
+  if (user) {
+    user.password = req.body.password
+    await user.save()
+    res.send({ status: "200", data: user })
+  } else {
+    res.send({ status: "400", message: "User not found ...!" })
+  }
+})
 
 export default userRouter
 

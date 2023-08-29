@@ -39,5 +39,5 @@ export default function Auth({ children }) {
 
 // to optimise code of usecontext
 export const userAuth = () => {
-  return useContext(AuthContext);
+  return useContext(AuthContext); 
 };
