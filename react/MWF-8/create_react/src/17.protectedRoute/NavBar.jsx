@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "./Auth";
+import { authUser } from "./Auth";
 
 export default function NavBar() {
   let [loginUser, setLoginUser] = useState(null);
-  const { getUser } = useContext(AuthContext);
-  useEffect(() => {
-    let x = getUser();
-    setLoginUser(x);
-  });
+  const { user } = authUser();
+  // console.log("🚀 ~ file: NavBar.jsx:8 ~ NavBar ~ auth:", auth);
+
   return (
     <>
       <ul className="d-flex gap-5">
@@ -22,7 +20,7 @@ export default function NavBar() {
         <li>
           <NavLink to="/profile">Profile</NavLink>
         </li>
-        {!loginUser && (
+        {!user && (
           <li>
             <NavLink to="/login">Login</NavLink>
           </li>

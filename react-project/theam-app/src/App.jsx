@@ -1,17 +1,19 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import NavBarCom from "./ui/component/NavBarCom";
-import FooterCom from "./ui/component/FooterCom";
-import Body from "./ui/component/Body";
+import NavBarCom from "./ui/component/Header/NavBarCom";
+import FooterCom from "./ui/component/Footer/FooterCom";
+import Home from "./ui/Pages/Home/Home";
+import About from "./ui/Pages/About/About";
+import Shop from "./ui/Pages/Shop/Shop";
 
 function App() {
   return (
     <>
       <NavBarCom />
-      {/* <Body /> */}
-      {/* <FooterCom /> */}
+      {/* <Home /> */}
+      <About />
+      {/* <Shop /> */}
+      <FooterCom />
     </>
   );
 }

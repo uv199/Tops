@@ -1,5 +1,5 @@
 import express from "express";
-import User from "../models/user";
+import { model } from "../models"
 import jwt from "jsonwebtoken"
 import bycrypt from "bcrypt"
 
@@ -7,7 +7,7 @@ const userRouter = express.Router();
 
 // Get ALl User
 userRouter.get("/getAll", (req, res) => {
-  User.find({}).then((resData) => {
+  model.User.find({}).then((resData) => {
     if (resData.length > 0) {
       res.send({ status: "200", data: resData })
     } else {
@@ -21,7 +21,7 @@ userRouter.get("/getAll", (req, res) => {
 userRouter.post("/signin", async (req, res) => {
   let { email, password } = req?.body
   try {
-    const matchUser = await User.findOne({ email })
+    const matchUser = await model.User.findOne({ email })
     if (matchUser) {
       let isMatchPass = await bycrypt.compare(password, matchUser.password)
       if (!isMatchPass) {
@@ -43,7 +43,7 @@ userRouter.post("/signin", async (req, res) => {
 userRouter.get("/getUserById/:id", async (req, res) => {
   let id = req?.params?.id
   try {
-    let matchUser = await User.findById(id)
+    let matchUser = await model.User.findById(id)
     console.log(" matchUser:", matchUser)
     if (matchUser) {
       res.send({ status: 200, data: matchUser })
@@ -60,7 +60,7 @@ userRouter.get("/getUserById/:id", async (req, res) => {
 userRouter.post("/create", async (req, res) => {
   let input = req?.body
   // input.password = await bycrypt.hash(input?.password, 8)
-  User.create(input).then((resData) => {
+  model.User.create(input).then((resData) => {
     res.send({ status: 200, data: resData })
   }).catch((err) => {
     res.send({ status: 400, message: err.message })
@@ -79,7 +79,7 @@ userRouter.post(`/update/:id`, (req, res) => {
   }
   let password = data.password
   delete data.password
-  User.findByIdAndUpdate(id, data, { new: true }).then(async (resData) => {
+  model.User.findByIdAndUpdate(id, data, { new: true }).then(async (resData) => {
     resData.password = password
     await resData.save()
     res.send({ status: 200, data: resData })
@@ -89,7 +89,7 @@ userRouter.post(`/update/:id`, (req, res) => {
 })
 
 userRouter.post('/reset_password', async (req, res) => {
-  const user = await User.findOne({ email: req?.body?.email })
+  const user = await model.User.findOne({ email: req?.body?.email })
   if (user) {
     user.password = req.body.password
     await user.save()

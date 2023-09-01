@@ -15,6 +15,7 @@ export default function Login() {
   return (
     <>
       <div>
+        {user}
         <input type="text" onChange={(e) => setUser(e?.target?.value)} />
         <Button variant="info" onClick={() => loginHandler()}>
           Login

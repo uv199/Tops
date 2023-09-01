@@ -24,3 +24,16 @@ let apiCall = async (params) => {
     }
 }
 apiCall()
+
+
+// let apiCall = async (params) => {
+
+//     fun().then((res) => {
+//         fun1().then((fun1Res) => {
+
+//         })
+//     }).catch((err) => {
+
+//     })
+
+// }
