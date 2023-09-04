@@ -47,9 +47,14 @@ let len = A.length
 console.log("🚀 ~ file: array-method.js:48 ~ len:", len)
 console.log("🚀 ~ file: array-method.js:46 ~ total ~ total:", total)
 
+let includeStatus = arr.some((e) => {
+    return e > 50
+})
 
 */
 
+
+console.log("🚀 ~ file: array-method.js:56 ~ includeStatus ~ includeStatus:", includeStatus)
 
 let join = arr.join("----")
 let tostr = arr.toString()

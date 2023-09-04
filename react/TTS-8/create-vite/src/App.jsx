@@ -16,6 +16,9 @@ import CondCom from "./7.conditionalRendaring/CondCom";
 import MapKeyCom from "./8.map-key/MapKeyCom";
 import ColorCom from "./0.Task/ColorBox/ColorCom";
 import ColorCom2 from "./0.Task/ColorBox/ColorCom2";
+import UseEffectCom from "./9.HOOK/useEffect/UseEffectCom";
+import UseEffectPro from "./0.Task/Hook/UseEffectPro";
+import UseRefCom from "./9.HOOK/useRef/UseRefCom";
 
 function App() {
   return (
@@ -25,7 +28,8 @@ function App() {
       <Body />
       <FotterCom /> */}
       {/* <ColorCom /> */}
-      <ColorCom2 />
+      {/* <ColorCom2 /> */}
+      {/* <UseEffectPro/> */}
       {/* <--------------------Component-------------------------> */}
       {/* <FunCom />0 */}
       {/* <ClassCom /> */}
@@ -43,7 +47,11 @@ function App() {
       {/* <--------------------Conditional-rendaring-------------------------> */}
       {/* <CondCom /> */}
       {/* <--------------------Map And Key-------------------------> */}
-      {/* <MapKeyCom />s */}
+      {/* <MapKeyCom /> */}
+      {/* <--------------------HOOK -------------------------> */}
+
+      {/* <UseEffectCom /> */}
+      <UseRefCom />
     </div>
   );
 }

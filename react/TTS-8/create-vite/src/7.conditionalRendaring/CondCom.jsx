@@ -4,7 +4,6 @@ export default function CondCom() {
   let length = [1, 2, 3].length;
   return (
     <>
-    
       {/* {length > 0 ? (
         <h1> arrays length is {length}</h1>
       ) : (

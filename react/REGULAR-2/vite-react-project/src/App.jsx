@@ -40,6 +40,7 @@ import SearchText from "./6.Input/SearchText";
 import SearchData from "./doubt/search/SearchData";
 import UseRefCom from "./11.HOOKS/useRef/UseRefCom";
 import Router from "./12.Router/Router";
+import UseMemo from "./11.HOOKS/useMemo/UseMemo";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -111,13 +112,14 @@ function App() {
       {/* <UseEffects /> */}
       {/* <ContaxtCom /> */}
       {/* <UseRefCom /> */}
+      <UseMemo />
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 
       {/* ----------------------------API-CRUD--------------------------  */}
       {/* <ApiCrud /> */}
       {/* ----------------------------Router--------------------------  */}
-      <Router />
+      {/* <Router /> */}
       {/* ----------------------------DOubt--------------------------  */}
       {/* <SearchData /> */}
     </div>

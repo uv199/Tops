@@ -7,6 +7,9 @@ app.use(express.json());
 
 app.use("/user", Routes.userRoute);
 app.use("/product", Routes.productRoute);
+app.use("/cart", Routes.cartRouter);
+app.use("/wishlist", Routes.wishListRouter);
+app.use("/order", Routes.orderRouter);
 
 
 app.listen(3000, () => {

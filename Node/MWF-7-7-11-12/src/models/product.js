@@ -17,8 +17,10 @@ const productSchema = mongoose.Schema({
     availableStock: Number,
     rating: Number,
     totalSoldUnit: Number,
-
-
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user"
+    }
 }, { timestamps: true })
 
 

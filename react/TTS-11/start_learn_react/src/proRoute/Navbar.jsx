@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { userAuth } from "./Auth";
 
 export default function Navbar() {
-  let auth = userAuth();
+  let { user } = userAuth();
+  console.log("🚀 ~ file: Navbar.jsx:7 ~ Navbar ~ user:", user);
   return (
     <>
       <ul className=" d-flex gap-lg-5">
@@ -13,7 +14,7 @@ export default function Navbar() {
         <li>
           <NavLink to={"/profile"}>Profile</NavLink>
         </li>
-        {!auth?.user && (
+        {!user && (
           <li>
             <NavLink to={"/login"}>Login</NavLink>
           </li>
@@ -22,3 +23,5 @@ export default function Navbar() {
     </>
   );
 }
+
+

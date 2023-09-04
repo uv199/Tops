@@ -22,8 +22,10 @@ userRouter.post("/signin", async (req, res) => {
   let { email, password } = req?.body
   try {
     const matchUser = await model.User.findOne({ email })
+    console.log("🚀 ~ file: user.js:25 ~ userRouter.post ~ matchUser:", matchUser)
     if (matchUser) {
       let isMatchPass = await bycrypt.compare(password, matchUser.password)
+      console.log("🚀 ~ file: user.js:27 ~ userRouter.post ~ isMatchPass:", isMatchPass)
       if (!isMatchPass) {
         res.send("email or password not match....!")
       } else {
@@ -49,7 +51,6 @@ userRouter.get("/getUserById/:id", async (req, res) => {
       res.send({ status: 200, data: matchUser })
     } else {
       res.send("Data not found...!")
-
     }
   } catch (error) {
     res.send({ status: "400", mesage: err.message })
@@ -59,7 +60,6 @@ userRouter.get("/getUserById/:id", async (req, res) => {
 // Create user 
 userRouter.post("/create", async (req, res) => {
   let input = req?.body
-  // input.password = await bycrypt.hash(input?.password, 8)
   model.User.create(input).then((resData) => {
     res.send({ status: 200, data: resData })
   }).catch((err) => {
@@ -100,13 +100,3 @@ userRouter.post('/reset_password', async (req, res) => {
 })
 
 export default userRouter
-
-
-// let x = {
-//   a: 30,
-//   b: 30,
-// }
-// let x = {
-//   a: { test: "test" },
-//   b: 30,
-// }

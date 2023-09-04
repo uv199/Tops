@@ -4,28 +4,30 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext(null);
 
 export default function Auth({ children }) {
-  let [user, setUser] = useState("");
+  let [user, setUser] = useState({});
 
   // navigation variable
   const navigate = useNavigate();
 
   // to login
-  function login(name) {
-    localStorage.setItem("loginUser", name);
+  function login(userObj) {
+    localStorage.setItem("loginUser", JSON.stringify(userObj));
+    setUser(userObj);
     navigate("/");
   }
 
   // to logout
   function logout() {
     localStorage.removeItem("loginUser");
+    setUser();
     navigate("/login");
   }
 
   // to get data from localstorage and set that into user state
   useEffect(() => {
     let data = localStorage.getItem("loginUser");
-    setUser(data);
-  });
+    setUser(JSON.parse(data));
+  }, []);
 
   return (
     <>
@@ -39,5 +41,5 @@ export default function Auth({ children }) {
 
 // to optimise code of usecontext
 export const userAuth = () => {
-  return useContext(AuthContext); 
+  return useContext(AuthContext);
 };

@@ -39,11 +39,7 @@ ________________________________________________________________________________
 task-4
 
 ['i','am', 'urvish'] ==> want ['hsivru','ma','i']
-by use of map, loop
-
-- [urvish , am ,i]
-- urvish -> [u,r,v,i,s,h] -> [h,s,i,v,r,u] -> hsivru
-
+by use of loop
 
 */
 
