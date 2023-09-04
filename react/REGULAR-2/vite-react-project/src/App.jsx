@@ -40,6 +40,7 @@ import SearchText from "./6.Input/SearchText";
 import SearchData from "./doubt/search/SearchData";
 import UseRefCom from "./11.HOOKS/useRef/UseRefCom";
 import Router from "./12.Router/Router";
+import ProRouter from "./13.protectedrouter/Router";
 import UseMemo from "./11.HOOKS/useMemo/UseMemo";
 
 function App() {
@@ -112,7 +113,7 @@ function App() {
       {/* <UseEffects /> */}
       {/* <ContaxtCom /> */}
       {/* <UseRefCom /> */}
-      <UseMemo />
+      {/* <UseMemo /> */}
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 
@@ -120,6 +121,7 @@ function App() {
       {/* <ApiCrud /> */}
       {/* ----------------------------Router--------------------------  */}
       {/* <Router /> */}
+      <ProRouter />
       {/* ----------------------------DOubt--------------------------  */}
       {/* <SearchData /> */}
     </div>
