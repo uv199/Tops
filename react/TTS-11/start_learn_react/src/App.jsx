@@ -42,6 +42,8 @@ import { BrowserRouter } from "react-router-dom";
 import RouterRev from "./router/navigation-rev/RouterRev";
 import PrvRouter from "./protectedRoute/rev/Router";
 import PrvRouterContext from "./proRoute/Router";
+import UseMemo from "./HOOKS/useMemo/UseMemo";
+import UseCallBack from "./HOOKS/useCallBack/UseCallBack";
 
 function App() {
   return (
@@ -107,6 +109,8 @@ function App() {
         {/* <UseRefCom /> */}
         {/* <UseReducer /> */}
         {/* <UseReducer2 /> */}
+        {/* <UseMemo/> */}
+        <UseCallBack />
 
         {/*------------------ApiCom------------------ */}
         {/* <ApiCom /> */}
@@ -115,7 +119,7 @@ function App() {
         {/* <Router /> */}
         {/* <PrvRouter /> */}
         {/* <RouterRev /> */}
-        <PrvRouterContext />
+        {/* <PrvRouterContext /> */}
       </div>
     </BrowserRouter>
   );

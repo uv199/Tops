@@ -3,5 +3,6 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  /* padding: 50px; */
+
+  margin-left: 100px;
 }
