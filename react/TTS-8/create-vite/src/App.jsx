@@ -19,6 +19,7 @@ import ColorCom2 from "./0.Task/ColorBox/ColorCom2";
 import UseEffectCom from "./9.HOOK/useEffect/UseEffectCom";
 import UseEffectPro from "./0.Task/Hook/UseEffectPro";
 import UseRefCom from "./9.HOOK/useRef/UseRefCom";
+import InputCom from "./10.input/InputCom";
 
 function App() {
   return (
@@ -49,9 +50,11 @@ function App() {
       {/* <--------------------Map And Key-------------------------> */}
       {/* <MapKeyCom /> */}
       {/* <--------------------HOOK -------------------------> */}
-
       {/* <UseEffectCom /> */}
-      <UseRefCom />
+      {/* <UseRefCom /> */}
+
+      {/* <--------------------Input-------------------------> */}
+      <InputCom />
     </div>
   );
 }

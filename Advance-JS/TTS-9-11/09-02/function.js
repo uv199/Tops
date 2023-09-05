@@ -13,7 +13,6 @@ let fun2 = function () {
 }
 fun2()
 
-
 const fun3 = (x) => {
     console.log("---fun3------------>", x)
 }
