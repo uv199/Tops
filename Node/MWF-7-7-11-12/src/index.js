@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from "express";
 import { Routes } from "./routers"
 import { dbConnection } from "./db";

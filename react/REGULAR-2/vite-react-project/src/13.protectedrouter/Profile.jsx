@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <>
       <h2>Profile</h2>
-      <h1>{auth.user}</h1>
+      <h1>{auth?.user?.email}</h1>
       <Button onClick={() => auth.LogOut()} className="mt-3 p-2" variant="dark">
         logout
       </Button>

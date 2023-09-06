@@ -41,6 +41,7 @@ import SearchData from "./doubt/search/SearchData";
 import UseRefCom from "./11.HOOKS/useRef/UseRefCom";
 import Router from "./12.Router/Router";
 import ProRouter from "./13.protectedrouter/Router";
+import ProRouteRev from "./13.protectedrouter/Prorev/Router";
 import UseMemo from "./11.HOOKS/useMemo/UseMemo";
 
 function App() {
@@ -122,6 +123,7 @@ function App() {
       {/* ----------------------------Router--------------------------  */}
       {/* <Router /> */}
       <ProRouter />
+      {/* <ProRouteRev /> */}
       {/* ----------------------------DOubt--------------------------  */}
       {/* <SearchData /> */}
     </div>

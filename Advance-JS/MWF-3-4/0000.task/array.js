@@ -41,3 +41,5 @@ console.log("🚀 ~ file: array.js:39 ~ result ~ arr:", arr)
 //   rerturn arr 
 })
 console.log("🚀 ~ file: array.js:43 ~ result:", result)
+
+

@@ -19,7 +19,8 @@ const m
       x= 90
       y= 90
       z= 90
-      console.log(x) ___________________ point-x1
+      console.log(x) ___________________ p
+      oint-x1
       console.log(y) ___________________ point-y1
       console.log(z) ___________________ point-z1
       console.log(m) ___________________ 
