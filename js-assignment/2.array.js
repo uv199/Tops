@@ -1,6 +1,6 @@
 /*
 
--> make one array who have value from 1 to 10
+-> 
 
 1. print 9th and 10th index of array
 2. print every element of array by map and for loop
