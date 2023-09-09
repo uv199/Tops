@@ -1,36 +1,60 @@
-import redux from "redux";
+import redux, { combineReducers } from "redux";
 
-const DEC = "decrement";
 const INC = "increment";
-const INC_BY_VALUE = "incByValue";
-let store = redux.createStore(reducer);
 
-function reducer(state = { count: 0 }, action) {
+let store = redux.createStore(
+  combineReducers({
+    countReducer,
+    numberReducer,
+  })
+);
+
+function countReducer(state = { count: 0 }, action) {
   switch (action.type) {
     case INC:
-      return { count: state.count + 1 };
-    case DEC:
-      return { count: state.count - 1 };
-    case INC_BY_VALUE:
       return { count: state.count + action.payload };
     default:
       return state;
   }
 }
 
-// action generator
-function incrementFun(params) {
-  return { type: INC };
-}
-function decrementFun(params) {
-  return { type: DEC };
-}
-function incByValFun(x) {
-  return { type: INC_BY_VALUE, payload: x };
+function numberReducer(state = { number: 0 }, action) {
+  switch (action.type) {
+    case INC:
+      if (action.payload > 100) {
+        return { number: state.number + 1 };
+      } else {
+        return state;
+      }
+    default:
+      return state;
+  }
 }
 
 let x = store.getState();
-store.dispatch(incByValFun(10));
-store.dispatch(incByValFun(10));
+console.log("x", x);
+
+// action genarator
+function incAction(no) {
+  return { type: INC, payload: no };
+}
+function incAction_num() {
+  // return { type: "numb_inc" };
+  return { type: INC };
+}
+
+store.dispatch(incAction(1000));
+// store.dispatch(incAction_num());
+
 let y = store.getState();
-console.log("🚀 ~ file: index.js:35 ~ y:", y);
+console.log("y", y);
+
+// let obj1 = {
+//   count: 0,
+// };
+
+// let obj2 = {
+//   number: 0,
+// };
+
+// state = { countReducer: { count: 0 }, numberReducer: { number: 0 } };

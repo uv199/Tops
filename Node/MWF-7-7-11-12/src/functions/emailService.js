@@ -1,12 +1,12 @@
 import nodeMailer from "nodemailer";
 
-export const emilaService = (data) => {
+export const emailService = (data) => {
   const transporter = nodeMailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
     auth: {
-      user: "wellington.olson50@ethereal.email",
-      pass: "MNPzHRDP8GSxnrEmXx",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 

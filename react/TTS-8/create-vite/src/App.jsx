@@ -20,6 +20,7 @@ import UseEffectCom from "./9.HOOK/useEffect/UseEffectCom";
 import UseEffectPro from "./0.Task/Hook/UseEffectPro";
 import UseRefCom from "./9.HOOK/useRef/UseRefCom";
 import InputCom from "./10.input/InputCom";
+import InputUpdate from "./10.input/InputUpdate";
 
 function App() {
   return (
@@ -54,7 +55,8 @@ function App() {
       {/* <UseRefCom /> */}
 
       {/* <--------------------Input-------------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
+      <InputUpdate />
     </div>
   );
 }

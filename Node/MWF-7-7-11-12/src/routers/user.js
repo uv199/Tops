@@ -2,7 +2,8 @@ import express from "express";
 import { model } from "../models";
 import jwt from "jsonwebtoken";
 import bycrypt from "bcrypt";
-import { emilaService } from "../functions/emailService";
+import { emailService, emilaService } from "../functions/emailService";
+import { sendOTP } from "../functions/otpServices";
 
 const userRouter = express.Router();
 
@@ -104,12 +105,12 @@ userRouter.post(`/update/:id`, (req, res) => {
     });
 });
 
-userRouter.post("/reset_password", async (req, res) => {
+userRouter.post("/sendotp", async (req, res) => {
   const user = await model.User.findOne({ email: req?.body?.email });
   if (user) {
-    // mail saeend to user otp mokalvano 
-    user.code  = otp
-    // user.password = req.body.password;
+    let otp = await sendOTP(user);
+    console.log("🚀 ~ file: user.js:112 ~ userRouter.post ~ otp:", otp);
+    user.code = otp;
     await user.save();
     res.send({ status: "200", data: user });
   } else {
@@ -118,6 +119,26 @@ userRouter.post("/reset_password", async (req, res) => {
 });
 
 // verifyotp
-// input - password otp
+userRouter.post("/reset_passsword", async (req, res) => {
+  try {
+    let { otp, password } = req?.body;
+    const user = await model.User.findOne({ code: otp });
+    if (user) {
+      let x = new Date() - new Date(user?.updatedAt);
+      console.log("x:", x);
+      if (x > 120000) {
+        res.send({ status: 400, message: "otp expire...!" });
+      } else {
+        user.password = password;
+        await user.save();
+        res.send({ status: "200", data: user });
+      }
+    } else {
+      res.send({ status: "400", message: "OTP is not match" });
+    }
+  } catch (error) {
+    res.send({ status: "400", message: error.message });
+  }
+});
 
 export default userRouter;

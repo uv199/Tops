@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export const dbConnection = () => {
   console.log("test====");
   mongoose
-    .connect("mongodb://127.0.0.1:27017/School")
+    .connect(process.env.DATA_BASE_URL)
     .then((res) => {
       console.log("Databadse connection successful...!");
     })

@@ -1,0 +1,7 @@
+[
+  {
+    "name": "urvish",
+    "age": 29,
+    "arr": ["test", { "name": "data" }]
+  }
+]

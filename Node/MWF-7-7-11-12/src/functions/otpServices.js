@@ -1,12 +1,25 @@
+import { emailService } from "./emailService";
+
 const client = require("twilio")(
-  "AC3656cd472486d9c05973193d158b135b",
-  "6dabf90d0a5011e63af667a881efafba"
+  process.env.TWILIO_KEY,
+  process.env.TWILIO_TOKEN
 );
-client.messages
-  .create({
-    body: "your otp is 9999999",
-    from: "+12512374821",
-    to: "+917575083084",
-  })
-  .then((message) => console.log(message.sid))
+
+export const sendOTP = (user) => {
+  const otp = Math.trunc(Math.random() * 1000000);
+  client.messages
+    .create({
+      body: `your otp is ${otp}`,
+      from: "+12512374821",
+      to: `+91${user.number}`,
+    })
+    .then((message) => {
+      emailService({
+        to: user.email,
+        subject: "OTP for login",
+        text: `your one time password is ${otp}`,
+      });
+    });
+    return otp;
+};
 //   .done();
