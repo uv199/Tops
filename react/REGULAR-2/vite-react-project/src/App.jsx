@@ -43,6 +43,7 @@ import Router from "./12.Router/Router";
 import ProRouter from "./13.protectedrouter/Router";
 import ProRouteRev from "./13.protectedrouter/Prorev/Router";
 import UseMemo from "./11.HOOKS/useMemo/UseMemo";
+import UseReducer from "./11.HOOKS/useReducer/UseReducer";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -115,6 +116,7 @@ function App() {
       {/* <ContaxtCom /> */}
       {/* <UseRefCom /> */}
       {/* <UseMemo /> */}
+      <UseReducer />
       {/* ----------------------------ProjectLayout--------------------------  */}
       {/* <ProjectLayout /> */}
 
@@ -122,7 +124,7 @@ function App() {
       {/* <ApiCrud /> */}
       {/* ----------------------------Router--------------------------  */}
       {/* <Router /> */}
-      <ProRouter />
+      {/* <ProRouter /> */}
       {/* <ProRouteRev /> */}
       {/* ----------------------------DOubt--------------------------  */}
       {/* <SearchData /> */}
