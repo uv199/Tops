@@ -23,7 +23,7 @@ export default function InputUpdate() {
   function swipeData() {
     console.log("------->");
     if (index || index === 0) {
-      // null-undefined-0-false
+      //    null-undefined-0-false
       data.splice(index, 1, name);
       setData([...data]);
       setName("");
