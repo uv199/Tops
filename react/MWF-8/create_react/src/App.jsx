@@ -31,6 +31,7 @@ import Router from "./16.router/Router";
 import RouterPro from "./17.protectedRoute/Router";
 import UseCallBack from "./14.HOOKS/UseCallBack/UseCallBack";
 import UseMemoCom from "./14.HOOKS/UseMemo/UseMemoCom";
+import App2 from "./18.Redux/App2";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -79,10 +80,13 @@ function App() {
       {/* <UseReducerCom /> */}
       {/* <UseRedCom2 /> */}
       {/* <UseCallBack /> */}
-      <UseMemoCom />
+      {/* <UseMemoCom /> */}
       {/* ------------------Router--------------------- */}
       {/* <Router /> */}
       {/* <RouterPro /> */}
+
+      {/* ------------------Redux--------------------- */}
+      <App2 />
     </div>
   );
 }
