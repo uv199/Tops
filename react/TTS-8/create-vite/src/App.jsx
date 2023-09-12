@@ -21,6 +21,7 @@ import UseEffectPro from "./0.Task/Hook/UseEffectPro";
 import UseRefCom from "./9.HOOK/useRef/UseRefCom";
 import InputCom from "./10.input/InputCom";
 import InputUpdate from "./10.input/InputUpdate";
+import LifeCycle from "./11.LifeCycle_Methos/LifeCycle";
 
 function App() {
   return (
@@ -56,7 +57,9 @@ function App() {
 
       {/* <--------------------Input-------------------------> */}
       {/* <InputCom /> */}
-      <InputUpdate />
+      {/* <InputUpdate /> */}
+      {/* <--------------------LifeCycle-------------------------> */}
+      <LifeCycle />
     </div>
   );
 }
