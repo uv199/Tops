@@ -56,3 +56,11 @@ let familyTree = {
     },
   ],
 };
+
+/*
+1. dada ka name
+2. dada's 2nd child name
+3. dada's 2nd child's 2nd son
+4. dada's 3nd child's 1st vehicle name
+5. dada's 1st child's 1st vehicle number
+*/

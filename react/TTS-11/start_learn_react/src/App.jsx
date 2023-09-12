@@ -44,6 +44,7 @@ import PrvRouter from "./protectedRoute/rev/Router";
 import PrvRouterContext from "./proRoute/Router";
 import UseMemo from "./HOOKS/useMemo/UseMemo";
 import UseCallBack from "./HOOKS/useCallBack/UseCallBack";
+import AppCom from "./redux/AppCom";
 
 function App() {
   return (
@@ -110,7 +111,7 @@ function App() {
         {/* <UseReducer /> */}
         {/* <UseReducer2 /> */}
         {/* <UseMemo/> */}
-        <UseCallBack />
+        {/* <UseCallBack /> */}
 
         {/*------------------ApiCom------------------ */}
         {/* <ApiCom /> */}
@@ -120,6 +121,8 @@ function App() {
         {/* <PrvRouter /> */}
         {/* <RouterRev /> */}
         {/* <PrvRouterContext /> */}
+        {/*------------------Redux------------------ */}
+        <AppCom />
       </div>
     </BrowserRouter>
   );
