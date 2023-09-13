@@ -32,11 +32,15 @@ userRouter.post("/signin", async (req, res) => {
     const matchUser = await model.User.findOne({ email });
 
     if (matchUser) {
+      "matchUser", matchUser;
       let isMatchPass = await bycrypt.compare(password, matchUser.password);
       if (!isMatchPass) {
         res.send("email or password not match....!");
       } else {
-        let token = useToken({ email: matchUser.email, city: "stu" });
+        let token = useToken({
+          email: matchUser.email,
+          userType: matchUser.userType,
+        });
 
         res.send({ status: 200, data: matchUser, token });
       }

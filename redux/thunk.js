@@ -22,11 +22,10 @@ function countReducer(state = { count: 0 }, action) {
 // action genarator
 function incAction(id) {
   return async (dispatch, getState) => {
-    let { data } = await axios.get(`http://localhost:3000/data/${id}`);
+    let { data } = await axios.get(`http://localhost:3000/user/${id}`);
     return dispatch({ type: INC, payload: data?.x });
   };
 }
-
 store.dispatch(incAction(2));
 
 store.getState();

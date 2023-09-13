@@ -1,5 +1,6 @@
 import Product from "../models/product";
 import User from "../models/user";
+import productdata from "../data/product.json";
 
 export async function AddAdmin() {
   try {
@@ -23,12 +24,8 @@ export async function AddProductData() {
   try {
     const productData = await Product.countDocuments();
     if (productData === 0) {
-      Product.create();
+      Product.create(productdata);
     }
-    console.log(
-      "🚀 ~ file: addDefaultData.js:25 ~ AddProductData ~ productData:",
-      productData
-    );
   } catch (error) {
     console.log("--> to create product ---->", error);
   }

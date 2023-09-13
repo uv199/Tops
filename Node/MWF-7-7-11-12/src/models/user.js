@@ -10,6 +10,10 @@ let userSchema = mongoose.Schema(
     name: {
       type: String,
     },
+    userType: {
+      type: String,
+      enum: ["admin", "customer"],
+    },
     email: {
       type: String,
       required: true,

@@ -1,5 +1,5 @@
 import React from "react";
-import { add } from "./redux/count/countAction";
+import { add } from "./redux/count/action";
 import { connect } from "react-redux";
 
 function CountCom(props) {
@@ -13,8 +13,9 @@ function CountCom(props) {
 }
 
 const toStatetoProps = (state) => {
+  console.log("--+++++--->", state);
   return {
-    count: state.x,
+    count: state.COUNT.x,
   };
 };
 
