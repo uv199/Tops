@@ -42,4 +42,3 @@ task-4
 by use of loop
 
 */
-
