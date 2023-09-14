@@ -1,7 +1,7 @@
 let PROMIS = new Promise((resolve, reject) => {
-  let arr = [1, 2, 3, 4, 6, 5];
+  let arr = [1, 2, 3, 4, 5, 6];
 
-  let x = arr.find((e) => e.length > 4);
+  let x = arr.find((e) => e > 4);
   //   JSON.parse({ a: 20 });
   //   throw new Error("-----data get some error----");
   if (x) {

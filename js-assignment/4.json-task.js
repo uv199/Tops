@@ -24,5 +24,6 @@ function cityByState(stateName) {
   });
   return data;
 }
+
 let cityOfAP = cityByState("Andhra Pradesh");
 console.log("cityOfAP:", cityOfAP);

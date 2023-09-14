@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { inc } from "./redux/amount/action";
 
-function Divcom(props) {
+function AmountCom(props) {
   console.log("----->props", props);
   return (
     <>
@@ -19,8 +19,9 @@ function Divcom(props) {
   );
 }
 const toStateToProps = (state) => {
+  console.log("state", state)
   return {
-    amount: state.amount,
+    amount: state.AMOUNT.amount,
   };
 };
 
@@ -30,4 +31,4 @@ const toDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(toStateToProps, toDispatchToProps)(Divcom);
+export default connect(toStateToProps, toDispatchToProps)(AmountCom);
