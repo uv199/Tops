@@ -1,5 +1,5 @@
 import { INC_COUNT } from "./constant";
 
-const incAmount = () => {
+export const incCount = () => {
   return { type: INC_COUNT };
 };

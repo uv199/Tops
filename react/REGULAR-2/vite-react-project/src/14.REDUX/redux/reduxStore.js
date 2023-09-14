@@ -1,4 +1,10 @@
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { countReducer } from "./count/reducer";
+import { amountReducer } from "./amount/Reducer";
 
-export const store = createStore(countReducer);
+let rootReducer = combineReducers({
+  COUNT: countReducer,
+  AMOUNT: amountReducer,
+});
+
+export const store = createStore(rootReducer);
