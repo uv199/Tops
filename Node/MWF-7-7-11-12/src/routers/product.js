@@ -1,6 +1,7 @@
 import express from "express";
 import { model } from "../models";
 import { AdminAuth } from "../auth";
+import { productByRange } from "../controler/product";
 
 const productRouter = express.Router();
 
@@ -23,6 +24,8 @@ productRouter.get("/getProductById/:id", (req, res) => {
       res.send({ status: 400, message: err.message });
     });
 });
+
+productRouter.get("/getProductByRang", productByRange);
 
 productRouter.put("/update/:id", (req, res) => {
   model.Product.findByIdAndUpdate(req?.params?.id, req?.body, { new: true })
