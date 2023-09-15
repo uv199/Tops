@@ -13,13 +13,11 @@ function CountCom(props) {
 }
 
 const toStateToProps = (state) => {
-  console.log("state", state)
+  console.log("state", state);
   return {
     count: state.COUNT.count,
   };
 };
-
-
 
 const toDispatchToProps = (dispatch) => {
   return {

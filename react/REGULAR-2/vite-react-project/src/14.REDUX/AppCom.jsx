@@ -9,7 +9,7 @@ export default function AppCom() {
     <>
       <Provider store={store}>
         <CountCom />
-        <AmountCom/>
+        <AmountCom />
       </Provider>
     </>
   );
