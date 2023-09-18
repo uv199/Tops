@@ -1,12 +1,18 @@
 import jwt from "jsonwebtoken";
+import { model } from "../models";
 
-export const authorized = (req, res, next) => {
+export const authorized = async (req, res, next) => {
   // console.log(req.headers.authorization)
   try {
     const token = req.headers.authorization.split(" ")[1];
+    console.log("token", token);
     // const token = req.headers.auth_token
 
-    const data = jwt.verify(token, "12345teghsg");
+    const data = jwt.verify(token, process.env.SECRET_KEY);
+    // console.log("data", data);
+    const userData = await model.User.findOne({ email: data?.email });
+    req.loginUser = userData;
+    // console.log("userData", userData);
     // if (data) req.body.user = data
     if (data) next();
     else throw new Error("you are not authorized");

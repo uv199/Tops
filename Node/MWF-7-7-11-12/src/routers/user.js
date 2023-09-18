@@ -32,7 +32,6 @@ userRouter.post("/signin", async (req, res) => {
     const matchUser = await model.User.findOne({ email });
 
     if (matchUser) {
-      "matchUser", matchUser;
       let isMatchPass = await bycrypt.compare(password, matchUser.password);
       if (!isMatchPass) {
         res.send("email or password not match....!");
