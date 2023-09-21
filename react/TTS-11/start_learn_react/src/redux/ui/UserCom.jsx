@@ -1,27 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Table } from "reactstrap";
 
 function UserCom(props) {
-  console.log("props--->", props.data);
+  let [searchText, setSarchText] = useState("");
+  let [data, setData] = useState([]);
+
+  useEffect(() => {
+    // setData(props?.data);
+    if (searchText.length > 0) {
+      let filterData = props?.data.filter((e) => {
+        return e?.email?.toLowerCase().includes(searchText.toLowerCase());
+      });
+      setData(filterData);
+    } else {
+      setData(props?.data);
+    }
+  }, [props?.data, searchText]);
+
   return (
     <>
-      <h1>USER TABLE</h1>
+      <div className="d-flex">
+        <h1 className="w-75">USER TABLE</h1>
+        <input
+          className="w-25"
+          type="text"
+          onChange={(e) => setSarchText(e?.target?.value)}
+        />
+      </div>
       <Table bordered>
         <thead>
           <tr>
             <th>SR.</th>
             <th>EMAIL</th>
-            <th>PASSWORD</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Pincode</th>
           </tr>
         </thead>
         <tbody>
-          {props?.data?.map?.((e, i) => {
+          {data?.map?.((e, i) => {
             return (
               <tr key={i}>
                 <th scope="row">{i + 1}</th>
-                <td>{e.email}</td>
-                <td>{e.password}</td>
+                <td>{e?.email}</td>
+                <td>{e?.name}</td>
+                <td>{e?.adderess?.city}</td>
+                <td>{e?.adderess?.pincode}</td>
               </tr>
             );
           })}

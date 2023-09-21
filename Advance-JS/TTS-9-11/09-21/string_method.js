@@ -55,4 +55,4 @@ let str = "UV Hello Wolrd";
     console.log("x", x);
     */
 let x = str.startsWith("UV");
-console.log("x", x)
+console.log("x", x);

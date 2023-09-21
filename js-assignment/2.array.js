@@ -58,3 +58,13 @@ function sumOfAllArrEle(arr) {
 
 let x = [1, 2, 3, 4, 5];
 let total = sumOfAllArrEle(x);
+
+// dta = {
+//   name,
+//   age,
+//   adderess: {
+//     city,
+//     state,
+//     pincode,
+//   },
+// };
