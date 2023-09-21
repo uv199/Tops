@@ -1,6 +1,6 @@
 /*
-
--> 
+// [1,2,3,300,100]
+-> create array which have 1 to 9 no
 
 1. print 9th and 10th index of array
 2. print every element of array by map and for loop
@@ -42,3 +42,19 @@ task-4
 by use of loop
 
 */
+
+function replaceValue(arr, index, value) {
+  arr[index] = value;
+  // change a value of 6th index with 100
+  return arr;
+}
+function sumOfAllArrEle(arr) {
+  let sum = 0;
+  arr.map((e) => {
+    sum += e;
+  });
+  return sum;
+}
+
+let x = [1, 2, 3, 4, 5];
+let total = sumOfAllArrEle(x);

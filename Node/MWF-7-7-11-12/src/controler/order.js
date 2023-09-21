@@ -1,15 +1,7 @@
 import { model } from "../models";
 
-export const getall = (req, res) => {
-  model.Cart.find({ userId: req?.loginUser?.id })
-    .populate([
-      { path: "userId", select: { name: 1 } },
-      {
-        path: "products.productId",
-        select: { name: 1, userId: 1 },
-        populate: [{ path: "userId", select: { name: 1 } }],
-      },
-    ])
+export const createOrder = (req, res) => {
+  model.Order.create(req?.body)
     .then((resData) => {
       res.send({ status: 200, data: resData });
     })
@@ -18,12 +10,9 @@ export const getall = (req, res) => {
     });
 };
 
-export const create = async (req, res) => {
-  model.Cart.update(
-    { userId: req?.loginUser?.id },
-    { ...req?.body, userId: req?.loginUser?.id },
-    { upsert: true }
-  )
+export const getOrderById = (req, res) => {
+  model.Order.findById(req?.params?.id)
+    .populate({ path: "productId" })
     .then((resData) => {
       res.send({ status: 200, data: resData });
     })
@@ -32,8 +21,8 @@ export const create = async (req, res) => {
     });
 };
 
-export const update = (req, res) => {
-  model.Cart.findByIdAndUpdate(req?.params?.id, req?.body, { new: true })
+export const updateOrder = (req, res) => {
+  model.Order.findByIdAndUpdate(req?.params?.id, req?.body, { new: true })
     .then((resData) => {
       res.send({ status: 200, data: resData });
     })
@@ -42,8 +31,8 @@ export const update = (req, res) => {
     });
 };
 
-export const remove = (req, res) => {
-  model.Cart.findByIdAndRemove(req?.params?.id)
+export const deleteOrder = (req, res) => {
+  model.Order.findByIdAndRemove(req?.params?.id)
     .then((resData) => {
       res.send({ status: 200, message: "Delete successFully...!" });
     })

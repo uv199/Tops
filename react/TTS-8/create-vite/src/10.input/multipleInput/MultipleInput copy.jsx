@@ -6,12 +6,12 @@ export default function MultipleInput() {
     name: "",
     email: "",
     number: "",
-    address: {
-      pincode: "",
-      city: "",
-    },
   });
   const [dataArr, setDataArr] = useState([]);
+
+  function getData(e) {
+    setUser({ ...user, [e.target.name]: e?.target?.value });
+  }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -20,10 +20,6 @@ export default function MultipleInput() {
       name: "",
       email: "",
       number: "",
-      address: {
-        pincode: "",
-        city: "",
-      },
     });
   }
   return (
@@ -32,49 +28,26 @@ export default function MultipleInput() {
         <label htmlFor="name">Name</label>
         <input
           type="text"
+          name="name"
           id="name"
-          value={user?.name}
-          onChange={(e) => setUser({ ...user, name: e?.target?.value })}
+          value={user.name}
+          onChange={(e) => getData(e)}
         />
         <label htmlFor="email">Email</label>
         <input
           type="text"
+          name="email"
           id="email"
-          value={user?.email}
-          onChange={(e) => setUser({ ...user, email: e?.target?.value })}
+          value={user.email}
+          onChange={(e) => getData(e)}
         />
         <label htmlFor="number">Number</label>
         <input
           type="number"
+          name="number"
           id="number"
-          value={user?.number}
-          onChange={(e) => setUser({ ...user, number: e?.target?.value })}
-        />
-        <label htmlFor="city">City</label>
-
-        <input
-          type="text"
-          id="city"
-          value={user?.address?.city}
-          onChange={(e) =>
-            setUser({
-              ...user,
-              address: { ...user?.address, city: e?.target?.value },
-            })
-          }
-        />
-
-        <label htmlFor="pincode">Pincode</label>
-        <input
-          type="number"
-          value={user?.address?.pincode}
-          id="pincode"
-          onChange={(e) =>
-            setUser({
-              ...user,
-              address: { ...user?.address, pincode: e?.target?.value },
-            })
-          }
+          value={user.number}
+          onChange={(e) => getData(e)}
         />
         <input
           type="submit"
@@ -90,8 +63,7 @@ export default function MultipleInput() {
             <th>Name</th>
             <th>Email</th>
             <th>Number</th>
-            <th>City</th>
-            <th>Pincode</th>
+            <th>arr</th>
           </tr>
         </thead>
         <tbody>
@@ -102,8 +74,6 @@ export default function MultipleInput() {
                 <td>{e?.name}</td>
                 <td>{e?.email}</td>
                 <td>{e?.number}</td>
-                <td>{e?.address?.city}</td>
-                <td>{e?.address?.pincode}</td>
 
                 {/* {e?.size?.map?.((e) => {
                   return (
@@ -132,17 +102,3 @@ export default function MultipleInput() {
 // };
 
 // // obj ?
-
-// let data = {
-//   name,
-//   email,
-//   password,
-//   address: {
-//     line1,
-//     line2,
-//     pincode,
-//     city,
-//     state,
-//   },
-//   vehicaleDetrails: ["passion"],
-// };

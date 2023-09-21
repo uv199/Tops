@@ -31,3 +31,43 @@ export const productByRange = async (req, res) => {
     res.send({ status: 400, message: error.message });
   }
 };
+
+export const createProduct = (req, res) => {
+  model.Product.create(req?.body)
+    .then((resData) => {
+      res.send({ status: 200, data: resData });
+    })
+    .catch((err) => {
+      res.send({ status: 400, message: err.message });
+    });
+};
+
+export const getById = (req, res) => {
+  model.Product.findById(req?.params?.id)
+    .then((resData) => {
+      res.send({ status: 200, data: resData });
+    })
+    .catch((err) => {
+      res.send({ status: 400, message: err.message });
+    });
+};
+
+export const updateProduct = (req, res) => {
+  model.Product.findByIdAndUpdate(req?.params?.id, req?.body, { new: true })
+    .then((resData) => {
+      res.send({ status: 200, data: resData });
+    })
+    .catch((err) => {
+      res.send({ status: 400, message: err.message });
+    });
+};
+
+export const deleteProduct = (req, res) => {
+  model.Product.findByIdAndRemove(req?.params?.id)
+    .then((resData) => {
+      res.send({ status: 200, message: "Delete successFully...!" });
+    })
+    .catch((err) => {
+      res.send({ status: 400, message: err.message });
+    });
+};

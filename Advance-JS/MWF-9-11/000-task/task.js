@@ -18,3 +18,5 @@ function start(params) {
 function stop(params) {
   clearInterval(id);
 }
+
+

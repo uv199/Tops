@@ -57,9 +57,9 @@ function App() {
       {/* <UseRefCom /> */}
 
       {/* <--------------------Input-------------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
       {/* <InputUpdate /> */}
-      {/* <MultipleInput /> */}
+      <MultipleInput />
       {/* <--------------------LifeCycle-------------------------> */}
       {/* <LifeCycle /> */}
     </div>

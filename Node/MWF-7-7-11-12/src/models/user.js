@@ -25,12 +25,14 @@ let userSchema = mongoose.Schema(
       type: String,
     },
     age: Number,
-    address: {
-      add: String,
-      city: String,
-      state: String,
-      pinCode: String,
-    },
+    address: [
+      {
+        add: String,
+        city: String,
+        state: String,
+        pinCode: String,
+      },
+    ],
     code: Number,
   },
   { timestamps: true }

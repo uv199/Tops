@@ -6,11 +6,10 @@ const cartRouter = express.Router();
 
 cartRouter.post("/create", authorized, create);
 
-cartRouter.get("/getAll", getall);
+cartRouter.get("/getAll", authorized, getall);
 
-cartRouter.put("/update/:id", update)
+cartRouter.put("/update/:id", authorized, update);
 
-cartRouter.delete("/delete/:id", remove)
+cartRouter.delete("/delete/:id", authorized, remove);
 
-
-export default cartRouter
+export default cartRouter;

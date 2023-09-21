@@ -1,5 +1,5 @@
 const data = require("../../../JS-assignment/data.json");
-// console.log("data:--->", data[0]);
+const productData = require("../../../JS-assignment/product.json");
 /*
 
 function getCityByChrlength(length) {
@@ -10,8 +10,6 @@ function getCityByChrlength(length) {
   return cityData;
 }
 let x = getCityByChrlength(15);
-console.log("x:", x);
-
 function getCityByPopulation(population) {
   let filterdData = data.filter((e) => {
     return e.population > population;
@@ -20,15 +18,12 @@ function getCityByPopulation(population) {
   return cityData;
 }
 let y = getCityByPopulation(15000000);
-console.log("y:", y);
-
 function getAccendingPopulation() {
   data.sort((a, b) => b.population - a.population);
   let topFive = data.slice(0, 5);
   return topFive;
 }
 let z = getAccendingPopulation();
-console.log("z:", z);
 // test------->
 
 let obj = {
@@ -37,7 +32,6 @@ let obj = {
 
 obj.test.map((e) => {
     let keys = Object.keys(e)
-    console.log("------", keys.length);
 });
 
 
@@ -49,11 +43,10 @@ function statePopulation(state) {
   filterdData.forEach((e) => {
     totalPopulation += parseInt(e.population);
   });
-  console.log("totalPopulation", totalPopulation);
 }
 statePopulation("Karnātaka");
 
-*/
+
 
 function topState() {
   // count total popolation of state
@@ -73,8 +66,6 @@ function topState() {
   return arr.slice(0, 5);
 }
 let fiveState = topState("Karnātaka");
-console.log("fiveState", fiveState);
-
 // let obj = {
 //   name: "urvish",
 //   age: 50,
@@ -82,3 +73,22 @@ console.log("fiveState", fiveState);
 
 // let x = "name";
 // obj[x];
+
+// have to find who have highest percentage if there are more product with hightest percentage then we will take that product which have higer price
+*/
+function getHightestproduct() {
+  let gettop = productData.sort((a, b) => {
+    if (a.discountPercentage === b.discountPercentage) {
+      return b.price - a.price;
+    }
+    return b.discountPercentage - a.discountPercentage;
+  });
+
+  let finalData = {
+    ProductName: gettop[0].title,
+    Price: gettop[0].price,
+    DiscountPercentage: gettop[0].discountPercentage,
+  };
+  console.log("finalfiler", finalData);
+}
+getHightestproduct();
