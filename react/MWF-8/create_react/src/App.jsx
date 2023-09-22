@@ -32,6 +32,7 @@ import RouterPro from "./17.protectedRoute/Router";
 import UseCallBack from "./14.HOOKS/UseCallBack/UseCallBack";
 import UseMemoCom from "./14.HOOKS/UseMemo/UseMemoCom";
 import App2 from "./18.Redux/App2";
+import AppToolKit from "./19.Redux_toolkit/AppToolKit";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -86,7 +87,8 @@ function App() {
       {/* <RouterPro /> */}
 
       {/* ------------------Redux--------------------- */}
-      <App2 />
+      {/* <App2 /> */}
+      <AppToolKit />
     </div>
   );
 }

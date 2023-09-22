@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
-import { addUser } from "../user/action";
+import { addUser } from "../redux/user/action";
 
 function UserForm(props) {
   const [data, setData] = useState({ name: "", age: "" });

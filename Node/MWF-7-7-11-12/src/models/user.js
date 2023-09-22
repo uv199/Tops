@@ -13,6 +13,7 @@ let userSchema = mongoose.Schema(
     userType: {
       type: String,
       enum: ["admin", "customer"],
+      default: "customer",
     },
     email: {
       type: String,
@@ -21,8 +22,8 @@ let userSchema = mongoose.Schema(
     },
     number: String,
     password: {
-      required: true,
       type: String,
+      required: true,
     },
     age: Number,
     address: [

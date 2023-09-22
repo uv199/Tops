@@ -6,7 +6,7 @@ export default function User() {
     return state.USER;
   });
   let y = useDispatch();
-//   y(action )
+  //   y(action )
   console.log("y", y);
   console.log("x", x);
   return <div>User</div>;

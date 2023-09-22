@@ -45,6 +45,7 @@ import ProRouteRev from "./13.protectedrouter/Prorev/Router";
 import UseMemo from "./11.HOOKS/useMemo/UseMemo";
 import UseReducer from "./11.HOOKS/useReducer/UseReducer";
 import AppCom from "./14.redux/AppCom";
+import AppComToolKit from "./15.REDUX_TOOLKIT/AppComToolKit";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -130,7 +131,9 @@ function App() {
       {/* ----------------------------Doubt--------------------------  */}
       {/* <SearchData /> */}
       {/* ----------------------------redux--------------------------  */}
-      <AppCom />
+      {/* <AppCom /> */}
+      {/* ----------------------------redux-toolkit--------------------------  */}
+      <AppComToolKit />
     </div>
   );
 }

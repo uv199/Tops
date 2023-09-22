@@ -7,13 +7,13 @@ function UserTable({ userArr, getData }) {
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState(userArr);
   useEffect(() => {
-    let filterdData = userArr.filter((e) => e?.name?.includes?.(searchText));
+    let filterdData = userArr?.filter?.((e) => e?.name?.includes?.(searchText));
     setData(filterdData);
   }, [searchText]);
 
   return (
     <>
-      {userArr.length > 0 ? (
+      {userArr?.length > 0 ? (
         <>
           <div className="d-flex w-100 justify-content-around ">
             <h1 className="w-50 ">USER DATA TABLE</h1>

@@ -13,6 +13,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.4",
+    "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.8.1",
     "async": "^2.6.4",
     "axios": "^1.4.0",
