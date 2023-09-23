@@ -56,3 +56,5 @@ let str = "UV Hello Wolrd";
     */
 let x = str.startsWith("UV");
 console.log("x", x);
+
+// urvish v patel => hsviru v letap

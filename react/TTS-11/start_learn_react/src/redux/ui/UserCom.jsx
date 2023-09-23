@@ -47,6 +47,12 @@ function UserCom(props) {
                 <td>{e?.name}</td>
                 <td>{e?.adderess?.city}</td>
                 <td>{e?.adderess?.pincode}</td>
+                <td>{index === i ? e?.password : "*********"}</td>
+                <td>
+                  <button
+                    onClick={index ? setindex(null) : setindex(i)}
+                  ></button>
+                </td>
               </tr>
             );
           })}

@@ -23,6 +23,7 @@ import InputCom from "./10.input/InputCom";
 import InputUpdate from "./10.input/InputUpdate";
 import MultipleInput from "./10.input/multipleInput/MultipleInput";
 import LifeCycle from "./11.LifeCycle_Methos/LifeCycle";
+import SearchCom from "./10.input/search/SearchCom";
 
 function App() {
   return (
@@ -59,7 +60,8 @@ function App() {
       {/* <--------------------Input-------------------------> */}
       {/* <InputCom /> */}
       {/* <InputUpdate /> */}
-      <MultipleInput />
+      {/* <MultipleInput /> */}
+      <SearchCom />
       {/* <--------------------LifeCycle-------------------------> */}
       {/* <LifeCycle /> */}
     </div>

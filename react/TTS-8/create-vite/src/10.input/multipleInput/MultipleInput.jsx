@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import { Button, Table } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Pencil, Trash2 } from "lucide-react";
+import React, { useId, useState } from "react";
+import { Button, ButtonGroup, Table } from "reactstrap";
 
 export default function MultipleInput() {
   const [user, setUser] = useState({
@@ -12,6 +14,7 @@ export default function MultipleInput() {
     },
   });
   const [dataArr, setDataArr] = useState([]);
+  let [index, setIndex] = useState(null);
 
   function submitHandler(e) {
     e.preventDefault();
@@ -26,6 +29,29 @@ export default function MultipleInput() {
       },
     });
   }
+
+  function updateHandler(data, id) {
+    console.log("id", id);
+    console.log("data", data);
+    setUser(data);
+    setIndex(id);
+  }
+  function updateData() {
+    // let newData = dataArr.filter((e, i) => i !== index);
+    dataArr.splice(index, 1, user);
+    setDataArr(dataArr);
+    setIndex(null);
+    setUser({
+      name: "",
+      email: "",
+      number: "",
+      address: {
+        pincode: "",
+        city: "",
+      },
+    });
+  }
+
   return (
     <>
       <form className="d-flex flex-column">
@@ -43,13 +69,13 @@ export default function MultipleInput() {
           value={user?.email}
           onChange={(e) => setUser({ ...user, email: e?.target?.value })}
         />
-        <label htmlFor="number">Number</label>
+        {/* <label htmlFor="number">Number</label>
         <input
           type="number"
           id="number"
           value={user?.number}
           onChange={(e) => setUser({ ...user, number: e?.target?.value })}
-        />
+        /> */}
         <label htmlFor="city">City</label>
 
         <input
@@ -64,7 +90,7 @@ export default function MultipleInput() {
           }
         />
 
-        <label htmlFor="pincode">Pincode</label>
+        {/* <label htmlFor="pincode">Pincode</label>
         <input
           type="number"
           value={user?.address?.pincode}
@@ -75,14 +101,19 @@ export default function MultipleInput() {
               address: { ...user?.address, pincode: e?.target?.value },
             })
           }
-        />
-        <input
-          type="submit"
-          className="mt-3"
-          onClick={(e) => submitHandler(e)}
-        />
+        /> */}
+        {index || index === 0 ? (
+          <button onClick={() => updateData()}>Update</button>
+        ) : (
+          <input
+            type="submit"
+            className="mt-3"
+            onClick={(e) => submitHandler(e)}
+          />
+        )}
       </form>
 
+      <h1>index is : {index}</h1>
       <Table striped>
         <thead>
           <tr>
@@ -92,6 +123,7 @@ export default function MultipleInput() {
             <th>Number</th>
             <th>City</th>
             <th>Pincode</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -104,6 +136,10 @@ export default function MultipleInput() {
                 <td>{e?.number}</td>
                 <td>{e?.address?.city}</td>
                 <td>{e?.address?.pincode}</td>
+                <td>
+                  <Pencil onClick={() => updateHandler(e, i)} />
+                  <Trash2 color="#d04e4e" />
+                </td>
 
                 {/* {e?.size?.map?.((e) => {
                   return (
@@ -120,29 +156,3 @@ export default function MultipleInput() {
     </>
   );
 }
-
-// let obj = {
-//   name: "urvish",
-//   age: 23,
-// };
-
-// obj = {
-//   ...obj,
-//   age: 34,
-// };
-
-// // obj ?
-
-// let data = {
-//   name,
-//   email,
-//   password,
-//   address: {
-//     line1,
-//     line2,
-//     pincode,
-//     city,
-//     state,
-//   },
-//   vehicaleDetrails: ["passion"],
-// };

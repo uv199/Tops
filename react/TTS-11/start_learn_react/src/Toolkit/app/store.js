@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import countReducer from "../fetures/count/countSlice";
-import amountReducer from "../fetures/amount/amountslice";
+import countReducer from "../features/count/countSlice";
+import amountReducer from "../features/amount/amountSlice";
 
 export const store = configureStore({
   reducer: {

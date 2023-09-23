@@ -45,6 +45,7 @@ import PrvRouterContext from "./proRoute/Router";
 import UseMemo from "./HOOKS/useMemo/UseMemo";
 import UseCallBack from "./HOOKS/useCallBack/UseCallBack";
 import AppCom from "./redux/AppCom";
+import AppToolKit from "./Toolkit/AppToolKit";
 
 function App() {
   return (
@@ -122,7 +123,9 @@ function App() {
         {/* <RouterRev /> */}
         {/* <PrvRouterContext /> */}
         {/*------------------Redux------------------ */}
-        <AppCom />
+        {/* <AppCom /> */}
+        {/*------------------Redux-ToolKit------------------ */}
+        <AppToolKit />
       </div>
     </BrowserRouter>
   );
