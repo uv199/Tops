@@ -1,19 +1,23 @@
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
+import "./index.scss";
 
 export default function NavBarCom() {
+  const navigate = useNavigate();
   return (
     <>
       <nav
-        class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+        className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
         arial-label="Furni navigation bar"
       >
-        <div class="container">
-          <a class="navbar-brand" href="index.html">
+        <div className="container">
+          <a className="navbar-brand" href="index.html">
             Furni<span>.</span>
           </a>
 
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsFurni"
@@ -21,51 +25,49 @@ export default function NavBarCom() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsFurni">
-            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                  Home
-                </a>
+          <div className="collapse navbar-collapse" id="navbarsFurni">
+            <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li className="nav-item active">
+                <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
-                <a class="nav-link" href="shop.html">
-                  Shop
-                </a>
+                <NavLink to={"/shop"}>Shop</NavLink>
               </li>
               <li>
-                <a class="nav-link" href="about.html">
-                  About us
-                </a>
+                <NavLink to={"/about"}>About Us</NavLink>
               </li>
               <li>
-                <a class="nav-link" href="services.html">
-                  Services
-                </a>
+                <NavLink to={"/service"}>Services</NavLink>
               </li>
               <li>
-                <a class="nav-link" href="blog.html">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="contact.html">
-                  Contact us
-                </a>
+                <NavLink to={"/contact"}>Contact us</NavLink>
               </li>
             </ul>
 
-            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+              {false ? (
+                <li>
+                  <a className="nav-link" href="#">
+                    <img src="images/user.svg" />
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <a className="nav-link" href="#">
+                    <Button
+                      className="ps-4 pe-4"
+                      onClick={() =>  navigate("/login")}
+                    >
+                      Signup
+                    </Button>
+                  </a>
+                </li>
+              )}
               <li>
-                <a class="nav-link" href="#">
-                  <img src="images/user.svg" />
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" href="cart.html">
+                <a className="nav-link" href="cart.html">
                   <img src="images/cart.svg" />
                 </a>
               </li>

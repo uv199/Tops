@@ -15,6 +15,7 @@ const countSlice = createSlice({
       state.count--;
     },
   },
+  
 });
 
 export default countSlice.reducer;

@@ -10,6 +10,7 @@ export default function AmountCom() {
     <>
       AmountCom
       <h1>count is : {amount}</h1>
+      
     </>
   );
 }

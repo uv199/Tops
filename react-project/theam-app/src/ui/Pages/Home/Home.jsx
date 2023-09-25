@@ -23,9 +23,9 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            {[1, 2, 3].map((e) => {
+            {[1, 2, 3].map((e, i) => {
               return (
-                <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                <div key={i} className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
                   <a className="product-item" href="cart.html">
                     <img
                       src="images/product-1.png"
@@ -57,9 +57,9 @@ export default function Home() {
               </p>
 
               <div className="row my-5">
-                {[1, 2, 3, 4].map((e) => {
+                {[1, 2, 3, 4].map((e, i) => {
                   return (
-                    <div className="col-6 col-md-6">
+                    <div key={i} className="col-6 col-md-6">
                       <div className="feature">
                         <div className="icon">
                           <img
@@ -137,19 +137,19 @@ export default function Home() {
       </div>
 
       {/* populer product  */}
-      <div class="popular-product">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="product-item-sm d-flex">
-                <div class="thumbnail">
+      <div className="popular-product">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div className="product-item-sm d-flex">
+                <div className="thumbnail">
                   <img
                     src="images/product-1.png"
                     alt="Image"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </div>
-                <div class="pt-3">
+                <div className="pt-3">
                   <h3>Nordic Chair</h3>
                   <p>
                     Donec facilisis quam ut purus rutrum lobortis. Donec vitae
@@ -162,16 +162,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="product-item-sm d-flex">
-                <div class="thumbnail">
+            <div className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div className="product-item-sm d-flex">
+                <div className="thumbnail">
                   <img
                     src="images/product-2.png"
                     alt="Image"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </div>
-                <div class="pt-3">
+                <div className="pt-3">
                   <h3>Kruzo Aero Chair</h3>
                   <p>
                     Donec facilisis quam ut purus rutrum lobortis. Donec vitae
@@ -184,16 +184,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="product-item-sm d-flex">
-                <div class="thumbnail">
+            <div className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div className="product-item-sm d-flex">
+                <div className="thumbnail">
                   <img
                     src="images/product-3.png"
                     alt="Image"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </div>
-                <div class="pt-3">
+                <div className="pt-3">
                   <h3>Ergonomic Chair</h3>
                   <p>
                     Donec facilisis quam ut purus rutrum lobortis. Donec vitae
@@ -209,30 +209,34 @@ export default function Home() {
         </div>
       </div>
       {/* blogs */}
-      <div class="blog-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="col-md-6">
-              <h2 class="section-title">Recent Blog</h2>
+      <div className="blog-section">
+        <div className="container">
+          <div className="row mb-5">
+            <div className="col-md-6">
+              <h2 className="section-title">Recent Blog</h2>
             </div>
-            <div class="col-md-6 text-start text-md-end">
-              <a href="#" class="more">
+            <div className="col-md-6 text-start text-md-end">
+              <a href="#" className="more">
                 View All Posts
               </a>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail">
-                  <img src="images/post-1.jpg" alt="Image" class="img-fluid" />
+          <div className="row">
+            <div className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+              <div className="post-entry">
+                <a href="#" className="post-thumbnail">
+                  <img
+                    src="images/post-1.jpg"
+                    alt="Image"
+                    className="img-fluid"
+                  />
                 </a>
-                <div class="post-content-entry">
+                <div className="post-content-entry">
                   <h3>
                     <a href="#">First Time Home Owner Ideas</a>
                   </h3>
-                  <div class="meta">
+                  <div className="meta">
                     <span>
                       by <a href="#">Kristin Watson</a>
                     </span>{" "}
@@ -244,16 +248,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail">
-                  <img src="images/post-2.jpg" alt="Image" class="img-fluid" />
+            <div className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+              <div className="post-entry">
+                <a href="#" className="post-thumbnail">
+                  <img
+                    src="images/post-2.jpg"
+                    alt="Image"
+                    className="img-fluid"
+                  />
                 </a>
-                <div class="post-content-entry">
+                <div className="post-content-entry">
                   <h3>
                     <a href="#">How To Keep Your Furniture Clean</a>
                   </h3>
-                  <div class="meta">
+                  <div className="meta">
                     <span>
                       by <a href="#">Robert Fox</a>
                     </span>{" "}
@@ -265,16 +273,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-              <div class="post-entry">
-                <a href="#" class="post-thumbnail">
-                  <img src="images/post-3.jpg" alt="Image" class="img-fluid" />
+            <div className="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+              <div className="post-entry">
+                <a href="#" className="post-thumbnail">
+                  <img
+                    src="images/post-3.jpg"
+                    alt="Image"
+                    className="img-fluid"
+                  />
                 </a>
-                <div class="post-content-entry">
+                <div className="post-content-entry">
                   <h3>
                     <a href="#">Small Space Furniture Apartment Ideas</a>
                   </h3>
-                  <div class="meta">
+                  <div className="meta">
                     <span>
                       by <a href="#">Kristin Watson</a>
                     </span>{" "}
