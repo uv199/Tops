@@ -4,7 +4,7 @@ import HeroSection from "../../component/HeroSection/HeroSection";
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSection title={"WellCome to Furni..."} isBtn={true} />
       {/* product */}
       <div className="product-section">
         <div className="container">

@@ -10,11 +10,11 @@ const amountSlice = createSlice({
       state.amount++;
     },
   },
-  extraReducers: {
-    ["count/increment"]: (state, { payload }) => {
-      console.log("state", state)
+  extraReducers: (builder) => {
+    builder.addCase("count/increment", (state, { payload }) => {
+      console.log("state", state.count);
       state.amount += payload;
-    },
+    });
   },
 });
 

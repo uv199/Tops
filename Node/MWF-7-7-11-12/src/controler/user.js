@@ -14,6 +14,7 @@ export const getAll = (req, res) => {
     .then((resData) => {
       if (resData.length > 0) {
         res.send({ status: "200", data: resData });
+        
       } else {
         throw new Error("Data not found");
       }
@@ -25,6 +26,7 @@ export const getAll = (req, res) => {
 
 export const signIn = async (req, res) => {
   let { email, password } = req?.body;
+  console.log(" req?.body", req?.body);
   try {
     const matchUser = await model.User.findOne({ email });
 
@@ -47,6 +49,7 @@ export const signIn = async (req, res) => {
     res.send({ status: 400, error: error.mesage });
   }
 };
+console.log("signIn", signIn);
 
 export const getUserById = async (req, res) => {
   let id = req?.params?.id;

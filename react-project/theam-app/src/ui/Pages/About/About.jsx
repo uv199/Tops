@@ -4,7 +4,7 @@ import HeroSection from "../../component/HeroSection/HeroSection";
 export default function About() {
   return (
     <>
-      <HeroSection />
+      <HeroSection title={"About Us"} isBtn={false} />
       <div className="why-choose-section">
         <div className="container">
           <div className="row justify-content-between">

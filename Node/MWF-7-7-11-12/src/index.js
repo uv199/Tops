@@ -1,12 +1,13 @@
 import "dotenv/config";
 import express from "express";
 import { Routes } from "./routers";
+import cors from "cors";
 import { dbConnection } from "./db";
 import { AddAdmin, AddProductData } from "./db/addDefaultData";
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
 app.use("/user", Routes.userRoute);
 app.use("/product", Routes.productRoute);
 app.use("/cart", Routes.cartRouter);

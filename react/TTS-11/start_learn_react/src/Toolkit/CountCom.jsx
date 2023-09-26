@@ -4,7 +4,6 @@ import { increment } from "./features/count/countSlice";
 
 export default function CountCom() {
   const count = useSelector((state) => {
-    console.log(state);
     return state.COUNT;
   });
 

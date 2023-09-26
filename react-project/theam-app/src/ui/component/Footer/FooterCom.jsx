@@ -1,6 +1,8 @@
 import React from "react";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 
 export default function FooterCom() {
+  const navigate = useNavigate();
   return (
     <>
       <footer className="footer-section">
@@ -91,16 +93,33 @@ export default function FooterCom() {
                 <div className="col-6 col-sm-6 col-md-3">
                   <ul className="list-unstyled">
                     <li>
-                      <a href="#">About us</a>
+                      <NavLink onClick={() => window.scrollTo(0, 0)} to={"/"}>
+                        Home
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#">Services</a>
+                      <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={"/about"}
+                      >
+                        About Us
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#">Blog</a>
+                      <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={"/service"}
+                      >
+                        Services
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#">Contact us</a>
+                      <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={"/contact"}
+                      >
+                        Contact us
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
