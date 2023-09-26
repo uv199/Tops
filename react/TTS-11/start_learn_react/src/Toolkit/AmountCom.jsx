@@ -8,7 +8,7 @@ export default function AmountCom() {
   return (
     <>
       <h1> Amount is {amount.amount}</h1>
-      <button onClick={() => dispatch(increment())}>INC_AMT</button>
+      <button onClick={() => dispatch(increment(100))}>INC_AMT</button>
     </>
   );
 }

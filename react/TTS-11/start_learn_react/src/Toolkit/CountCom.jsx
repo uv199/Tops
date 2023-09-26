@@ -12,7 +12,7 @@ export default function CountCom() {
   return (
     <>
       <h1> Count is {count.count}</h1>
-      <button onClick={() => dispatch(increment())}>INC</button>
+      <button onClick={() => dispatch(increment(100))}>INC</button>
     </>
   );
 }

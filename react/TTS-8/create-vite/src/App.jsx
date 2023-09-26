@@ -24,10 +24,11 @@ import InputUpdate from "./10.input/InputUpdate";
 import MultipleInput from "./10.input/multipleInput/MultipleInput";
 import LifeCycle from "./11.LifeCycle_Methos/LifeCycle";
 import SearchCom from "./10.input/search/SearchCom";
+import Router from "./12.Routing/Router";
 
 function App() {
   return (
-    <div className="app">
+    <>
       {/* <--------------------Task-------------------------> */}
       {/* <HeaderCom />
       <Body />
@@ -61,10 +62,12 @@ function App() {
       {/* <InputCom /> */}
       {/* <InputUpdate /> */}
       {/* <MultipleInput /> */}
-      <SearchCom />
+      {/* <SearchCom /> */}
       {/* <--------------------LifeCycle-------------------------> */}
       {/* <LifeCycle /> */}
-    </div>
+      {/* <--------------------Router-------------------------> */}
+      <Router />
+    </>
   );
 }
 

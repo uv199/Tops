@@ -39,7 +39,10 @@ export default function MultipleInput() {
   function updateData() {
     // let newData = dataArr.filter((e, i) => i !== index);
     dataArr.splice(index, 1, user);
-    setDataArr(dataArr);
+    // setDataArr(dataArr);
+    setDataArr((lastData)=>{
+      return e.splice
+    });
     setIndex(null);
     setUser({
       name: "",

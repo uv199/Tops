@@ -4,8 +4,8 @@ import { build } from "vite";
 const todoApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
-    endpoints:(builder)=>({
-        P
-    })
+    endpoints: (builder) => ({
+      todos :builder.query(),
+    }),
   }),
 });

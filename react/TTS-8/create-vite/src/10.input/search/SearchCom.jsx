@@ -5,12 +5,16 @@ import { Table } from "reactstrap";
 export default function SearchCom() {
   let [stateData, setStateData] = useState(Data);
   let [searchTxt, setSearchTxt] = useState("");
+
   useEffect(() => {
-    let newdata = Data.filter((e) =>
-      e.city.toLowerCase().includes(searchTxt.toLowerCase()) || e.state_name.toLowerCase().includes(searchTxt.toLowerCase())
+    let newdata = Data.filter(
+      (e) =>
+        e.city.toLowerCase().includes(searchTxt.toLowerCase()) ||
+        e.state_name.toLowerCase().includes(searchTxt.toLowerCase())
     );
     setStateData(newdata);
   }, [searchTxt]);
+
   return (
     <>
       <input type="text" onChange={(e) => setSearchTxt(e?.target?.value)} />

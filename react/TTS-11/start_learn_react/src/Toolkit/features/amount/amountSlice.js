@@ -10,6 +10,12 @@ const amountSlice = createSlice({
       state.amount++;
     },
   },
+  extraReducers: {
+    ["count/increment"]: (state, { payload }) => {
+      console.log("state", state)
+      state.amount += payload;
+    },
+  },
 });
 
 export default amountSlice.reducer;
