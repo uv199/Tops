@@ -15,7 +15,7 @@ export default function AmountCom() {
         color="danger"
         onClick={() => dispatch(incrementByValue({ amountValue: 100 }))}
       >
-        Increment-Amt
+        Inc-Amt
       </Button>
     </>
   );

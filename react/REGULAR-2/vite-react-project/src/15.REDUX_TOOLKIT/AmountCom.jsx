@@ -9,8 +9,7 @@ export default function AmountCom() {
   return (
     <>
       AmountCom
-      <h1>count is : {amount}</h1>
-      
+      <h1>Amount is : {amount}</h1>
     </>
   );
 }

@@ -14,6 +14,12 @@ const countSlice = createSlice({
       state.count--;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase("amount/incrementByValue", (state, action) => {
+      console.log("state------>");
+      state.count += 1000;
+    });
+  },
 });
 
 export default countSlice.reducer;

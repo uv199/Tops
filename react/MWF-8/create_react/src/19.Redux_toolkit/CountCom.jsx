@@ -15,9 +15,9 @@ export default function CountCom() {
       <Button color="danger" onClick={() => dispatch(increment())}>
         Increment
       </Button>
-      <Button color="danger" onClick={() => dispatch(decrement())}>
+      {/* <Button color="danger" onClick={() => dispatch(decrement())}>
         Decrement
-      </Button>
+      </Button> */}
     </>
   );
 }

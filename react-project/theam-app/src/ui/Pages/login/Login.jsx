@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import React, { useState } from "react";
 import {
   Button,
@@ -19,6 +19,7 @@ export default function Login(props) {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
   const [modal, setModal] = useState(true);
@@ -50,19 +51,31 @@ export default function Login(props) {
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            <FormGroup>
+            {/* <FormGroup>
               <Label for="email">Email</Label>
-              <input
+              <Input
                 id="email"
                 placeholder="Enter your email"
                 type="email"
                 {...register("email")}
               />
               {errors.email && <span>Please enter email</span>}
-            </FormGroup>
+            </FormGroup> */}
+            <Controller
+              control={control}
+              name="email"
+              render={({ field }) => (
+                <Input
+                  id="email"
+                  placeholder="Enter your email"
+                  type="email"
+                  {...field}
+                />
+              )}
+            />
             <FormGroup>
               <Label for="password">Password</Label>
-              <input
+              <Input
                 id="password"
                 placeholder="Enter your password"
                 type="password"

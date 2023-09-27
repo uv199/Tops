@@ -11,7 +11,7 @@ export default function CountCom() {
     <>
       CountCom
       <h1>count is : {data.count}</h1>
-      <button onClick={() => dispatch(increment())}>add-amount</button>
+      <button onClick={() => dispatch(increment())}>add-count</button> <br />
     </>
   );
 }

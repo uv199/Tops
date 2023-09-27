@@ -1,8 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { increment as incrementCount } from "../count/countSlice";
+import axios from "axios";
 const initialState = {
   amount: 2000,
 };
+
+createAsyncThunk("count/fetchData", () => {
+  axios.get();
+});
+
 const amountSlice = createSlice({
   name: "amount",
   initialState,
@@ -13,7 +19,7 @@ const amountSlice = createSlice({
   },
   extraReducers: (builder) => {
     console.log("builder", builder);
-    builder.addCase(incrementCount, (state) => {
+    builder.addCase("count/increment", (state) => {
       state.amount--;
     });
   },

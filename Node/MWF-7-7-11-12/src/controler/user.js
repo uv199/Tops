@@ -14,7 +14,6 @@ export const getAll = (req, res) => {
     .then((resData) => {
       if (resData.length > 0) {
         res.send({ status: "200", data: resData });
-        
       } else {
         throw new Error("Data not found");
       }

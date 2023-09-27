@@ -1,3 +1,4 @@
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BootstrapCom from "./3.style/BootstrapCom";
 import StyleCom from "./3.style/StyleCom";
@@ -8,6 +9,9 @@ import FragmentCom from "./4.fragment-map-key/FragmentCom";
 import Header from "./3.style/Header";
 import MapKey from "./4.fragment-map-key/MapKey";
 import MapKey2 from "./4.fragment-map-key/MapKey2";
+import UseStateFun from "./6.State/UseStateFun";
+import ClassComState from "./6.State/classComState";
+import StatePro1 from "./6.State/statePro1";
 
 function App() {
   return (
@@ -24,7 +28,11 @@ function App() {
       {/* <FragmentCom /> */}
       {/* <-------------------------map-key---------------------------------> */}
       {/* <MapKey /> */}
-      <MapKey2 />
+      {/* <MapKey2 /> */}
+      {/* <-------------------------State---------------------------------> */}
+      {/* <UseStateFun /> */}
+      {/* <ClassComState /> */}
+      <StatePro1 />
     </div>
   );
 }

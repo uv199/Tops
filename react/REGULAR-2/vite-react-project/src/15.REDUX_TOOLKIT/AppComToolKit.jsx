@@ -9,9 +9,9 @@ export default function AppComToolKit() {
   return (
     <>
       <Provider store={store}>
-        {/* <CountCom /> */}
-        {/* <AmountCom /> */}
-        <UserCom />
+        <CountCom />
+        <AmountCom />
+        {/* <UserCom /> */}
       </Provider>
     </>
   );
