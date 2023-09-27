@@ -4,6 +4,7 @@ import { Routes } from "./routers";
 import cors from "cors";
 import { dbConnection } from "./db";
 import { AddAdmin, AddProductData } from "./db/addDefaultData";
+import { updateOldUser } from "./db/script";
 const app = express();
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use("/wishlist", Routes.wishListRouter);
 app.use("/order", Routes.orderRouter);
 
 app.listen(3000, () => {
+  updateOldUser();
   dbConnection();
   AddAdmin();
   AddProductData();

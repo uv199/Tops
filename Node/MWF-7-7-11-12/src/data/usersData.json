@@ -1,0 +1,43 @@
+{
+    "_id" : ObjectId("650159e0ee8e2702a029175e"),
+    "userType" : "admin",
+    "email" : "admin@admin.com",
+    "password" : "$2b$12$XjY0awULd6KWNX1aQ3fKGeEv6I2nDbTyeKYlVnY5ZAq.Qho5Y/d8O",
+    "createdAt" : ISODate("2023-09-13T06:42:40.837+0000"),
+    "updatedAt" : ISODate("2023-09-13T06:42:40.837+0000"),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("6507e648d52b16b7d8c5376a"),
+    "name" : "urvish",
+    "email" : "urvish@gmail.com",
+    "number" : "7575083084",
+    "password" : "$2b$12$CNtDAF1HrVv2rq8Diy6gcedQjSdn6YVUScB0WBl4BilL67NEi4PZ6",
+    "age" : NumberInt(19),
+    "address" : {
+        "add" : "A-308 tapti avenue",
+        "city" : "surat",
+        "state" : "gujarat",
+        "pinCode" : "395007"
+    },
+    "createdAt" : ISODate("2023-09-18T05:55:20.626+0000"),
+    "updatedAt" : ISODate("2023-09-18T05:55:20.626+0000"),
+    "__v" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("6507e85117d046374f394d3b"),
+    "name" : "sanket",
+    "email" : "sanket@gmail.com",
+    "number" : "7575083084",
+    "password" : "$2b$12$nG694Q4n1JHj93flSYO2q.QQxyASNdqnP.6t7cYD2Fgvcj0i5wxDW",
+    "age" : NumberInt(19),
+    "address" : {
+        "add" : "A-308 tapti avenue",
+        "city" : "surat",
+        "state" : "gujarat",
+        "pinCode" : "395007"
+    },
+    "createdAt" : ISODate("2023-09-18T06:04:01.691+0000"),
+    "updatedAt" : ISODate("2023-09-18T06:04:01.691+0000"),
+    "__v" : NumberInt(0)
+}
