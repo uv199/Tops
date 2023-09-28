@@ -12,6 +12,7 @@ import MapKey2 from "./4.fragment-map-key/MapKey2";
 import UseStateFun from "./6.State/UseStateFun";
 import ClassComState from "./6.State/classComState";
 import StatePro1 from "./6.State/statePro1";
+import ClassPro1 from "./6.State/classPro1";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       {/* <-------------------------State---------------------------------> */}
       {/* <UseStateFun /> */}
       {/* <ClassComState /> */}
-      <StatePro1 />
+      {/* <StatePro1 /> */}
+      <ClassPro1 />
     </div>
   );
 }

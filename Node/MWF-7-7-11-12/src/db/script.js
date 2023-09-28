@@ -5,9 +5,7 @@ export const updateOldUser = async () => {
     let resData = await model.User.find({});
 
     for (let i = 0; i < resData.length; i++) {
-      console.log("resData?.[i]?.id", resData?.[i]?.id);
       let data = await model?.User?.findById(resData?.[i]?.id);
-      console.log("data?.address", data?.address);
       data.address = data?.address;
       await data.save();
     }

@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../../component/HeroSection/HeroSection";
+import Card from "../../component/card/Card";
 
 export default function Home() {
   return (
@@ -24,22 +25,7 @@ export default function Home() {
               </p>
             </div>
             {[1, 2, 3].map((e, i) => {
-              return (
-                <div key={i} className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                  <a className="product-item" href="cart.html">
-                    <img
-                      src="images/product-1.png"
-                      className="img-fluid product-thumbnail"
-                    />
-                    <h3 className="product-title">Nordic Chair</h3>
-                    <strong className="product-price">$50.00</strong>
-
-                    <span className="icon-cross">
-                      <img src="images/cross.svg" className="img-fluid" />
-                    </span>
-                  </a>
-                </div>
-              );
+              return <Card key={i} />;
             })}
           </div>
         </div>
