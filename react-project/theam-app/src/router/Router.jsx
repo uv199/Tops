@@ -9,6 +9,8 @@ import Page404 from "../ui/Pages/404-page/Page404";
 import { Provider as AuthContext } from "react-redux";
 import { store } from "../redux/app/store";
 import Login from "../ui/Pages/login/Login";
+import { ToastContainer } from "react-toastify";
+import Profile from "../ui/Pages/Profile/Profile";
 
 export default function Router() {
   return (
@@ -21,10 +23,12 @@ export default function Router() {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/profile" element={<Profile />} />
             <Route exact path="*" element={<Page404 />} />
           </Routes>
           <FooterCom />
         </BrowserRouter>
+        <ToastContainer limit={1} autoClose={2000} />
       </AuthContext>
     </>
   );

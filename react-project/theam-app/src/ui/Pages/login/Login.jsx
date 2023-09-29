@@ -11,8 +11,12 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { BE_URL } from "../../../config";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../../redux/features/auth/authSlice";
 
 export default function Login(props) {
   const navigate = useNavigate();
@@ -23,23 +27,19 @@ export default function Login(props) {
     formState: { errors },
   } = useForm();
   const [modal, setModal] = useState(true);
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    console.log(data);
-    axios({
-      method: "post",
-      url: "http://127.0.0.1:3000/user/signin",
-      data: {
-        email: data.email,
-        password: data.password,
-      },
-    })
-      .then((res) => {
-        // console.log("res", res);
+    axios
+      .post(`${BE_URL}/user/signin`, data)
+      .then((resData) => {
+        console.log("resData", resData.data);
+        dispatch(logIn(resData.data));
         navigate("/");
       })
       .catch((err) => {
         console.log("err", err);
+        toast.error(err.message);
       });
   };
 
@@ -75,12 +75,19 @@ export default function Login(props) {
             />
             <FormGroup>
               <Label for="password">Password</Label>
-              <Input
-                id="password"
-                placeholder="Enter your password"
-                type="password"
-                {...register("password")}
+              <Controller
+                control={control}
+                name="password"
+                render={({ field }) => (
+                  <Input
+                    id="password"
+                    placeholder="Enter your password"
+                    type="password"
+                    {...field}
+                  />
+                )}
               />
+
               {errors.password && <span>Please enter password</span>}
             </FormGroup>
             <FormGroup>

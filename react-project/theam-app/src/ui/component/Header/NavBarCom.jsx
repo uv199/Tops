@@ -2,9 +2,12 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 import "./index.scss";
+import { useSelector } from "react-redux";
 
 export default function NavBarCom() {
   const navigate = useNavigate();
+  let user = useSelector((state) => state.auth.user);
+  console.log("user", user);
   return (
     <>
       <nav
@@ -48,29 +51,30 @@ export default function NavBarCom() {
             </ul>
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-              {false ? (
+              <li className="me-5">
+                <a className="nav-link" href="cart.html">
+                  <img src="images/cart.svg" />
+                </a>
+              </li>
+              "{}"
+              {JSON.stringify(user) !== "{}" ? (
                 <li>
-                  <a className="nav-link" href="#">
+                  <NavLink className="nav-link" to="/profile">
                     <img src="images/user.svg" />
-                  </a>
+                  </NavLink>
                 </li>
               ) : (
                 <li>
                   <a className="nav-link" href="#">
                     <Button
                       className="ps-4 pe-4"
-                      onClick={() =>  navigate("/login")}
+                      onClick={() => navigate("/login")}
                     >
                       Signup
                     </Button>
                   </a>
                 </li>
               )}
-              <li>
-                <a className="nav-link" href="cart.html">
-                  <img src="images/cart.svg" />
-                </a>
-              </li>
             </ul>
           </div>
         </div>
