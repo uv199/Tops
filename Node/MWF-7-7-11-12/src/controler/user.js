@@ -30,9 +30,13 @@ export const signIn = async (req, res) => {
     const matchUser = await model.User.findOne({ email });
 
     if (matchUser) {
-      let isMatchPass = await bycrypt.compare(password, matchUser.password);
+      console.log("isMatchPass", isMatchPass);
+      let isMatchPass = await bycrypt.compare(
+        password || "",
+        matchUser.password
+      );
       if (!isMatchPass) {
-        res.send("email or password not match....!");
+        res.status(400).send("email or password not match....!");
       } else {
         let token = useToken({
           email: matchUser.email,
