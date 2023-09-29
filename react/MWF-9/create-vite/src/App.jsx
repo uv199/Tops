@@ -13,6 +13,7 @@ import UseStateFun from "./6.State/UseStateFun";
 import ClassComState from "./6.State/classComState";
 import StatePro1 from "./6.State/statePro1";
 import ClassPro1 from "./6.State/classPro1";
+import LifeCycle from "./7.lifeCycleMethos/LifeCycle";
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
       {/* <UseStateFun /> */}
       {/* <ClassComState /> */}
       {/* <StatePro1 /> */}
-      <ClassPro1 />
+      {/* <ClassPro1 /> */}
+      {/* <-------------------------LifeCycle---------------------------------> */}
+      <LifeCycle />
     </div>
   );
 }

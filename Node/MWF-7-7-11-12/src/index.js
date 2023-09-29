@@ -4,8 +4,10 @@ import { Routes } from "./routers";
 import cors from "cors";
 import { dbConnection } from "./db";
 import { AddAdmin, AddProductData } from "./db/addDefaultData";
-import { updateOldUser } from "./db/script";
+import { updateOldUser, updateOldUser2 } from "./db/script";
 const app = express();
+
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -15,10 +17,11 @@ app.use("/cart", Routes.cartRouter);
 app.use("/wishlist", Routes.wishListRouter);
 app.use("/order", Routes.orderRouter);
 
-app.listen(3000, () => {
-  updateOldUser();
+app.listen(port, () => {
+  // updateOldUser();
   dbConnection();
-  AddAdmin();
-  AddProductData();
-  console.log(`your server is running on http://localhost:3000/`);
+  // AddAdmin();
+  // AddProductData();
+  updateOldUser2();
+  console.log(`your server is running on http://localhost:${port}/`);
 });

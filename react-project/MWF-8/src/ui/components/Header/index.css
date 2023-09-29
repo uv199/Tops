@@ -1,0 +1,16 @@
+.active {
+  color: white;
+}
+
+li a {
+  text-decoration: none;
+  font-size: large;
+  color: rgb(107, 24, 24);
+}
+li a:hover {
+  color: white;
+}
+
+.userIcon:hover {
+  color: white;
+}
