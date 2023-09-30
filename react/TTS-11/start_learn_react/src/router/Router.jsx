@@ -45,7 +45,7 @@ export default function Router() {
         {/* <Home />  // not acceptable give erro */}
         <Route path="*" element={<Error404 />} />
         <Route path="/home" element={<Home2 />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about/:id" element={<About />} />
         <Route path="/service">
           <Route index element={<Service />} />
           <Route path="car" element={<CarService />} />

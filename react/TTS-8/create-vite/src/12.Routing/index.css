@@ -16,3 +16,8 @@ li a {
 li {
   margin-left: 120px;
 }
+
+div a {
+  text-decoration: none;
+  color: black;
+}

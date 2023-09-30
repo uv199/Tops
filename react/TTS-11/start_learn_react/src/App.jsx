@@ -118,14 +118,14 @@ function App() {
         {/* <ApiCom /> */}
         {/* <ApiCom2 /> */}
         {/*------------------Router------------------ */}
-        {/* <Router /> */}
+        <Router />
         {/* <PrvRouter /> */}
         {/* <RouterRev /> */}
         {/* <PrvRouterContext /> */}
         {/*------------------Redux------------------ */}
         {/* <AppCom /> */}
         {/*------------------Redux-ToolKit------------------ */}
-        <AppToolKit />
+        {/* <AppToolKit /> */}
       </div>
     </BrowserRouter>
   );

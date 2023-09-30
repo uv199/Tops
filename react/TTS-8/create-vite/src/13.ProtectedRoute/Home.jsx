@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Service() {
+export default function Home() {
   return (
     <>
-      <h1>Service</h1>
+      <h1>Home</h1>
     </>
   );
 }

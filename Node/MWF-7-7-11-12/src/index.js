@@ -20,7 +20,7 @@ app.use("/order", Routes.orderRouter);
 app.listen(port, () => {
   // updateOldUser();
   dbConnection();
-  // AddAdmin();
+  AddAdmin();
   // AddProductData();
   updateOldUser2();
   console.log(`your server is running on http://localhost:${port}/`);

@@ -25,6 +25,7 @@ import MultipleInput from "./10.input/multipleInput/MultipleInput";
 import LifeCycle from "./11.LifeCycle_Methos/LifeCycle";
 import SearchCom from "./10.input/search/SearchCom";
 import Router from "./12.Routing/Router";
+import ProRouter from "./13.ProtectedRoute/ProRouter";
 
 function App() {
   return (
@@ -66,7 +67,8 @@ function App() {
       {/* <--------------------LifeCycle-------------------------> */}
       {/* <LifeCycle /> */}
       {/* <--------------------Router-------------------------> */}
-      <Router />
+      {/* <Router /> */}
+      <ProRouter />
     </>
   );
 }
