@@ -4,9 +4,8 @@ export const userReducer = (
   state = [{ email: "test", password: "123" }],
   action
 ) => {
-  console.log("action", action);
   switch (action.type) {
-    case ADD_USER:
+    case ADD_USER || ADD_USER_FROM_API:
       return [...state, action.payload];
     default:
       return state;
