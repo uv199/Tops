@@ -47,6 +47,7 @@ import UseReducer from "./11.HOOKS/useReducer/UseReducer";
 import AppCom from "./14.redux/AppCom";
 import AppComToolKit from "./15.REDUX_TOOLKIT/AppComToolKit";
 import AppKD from "./REDUX-KAUSHAL/AppKD";
+import AppTK from "./TOOL_KIT-KAUSHAL/AppTK";
 
 function App() {
   const [isPass, setIsPass] = useState("pass");
@@ -56,7 +57,8 @@ function App() {
   return (
     <div>
       {/* ----------------------------redux--------------------------  */}
-      <AppKD />
+      {/* <AppKD /> */}
+      <AppTK />
       {/* ----------------------------component--------------------------  */}
       {/* <ClassCom />
       <ClassCom2 />

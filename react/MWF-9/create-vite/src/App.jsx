@@ -14,30 +14,51 @@ import ClassComState from "./6.State/classComState";
 import StatePro1 from "./6.State/statePro1";
 import ClassPro1 from "./6.State/classPro1";
 import LifeCycle from "./7.lifeCycleMethos/LifeCycle";
+import UseEffect from "./5.HOOKS/useEffect/UseEffect";
+import FunProps from "./8.props/FunProps";
+import ClassPro from "./8.props/ClassPro";
+import ProjectProps from "./8.props/project/ProjectProps";
 
 function App() {
+  let x = "urvish";
+
   return (
     <div>
       {/* <-------------------------Components---------------------------------> */}
       {/* <FunCom1 /> */}
       {/* <ClassCom /> */}
       {/* <FunCom2 /> */}
+
       {/* <-------------------------style---------------------------------> */}
       {/* <StyleCom /> */}
       {/* <BootstrapCom /> */}
       {/* <Header /> */}
+
       {/* <-------------------------Fragment---------------------------------> */}
       {/* <FragmentCom /> */}
+
       {/* <-------------------------map-key---------------------------------> */}
       {/* <MapKey /> */}
       {/* <MapKey2 /> */}
+
       {/* <-------------------------State---------------------------------> */}
       {/* <UseStateFun /> */}
       {/* <ClassComState /> */}
       {/* <StatePro1 /> */}
       {/* <ClassPro1 /> */}
+
       {/* <-------------------------LifeCycle---------------------------------> */}
-      <LifeCycle />
+      {/* <LifeCycle /> */}
+
+      {/* <-------------------------HOOK---------------------------------> */}
+      {/* <UseEffect /> */}
+
+      {/* <-------------------------Props---------------------------------> */}
+      {/* <FunProps name={"urvish"} age={30} /> */}
+      {/* <FunProps name="laxmi" /> */}
+      {/* <ClassPro data={{ name: "urvish", age: 23 }} /> */}
+      {/* <ClassPro /> */}
+      <ProjectProps />
     </div>
   );
 }

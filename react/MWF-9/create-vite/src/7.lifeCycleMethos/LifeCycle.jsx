@@ -18,9 +18,8 @@ export default class LifeCycle extends Component {
 
   // componentDidUpdate
   componentDidUpdate(oldProps, oldState) {
-    // console.log("oldState", oldState);
-    // console.log("oldProps", oldProps);
-    console.log("-----componentDidUpdate----->");
+    console.log("-----componentDidUpdate----->", this.state.count);
+    // this.setState({ count: this.state.count + 1 }); // don't set statde in update without use proper condition
     if (this.state.count > 5) {
       alert("count is grater then 5");
     }
