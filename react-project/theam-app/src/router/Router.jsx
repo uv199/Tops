@@ -8,9 +8,11 @@ import FooterCom from "../ui/component/Footer/FooterCom";
 import Page404 from "../ui/Pages/404-page/Page404";
 import { Provider as AuthContext } from "react-redux";
 import { store } from "../redux/app/store";
-import Login from "../ui/Pages/login/Login";
+import Login from "../ui/Pages/Login/Login";
 import { ToastContainer } from "react-toastify";
 import Profile from "../ui/Pages/Profile/Profile";
+import Product from "../ui/Pages/Admin/product";
+import Dashbord from "../ui/Pages/Admin/dashbord/Dashbord";
 
 export default function Router() {
   return (
@@ -24,6 +26,8 @@ export default function Router() {
             <Route exact path="/shop" element={<Shop />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/dashbord" element={<Dashbord />} />
+            <Route exact path="/products" element={<Product />} />
             <Route exact path="*" element={<Page404 />} />
           </Routes>
           <FooterCom />

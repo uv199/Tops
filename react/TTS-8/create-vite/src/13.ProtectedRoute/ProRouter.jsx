@@ -22,7 +22,7 @@ export default function ProRouter() {
             </li>
           </ul>
           <Routes>
-            <Route path="/" element={<AuthRoute component={<Home />} />} />
+            <Route path="/" element={<Home />} />
             <Route
               path="/profile"
               element={<AuthRoute component={<Profile />} />}

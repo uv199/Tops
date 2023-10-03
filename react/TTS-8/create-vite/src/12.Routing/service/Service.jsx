@@ -6,8 +6,8 @@ export default function Service() {
   return (
     <>
       <div className="d-flex flex-column">
-        <NavLink to={"/service/bike"}>Bike</NavLink>
-        <NavLink to={"/service/car"}>Car</NavLink>
+        <NavLink to={"/service/bike/7777"}>Bike</NavLink>
+        <NavLink to={"/service/car/5000"}>Car</NavLink>
       </div>
       <h1>Service</h1>
       <Outlet />

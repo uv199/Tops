@@ -26,6 +26,8 @@ import LifeCycle from "./11.LifeCycle_Methos/LifeCycle";
 import SearchCom from "./10.input/search/SearchCom";
 import Router from "./12.Routing/Router";
 import ProRouter from "./13.ProtectedRoute/ProRouter";
+import UseMemocom from "./9.HOOK/useMemo/UseMemocom";
+import UseCallBack from "./9.HOOK/UseCallBack/UseCallBack";
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
       {/* <--------------------HOOK -------------------------> */}
       {/* <UseEffectCom /> */}
       {/* <UseRefCom /> */}
+      {/* <UseMemocom /> */}
+      <UseCallBack />
 
       {/* <--------------------Input-------------------------> */}
       {/* <InputCom /> */}
@@ -68,7 +72,7 @@ function App() {
       {/* <LifeCycle /> */}
       {/* <--------------------Router-------------------------> */}
       {/* <Router /> */}
-      <ProRouter />
+      {/* <ProRouter /> */}
     </>
   );
 }

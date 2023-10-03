@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function AuthRoute(props) {
   const navigate = useNavigate();
   useEffect(() => {
-    if (false) {
+    if (true) {
       navigate("/login");
     }
   });
