@@ -113,13 +113,16 @@ export const ProductForm = ({ modal, toggle }) => {
                   <Controller
                     name="category"
                     control={control}
-                    render={({ field }) => (
+                    render={({ field: { onChange, value } }) => (
                       <Select
                         isMulti
-                        {...field}
+                        {...register("category", {
+                          required: true,
+                        })}
                         options={options}
                         className="basic-multi-select"
                         classNamePrefix="select"
+                        onChange={(e) => onChange(e)}
                       />
                     )}
                   />
