@@ -16,7 +16,6 @@ export const productByRange = async (req, res) => {
     });
     filter = { ...filter, $and: catObj };
   }
-
   try {
     let data = await model.Product.find(
       filter,
@@ -26,6 +25,15 @@ export const productByRange = async (req, res) => {
       //   },
       //   { price: 1, title: 1 }
     );
+    res.send({ status: 200, data });
+  } catch (error) {
+    res.send({ status: 400, message: error.message });
+  }
+};
+export const getAll = async (req, res) => {
+  console.log("------");
+  try {
+    let data = await model.Product.find({});
     res.send({ status: 200, data });
   } catch (error) {
     res.send({ status: 400, message: error.message });

@@ -21,7 +21,7 @@ app.use("/cart", Routes.cartRouter);
 app.use("/wishlist", Routes.wishListRouter);
 app.use("/order", Routes.orderRouter);
 
-const mno = "test2"
+const mno = "test2";
 const server = app.listen(port, () => {
   // updateOldUser();
   dbConnection();
