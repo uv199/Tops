@@ -23,9 +23,9 @@ app.use("/order", Routes.orderRouter);
 
 const server = app.listen(port, () => {
   // updateOldUser();
-  // dbConnection();
+  dbConnection();
   // AddAdmin();
-  // AddProductData();
+  AddProductData();
   // updateOldUser2();
   console.log(`your server is running on http://localhost:${port}/`);
 });
@@ -43,6 +43,4 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("---User is offline--->");
   });
-  
-
 });
