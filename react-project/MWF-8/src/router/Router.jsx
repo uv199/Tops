@@ -12,6 +12,8 @@ import { store } from "../Redux/app/store";
 import About from "../ui/pages/About";
 import Contact from "../ui/pages/Contact";
 import LoginForm from "../ui/pages/Login";
+import Dashbord from "../ui/pages/Admin/Dashbord/Dashbord";
+import ProductForm from "../ui/pages/Admin/Product/ProductForm";
 export default function Router() {
   return (
     <>
@@ -21,11 +23,13 @@ export default function Router() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/admin/dashboard" element={<Dashbord />} />
             <Route path="/kids" element={<Kids />} />
             <Route path="/men" element={<Men />} />
             <Route path="/women" element={<Women />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/form" element={<ProductForm />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
           <FooterCom />

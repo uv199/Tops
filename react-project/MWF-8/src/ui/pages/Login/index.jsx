@@ -1,55 +1,87 @@
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 import { ToastContainer, toast } from "react-toastify";
+import { login } from "../../../Redux/fetures/auth/authSlice";
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
+  let [Data, setData] = useState({
+    email: "",
+    password: "",
+  });
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  let arr = [
-    {
-      email: "uv@gmail.com",
-      password: "1234",
-    },
-    {
-      email: "akshit@gmail.com",
-      password: "456",
-    },
-  ];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    let matchdata = arr.find((e) => {
-      return e.email === data.email;
-    });
-    if (matchdata) {
-      localStorage.setItem("user", JSON.stringify(data));
-      // alert("login succese...!");
-      toast.warn("login succese...!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: "zoom",
+    axios
+      .post("http://localhost:9999/user/signin", data)
+      .then((resData) => {
+        console.log("----resData------", resData.data);
+        dispatch(login(resData.data));
+        // do form blanck
+        setData({
+          email: "",
+          password: "",
+        });
+        navigate("/admin/dashboard");
+      })
+      .catch((error) => {
+        console.log("----errr------");
       });
-    } else {
-      alert("user not found...!");
-    }
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="abc@gmail.com" {...register("email")} />
-        <input {...register("name", { required: true })} />
-        {errors.name && <span>This field is required</span>}
-        <input type="submit" />
-      </form>
-      <ToastContainer limit={1} />
+      <div className="d-flex justify-content-center">
+        <form
+          style={{ backgroundColor: "lightcoral" }}
+          onSubmit={handleSubmit(onSubmit)}
+          className="d-flex flex-column w-25 gap-2 p-4 border-1 rounded-3 m-4"
+        >
+          <label htmlFor="email">Email</label>
+          <input
+            {...register("email", { required: true })}
+            onChange={(e) => setData({ ...Data, email: e?.target?.value })}
+            value={Data?.email}
+            className="p-1 ps-3 border-0 rounded-3"
+            id="email"
+            placeholder="Enter your Email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            {...register("password", { required: true })}
+            onChange={(e) => setData({ ...Data, password: e?.target?.value })}
+            id="password"
+            value={Data?.password}
+            className="p-1 ps-3 border-0 rounded-3"
+            placeholder="Enter your Password"
+          />
+          {errors.name && <span>This field is required</span>}
+          <input className="border-0 rounded-3 mt-3" type="submit" />
+        </form>
+      </div>
     </>
   );
 }
+
+/*
+
+    name:  "urvish",
+    email: "uv@gmail.com",
+    number: "7575083084",
+    password: "123456",
+    age: 23,
+    address: [
+      {
+        add:"A-308 abc",
+        city: "surat",
+        state: "gujrat",
+        pinCode: "395007",
+      },
+    ], */

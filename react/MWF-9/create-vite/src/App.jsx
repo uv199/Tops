@@ -18,6 +18,8 @@ import UseEffect from "./5.HOOKS/useEffect/UseEffect";
 import FunProps from "./8.props/FunProps";
 import ClassPro from "./8.props/ClassPro";
 import ProjectProps from "./8.props/project/ProjectProps";
+import Parents from "./8.props/propsLifting/Parents";
+import SingleInput from "./9.Input/single/SingleInput";
 
 function App() {
   let x = "urvish";
@@ -58,7 +60,10 @@ function App() {
       {/* <FunProps name="laxmi" /> */}
       {/* <ClassPro data={{ name: "urvish", age: 23 }} /> */}
       {/* <ClassPro /> */}
-      <ProjectProps />
+      {/* <ProjectProps /> */}
+      {/* <Parents /> */}
+      {/* <-------------------------Input---------------------------------> */}
+      <SingleInput />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "reactstrap";
+import PropsUseEffect from "./PropsUseEffect";
 
 export default function UseEffect() {
   let [count, setCount] = useState(0);
@@ -42,6 +43,7 @@ export default function UseEffect() {
       <Button color="danger" onClick={() => setAmount(amount + 1)}>
         INC
       </Button>
+      <PropsUseEffect count={count} />
     </>
   );
 }
