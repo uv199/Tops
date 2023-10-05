@@ -30,7 +30,6 @@ export default function SignUp(props) {
   });
   const navigate = useNavigate();
   const {
-    register,
     handleSubmit,
     control,
     formState: { errors },
@@ -38,6 +37,7 @@ export default function SignUp(props) {
 
   const onSubmit = (data) => {
     console.log("data", data);
+    console.log("userdara", userData);
   };
 
   return (
@@ -55,10 +55,10 @@ export default function SignUp(props) {
               id="name"
               placeholder="Enter your name"
               type="text"
+              {...field}
               onChange={(e) =>
                 setUserData({ ...userData, name: e?.target?.value })
               }
-              {...field}
             />
           )}
         />
@@ -72,6 +72,9 @@ export default function SignUp(props) {
               placeholder="Enter your email"
               type="email"
               {...field}
+              onChange={(e) =>
+                setUserData({ ...userData, email, age: e?.target?.value })
+              }
             />
           )}
         />
@@ -85,6 +88,7 @@ export default function SignUp(props) {
               placeholder="Enter your number"
               type="text"
               {...field}
+              onChange={(e) => setUserData({ ...userData, number: e?.target?.value })}
             />
           )}
         />
@@ -98,6 +102,7 @@ export default function SignUp(props) {
               placeholder="Enter your age"
               type="text"
               {...field}
+              onChange={(e) => setUserData({ ...userData, age: e?.target?.value })}
             />
           )}
         />
@@ -111,6 +116,15 @@ export default function SignUp(props) {
               placeholder="Enter your address"
               type="text"
               {...field}
+              onChange={(e) =>
+                setUserData({
+                  ...userData,
+                  address: [
+                    ...userData[0],
+                    { ...userData.address[0], add: e?.target?.value },
+                  ],
+                })
+              }
             />
           )}
         />
@@ -125,6 +139,15 @@ export default function SignUp(props) {
               placeholder="Enter your city"
               type="text"
               {...field}
+              onChange={(e) =>
+                setUserData({
+                  ...userData,
+                  address: [
+                    ...userData[0],
+                    { ...userData.address[0], city: e?.target?.value },
+                  ],
+                })
+              }
             />
           )}
         />
@@ -139,6 +162,15 @@ export default function SignUp(props) {
               placeholder="Enter your state"
               type="text"
               {...field}
+              onChange={(e) =>
+                setUserData({
+                  ...userData,
+                  address: [
+                    ...userData[0],
+                    { ...userData.address[0], state: e?.target?.value },
+                  ],
+                })
+              }
             />
           )}
         />
@@ -154,7 +186,11 @@ export default function SignUp(props) {
               onChange={(e) =>
                 setUserData({
                   ...userData,
-                  adress: [{ ...adress[0], pinCode: e?.target?.value }],
+                  address: [
+                    ...userData[0],
+
+                    { ...userData.address[0], pinCode: e?.target?.value },
+                  ],
                 })
               }
               type="text"
@@ -211,5 +247,5 @@ export default function SignUp(props) {
       },
     ],
 
-
+arress[0].city==
 */

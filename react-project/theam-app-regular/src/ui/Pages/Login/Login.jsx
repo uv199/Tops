@@ -14,6 +14,7 @@ import { redirect, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/features/auth/authSlice";
+import { toast } from "react-toastify";
 
 export default function Login(props) {
   const navigate = useNavigate();
@@ -33,10 +34,12 @@ export default function Login(props) {
         dispatch(login(resData.data));
         if (resData?.data?.data?.userType === "admin") {
           navigate("/dashbord");
+        } else {
+          navigate("/");
         }
       })
       .catch((err) => {
-        console.log("err", err);
+        toast.error(err?.message);
       });
   };
 

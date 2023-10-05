@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: {},
+  user: JSON.parse(localStorage.getItem("user")) || {},
+  token: JSON.parse(localStorage.getItem("token")) || "",
   err: "",
-  token: "",
 };
 
 const authSlice = createSlice({
@@ -19,6 +19,7 @@ const authSlice = createSlice({
     },
     logOut: (state) => {
       state.user = {};
+      state.token = "";
       localStorage.clear();
     },
   },

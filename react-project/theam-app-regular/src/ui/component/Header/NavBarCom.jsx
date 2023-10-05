@@ -34,23 +34,40 @@ export default function NavBarCom() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarsFurni">
-            <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-              <li className="nav-item active">
-                <NavLink to={"/"}>Home</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/shop"}>Shop</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/about"}>About Us</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/service"}>Services</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/contact"}>Contact us</NavLink>
-              </li>
-            </ul>
+            {loginUser?.user?.userType === "admin" ? (
+              <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li className="nav-item active">
+                  <NavLink to={"/dashbord"}>Dashboard</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/products"}>Products</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/orders"}>Orders</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/users"}>Users</NavLink>
+                </li>
+              </ul>
+            ) : (
+              <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li className="nav-item active">
+                  <NavLink to={"/"}>Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/shop"}>Shop</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/about"}>About Us</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/service"}>Services</NavLink>
+                </li>
+                <li>
+                  <NavLink to={"/contact"}>Contact us</NavLink>
+                </li>
+              </ul>
+            )}
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li className="me-5">
