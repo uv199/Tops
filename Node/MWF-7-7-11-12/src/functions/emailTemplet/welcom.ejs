@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="
+    background: #e2d4f0;
+    padding: 30px 0;
+    text-align: center;
+    font-family: Arial;
+  ">
+        <h1>Header</h1>
+    </div>
+    <div style="margin: 0 auto; max-width: 720px; padding: 30px 0; font-family: Arial">
+        <h3>Hello, <%= receiver %>
+        </h3>
+        <p>
+            <%= content %>
+        </p>
+    </div>
+    <div>
+        <% if (age> 12) { %>
+            <p> valid!!!</p>
+            <%} else { %>
+                <p> Not Allowed </p>
+                <% } %>
+    </div>
+    <div style="
+    background: #4b2179;
+    padding: 30px 0;
+    text-align: center;
+    font-family: Arial;
+    color: #fff;
+  ">
+        <p>Footer</p>
+    </div>
+</body>
+
+</html>

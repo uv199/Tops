@@ -10,6 +10,8 @@ import path from "path";
 const app = express();
 
 import { Server } from "socket.io";
+import { cronJob } from "./functions/cronJob";
+import { sendEmailTemp } from "./functions/emailService";
 
 const port = process.env.PORT || 3000;
 
@@ -25,8 +27,11 @@ const mno = "test2";
 const server = app.listen(port, () => {
   // updateOldUser();
   dbConnection();
+  // cronJob();
+  sendEmailTemp();
+
   // AddAdmin();
-  AddProductData();
+  // AddProductData();
   // updateOldUser2();
   console.log(`your server is running on http://localhost:${port}/`);
 });
