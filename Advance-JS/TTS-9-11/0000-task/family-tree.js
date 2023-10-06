@@ -43,6 +43,7 @@ let familyTree = {
           number: 1111,
         },
       ],
+
       son: [
         {
           name: "jigar",
@@ -57,8 +58,7 @@ let familyTree = {
   ],
 };
 
-
-familyTree.son[2].vehicle.map((e)=>{})
+familyTree.son[2].vehicle.map((e) => {});
 /*
 1. dada ka name
 2. dada's 2nd child name

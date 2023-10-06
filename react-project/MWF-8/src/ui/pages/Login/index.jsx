@@ -6,6 +6,7 @@ import { login } from "../../../Redux/fetures/auth/authSlice";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BE_URL } from "../../../config";
 export default function LoginForm() {
   let [Data, setData] = useState({
     email: "",
@@ -20,9 +21,8 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:9999/user/signin", data)
+      .post(`${BE_URL}/user/signin`, data)
       .then((resData) => {
-        console.log("----resData------", resData.data);
         dispatch(login(resData.data));
         // do form blanck
         setData({

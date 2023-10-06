@@ -210,6 +210,7 @@ export default function SignUp(props) {
                 placeholder="Enter your password"
                 type="password"
                 {...field}
+                
               />
             )}
           />

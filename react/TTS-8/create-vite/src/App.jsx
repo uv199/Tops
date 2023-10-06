@@ -27,7 +27,9 @@ import SearchCom from "./10.input/search/SearchCom";
 import Router from "./12.Routing/Router";
 import ProRouter from "./13.ProtectedRoute/ProRouter";
 import UseMemocom from "./9.HOOK/useMemo/UseMemocom";
-import UseCallBack from "./9.HOOK/UseCallBack/UseCallBack";
+import FormCom from "./14.localstorage/FormCom";
+import LocalStorage from "./14.localstorage/LocalStorage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -61,7 +63,6 @@ function App() {
       {/* <UseEffectCom /> */}
       {/* <UseRefCom /> */}
       {/* <UseMemocom /> */}
-      <UseCallBack />
 
       {/* <--------------------Input-------------------------> */}
       {/* <InputCom /> */}
@@ -73,6 +74,10 @@ function App() {
       {/* <--------------------Router-------------------------> */}
       {/* <Router /> */}
       {/* <ProRouter /> */}
+      {/* <--------------------Localstorage-------------------------> */}
+      {/* <FormCom /> */}
+      <LocalStorage />
+      <ToastContainer limit={1} newestOnTop={false} />
     </>
   );
 }

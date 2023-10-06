@@ -8,3 +8,5 @@ function fun1(x) {
 }
 
 fun1(10);
+
+

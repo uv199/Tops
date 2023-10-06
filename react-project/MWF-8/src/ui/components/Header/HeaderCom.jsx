@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 
 function HeaderCom(props) {
   const userData = useSelector((state) => state?.auth?.user);
-  console.log("userData", userData);
   const navigate = useNavigate();
 
   return (

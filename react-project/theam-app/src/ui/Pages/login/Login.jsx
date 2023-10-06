@@ -33,12 +33,10 @@ export default function Login(props) {
     axios
       .post(`${BE_URL}/user/signin`, data)
       .then((resData) => {
-        console.log("resData", resData.data);
         dispatch(logIn(resData.data));
         navigate("/");
       })
       .catch((err) => {
-        console.log("err", err);
         toast.error(err.message);
       });
   };
@@ -51,16 +49,6 @@ export default function Login(props) {
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            {/* <FormGroup>
-              <Label for="email">Email</Label>
-              <Input
-                id="email"
-                placeholder="Enter your email"
-                type="email"
-                {...register("email")}
-              />
-              {errors.email && <span>Please enter email</span>}
-            </FormGroup> */}
             <Controller
               control={control}
               name="email"
