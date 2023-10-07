@@ -20,6 +20,8 @@ import ClassPro from "./8.props/ClassPro";
 import ProjectProps from "./8.props/project/ProjectProps";
 import Parents from "./8.props/propsLifting/Parents";
 import SingleInput from "./9.Input/single/SingleInput";
+import SingleInput2 from "./9.Input/single/SingleInput2";
+import MultiInput from "./9.Input/multi_input/MultiInput";
 
 function App() {
   let x = "urvish";
@@ -63,7 +65,9 @@ function App() {
       {/* <ProjectProps /> */}
       {/* <Parents /> */}
       {/* <-------------------------Input---------------------------------> */}
-      <SingleInput />
+      {/* <SingleInput /> */}
+      {/* <SingleInput2 /> */}
+      <MultiInput />
     </div>
   );
 }

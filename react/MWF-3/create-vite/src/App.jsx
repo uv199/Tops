@@ -7,10 +7,15 @@ import PropsFunCom from "./3.Props/PropsFunCom";
 import CityTable from "./4.Map-key/CityTable";
 import FragmentCom from "./4.Map-key/FragmentCom";
 import MapKey from "./4.Map-key/MapKey";
+import ConditionCom from "./5.conditionalRendaring/ConditionCom";
+import StatePro1 from "./6.useState/StatePro1";
+import UseStateClass from "./6.useState/UseStateClass";
+import UseStateFun from "./6.useState/UseStateFun";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="app_container">
       {/* ------------------------------COMPONENT------------------------- */}
       {/* <ClassCom /> */}
       {/* <FunCom /> */}
@@ -21,12 +26,18 @@ function App() {
       {/* <PropsFunCom name={"Shubham"} /> */}
       {/* <PropsCalssCom data={{ name: "urvish", age: 23 }} /> */}
       {/* <PropsCalssCom /> */}
-      {/* ------------------------------Fragment------------------------- */}
+      {/* ------------------------------FRAGMENT------------------------- */}
       {/* <FragmentCom /> */}
       {/* <FragmentCom /> */}
-      {/* ------------------------------Map-Key------------------------- */}
+      {/* ------------------------------MAP-KEY------------------------- */}
       {/* <MapKey /> */}
-      <CityTable />
+      {/* <CityTable /> */}
+      {/* ------------------------------CONDITION-RENDARING------------------------- */}
+      {/* <ConditionCom /> */}
+      {/* ------------------------------USE-STATE------------------------- */}
+      {/* <UseStateFun /> */}
+      {/* <UseStateClass /> */}
+      <StatePro1 />
     </div>
   );
 }

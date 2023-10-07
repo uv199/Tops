@@ -1,0 +1,26 @@
+.product-com {
+    padding: 150px 0px;
+}
+
+span {
+    color: #F28123;
+}
+
+.bottom-border {
+    height: 5px;
+    width: 80px;
+    margin-left: 899px;
+    background-color: #F28123 !important;
+}
+
+.p-txt {
+    color: #555;
+}
+
+.productlist {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}

@@ -1,0 +1,12 @@
+.btn {
+    height: '55px';
+    width: '100px';
+    background-color: '#FF3F6C';
+    font-weight: 'bold';
+    border: 'none';
+    border-radius: '18px';
+}
+
+.active {
+    color: orangered !important;
+}

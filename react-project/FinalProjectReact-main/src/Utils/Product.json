@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Strawberry",
+        "season": "Summer",
+        "category": "RUNNING",
+        "textkg": "Per Kg",
+        "price": "85$",
+        "imageURL": "https://technext.github.io/frutika/assets/img/products/product-img-1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Berry",
+        "season": "Summer",
+        "category": "RUNNING",
+        "textkg": "Per Kg",
+        "price": "70$",
+        "imageURL": "https://technext.github.io/frutika/assets/img/products/product-img-2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Lemon",
+        "season": "Summer",
+        "category": "RUNNING",
+        "textkg": "Per Kg",
+        "price": "35$",
+        "imageURL": "https://technext.github.io/frutika/assets/img/products/product-img-3.jpg"
+    }
+]

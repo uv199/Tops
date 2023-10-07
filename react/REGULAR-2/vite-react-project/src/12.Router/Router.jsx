@@ -29,7 +29,7 @@ export default function Router() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           {/* nested route */}
-          <Route path="/service">
+          <Route path="/service" >
             <Route index element={<Service />} />
             <Route path="bike" element={<BikeService />} />
             <Route path="car" element={<CarService />} />

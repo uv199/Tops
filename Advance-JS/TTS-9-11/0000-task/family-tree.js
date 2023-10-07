@@ -66,3 +66,13 @@ familyTree.son[2].vehicle.map((e) => {});
 4. dada's 3nd child's 1st vehicle name
 5. dada's 1st child's 1st vehicle number
 */
+
+res1 = { name: "uv" };
+return { ...res, city: "surat" };
+
+res2 = { name: "uv", city: "surat" };
+return { ...res2, age: 23 };
+
+res3 = { name: "uv", city: "surat", age: 23 };
+
+console.log(`my name is ${res3.name}`)

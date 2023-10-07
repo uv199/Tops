@@ -14,7 +14,7 @@ export default function Service() {
       </button>
       <button onClick={() => navigate(-1)}>go to back</button>
 
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 }

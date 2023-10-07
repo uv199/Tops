@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.deal-banner {
+    display: flex;
+    gap: 50px;
+    background-color: #f5f5f5;
+    padding: 135px 217px;
+    width: 100%;
+}
+
+.deal-banner .image-column .price-box .inner-price {
+    position: relative;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: #F28123;
+    text-align: center;
+}
+
+.deal-banner .image-column .price-box {
+    position: absolute;
+    /* top: 10px; */
+    left: 279px;
+    /*can't apply*/
+    background-color: rgba(242, 129, 35, 0.75) !important;
+    border: 1px solid #fff;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    /* z-index: -1; */
+}
+
+.deal-banner .image-column .price-box .inner-price .price {
+    color: black;
+    font-size: 20px;
+}
+
+.timer-count .time-countdown {
+    padding-top: 25px;
+    display: flex;
+    gap: 5px;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.timer-count .inner {
+    text-align: center;
+}
+
+.timer-count .day-counter {
+    border: 2px solid #F28123;
+    width: 95px;
+}
+
+.timer-count .hour-counter {
+    border: 2px solid #F28123;
+    width: 95px;
+}
+
+.timer-count .min-counter {
+    border: 2px solid #F28123;
+    width: 95px;
+}
+
+.timer-count .sec-counter {
+    border: 2px solid #F28123;
+    width: 95px;
+}
