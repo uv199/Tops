@@ -1,11 +1,19 @@
 import { Pencil, XCircle } from "lucide-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Table } from "reactstrap";
+import { deleteProduct } from "../../../../redux/fetures/ProductSlice/productSlice";
 
 export default () => {
   const { err, product } = useSelector((state) => state?.productReducer);
   if (err.length > 0) toast.error(err);
+  const dispatch = useDispatch();
+  function deleteHandler(data, index) {
+    console.log("index", index);
+    console.log("data", data);
+    // /delete/:id
+    dispatch(deleteProduct({ id: data._id, index }));
+  }
   return (
     <div className="m-4">
       <Table striped>
@@ -38,7 +46,13 @@ export default () => {
                 <td>{e?.price}</td>
                 <td>
                   <Pencil color="#979191" className="m-2" role="button" />
-                  <XCircle color="#979191" className="m-2" role="button" />
+                  <XCircle
+                    color="#979191"
+                    className="m-2"
+                    role="button"
+                    n
+                    onClick={() => deleteHandler(e, i)}
+                  />
                 </td>
               </tr>
             );

@@ -12,6 +12,38 @@ export const fetchData = createAsyncThunk("product/fetchData", () => {
     return resData?.data;
   });
 });
+export const deleteProduct = createAsyncThunk(
+  "product/deleteProduct",
+  ({ id, index }) => {
+    console.log("id, index", id, index);
+    return axios
+      .delete(`${BE_URL}product/delete/${id}`)
+      .then((resData) => {
+        console.log("resData", resData);
+        return index;
+      })
+      .catch((err) => {
+        console.log("errr----", err);
+      });
+  }
+);
+
+export const addProduct = createAsyncThunk("product/addProduct", (data) => {
+  return axios
+    .post(`${BE_URL}product/create`, data, {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Barer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+    })
+    .then((resData) => {
+      console.log("resData", resData);
+      return resData?.data;
+    })
+    .catch((err) => {
+      console.log("errr--->", err.message);
+    });
+});
 
 const productSlice = createSlice({
   name: "product",
@@ -27,6 +59,14 @@ const productSlice = createSlice({
       })
       .addCase(fetchData.rejected, (state, { payload }) => {
         state.err = "Data not founds...";
+      })
+      .addCase(addProduct.fulfilled, (state, { payload }) => {
+        console.log("payload", payload);
+        state?.product?.unshift(payload?.data);
+      })
+      .addCase(deleteProduct.fulfilled, (state, { payload }) => {
+        console.log("payload", payload);
+        state.product = state.product.filter((e, i) => i !== payload);
       });
   },
 });

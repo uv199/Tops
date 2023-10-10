@@ -71,6 +71,7 @@ export const updateProduct = (req, res) => {
 };
 
 export const deleteProduct = (req, res) => {
+  console.log("req?.params?.id", req?.params?.id)
   model.Product.findByIdAndRemove(req?.params?.id)
     .then((resData) => {
       res.send({ status: 200, message: "Delete successFully...!" });
