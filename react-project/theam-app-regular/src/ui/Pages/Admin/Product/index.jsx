@@ -15,9 +15,15 @@ export default function Product() {
   });
   return (
     <>
-      <Button onClick={() => toggle()}>Add Product</Button>
-      <ProductForm toggle={toggle} modal={modal} />
-      <ProductTable />
+      <div className="m-2">
+        <div className="d-flex justify-content-between align-items-baseline ps-4">
+          <h1 className="w-75 text-center">Products</h1>
+          <Button className="h-75" onClick={() => toggle()}>Add Product</Button>
+        </div>
+        <hr />
+        <ProductForm toggle={toggle} modal={modal} />
+        <ProductTable />
+      </div>
     </>
   );
 }

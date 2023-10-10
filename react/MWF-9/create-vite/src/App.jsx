@@ -22,6 +22,9 @@ import Parents from "./8.props/propsLifting/Parents";
 import SingleInput from "./9.Input/single/SingleInput";
 import SingleInput2 from "./9.Input/single/SingleInput2";
 import MultiInput from "./9.Input/multi_input/MultiInput";
+import ClassMulti from "./9.Input/multi_input/ClassMulti";
+import DeleteCom from "./9.Input/Edit-Delete/DeleteCom";
+import EditCom from "./9.Input/Edit-Delete/EditCom";
 
 function App() {
   let x = "urvish";
@@ -67,7 +70,10 @@ function App() {
       {/* <-------------------------Input---------------------------------> */}
       {/* <SingleInput /> */}
       {/* <SingleInput2 /> */}
-      <MultiInput />
+      {/* <MultiInput /> */}
+      {/* <ClassMulti /> */}
+      {/* <DeleteCom /> */}
+      <EditCom />
     </div>
   );
 }

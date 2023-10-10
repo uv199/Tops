@@ -11,6 +11,7 @@ export default function ProductCom() {
   const toggle = () => setModal(!modal);
   const dispatch = useDispatch();
   useEffect(() => {
+    console.log("---===>");
     dispatch(fetchProductData());
   }, []);
 
@@ -23,7 +24,7 @@ export default function ProductCom() {
           </Button>
         </div>
         <ProductForm modal={modal} toggle={toggle} />
-        <ProductTable  />
+        <ProductTable />
       </div>
     </>
   );

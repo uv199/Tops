@@ -25,14 +25,11 @@ app.use("/order", Routes.orderRouter);
 
 const mno = "test2";
 const server = app.listen(port, () => {
-  // updateOldUser();
   dbConnection();
   // cronJob();
-  sendEmailTemp();
-
-  // AddAdmin();
-  // AddProductData();
-  // updateOldUser2();
+  // sendEmailTemp();
+  AddAdmin();
+  AddProductData();
   console.log(`your server is running on http://localhost:${port}/`);
 });
 

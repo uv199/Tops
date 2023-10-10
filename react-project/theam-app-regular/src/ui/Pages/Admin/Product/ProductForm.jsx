@@ -21,6 +21,7 @@ const options = [
 export const ProductForm = ({ modal, toggle }) => {
   const [productData, setProductData] = useState({});
 
+
   const {
     register,
     handleSubmit,
@@ -33,9 +34,6 @@ export const ProductForm = ({ modal, toggle }) => {
   // const fun=(e)=>
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
-        Click Me
-      </Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
@@ -96,7 +94,9 @@ export const ProductForm = ({ modal, toggle }) => {
                 <Col className="d-flex flex-column">
                   <label>Image</label>
                   <input
+                    placeholder="Please enter image url "
                     className="border-1 rounded "
+                    type="url"
                     {...register("thumbnail")}
                   />
                 </Col>
@@ -122,26 +122,30 @@ export const ProductForm = ({ modal, toggle }) => {
                         options={options}
                         className="basic-multi-select"
                         classNamePrefix="select"
-                        onChange={(e) => onChange(e)}
+                        onChange={(ele) => onChange(ele?.map((e) => e?.value))}
                       />
                     )}
                   />
                 </Col>
-                {/* <Col className="d-flex flex-column">
-                  <label>Category</label>
-                  {/* <input
-                    className="border-1 rounded "
-                    {...register("category")}
-                  /> */}
-                {/* <Select
-                    isMulti
-                    onChange={(e) => fun(e)}
-                    name="category"
-                    options={options}
-                    className="basic-multi-select"
-                    classNamePrefix="select"
-                  /> */}
-                {/* </Col>  */}
+                <Col className="d-flex flex-column">
+                  <label>Color</label>
+                  <Controller
+                    name="color"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                      <Select
+                        isMulti
+                        {...register("color", {
+                          required: true,
+                        })}
+                        options={options}
+                        className="basic-multi-select"
+                        classNamePrefix="select"
+                        onChange={(ele) => onChange(ele.map((e) => e.value))}
+                      />
+                    )}
+                  />
+                </Col>
 
                 <Col className="d-flex flex-column">
                   <label>Available Color</label>
@@ -177,21 +181,13 @@ export const ProductForm = ({ modal, toggle }) => {
   title: String,
   description: String,
   brand: String,
-  gender: {
-    type: String,
-    enum: ["male", "female", "kids"],
-  },
+  gender:  String //["male", "female", "kids"]
   price: Number,
-  images: [String],
   thumbnail: String,
   discountPercentage: Number,
   category: { type: [String] },
   color: { type: [String], default: ["red", "black", "white"] },
   size: { type: [String], default: ["44", "45", "42", "43"] },
-  isAvailable: {
-    type: Boolean,
-    default: true,
-  },
   availableStock: Number,
   rating: { type: Number, default: 0 },
   totalRaters: { type: Number, default: 0 },

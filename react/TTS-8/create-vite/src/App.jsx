@@ -30,6 +30,8 @@ import UseMemocom from "./9.HOOK/useMemo/UseMemocom";
 import FormCom from "./14.localstorage/FormCom";
 import LocalStorage from "./14.localstorage/LocalStorage";
 import { ToastContainer } from "react-toastify";
+import Usecontaxt from "./9.HOOK/Use-contaxt/Usecontaxt";
+import UseReducer from "./9.HOOK/Use-Reducer/UseReducer";
 
 function App() {
   return (
@@ -77,6 +79,10 @@ function App() {
       {/* <--------------------Localstorage-------------------------> */}
       {/* <FormCom /> */}
       <LocalStorage />
+      {/* <--------------------Use-Contaxt-------------------------> */}
+      {/* <Usecontaxt /> */}
+      {/* <--------------------Use-Reducer-------------------------> */}
+      {/* <UseReducer /> */}
       <ToastContainer limit={1} newestOnTop={false} />
     </>
   );

@@ -9,10 +9,9 @@ export default function ProductTable() {
   const allData = useSelector((state) => {
     return state?.productReducer?.products;
   });
-  console.log("allData", allData);
   useEffect(() => {
     setProductData(allData);
-  }, []);
+  }, [allData]);
 
   return (
     <>

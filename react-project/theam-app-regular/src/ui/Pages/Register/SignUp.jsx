@@ -88,7 +88,9 @@ export default function SignUp(props) {
               placeholder="Enter your number"
               type="text"
               {...field}
-              onChange={(e) => setUserData({ ...userData, number: e?.target?.value })}
+              onChange={(e) =>
+                setUserData({ ...userData, number: e?.target?.value })
+              }
             />
           )}
         />
@@ -102,7 +104,9 @@ export default function SignUp(props) {
               placeholder="Enter your age"
               type="text"
               {...field}
-              onChange={(e) => setUserData({ ...userData, age: e?.target?.value })}
+              onChange={(e) =>
+                setUserData({ ...userData, age: e?.target?.value })
+              }
             />
           )}
         />
@@ -210,7 +214,6 @@ export default function SignUp(props) {
                 placeholder="Enter your password"
                 type="password"
                 {...field}
-                
               />
             )}
           />

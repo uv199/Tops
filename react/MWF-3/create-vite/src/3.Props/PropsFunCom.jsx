@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function PropsFunCom(props) {
   console.log("props", props);
+
   return (
     <div>
       <h1>Hello world...</h1>

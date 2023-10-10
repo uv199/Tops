@@ -11,6 +11,8 @@ import ConditionCom from "./5.conditionalRendaring/ConditionCom";
 import StatePro1 from "./6.useState/StatePro1";
 import UseStateClass from "./6.useState/UseStateClass";
 import UseStateFun from "./6.useState/UseStateFun";
+import UseEffect from "./7.UseEffect/UseEffect";
+import LifeCycle from "./8.LifeCycle/LifeCycle";
 import "./App.css";
 
 function App() {
@@ -37,7 +39,11 @@ function App() {
       {/* ------------------------------USE-STATE------------------------- */}
       {/* <UseStateFun /> */}
       {/* <UseStateClass /> */}
-      <StatePro1 />
+      {/* <StatePro1 /> */}
+      {/* ------------------------------LIFE-CYCLE------------------------- */}
+      {/* <LifeCycle /> */}
+      {/* ------------------------------HOOK------------------------- */}
+      <UseEffect />
     </div>
   );
 }

@@ -28,10 +28,10 @@ function HeaderCom(props) {
           {userData?.userType === "admin" ? (
             <Nav className="me-auto ms-5 gap-5" navbar>
               <NavItem>
-                <NavLink to="">Dashboard</NavLink>
+                <NavLink to="admin/dashboard">Dashboard</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/product">Product</NavLink>
+                <NavLink to="/products">Product</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/orders">Orders</NavLink>
