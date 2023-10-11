@@ -12,6 +12,7 @@ import StatePro1 from "./6.useState/StatePro1";
 import UseStateClass from "./6.useState/UseStateClass";
 import UseStateFun from "./6.useState/UseStateFun";
 import UseEffect from "./7.UseEffect/UseEffect";
+import UseEffectPro from "./7.UseEffect/UseEffectPro";
 import LifeCycle from "./8.LifeCycle/LifeCycle";
 import "./App.css";
 
@@ -43,7 +44,8 @@ function App() {
       {/* ------------------------------LIFE-CYCLE------------------------- */}
       {/* <LifeCycle /> */}
       {/* ------------------------------HOOK------------------------- */}
-      <UseEffect />
+      {/* <UseEffect /> */}
+      <UseEffectPro />
     </div>
   );
 }

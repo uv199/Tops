@@ -5,6 +5,7 @@ export default function UseEffect() {
   let x = 0;
   let [count, setCount] = useState(0);
   let [amount, setAmount] = useState(0);
+
   useEffect(() => {
     console.log("----use effcet every time----001");
   });
