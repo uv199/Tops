@@ -5,12 +5,16 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   Table,
   Row,
   Col,
 } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
+import { BE_URL } from "../../../../config";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../../../redux/features/product/ProductSlice";
 
 const options = [
   { value: "chair", label: "Chair" },
@@ -18,18 +22,65 @@ const options = [
   { value: "sofa", label: "Sofa" },
   { value: "tvStand", label: "TV-Stand" },
 ];
-export const ProductForm = ({ modal, toggle }) => {
-  const [productData, setProductData] = useState({});
-
-
+const colorOption = [
+  { value: "red", label: "Red" },
+  { value: "Yellow", label: "Yellow" },
+  { value: "black", label: "Black" },
+  { value: "white", label: "Ehite" },
+];
+export const ProductForm = ({
+  modal,
+  toggle,
+  formData,
+  index,
+  setFormData,
+}) => {
+  console.log("formData", formData);
   const {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+    values: formData,
+  });
+  const dispatch = useDispatch();
 
-  const onSubmit = (data) => console.log("-----darta---->", data);
+  const onSubmit = (data) => {
+    axios
+      .post(`${BE_URL}/product/create`, data, {
+        headers: {
+          authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      })
+      .then((resData) => {
+        console.log("resData", resData);
+        dispatch(addProduct(resData?.data?.data));
+        reset();
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
+
+  const updateHandler = (data) => {
+    axios
+      .put(`${BE_URL}/product/update/${formData._id}`, formData, {
+        headers: {
+          authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      })
+      .then((resData) => {
+        console.log("resData", resData);
+        reset();
+        toggle();
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
 
   // const fun=(e)=>
   return (
@@ -44,13 +95,10 @@ export const ProductForm = ({ modal, toggle }) => {
                   <label>Title</label>
                   <input
                     className="border-1 rounded "
-                    onChange={(e) =>
-                      setProductData({
-                        ...productData,
-                        title: e?.target?.value,
-                      })
-                    }
                     {...register("title")}
+                    onChange={(e) =>
+                      setFormData({ ...formData, title: e?.target?.value })
+                    }
                   />
                 </Col>
                 <Col className="d-flex flex-column">
@@ -59,8 +107,8 @@ export const ProductForm = ({ modal, toggle }) => {
                     className="border-1 rounded "
                     {...register("description")}
                     onChange={(e) =>
-                      setProductData({
-                        ...productData,
+                      setFormData({
+                        ...formData,
                         description: e?.target?.value,
                       })
                     }
@@ -72,16 +120,19 @@ export const ProductForm = ({ modal, toggle }) => {
                     className="border-1 rounded "
                     {...register("brand")}
                     onChange={(e) =>
-                      setProductData({
-                        ...productData,
-                        brand: e?.target?.value,
-                      })
+                      setFormData({ ...formData, brand: e?.target?.value })
                     }
                   />
                 </Col>
                 <Col className="d-flex flex-column">
                   <label>Gender</label>
-                  <select className="border-1 rounded " {...register("gender")}>
+                  <select
+                    className="border-1 rounded "
+                    {...register("gender")}
+                    onChange={(e) =>
+                      setFormData({ ...formData, brand: e?.target?.value })
+                    }
+                  >
                     <option value="female">female</option>
                     <option value="male">male</option>
                   </select>
@@ -89,7 +140,13 @@ export const ProductForm = ({ modal, toggle }) => {
 
                 <Col className="d-flex flex-column">
                   <label>Price</label>
-                  <input className="border-1 rounded " {...register("price")} />
+                  <input
+                    className="border-1 rounded "
+                    {...register("price")}
+                    onChange={(e) =>
+                      setFormData({ ...formData, price: e?.target?.value })
+                    }
+                  />
                 </Col>
                 <Col className="d-flex flex-column">
                   <label>Image</label>
@@ -98,6 +155,9 @@ export const ProductForm = ({ modal, toggle }) => {
                     className="border-1 rounded "
                     type="url"
                     {...register("thumbnail")}
+                    onChange={(e) =>
+                      setFormData({ ...formData, thumbnail: e?.target?.value })
+                    }
                   />
                 </Col>
 
@@ -106,6 +166,12 @@ export const ProductForm = ({ modal, toggle }) => {
                   <input
                     className="border-1 rounded "
                     {...register("discountPercentage")}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        discountPercentage: e?.target?.value,
+                      })
+                    }
                   />
                 </Col>
                 <Col className="d-flex flex-column">
@@ -138,7 +204,10 @@ export const ProductForm = ({ modal, toggle }) => {
                         {...register("color", {
                           required: true,
                         })}
-                        options={options}
+                        defaultValue={colorOption.filter((e) =>
+                          formData.color.includes(e.value)
+                        )}
+                        options={colorOption}
                         className="basic-multi-select"
                         classNamePrefix="select"
                         onChange={(ele) => onChange(ele.map((e) => e.value))}
@@ -153,7 +222,13 @@ export const ProductForm = ({ modal, toggle }) => {
                 </Col>
                 <Col className="d-flex flex-column">
                   <label>Available Size</label>
-                  <input className="border-1 rounded " {...register("size")} />
+                  <input
+                    className="border-1 rounded "
+                    {...register("size")}
+                    onChange={(e) =>
+                      setFormData({ ...formData, size: e?.target?.value })
+                    }
+                  />
                 </Col>
 
                 <Col className="d-flex flex-column">
@@ -161,12 +236,25 @@ export const ProductForm = ({ modal, toggle }) => {
                   <input
                     className="border-1 rounded "
                     {...register("availableStock")}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        availableStock: e?.target?.value,
+                      })
+                    }
                   />
                 </Col>
               </Row>
 
               <Button className="mt-3 w-100" type="submit">
                 Submit
+              </Button>
+              <Button
+                className="mt-3 w-100"
+                type="submit"
+                onClick={() => updateHandler()}
+              >
+                Update
               </Button>
             </Table>
           </form>

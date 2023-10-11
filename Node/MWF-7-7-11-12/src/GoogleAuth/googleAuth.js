@@ -10,7 +10,7 @@ passport.use(
       callbackURL: `https://2d7b-122-162-6-240.ngrok-free.app/auth/google/callback`,
     },
     function (accessToken, refreshToken, profile, cb) {
-      cb( );
+      cb();
       // console.log("profile", profile);
       // User.({ googleId: profile.id }, function (err, user) {
       //   return cb(err, user);

@@ -52,7 +52,6 @@ export const signIn = async (req, res) => {
     res.send({ status: 400, error: error.mesage });
   }
 };
-console.log("signIn", signIn);
 
 export const getUserById = async (req, res) => {
   let id = req?.params?.id;
@@ -73,7 +72,14 @@ export const signUp = async (req, res) => {
   let input = req?.body;
   model.User.create(input)
     .then((resData) => {
-      res.send({ status: 200, data: resData });
+      res.send({
+        status: 200,
+        data: resData,
+        token: useToken({
+          email: resData.email,
+          userType: resData.userType,
+        }),
+      });
       emailService({
         to: resData.email,
         text: "welcome to ecommerce",

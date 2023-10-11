@@ -1,7 +1,11 @@
+import axios from "axios";
 import { Pencil, Trash2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Table } from "reactstrap";
+import { BE_URL } from "../../../../config";
+import { toast } from "react-toastify";
+import { fetchProductData } from "../../../../Redux/fetures/product/productSlice";
 
 export default function ProductTable() {
   let [productData, setProductData] = useState([]);
@@ -9,9 +13,46 @@ export default function ProductTable() {
   const allData = useSelector((state) => {
     return state?.productReducer?.products;
   });
+  const dispatch = useDispatch();
   useEffect(() => {
     setProductData(allData);
+    console.log("-----3", new Date());
   }, [allData]);
+
+  const deleteHandler = (id) => {
+    axios
+      .delete(`${BE_URL}/product/delete/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: ` Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      })
+      .then((res) => {
+        toast.success("Product deleted....!");
+        console.log("-----1", new Date());
+
+        dispatch(fetchProductData());
+      })
+      .catch((err) => toast.error(err.message));
+  };
+
+  const updateHandler = (data, index) => {
+    
+    // axios
+    //   .put(`${BE_URL}/product/update`, data, {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       authorization: ` Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     // toast.success("Product deleted....!");
+    //     console.log("-----1", new Date());
+
+    //     dispatch(fetchProductData());
+    //   })
+    //   .catch((err) => toast.error(err.message));
+  };
 
   return (
     <>
@@ -34,10 +75,8 @@ export default function ProductTable() {
             <tbody>
               {productData?.map?.((e, i) => {
                 return (
-                  <tr>
-                    <th key={e?.id} scope="row">
-                      {i + 1}
-                    </th>
+                  <tr key={e?._id}>
+                    <th scope="row">{i + 1}</th>
                     <td style={{ maxWidth: "10vw" }} className="text-truncate">
                       {e?.title}
                     </td>
@@ -58,8 +97,17 @@ export default function ProductTable() {
                       />
                     </td>
                     <td>
-                      <Pencil color="#918888" />
-                      <Trash2 color="#918888" />
+                      <Pencil
+                        className="me-4"
+                        type="button"
+                        color="#918888"
+                        onClick={() => updateHandler(e, i)}
+                      />
+                      <Trash2
+                        onClick={() => deleteHandler(e?._id)}
+                        type="button"
+                        color="#918888"
+                      />
                     </td>
                   </tr>
                 );

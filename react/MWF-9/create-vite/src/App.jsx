@@ -25,6 +25,9 @@ import MultiInput from "./9.Input/multi_input/MultiInput";
 import ClassMulti from "./9.Input/multi_input/ClassMulti";
 import DeleteCom from "./9.Input/Edit-Delete/DeleteCom";
 import EditCom from "./9.Input/Edit-Delete/EditCom";
+import LocalStorage from "./10.localStorage/LocalStorage";
+import UseRef from "./5.HOOKS/useRef/UseRef";
+import UseMemo from "./5.HOOKS/useMemo-Callbck/UseMemo";
 
 function App() {
   let x = "urvish";
@@ -59,6 +62,8 @@ function App() {
 
       {/* <-------------------------HOOK---------------------------------> */}
       {/* <UseEffect /> */}
+      {/* <UseRef /> */}
+      <UseMemo />
 
       {/* <-------------------------Props---------------------------------> */}
       {/* <FunProps name={"urvish"} age={30} /> */}
@@ -73,7 +78,9 @@ function App() {
       {/* <MultiInput /> */}
       {/* <ClassMulti /> */}
       {/* <DeleteCom /> */}
-      <EditCom />
+      {/* <EditCom /> */}
+      {/* <-------------------------Local-storage---------------------------------> */}
+      {/* <LocalStorage /> */}
     </div>
   );
 }

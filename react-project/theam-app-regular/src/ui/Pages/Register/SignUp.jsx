@@ -11,33 +11,47 @@ import {
   FormGroup,
 } from "reactstrap";
 import { NavLink, useNavigate } from "react-router-dom";
+import { ActivitySquareIcon } from "lucide-react";
+import axios from "axios";
+import { BE_URL } from "../../../config";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { login } from "../../../redux/features/auth/authSlice";
 
 export default function SignUp(props) {
+  let [address, setAddress] = useState({
+    add: "",
+    city: "",
+    pinCode: "",
+    state: "",
+  });
   const [userData, setUserData] = useState({
     name: "",
     age: "",
     email: "",
     password: "",
     number: "",
-    address: [
-      {
-        add: "",
-        city: "",
-        pinCode: "",
-        state: "",
-      },
-    ],
   });
   const navigate = useNavigate();
   const {
-    handleSubmit,
-    control,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("data", data);
-    console.log("userdara", userData);
+  const dispatch = useDispatch();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("userData", userData);
+
+    axios
+      .post(`${BE_URL}/user/signUp`, { ...userData, address: [address] })
+      .then((res) => {
+        dispatch(login(res.data));
+        navigate("/");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
 
   return (
@@ -45,180 +59,94 @@ export default function SignUp(props) {
       style={{ maxWidth: "100vw", padding: "50px" }}
       className="d-flex justify-content-center "
     >
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={onSubmit}>
         <Label for="name">Name</Label>
-        <Controller
-          control={control}
-          name="name"
-          render={({ field }) => (
-            <Input
-              id="name"
-              placeholder="Enter your name"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({ ...userData, name: e?.target?.value })
-              }
-            />
-          )}
+        <Input
+          onChange={(e) => setUserData({ ...userData, name: e?.target?.value })}
+          id="name"
+          placeholder="Enter your name"
+          type="text"
         />
+
         <Label for="email">Email</Label>
-        <Controller
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <Input
-              id="email"
-              placeholder="Enter your email"
-              type="email"
-              {...field}
-              onChange={(e) =>
-                setUserData({ ...userData, email, age: e?.target?.value })
-              }
-            />
-          )}
+
+        <Input
+          onChange={(e) =>
+            setUserData({ ...userData, email: e?.target?.value })
+          }
+          id="email"
+          placeholder="Enter your email"
+          type="email"
         />
+
         <Label for="number">Phone-No</Label>
-        <Controller
-          control={control}
-          name="number"
-          render={({ field }) => (
-            <Input
-              id="number"
-              placeholder="Enter your number"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({ ...userData, number: e?.target?.value })
-              }
-            />
-          )}
+
+        <Input
+          onChange={(e) =>
+            setUserData({ ...userData, number: e?.target?.value })
+          }
+          id="number"
+          placeholder="Enter your number"
+          type="text"
         />
+
         <Label for="age">Age</Label>
-        <Controller
-          control={control}
-          name="age"
-          render={({ field }) => (
-            <Input
-              id="age"
-              placeholder="Enter your age"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({ ...userData, age: e?.target?.value })
-              }
-            />
-          )}
+
+        <Input
+          onChange={(e) => setUserData({ ...userData, age: e?.target?.value })}
+          id="age"
+          placeholder="Enter your age"
+          type="text"
         />
+
         <Label for="add">Address</Label>
-        <Controller
-          control={control}
-          name="add"
-          render={({ field }) => (
-            <Input
-              id="add"
-              placeholder="Enter your address"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({
-                  ...userData,
-                  address: [
-                    ...userData[0],
-                    { ...userData.address[0], add: e?.target?.value },
-                  ],
-                })
-              }
-            />
-          )}
+
+        <Input
+          onChange={(e) => setAddress({ ...address, add: e?.target?.value })}
+          id="add"
+          placeholder="Enter your address"
+          type="text"
         />
+
         <Label for="city">City</Label>
 
-        <Controller
-          control={control}
-          name="city"
-          render={({ field }) => (
-            <Input
-              id="city"
-              placeholder="Enter your city"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({
-                  ...userData,
-                  address: [
-                    ...userData[0],
-                    { ...userData.address[0], city: e?.target?.value },
-                  ],
-                })
-              }
-            />
-          )}
+        <Input
+          onChange={(e) => setAddress({ ...address, city: e?.target?.value })}
+          id="city"
+          placeholder="Enter your city"
+          type="text"
         />
+
         <Label for="state">State</Label>
 
-        <Controller
-          control={control}
-          name="state"
-          render={({ field }) => (
-            <Input
-              id="state"
-              placeholder="Enter your state"
-              type="text"
-              {...field}
-              onChange={(e) =>
-                setUserData({
-                  ...userData,
-                  address: [
-                    ...userData[0],
-                    { ...userData.address[0], state: e?.target?.value },
-                  ],
-                })
-              }
-            />
-          )}
+        <Input
+          onChange={(e) => setAddress({ ...address, state: e?.target?.value })}
+          id="state"
+          placeholder="Enter your state"
+          type="text"
         />
+
         <Label for="pinCode">Pin-Code</Label>
 
-        <Controller
-          control={control}
-          name="pinCode"
-          render={({ field }) => (
-            <Input
-              id="pinCode"
-              placeholder="Enter your pins-code"
-              onChange={(e) =>
-                setUserData({
-                  ...userData,
-                  address: [
-                    ...userData[0],
-
-                    { ...userData.address[0], pinCode: e?.target?.value },
-                  ],
-                })
-              }
-              type="text"
-              {...field}
-            />
-          )}
+        <Input
+          onChange={(e) =>
+            setAddress({ ...address, pinCode: e?.target?.value })
+          }
+          id="pinCode"
+          placeholder="Enter your pins-code"
+          type="text"
         />
 
         <FormGroup>
           <Label for="password">Password</Label>
-          <Controller
-            control={control}
-            name="password"
-            render={({ field }) => (
-              <Input
-                id="password"
-                placeholder="Enter your password"
-                type="password"
-                {...field}
-              />
-            )}
+          <Input
+            onChange={(e) =>
+              setUserData({ ...userData, password: e?.target?.value })
+            }
+            id="password"
+            placeholder="Enter your password"
+            type="password"
           />
-
-          {errors.password && <span>Please enter password</span>}
         </FormGroup>
         <NavLink to="/login" className="text-decoration-underlines">
           Alredy have Account ? signIn

@@ -12,15 +12,16 @@ import {
   Col,
   Label,
 } from "reactstrap";
-
-const options = [
-  { value: "red", label: "Red" },
-  { value: "yellow", label: "Yellow" },
-  { value: "black", label: "Black" },
-  { value: "white", label: "White" },
-  { value: "blue", label: "Blue" },
-  { value: "pink", label: "Pink" },
-];
+import {
+  categoryOptions,
+  colorOptions,
+  sizeOptions,
+} from "../../../../utils/OptoionData";
+import axios from "axios";
+import { BE_URL } from "../../../../config";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../../../Redux/fetures/product/productSlice";
 
 export default ({ modal, toggle }) => {
   let [prouductData, setProductData] = useState({
@@ -29,17 +30,33 @@ export default ({ modal, toggle }) => {
     brand: "",
     price: "",
     thumbnail: "",
+    gender: "",
+    color: [],
+    category: [],
     discountPercentage: "",
     availableStock: "",
   });
-
-  let [color, setColor] = useState([]);
-
-  const getColor = (e) => {
-    console.log("e", e);
-    let values = e.map((ele) => ele.value);
-    setColor(values);
+  const dispatch = useDispatch();
+  const submitHandler = () => {
+    toggle()
+    console.log("----prouductData---", prouductData);
+    axios
+      .post(`${BE_URL}/product/create`, prouductData, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: ` Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      })
+      .then((resData) => {
+        console.log("----->", resData);
+        dispatch(addProduct(resData.data));
+        toast.success("Product added..!");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
+
   return (
     <div>
       <Modal size="lg" isOpen={modal} toggle={toggle}>
@@ -54,6 +71,12 @@ export default ({ modal, toggle }) => {
                     id="title"
                     placeholder="Enter product name"
                     type="text"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        title: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -61,9 +84,15 @@ export default ({ modal, toggle }) => {
                 <FormGroup>
                   <Label for="decription">Description</Label>
                   <Input
-                    id="decription"
+                    id="description"
                     placeholder="Enter product description"
                     type="text"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        description: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -76,6 +105,12 @@ export default ({ modal, toggle }) => {
                     id="brand"
                     placeholder="Enter product name"
                     type="text"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        brand: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -84,15 +119,40 @@ export default ({ modal, toggle }) => {
                   <Label>Gender</Label>
                   <Row>
                     <Col>
-                      <Input id="gender" className="me-2" type="radio" />
+                      <Input
+                        id="gender"
+                        className="me-2"
+                        type="radio"
+                        name="test"
+                        // checked={prouductData.gender === "male"}
+                        onChange={() =>
+                          setProductData({ ...prouductData, gender: "male" })
+                        }
+                      />
                       <Label for="gender">Male</Label>
                     </Col>
                     <Col>
-                      <Input id="gender" className="me-2" type="radio" />
+                      <Input
+                        id="gender"
+                        className="me-2"
+                        type="radio"
+                        name="test"
+                        onChange={() =>
+                          setProductData({ ...prouductData, gender: "female" })
+                        }
+                      />
                       <Label for="gender">Female</Label>
                     </Col>
                     <Col>
-                      <Input id="gender" className="me-2" type="radio" />
+                      <Input
+                        id="gender"
+                        className="me-2"
+                        type="radio"
+                        name="test"
+                        onChange={() =>
+                          setProductData({ ...prouductData, gender: "kids" })
+                        }
+                      />
                       <Label for="gender">Kids</Label>
                     </Col>
                   </Row>
@@ -107,6 +167,12 @@ export default ({ modal, toggle }) => {
                     id="thumbnail"
                     placeholder="Enter product name"
                     type="url"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        thumbnail: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -117,6 +183,12 @@ export default ({ modal, toggle }) => {
                     id="discountPercentage"
                     placeholder="Enter product description"
                     type="number"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        discountPercentage: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -129,16 +201,27 @@ export default ({ modal, toggle }) => {
                     id="availableStock"
                     placeholder="Enter product name"
                     type="number"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        availableStock: e?.target?.value,
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="category">Category</Label>
-                  <Input
-                    id="category"
-                    placeholder="Enter product description"
-                    type="text"
+                  <Label for="size">Available Size</Label>
+                  <Select
+                    isMulti
+                    options={sizeOptions}
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        size: e.map((ele) => ele.value),
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
@@ -149,23 +232,53 @@ export default ({ modal, toggle }) => {
                   <Label for="color">Available Color</Label>
                   <Select
                     isMulti
-                    options={options}
-                    onChange={(e) => getColor(e)}
+                    options={colorOptions}
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        color: e.map((ele) => ele.value),
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="size">Available Size</Label>
-                  <Input
-                    id="category"
-                    placeholder="Enter product description"
-                    type="text"
+                  <Label for="category">Category</Label>
+                  <Select
+                    isMulti
+                    options={categoryOptions}
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        category: e?.map((ele) => ele.value),
+                      })
+                    }
                   />
                 </FormGroup>
               </Col>
             </Row>
-            <Button className="w-100">Add Product</Button>
+            <Row>
+              <Col md={6}>
+                <FormGroup>
+                  <Label for="color">Price</Label>
+                  <Input
+                    id="price"
+                    placeholder="Enter product price"
+                    type="number"
+                    onChange={(e) =>
+                      setProductData({
+                        ...prouductData,
+                        price: e?.target?.value,
+                      })
+                    }
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Button className="w-100" onClick={submitHandler}>
+              Add Product
+            </Button>
           </Form>
         </ModalBody>
       </Modal>
@@ -179,7 +292,7 @@ export default ({ modal, toggle }) => {
   description: "good shose",
   brand: "nike",
   gender: "male" // ["male", "female", "kids"],
-  price: 500,
+  price: 500,--
   thumbnail: "image url",
   discountPercentage: 20,
   category: ["sports","shose"],
