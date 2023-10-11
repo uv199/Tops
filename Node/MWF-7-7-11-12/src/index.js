@@ -6,14 +6,31 @@ import { dbConnection } from "./db";
 import { AddAdmin, AddProductData } from "./db/addDefaultData";
 import { updateOldUser, updateOldUser2 } from "./db/script";
 import path from "path";
+import GoogkleAuth from "./GoogleAuth/googleAuth";
 
 const app = express();
 
 import { Server } from "socket.io";
 import { cronJob } from "./functions/cronJob";
 import { sendEmailTemp } from "./functions/emailService";
+import passport from "passport";
 
 const port = process.env.PORT || 3000;
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["email", "profile"],
+  }),
+  (req, res) => {
+    res.send("hello world");
+  }
+);
+app.get("/", (req, res) => {
+  res.send("login success....!");
+});
+app.get("/login", (req, res) => {
+  res.send("login faild....!");
+});
 
 app.use(express.json());
 app.use(cors());
@@ -23,6 +40,15 @@ app.use("/cart", Routes.cartRouter);
 app.use("/wishlist", Routes.wishListRouter);
 app.use("/order", Routes.orderRouter);
 
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google"),
+  function (req, res) {
+    console.log("req.user", req.user);
+    // Successful authentication, redirect home.
+    res.send("data found");
+  }
+);
 const mno = "test2";
 const server = app.listen(port, () => {
   // updateOldUser();

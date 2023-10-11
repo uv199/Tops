@@ -43,6 +43,7 @@ export const getAll = async (req, res) => {
 export const createProduct = (req, res) => {
   model.Product.create(req?.body)
     .then((resData) => {
+      console.log("resData", resData);
       res.send({ status: 200, data: resData });
     })
     .catch((err) => {
@@ -71,7 +72,7 @@ export const updateProduct = (req, res) => {
 };
 
 export const deleteProduct = (req, res) => {
-  console.log("req?.params?.id", req?.params?.id)
+  console.log("req?.params?.id", req?.params?.id);
   model.Product.findByIdAndRemove(req?.params?.id)
     .then((resData) => {
       res.send({ status: 200, message: "Delete successFully...!" });
