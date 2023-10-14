@@ -8,10 +8,11 @@ import {
   signUp,
   updateUser,
 } from "../controler/user";
+import { AdminAuth } from "../auth";
 
 const userRouter = express.Router();
 
-userRouter.get("/getAll", getAll);
+userRouter.get("/getAll", AdminAuth, getAll);
 
 userRouter.get("/getUserById/:id", getUserById);
 

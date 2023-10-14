@@ -15,15 +15,32 @@ ask for
   */
 const ALL_DATA = require("./data.json");
 
-function cityByState(stateName) {
-  let matchData = ALL_DATA.filter((e) => {
-    return e.state_name === stateName;
-  });
-  let data = matchData.map((e) => {
-    return e.city;
-  });
-  return data;
-}
+// [
+//   {
+//     state: "delhi",
+//     population: 200,
+//   },
+//   {
+//     state: "gujrat",
+//     population: 200,
+//   },
+// ];
 
-let cityOfAP = cityByState("Andhra Pradesh");
-console.log("cityOfAP:", cityOfAP);
+let arr = [];
+ALL_DATA.map((objEle) => {
+  // console.log("objEle", objEle.state_name);
+  // objEle.state_name = delhi
+  let index = arr.findIndex((ele) => ele.state === objEle.state_name);
+  if (index === -1) {
+    // console.log("if --------called------>");
+    arr.push({
+      state: objEle.state_name,
+      population: +objEle.population,
+    });
+    // console.log("arr", arr);
+  } else {
+    // console.log("else --------called---------------->");
+    arr[index].population += +objEle.population;
+  }
+});
+console.log("arr", arr);

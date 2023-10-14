@@ -14,6 +14,8 @@ import UseStateFun from "./6.useState/UseStateFun";
 import UseEffect from "./7.UseEffect/UseEffect";
 import UseEffectPro from "./7.UseEffect/UseEffectPro";
 import LifeCycle from "./8.LifeCycle/LifeCycle";
+import DeleteData from "./9.input/DeleteData";
+import InputData from "./9.input/InputData";
 import "./App.css";
 
 function App() {
@@ -45,7 +47,9 @@ function App() {
       {/* <LifeCycle /> */}
       {/* ------------------------------HOOK------------------------- */}
       {/* <UseEffect /> */}
-      <UseEffectPro />
+      {/* <UseEffectPro /> */}
+      {/* <InputData /> */}
+      <DeleteData />
     </div>
   );
 }

@@ -32,6 +32,8 @@ import LocalStorage from "./14.localstorage/LocalStorage";
 import { ToastContainer } from "react-toastify";
 import Usecontaxt from "./9.HOOK/Use-contaxt/Usecontaxt";
 import UseReducer from "./9.HOOK/Use-Reducer/UseReducer";
+import UseCallBack from "./9.HOOK/UseCallBack/UseCallBack";
+import Select_Radio from "./10.input/Select_Radio";
 
 function App() {
   return (
@@ -61,16 +63,21 @@ function App() {
       {/* <CondCom /> */}
       {/* <--------------------Map And Key-------------------------> */}
       {/* <MapKeyCom /> */}
-      {/* <--------------------HOOK -------------------------> */}
+      {/* <--------------------HOOK-------------------------> */}
       {/* <UseEffectCom /> */}
       {/* <UseRefCom /> */}
       {/* <UseMemocom /> */}
+      {/* <UseReducer /> */}
+      {/* <Usecontaxt /> */}
+      {/* <UseCallBack /> */}
 
       {/* <--------------------Input-------------------------> */}
       {/* <InputCom /> */}
       {/* <InputUpdate /> */}
       {/* <MultipleInput /> */}
       {/* <SearchCom /> */}
+      <Select_Radio />
+
       {/* <--------------------LifeCycle-------------------------> */}
       {/* <LifeCycle /> */}
       {/* <--------------------Router-------------------------> */}
@@ -78,11 +85,8 @@ function App() {
       {/* <ProRouter /> */}
       {/* <--------------------Localstorage-------------------------> */}
       {/* <FormCom /> */}
-      <LocalStorage />
-      {/* <--------------------Use-Contaxt-------------------------> */}
-      {/* <Usecontaxt /> */}
-      {/* <--------------------Use-Reducer-------------------------> */}
-      {/* <UseReducer /> */}
+      {/* <LocalStorage /> */}
+
       <ToastContainer limit={1} newestOnTop={false} />
     </>
   );

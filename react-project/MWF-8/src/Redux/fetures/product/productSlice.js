@@ -8,7 +8,6 @@ const initialState = {
 
 export const fetchProductData = createAsyncThunk("product/fetchProduct", () => {
   return axios.get(`${BE_URL}/product/getAll`).then((resData) => {
-    console.log("-----2", new Date());
     return resData.data;
   });
 });
@@ -18,13 +17,10 @@ const productSLice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, { payload }) => {
-      console.log("payload", payload);
       state.products.unshift(payload.data);
     },
     updateProduct: (state, { payload }) => {
-      console.log("payload", payload);
-
-      // state.products.splice();
+      state.products.splice(payload?.index, 1, payload?.data);
     },
   },
   extraReducers: (builder) => {
@@ -35,4 +31,4 @@ const productSLice = createSlice({
 });
 
 export default productSLice.reducer;
-export const { addProduct ,updateProduct} = productSLice.actions;
+export const { addProduct, updateProduct } = productSLice.actions;

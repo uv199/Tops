@@ -10,20 +10,22 @@ export default function LocalStorage() {
   let [dataArr, setDataArr] = useState([]);
   let [index, setIndex] = useState(null);
   let [updateMode, setUpdateMode] = useState(false);
+  let [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    let jsonString = localStorage.getItem("dataArr");
-    console.log("jsonString", jsonString);
-    let normalData = JSON.parse(jsonString);
-    console.log("normalData", normalData);
-    setDataArr(normalData);
-  }, []);
+    let jsonString = localStorage.getItem("Data");
+    let normalData = JSON.parse(jsonString) || [];
+    const afterSearchData = normalData?.filter?.((e) => {
+      return e?.userName?.toLowerCase?.()?.includes?.(searchText.toLowerCase());
+    });
+    setDataArr(afterSearchData);
+  }, [searchText]);
 
   function addDataToArr(e) {
     e.preventDefault();
-    if (userData.userName.length > 0 && userData.password.length > 0) {
+    if (userData?.userName?.length > 0 && userData?.password.length > 0) {
       setDataArr([...dataArr, userData]);
-      localStorage.setItem("dataArr", JSON.stringify([...dataArr, userData]));
+      localStorage.setItem("Data", JSON.stringify([...dataArr, userData]));
       setUserData({
         userName: "",
         password: "",
@@ -39,11 +41,9 @@ export default function LocalStorage() {
     setIndex(index);
   };
   const updateInArr = () => {
-    console.log("--==--==");
-
     dataArr.splice(index, 1, userData);
     setDataArr([...dataArr]);
-    localStorage.setItem("dataArr", JSON.stringify([...dataArr]));
+    localStorage.setItem("Data", JSON.stringify([...dataArr]));
     setUserData({
       userName: "",
       password: "",
@@ -84,6 +84,8 @@ export default function LocalStorage() {
           </Button>
         )}
       </form>
+      <h2>Search your text..</h2>
+      <input type="text" onChange={(e) => setSearchText(e?.target?.value)} />
       <Table>
         <thead>
           <tr>

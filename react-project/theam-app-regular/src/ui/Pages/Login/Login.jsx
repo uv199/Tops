@@ -15,6 +15,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
+import { fetchCardData } from "../../../redux/features/cart/cartslice";
 
 export default function Login(props) {
   const navigate = useNavigate();
@@ -27,14 +28,15 @@ export default function Login(props) {
   const [modal, setModal] = useState(true);
   const dispatch = useDispatch();
   const onSubmit = (data) => {
-    console.log("data", data);
     axios
       .post("http://localhost:9999/user/signin", data)
       .then((resData) => {
+        console.log("resData", resData.data);
         dispatch(login(resData.data));
         if (resData?.data?.data?.userType === "admin") {
           navigate("/dashbord");
         } else {
+          dispatch(fetchCardData(resData?.data?.token));
           navigate("/");
         }
       })

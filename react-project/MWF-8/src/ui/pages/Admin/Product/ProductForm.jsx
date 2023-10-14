@@ -1,5 +1,5 @@
 import Select from "react-select";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Modal,
@@ -21,9 +21,13 @@ import axios from "axios";
 import { BE_URL } from "../../../../config";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../../../Redux/fetures/product/productSlice";
+import {
+  addProduct,
+  updateProduct,
+} from "../../../../Redux/fetures/product/productSlice";
 
-export default ({ modal, toggle }) => {
+export default ({ modal, toggle, updatedData, index, setIndex }) => {
+  console.log("updatedData", updatedData?.size);
   let [prouductData, setProductData] = useState({
     title: "",
     description: "",
@@ -31,15 +35,22 @@ export default ({ modal, toggle }) => {
     price: "",
     thumbnail: "",
     gender: "",
+    size: [],
     color: [],
     category: [],
     discountPercentage: "",
     availableStock: "",
   });
+  useEffect(() => {
+    console.log("-------");
+  }, []);
   const dispatch = useDispatch();
+  useEffect(() => {
+    setProductData(updatedData);
+  }, [updatedData]);
+
   const submitHandler = () => {
-    toggle()
-    console.log("----prouductData---", prouductData);
+    toggle();
     axios
       .post(`${BE_URL}/product/create`, prouductData, {
         headers: {
@@ -48,7 +59,6 @@ export default ({ modal, toggle }) => {
         },
       })
       .then((resData) => {
-        console.log("----->", resData);
         dispatch(addProduct(resData.data));
         toast.success("Product added..!");
       })
@@ -57,6 +67,37 @@ export default ({ modal, toggle }) => {
       });
   };
 
+  const updateHandler = () => {
+    toggle();
+    axios
+      .put(`${BE_URL}/product/update/${updatedData?._id}`, prouductData, {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: ` Bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      })
+      .then((resData) => {
+        dispatch(updateProduct({ index, data: resData?.data?.data }));
+
+        setProductData({
+          title: "",
+          description: "",
+          brand: "",
+          price: "",
+          thumbnail: "",
+          gender: "",
+          color: [],
+          category: [],
+          discountPercentage: "",
+          availableStock: "",
+        });
+        setIndex(null);
+        toast.success("Product updated..!");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
   return (
     <div>
       <Modal size="lg" isOpen={modal} toggle={toggle}>
@@ -69,6 +110,7 @@ export default ({ modal, toggle }) => {
                   <Label for="title">Name</Label>
                   <Input
                     id="title"
+                    value={prouductData?.title}
                     placeholder="Enter product name"
                     type="text"
                     onChange={(e) =>
@@ -85,6 +127,7 @@ export default ({ modal, toggle }) => {
                   <Label for="decription">Description</Label>
                   <Input
                     id="description"
+                    value={prouductData?.description}
                     placeholder="Enter product description"
                     type="text"
                     onChange={(e) =>
@@ -103,6 +146,7 @@ export default ({ modal, toggle }) => {
                   <Label for="brand">Brand</Label>
                   <Input
                     id="brand"
+                    value={prouductData?.brand}
                     placeholder="Enter product name"
                     type="text"
                     onChange={(e) =>
@@ -124,7 +168,7 @@ export default ({ modal, toggle }) => {
                         className="me-2"
                         type="radio"
                         name="test"
-                        // checked={prouductData.gender === "male"}
+                        checked={prouductData?.gender === "male"}
                         onChange={() =>
                           setProductData({ ...prouductData, gender: "male" })
                         }
@@ -137,6 +181,7 @@ export default ({ modal, toggle }) => {
                         className="me-2"
                         type="radio"
                         name="test"
+                        checked={prouductData?.gender === "female"}
                         onChange={() =>
                           setProductData({ ...prouductData, gender: "female" })
                         }
@@ -149,6 +194,7 @@ export default ({ modal, toggle }) => {
                         className="me-2"
                         type="radio"
                         name="test"
+                        checked={prouductData?.gender === "kids"}
                         onChange={() =>
                           setProductData({ ...prouductData, gender: "kids" })
                         }
@@ -167,6 +213,7 @@ export default ({ modal, toggle }) => {
                     id="thumbnail"
                     placeholder="Enter product name"
                     type="url"
+                    value={prouductData?.thumbnail}
                     onChange={(e) =>
                       setProductData({
                         ...prouductData,
@@ -182,6 +229,7 @@ export default ({ modal, toggle }) => {
                   <Input
                     id="discountPercentage"
                     placeholder="Enter product description"
+                    value={prouductData?.discountPercentage}
                     type="number"
                     onChange={(e) =>
                       setProductData({
@@ -201,6 +249,7 @@ export default ({ modal, toggle }) => {
                     id="availableStock"
                     placeholder="Enter product name"
                     type="number"
+                    value={prouductData?.availableStock}
                     onChange={(e) =>
                       setProductData({
                         ...prouductData,
@@ -216,6 +265,9 @@ export default ({ modal, toggle }) => {
                   <Select
                     isMulti
                     options={sizeOptions}
+                    defaultValue={sizeOptions?.filter?.((ele) =>
+                      updatedData?.size?.includes?.(ele.value)
+                    )}
                     onChange={(e) =>
                       setProductData({
                         ...prouductData,
@@ -232,6 +284,9 @@ export default ({ modal, toggle }) => {
                   <Label for="color">Available Color</Label>
                   <Select
                     isMulti
+                    defaultValue={colorOptions?.filter?.((ele) =>
+                      updatedData?.color.includes?.(ele?.value)
+                    )}
                     options={colorOptions}
                     onChange={(e) =>
                       setProductData({
@@ -247,6 +302,9 @@ export default ({ modal, toggle }) => {
                   <Label for="category">Category</Label>
                   <Select
                     isMulti
+                    defaultValue={categoryOptions?.filter?.((ele) =>
+                      updatedData?.category.includes?.(ele?.value)
+                    )}
                     options={categoryOptions}
                     onChange={(e) =>
                       setProductData({
@@ -265,6 +323,7 @@ export default ({ modal, toggle }) => {
                   <Input
                     id="price"
                     placeholder="Enter product price"
+                    value={prouductData?.price}
                     type="number"
                     onChange={(e) =>
                       setProductData({
@@ -276,9 +335,15 @@ export default ({ modal, toggle }) => {
                 </FormGroup>
               </Col>
             </Row>
-            <Button className="w-100" onClick={submitHandler}>
-              Add Product
-            </Button>
+            {index || index === 0 ? (
+              <Button className="w-100" onClick={updateHandler}>
+                Update
+              </Button>
+            ) : (
+              <Button className="w-100" onClick={submitHandler}>
+                Add Product
+              </Button>
+            )}
           </Form>
         </ModalBody>
       </Modal>

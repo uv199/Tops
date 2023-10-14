@@ -16,6 +16,7 @@ import { store } from "../redux/app/store";
 import SignUp from "../ui/Pages/Register/SignUp";
 import Order from "../ui/Pages/Admin/Order/Order";
 import User from "../ui/Pages/Admin/User/User";
+import Cart from "../ui/Pages/Cart/Cart";
 
 export default function Router() {
   return (
@@ -34,6 +35,7 @@ export default function Router() {
             <Route exact path="/products" element={<Product />} />
             <Route exact path="/orders" element={<Order />} />
             <Route exact path="/users" element={<User />} />
+            <Route exact path="/cart" element={<Cart />} />
             <Route exact path="*" element={<Page404 />} />
           </Routes>
           <FooterCom />

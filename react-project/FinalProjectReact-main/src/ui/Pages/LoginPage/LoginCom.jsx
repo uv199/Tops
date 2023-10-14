@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../redux/fetures/authSlice/authSlice";
 import axios from "axios";
 import { BE_URL } from "../../../config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function LoginCom() {
@@ -21,6 +21,7 @@ export default function LoginCom() {
       .then((resData) => {
         dispatch(login(resData?.data));
         toast.success("login Succesfully");
+        window.scrollTo(0, 0);
         if (resData?.data?.data?.userType === "admin") {
           navigate("/dashboard");
         } else {
@@ -72,6 +73,7 @@ export default function LoginCom() {
                   }
                 />
               </FormGroup>
+              <Link to={"/register"}>Don't have account ? SignUp</Link>
               <p className="loginpara pt-3">
                 By Continuing, I agree to the{" "}
                 <b>

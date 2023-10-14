@@ -32,7 +32,7 @@ export default function LoginForm() {
         navigate("/admin/dashboard");
       })
       .catch((error) => {
-        console.log("----errr------");
+        toast.error(error.message);
       });
   };
 

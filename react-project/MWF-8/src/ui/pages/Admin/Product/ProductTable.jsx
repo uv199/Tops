@@ -7,7 +7,7 @@ import { BE_URL } from "../../../../config";
 import { toast } from "react-toastify";
 import { fetchProductData } from "../../../../Redux/fetures/product/productSlice";
 
-export default function ProductTable() {
+export default function ProductTable({ toggle, setDefautlData, setIndex }) {
   let [productData, setProductData] = useState([]);
 
   const allData = useSelector((state) => {
@@ -16,7 +16,6 @@ export default function ProductTable() {
   const dispatch = useDispatch();
   useEffect(() => {
     setProductData(allData);
-    console.log("-----3", new Date());
   }, [allData]);
 
   const deleteHandler = (id) => {
@@ -29,7 +28,6 @@ export default function ProductTable() {
       })
       .then((res) => {
         toast.success("Product deleted....!");
-        console.log("-----1", new Date());
 
         dispatch(fetchProductData());
       })
@@ -37,21 +35,9 @@ export default function ProductTable() {
   };
 
   const updateHandler = (data, index) => {
-    
-    // axios
-    //   .put(`${BE_URL}/product/update`, data, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       authorization: ` Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-    //     },
-    //   })
-    //   .then((res) => {
-    //     // toast.success("Product deleted....!");
-    //     console.log("-----1", new Date());
-
-    //     dispatch(fetchProductData());
-    //   })
-    //   .catch((err) => toast.error(err.message));
+    toggle();
+    setDefautlData(data);
+    setIndex(index);
   };
 
   return (

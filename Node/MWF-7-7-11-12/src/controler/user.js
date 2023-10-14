@@ -11,7 +11,9 @@ const useToken = (data) => {
 
 export const getAll = (req, res) => {
   model.User.find({})
+    .populate({ path: "products.productId" })
     .then((resData) => {
+      console.log("resData", resData);
       if (resData.length > 0) {
         res.send({ status: "200", data: resData });
       } else {

@@ -7,11 +7,13 @@ import { fetchProductData } from "../../../../Redux/fetures/product/productSlice
 
 export default function ProductCom() {
   const [modal, setModal] = useState(false);
+  let [productData, setProductData] = useState({});
+  let [index, setIndex] = useState(null);
 
   const toggle = () => setModal(!modal);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("---===>");
     dispatch(fetchProductData());
   }, []);
 
@@ -23,8 +25,19 @@ export default function ProductCom() {
             Add Product
           </Button>
         </div>
-        <ProductForm modal={modal} toggle={toggle} />
-        <ProductTable />
+        <ProductForm
+          index={index}
+          updatedData={productData}
+          setDefautlData={setProductData}
+          modal={modal}
+          toggle={toggle}
+          setIndex={setIndex}
+        />
+        <ProductTable
+          setIndex={setIndex}
+          setDefautlData={setProductData}
+          toggle={toggle}
+        />
       </div>
     </>
   );

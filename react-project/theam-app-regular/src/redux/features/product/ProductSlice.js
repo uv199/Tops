@@ -5,9 +5,14 @@ import axios from "axios";
 const initialState = { product: [] };
 
 export const fetchProduct = createAsyncThunk("product/fetchProduct", () => {
-  return axios.get(`${BE_URL}/product/getAll`).then((res) => {
-    return res?.data?.data;
-  });
+  console.log("------fetch data --->");
+  return axios
+    .get(`${BE_URL}/product/getAll`)
+    .then((res) => {
+      console.log("res?.data?.data", res?.data?.data);
+      return res?.data?.data;
+    })
+    .catch((err) => console.log(err));
 });
 
 const productSlice = createSlice({
@@ -18,7 +23,6 @@ const productSlice = createSlice({
       state.product.unshift(payload);
     },
     removeProduct: (state, { payload }) => {
-      console.log("payload", payload);
       state.product.splice(payload, 1);
     },
   },

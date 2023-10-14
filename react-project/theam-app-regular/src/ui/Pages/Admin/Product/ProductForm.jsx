@@ -35,7 +35,6 @@ export const ProductForm = ({
   index,
   setFormData,
 }) => {
-  console.log("formData", formData);
   const {
     register,
     handleSubmit,
@@ -56,7 +55,6 @@ export const ProductForm = ({
         },
       })
       .then((resData) => {
-        console.log("resData", resData);
         dispatch(addProduct(resData?.data?.data));
         reset();
       })
@@ -73,7 +71,6 @@ export const ProductForm = ({
         },
       })
       .then((resData) => {
-        console.log("resData", resData);
         reset();
         toggle();
       })

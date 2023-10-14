@@ -23,11 +23,9 @@ export default function ProductTable({ toggle, setFormData, setIndex }) {
 
   const dispatch = useDispatch();
   function deleteHandler(id, index) {
-    console.log("id, index", id, index);
     axios
       .delete(`${BE_URL}/product/delete/${id}`)
       .then((resData) => {
-        console.log("res data delete====>", resData);
         dispatch(removeProduct(index));
       })
       .catch((err) => {

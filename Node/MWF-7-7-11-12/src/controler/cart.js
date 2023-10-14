@@ -7,7 +7,6 @@ export const getall = (req, res) => {
       {
         path: "products.productId",
         select: { name: 1, userId: 1 },
-        populate: [{ path: "userId", select: { name: 1 } }],
       },
     ])
     .then((resData) => {
@@ -19,8 +18,9 @@ export const getall = (req, res) => {
 };
 
 export const create = async (req, res) => {
+  console.log("req?.loginUser", req?.loginUser);
   model.Cart.update(
-    { userId: req?.loginUser?.id },
+    { userId: req?.loginUser?._id },
     { ...req?.body, userId: req?.loginUser?.id },
     { upsert: true }
   )

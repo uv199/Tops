@@ -41,7 +41,6 @@ export default function SignUp(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("userData", userData);
 
     axios
       .post(`${BE_URL}/user/signUp`, { ...userData, address: [address] })

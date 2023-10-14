@@ -28,6 +28,7 @@ import EditCom from "./9.Input/Edit-Delete/EditCom";
 import LocalStorage from "./10.localStorage/LocalStorage";
 import UseRef from "./5.HOOKS/useRef/UseRef";
 import UseMemo from "./5.HOOKS/useMemo-Callbck/UseMemo";
+import Router from "./11.router/Router";
 
 function App() {
   let x = "urvish";
@@ -63,7 +64,7 @@ function App() {
       {/* <-------------------------HOOK---------------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseRef /> */}
-      <UseMemo />
+      {/* <UseMemo /> */}
 
       {/* <-------------------------Props---------------------------------> */}
       {/* <FunProps name={"urvish"} age={30} /> */}
@@ -81,6 +82,8 @@ function App() {
       {/* <EditCom /> */}
       {/* <-------------------------Local-storage---------------------------------> */}
       {/* <LocalStorage /> */}
+      {/* <-------------------------Router---------------------------------> */}
+      <Router />
     </div>
   );
 }

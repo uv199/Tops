@@ -11,7 +11,6 @@ let obj = {
 if (obj.address) {
     let address = {}
     for (const key in obj.address) {
-        console.log("---->", key, obj.address[key])
         // address.add= obj.address[key]
         obj[`address.${key}`] = obj.address[key]
     }

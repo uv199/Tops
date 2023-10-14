@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 import "./index.scss";
 import { useSelector } from "react-redux";
@@ -8,7 +8,6 @@ export default function NavBarCom() {
   const navigate = useNavigate();
 
   const loginUser = useSelector((state) => state.authReducer);
-  console.log("loginUser", loginUser);
 
   return (
     <>
@@ -71,11 +70,10 @@ export default function NavBarCom() {
 
             <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
               <li className="me-5">
-                <a className="nav-link" href="cart.html">
+                <Link className="nav-link" to="/cart">
                   <img src="images/cart.svg" />
-                </a>
+                </Link>
               </li>
-              // "{}"
               {JSON.stringify(loginUser?.user) !== "{}" ? (
                 <li>
                   <NavLink className="nav-link" to="/profile">

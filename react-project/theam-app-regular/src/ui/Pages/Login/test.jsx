@@ -11,8 +11,6 @@ export default function App() {
 
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example"));
-
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormGroup>
