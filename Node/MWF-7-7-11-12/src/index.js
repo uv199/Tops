@@ -7,13 +7,16 @@ import { AddAdmin, AddProductData } from "./db/addDefaultData";
 import { updateOldUser, updateOldUser2 } from "./db/script";
 import path from "path";
 import GoogkleAuth from "./GoogleAuth/googleAuth";
+import http from "http";
 
 const app = express();
+const server = http.createServer(app);
 
 import { Server } from "socket.io";
 import { cronJob } from "./functions/cronJob";
 import { sendEmailTemp } from "./functions/emailService";
 import passport from "passport";
+import moment from "moment/moment";
 
 const port = process.env.PORT || 3000;
 app.get(
@@ -50,7 +53,7 @@ app.get(
   }
 );
 const mno = "test2";
-const server = app.listen(port, () => {
+server.listen(port, () => {
   // updateOldUser();
   dbConnection();
   // cronJob();

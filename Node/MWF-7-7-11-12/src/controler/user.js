@@ -11,7 +11,7 @@ const useToken = (data) => {
 
 export const getAll = (req, res) => {
   model.User.find({})
-    .populate({ path: "products.productId" })
+    // .populate({ path: "products.productId" })
     .then((resData) => {
       console.log("resData", resData);
       if (resData.length > 0) {
@@ -48,10 +48,10 @@ export const signIn = async (req, res) => {
         res.send({ status: 200, data: matchUser, token });
       }
     } else {
-      res.send("Match user not found....!");
+      throw new Error("Match user not found....!");
     }
   } catch (error) {
-    res.send({ status: 400, error: error.mesage });
+    res.status(400).send("Match user not found....!");
   }
 };
 

@@ -45,5 +45,6 @@ export default userRouter;
 // class : name,div,teacher:id,monitor:id,studentcount,
 
 // user : name,email,password,add,classTeacher:id,subject,salary,gender,fees type : "admin/teacher/stuident" // usertype:id
-userType: "";
+// userType: "";
 //class : name,div,teacher:id,monitor:id,studentcount,
+
