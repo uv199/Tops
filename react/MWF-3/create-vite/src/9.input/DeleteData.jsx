@@ -15,7 +15,6 @@ export default function DeleteData() {
   const deleteHandler = (index) => {
     // filter
     let filterdData = userArr.filter((e, i) => i !== index);
-    console.log("filterdData", filterdData);
     setUserArr(filterdData);
 
     //splice

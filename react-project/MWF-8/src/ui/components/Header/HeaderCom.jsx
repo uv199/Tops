@@ -72,7 +72,10 @@ function HeaderCom(props) {
             </>
           )}
           {JSON.stringify(userData) !== "{}" ? (
-            <User2 className="userIcon ms-4 me-4" />
+            <User2
+              className="userIcon ms-4 me-4"
+              onClick={() => navigate("/profile")}
+            />
           ) : (
             <Button
               style={{

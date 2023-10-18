@@ -15,7 +15,9 @@ import UseEffect from "./7.UseEffect/UseEffect";
 import UseEffectPro from "./7.UseEffect/UseEffectPro";
 import LifeCycle from "./8.LifeCycle/LifeCycle";
 import DeleteData from "./9.input/DeleteData";
+import FullCrud from "./9.input/FullCrud";
 import InputData from "./9.input/InputData";
+import UpdateData from "./9.input/UpdateData";
 import "./App.css";
 
 function App() {
@@ -49,7 +51,9 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* <InputData /> */}
-      <DeleteData />
+      {/* <DeleteData /> */}
+      {/* <UpdateData /> */}
+      <FullCrud />
     </div>
   );
 }

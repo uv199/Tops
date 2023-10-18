@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import CardCom from "../../components/CardCom";
 import ShoseData from "../../../utils/shose.json";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeContetnt() {
-  const [Data, setData] = useState(ShoseData);
-
+  let [allProduct, setAllProduct] = useState([]);
+  let allData = useSelector((state) => state.productReducer.products);
+  const navigate = useNavigate();
+  useEffect(() => {
+    setAllProduct(allData);
+  }, [allData]);
   return (
     <>
       <div
@@ -13,8 +19,14 @@ export default function HomeContetnt() {
           gap: "10px",
         }}
       >
-        {Data?.map?.((e, i) => {
-          return <CardCom key={i + Math.random()} data={e} />;
+        {allProduct?.map?.((e, i) => {
+          return (
+            <CardCom
+              key={i + Math.random()}
+              data={e}
+              onclick={() => navigate(`productpage/${e?._id}`)}
+            />
+          );
         })}
       </div>
     </>

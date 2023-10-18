@@ -24,14 +24,20 @@ export default function LoginForm() {
       .post(`${BE_URL}/user/signin`, data)
       .then((resData) => {
         dispatch(login(resData.data));
+        console.log("resData.data", resData.data)
         // do form blanck
         setData({
           email: "",
           password: "",
         });
-        navigate("/admin/dashboard");
+        if (resData.data.data.userType === "admin") {
+          navigate("/admin/dashboard");
+        } else {
+          navigate("/");
+        }
       })
       .catch((error) => {
+        console.log("error", error)
         toast.error(error.message);
       });
   };

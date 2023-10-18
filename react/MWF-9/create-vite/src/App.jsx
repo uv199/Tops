@@ -29,6 +29,7 @@ import LocalStorage from "./10.localStorage/LocalStorage";
 import UseRef from "./5.HOOKS/useRef/UseRef";
 import UseMemo from "./5.HOOKS/useMemo-Callbck/UseMemo";
 import Router from "./11.router/Router";
+import ProtectedRoute from "./12.ProtectedRouter/Router";
 
 function App() {
   let x = "urvish";
@@ -83,7 +84,8 @@ function App() {
       {/* <-------------------------Local-storage---------------------------------> */}
       {/* <LocalStorage /> */}
       {/* <-------------------------Router---------------------------------> */}
-      <Router />
+      {/* <Router /> */}
+      <ProtectedRoute />
     </div>
   );
 }

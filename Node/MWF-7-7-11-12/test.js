@@ -1,17 +1,12 @@
-let obj = {
-    "name": "urviesh1",
-    "email": "urvish1@gmail.com",
-    // "test=muyname:"test",
-    "address": {
-        "add": "B/308 tapti avenue",
-        "city": "Surat"
-    }
-}
+fun();
+var fun;
 
-if (obj.address) {
-    let address = {}
-    for (const key in obj.address) {
-        // address.add= obj.address[key]
-        obj[`address.${key}`] = obj.address[key]
-    }
+fun();
+function fun() {
+  console.log("second");
 }
+fun();
+var fun = () => {
+  console.log("first");
+};
+fun();

@@ -15,6 +15,8 @@ import LoginForm from "../ui/pages/Login";
 import Dashbord from "../ui/pages/Admin/Dashbord/Dashbord";
 import ProductForm from "../ui/pages/Admin/Product/ProductForm";
 import ProductCom from "../ui/pages/Admin/Product/ProductCom";
+import Profile from "../ui/pages/Profile/Profile";
+import ProductPage from "../ui/pages/ProductPage/ProductPage";
 export default function Router() {
   return (
     <>
@@ -31,6 +33,8 @@ export default function Router() {
             <Route path="/women" element={<Women />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/productpage/:id" element={<ProductPage />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
           <FooterCom />

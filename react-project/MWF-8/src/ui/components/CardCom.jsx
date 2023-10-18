@@ -10,14 +10,21 @@ export default function CardCom(props) {
         style={{
           width: "18rem",
         }}
+        onClick={props?.onclick}
       >
-        <img alt="Sample" src={props?.data?.imageURL} />
+        <img
+          alt="Sample"
+          style={{ height: "200px" }}
+          src={props?.data?.thumbnail}
+        />
         <CardBody>
-          <CardTitle tag="h5">{props?.data?.name}</CardTitle>
+          <CardTitle tag="h5">{props?.data?.title}</CardTitle>
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             $ {props?.data?.price}
           </CardSubtitle>
-
+          <CardText className="text-truncate">
+            {props?.data?.description}
+          </CardText>
           <Button
             className="w-50"
             style={{ color: "#ffffff", backgroundColor: "lightcoral" }}

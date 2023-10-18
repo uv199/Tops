@@ -17,6 +17,7 @@ import SignUp from "../ui/Pages/Register/SignUp";
 import Order from "../ui/Pages/Admin/Order/Order";
 import User from "../ui/Pages/Admin/User/User";
 import Cart from "../ui/Pages/Cart/Cart";
+import ProductPage from "../ui/Pages/ProductPage/ProductPage";
 
 export default function Router() {
   return (
@@ -33,6 +34,7 @@ export default function Router() {
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/dashbord" element={<Dashbord />} />
             <Route exact path="/products" element={<Product />} />
+            <Route exact path="/productpage/:id" element={<ProductPage />} />
             <Route exact path="/orders" element={<Order />} />
             <Route exact path="/users" element={<User />} />
             <Route exact path="/cart" element={<Cart />} />
