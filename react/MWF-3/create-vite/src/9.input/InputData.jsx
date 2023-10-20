@@ -7,6 +7,7 @@ export default function InputData() {
   let [password, setPassword] = useState("");
 
   const getData = (element) => {
+    console.log("element", element)
     setEmail(element.target.value);
   };
 

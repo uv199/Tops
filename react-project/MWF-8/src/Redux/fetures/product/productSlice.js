@@ -4,12 +4,19 @@ import { BE_URL } from "../../../config";
 
 const initialState = {
   products: [],
+  searchText: "",
 };
 
 export const fetchProductData = createAsyncThunk("product/fetchProduct", () => {
-  return axios.get(`${BE_URL}/product/getAll`).then((resData) => {
-    return resData.data;
-  });
+  return axios
+    .get(`${BE_URL}/product/getAll`, {
+      params: {
+        gender: "male",
+      },
+    })
+    .then((resData) => {
+      return resData.data;
+    });
 });
 
 const productSLice = createSlice({

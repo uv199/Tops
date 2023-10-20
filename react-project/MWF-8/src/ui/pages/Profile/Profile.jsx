@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Profile() {
   //  take data from auth slice and show as per your design
   const loginUser = useSelector((state) => state?.auth?.user);
+  console.log("loginUser", loginUser)
   //   console.log("loginUser", loginUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();

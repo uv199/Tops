@@ -31,9 +31,10 @@ export const productByRange = async (req, res) => {
   }
 };
 export const getAll = async (req, res) => {
-  console.log("------");
+  const filter = req?.params;
+  console.log("filter", filter);
   try {
-    let data = await model.Product.find({});
+    let data = await model.Product.find(filter);
     res.send({ status: 200, data });
   } catch (error) {
     res.send({ status: 400, message: error.message });

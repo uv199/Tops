@@ -36,6 +36,9 @@ function HeaderCom(props) {
               <NavItem>
                 <NavLink to="/orders">Orders</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink to="/user">User</NavLink>
+              </NavItem>
             </Nav>
           ) : (
             <>

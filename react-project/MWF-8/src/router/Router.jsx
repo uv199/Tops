@@ -17,6 +17,10 @@ import ProductForm from "../ui/pages/Admin/Product/ProductForm";
 import ProductCom from "../ui/pages/Admin/Product/ProductCom";
 import Profile from "../ui/pages/Profile/Profile";
 import ProductPage from "../ui/pages/ProductPage/ProductPage";
+import SignUp from "../ui/pages/Signup/SignUp";
+import UserList from "../ui/pages/Admin/User/UserList";
+import Orders from "../ui/pages/Admin/Order/Orders";
+import { AuthRoute, AdminAuth } from "./AuthRoute";
 export default function Router() {
   return (
     <>
@@ -24,17 +28,41 @@ export default function Router() {
         <BrowserRouter>
           <HeaderCom />
           <Routes>
+            {/* ---------------- Public ------------------ */}
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/admin/dashboard" element={<Dashbord />} />
-            <Route path="products" element={<ProductCom />} />
             <Route path="/kids" element={<Kids />} />
             <Route path="/men" element={<Men />} />
             <Route path="/women" element={<Women />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/productpage/:id" element={<ProductPage />} />
+
+            {/* ---------------- Auth ------------------ */}
+            <Route
+              path="/profile"
+              element={<AuthRoute component={<Profile />} />}
+            />
+
+            {/* ---------------- admin ------------------ */}
+
+            <Route
+              path="products"
+              element={<AdminAuth component={<ProductCom />} />}
+            />
+            <Route
+              path="/orders"
+              element={<AdminAuth component={<Orders />} />}
+            />
+            <Route
+              path="/user"
+              element={<AdminAuth component={<UserList />} />}
+            />
+            <Route
+              path="/admin/dashboard"
+              element={<AdminAuth component={<Dashbord />} />}
+            />
             <Route path="*" element={<Error404 />} />
           </Routes>
           <FooterCom />

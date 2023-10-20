@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { login } from "../../../Redux/fetures/auth/authSlice";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BE_URL } from "../../../config";
 export default function LoginForm() {
   let [Data, setData] = useState({
@@ -24,7 +24,7 @@ export default function LoginForm() {
       .post(`${BE_URL}/user/signin`, data)
       .then((resData) => {
         dispatch(login(resData.data));
-        console.log("resData.data", resData.data)
+        console.log("resData.data", resData.data);
         // do form blanck
         setData({
           email: "",
@@ -37,7 +37,7 @@ export default function LoginForm() {
         }
       })
       .catch((error) => {
-        console.log("error", error)
+        console.log("error", error);
         toast.error(error.message);
       });
   };
@@ -69,7 +69,8 @@ export default function LoginForm() {
             placeholder="Enter your Password"
           />
           {errors.name && <span>This field is required</span>}
-          <input className="border-0 rounded-3 mt-3" type="submit" />
+          <Link to={"/signup"}>Create new Account..?</Link>
+          <input className="border-0 rounded-3" type="submit" />
         </form>
       </div>
     </>

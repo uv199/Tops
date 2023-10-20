@@ -285,7 +285,7 @@ export default ({ modal, toggle, updatedData, index, setIndex }) => {
                   <Select
                     isMulti
                     defaultValue={colorOptions?.filter?.((ele) =>
-                      updatedData?.color.includes?.(ele?.value)
+                      updatedData?.color?.includes?.(ele?.value)
                     )}
                     options={colorOptions}
                     onChange={(e) =>
@@ -303,7 +303,7 @@ export default ({ modal, toggle, updatedData, index, setIndex }) => {
                   <Select
                     isMulti
                     defaultValue={categoryOptions?.filter?.((ele) =>
-                      updatedData?.category.includes?.(ele?.value)
+                      updatedData?.category?.includes?.(ele?.value)
                     )}
                     options={categoryOptions}
                     onChange={(e) =>

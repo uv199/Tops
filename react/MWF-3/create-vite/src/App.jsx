@@ -1,3 +1,4 @@
+import MultipleInput from "./10.multipleInput/MultipleInput";
 import ClassCom from "./2.component/ClassCom";
 import FunCom from "./2.component/FunCom";
 import HomePage from "./2.component/project/HomePage";
@@ -50,10 +51,12 @@ function App() {
       {/* ------------------------------HOOK------------------------- */}
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
-      {/* <InputData /> */}
+      {/* ------------------------------INPUT------------------------- */}
+      <InputData />
       {/* <DeleteData /> */}
       {/* <UpdateData /> */}
-      <FullCrud />
+      {/* <FullCrud /> */}
+      {/* <MultipleInput /> */}
     </div>
   );
 }
