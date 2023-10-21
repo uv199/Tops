@@ -52,11 +52,12 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* ------------------------------INPUT------------------------- */}
-      <InputData />
+      {/* <InputData /> */}
       {/* <DeleteData /> */}
-      {/* <UpdateData /> */}
+      <UpdateData />
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
+
     </div>
   );
 }

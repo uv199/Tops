@@ -18,6 +18,7 @@ import Order from "../ui/Pages/Admin/Order/Order";
 import User from "../ui/Pages/Admin/User/User";
 import Cart from "../ui/Pages/Cart/Cart";
 import ProductPage from "../ui/Pages/ProductPage/ProductPage";
+import VideoPlayer from "../ui/Pages/VideoPlayer/VideoPlayer";
 
 export default function Router() {
   return (
@@ -38,6 +39,7 @@ export default function Router() {
             <Route exact path="/orders" element={<Order />} />
             <Route exact path="/users" element={<User />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/video" element={<VideoPlayer />} />
             <Route exact path="*" element={<Page404 />} />
           </Routes>
           <FooterCom />

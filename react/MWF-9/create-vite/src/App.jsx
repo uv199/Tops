@@ -30,6 +30,7 @@ import UseRef from "./5.HOOKS/useRef/UseRef";
 import UseMemo from "./5.HOOKS/useMemo-Callbck/UseMemo";
 import Router from "./11.router/Router";
 import ProtectedRoute from "./12.ProtectedRouter/Router";
+import UseContaxtCom from "./5.HOOKS/useContext/UseContaxtCom";
 
 function App() {
   let x = "urvish";
@@ -66,6 +67,7 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseRef /> */}
       {/* <UseMemo /> */}
+      <UseContaxtCom />
 
       {/* <-------------------------Props---------------------------------> */}
       {/* <FunProps name={"urvish"} age={30} /> */}
@@ -85,7 +87,7 @@ function App() {
       {/* <LocalStorage /> */}
       {/* <-------------------------Router---------------------------------> */}
       {/* <Router /> */}
-      <ProtectedRoute />
+      {/* <ProtectedRoute /> */}
     </div>
   );
 }

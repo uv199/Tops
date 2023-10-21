@@ -1,3 +1,5 @@
+/*
+
 import redux, { applyMiddleware } from "redux";
 import logger from "redux-logger";
 import axios from "axios";
@@ -56,3 +58,32 @@ store.dispatch(incAction());
 // store.dispatch(decAction());
 
 let y = store.getState();
+*/
+
+function sum(no, action) {
+  if (action.type === "inc_two") {
+    return no + 2;
+  } else if (action.type === "inc_three") {
+    return no + 3;
+  } else if (action.type === "inc_val") {
+    return no + action.x;
+  } else {
+    return no;
+  }
+}
+// action creator
+function incAction(params) {
+  return { type: "inc_two" };
+}
+function incthreeAction(params) {
+  return { type: "inc_three" };
+}
+function incValAction(x) {
+  return { type: "inc_val", x: x };
+}
+
+let number = 10;
+number = sum(number, incAction());
+number = sum(number, incthreeAction());
+number = sum(number, incValAction(50));
+console.log("number", number);

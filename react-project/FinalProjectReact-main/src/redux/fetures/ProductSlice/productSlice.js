@@ -5,6 +5,7 @@ import { BE_URL } from "../../../config";
 const initialState = {
   product: [],
   err: "",
+  filter: {},
   topFiveData: [],
 };
 
@@ -13,6 +14,7 @@ export const fetchData = createAsyncThunk("product/fetchData", () => {
     return resData?.data;
   });
 });
+
 export const deleteProduct = createAsyncThunk(
   "product/deleteProduct",
   ({ id, index }) => {
