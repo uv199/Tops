@@ -8,6 +8,8 @@ export default function MultipleInput() {
     password: "",
     age: "",
   });
+  let [searchText, setSearchText] = useState("");
+
   let [dataArr, setDataArr] = useState([]);
 
   // take data from local storage and store them in to dataArr state
@@ -16,9 +18,21 @@ export default function MultipleInput() {
     const data = localStorage.getItem("userData");
     //convert json data into normal data
     const normalData = JSON.parse(data);
-    // store normal data into dataArray
+    /*
+    // without search 
+     store normal data into dataArray
     setDataArr(normalData);
-  }, []);
+    */
+
+    // withsearch
+    //filter a data from all data and set them in state so then display a data only which have includes a searchText string
+    // convert bodth string into lowercase to ignore cash sensitveness during search
+    let filteredData = normalData.filter((e) =>
+      e.email.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setDataArr(filteredData);
+  }, [searchText]);
 
   const submitHandler = () => {
     // user.email !=="" && user.password!==""
@@ -33,6 +47,7 @@ export default function MultipleInput() {
       age: "",
     });
   };
+
   return (
     <>
       <Form className="border p-3 border-dark rounded-3">
@@ -80,33 +95,50 @@ export default function MultipleInput() {
           Submit
         </Button>
       </Form>
-      <Table className="w-50" striped>
-        <thead>
-          <tr>
-            <th>SR.</th>
-            <th>Email</th>
-            <th>PASSWORD</th>
-            <th>AGE</th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dataArr?.map?.((e, i) => {
-            return (
-              <tr key={i}>
-                <th scope="row">{i + 1}</th>
-                <td>{e?.email}</td>
-                <td>{e?.password}</td>
-                <td>{e?.age}</td>
-                <td>
-                  <FileSignature role="button" />
-                  <Trash2 color="#e71818" role="button" />
-                </td>
+
+      <div
+        style={{ backgroundColor: "lightsalmon" }}
+        className="d-flex flex-column p-4 rounded-4 mt-4 w-50 align-items-end "
+      >
+        <input
+          // set search input in state
+          onChange={(e) => setSearchText(e?.target?.value)}
+          className="w-100 p-1 border rounded-3 mt-3 mb-3"
+          type="text"
+          placeholder="Search your text here...!"
+        />
+        {dataArr.length > 0 ? (
+          <Table striped>
+            <thead>
+              <tr>
+                <th>SR.</th>
+                <th>Email</th>
+                <th>PASSWORD</th>
+                <th>AGE</th>
+                <th>ACTION</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+            </thead>
+            <tbody>
+              {dataArr?.map?.((e, i) => {
+                return (
+                  <tr key={i}>
+                    <th scope="row">{i + 1}</th>
+                    <td>{e?.email}</td>
+                    <td>{e?.password}</td>
+                    <td>{e?.age}</td>
+                    <td>
+                      <FileSignature role="button" />
+                      <Trash2 color="#e71818" role="button" />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        ) : (
+          <h1>Data not available...!</h1>
+        )}
+      </div>
     </>
   );
 }
