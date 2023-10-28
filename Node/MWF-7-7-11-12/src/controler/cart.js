@@ -2,13 +2,7 @@ import { model } from "../models";
 
 export const getall = (req, res) => {
   model.Cart.find({ userId: req?.loginUser?.id })
-    .populate([
-      { path: "userId", select: { name: 1 } },
-      {
-        path: "products.productId",
-        select: { name: 1, userId: 1 },
-      },
-    ])
+    .populate([{ path: "products.productId" }])
     .then((resData) => {
       res.send({ status: 200, data: resData });
     })

@@ -12,6 +12,7 @@ export const createWishlist = (req, res) => {
 
 export const getByUserId = (req, res) => {
   model.WishList.findById(req?.params?.id)
+    .populate([{ path: "products" }])
     .then((resData) => {
       res.send({ status: 200, data: resData });
     })
