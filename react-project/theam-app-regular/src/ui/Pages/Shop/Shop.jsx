@@ -8,10 +8,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { BE_URL } from "../../../config";
 import { fetchCardData } from "../../../redux/features/cart/cartslice";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Shop() {
   let [productArr, setProductArr] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   useEffect(() => {
     console.log("-----?");
@@ -26,14 +28,7 @@ export default function Shop() {
   }, [fetchData]);
 
   const openProject = (id) => {
-    axios
-      .delete(`${BE_URL}/product/getById/${id}`)
-      .then((resData) => {
-        dispatch(removeProduct(index));
-      })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+    navigate("/product")
   };
 
   const addTocart = (id) => {
