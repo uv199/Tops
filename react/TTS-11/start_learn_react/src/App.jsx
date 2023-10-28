@@ -46,6 +46,9 @@ import UseMemo from "./HOOKS/useMemo/UseMemo";
 import UseCallBack from "./HOOKS/useCallBack/UseCallBack";
 import AppCom from "./redux/AppCom";
 import AppToolKit from "./Toolkit/AppToolKit";
+import LazyLoad from "./Smalltopics/LazyLoad";
+import Amount from "./Smalltopics/Amount";
+import Count from "./Smalltopics/Count";
 
 function App() {
   return (
@@ -118,7 +121,7 @@ function App() {
         {/* <ApiCom /> */}
         {/* <ApiCom2 /> */}
         {/*------------------Router------------------ */}
-        <Router />
+        {/* <Router /> */}
         {/* <PrvRouter /> */}
         {/* <RouterRev /> */}
         {/* <PrvRouterContext /> */}
@@ -126,6 +129,11 @@ function App() {
         {/* <AppCom /> */}
         {/*------------------Redux-ToolKit------------------ */}
         {/* <AppToolKit /> */}
+
+        {/*------------------lazy load------------------ */}
+        {/* <LazyLoad /> */}
+        <Amount />
+        <Count />
       </div>
     </BrowserRouter>
   );

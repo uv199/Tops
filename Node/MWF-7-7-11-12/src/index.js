@@ -8,7 +8,7 @@ import { updateOldUser, updateOldUser2 } from "./db/script";
 import path from "path";
 import GoogkleAuth from "./GoogleAuth/googleAuth";
 import http from "http";
-
+import Razorpay from "razorpay"
 const app = express();
 const server = http.createServer(app);
 
@@ -42,6 +42,16 @@ app.use("/product", Routes.productRoute);
 app.use("/cart", Routes.cartRouter);
 app.use("/wishlist", Routes.wishListRouter);
 app.use("/order", Routes.orderRouter);
+
+app.get("/payment", (req, res) => {
+  console.log("req,res", req.body);
+});
+
+// let rzp = new Razorpay({
+//   key_id: process.env.KEY_ID, // your `KEY_ID`
+//   key_secret: process.env.KEY_SECRET // your `KEY_SECRET`
+// })
+
 
 app.get(
   "/auth/google/callback",

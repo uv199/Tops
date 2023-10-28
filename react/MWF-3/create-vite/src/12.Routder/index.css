@@ -1,0 +1,13 @@
+.navDiv {
+  width: 100vw;
+}
+
+.linkTag a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: red !important;
+  font-weight: bold;
+}

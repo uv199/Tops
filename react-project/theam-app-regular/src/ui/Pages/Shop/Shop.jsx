@@ -25,6 +25,17 @@ export default function Shop() {
     setProductArr(fetchData);
   }, [fetchData]);
 
+  const openProject = (id) => {
+    axios
+      .delete(`${BE_URL}/product/getById/${id}`)
+      .then((resData) => {
+        dispatch(removeProduct(index));
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
+
   const addTocart = (id) => {
     const data = {
       products: [
@@ -80,7 +91,14 @@ export default function Shop() {
           <div className="d-flex flex-row flex-wrap gap-5 justify-content-center  ">
             <div className="w-100 d-flex flex-wrap gap-5">
               {productArr.map((e, i) => {
-                return <Card key={i} data={e} onClickEvent={addTocart} />;
+                return (
+                  <Card
+                    key={i}
+                    data={e}
+                    openProduct={openProject}
+                    onClickEvent={addTocart}
+                  />
+                );
               })}
             </div>
           </div>

@@ -24,6 +24,8 @@ node - return array must be in accending order
     - your family's vehicle,s name and number (note : it can be multiple)
 
 ==>Example
+
+
 const myFamilyData = {
     fatherName:"abc",
     age:26,
@@ -64,9 +66,7 @@ Note : Must use Reducer
 
 9. Find some Data from below given array of object 
  let marksheet =[
-    {
-        subject:"Gujarati",
-        marks : 60
+    {   subject:"Gujarati",   marks : 60
     },
     {
         subject:"Maths",
@@ -102,3 +102,10 @@ Note : return a object like { lowentMarsk : "Englis", higestMarks :"Hindi" }
 
 
 */
+let marksheet = [
+  { subject: "Gujarati", marks: 60 },
+  { subject: "Maths", marks: 40 },
+  { subject: "Science", marks: 50 },
+  { subject: "Hindi", marks: 70 },
+  { subject: "English", marks: 30 },
+];

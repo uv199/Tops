@@ -33,6 +33,9 @@ import UseCallBack from "./14.HOOKS/UseCallBack/UseCallBack";
 import UseMemoCom from "./14.HOOKS/UseMemo/UseMemoCom";
 import App2 from "./18.Redux/App2";
 import AppToolKit from "./19.Redux_toolkit/AppToolKit";
+import Count from "./20.SmallTopics/Count";
+import Amount from "./20.SmallTopics/Amount";
+import LazyLoading from "./20.SmallTopics/lazy/LazyLoading";
 
 function App() {
   // return <h1>{5 + 10}</h1>;
@@ -88,7 +91,12 @@ function App() {
 
       {/* ------------------Redux--------------------- */}
       {/* <App2 /> */}
-      <AppToolKit />
+      {/* <AppToolKit /> */}
+      {/* ------------------HOC--------------------- */}
+      {/* <Count />
+      <Amount /> */}
+      {/* ------------------LazyLoading--------------------- */}
+      <LazyLoading />
     </div>
   );
 }

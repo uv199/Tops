@@ -85,7 +85,7 @@ console.log(m)
 
 */
 
-const m = 10;
+const m = 10;F
 console.log(m) --> point-1;
 m = 100;
 console.log(m) --> point-2;

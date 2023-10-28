@@ -4,6 +4,7 @@ import { sendOTP } from "../functions/otpServices";
 import jwt from "jsonwebtoken";
 import bycrypt from "bcrypt";
 import { emailService } from "../functions/emailService";
+import { promises } from "nodemailer/lib/xoauth2";
 
 const useToken = (data) => {
   return jwt.sign(data, process.env.SECRET_KEY);
