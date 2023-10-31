@@ -8,6 +8,9 @@ import Style from "./3.Style-CSS/Style";
 import UseStaeCom from "./4.Hook/usestate/UseStaeFun";
 import UseStaePro from "./4.Hook/usestate/UseStaePro";
 import UseStaePro2 from "./4.Hook/usestate/UseStaePro2";
+import UseStateClass from "./4.Hook/usestate/UseStateClass";
+import FragmentCom from "./5.map-Key-Fragment/Fragment";
+import MapKey from "./5.map-Key-Fragment/MapKey";
 
 function App() {
   return (
@@ -23,7 +26,14 @@ function App() {
       {/*-----------------------USE_STATE--------------------------  */}
       {/* <UseStaeCom /> */}
       {/* <UseStaePro /> */}
-      <UseStaePro2 />
+      {/* <UseStaePro2 /> */}
+      {/* <UseStateClass /> */}
+      {/*-----------------------FRAGMENT--------------------------  */}
+      {/* <FragmentCom /> */}
+      {/* <FragmentCom /> */}
+      {/*-----------------------MAP-KEY--------------------------  */}
+
+      <MapKey />
     </div>
   );
 }

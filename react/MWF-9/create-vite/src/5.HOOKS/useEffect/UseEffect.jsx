@@ -5,6 +5,7 @@ import PropsUseEffect from "./PropsUseEffect";
 export default function UseEffect() {
   let [count, setCount] = useState(0);
   let [amount, setAmount] = useState(0);
+  
   // without dependency like render in class call everytime
   //   useEffect(() => {
   //     console.log("*-----without any dependency-----*");

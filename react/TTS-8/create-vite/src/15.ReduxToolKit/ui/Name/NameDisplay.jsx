@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Table } from "reactstrap";
 import { removeName } from "../../redux/fetures/nameList/Name";
 
-export default function NameDisplay() {
+export default function NameDisplay(props) {
   let [dataArr, setDataArr] = useState([]);
+
   const data = useSelector((state) => {
     return state.NAME.nameArr;
   });
@@ -17,6 +18,11 @@ export default function NameDisplay() {
   const deleteHandler = (index) => {
     dispatch(removeName(index));
   };
+  const editHandler = (i, e) => {
+    props.setIndex(i);
+    props.setInputData(e);
+  };
+
   return (
     <div>
       <Table striped>
@@ -33,7 +39,7 @@ export default function NameDisplay() {
                 <th scope="row">{i + 1}</th>
                 <td>{e}</td>
                 <td>
-                  <Pencil className="me-5" />
+                  <Pencil className="me-5" onClick={() => editHandler(i, e)} />
                   <Trash2 onClick={() => deleteHandler(i)} color="#d04e4e" />
                 </td>
               </tr>

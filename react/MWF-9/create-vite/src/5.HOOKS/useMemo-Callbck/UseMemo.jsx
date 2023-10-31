@@ -8,14 +8,14 @@ export default function UseMemo() {
 
   // useMemo return a value
   const x = useMemo(() => getX(count), [count]);
+  // const x =  getX(count)
 
   // useCallBack reaturnd a callback function
   const yFun = useCallback(() => {
-    console.log("--->");
+    console.log("--call back->");
     for (let i = 0; i < 1000000000; i++) {}
     return [count, count + 1, count + 3];
   }, [count]);
-
   return (
     <>
       <h1>UseMemo</h1>
@@ -28,6 +28,7 @@ export default function UseMemo() {
           backgroundColor: isBlack ? "black" : "lightcoral",
         }}
       ></div>
+
       <Com yFun={yFun} />
       <Button color="danger" onClick={() => setIsBlack(!isBlack)}>
         Change color

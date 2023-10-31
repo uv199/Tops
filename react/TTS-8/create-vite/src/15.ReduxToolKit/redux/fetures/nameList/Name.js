@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { nameArr: ["test", "name"] };
+const initialState = { nameArr: [] };
 
 const nameslice = createSlice({
   name: "nameList",
@@ -10,7 +10,9 @@ const nameslice = createSlice({
       console.log("action", action);
       state.nameArr.push(action.payload);
     },
-    updateName: (state, action) => {},
+    updateName: (state, { payload }) => {
+      state.nameArr.splice(payload?.index, 1, payload?.newData);
+    },
     removeName: (state, action) => {
       console.log("action", action);
       state.nameArr.splice(action.payload, 1);

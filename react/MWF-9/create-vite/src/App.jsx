@@ -67,9 +67,9 @@ function App() {
       {/* <-------------------------HOOK---------------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseRef /> */}
-      {/* <UseMemo /> */}
+      <UseMemo />
       {/* <UseContaxtCom /> */}
-      <UseReducer />
+      {/* <UseReducer /> */}
 
       {/* <-------------------------Props---------------------------------> */}
       {/* <FunProps name={"urvish"} age={30} /> */}

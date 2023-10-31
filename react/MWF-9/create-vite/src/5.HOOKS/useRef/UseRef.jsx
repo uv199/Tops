@@ -9,6 +9,7 @@ export default function UseRef() {
   useEffect(() => {
     inputRef?.current?.focus?.();
   }, [inputRef]);
+
   useEffect(() => {
     headRef.current.innerHTML = "hello world";
   }, [headRef]);
