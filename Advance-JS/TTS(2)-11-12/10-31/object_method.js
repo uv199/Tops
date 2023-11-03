@@ -2754,11 +2754,11 @@ const names = [
   "Zuriel",
 ];
 
-// console.log("---before--->", new Date().getTime());
-// for (let i = 0; i < names.length / 2; i++) {
-//   console.log("---name---> ", names[i], " at index ", i);
-//   if (names[i] === "Zaineddinex" || names[names.length - i] === "Zaineddinex") {
-//     console.log("---after--->", new Date().getTime());
-//     break;
-//   }
-// }
+console.log("---before--->", new Date().getTime());
+for (let i = 0; i < names.length / 2; i++) {
+  // console.log("---name---> ", names[i], " at index ", i);
+  if (names[i] === "Zaineddine" || names[names.length - i] === "Zaineddine") {
+    console.log("---after--->", new Date().getTime());
+    break;
+  }
+}

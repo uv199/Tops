@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { addName, updateName } from "../../redux/fetures/NameList/Name";
 
 export default function NameInput(props) {
-  console.log("props", props.index);
   let [inputText, setInputText] = useState("");
 
   const dispatch = useDispatch();

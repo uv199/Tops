@@ -10,6 +10,8 @@ export default function NameDisplay(props) {
   const data = useSelector((state) => {
     return state.NAME.nameArr;
   });
+
+  const count = useSelector((state) => state.COUNT.count);
   const dispatch = useDispatch();
   useEffect(() => {
     setDataArr(data);
@@ -25,6 +27,9 @@ export default function NameDisplay(props) {
 
   return (
     <div>
+      <hr />
+      <h1>Total Online user is {count} </h1>
+      <hr />
       <Table striped>
         <thead>
           <tr>
