@@ -1,7 +1,0 @@
-{
-  "name": "test",
-  "age": 1,
-  "arr": ["a"],
-  "bool": true,
-  "obj": { "test": "name" }
-}

@@ -1,4 +1,0 @@
-sort array by actual value
-
-let sortArr = [1, 30, 32, 4, 21, 100000]; 
- want = 1,4,21,30,32,10000

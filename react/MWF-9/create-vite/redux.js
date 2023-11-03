@@ -1,49 +1,49 @@
+import axios from "axios";
 import redux, { applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 // constatnt
-const INC = "INC";
-const DEC = "DEC";
+const ADD_USER = "ADD_USER";
 
 // store
 const store = redux.createStore(reducer, applyMiddleware(logger.default));
 
 //reducer function
-function reducer(state = { count: 0 }, action) {
-  console.log("action", action);
+function reducer(state = { user: [] }, action) {
+  console.log("state", state);
+  // console.log("action----->", action);
+
   switch (action.type) {
-    case INC:
-      return { count: state.count + 1 };
-    case DEC:
-      return { count: state.count - 1 };
+    case ADD_USER:
+      return { user: [...state.user, action.payload] };
     default:
       return state;
   }
 }
 
 // action generator
+function addUserToStore(data) {
+  // console.log("data", data);
 
-function incAction() {
-  return { type: INC };
+  let newObj = {
+    id: data.id,
+    email: data.email,
+    username: data.username,
+  };
+  return { type: ADD_USER, payload: newObj };
 }
-function decAction() {
-  return { type: DEC };
+
+function addUser(id) {
+  axios({
+    method: "get",
+    url: `https://fakestoreapi.com/users/${id}`,
+  })
+    .then((res) => {
+      store.dispatch(addUserToStore(res.data));
+    })
+    .catch((err) => {});
 }
-
-// dispatch method
-store.dispatch(incAction());
-store.dispatch(incAction());
-store.dispatch(incAction());
-store.dispatch(decAction());
-
-/*
-let obj = {
-  count: 0,
-};
-
-// obj.count=obj.count+1
-obj = {
-  count: obj.count + 1,
-};
-console.log("====",obj)
-*/
+addUser(1);
+addUser(2);
+addUser(3);
+addUser(4);
