@@ -32,7 +32,6 @@ b = 9000; // can reassign
 }
 // console.log("b2", b2) //  b2 is not defined
 
-*/
 {
   // tops
   let mon = 100;
@@ -50,6 +49,23 @@ b = 9000; // can reassign
   }
 }
 
+*/
+//  ---------------const-----------------
 
+// const c  // need to give intial value
 
+const c = 20;
+// c=40 // can't reassign a value
+// cons c // can't redeclier
 
+{
+  const c2 = 100;
+  {
+    const c2 = 200;
+    {
+      // c2 = 900;
+      console.log("c2", c2); // ----1
+    }
+  }
+  console.log("c2", c2); //-----2
+}

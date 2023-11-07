@@ -3,7 +3,6 @@ import DATA from "../../../../../JS-assignment/product.json";
 import CardCom from "./CardCom";
 
 export default function PropPro1() {
-  console.log("DATA", DATA);
   return (
     <>
       <div

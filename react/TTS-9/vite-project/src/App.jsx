@@ -14,6 +14,8 @@ import MapKey from "./5.map-Key-Fragment/MapKey";
 import FunProps from "./6.Props/Function/FunProps";
 import ClassProps from "./6.Props/Class/ClassProps";
 import PropPro1 from "./6.Props/PropPro1";
+import PropsChange from "./6.Props/Function/PropsChange";
+import LifeCycleMethod from "./7.LifeCycleMethod/LifeCycleMethod";
 
 function App() {
   return (
@@ -46,7 +48,11 @@ function App() {
       {/* <FunProps name={"Nimesh"} age={20} color={"green"} /> */}
       {/* <ClassProps data={{ name: "Urvish", greeting: "Good-Morning" }} /> */}
       {/* <ClassProps /> */}
-      <PropPro1 />
+      {/* <PropPro1 /> */}
+      {/* <PropsChange name="urvish" /> */}
+
+      {/*-----------------------LIFE_CYCLE_METHOD--------------------------  */}
+      <LifeCycleMethod />
     </div>
   );
 }

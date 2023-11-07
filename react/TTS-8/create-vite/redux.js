@@ -12,6 +12,20 @@ const store = redux.createStore(
   applyMiddleware(logger.default, thunk.default)
 );
 
+// let store = { count: { count: 0 }, amount: { amount: 0 } };
+
+function reducer(state = { count: 0 }, action) {
+  switch (action.type) {
+    case SET_VALUE:
+      return { count: action.value };
+    case INC:
+      return { count: state.count + 1 };
+    case DEC:
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
 function reducer(state = { count: 0 }, action) {
   switch (action.type) {
     case SET_VALUE:

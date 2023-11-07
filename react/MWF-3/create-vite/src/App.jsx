@@ -1,3 +1,6 @@
+import Event from "./00.revise/Event";
+import TableComponent from "./00.revise/HideShow";
+import SunChokdi from "./00.revise/sunChookdi/SunChokdi";
 import MultipleInput from "./10.multipleInput/MultipleInput";
 import UseRef from "./11.Hooks/UseRef";
 import Router from "./12.Routder/Router";
@@ -26,6 +29,10 @@ import "./App.css";
 function App() {
   return (
     <div className="app_container">
+      {/* ------------------------------REVISE------------------------- */}
+      {/* <Event /> */}
+      {/* <TableComponent /> */}
+      <SunChokdi />
       {/* ------------------------------COMPONENT------------------------- */}
       {/* <ClassCom /> */}
       {/* <FunCom /> */}
@@ -61,7 +68,7 @@ function App() {
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
       {/* ------------------------------ROUTER------------------------- */}
-      <Router />
+      {/* <Router /> */}
     </div>
   );
 }

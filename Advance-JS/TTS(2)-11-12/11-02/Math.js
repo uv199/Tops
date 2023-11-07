@@ -25,6 +25,32 @@ console.log("trunc()---->", Math.trunc(12.99));
 
 */
 
+// to generate random number (0 to 1)
+// console.log("Math.random()", Math.floor(Math.random() * 10));
+// console.log("Math.random()", Math.floor(Math.random() * 10));
+// console.log("Math.random()", Math.floor(Math.random() * 10));
+// console.log("Math.random()", Math.floor(Math.random() * 10));
+
+let randomNumber = 0;
+for (let i = 1; i >= 1; i++) {
+  randomNumber = Math.floor(Math.random() * 10);
+  if (randomNumber < 7 && randomNumber > 0) {
+    console.log("randomNumber", randomNumber);
+    break;
+  }
+}
+console.log("randomNumber", randomNumber);
+/*
+let x = Math.random();
+console.log("x", x);
+let x2 = x * 10;
+console.log("x2", x2);
+let x3 = Math.floor(x2);
+console.log("x3", x3);
+
+let random = Math.floor(Math.random() * 10); //0.888487161190568 // 8.8888... //8
+*/
+/*
 let obj = {
   a: 1000,
   b: 5000,
@@ -52,5 +78,6 @@ for (const key in obj) {
 }
 
 console.log("----=-=-=-=-=->", obj2);
-
 // obj2=obj
+
+*/

@@ -1,6 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = { nameArr: [] };
+
+export const fetchUser = createAsyncThunk("nameList/fetchData", (id) => {
+  return axios({
+    method: "get",
+    url: `https://fakestoreapi.com/users/${id}`,
+  })
+    .then((res) => {
+      // console.log("res", res);
+      let { firstname, lastname } = res?.data?.name;
+      return firstname + " " + lastname;
+    })
+    .catch((err) => {
+      console.log("err", err);
+    });
+});
 
 const nameslice = createSlice({
   name: "nameList",
@@ -17,6 +33,15 @@ const nameslice = createSlice({
       console.log("action", action);
       state.nameArr.splice(action.payload, 1);
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUser.fulfilled, (state, action) => {
+        state.nameArr.push(action.payload);
+      })
+      .addCase(fetchUser.rejected, (state, action) => {
+        console.log("action---->");
+      });
   },
 });
 
