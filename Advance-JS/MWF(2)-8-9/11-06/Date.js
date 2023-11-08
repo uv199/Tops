@@ -6,7 +6,6 @@
 // let toDay = new Date(1000 * 60 * 60 * 24);
 let toDay = new Date("11/05/2023");
 console.log("toDay", toDay);
-
 console.log("toDay", toDay.getDate());
 console.log("toDay", toDay.getDay());
 console.log("toDay", toDay.getFullYear());
