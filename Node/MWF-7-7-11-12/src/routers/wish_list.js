@@ -5,13 +5,14 @@ import {
   getByUserId,
   updateWishlist,
 } from "../controler/wishlist";
+import { authorized } from "../auth";
 
 const wishListRouter = express.Router();
 
-wishListRouter.post("/create", createWishlist);
+wishListRouter.post("/create", authorized, createWishlist);
 
-wishListRouter.get("/getWishListById/:id", getByUserId);
+wishListRouter.get("/getByUserId", authorized, getByUserId);
 
-wishListRouter.put("/update/:id", updateWishlist);
+wishListRouter.put("/update", authorized, updateWishlist);
 
 export default wishListRouter;

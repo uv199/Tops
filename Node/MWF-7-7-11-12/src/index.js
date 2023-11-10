@@ -8,7 +8,7 @@ import { updateOldUser, updateOldUser2 } from "./db/script";
 import path from "path";
 import GoogkleAuth from "./GoogleAuth/googleAuth";
 import http from "http";
-import Razorpay from "razorpay"
+import Razorpay from "razorpay";
 const app = express();
 const server = http.createServer(app);
 
@@ -52,7 +52,6 @@ app.get("/payment", (req, res) => {
 //   key_secret: process.env.KEY_SECRET // your `KEY_SECRET`
 // })
 
-
 app.get(
   "/auth/google/callback",
   passport.authenticate("google"),
@@ -62,7 +61,7 @@ app.get(
     res.send("data found");
   }
 );
-const mno = "test2";
+
 server.listen(port, () => {
   // updateOldUser();
   dbConnection();

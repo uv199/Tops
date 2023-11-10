@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const wishListSchema = mongoose.Schema(
   {
-    products: [ObjectId],
+    products: [{ type: ObjectId, ref: "product" }],
     userId: ObjectId,
   },
   { timestamps: true }

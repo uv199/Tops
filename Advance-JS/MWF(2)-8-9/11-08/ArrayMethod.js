@@ -21,7 +21,8 @@ console.log("arr", arr);
 // sort(func) – sorts the array in-place, then returns it.
 let sort = [1, 23, 5, 23, 44, 67, 8, 2, 34, 56];
 console.log("sort", sort);
-sort.sort();
+// sort.sort((a,b);
+sort.sort((a,b)=>a-b);
 console.log("sort", sort);
 
 // reverse() – reverses the array in-place, then returns it.
@@ -97,15 +98,5 @@ let filteredData = arr.filter((e) => {
   return e > 5;
 });
 console.log("filteredData", filteredData);
-
-// forEach(func) – calls func for every element, does not return anything.
-
-// map(func) – creates a new array from results of calling func for every element.
-
-// split/join – convert a string to array and back.
-
-// reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
-
-// Array.isArray(value) checks value for being an array, if so returns true, otherwise false.
 
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
