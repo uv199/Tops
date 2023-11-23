@@ -64,7 +64,6 @@ console.log("avilable", avilable);
 ARR.reverse();
 console.log("ARR", ARR);
 
-*/
 
 // sort(func) – sorts the array in-place, then returns it.
 
@@ -73,3 +72,6 @@ let sortArr = [1, 2, 3, 88, 34, 5, 66, 7, 12, 8, 50, 9];
 sortArr.sort();
 
 console.log("sortArr", sortArr);
+
+*/
+

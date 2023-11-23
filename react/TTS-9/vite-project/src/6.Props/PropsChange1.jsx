@@ -10,6 +10,7 @@ export default function PropsChanges1(props) {
     setIsProps(!isProps);
   };
 
+
   console.log("isProps", isProps);
   return (
     <>
@@ -21,3 +22,6 @@ export default function PropsChanges1(props) {
     </>
   );
 }
+
+
+

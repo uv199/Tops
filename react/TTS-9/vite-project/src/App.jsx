@@ -17,6 +17,9 @@ import PropPro1 from "./6.Props/PropPro1";
 import PropsChanges from "./6.Props/Function/PropsChange";
 import LifeCycleMethod from "./7.LifeCycleMethod/LifeCycleMethod";
 import PropsChanges1 from "./6.Props/PropsChange1";
+import LifePro from "./7.LifeCycleMethod/LifePro";
+import UseEfectCom from "./4.Hook/useEffect/UseEfectCom";
+import UseEfreectProject from "./4.Hook/useEffect/UseEfreectProject";
 
 function App() {
   return (
@@ -54,7 +57,11 @@ function App() {
 
       {/*-----------------------LIFE_CYCLE_METHOD--------------------------  */}
       {/* <LifeCycleMethod /> */}
-      <PropsChanges1 name="shivam"/>
+      {/* <LifePro /> */}
+      {/* <PropsChanges1 name="shivam"/> */}
+      {/*-----------------------HOOK--------------------------  */}
+      {/* <UseEfectCom /> */}
+      <UseEfreectProject />
     </div>
   );
 }
