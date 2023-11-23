@@ -51,12 +51,32 @@ let newArr = ARR.map((e) => {
 console.log("total", total);
 console.log("newArr", newArr);
 
-*/
 
 let total = ARR.reduce((lastReturnValue, e) => {
-  console.log("lastReturnValue", lastReturnValue);
-  console.log("e", e);
-  return lastReturnValue + e;
+    console.log("lastReturnValue", lastReturnValue);
+    console.log("e", e);
+    return lastReturnValue + e;
 }, 100);
 
 console.log("total", total);
+
+
+// split/join – convert a string to array and back.
+
+let arrJoin = [1, 2, 3, 4, 5, 6];
+let x = arrJoin.join("---");
+let y = arrJoin.toString();
+console.log("x", x);
+console.log("y", y);
+
+*/
+//  "urvish" => "hsivru"
+// "urvish v patel" => "patel v urvish"
+
+let str = "urvish";
+
+let arr = str.split("");
+arr.reverse();
+console.log("arr", arr);
+let reversStr = arr.join("");
+console.log("reversStr", reversStr);
