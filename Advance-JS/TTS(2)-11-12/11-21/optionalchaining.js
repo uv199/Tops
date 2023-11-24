@@ -16,5 +16,7 @@ console.log("city", city);
 user?.fun?.();
 
 // let arr = [1, 2, 3];
-let arr = null
+let arr = null;
 arr?.map?.((e) => console.log(e));
+
+// typeof null
