@@ -32,9 +32,12 @@ let customer1 = {
 };
 */
 
-// --------------------------arra-----------------
+// --------------------------arra---------------------------
 
 let a = [1, 2, 3];
+
+// allData/displaydata -> allData.filter() -> displaydata -> table()
+
 let a2 = [10, 20, 30];
 // let b = a; // ref
 let b = [0, ...a, ...a2, 9000]; // copy

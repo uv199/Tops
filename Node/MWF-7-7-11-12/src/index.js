@@ -86,3 +86,11 @@ io.on("connection", (socket) => {
     console.log("---User is offline--->");
   });
 });
+
+let str = "urvish";
+let rev = "";
+for (let i = 0; i < str.length; i++) {
+  rev = str[i] + rev;
+}
+
+console.log("rev", rev);

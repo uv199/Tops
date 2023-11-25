@@ -49,6 +49,7 @@ import AppToolKit from "./Toolkit/AppToolKit";
 import LazyLoad from "./Smalltopics/LazyLoad";
 import Amount from "./Smalltopics/Amount";
 import Count from "./Smalltopics/Count";
+import AppRTRev from "./ToolKitRev/AppRTRev";
 
 function App() {
   return (
@@ -129,11 +130,12 @@ function App() {
         {/* <AppCom /> */}
         {/*------------------Redux-ToolKit------------------ */}
         {/* <AppToolKit /> */}
+        <AppRTRev />
 
         {/*------------------lazy load------------------ */}
         {/* <LazyLoad /> */}
-        <Amount />
-        <Count />
+        {/* <Amount />
+        <Count /> */}
       </div>
     </BrowserRouter>
   );

@@ -26,6 +26,7 @@ let arr = [
   },
 ];
 
+// print all city by use of map
 arr.map((e) => {
   console.log(e);
 });

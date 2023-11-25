@@ -20,6 +20,7 @@ import PropsChanges1 from "./6.Props/PropsChange1";
 import LifePro from "./7.LifeCycleMethod/LifePro";
 import UseEfectCom from "./4.Hook/useEffect/UseEfectCom";
 import UseEfreectProject from "./4.Hook/useEffect/UseEfreectProject";
+import SingleInput from "./8.Input/SingleInput";
 
 function App() {
   return (
@@ -59,9 +60,13 @@ function App() {
       {/* <LifeCycleMethod /> */}
       {/* <LifePro /> */}
       {/* <PropsChanges1 name="shivam"/> */}
+
       {/*-----------------------HOOK--------------------------  */}
       {/* <UseEfectCom /> */}
-      <UseEfreectProject />
+      {/* <UseEfreectProject /> */}
+
+      {/*-----------------------INPUT--------------------------  */}
+      <SingleInput />
     </div>
   );
 }
