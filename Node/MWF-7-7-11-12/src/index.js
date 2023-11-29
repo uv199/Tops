@@ -8,13 +8,13 @@ import { updateOldUser, updateOldUser2 } from "./db/script";
 import path from "path";
 import GoogkleAuth from "./GoogleAuth/googleAuth";
 import http from "http";
-import Razorpay from "razorpay";
 const app = express();
 const server = http.createServer(app);
 
 import { Server } from "socket.io";
 import { cronJob } from "./functions/cronJob";
 import { sendEmailTemp } from "./functions/emailService";
+
 import passport from "passport";
 import moment from "moment/moment";
 
@@ -81,16 +81,16 @@ app.get("/msg", (req, res) => {
 const io = new Server(server);
 
 io.on("connection", (socket) => {
-  console.log("---User is online--->");
+  console.log("---User is online--->", socket.id);
+
+  socket.on("receiveMsg", (data, id) => {
+    console.log("id", id);
+    console.log("data", data);
+    // socket.emit("sendMsg",data)
+    // io.emit("sendMsg", data);
+    io.to(id).emit("sendMsg", data);
+  });
   socket.on("disconnect", () => {
     console.log("---User is offline--->");
   });
 });
-
-let str = "urvish";
-let rev = "";
-for (let i = 0; i < str.length; i++) {
-  rev = str[i] + rev;
-}
-
-console.log("rev", rev);

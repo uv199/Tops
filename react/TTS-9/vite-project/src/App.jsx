@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+
 import "./App.css";
 import ClassCom from "./2.component/Class/ClassCom";
 import FunCom from "./2.component/Functional/FunCom";
@@ -21,53 +23,60 @@ import LifePro from "./7.LifeCycleMethod/LifePro";
 import UseEfectCom from "./4.Hook/useEffect/UseEfectCom";
 import UseEfreectProject from "./4.Hook/useEffect/UseEfreectProject";
 import SingleInput from "./8.Input/SingleInput";
+import SingleInputRev from "./8.Input/SingleInputRev";
+import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
 
 function App() {
   return (
-    <div className="appContainer">
-      {/*-----------------------COMPONENT--------------------------  */}
-      {/* <FunCom /> */}
-      {/* <ClassCom /> */}
+    <>
+      <div className="appContainer">
+        {/*-----------------------COMPONENT--------------------------  */}
+        {/* <FunCom /> */}
+        {/* <ClassCom /> */}
 
-      {/*-----------------------STYLE--------------------------  */}
-      {/* <Style /> */}
-      {/* <Slider /> */}
-      {/* <ReactStrap /> */}
-      {/* <MainPage /> */}
+        {/*-----------------------STYLE--------------------------  */}
+        {/* <Style /> */}
+        {/* <Slider /> */}
+        {/* <ReactStrap /> */}
+        {/* <MainPage /> */}
 
-      {/*-----------------------USE_STATE--------------------------  */}
-      {/* <UseStaeCom /> */}
-      {/* <UseStaePro /> */}
-      {/* <UseStaePro2 /> */}
-      {/* <UseStateClass /> */}
+        {/*-----------------------USE_STATE--------------------------  */}
+        {/* <UseStaeCom /> */}
+        {/* <UseStaePro /> */}
+        {/* <UseStaePro2 /> */}
+        {/* <UseStateClass /> */}
 
-      {/*-----------------------FRAGMENT--------------------------  */}
-      {/* <FragmentCom /> */}
-      {/* <FragmentCom /> */}
+        {/*-----------------------FRAGMENT--------------------------  */}
+        {/* <FragmentCom /> */}
+        {/* <FragmentCom /> */}
 
-      {/*-----------------------MAP-KEY--------------------------  */}
-      {/* <MapKey /> */}
+        {/*-----------------------MAP-KEY--------------------------  */}
+        {/* <MapKey /> */}
 
-      {/*-----------------------PROPS--------------------------  */}
-      {/* <FunProps name={"Urvish"} age={23} color={"red"} /> */}
-      {/* <FunProps name={"Nimesh"} age={20} color={"green"} /> */}
-      {/* <ClassProps data={{ name: "Urvish", greeting: "Good-Morning" }} /> */}
-      {/* <ClassProps /> */}
-      {/* <PropPro1 /> */}
-      {/* <PropsChange name="urvish" /> */}
+        {/*-----------------------PROPS--------------------------  */}
+        {/* <FunProps name={"Urvish"} age={23} color={"red"} /> */}
+        {/* <FunProps name={"Nimesh"} age={20} color={"green"} /> */}
+        {/* <ClassProps data={{ name: "Urvish", greeting: "Good-Morning" }} /> */}
+        {/* <ClassProps /> */}
+        {/* <PropPro1 /> */}
+        {/* <PropsChange name="urvish" /> */}
 
-      {/*-----------------------LIFE_CYCLE_METHOD--------------------------  */}
-      {/* <LifeCycleMethod /> */}
-      {/* <LifePro /> */}
-      {/* <PropsChanges1 name="shivam"/> */}
+        {/*-----------------------LIFE_CYCLE_METHOD--------------------------  */}
+        {/* <LifeCycleMethod /> */}
+        {/* <LifePro /> */}
+        {/* <PropsChanges1 name="shivam"/> */}
 
-      {/*-----------------------HOOK--------------------------  */}
-      {/* <UseEfectCom /> */}
-      {/* <UseEfreectProject /> */}
+        {/*-----------------------HOOK--------------------------  */}
+        {/* <UseEfectCom /> */}
+        {/* <UseEfreectProject /> */}
 
-      {/*-----------------------INPUT--------------------------  */}
-      <SingleInput />
-    </div>
+        {/*-----------------------INPUT--------------------------  */}
+        {/* <SingleInput /> */}
+        {/* <SingleInputRev /> */}
+        <MultipleInput />
+      </div>
+      <ToastContainer />
+    </>
   );
 }
 

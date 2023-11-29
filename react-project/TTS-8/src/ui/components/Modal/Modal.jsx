@@ -10,6 +10,7 @@ import {
   FormText,
   FormGroup,
 } from "reactstrap";
+import DynamicForm from "../DynamicForm";
 
 export default function PopUp({ toggle, modal }) {
   return (
@@ -17,16 +18,15 @@ export default function PopUp({ toggle, modal }) {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <FormGroup>
+          <DynamicForm />
+          {/* <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input />
-            {/* <FormFeedback valid>Sweet! that name is available</FormFeedback> */}
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Password</Label>
             <Input />
-            {/* <FormFeedback>Oh noes! that name is already taken</FormFeedback> */}
-          </FormGroup>
+          </FormGroup> */}
           <p>Create new account..!</p>
           <Button color="primary" className="w-100" onClick={toggle}>
             Do Something

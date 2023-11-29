@@ -73,6 +73,7 @@ export const getUserById = async (req, res) => {
 
 export const signUp = async (req, res) => {
   let input = req?.body;
+  console.log("input", input)
   model.User.create(input)
     .then((resData) => {
       res.send({

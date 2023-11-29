@@ -1,5 +1,19 @@
-import React from "react";
-import { Label } from "reactstrap";
+import axios from "axios";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  Label,
+  Input,
+  FormFeedback,
+  FormText,
+  FormGroup,
+  Form,
+} from "reactstrap";
+
 const intialData = {
   name: "",
   email: "",
@@ -15,11 +29,15 @@ const intialAdd = {
   state: "",
   pinCode: "",
 };
-const InputCom = ({ feild, type }) => {
+const InputCom = ({ feild, type, setData, data }) => {
   return (
     <FormGroup>
-      <Label for={feild}>Name</Label>
+      <Label style={{ textTransform: "capitalize" }} for={feild}>
+        {feild}
+      </Label>
       <Input
+        onChange={(e) => setData({ ...data, [feild]: e?.target?.value })}
+        value={data[feild]}
         id={feild}
         placeholder={`Enter your ${feild}`}
         type={"text" || type}
@@ -28,83 +46,76 @@ const InputCom = ({ feild, type }) => {
   );
 };
 
+let regiserForm = [
+  { feild: "name" },
+  { feild: "email" },
+  { feild: "number" },
+  { feild: "age" },
+  { feild: "password" },
+  { feild: "confirmPassword" },
+];
+
+let addressForm = [
+  { feild: "add" },
+  { feild: "city" },
+  { feild: "state" },
+  { feild: "pinCode" },
+];
+
 export default function Register() {
   const [user, setUser] = useState(intialData);
   const [address, setAddress] = useState(intialAdd);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (user.password !== user.confirmPassword)
+      toast.error("Password and confirm password is not same");
+    else {
+      let apiData = {
+        ...user,
+        address: [address],
+      };
+      delete apiData.confirmPassword;
+      console.log("apiData", apiData);
+      axios({
+        method: "post",
+        url: "http://localhost:9999/user/signUp",
+        data: apiData,
+      })
+        .then((resData) => {
+          console.log("resData", resData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
   return (
     <>
-      <Form>
-        {/* <InputCom feild={"name"} /> */}
-        <FormGroup>
-          <Label for="name">Name</Label>
-          <Input id="name" placeholder="Enter your name" type="text" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="email">Email</Label>
-          <Input id="email" placeholder="Enter your email" type="email" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="number">Contact Number</Label>
-          <Input
-            id="number"
-            placeholder="Enter your contact number"
-            type="number"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="age">Age</Label>
-          <Input id="age" placeholder="Enter your age" type="number" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Password</Label>
-          <Input
-            id="password"
-            placeholder="Enter your password"
-            type="password"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Confirm Password</Label>
-          <Input
-            id="password"
-            placeholder="Enter your password"
-            type="password"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input
-            id="examplePassword"
-            name="password"
-            placeholder="password placeholder"
-            type="password"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Text Area</Label>
-          <Input id="exampleText" name="text" type="textarea" />
-        </FormGroup>
+      <Form onSubmit={submitHandler}>
+        {regiserForm.map((ele) => {
+          return <InputCom {...ele} setData={setUser} data={user} />;
+        })}
+        {addressForm.map((ele) => {
+          return <InputCom {...ele} setData={setAddress} data={address} />;
+        })}
+
         <FormGroup tag="fieldset">
-          <legend>Radio Buttons</legend>
+          <legend>Gender</legend>
           <FormGroup check>
-            <Input name="radio1" type="radio" />{" "}
-            <Label check>
-              Option one is this and that—be sure to include why it‘s great
-            </Label>
+            <Input name="male" type="radio" />
+            <Label check>Male</Label>
           </FormGroup>
           <FormGroup check>
-            <Input name="radio1" type="radio" />{" "}
-            <Label check>
-              Option two can be something else and selecting it will deselect
-              option one
-            </Label>
+            <Input name="female" type="radio" />
+            <Label check>Female</Label>
           </FormGroup>
           <FormGroup check disabled>
-            <Input disabled name="radio1" type="radio" />{" "}
-            <Label check>Option three is disabled</Label>
+            <Input name="kids" type="radio" />
+            <Label check>Kids</Label>
           </FormGroup>
         </FormGroup>
-        <Button>Submit</Button>
+        <Button color="danger">Submit</Button>
       </Form>
     </>
   );
