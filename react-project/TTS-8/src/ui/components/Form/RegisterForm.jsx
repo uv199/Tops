@@ -1,23 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Label,
-  Input,
-  FormFeedback,
-  FormText,
-  FormGroup,
-  Form,
-} from "reactstrap";
+import { Button, Label, Input, FormGroup, Form } from "reactstrap";
 
 const intialData = {
   name: "",
   email: "",
   number: "",
+  gender: "male",
   age: "",
   password: "",
   confirmPassword: "",
@@ -37,7 +27,7 @@ const InputCom = ({ feild, type, setData, data }) => {
       </Label>
       <Input
         onChange={(e) => setData({ ...data, [feild]: e?.target?.value })}
-        value={data[feild]}
+        value={data?.[feild]}
         id={feild}
         placeholder={`Enter your ${feild}`}
         type={"text" || type}
@@ -62,7 +52,7 @@ let addressForm = [
   { feild: "pinCode" },
 ];
 
-export default function Register() {
+export default function RegisterForm({ manageToggle, toggle }) {
   const [user, setUser] = useState(intialData);
   const [address, setAddress] = useState(intialAdd);
 
@@ -84,6 +74,7 @@ export default function Register() {
       })
         .then((resData) => {
           console.log("resData", resData);
+          toggle();
         })
         .catch((err) => {
           console.log(err);
@@ -103,19 +94,41 @@ export default function Register() {
         <FormGroup tag="fieldset">
           <legend>Gender</legend>
           <FormGroup check>
-            <Input name="male" type="radio" />
+            <Input
+              onChange={() => setUser({ ...user, gender: "male" })}
+              type="radio"
+              checked={user.gender === "male"}
+            />
             <Label check>Male</Label>
           </FormGroup>
           <FormGroup check>
-            <Input name="female" type="radio" />
+            <Input
+              onChange={() => setUser({ ...user, gender: "female" })}
+              type="radio"
+              checked={user.gender === "female"}
+            />
             <Label check>Female</Label>
           </FormGroup>
           <FormGroup check disabled>
-            <Input name="kids" type="radio" />
+            <Input
+              onChange={() => setUser({ ...user, gender: "kids" })}
+              type="radio"
+              checked={user.gender === "kids"}
+            />
+
             <Label check>Kids</Label>
           </FormGroup>
         </FormGroup>
-        <Button color="danger">Submit</Button>
+        <p
+          style={{ textDecoration: "underline", color: "blue" }}
+          role="button"
+          onClick={manageToggle}
+        >
+          Already have account..!
+        </p>
+        <Button color="danger" className="w-100">
+          Create Account
+        </Button>
       </Form>
     </>
   );

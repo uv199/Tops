@@ -37,6 +37,9 @@ export default () => {
             <NavItem>
               <NavLink to={"/contact"}>CONTACT US</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink to={"/product"}>PRODUCT</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText>Simple Text</NavbarText>
         </Collapse>

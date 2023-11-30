@@ -61,6 +61,7 @@ app.get(
     res.send("data found");
   }
 );
+app.use("/assets/", express.static("./assets"));
 
 server.listen(port, () => {
   // updateOldUser();

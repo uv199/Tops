@@ -7,6 +7,8 @@ import PageNotFound from "./PageNotFound";
 import NavBar from "./NavBar";
 import CarService from "./CarService";
 import BikeService from "./BikeService";
+import Product from "./Product/Product";
+import SingleProduct from "./Product/SingleProduct";
 
 export default function Router() {
   return (
@@ -22,8 +24,9 @@ export default function Router() {
             <Route path="car" element={<CarService />} />
             <Route path="bike" element={<BikeService />} />
           </Route>
-
           <Route path="/contact" Component={Contact} />
+          <Route path="/product" Component={Product} />
+          <Route path="/product/:id" Component={SingleProduct} />
           <Route path="*" Component={PageNotFound} />
         </Routes>
       </BrowserRouter>

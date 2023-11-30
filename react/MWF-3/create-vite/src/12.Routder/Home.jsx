@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 
 export default function Home() {
   let [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
   useEffect(() => {
     console.log("----->");
     setTimeout(() => {
@@ -12,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     alert(`count is ${count}`);
   }, [count]);
+
   return (
     <>
       <div>
@@ -19,6 +23,9 @@ export default function Home() {
         <h3>Count is {count}</h3>
         <Button color="danger" onClick={() => setCount(count + 1)}>
           INC
+        </Button>
+        <Button color="danger" onClick={() => navigate("service/car")}>
+          Go to CarService
         </Button>
       </div>
     </>

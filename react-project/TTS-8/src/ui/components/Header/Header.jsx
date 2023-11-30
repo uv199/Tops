@@ -9,19 +9,31 @@ import {
   NavLink,
   Button,
 } from "reactstrap";
-import PopUp from "../Modal/Modal";
+import LoginModal from "../Modal/LoginModal";
+import RegisterModal from "../Modal/RegisterModal";
 
 export default () => {
-  const [modal, setModal] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+  const [registerModal, setRegisterModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const loginToggle = () => setModal(!modal);
-
-
+  const loginToggle = () => setLoginModal(!loginModal);
+  const RegisterToggle = () => setRegisterModal(!registerModal);
   const toggle = () => setIsOpen(!isOpen);
+
   return (
     <>
-      <PopUp toggle={loginToggle} modal={modal} />
+      <LoginModal
+        toggle={loginToggle}
+        modal={loginModal}
+        setModal={setRegisterModal}
+      />
+      <RegisterModal
+        toggle={RegisterToggle}
+        modal={registerModal}
+        setModal={setLoginModal}
+      />
+
       <Navbar expand="lg" style={{ width: "100vw" }}>
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggle} />
