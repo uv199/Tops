@@ -123,8 +123,6 @@ delete1(i)
 <h1 onCLick={()=>delete1(e,i)})>1</h1>
 })
 
-
-
 <h1 onCLick={()=>delete1(1,0)})>1</h1>
 <h1 onCLick={()=>delete1(2,1)})>2</h1>
 <h1 onCLick={()=>delete1(3,2)})>3</h1>

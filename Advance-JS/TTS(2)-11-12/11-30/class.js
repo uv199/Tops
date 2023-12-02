@@ -8,9 +8,6 @@ class Student {
   }
 }
 
-
-
-
 let s1 = new Student("Urvish");
 let s2 = new Student("Nidhi");
 
