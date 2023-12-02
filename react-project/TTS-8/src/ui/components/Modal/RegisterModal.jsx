@@ -7,6 +7,7 @@ export default function RegisterModal({ toggle, modal, setModal }) {
     toggle();
     setModal(true);
   };
+
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle}>

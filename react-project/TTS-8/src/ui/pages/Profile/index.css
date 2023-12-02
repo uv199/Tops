@@ -1,0 +1,84 @@
+
+.card {
+  margin: 70px auto 200px;
+  width: 320px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+.cover-bg {
+  width: 100%;
+  height: 120px;
+  background: #b4e2d6;
+  background: url("https://images.pexels.com/photos/131683/pexels-photo-131683.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+    no-repeat center;
+  background-size: 260%;
+  border-radius: 5px 5px 0 0;
+}
+.user-info {
+  padding-left: 16px;
+  padding-top: 10px;
+}
+.user-info-wrap {
+  margin-top: -35px;
+  display: flex;
+  padding: 0 20px;
+}
+.user-name {
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: -5px;
+}
+.user-title {
+  font-size: 16px;
+  font-weight: 200;
+  color: #8b8784;
+  display: block;
+  margin-top: 10px;
+}
+.user-photo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  background: #fff
+    url("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+    no-repeat center;
+  background-size: cover;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+.user-bio {
+  padding: 20px;
+}
+.user-bio p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+}
+.social-icons {
+  display: flex;
+}
+.social a {
+  display: block;
+  height: 20px;
+  color: #a9a9a8;
+  margin-right: 13px;
+  transition: all 0.3s ease-in-out 0s;
+}
+.social a .fa {
+  height: 32px;
+}
+.social a:hover {
+  color: #47a398;
+}
+.social .message a {
+  margin: 0;
+}

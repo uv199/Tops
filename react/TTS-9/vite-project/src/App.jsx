@@ -25,6 +25,7 @@ import UseEfreectProject from "./4.Hook/useEffect/UseEfreectProject";
 import SingleInput from "./8.Input/SingleInput";
 import SingleInputRev from "./8.Input/SingleInputRev";
 import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
+import MultiUpdate from "./8.Input/MultipleInput/MultiUpdate";
 
 function App() {
   return (
@@ -73,7 +74,8 @@ function App() {
         {/*-----------------------INPUT--------------------------  */}
         {/* <SingleInput /> */}
         {/* <SingleInputRev /> */}
-        <MultipleInput />
+        {/* <MultipleInput /> */}
+        <MultiUpdate />
       </div>
       <ToastContainer />
     </>

@@ -11,6 +11,9 @@ import {
 } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
 import RegisterModal from "../Modal/RegisterModal";
+import { CircleUserRound } from "lucide-react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default () => {
   const [loginModal, setLoginModal] = useState(false);
@@ -20,6 +23,10 @@ export default () => {
   const loginToggle = () => setLoginModal(!loginModal);
   const RegisterToggle = () => setRegisterModal(!registerModal);
   const toggle = () => setIsOpen(!isOpen);
+
+  //  state = { }
+  const token = useSelector((state) => state?.authReducer?.token);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -34,7 +41,7 @@ export default () => {
         setModal={setLoginModal}
       />
 
-      <Navbar expand="lg" style={{ width: "100vw" }}>
+      <Navbar expand="lg" style={{ width: "100%" }}>
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -49,9 +56,17 @@ export default () => {
             </NavItem>
           </Nav>
         </Collapse>
-        <Button color="danger" onClick={loginToggle}>
-          Login
-        </Button>
+        {token ? (
+          <CircleUserRound
+            color="#706b6b"
+            role="button"
+            onClick={() => navigate("/profile")}
+          />
+        ) : (
+          <Button color="danger" onClick={loginToggle}>
+            Login
+          </Button>
+        )}
       </Navbar>
     </>
   );

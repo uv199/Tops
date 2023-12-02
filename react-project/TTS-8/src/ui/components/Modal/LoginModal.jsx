@@ -13,7 +13,7 @@ export default function LoginModal({ modal, toggle, setModal }) {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <LoginForm />
+          <LoginForm toggle={toggle} />
           <p
             style={{ textDecoration: "underline", color: "blue" }}
             role="button"
@@ -21,9 +21,6 @@ export default function LoginModal({ modal, toggle, setModal }) {
           >
             Create new account..!
           </p>
-          <Button color="danger" className="w-100" onClick={toggle}>
-            Create Account
-          </Button>
         </ModalBody>
       </Modal>
     </div>

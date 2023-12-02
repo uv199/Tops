@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { Button, Label, Input, FormGroup, Form } from "reactstrap";
+import { login } from "../../../redux/fetures/auth/auth";
+import { BE_URL } from "../../../config";
 
 const intialData = {
   name: "",
@@ -56,6 +59,8 @@ export default function RegisterForm({ manageToggle, toggle }) {
   const [user, setUser] = useState(intialData);
   const [address, setAddress] = useState(intialAdd);
 
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (user.password !== user.confirmPassword)
@@ -69,11 +74,11 @@ export default function RegisterForm({ manageToggle, toggle }) {
       console.log("apiData", apiData);
       axios({
         method: "post",
-        url: "http://localhost:9999/user/signUp",
+        url: `${BE_URL}/user/signUp`,
         data: apiData,
       })
         .then((resData) => {
-          console.log("resData", resData);
+          dispatch(login(resData.data));
           toggle();
         })
         .catch((err) => {
