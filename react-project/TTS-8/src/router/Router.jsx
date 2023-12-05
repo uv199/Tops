@@ -9,6 +9,12 @@ import Error404 from "../ui/pages/Error404/Error404";
 import { Provider } from "react-redux";
 import { store } from "../redux/app/store";
 import Profile from "../ui/pages/Profile/Profile";
+import Contact from "../ui/pages/Contact/Contact";
+import About from "../ui/pages/About/About";
+import Dashboard from "../ui/pages/Admin/Dashboard/Dashboard";
+import User from "../ui/pages/Admin/Users/User";
+import Order from "../ui/pages/Admin/Order/Order";
+import AllProduct from "../ui/pages/Admin/AllProduct/AllProduct";
 
 export default function Router() {
   return (
@@ -20,6 +26,12 @@ export default function Router() {
             <Route path="" element={<Home />} />
             <Route path="product" element={<Product />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="about" element={<About />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="users" element={<User />} />
+            <Route path="order" element={<Order />} />
+            <Route path="admin-product" element={<AllProduct />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
           <Footer />

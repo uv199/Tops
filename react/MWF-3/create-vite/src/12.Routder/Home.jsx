@@ -6,15 +6,15 @@ export default function Home() {
   let [count, setCount] = useState(0);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("----->");
-    setTimeout(() => {
-      alert("hello world");
-    }, 2000);
-  }, []);
-  useEffect(() => {
-    alert(`count is ${count}`);
-  }, [count]);
+  // useEffect(() => {
+  //   console.log("----->");
+  //   setTimeout(() => {
+  //     alert("hello world");
+  //   }, 2000);
+  // }, []);
+  // useEffect(() => {
+  //   alert(`count is ${count}`);
+  // }, [count]);
 
   return (
     <>

@@ -6,14 +6,15 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Button,
 } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
 import RegisterModal from "../Modal/RegisterModal";
 import { CircleUserRound } from "lucide-react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
+import "./header.css";
 
 export default () => {
   const [loginModal, setLoginModal] = useState(false);
@@ -25,7 +26,9 @@ export default () => {
   const toggle = () => setIsOpen(!isOpen);
 
   //  state = { }
-  const token = useSelector((state) => state?.authReducer?.token);
+  const { token, user } = useSelector((state) => state?.authReducer);
+  console.log("-----------  token----------->", token);
+
   const navigate = useNavigate();
 
   return (
@@ -41,19 +44,69 @@ export default () => {
         setModal={setLoginModal}
       />
 
-      <Navbar expand="lg" style={{ width: "100%" }}>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <Navbar
+        expand="lg"
+        style={{
+          width: "100%",
+          backgroundColor: "lightgray",
+          position: "sticky",
+          top: "0",
+          zIndex: "9999",
+        }}
+      >
+        <NavbarBrand href="/">
+          <b>ShoesMania</b>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar className="navi">
           <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
+            {JSON.stringify(user) === "{}" || user?.userType === "customer" ? (
+              <>
+                <NavItem>
+                  <NavLink className="m-2" to="/">
+                    Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/product">
+                    Shose
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/contact">
+                    Contact
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/about">
+                    About
+                  </NavLink>
+                </NavItem>
+              </>
+            ) : (
+              <>
+                <NavItem>
+                  <NavLink className="m-2" to="/dashboard">
+                    Dashboard
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/admin-product">
+                    Product
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/order">
+                    Order
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="m-2" to="/users">
+                    Users
+                  </NavLink>
+                </NavItem>
+              </>
+            )}
           </Nav>
         </Collapse>
         {token ? (

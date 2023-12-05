@@ -9,6 +9,9 @@ import CarService from "./CarService";
 import BikeService from "./BikeService";
 import Product from "./Product/Product";
 import SingleProduct from "./Product/SingleProduct";
+import AllProduct2 from "./Product2/AllProduct2";
+import Footer from "./Product2/Footer";
+import SingleProduct2 from "./Product2/SingleProduct2";
 
 export default function Router() {
   return (
@@ -25,10 +28,14 @@ export default function Router() {
             <Route path="bike" element={<BikeService />} />
           </Route>
           <Route path="/contact" Component={Contact} />
-          <Route path="/product" Component={Product} />
-          <Route path="/product/:id" Component={SingleProduct} />
+          <Route path="/product" Component={AllProduct2} />
+          <Route path="/product/:id" Component={SingleProduct2} />
+
+          {/* <Route path="/product" Component={Product} /> */}
+          {/* <Route path="/product/:id" Component={SingleProduct} /> */}
           <Route path="*" Component={PageNotFound} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
