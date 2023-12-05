@@ -11,6 +11,7 @@ class User {
 class Student extends User {
   constructor(fees) {
     super(fees);
+    this.fees = 999999999;
   }
   printFees() {
     console.log("----fees---->", this.fees);

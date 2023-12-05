@@ -24,8 +24,10 @@ import UseEfectCom from "./4.Hook/useEffect/UseEfectCom";
 import UseEfreectProject from "./4.Hook/useEffect/UseEfreectProject";
 import SingleInput from "./8.Input/SingleInput";
 import SingleInputRev from "./8.Input/SingleInputRev";
-import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
+
 import MultiUpdate from "./8.Input/MultipleInput/MultiUpdate";
+import LocalStorage from "./9.localstorage/LocalStorage";
+import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
 
 function App() {
   return (
@@ -75,7 +77,10 @@ function App() {
         {/* <SingleInput /> */}
         {/* <SingleInputRev /> */}
         {/* <MultipleInput /> */}
-        <MultiUpdate />
+        {/* <MultiUpdate /> */}
+
+        {/*-----------------------LOCALSTORAGE--------------------------  */}
+        <LocalStorage />
       </div>
       <ToastContainer />
     </>

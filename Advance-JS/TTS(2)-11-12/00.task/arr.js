@@ -41,3 +41,5 @@ let data = name.map((e) => {
   return e[0].toUpperCase() + e.slice(1, e.length);
 });
 console.log("data", data);
+
+

@@ -116,40 +116,9 @@ export default function MultipleInput() {
   );
 }
 
-// let obj = {
-//   emial: "",
-//   password: "",
-// };
-
-// obj = {...obj, email: "teat@gmail.com" };
-// obj = { ...obj,password: "teat@gmail.com" };
-
 /*
-function delete1(i) {
- console.log(i) 
-}
-
-[1,2,3].map((e,i)=>{
-delete1(i)
-<h1 onCLick={()=>delete1(i)})>1</h1>
-})
-
-
-
-<h1 onCLick={()=>delete1(0)})>1</h1>
-<h1 onCLick={()=>delete1(1)})>2</h1>
-<h1 onCLick={()=>delete1(2)})>3</h1>
-
-*/
-
-/*
- let a= [ 1,2,3,4,5]
-
-
- // index =  2
-
- let filterdData = a.filter((e,i)=>{
-  return index !==i 
- })
-
+getItem("key_Name")
+removeItem("key_Name")
+clear()
+localstorage.setItem(key name, data) => localstorage.setItem("user", "{'name':'urvish'}")
 */

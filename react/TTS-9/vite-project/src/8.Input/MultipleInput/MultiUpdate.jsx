@@ -31,7 +31,7 @@ export default function MultiUpdate() {
       allUser.splice(index, 1, user);
       setUser([...allUser]);
 
-      // to blank input form 
+      // to blank input form
       setUser({
         email: "",
         password: "",
