@@ -4,6 +4,7 @@ import SunChokdi from "./00.revise/sunChookdi/SunChokdi";
 import MultipleInput from "./10.multipleInput/MultipleInput";
 import UseRef from "./11.Hooks/UseRef";
 import Router from "./12.Routder/Router";
+import AppProtect from "./13.ProtectedRouter/AppProtect";
 import ClassCom from "./2.component/ClassCom";
 import FunCom from "./2.component/FunCom";
 import HomePage from "./2.component/project/HomePage";
@@ -68,7 +69,9 @@ function App() {
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
       {/* ------------------------------ROUTER------------------------- */}
-      <Router />
+      {/* <Router /> */}
+      {/* ------------------------------PROTECTED-ROUTER------------------------- */}
+      <AppProtect />
     </div>
   );
 }
