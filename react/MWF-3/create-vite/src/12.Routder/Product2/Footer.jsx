@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <div>
       <footer id="footer">
-        <div class="foot-col-1">
-          <div class="logo">
+        <div className="foot-col-1">
+          <div className="logo">
             <a href="#">
               <img src="https//www.sofitmobile.com/images/sofit-icon.png" />
             </a>
@@ -20,7 +20,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div class="foot-col-2">
+        <div className="foot-col-2">
           <h4>Navigation</h4>
           <p role="button" onClick={() => navigate("/")}>
             Home
@@ -36,7 +36,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div class="foot-col-4">
+        <div className="foot-col-4">
           <h4>Info</h4>
           <p>
             Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper

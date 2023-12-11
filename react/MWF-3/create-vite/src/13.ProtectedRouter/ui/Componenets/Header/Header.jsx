@@ -7,8 +7,16 @@ import RegisterModal from "../Modal/RegisterModal";
 
 export default function Header() {
   const [registerModal, setRegisterModal] = useState(false);
-  
+
   const registerToggle = () => setRegisterModal(!registerModal);
+
+  const data = JSON.parse(localStorage.getItem("user"));
+  console.log("-----------  data----------->", data);
+
+  const logoutHandler = () => {
+    localStorage.setItem("user", JSON.stringify({}));
+    setRegisterModal(true);
+  };
 
   return (
     <>
@@ -20,20 +28,28 @@ export default function Header() {
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/about"}>About</NavLink>
           </div>
-          {/* <NavLink to={"/profile"}>
-            <img
-              style={{ fontWeight: "bold", fill: "white" }}
-              src={Person}
-              alt=""
-            />
-          </NavLink> */}
-          <Button
-            className="me-4"
-            style={{ backgroundColor: "black", color: "white" }}
-            onClick={registerToggle}
-          >
-            Login
-          </Button>
+          <div>
+            <NavLink to={"/profile"} className="me-2">
+              <img style={{ fontWeight: "bold", fill: "white" }} src={Person} />
+            </NavLink>
+            {Object.keys(data).length > 0 ? (
+              <Button
+                className="me-4"
+                style={{ backgroundColor: "black", color: "white" }}
+                onClick={logoutHandler}
+              >
+                LogOut
+              </Button>
+            ) : (
+              <Button
+                className="me-4"
+                style={{ backgroundColor: "black", color: "white" }}
+                onClick={registerToggle}
+              >
+                Login
+              </Button>
+            )}
+          </div>
         </div>
       </header>
     </>

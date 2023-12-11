@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FunCom from "./FunCom";
 
-// class ClassCom extends React.Component {}
+// className ClassCom extends React.Component {}
 class ClassCom extends Component {
   render() {
     return (

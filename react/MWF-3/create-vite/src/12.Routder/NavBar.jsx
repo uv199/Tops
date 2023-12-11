@@ -28,7 +28,7 @@ export default () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="linkTag me-auto d-flex gap-3" navbar>
             <NavItem>
-              {/* // NOTE - we cant get active class in Link tage so we use NavLink */}
+              {/* // NOTE - we cant get active className in Link tage so we use NavLink */}
               <NavLink to={""}>HOME</NavLink>
             </NavItem>
             <NavItem>
