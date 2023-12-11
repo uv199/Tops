@@ -28,6 +28,7 @@ import SingleInputRev from "./8.Input/SingleInputRev";
 import MultiUpdate from "./8.Input/MultipleInput/MultiUpdate";
 import LocalStorage from "./9.localstorage/LocalStorage";
 import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
+import MultipleInputRiya from "./8.Input/MultipleInputRiya";
 
 function App() {
   return (
@@ -80,7 +81,8 @@ function App() {
         {/* <MultiUpdate /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
-        <LocalStorage />
+        {/* <LocalStorage /> */}
+        <MultipleInputRiya />
       </div>
       <ToastContainer />
     </>

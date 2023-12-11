@@ -1,6 +1,6 @@
 /*
-// [1,2,3,300,100]
--> create array which have 1 to 9 no
+// [1,2,100,3,300,100,1,5,6]
+-> create array which have 1 to 9 no 
 
 1. print 9th and 10th index of array
 2. print every element of array by map and for loop

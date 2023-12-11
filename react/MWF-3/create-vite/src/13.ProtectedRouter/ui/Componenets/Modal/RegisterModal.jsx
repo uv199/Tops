@@ -5,13 +5,13 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   Label,
   Input,
   FormGroup,
 } from "reactstrap";
 
 export default function RegisterModal({ modal, toggle }) {
+    
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle}>

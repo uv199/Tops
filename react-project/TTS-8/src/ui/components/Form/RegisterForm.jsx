@@ -97,7 +97,7 @@ export default function RegisterForm({ manageToggle, toggle }) {
         })}
 
         <FormGroup tag="fieldset">
-          <legend>Gender</legend>
+          <label>Gender</label>
           <FormGroup check>
             <Input
               onChange={() => setUser({ ...user, gender: "male" })}

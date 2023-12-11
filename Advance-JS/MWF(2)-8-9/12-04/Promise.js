@@ -11,6 +11,7 @@ let pro = new Promise((resolve, reject) => {
 
 pro
   .then((res) => {
+    
     console.log("res----------->", res);
     return { bike: "pulsar" };
   })
