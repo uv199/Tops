@@ -69,5 +69,13 @@ export default function LocalStorage() {
     localStorage.setItem("test", "teststtstt");
     localStorage.setItem("test2", "teststtstt");
     localStorage.setItem("test2", "test2");
+     
   }, []);
+
+   to set = localStoreage.setItem("key name in str",data in str)
+   to set = localStoreage.getItme("key name in str")
+   to update  = localStoreage.update ("give key name which want to update  in str",new data  in str)
+   to remove = 
+    - localStoreage.removeItem("key name") -->  clear perticular key
+    - localStoreage.clear() --> clear all key 
   */

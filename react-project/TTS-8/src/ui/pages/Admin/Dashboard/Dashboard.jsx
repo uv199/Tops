@@ -6,13 +6,6 @@ export default function Dashboard() {
       <body>
         <div className="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
           <div className="ui-theme-settings">
-            <button
-              type="button"
-              id="TooltipDemo"
-              className="btn-open-options btn btn-warning"
-            >
-              <i className="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
-            </button>
             <div className="theme-settings__inner">
               <div className="scrollbar-container">
                 <div className="theme-settings__options-wrapper">

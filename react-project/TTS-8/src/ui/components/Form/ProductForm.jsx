@@ -5,6 +5,7 @@ import { Button, Label, Input, FormGroup, Form } from "reactstrap";
 import { BE_URL } from "../../../config";
 import Select from "react-select";
 import { CloudCog } from "lucide-react";
+import { useSelector } from "react-redux";
 const intialData = {
   title: "",
   description: "",
@@ -35,7 +36,7 @@ const InputCom = ({ feild, type, setData, data }) => {
   );
 };
 
-let productForm = [
+const productForm = [
   { feild: "title" },
   { feild: "description" },
   { feild: "brand" },
@@ -61,8 +62,38 @@ const colorOptions = [
 export default function ProductForm({ toggle }) {
   const [product, setProduct] = useState(intialData);
 
+  const token = useSelector((state) => state?.authReducer?.token);
+  const handleCheck = (value) => {
+    console.log("-----------  value----------->", value);
+    // if value available in array then remove from array
+    // and if not available in array then add it
+
+    if (product.size.includes(value)) {
+      setProduct({ ...product, size: product.size.filter((e) => e !== value) });
+    } else {
+      setProduct({ ...product, size: [...product.size, value] });
+    }
+  };
+
   const submitHandler = (e) => {
-    console.log("----->");
+    e.preventDefault();
+    console.log("----->", product);
+    axios({
+      method: "post",
+      url: `${BE_URL}/product/create`,
+      data: product,
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        console.log("----->", res.data);
+        toast.success("Product added successfully");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
   };
   return (
     <>
@@ -103,7 +134,9 @@ export default function ProductForm({ toggle }) {
           <Select
             isMulti
             name="category"
-            onChange={(e) => console.log("---->", e)}
+            onChange={(e) =>
+              setProduct({ ...product, category: e.map((ele) => ele.value) })
+            }
             options={categoryOptions}
             className="basic-multi-select"
             classNamePrefix="select"
@@ -114,6 +147,9 @@ export default function ProductForm({ toggle }) {
           <Select
             isMulti
             name="color"
+            onChange={(e) =>
+              setProduct({ ...product, color: e.map((ele) => ele.value) })
+            }
             options={colorOptions}
             className="basic-multi-select"
             classNamePrefix="select"
@@ -125,18 +161,38 @@ export default function ProductForm({ toggle }) {
           <div className="d-flex mb-4">
             <div className="w-25">
               <FormGroup check>
-                <Input id="checkbox2" type="checkbox" /> <Label check>42</Label>
+                <Input
+                  checked={product?.size?.includes?.("42")}
+                  onChange={() => handleCheck("42")}
+                  type="checkbox"
+                />
+                <Label check>42</Label>
               </FormGroup>
               <FormGroup check>
-                <Input id="checkbox2" type="checkbox" /> <Label check>43</Label>
+                <Input
+                  checked={product?.size?.includes?.("43")}
+                  type="checkbox"
+                  onChange={() => handleCheck("43")}
+                />
+                <Label check>43</Label>
               </FormGroup>
             </div>
             <div className="w-25">
               <FormGroup check>
-                <Input id="checkbox2" type="checkbox" /> <Label check>44</Label>
+                <Input
+                  checked={product?.size?.includes?.("44")}
+                  onChange={() => handleCheck("44")}
+                  type="checkbox"
+                />
+                <Label check>44</Label>
               </FormGroup>
               <FormGroup check>
-                <Input id="checkbox2" type="checkbox" /> <Label check>45</Label>
+                <Input
+                  checked={product?.size?.includes?.("45")}
+                  onChange={() => handleCheck("45")}
+                  type="checkbox"
+                />
+                <Label check>45</Label>
               </FormGroup>
             </div>
           </div>
@@ -156,3 +212,16 @@ let arr = [
   { value: "formal", label: "Formal" },
 ];
 let arr2 = ["casual", "sports", "formal"];
+
+/*
+
+    let arr = product.size;
+    if (arr.includes(x)) {
+      let newArr = arr.filter((e) => e !== x);
+      setProduct({ ...product, size: newArr });
+    } else {
+      let newArr = [...arr, x];
+      setProduct({ ...product, size: newArr });
+    }
+
+    */

@@ -29,6 +29,9 @@ import MultiUpdate from "./8.Input/MultipleInput/MultiUpdate";
 import LocalStorage from "./9.localstorage/LocalStorage";
 import MultipleInput from "./8.Input/MultipleInput/MultipleInput";
 import MultipleInputRiya from "./8.Input/MultipleInputRiya";
+import LocalstoreageRev from "./9.localstorage/LocalstoreageRev";
+import UseRefCom from "./4.Hook/useRef/UseRefCom";
+import UseContaxtCom from "./4.Hook/useContaxt/UseContaxtCom";
 
 function App() {
   return (
@@ -73,6 +76,8 @@ function App() {
         {/*-----------------------HOOK--------------------------  */}
         {/* <UseEfectCom /> */}
         {/* <UseEfreectProject /> */}
+        {/* <UseRefCom /> */}
+        <UseContaxtCom />
 
         {/*-----------------------INPUT--------------------------  */}
         {/* <SingleInput /> */}
@@ -82,7 +87,8 @@ function App() {
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}
-        <MultipleInputRiya />
+        {/* <LocalstoreageRev /> */}
+        {/* <MultipleInputRiya /> */}
       </div>
       <ToastContainer />
     </>

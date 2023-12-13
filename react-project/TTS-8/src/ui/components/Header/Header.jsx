@@ -51,7 +51,7 @@ export default () => {
           backgroundColor: "lightgray",
           position: "sticky",
           top: "0",
-          zIndex: "1",
+          zIndex: "10",
         }}
       >
         <NavbarBrand href="/">
