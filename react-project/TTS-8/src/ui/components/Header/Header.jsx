@@ -27,7 +27,6 @@ export default () => {
 
   //  state = { }
   const { token, user } = useSelector((state) => state?.authReducer);
-  console.log("-----------  token----------->", token);
 
   const navigate = useNavigate();
 

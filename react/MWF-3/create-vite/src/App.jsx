@@ -2,6 +2,7 @@ import Event from "./00.revise/Event";
 import TableComponent from "./00.revise/HideShow";
 import SunChokdi from "./00.revise/sunChookdi/SunChokdi";
 import MultipleInput from "./10.multipleInput/MultipleInput";
+import UseContaxtCom from "./11.Hooks/UseContaxt/UseContaxtCom";
 import UseRef from "./11.Hooks/UseRef";
 import Router from "./12.Routder/Router";
 import AppProtect from "./13.ProtectedRouter/AppProtect";
@@ -62,6 +63,7 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* <UseRef /> */}
+      <UseContaxtCom />
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
       {/* <DeleteData /> */}
@@ -71,7 +73,7 @@ function App() {
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
       {/* ------------------------------PROTECTED-ROUTER------------------------- */}
-      <AppProtect />
+      {/* <AppProtect /> */}
     </div>
   );
 }

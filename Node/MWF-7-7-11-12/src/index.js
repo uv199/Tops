@@ -81,17 +81,37 @@ app.get("/msg", (req, res) => {
 
 const io = new Server(server);
 
-io.on("connection", (socket) => {
-  console.log("---User is online--->", socket.id);
+// io.on("connection", (socket) => {
+//   console.log("---User is online--->", socket.id);
 
-  socket.on("receiveMsg", (data, id) => {
-    console.log("id", id);
-    console.log("data", data);
-    // socket.emit("sendMsg",data)
-    // io.emit("sendMsg", data);
-    io.to(id).emit("sendMsg", data);
+//   socket.on("receiveMsg", (data, id) => {
+//     console.log("id", id);
+//     console.log("data", data);
+//     // socket.emit("sendMsg",data)
+//     // io.emit("sendMsg", data);
+//     io.to(id).emit("sendMsg", data);
+//   });
+//   socket.on("disconnect", () => {
+//     console.log("---User is offline--->");
+//   });
+// });
+
+io.on("connection", (socket) => {
+  console.log("A user connected");
+
+  socket.on("joinRoom", (room) => {
+    socket.join(room);
+    console.log(`User joined room: ${room}`);
+  });
+
+  socket.on("sendMessage", (room, message) => {
+    console.log(`Message received in room ${room}: ${message}`);
+    io.to(room).emit("message", message);
+  });
+  socket.on("disconnecting", () => {
+    console.log(socket.rooms);
   });
   socket.on("disconnect", () => {
-    console.log("---User is offline--->");
+    console.log("User disconnected");
   });
 });

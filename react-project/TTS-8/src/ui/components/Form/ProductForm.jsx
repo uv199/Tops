@@ -64,7 +64,6 @@ export default function ProductForm({ toggle }) {
 
   const token = useSelector((state) => state?.authReducer?.token);
   const handleCheck = (value) => {
-    console.log("-----------  value----------->", value);
     // if value available in array then remove from array
     // and if not available in array then add it
 
@@ -77,7 +76,6 @@ export default function ProductForm({ toggle }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("----->", product);
     axios({
       method: "post",
       url: `${BE_URL}/product/create`,
@@ -88,7 +86,6 @@ export default function ProductForm({ toggle }) {
       },
     })
       .then((res) => {
-        console.log("----->", res.data);
         toast.success("Product added successfully");
       })
       .catch((err) => {

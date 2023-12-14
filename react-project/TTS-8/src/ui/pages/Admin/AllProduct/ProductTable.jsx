@@ -1,33 +1,34 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Table } from "reactstrap";
-import { BE_URL } from "../../../../config";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Table } from "reactstrap";
+import { fetchProduct } from "../../../../redux/fetures/product/product";
 import { toast } from "react-toastify";
 import { Eye } from "lucide-react";
 
-export default function User() {
-  let [user, setUser] = useState([]);
-  let { token } = useSelector((state) => state?.authReducer);
+export default function ProductTable() {
+  let [allProduct, setAllProduct] = useState([]);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    axios({
-      method: "get",
-      url: `${BE_URL}/user/getAll`,
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => {
-        setUser(res?.data?.data);
-      })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+    dispatch(fetchProduct());
+  }, []);
+
+  const data = useSelector((state) => state.productReducer);
+  console.log("-----------  data----------->", data.products)
+
+  useEffect(() => {
+    if (data.error.length > 0) {
+      toast.error(data.error);
+    }
+    setAllProduct(data.products);
   }, []);
 
   return (
-    <>
-      <div className="m-4">
+    <div>
+      {data.pending ? (
+        <h1>fetching data......!</h1>
+      ) : (
         <Table striped>
           <thead>
             <tr>
@@ -40,7 +41,7 @@ export default function User() {
             </tr>
           </thead>
           <tbody>
-            {user?.map?.((e, i) => {
+            {allProduct?.map?.((e, i) => {
               return (
                 <tr key={e?._id}>
                   <th scope="row">{i + 1}</th>
@@ -56,7 +57,7 @@ export default function User() {
             })}
           </tbody>
         </Table>
-      </div>
-    </>
+      )}
+    </div>
   );
 }

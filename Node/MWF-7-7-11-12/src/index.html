@@ -107,13 +107,27 @@
         }
 
     })
+    // Prompt the user for a room name
+    const room = prompt('Enter a room name:');
 
-    socket.on("sendMsg", (data) => {
-        const item = document.createElement('li');
-        item.textContent = data;
-        messages.appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
-    })
+    // Join the specified room
+    socket.emit('joinRoom', room);
+
+    // Listen for messages from the server
+    socket.on('message', (message) => {
+        console.log(`Message received: ${message}`);
+    });
+
+    // Send a test message
+    const testMessage = 'Hello, room!';
+    socket.emit('sendMessage', room, testMessage);
+
+    // socket.on("sendMsg", (data) => {
+    //     const item = document.createElement('li');
+    //     item.textContent = data;
+    //     messages.appendChild(item);
+    //     window.scrollTo(0, document.body.scrollHeight);
+    // })
 
 
 

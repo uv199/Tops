@@ -71,7 +71,6 @@ export default function RegisterForm({ manageToggle, toggle }) {
         address: [address],
       };
       delete apiData.confirmPassword;
-      console.log("apiData", apiData);
       axios({
         method: "post",
         url: `${BE_URL}/user/signUp`,

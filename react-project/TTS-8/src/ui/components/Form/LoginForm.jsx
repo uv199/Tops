@@ -12,13 +12,12 @@ export default function LoginForm({ toggle }) {
     email: "",
     password: "",
   });
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("user--->", user);
 
     axios({
       method: "post",

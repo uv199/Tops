@@ -32,6 +32,7 @@ import MultipleInputRiya from "./8.Input/MultipleInputRiya";
 import LocalstoreageRev from "./9.localstorage/LocalstoreageRev";
 import UseRefCom from "./4.Hook/useRef/UseRefCom";
 import UseContaxtCom from "./4.Hook/useContaxt/UseContaxtCom";
+import UseRedeucerCom from "./4.Hook/useReducer/UseRedeucerCom";
 
 function App() {
   return (
@@ -77,7 +78,8 @@ function App() {
         {/* <UseEfectCom /> */}
         {/* <UseEfreectProject /> */}
         {/* <UseRefCom /> */}
-        <UseContaxtCom />
+        {/* <UseContaxtCom /> */}
+        <UseRedeucerCom />
 
         {/*-----------------------INPUT--------------------------  */}
         {/* <SingleInput /> */}

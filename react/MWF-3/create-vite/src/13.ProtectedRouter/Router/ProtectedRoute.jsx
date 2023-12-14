@@ -6,9 +6,8 @@ export default function ProtectedRoute({ Component }) {
   useEffect(() => {
     let data = localStorage.getItem("user");
     let normalData = JSON.parse(data);
-    Object.keys(normalData).length;
 
-    if (Object.keys(normalData).length === 0) {
+    if (normalData && Object.keys(normalData).length === 0) {
       navigate("/anauthorized");
     }
   });

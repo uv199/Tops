@@ -8,7 +8,6 @@ const handleCheck = (x) => {
   } else {
     arr = [...arr, x];
   }
-  console.log("-----------  arr----------->", arr);
 };
 handleCheck(3);
 handleCheck(4);

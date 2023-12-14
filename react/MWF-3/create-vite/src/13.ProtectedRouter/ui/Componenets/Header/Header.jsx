@@ -32,7 +32,7 @@ export default function Header() {
             <NavLink to={"/profile"} className="me-2">
               <img style={{ fontWeight: "bold", fill: "white" }} src={Person} />
             </NavLink>
-            {Object.keys(data).length > 0 ? (
+            {data && Object.keys?.(data)?.length > 0 ? (
               <Button
                 className="me-4"
                 style={{ backgroundColor: "black", color: "white" }}
