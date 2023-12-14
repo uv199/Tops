@@ -11,8 +11,7 @@ export default function UseRedeucerCom() {
       return state;
     }
   };
-
-  //
+  
   let [count, dispatch] = useReducer(reducer, { count: 1000 });
 
   return (
