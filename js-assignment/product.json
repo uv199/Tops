@@ -11,8 +11,8 @@
     "size": ["44", "45", "42", "43"],
     "isAvailable": true,
     "availableStock": 54,
-    "rating": 0,
-    "totalRaters": 0,
+    "rating": 15,
+    "totalRaters": 3,
     "totalSoldUnit": 0
   },
   {
@@ -27,8 +27,8 @@
     "size": ["44", "45", "42", "43"],
     "isAvailable": true,
     "availableStock": 7,
-    "rating": 0,
-    "totalRaters": 0,
+    "rating": 10,
+    "totalRaters": 3,
     "totalSoldUnit": 0
   },
 

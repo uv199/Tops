@@ -14,5 +14,3 @@ ask for
 8. give top 5 state name population wise 
   */
 const ALL_DATA = require("./data.json");
-
-
