@@ -33,6 +33,9 @@ import LocalstoreageRev from "./9.localstorage/LocalstoreageRev";
 import UseRefCom from "./4.Hook/useRef/UseRefCom";
 import UseContaxtCom from "./4.Hook/useContaxt/UseContaxtCom";
 import UseRedeucerCom from "./4.Hook/useReducer/UseRedeucerCom";
+import ManoharRecucer from "./4.Hook/useReducer/ManoharReducer";
+import ReducerWithPayload from "./4.Hook/useReducer/ReducerWithPayload";
+import Router from "./10.Router/Router";
 
 function App() {
   return (
@@ -79,7 +82,9 @@ function App() {
         {/* <UseEfreectProject /> */}
         {/* <UseRefCom /> */}
         {/* <UseContaxtCom /> */}
-        <UseRedeucerCom />
+        {/* <UseRedeucerCom /> */}
+        {/* <ManoharRecucer /> */}
+        {/* <ReducerWithPayload /> */}
 
         {/*-----------------------INPUT--------------------------  */}
         {/* <SingleInput /> */}
@@ -91,6 +96,8 @@ function App() {
         {/* <LocalStorage /> */}
         {/* <LocalstoreageRev /> */}
         {/* <MultipleInputRiya /> */}
+        {/*-----------------------ROUTER--------------------------  */}
+        <Router />
       </div>
       <ToastContainer />
     </>

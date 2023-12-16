@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "../ui/pages/Home/Home";
-import Header from "../ui/components/Header/Header";
-import Footer from "../ui/components/Footer/Footer";
+import Header from "@component/Header/Header";
+import Footer from "@component/Footer/Footer";
 import Error404 from "../ui/pages/Error404/Error404";
 import { Provider } from "react-redux";
 import { store } from "../redux/app/store";

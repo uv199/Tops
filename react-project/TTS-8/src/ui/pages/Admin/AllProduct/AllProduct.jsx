@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import React, { useState } from "react";
 import { Button, Input, Table } from "reactstrap";
-import ProductModal from "../../../components/Modal/ProductModal";
+import ProductModal from "@component/Modal/ProductModal";
 import ProductTable from "./ProductTable";
 
 export default function AllProduct() {

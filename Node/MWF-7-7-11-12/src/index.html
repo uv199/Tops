@@ -114,7 +114,7 @@
     socket.emit('joinRoom', room);
 
     // Listen for messages from the server
-    socket.on('message', (message) => {
+    socket.on('sendMessageToRoom', (message) => {
         console.log(`Message received: ${message}`);
     });
 

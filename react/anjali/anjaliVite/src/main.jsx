@@ -3,15 +3,16 @@ import ReactDOM from "react-dom/client";
 // import App, { sum, sub } from "./App.jsx";
 import "./index.css";
 import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // console.log("-----------  sub----------->", sub);
 // console.log("-----------  sum----------->", sum);
 console.log("-----------  App----------->", App);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );
 
 /*

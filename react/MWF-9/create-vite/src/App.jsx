@@ -32,6 +32,7 @@ import Router from "./11.router/Router";
 import ProtectedRoute from "./12.ProtectedRouter/Router";
 import UseContaxtCom from "./5.HOOKS/useContext/UseContaxtCom";
 import UseReducer from "./5.HOOKS/useReducer/UseReducer";
+import Urvish from "./2.component/urvish.jsx";
 
 function App() {
   let x = "urvish";
@@ -42,9 +43,10 @@ function App() {
       {/* <FunCom1 /> */}
       {/* <ClassCom /> */}
       {/* <FunCom2 /> */}
+      {/* <Urvish /> */}
 
       {/* <-------------------------style---------------------------------> */}
-      {/* <StyleCom /> */}
+      <StyleCom />
       {/* <BootstrapCom /> */}
       {/* <Header /> */}
 
@@ -67,7 +69,7 @@ function App() {
       {/* <-------------------------HOOK---------------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseRef /> */}
-      <UseMemo />
+      {/* <UseMemo /> */}
       {/* <UseContaxtCom /> */}
       {/* <UseReducer /> */}
 

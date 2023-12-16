@@ -4,6 +4,7 @@ import SunChokdi from "./00.revise/sunChookdi/SunChokdi";
 import MultipleInput from "./10.multipleInput/MultipleInput";
 import UseContaxtCom from "./11.Hooks/UseContaxt/UseContaxtCom";
 import UseRef from "./11.Hooks/UseRef";
+import UseReducerCom from "./11.Hooks/useReducer/UseReducerCom";
 import Router from "./12.Routder/Router";
 import AppProtect from "./13.ProtectedRouter/AppProtect";
 import ClassCom from "./2.component/ClassCom";
@@ -63,7 +64,8 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* <UseRef /> */}
-      <UseContaxtCom />
+      {/* <UseContaxtCom /> */}
+      <UseReducerCom />
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
       {/* <DeleteData /> */}

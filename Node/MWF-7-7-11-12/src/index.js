@@ -106,11 +106,13 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", (room, message) => {
     console.log(`Message received in room ${room}: ${message}`);
-    io.to(room).emit("message", message);
+    io.to(room).emit("sendMessageToRoom", message);
   });
+
   socket.on("disconnecting", () => {
     console.log(socket.rooms);
   });
+
   socket.on("disconnect", () => {
     console.log("User disconnected");
   });
