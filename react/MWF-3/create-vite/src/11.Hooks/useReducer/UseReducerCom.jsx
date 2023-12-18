@@ -99,3 +99,15 @@ export default function UseReducerCom() {
 // x = {
 //   count: 2,
 // };
+
+
+//---------------------task--------------------
+// let [user,disptach] = useReducer(reducer, {email:"",password:"" });
+// <h1>{user.email}</h1>
+// <h1>{user.password}</h1>
+
+// input for name 
+// add name btn
+
+// input for password 
+// add password btn
