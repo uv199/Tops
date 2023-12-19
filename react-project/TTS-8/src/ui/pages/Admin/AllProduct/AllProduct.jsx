@@ -19,7 +19,7 @@ export default function AllProduct() {
           <Button onClick={toggle}>Add Product</Button>
         </div>
         <hr />
-        <ProductTable />
+        <ProductTable toggle={toggle} />
       </div>
     </>
   );

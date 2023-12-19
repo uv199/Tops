@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Button, Label, Input, FormGroup, Form } from "reactstrap";
 import { BE_URL } from "../../../config";
 import Select from "react-select";
 import { CloudCog } from "lucide-react";
 import { useSelector } from "react-redux";
+import { useParams, useSearchParams, useLocation } from "react-router-dom";
 const intialData = {
   title: "",
   description: "",
@@ -61,8 +62,19 @@ const colorOptions = [
 
 export default function ProductForm({ toggle }) {
   const [product, setProduct] = useState(intialData);
+  let [searchParams] = useSearchParams();
+  useEffect(() => {
+    const id = searchParams.get("id");
+    axios({
+      method: "get",
+      url: `${BE_URL}/product/getProductById/${id}`,
+    }).then((res) => {
+      setProduct(res?.data?.data);
+    });
+  }, [location.search]);
 
   const token = useSelector((state) => state?.authReducer?.token);
+
   const handleCheck = (value) => {
     // if value available in array then remove from array
     // and if not available in array then add it
@@ -95,8 +107,10 @@ export default function ProductForm({ toggle }) {
   return (
     <>
       <Form onSubmit={submitHandler}>
-        {productForm.map((ele) => {
-          return <InputCom {...ele} setData={setProduct} data={product} />;
+        {productForm.map((ele, i) => {
+          return (
+            <InputCom key={i} {...ele} setData={setProduct} data={product} />
+          );
         })}
         <label>Gender</label>
         <FormGroup tag="fieldset" className="d-flex gap-3 ">
@@ -144,6 +158,11 @@ export default function ProductForm({ toggle }) {
           <Select
             isMulti
             name="color"
+            // ["red","black"]
+            value={[
+              { value: "red", label: "Red" },
+              { value: "black", label: "Black" },
+            ]}
             onChange={(e) =>
               setProduct({ ...product, color: e.map((ele) => ele.value) })
             }

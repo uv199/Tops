@@ -18,3 +18,16 @@ output = {
   data: input,
   token: "token",
 };
+
+
+// create product
+
+
+// delete product
+
+// product/delete/:id
+
+
+
+
+

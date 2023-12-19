@@ -4,7 +4,10 @@ import { Table } from "reactstrap";
 import { fetchProduct } from "../../../../redux/fetures/product/product";
 import { toast } from "react-toastify";
 import "./index.css";
-import { Eye } from "lucide-react";
+import { Eye, Trash } from "lucide-react";
+import axios from "axios";
+import { BE_URL } from "../../../../config";
+import { useSearchParams } from "react-router-dom";
 
 const StyleRow = ({ arr1, ele }) => {
   let available = arr1?.includes?.(`${ele}`) ? "black" : "gray";
@@ -22,9 +25,11 @@ const StyleRow = ({ arr1, ele }) => {
     </span>
   );
 };
+import { useLocation } from "react-router-dom";
 
-export default function ProductTable() {
+export default function ProductTable({ toggle }) {
   let [allProduct, setAllProduct] = useState([]);
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const dispatch = useDispatch();
 
@@ -39,8 +44,33 @@ export default function ProductTable() {
       toast.error(data.error);
     }
     setAllProduct(data.products);
-  }, []);
+  }, [data]);
 
+  // delete logic
+  const deleteHandler = (id) => {
+    console.log("-----------  id----------->", id);
+
+    axios({
+      method: "delete",
+      url: `${BE_URL}/product/delete/${id}`,
+      headers: {
+        authorization: `Berer ${JSON.parse(localStorage.getItem("token"))}`,
+      },
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res.data);
+        toast.success("product Deleted");
+        dispatch(fetchProduct());
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
+
+  const updateHandler = (data) => {
+    toggle();
+    setSearchParams({ id: data?._id });
+  };
   return (
     <div style={{ overflow: "scroll" }}>
       {data.pending ? (
@@ -100,7 +130,17 @@ export default function ProductTable() {
                     })}
                   </td>
                   <td>
-                    <Eye role="button" color="#a8a8a7" />
+                    <Eye
+                      role="button"
+                      color="#a8a8a7"
+                      className="me-2"
+                      onClick={() => updateHandler(e)}
+                    />
+                    <Trash
+                      role="button"
+                      color="#a8a8a7"
+                      onClick={() => deleteHandler(e?._id)}
+                    />
                   </td>
                 </tr>
               );
