@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Event from "./00.revise/Event";
 import TableComponent from "./00.revise/HideShow";
 import SunChokdi from "./00.revise/sunChookdi/SunChokdi";
@@ -28,6 +29,7 @@ import FullCrud from "./9.input/FullCrud";
 import InputData from "./9.input/InputData";
 import UpdateData from "./9.input/UpdateData";
 import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -65,7 +67,7 @@ function App() {
       {/* <UseEffectPro /> */}
       {/* <UseRef /> */}
       {/* <UseContaxtCom /> */}
-      <UseReducerCom />
+      {/* <UseReducerCom /> */}
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
       {/* <DeleteData /> */}
@@ -75,7 +77,8 @@ function App() {
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
       {/* ------------------------------PROTECTED-ROUTER------------------------- */}
-      {/* <AppProtect /> */}
+      <AppProtect />
+      <ToastContainer />
     </div>
   );
 }

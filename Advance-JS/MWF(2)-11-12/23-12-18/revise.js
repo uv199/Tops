@@ -1,14 +1,14 @@
-let age = 20;
-let gender = "male";
-let ball = "";
-if (age > 18) {
-  if (gender === "male") {
-    ball = "red";
-  } else if (gender === "female") {
-    ball = "pink";
-  }
-} else {
-  ball = "green";
-}
+// nvm -v ==> - to check nvm version
+// nvm install (node version)
+// nvm uninstall (node version)
+// nvm list  =>
+// nvm use (node version)
 
-console.log("BALL", ball);
+// node -v ==> to check node version
+
+let x = 9999;
+console.log("---->", x);
+
+for (let i = 0; i < 20; i++) {
+  console.log("---->", i);
+}

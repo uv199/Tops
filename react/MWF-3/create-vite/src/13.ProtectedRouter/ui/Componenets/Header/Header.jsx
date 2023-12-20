@@ -3,24 +3,31 @@ import "./index.css";
 import { NavLink } from "react-router-dom";
 import Person from "./circle-user-round.svg";
 import { Button } from "reactstrap";
-import RegisterModal from "../Modal/RegisterModal";
+import LoginModal from "../Modal/LoginModal";
+import { toast } from "react-toastify";
+import RegisetModal from "../Modal/RegisetModal";
 
 export default function Header() {
+  const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
 
-  const registerToggle = () => setRegisterModal(!registerModal);
+  const regisetrToggle = () => setRegisterModal(!registerModal);
+
+  const loginToggle = () => setLoginModal(!loginModal);
 
   const data = JSON.parse(localStorage.getItem("user"));
   console.log("-----------  data----------->", data);
 
   const logoutHandler = () => {
     localStorage.setItem("user", JSON.stringify({}));
-    setRegisterModal(true);
+    setLoginModal(true);
+    toast.success("logout successfully done..!");
   };
 
   return (
     <>
-      <RegisterModal toggle={registerToggle} modal={registerModal} />
+      <LoginModal toggle={loginToggle} modal={loginModal} />
+      <RegisetModal toggle={regisetrToggle} modal={registerModal} />
       <header>
         <h1>UV</h1>
         <div className="w-100  d-flex justify-content-between align-items-center">
@@ -41,13 +48,22 @@ export default function Header() {
                 LogOut
               </Button>
             ) : (
-              <Button
-                className="me-4"
-                style={{ backgroundColor: "black", color: "white" }}
-                onClick={registerToggle}
-              >
-                Login
-              </Button>
+              <>
+                <Button
+                  className="me-4"
+                  style={{ backgroundColor: "black", color: "white" }}
+                  onClick={loginToggle}
+                >
+                  Login
+                </Button>
+                <Button
+                  className="me-4"
+                  style={{ backgroundColor: "black", color: "white" }}
+                  onClick={regisetrToggle}
+                >
+                  Register
+                </Button>
+              </>
             )}
           </div>
         </div>

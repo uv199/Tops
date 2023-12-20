@@ -25,7 +25,7 @@ const StyleRow = ({ arr1, ele }) => {
     </span>
   );
 };
-import { useLocation } from "react-router-dom";
+import PaginationCom from "../../../components/Pagination/PaginationCom";
 
 export default function ProductTable({ toggle }) {
   let [allProduct, setAllProduct] = useState([]);
@@ -76,77 +76,80 @@ export default function ProductTable({ toggle }) {
       {data.pending ? (
         <h1>fetching data......!</h1>
       ) : (
-        <Table striped>
-          <thead>
-            <tr>
-              <th>SR</th>
-              <th>IMAGE</th>
-              <th>TITLE</th>
-              <th>AVAILABLE STOCK</th>
-              <th>PRICE</th>
-              <th>DISCOUNT (%)</th>
-              <th>SIZE</th>
-              <th>COLOR</th>
-              <th>ACTION</th>
-            </tr>
-          </thead>
-          <tbody>
-            {allProduct?.map?.((e, i) => {
-              return (
-                <tr key={e?._id}>
-                  <th scope="row">{i + 1}</th>
-                  <td>
-                    <img
-                      style={{ maxHeight: "40px" }}
-                      src={e?.thumbnail}
-                      alt="img"
-                    />
-                  </td>
-                  <td>{e?.title}</td>
-                  <td>{e?.availableStock || 0}</td>
-                  <td>{e?.price || 0}</td>
-                  <td>{e?.discountPercentage || 0}</td>
-                  <td>
-                    {[41, 42, 43, 44, 45].map?.((ele, i) => {
-                      return <StyleRow key={i} arr1={e.size} ele={ele} />;
-                    })}
-                  </td>
-                  <td>
-                    {e?.color?.map?.((col) => {
-                      return (
-                        <span
-                          style={{
-                            border: "1px solid darkgray",
-                            display: "inline-block",
-                            width: "20px",
-                            height: "20px",
-                            margin: "3px",
+        <>
+          <Table striped>
+            <thead>
+              <tr>
+                <th>SR</th>
+                <th>IMAGE</th>
+                <th>TITLE</th>
+                <th>AVAILABLE STOCK</th>
+                <th>PRICE</th>
+                <th>DISCOUNT (%)</th>
+                <th>SIZE</th>
+                <th>COLOR</th>
+                <th>ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allProduct?.map?.((e, i) => {
+                return (
+                  <tr key={e?._id}>
+                    <th scope="row">{i + 1}</th>
+                    <td>
+                      <img
+                        style={{ maxHeight: "40px" }}
+                        src={e?.thumbnail}
+                        alt="img"
+                      />
+                    </td>
+                    <td>{e?.title}</td>
+                    <td>{e?.availableStock || 0}</td>
+                    <td>{e?.price || 0}</td>
+                    <td>{e?.discountPercentage || 0}</td>
+                    <td>
+                      {[41, 42, 43, 44, 45].map?.((ele, i) => {
+                        return <StyleRow key={i} arr1={e.size} ele={ele} />;
+                      })}
+                    </td>
+                    <td>
+                      {e?.color?.map?.((col) => {
+                        return (
+                          <span
+                            style={{
+                              border: "1px solid darkgray",
+                              display: "inline-block",
+                              width: "20px",
+                              height: "20px",
+                              margin: "3px",
 
-                            backgroundColor: col,
-                          }}
-                          className="border rounded-2 "
-                        ></span>
-                      );
-                    })}
-                  </td>
-                  <td>
-                    <Eye
-                      role="button"
-                      color="#a8a8a7"
-                      className="me-2"
-                      onClick={() => updateHandler(e)}
-                    />
-                    <Trash
-                      role="button"
-                      color="#a8a8a7"
-                      onClick={() => deleteHandler(e?._id)}
-                    />
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
+                              backgroundColor: col,
+                            }}
+                            className="border rounded-2 "
+                          ></span>
+                        );
+                      })}
+                    </td>
+                    <td>
+                      <Eye
+                        role="button"
+                        color="#a8a8a7"
+                        className="me-2"
+                        onClick={() => updateHandler(e)}
+                      />
+                      <Trash
+                        role="button"
+                        color="#a8a8a7"
+                        onClick={() => deleteHandler(e?._id)}
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+          <PaginationCom />
+        </>
       )}
     </div>
   );
