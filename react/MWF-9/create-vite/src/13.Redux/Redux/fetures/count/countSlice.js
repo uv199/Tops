@@ -6,7 +6,7 @@ let countSlice = createSlice({
   reducers: {
     incrementCount: (state, action) => {
       console.log("-----------  action----------->", action);
-      console.log("-----------  state----------->", state.count);
+      
       state.count++;
     },
     incrementcunt2: (state, action) => {

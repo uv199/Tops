@@ -45,6 +45,14 @@ for (let i = 0; i < no.length; i++) {
   if (no[i] === no[i + 1]) x++;
 }
 
+// Map((student)=>{
+//   let total = 0
+//   student.marks.Map((subject)=>{
+// total+=subject.marks
+//   })
+
+// })
+
 const classResult = [
   {
     name: "Vinay",
