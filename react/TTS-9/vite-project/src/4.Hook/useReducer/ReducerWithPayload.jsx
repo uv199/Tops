@@ -12,8 +12,11 @@ const reducer = (state, action) => {
 
 export default function ReducerWithPayload() {
   let [count, dispatch] = useReducer(reducer, { count: 1000 });
+  // take state
+
   return (
     <div>
+      {/* input set state */}
       <h1>Count is : {count.count}</h1>
       <Button onClick={() => dispatch({ actionType: "INC", payload: 10 })}>
         INC By Number

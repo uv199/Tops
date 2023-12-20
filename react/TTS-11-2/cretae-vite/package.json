@@ -1,5 +1,5 @@
 {
-  "name": "anjalivite",
+  "name": "cretae-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "async": "^3.2.5",
-    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-grid-gallery": "^1.0.1-alpha.0",
-    "reactstrap": "^9.2.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

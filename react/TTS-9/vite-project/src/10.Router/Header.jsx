@@ -11,6 +11,9 @@ export default function Header() {
         <li>
           <NavLink to={"/contact"}>Contact</NavLink>
         </li>
+        <li>
+          <NavLink to={"/service"}>Service</NavLink>
+        </li>
       </ul>
     </div>
   );
@@ -22,17 +25,19 @@ export default function Header() {
     <div>
       <ul className="d-flex gap-4">
         <li>
-          <Link to={"/"}>Home</Link>
+          <NavLink to={"/"}>Home</NavLink>
         </li>
         <li>
-          <Link to={"/contact"}>Contact</Link>
+          <NavLink to={"/contact"}>Contact</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/service"}>Service</NavLink>
         </li>
       </ul>
     </div>
   );
 }
 */
-
 
 /*
     <NavItem>

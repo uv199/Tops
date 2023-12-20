@@ -4,7 +4,48 @@ import Contact from "./Contact";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
+import Service from "./Service/Service";
+import BikeService from "./Service/BikeService";
+import CarService from "./Service/CarService";
+import SportsBike from "./Service/Bike/SportsBike";
+import NormalBike from "./Service/Bike/NormalBike";
+import HeaderRS from "./HeaderRS";
 
+export default function Router() {
+  return (
+    <>
+      <BrowserRouter>
+        {/* <Header /> */}
+        <HeaderRS expand="lg"/>
+        <div
+          style={{
+            width: "100vw",
+            minHeight: "100vh",
+            backgroundColor: "lightgray",
+          }}
+          className="d-flex justify-content-center align-items-center "
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/service">
+              <Route index Component={Service} />
+              <Route path="bike">
+                <Route index Component={BikeService} />
+                <Route path="sports" element={<SportsBike />} />
+                <Route path="normal" element={<NormalBike />} />
+              </Route>
+              <Route path="car" Component={CarService} />
+            </Route>
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </>
+  );
+}
+
+/*
 export default function Router() {
   return (
     <>
@@ -21,13 +62,17 @@ export default function Router() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/service">
+              <Route index Component={Service} />
+              <Route path="bike" Component={BikeService} />
+              <Route path="car" Component={CarService} />
+            </Route>
             <Route path="*" element={<Error404 />} />
           </Routes>
-          {/* <Routes>
-          <Route path="/contact/2" element={<Home />} />
-        </Routes> */}
         </div>
       </BrowserRouter>
     </>
   );
 }
+
+*/

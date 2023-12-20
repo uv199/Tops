@@ -10,3 +10,4 @@ export default function FunCom2() {
     </div>
   );
 }
+

@@ -14,14 +14,13 @@ export default function FunState() {
 
   const incCount = () => {
     // count = count + 1; // can't change value directly
-    setCount(count + 1);
+    setCount(count + 2);
     // console.log("-----------count----------->", count);
   };
 
   return (
     <div>
       <h1>{x}</h1>
-      FunState
       <Button onClick={() => incrementX()}>INC</Button>
       <hr />
       <h1>Count is {count}</h1>

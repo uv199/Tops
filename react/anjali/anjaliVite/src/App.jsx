@@ -7,6 +7,14 @@ import Header from "./2.styling/Header";
 import ClassComState from "./3.state/ClassComState";
 import FunState from "./3.state/FunState";
 import LifeCycle from "./4.lifeCycleMethod/LifeCycle";
+import Classsprops from "./5.porps/Classsprops";
+import FunProps, { sum, sub } from "./5.porps/FunProps";
+import Galary from "./6.map-key/Galary";
+
+// export default "test test"
+// import TEST from ""
+// export const x = "hello world..!";
+// import {x} from "path of file"
 
 export default function App() {
   let arr = [1, 2, 3, 4, 5, 6];
@@ -22,11 +30,20 @@ export default function App() {
       {/* <Header />
       <Body />
       <Footer /> */}
+
       {/* -----------STATE--------------- */}
       {/* <FunState /> */}
       {/* <ClassComState /> */}
+
       {/* -----------LIFE-CYCLE-METHOD--------------- */}
-      <LifeCycle />
+      {/* <LifeCycle /> */}
+
+      {/* -----------PROPS--------------- */}
+      {/* <FunProps name={"urvish"} age={20} /> */}
+      {/* <FunProps name={"sanjay"} age={30} /> */}
+      {/* <Classsprops name={"Urvish"} /> */}
+
+      <Galary />
     </div>
   );
 }

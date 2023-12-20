@@ -11,10 +11,6 @@ export default class LifeCycle extends Component {
     console.log("-----------constructor----------->");
   }
 
-  componentDidMount() {
-    console.log("-----------  componentDidMount----------->");
-  }
-
   componentDidUpdate(oldProps, oldState) {
     console.log("-----------  componentDidUpdate----------->");
     console.log("-----------  oldState----------->", oldState);
@@ -27,9 +23,10 @@ export default class LifeCycle extends Component {
     // console.log("-----------  oldProps----------->", oldProps);
   }
 
+  componentDidMount() {}
+
   render() {
     console.log("-----------  render----------->");
-
     return (
       <div>
         {this.state.count < 10 ? <Unmount /> : null}

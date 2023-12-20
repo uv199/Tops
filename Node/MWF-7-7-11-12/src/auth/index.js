@@ -21,6 +21,7 @@ export const authorized = async (req, res, next) => {
 export const AdminAuth = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
+    console.log("-----------  token----------->", token)
     const data = jwt.verify(token, process.env.SECRET_KEY);
     console.log("-----------  data----------->", data)
     if (data.userType !== "admin") throw new Error("You are--- not authorized");

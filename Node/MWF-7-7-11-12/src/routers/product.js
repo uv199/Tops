@@ -7,7 +7,7 @@ import {
   getById,
   productByRange,
   updateProduct,
-  getAll
+  getAll,
 } from "../controler/product";
 
 const productRouter = express.Router();
@@ -20,8 +20,8 @@ productRouter.get("/getAll", getAll);
 
 productRouter.get("/getProductByRang", productByRange);
 
-productRouter.put("/update/:id", updateProduct);
+productRouter.put("/update/:id", AdminAuth, updateProduct);
 
-productRouter.delete("/delete/:id", deleteProduct);
+productRouter.delete("/delete/:id", AdminAuth, deleteProduct);
 
 export default productRouter;
