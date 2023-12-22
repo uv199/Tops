@@ -1,7 +1,13 @@
 import React from "react";
 import Home from "./Home";
 import Contact from "./Contact";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Link,
+  useSearchParams,
+} from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
 import Service from "./Service/Service";
@@ -10,13 +16,15 @@ import CarService from "./Service/CarService";
 import SportsBike from "./Service/Bike/SportsBike";
 import NormalBike from "./Service/Bike/NormalBike";
 import HeaderRS from "./HeaderRS";
+import User from "./User/User";
+import Profile from "./User/Profile";
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
         {/* <Header /> */}
-        <HeaderRS expand="lg"/>
+        <HeaderRS expand="lg" />
         <div
           style={{
             width: "100vw",
@@ -38,6 +46,8 @@ export default function Router() {
               <Route path="car" Component={CarService} />
             </Route>
             <Route path="*" element={<Error404 />} />
+            <Route path="/user/:name/:id" element={<User />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
       </BrowserRouter>

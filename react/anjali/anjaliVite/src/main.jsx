@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // console.log("-----------  sub----------->", sub);
 // console.log("-----------  sum----------->", sum);
-console.log("-----------  App----------->", App);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>

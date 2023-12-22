@@ -148,7 +148,7 @@ export default function ProductTable({ toggle }) {
               })}
             </tbody>
           </Table>
-          <PaginationCom />
+          {/* <PaginationCom /> */}
         </>
       )}
     </div>

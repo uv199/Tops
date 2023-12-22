@@ -1,3 +1,4 @@
+import FetchData from "./00.Practicle/FetchData";
 import FunCom2 from "./1.Componenets/FunCom2";
 import FunctionalCom from "./1.Componenets/FunctionalCom";
 import ClassCom1 from "./1.Componenets/class/ClassCom1";
@@ -10,6 +11,9 @@ import LifeCycle from "./4.lifeCycleMethod/LifeCycle";
 import Classsprops from "./5.porps/Classsprops";
 import FunProps, { sum, sub } from "./5.porps/FunProps";
 import Galary from "./6.map-key/Galary";
+import MapKey from "./6.map-key/MapKey";
+import UseEffectCom from "./7.Hooks/useEffect/UseEffectCom";
+import UseEffectPro1 from "./7.Hooks/useEffect/UseEffectPro1";
 
 // export default "test test"
 // import TEST from ""
@@ -43,7 +47,16 @@ export default function App() {
       {/* <FunProps name={"sanjay"} age={30} /> */}
       {/* <Classsprops name={"Urvish"} /> */}
 
-      <Galary />
+      {/* -----------MAP-KEY--------------- */}
+      {/* <MapKey/> */}
+      {/* <Galary /> */}
+
+      {/* -----------HOOK--------------- */}
+      {/* <UseEffectCom /> */}
+      <UseEffectPro1 />
+
+      {/* -----------PARCTICE--------------- */}
+      {/* <FetchData /> */}
     </div>
   );
 }

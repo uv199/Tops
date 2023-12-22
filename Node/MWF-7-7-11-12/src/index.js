@@ -69,7 +69,7 @@ server.listen(port, () => {
   // cronJob();
   // sendEmailTemp();
   AddAdmin();
-  // AddProductData();
+  AddProductData();
   console.log(`your server is running on http://localhost:${port}/`);
 });
 

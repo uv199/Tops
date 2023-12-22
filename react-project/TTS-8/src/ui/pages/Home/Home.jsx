@@ -16,6 +16,11 @@ export default function Home() {
     <div>
       <h1>{token}</h1>
       <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }
