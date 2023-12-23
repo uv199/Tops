@@ -29,13 +29,19 @@ import PaginationCom from "../../../components/Pagination/PaginationCom";
 
 export default function ProductTable({ toggle }) {
   let [allProduct, setAllProduct] = useState([]);
+  let [totalCount, setTotalCount] = useState(0);
+  let [pagination, setPagination] = useState({
+    limit: 10,
+    page: 1,
+  });
   let [searchParams, setSearchParams] = useSearchParams();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProduct());
-  }, []);
+    dispatch(fetchProduct({ page: pagination?.page, limit: 10 }));
+    // window.scrollTo(0, document.body.scrollHeight);
+  }, [pagination]);
 
   const data = useSelector((state) => state.productReducer);
 
@@ -44,6 +50,7 @@ export default function ProductTable({ toggle }) {
       toast.error(data.error);
     }
     setAllProduct(data.products);
+    setTotalCount(data?.count);
   }, [data]);
 
   // delete logic
@@ -95,7 +102,7 @@ export default function ProductTable({ toggle }) {
               {allProduct?.map?.((e, i) => {
                 return (
                   <tr key={e?._id}>
-                    <th scope="row">{i + 1}</th>
+                    <th scope="row">{(pagination?.page - 1) * 10 + i + 1}</th>
                     <td>
                       <img
                         style={{ maxHeight: "40px" }}
@@ -148,9 +155,22 @@ export default function ProductTable({ toggle }) {
               })}
             </tbody>
           </Table>
-          {/* <PaginationCom /> */}
+          '<h1>{pagination?.totalProduct}</h1>
+          <PaginationCom
+            setPagination={setPagination}
+            page={pagination?.page}
+            limit={pagination?.limit}
+            pageLimit={Math.ceil(totalCount / 10)}
+          />
         </>
       )}
     </div>
   );
 }
+
+/*
+
+1-1 1*10 + 0+1= 11 
+21
+
+*/

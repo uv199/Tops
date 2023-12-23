@@ -20,6 +20,9 @@ export default function AllProduct() {
         </div>
         <hr />
         <ProductTable toggle={toggle} />
+        {/* // put pagination here 
+          transfer all state from table to here and pass them into table and pagination according need
+          */}
       </div>
     </>
   );

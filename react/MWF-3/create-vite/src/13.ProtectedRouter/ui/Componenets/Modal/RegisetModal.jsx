@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import {
   Button,
   Modal,
@@ -23,11 +24,16 @@ export default ({ toggle, modal }) => {
   const addUser = (e) => {
     e.preventDefault();
     let oldData = localStorage.getItem("userData");
-    let convertedOldData = JSON.parse(oldData);
-
-    let finalData = [...convertedOldData, user];
-    localStorage.setItem("userData", JSON.stringify(finalData));
-    setUser(intialData);
+    let convertedOldData = JSON.parse(oldData) || [];
+    if (convertedOldData.find((e) => e.email === user?.email)) {
+      toast.info(" email is already exist");
+    } else {
+      let finalData = [...convertedOldData, user];
+      localStorage.setItem("userData", JSON.stringify(finalData));
+      localStorage.setItem("user", JSON.stringify(user));
+      setUser(intialData);
+      toggle();
+    }
   };
 
   return (
@@ -77,6 +83,9 @@ export default ({ toggle, modal }) => {
                 <option>User</option>
               </Input>
             </FormGroup>
+            <p role="button" className="text-decoration-underline text-primary">
+              Alredy have account...!
+            </p>
             <Button color="danger" className="w-100">
               Submit
             </Button>

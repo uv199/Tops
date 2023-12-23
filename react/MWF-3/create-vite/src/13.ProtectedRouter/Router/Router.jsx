@@ -5,8 +5,9 @@ import About from "../ui/Pages/About";
 import Header from "../ui/Componenets/Header/Header";
 import Footer from "../ui/Componenets/Footer/Footer";
 import Profile from "../ui/Pages/Profile";
-import ProtectedRoute from "./ProtectedRoute";
+import { AdminProtectedRoute, ProtectedRoute } from "./ProtectedRoute";
 import AnAuthorized from "../ui/Pages/AnAuthorized";
+import Admin from "../ui/Pages/Admin";
 
 export default function Router() {
   return (
@@ -20,6 +21,14 @@ export default function Router() {
             element={<ProtectedRoute Component={<About />} />}
           />
           <Route path="/anauthorized" element={<AnAuthorized />} />
+
+          {/* --------- Admin auth route -------- */}
+          <Route
+            path="/admin"
+            element={<AdminProtectedRoute Component={<Admin />} />}
+          />
+
+          {/* --------- auth route -------- */}
           <Route
             path="/profile"
             element={<ProtectedRoute Component={<Profile />} />}

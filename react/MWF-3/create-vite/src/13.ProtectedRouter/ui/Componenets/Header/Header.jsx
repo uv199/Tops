@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Person from "./circle-user-round.svg";
 import { Button } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
@@ -11,6 +11,7 @@ export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
 
+  const navigate = useNavigate();
   const regisetrToggle = () => setRegisterModal(!registerModal);
 
   const loginToggle = () => setLoginModal(!loginModal);
@@ -22,6 +23,7 @@ export default function Header() {
     localStorage.setItem("user", JSON.stringify({}));
     setLoginModal(true);
     toast.success("logout successfully done..!");
+    navigate("/");
   };
 
   return (
@@ -34,6 +36,9 @@ export default function Header() {
           <div className="linkContainer">
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/about"}>About</NavLink>
+            {data?.userType === "Admin" && (
+              <NavLink to={"/admin"}>Admin</NavLink>
+            )}
           </div>
           <div>
             <NavLink to={"/profile"} className="me-2">

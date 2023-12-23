@@ -20,11 +20,18 @@ export default function LoginModal({ modal, toggle }) {
   let [user, setUser] = useState(intialData);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // check
-    localStorage.setItem("user", JSON.stringify(user));
-    setUser(intialData);
-    toggle();
-    toast.success("login successfully...!");
+    const regData = JSON.parse(localStorage.getItem("userData") || "[]");
+    let match = regData.find((e) => e.email === user?.email);
+    if (match) {
+      if (match.password !== user?.password)
+        return toast.warn("password not match");
+      localStorage.setItem("user", JSON.stringify(match));
+      setUser(intialData);
+      toggle();
+      toast.success("login successfully...!");
+    } else {
+      toast.warn("Email not found");
+    }
   };
 
   return (
@@ -55,6 +62,9 @@ export default function LoginModal({ modal, toggle }) {
                 }
               />
             </FormGroup>
+            <p role="button" className="text-decoration-underline text-primary">
+              Create Account...!
+            </p>
             <Button color="danger" className="w-100">
               Submit
             </Button>
