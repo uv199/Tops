@@ -1,13 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Contact from "./Contact";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Link,
-  useSearchParams,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
 import Service from "./Service/Service";
@@ -17,7 +11,7 @@ import SportsBike from "./Service/Bike/SportsBike";
 import NormalBike from "./Service/Bike/NormalBike";
 import HeaderRS from "./HeaderRS";
 import User from "./User/User";
-import Profile from "./User/Profile";
+import Profile from "./User/ProfileModal";
 
 export default function Router() {
   return (

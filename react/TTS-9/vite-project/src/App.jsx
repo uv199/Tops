@@ -36,6 +36,7 @@ import UseRedeucerCom from "./4.Hook/useReducer/UseRedeucerCom";
 import ManoharRecucer from "./4.Hook/useReducer/ManoharReducer";
 import ReducerWithPayload from "./4.Hook/useReducer/ReducerWithPayload";
 import Router from "./10.Router/Router";
+import AppPro from "./11.ProtectedRoute/AppPro";
 
 function App() {
   return (
@@ -97,7 +98,8 @@ function App() {
         {/* <LocalstoreageRev /> */}
         {/* <MultipleInputRiya /> */}
         {/*-----------------------ROUTER--------------------------  */}
-        <Router />
+        {/* <Router /> */}
+        <AppPro />
       </div>
       <ToastContainer />
     </>
