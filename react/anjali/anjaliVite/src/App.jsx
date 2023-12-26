@@ -14,6 +14,7 @@ import Galary from "./6.map-key/Galary";
 import MapKey from "./6.map-key/MapKey";
 import UseEffectCom from "./7.Hooks/useEffect/UseEffectCom";
 import UseEffectPro1 from "./7.Hooks/useEffect/UseEffectPro1";
+import SingleInput from "./8.Crud/SingleInput";
 
 // export default "test test"
 // import TEST from ""
@@ -26,7 +27,14 @@ export default function App() {
     return <p>no is {e}</p>;
   });
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
       {/* -----------COMPONENT--------------- */}
       {/* <ClassCom1 /> */}
 
@@ -53,7 +61,10 @@ export default function App() {
 
       {/* -----------HOOK--------------- */}
       {/* <UseEffectCom /> */}
-      <UseEffectPro1 />
+      {/* <UseEffectPro1 /> */}
+
+      {/* -----------INPUT--------------- */}
+      <SingleInput />
 
       {/* -----------PARCTICE--------------- */}
       {/* <FetchData /> */}

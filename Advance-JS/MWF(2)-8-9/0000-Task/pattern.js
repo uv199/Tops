@@ -122,3 +122,26 @@ const classResult = [
 // find all students percentage
 // give hiegest percentage holder name
 // give who have heigest percentage subject vise
+
+let ans = [
+  {
+    subject: "Hindi",
+    marks: 91,
+    name: "Tushar",
+  },
+  {
+    subject: "English",
+    marks: 88,
+    name: "Tushar",
+  },
+  {
+    subject: "Gujarati",
+    marks: 99,
+    name: "sanjay",
+  },
+  {
+    subject: "Maths",
+    marks: 99,
+    name: "Tushar",
+  },
+];
