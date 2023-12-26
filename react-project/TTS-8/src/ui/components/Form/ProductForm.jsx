@@ -134,7 +134,7 @@ export default function ProductForm({ toggle }) {
             <Input
               onChange={() => setProduct({ ...product, gender: "kids" })}
               type="radio"
-              checked={product.gender === "kids"}
+              checked={product?.gender === "kids"}
             />
 
             <Label check>Kids</Label>

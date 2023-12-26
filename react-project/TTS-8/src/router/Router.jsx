@@ -14,6 +14,7 @@ import Dashboard from "../ui/pages/Admin/Dashboard/Dashboard";
 import User from "../ui/pages/Admin/Users/User";
 import Order from "../ui/pages/Admin/Order/Order";
 import AllProduct from "../ui/pages/Admin/AllProduct/AllProduct";
+import { AuthRoute } from "./ProtectedRoute";
 
 export default function Router() {
   return (
@@ -26,7 +27,11 @@ export default function Router() {
             <Route path="profile" element={<Profile />} />
             <Route path="contact" element={<Contact />} />
             <Route path="about" element={<About />} />
-            <Route path="dashboard" element={<Dashboard />} />
+
+            <Route
+              path="dashboard"
+              element={<AuthRoute Component={<Dashboard />} />}
+            />
             <Route path="users" element={<User />} />
             <Route path="order" element={<Order />} />
             <Route path="admin-product" element={<AllProduct />} />

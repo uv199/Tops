@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -10,13 +10,16 @@ import {
 } from "reactstrap";
 import LoginModal from "../Modal/LoginModal";
 import RegisterModal from "../Modal/RegisterModal";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRound, Eye } from "lucide-react";
 import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import "./header.css";
 
 export default () => {
+  let { state } = useLocation();
+  console.log("-----------  location----------->", state);
+
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +28,10 @@ export default () => {
   const RegisterToggle = () => setRegisterModal(!registerModal);
   const toggle = () => setIsOpen(!isOpen);
 
-  //  state = { }
+  useEffect(() => {
+    setLoginModal(state?.loginModal);
+  }, [state]);
+
   const { token, user } = useSelector((state) => state?.authReducer);
 
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/Card/Card";
 import { useSelector } from "react-redux";
+import Slider from "./Slider";
 
 export default function Home() {
   // -----------state-----------
@@ -13,14 +14,8 @@ export default function Home() {
 
   const token = useSelector((state) => state.authReducer.token);
   return (
-    <div>
-      <h1>{token}</h1>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+    <div className="w-100">
+      <Slider />
     </div>
   );
 }
