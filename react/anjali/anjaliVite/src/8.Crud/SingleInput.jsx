@@ -14,21 +14,20 @@ export default function SingleInput() {
 
   //   let jsonData = localStorage.getItem("userData");
   //   let normalData = JSON.parse(jsonData);
-  //   console.log("-----------  jsonData----------->", normalData);
+  //   console.log("-----------  jsonData----------->", normalData);\
+
   useEffect(() => {
-    console.log("first---->");
     let jsonData = localStorage.getItem("allTask");
     let normalData = JSON.parse(jsonData) || [];
-    console.log("-----------  normalData----------->", normalData);
     setAllTask(normalData);
   }, []);
 
   useEffect(() => {
-    console.log("second---->");
     localStorage.setItem("allTask", JSON.stringify(allTask));
   }, [allTask]);
 
   const getData = (e) => {
+    console.log("-----------  e----------->", e);
     setTask(e?.target?.value);
   };
 
@@ -36,14 +35,12 @@ export default function SingleInput() {
     setAllTask([...allTask, task]);
     // allTask = []
     // alltask=["test"]
-    console.log("00000====>");
     setTask("");
     // localStorage.setItem("allTask", JSON.stringify([...allTask, task]));
   };
 
   // DELETE
   const deleteHandler = (index) => {
-    console.log("----->", index);
     // whole array = allTask
     //index = index
     const filteredData = allTask?.filter((e, i) => i !== index);

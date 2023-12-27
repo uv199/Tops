@@ -14,6 +14,8 @@ import Galary from "./6.map-key/Galary";
 import MapKey from "./6.map-key/MapKey";
 import UseEffectCom from "./7.Hooks/useEffect/UseEffectCom";
 import UseEffectPro1 from "./7.Hooks/useEffect/UseEffectPro1";
+import Home from "./8.Crud/Home";
+import MultiInput from "./8.Crud/MultiInput";
 import SingleInput from "./8.Crud/SingleInput";
 
 // export default "test test"
@@ -64,7 +66,8 @@ export default function App() {
       {/* <UseEffectPro1 /> */}
 
       {/* -----------INPUT--------------- */}
-      <SingleInput />
+      {/* <SingleInput /> */}
+      <Home />
 
       {/* -----------PARCTICE--------------- */}
       {/* <FetchData /> */}

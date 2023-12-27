@@ -34,3 +34,8 @@ root.render(
   </div>
 );
 */
+
+
+// not install bootstrap or reactstrap
+// not give css link in main
+// not import componenet
