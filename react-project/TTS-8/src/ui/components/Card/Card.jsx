@@ -1,4 +1,6 @@
+import { Heart, ShoppingCart } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Card as StrapCard,
   Button,
@@ -8,25 +10,41 @@ import {
   CardTitle,
 } from "reactstrap";
 
-export default function Card() {
+export default function Card({ product }) {
+  const navigate = useNavigate();
+  const redirectHandler = () => {
+    console.log("redired");
+    navigate(`/shose/${product?._id}`);
+  };
+  const wichListHandler = () => {
+    console.log("-----------  wichListHandler----------->");
+  };
+
   return (
     <>
-      <StrapCard
-        style={{
-          width: "18rem",
-        }}
-      >
-        <img alt="Sample" src="https://picsum.photos/300/200" />
+      <StrapCard>
+        <img
+          alt="Sample"
+          src={product?.thumbnail}
+          style={{ width: "100%", height: "250px" }}
+          onClick={redirectHandler}
+        />
         <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Card subtitle
-          </CardSubtitle>
-          <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card‘s content.
-          </CardText>
-          <Button>Button</Button>
+          <div onClick={redirectHandler}>
+            <CardTitle tag="h5">{product?.title}</CardTitle>
+            <CardSubtitle className="mb-2 text-muted" tag="h6">
+              $ {product?.price}.00
+            </CardSubtitle>
+            <CardText>{product?.description}</CardText>
+          </div>
+          <div className="d-flex gap-2">
+            <Button color="danger" className="w-100">
+              <ShoppingCart color="#ffffff" />
+            </Button>
+            <Button onClick={wichListHandler} color="danger" className="w-100">
+              <Heart color="#ffffff" fill="#ffffff" />
+            </Button>
+          </div>
         </CardBody>
       </StrapCard>
     </>

@@ -15,6 +15,8 @@ import User from "../ui/pages/Admin/Users/User";
 import Order from "../ui/pages/Admin/Order/Order";
 import AllProduct from "../ui/pages/Admin/AllProduct/AllProduct";
 import { AuthRoute } from "./ProtectedRoute";
+import AllShose from "../ui/pages/Shose/AllShose";
+import ShoseDetail from "../ui/pages/Shose/ShoseDetail";
 
 export default function Router() {
   return (
@@ -27,6 +29,8 @@ export default function Router() {
             <Route path="profile" element={<Profile />} />
             <Route path="contact" element={<Contact />} />
             <Route path="about" element={<About />} />
+            <Route path="shose-all" element={<AllShose />} />
+            <Route path="shose/:id" element={<ShoseDetail />} />
 
             <Route
               path="dashboard"

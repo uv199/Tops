@@ -73,7 +73,7 @@ export default () => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="m-2" to="/product">
+                  <NavLink className="m-2" to="/shose-all">
                     Shose
                   </NavLink>
                 </NavItem>
