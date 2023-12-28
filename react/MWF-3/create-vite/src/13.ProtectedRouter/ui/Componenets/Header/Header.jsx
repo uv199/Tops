@@ -12,7 +12,10 @@ export default function Header() {
   const [registerModal, setRegisterModal] = useState(false);
 
   const navigate = useNavigate();
-  const regisetrToggle = () => setRegisterModal(!registerModal);
+  const regisetrToggle = () => {
+    console.log("------>");
+    setRegisterModal(!registerModal);
+  };
 
   const loginToggle = () => setLoginModal(!loginModal);
 
@@ -28,7 +31,11 @@ export default function Header() {
 
   return (
     <>
-      <LoginModal toggle={loginToggle} modal={loginModal} />
+      <LoginModal
+        toggle={loginToggle}
+        modal={loginModal}
+        regisetrToggle={regisetrToggle}
+      />
       <RegisetModal toggle={regisetrToggle} modal={registerModal} />
       <header>
         <h1>UV</h1>
@@ -60,13 +67,6 @@ export default function Header() {
                   onClick={loginToggle}
                 >
                   Login
-                </Button>
-                <Button
-                  className="me-4"
-                  style={{ backgroundColor: "black", color: "white" }}
-                  onClick={regisetrToggle}
-                >
-                  Register
                 </Button>
               </>
             )}

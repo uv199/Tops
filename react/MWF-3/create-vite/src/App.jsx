@@ -29,7 +29,8 @@ import FullCrud from "./9.input/FullCrud";
 import InputData from "./9.input/InputData";
 import UpdateData from "./9.input/UpdateData";
 import "./App.css";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import CheckBox from "./10.multipleInput/CheckBox";
 
 function App() {
   return (
@@ -74,10 +75,11 @@ function App() {
       {/* <UpdateData /> */}
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
+      <CheckBox />
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
       {/* ------------------------------PROTECTED-ROUTER------------------------- */}
-      <AppProtect />
+      {/* <AppProtect /> */}
       <ToastContainer />
     </div>
   );

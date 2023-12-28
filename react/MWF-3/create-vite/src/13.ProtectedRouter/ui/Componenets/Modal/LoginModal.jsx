@@ -16,7 +16,8 @@ const intialData = {
   password: "",
 };
 
-export default function LoginModal({ modal, toggle }) {
+export default function LoginModal({ modal, toggle, regisetrToggle }) {
+  console.log(regisetrToggle);
   let [user, setUser] = useState(intialData);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +35,10 @@ export default function LoginModal({ modal, toggle }) {
     }
   };
 
+  const redirect = () => {
+    toggle();
+    regisetrToggle();
+  };
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle} onSubmit={(e) => handleSubmit(e)}>
@@ -62,7 +67,11 @@ export default function LoginModal({ modal, toggle }) {
                 }
               />
             </FormGroup>
-            <p role="button" className="text-decoration-underline text-primary">
+            <p
+              onClick={redirect}
+              role="button"
+              className="text-decoration-underline text-primary"
+            >
               Create Account...!
             </p>
             <Button color="danger" className="w-100">
