@@ -7,7 +7,11 @@ export default function StyleHome() {
   return (
     <div>
       <Header />
-      <Body />
+      <div className="d-flex">
+        <Body />
+        <Body />
+      </div>
+
       <Footer />
     </div>
   );
