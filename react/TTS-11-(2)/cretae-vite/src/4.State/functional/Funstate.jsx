@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 
 export default function Funstate() {
   let [count, setCount] = useState(10);
-  let [data, setData] = useState({ amount: 999 });
+  let [data, setData] = useState({ amount: 999, point: 0 });
   console.log("-----------  data----------->", data);
   console.log("-----------  count----------->", count);
   let x = 99;
@@ -21,6 +21,9 @@ export default function Funstate() {
   const incAmount = () => {
     setData({ amount: data.amount + 1 });
   };
+
+  // incPoint => increment in point only
+
   return (
     <div>
       <h1>x is {x} </h1>
@@ -38,6 +41,12 @@ export default function Funstate() {
       <h1>Count-2 is {data?.amount}</h1>
       <Button color="danger" onClick={incAmount}>
         Inc Amount
+      </Button>
+
+      <hr />
+      <h1>Point is {data?.point}</h1>
+      <Button color="danger" onClick={incPoint}>
+        Inc point
       </Button>
     </div>
   );
