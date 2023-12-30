@@ -2,17 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let amountSlice = createSlice({
   name: "amount",
-  initialState: { amount: 1000 , name : "" },
+  initialState: { amount: 1000, name: "" },
   reducers: {
     incAmount: (state, action) => {
       console.log("===state");
       state.amount++;
     },
-    nameInput: (state, action) => {
-        state.amount += action.payload;
+    amtIncByValue: (state, action) => {
+      state.amount += action.payload;
     },
-    userInput: (state, action) => {
-        state.amount += action.payload;
+    addName: (state, action) => {
+      state.name += action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -23,4 +23,4 @@ let amountSlice = createSlice({
 });
 
 export default amountSlice.reducer;
-export const { incAmount, nameInput ,userInput } = amountSlice.actions;
+export const { incAmount, amtIncByValue, addName } = amountSlice.actions;

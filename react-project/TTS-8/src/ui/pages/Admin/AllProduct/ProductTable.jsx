@@ -27,13 +27,9 @@ const StyleRow = ({ arr1, ele }) => {
 };
 import PaginationCom from "../../../components/Pagination/PaginationCom";
 
-export default function ProductTable({ toggle }) {
+export default function ProductTable({ toggle, pagination, setTotalCount }) {
   let [allProduct, setAllProduct] = useState([]);
-  let [totalCount, setTotalCount] = useState(0);
-  let [pagination, setPagination] = useState({
-    limit: 10,
-    page: 1,
-  });
+
   let [searchParams, setSearchParams] = useSearchParams();
 
   const dispatch = useDispatch();
@@ -65,9 +61,8 @@ export default function ProductTable({ toggle }) {
       },
     })
       .then((res) => {
-        console.log("-----------  res----------->", res.data);
         toast.success("product Deleted");
-        dispatch(fetchProduct());
+        dispatch(fetchProduct({ page: pagination?.page, limit: 10 }));
       })
       .catch((err) => {
         toast.error(err.message);
@@ -156,12 +151,6 @@ export default function ProductTable({ toggle }) {
             </tbody>
           </Table>
           '<h1>{pagination?.totalProduct}</h1>
-          <PaginationCom
-            setPagination={setPagination}
-            page={pagination?.page}
-            limit={pagination?.limit}
-            pageLimit={Math.ceil(totalCount / 10)}
-          />
         </>
       )}
     </div>

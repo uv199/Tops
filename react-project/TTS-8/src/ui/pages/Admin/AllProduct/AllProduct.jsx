@@ -3,9 +3,16 @@ import React, { useState } from "react";
 import { Button, Input, Table } from "reactstrap";
 import ProductModal from "@component/Modal/ProductModal";
 import ProductTable from "./ProductTable";
+import PaginationCom from "../../../components/Pagination/PaginationCom";
 
 export default function AllProduct() {
   let [modal, setModal] = useState(false);
+  let [totalCount, setTotalCount] = useState(0);
+
+  let [pagination, setPagination] = useState({
+    limit: 10,
+    page: 1,
+  });
   const toggle = () => setModal(!modal);
   return (
     <>
@@ -19,10 +26,20 @@ export default function AllProduct() {
           <Button onClick={toggle}>Add Product</Button>
         </div>
         <hr />
-        <ProductTable toggle={toggle} />
+        <ProductTable
+          pagination={pagination}
+          setTotalCount={setTotalCount}
+          toggle={toggle}
+        />
         {/* // put pagination here 
           transfer all state from table to here and pass them into table and pagination according need
           */}
+        <PaginationCom
+          setPagination={setPagination}
+          page={pagination?.page}
+          limit={pagination?.limit}
+          pageLimit={Math.ceil(totalCount / 10)}
+        />
       </div>
     </>
   );

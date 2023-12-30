@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Input } from "reactstrap";
-import { incAmount, nameInput, userInput } from "../Redux/fetures/Amount/amount";
+import { incAmount, amtIncByValue, addName } from "../Redux/fetures/Amount/amount";
 
 export default function AmountCom() {
 
@@ -12,11 +12,11 @@ let [userName , setUserName] = useState("");
   const dispatch = useDispatch();
 
     const amountdata = () =>{
-        dispatch(nameInput(+amounrNum))
+        dispatch(amtIncByValue(+amounrNum))
         setAnmountNum("")
     }
     const userData = () =>{
-        dispatch(userInput(+amounrNum))
+        dispatch(addName(userName))
         setAnmountNum("")
     }
   

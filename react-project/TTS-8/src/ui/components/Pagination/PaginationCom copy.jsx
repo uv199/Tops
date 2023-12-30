@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 export default function PaginationCom({
@@ -25,15 +25,9 @@ export default function PaginationCom({
     setPageArr(generatePageArr());
   }, [page, pageLimit]);
 
-  const handlePageClick = useCallback(
-    (pageNumber) => {
-      if (pageNumber !== page) {
-        console.log("Setting pagination for page:", pageNumber);
-        setPagination({ limit, page: pageNumber });
-      }
-    },
-    [limit, setPagination]
-  );
+  const handlePageClick = (pageNumber) => {
+    setPagination({ limit, page: pageNumber });
+  };
 
   return (
     <div>

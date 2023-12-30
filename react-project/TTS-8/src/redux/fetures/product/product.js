@@ -3,13 +3,11 @@ import axios from "axios";
 import { BE_URL } from "../../../config";
 
 export const fetchProduct = createAsyncThunk("getProduct", (action) => {
-  console.log("-----------  action----------->", action);
   return axios({
     method: "get",
-    url: `${BE_URL}/product/getAll`,
+    url: `${BE_URL}/product/getAllPaginate`,
     params: action,
   }).then((res) => {
-    console.log("-----------   res.data.data----------->", res.data);
     return res.data;
   });
 });

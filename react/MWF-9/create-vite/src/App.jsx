@@ -34,6 +34,7 @@ import UseContaxtCom from "./5.HOOKS/useContext/UseContaxtCom";
 import UseReducer from "./5.HOOKS/useReducer/UseReducer";
 import Urvish from "./2.component/urvish.jsx";
 import AppRedux from "./13.Redux/AppRedux.jsx";
+import ReduxCrudApp from "./14.Redux_CRUD/ReduxCrudApp.jsx";
 
 function App() {
   let x = "urvish";
@@ -94,7 +95,8 @@ function App() {
       {/* <Router /> */}
       {/* <ProtectedRoute /> */}
       {/* <-------------------------Redux---------------------------------> */}
-      <AppRedux />
+      {/* <AppRedux /> */}
+      <ReduxCrudApp/>
     </div>
   );
 }
