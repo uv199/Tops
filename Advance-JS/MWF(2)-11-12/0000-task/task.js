@@ -13,4 +13,8 @@ just for try = 9 you are not elige
 12 you are not elige
  you are between 10 to 18
  
+
+ // 1-1-24
+ - today is 1, january 2024 - monday (want function) 
+ - calculate day between tow date
 */

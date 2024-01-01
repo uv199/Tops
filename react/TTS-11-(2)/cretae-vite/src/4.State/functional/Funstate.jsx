@@ -23,7 +23,9 @@ export default function Funstate() {
   };
 
   // incPoint => increment in point only
-
+  const incPoint = () => {
+    console.log("first");
+  };
   return (
     <div>
       <h1>x is {x} </h1>
@@ -47,6 +49,7 @@ export default function Funstate() {
       <h1>Point is {data?.point}</h1>
       <Button color="danger" onClick={incPoint}>
         Inc point
+        <i class="ms-2 bi bi-plus-square"></i>
       </Button>
     </div>
   );
