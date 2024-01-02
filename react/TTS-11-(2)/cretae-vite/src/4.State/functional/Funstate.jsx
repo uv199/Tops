@@ -4,8 +4,6 @@ import { Button } from "reactstrap";
 export default function Funstate() {
   let [count, setCount] = useState(10);
   let [data, setData] = useState({ amount: 999, point: 0 });
-  console.log("-----------  data----------->", data);
-  console.log("-----------  count----------->", count);
   let x = 99;
 
   const incX = () => {
@@ -13,18 +11,18 @@ export default function Funstate() {
   };
 
   const incCount = () => {
-    console.log("----->");
     // count++; => can't chnage sttae value directly use set method
     setCount(count + 1);
   };
 
   const incAmount = () => {
-    setData({ amount: data.amount + 1 });
+    setData({ ...data, amount: data.amount + 1 });
   };
 
   // incPoint => increment in point only
   const incPoint = () => {
     console.log("first");
+    setData({ ...data, point: data?.point + 1 });
   };
   return (
     <div>
