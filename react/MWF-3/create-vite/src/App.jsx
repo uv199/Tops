@@ -31,6 +31,7 @@ import UpdateData from "./9.input/UpdateData";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import CheckBox from "./10.multipleInput/CheckBox";
+import SimpleApi from "./14.API/SimpleApi";
 
 function App() {
   return (
@@ -39,47 +40,61 @@ function App() {
       {/* <Event /> */}
       {/* <TableComponent /> */}
       {/* <SunChokdi /> */}
+
       {/* ------------------------------COMPONENT------------------------- */}
       {/* <ClassCom /> */}
       {/* <FunCom /> */}
       {/* <HomePage /> */}
+
       {/* ------------------------------PROPS------------------------- */}
       {/* <PropsFunCom name={"Urvish"} age={23} /> */}
       {/* <PropsChange name={"Urvish"} /> */}
       {/* <PropsFunCom name={"Shubham"} /> */}
       {/* <PropsCalssCom data={{ name: "urvish", age: 23 }} /> */}
       {/* <PropsCalssCom /> */}
+
       {/* ------------------------------FRAGMENT------------------------- */}
       {/* <FragmentCom /> */}
       {/* <FragmentCom /> */}
+
       {/* ------------------------------MAP-KEY------------------------- */}
       {/* <MapKey /> */}
       {/* <CityTable /> */}
+
       {/* ------------------------------CONDITION-RENDARING------------------------- */}
       {/* <ConditionCom /> */}
+
       {/* ------------------------------USE-STATE------------------------- */}
       {/* <UseStateFun /> */}
       {/* <UseStateClass /> */}
       {/* <StatePro1 /> */}
+
       {/* ------------------------------LIFE-CYCLE------------------------- */}
       {/* <LifeCycle /> */}
+
       {/* ------------------------------HOOK------------------------- */}
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* <UseRef /> */}
       {/* <UseContaxtCom /> */}
       {/* <UseReducerCom /> */}
+
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
       {/* <DeleteData /> */}
       {/* <UpdateData /> */}
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
-      <CheckBox />
+      {/* <CheckBox /> */}
+
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
+
       {/* ------------------------------PROTECTED-ROUTER------------------------- */}
       {/* <AppProtect /> */}
+
+      {/* ------------------------------API------------------------- */}
+      <SimpleApi/>
       <ToastContainer />
     </div>
   );

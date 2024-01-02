@@ -35,7 +35,7 @@ function HeaderRS(args) {
               <NavLink to="/">Home</NavLink>
             </NavItem>
             <Button onClick={registerToggle} className="me-5" color="danger">
-              Login
+              Sign-Up
             </Button>
           </Nav>
         </Collapse>

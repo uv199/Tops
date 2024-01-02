@@ -115,9 +115,9 @@ export default function ProductTable({ toggle, pagination, setTotalCount }) {
                       })}
                     </td>
                     <td>
-                      {e?.color?.map?.((col) => {
+                      {e?.color?.map?.((col,i) => {
                         return (
-                          <span
+                          <span key={i}
                             style={{
                               border: "1px solid darkgray",
                               display: "inline-block",

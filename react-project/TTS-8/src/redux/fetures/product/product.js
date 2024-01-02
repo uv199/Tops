@@ -9,7 +9,7 @@ export const fetchProduct = createAsyncThunk("getProduct", (action) => {
     params: action,
   }).then((res) => {
     return res.data;
-  });
+  }).catch((err)=>console.log("------->",err.message));
 });
 
 const productSlice = createSlice({
