@@ -39,6 +39,9 @@ export default function Galary() {
   };
 
   return (
+    <>
+    <h1>test</h1>
     <Gallery onClick={handleSelect} onSelect={handleSelect} images={images} />
+    </>
   );
 }

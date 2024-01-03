@@ -49,7 +49,7 @@ export default function MultiInput({
           <FormGroup check inline>
             <Input
               type="checkbox"
-              onClick={() => checkHandler("reading")}
+              onChange={() => checkHandler("reading")}
               checked={user?.hobby?.includes("reading")}
             />
             <Label check>Reading</Label>
@@ -57,7 +57,7 @@ export default function MultiInput({
           <FormGroup check inline>
             <Input
               type="checkbox"
-              onClick={() => checkHandler("singing")}
+              onChange={() => checkHandler("singing")}
               checked={user?.hobby?.includes("singing")}
             />
             <Label check>Singing</Label>
@@ -65,7 +65,7 @@ export default function MultiInput({
           <FormGroup check inline>
             <Input
               type="checkbox"
-              onClick={() => checkHandler("traveling")}
+              onChange={() => checkHandler("traveling")}
               checked={user?.hobby?.includes("traveling")}
             />
             <Label check>Traveling</Label>

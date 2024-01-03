@@ -7,11 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
   Button,
 } from "reactstrap";
 
@@ -40,7 +35,9 @@ export default function Header() {
               <NavLink href="/components/">Contact</NavLink>
             </NavItem>
           </Nav>
-          <Button className="me-4" color="danger">Register</Button>
+          <Button className="me-4" color="danger">
+            Register
+          </Button>
         </Collapse>
       </Navbar>
     </div>

@@ -13,14 +13,21 @@ export default function StatePro1() {
     if (index < color?.length - 1) {
       setIndex(index + 1);
     } else {
-      alert("finished...!");
+      let x = confirm("finished...!");
+
+      // confirm
+      // ok => 0
+      // cancle => continue
       setIndex(0);
     }
   };
 
   return (
     <div>
-      <h1>{name[index]}</h1>
+      <h1>
+        {index}
+        {name[index]}
+      </h1>
       <Button color="danger" onClick={incIndex}>
         Chnage Name
       </Button>
@@ -39,3 +46,9 @@ export default function StatePro1() {
     </div>
   );
 }
+
+let a = ["a", "b", "c", "d"];
+let index = 0;
+
+// "a" =>a[0]=> a[index] =>0
+// "c" =>a[2]=> a[index] =>2

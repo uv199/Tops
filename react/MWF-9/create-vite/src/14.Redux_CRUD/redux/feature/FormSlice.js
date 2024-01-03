@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CloudSnow } from "lucide-react";
 
-let FormSlice =  createSlice  ({
+let formSlice = createSlice({
+  name: "user",
+  initialState: { users: [] },
+  reducers: {
+    addUser: (state, action) => {
+      console.log("--->", action.payload);
+      state.users.push(action.payload);
+    },
+  },
+});
 
-    name : "user",
-    initialState : { name: "", age: 12, city:"", Gender: ""},
-    reducers: {
-        addData :(state, action)=>{
-
-        }
-    }
-})
-export default FormSlice.reducer
+export default formSlice.reducer;
+export const { addUser } = formSlice.actions;

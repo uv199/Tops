@@ -1,5 +1,5 @@
 import Header from "./Header";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import MultiInput from "./MultiInput";
 import DataTable from "./DataTable";
@@ -14,17 +14,35 @@ export default function Home(args) {
 
   let [userArray, setUserArray] = useState([]);
   const toggle = () => setModal(!modal);
+  useEffect(() => {
+    let jsonData = localStorage?.getItem("userData") || "[]";
+    let normalData = JSON?.parse(jsonData);
+    setUserArray(normalData);
+  }, []);
+
+  useEffect(() => {
+    localStorage?.setItem("userData", JSON?.stringify?.(userArray));
+  }, [userArray]);
 
   return (
     <>
       <Header />
       <div style={{ width: "100%", backgroundColor: "darkgray" }}>
-        <div className="d-flex justify-content-end pe-4 p-3 ">
-          <Button color="danger" onClick={toggle}>
-            Add User
-          </Button>
+        <div className=" d-flex pe-4 p-3 ">
+          <div className="w-75 text-center">
+            <h1>USER TABLE</h1>
+          </div>
+          <div className="w-25 align-items-center d-flex justify-content-end">
+            <Button
+              style={{ maxHeight: "40px" }}
+              color="danger"
+              onClick={toggle}
+            >
+              Add User
+            </Button>
+          </div>
         </div>
-        <DataTable />
+        <DataTable userArray={userArray} toggle={toggle} />
         <Modal isOpen={modal} toggle={toggle} {...args}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>

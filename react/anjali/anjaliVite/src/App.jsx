@@ -2,6 +2,7 @@ import FetchData from "./00.Practicle/FetchData";
 import FunCom2 from "./1.Componenets/FunCom2";
 import FunctionalCom from "./1.Componenets/FunctionalCom";
 import ClassCom1 from "./1.Componenets/class/ClassCom1";
+import Router from "./10.routing/simpleRoute/Router";
 import Body from "./2.styling/Body";
 import Footer from "./2.styling/Footer";
 import Header from "./2.styling/Header";
@@ -67,10 +68,13 @@ export default function App() {
 
       {/* -----------INPUT--------------- */}
       {/* <SingleInput /> */}
-      <Home />
+      {/* <Home /> */}
 
       {/* -----------PARCTICE--------------- */}
       {/* <FetchData /> */}
+
+      {/* -----------ROUTER--------------- */}
+      <Router />
     </div>
   );
 }

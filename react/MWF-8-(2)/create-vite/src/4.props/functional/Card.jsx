@@ -8,7 +8,7 @@ let data = {
 
 let { a, b } = data;
 
-export default function Card({ name, age }) {
+export default function Card({ name, age, img }) {
   const chnageName = () => {
     console.log("-----------  chnageName----------->");
     name = "Hiii how are you ?";
@@ -17,6 +17,7 @@ export default function Card({ name, age }) {
   return (
     <div>
       <h1>Hello world</h1>
+      <img src={img} alt="" />
       <h3>
         <b>
           {name}--{age}
