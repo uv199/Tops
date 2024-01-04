@@ -3,6 +3,7 @@ import FunctionalCom from "./2.Componenet/functional/FunctionalCom";
 import FunctionalCom2 from "./2.Componenet/functional/FunctionalCom2";
 import Home from "./3.style/Home";
 import State from "./4.State/State";
+import Props from "./5.Props/Props";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
       {/* <Home /> */}
 
       {/* <----------------------STATE-----------------------> */}
-      <State />
+      {/* <State /> */}
+
+      {/* <----------------------PROPS-----------------------> */}
+      <Props />
     </div>
   );
 }

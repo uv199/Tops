@@ -7,7 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // import "./3.style/footer.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );

@@ -8,6 +8,7 @@ export const fetchProduct = createAsyncThunk("getProduct", (action) => {
     url: `${BE_URL}/product/getAllPaginate`,
     params: action,
   }).then((res) => {
+
     return res.data;
   }).catch((err)=>console.log("------->",err.message));
 });

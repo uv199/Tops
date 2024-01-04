@@ -17,4 +17,11 @@ just for try = 9 you are not elige
  // 1-1-24
  - today is 1, january 2024 - monday (want function) 
  - calculate day between tow date
+
+
+ // 3-1-24
+ - generate random number between 1-10 and also 1-6
+
 */
+
+

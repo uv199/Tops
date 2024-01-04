@@ -1,13 +1,13 @@
 import React from "react";
-import Funstate from "./functional/Funstate";
 import ClassState from "./class/ClassState";
 import StatePro1 from "./StatePro1";
+import Funstate from "./functional/Funstate";
 
 export default function State() {
   return (
     <div>
       {/* <ClassState/> */}
-      {/* <Funstate /> */}
+      <Funstate />
       <StatePro1 />
     </div>
   );
