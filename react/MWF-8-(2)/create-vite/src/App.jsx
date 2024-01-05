@@ -6,6 +6,8 @@ import FunProps from "./4.props/functional/FunProps";
 import FragmentCom from "./5.Map-Key/FragmentCom";
 import MapAndKey from "./5.Map-Key/MapAndKey";
 import MapProject from "./5.Map-Key/MapProject";
+import ClassState from "./6.State/Class/ClassState";
+import StatePro from "./6.State/StatePro";
 import FunState from "./6.State/functional/FunState";
 import "./App.css";
 
@@ -29,7 +31,9 @@ function App() {
       {/* <MapProject/> */}
 
       {/* <---------------------FUNSTATE------------------------> */}
-      <FunState />
+      {/* <FunState /> */}
+      {/* <ClassState /> */}
+      <StatePro />
     </div>
   );
 }

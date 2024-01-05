@@ -4,8 +4,8 @@ import { Button } from "reactstrap";
 export default function FunState() {
   //   arr = [100,"fun"]
   //   let [count,setCount] = arr
-  let [count, setCount] = useState(0);
-  let [data, setData] = useState({
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState({
     amount: 10,
     point: 20,
   });
@@ -19,7 +19,7 @@ export default function FunState() {
   console.log("------>", count); // its print currunt value
 
   const incPoint = () => {
-    setData({ point: data?.point + 1 });
+    setData({ ...data, point: data?.point + 1 });
   };
   return (
     <div>
@@ -31,6 +31,14 @@ export default function FunState() {
       <h1>point is {data?.point}</h1>
       <Button onClick={() => incPoint()} color="danger">
         Inc Point
+      </Button>
+      <hr />
+      <h1>Amount is {data?.amount}</h1>
+      <Button
+        color="danger"
+        onClick={() => setData({...data, amount: data?.amount + 1 })}
+      >
+        Inc Amount
       </Button>
     </div>
   );
@@ -46,5 +54,7 @@ data = data.point + 1; //
 
 // now data is 1
 
-data = { point: data?.point + 1 };
+...data => copy old object
+
+data = {...data, point: data?.point + 1 };
 */
