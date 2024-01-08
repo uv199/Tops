@@ -1,5 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import BootstrapCom from "./3.style/BootstrapCom";
 import StyleCom from "./3.style/StyleCom";
 import FunCom2 from "./2.component/FunCom2";
@@ -35,6 +36,7 @@ import UseReducer from "./5.HOOKS/useReducer/UseReducer";
 import Urvish from "./2.component/urvish.jsx";
 import AppRedux from "./13.Redux/AppRedux.jsx";
 import ReduxCrudApp from "./14.Redux_CRUD/ReduxCrudApp.jsx";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   let x = "urvish";
@@ -46,35 +48,28 @@ function App() {
       {/* <ClassCom /> */}
       {/* <FunCom2 /> */}
       {/* <Urvish /> */}
-
       {/* <-------------------------style---------------------------------> */}
       {/* <StyleCom /> */}
       {/* <BootstrapCom /> */}
       {/* <Header /> */}
-
       {/* <-------------------------Fragment---------------------------------> */}
       {/* <FragmentCom /> */}
-
       {/* <-------------------------map-key---------------------------------> */}
       {/* <MapKey /> */}
       {/* <MapKey2 /> */}
-
       {/* <-------------------------State---------------------------------> */}
       {/* <UseStateFun /> */}
       {/* <ClassComState /> */}
       {/* <StatePro1 /> */}
       {/* <ClassPro1 /> */}
-
       {/* <-------------------------LifeCycle---------------------------------> */}
       {/* <LifeCycle /> */}
-
       {/* <-------------------------HOOK---------------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseRef /> */}
       {/* <UseMemo /> */}
       {/* <UseContaxtCom /> */}
       {/* <UseReducer /> */}
-
       {/* <-------------------------Props---------------------------------> */}
       {/* <FunProps name={"urvish"} age={30} /> */}
       {/* <FunProps name="laxmi" /> */}
@@ -96,7 +91,8 @@ function App() {
       {/* <ProtectedRoute /> */}
       {/* <-------------------------Redux---------------------------------> */}
       {/* <AppRedux /> */}
-      <ReduxCrudApp/>
+      <ReduxCrudApp />
+      <ToastContainer />
     </div>
   );
 }

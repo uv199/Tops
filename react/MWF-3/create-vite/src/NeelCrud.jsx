@@ -8,13 +8,11 @@ export default function FullCrud() {
   let [index, setIndex] = useState(null);
   let [updateMode, setUpdateMode] = useState(false);
 
-
-
   // add data to array
   const addDataToArr = () => {
     setUserArr([...userArr, name]);
     setName("");
-    localStorage.setItem("userData", JSON.stringify([...userArr, name]))
+    localStorage.setItem("userData", JSON.stringify([...userArr, name]));
   };
 
   // Update
@@ -31,7 +29,7 @@ export default function FullCrud() {
       setName("");
       setIndex(null);
       setUpdateMode(false);
-      localStorage.setItem("userData", JSON.stringify([...userArr]))
+      localStorage.setItem("userData", JSON.stringify([...userArr]));
     }
   }
 
@@ -39,7 +37,7 @@ export default function FullCrud() {
   const deleteHandler = (index) => {
     let filterdData = userArr.filter((e, i) => i !== index);
     setUserArr(filterdData);
-    localStorage.setItem("userData", JSON.stringify(filterdData))
+    localStorage.setItem("userData", JSON.stringify(filterdData));
   };
 
   return (

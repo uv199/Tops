@@ -6,8 +6,8 @@ class ClassCom extends Component {
     return (
       <div>
         <h1>Hello World....! Class Com</h1>
-        <FunCom2 />
-        <FunCom2 />
+        {/* <FunCom2 /> */}
+        {/* <FunCom2 /> */}
       </div>
     );
   }

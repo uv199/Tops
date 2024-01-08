@@ -10,3 +10,8 @@ li a {
   font-weight: bolder;
   color: red;
 }
+
+.ul_link li:hover {
+  color: blue;
+  font-size: larger;
+}

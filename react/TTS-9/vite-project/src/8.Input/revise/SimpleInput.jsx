@@ -1,5 +1,6 @@
 import { Divide } from "lucide-react";
 import React, { useState } from "react";
+import { ArrowRight, Trash3 } from "react-bootstrap-icons";
 import { Button, Input, Label } from "reactstrap";
 
 export default function SimpleInput() {
@@ -16,7 +17,17 @@ export default function SimpleInput() {
     setTaskArray(allData);
     setTask(""); // to empty input value after add task
   };
-  console.log("-----------  taskArray----------->", taskArray);
+
+  // delete todo
+  const deleteHandler = (index) => {
+    let ans = confirm("Are you sure ?");
+    console.log("-----------  ans----------->", ans);
+    if (ans) {
+      let arr = taskArray.filter((e, i) => i !== index);
+      setTaskArray(arr);
+    }
+  };
+
   return (
     <>
       <div className="d-flex align-items-end">
@@ -45,9 +56,12 @@ export default function SimpleInput() {
           {taskArray.map((element, i) => {
             return (
               <>
-                <li key={i}>
-                  {i + 1}. {element}
-                </li>
+                <div className="d-flex justify-content-between ">
+                  <li key={i}>
+                    {i + 1}. {element}
+                  </li>
+                  <Trash3 onClick={() => deleteHandler(i)} color="red" />
+                </div>
                 <hr />
               </>
             );
@@ -57,3 +71,15 @@ export default function SimpleInput() {
     </>
   );
 }
+
+// let [task, setTask] = useState("");
+// let [taskArray, setTaskArray] = useState([]);
+
+// tastArry = ["a", "b", "c", "d", "e"];
+// index = 2;
+
+// let arr = taskArray.filter((e, i) => i !== index);
+
+// arr = ["a", "b", "d", "e"];
+// taskArray= arr
+// taskArray=["a", "b", "d", "e"];

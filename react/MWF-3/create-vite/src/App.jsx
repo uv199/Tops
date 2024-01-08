@@ -86,6 +86,7 @@ function App() {
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
       {/* <CheckBox /> */}
+      <FullCrud />
 
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
@@ -94,7 +95,7 @@ function App() {
       {/* <AppProtect /> */}
 
       {/* ------------------------------API------------------------- */}
-      <SimpleApi/>
+      {/* <SimpleApi/> */}
       <ToastContainer />
     </div>
   );

@@ -2,17 +2,25 @@ import React, { useState } from "react";
 import { Button } from "reactstrap";
 
 let name = ["urvish", "dhaval", "divyesh", "sona"];
+
+// length = 3
+
 // let color=[]
 export default function StatePro() {
   let [index, setIndex] = useState(0);
+  let [isContinue, setIsContinue] = useState(false);
 
   const IncIndex = () => {
-    if (index < name.length - 1) {
+    if (index < name.length - 1 || isContinue) {
       setIndex(index + 1);
     } else {
-      let value = confirm("you want to repeate");
-      console.log("-----------  value----------->", value);
-      setIndex(0);
+      let permission = confirm("you want to repeate");
+      if (permission) {
+        setIndex(0);
+      } else {
+        setIndex(index + 1);
+        setIsContinue(true);
+      }
     }
   };
 

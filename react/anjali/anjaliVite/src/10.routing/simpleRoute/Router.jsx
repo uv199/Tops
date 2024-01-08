@@ -6,6 +6,11 @@ import { BrowserRouter, Route, Routes, Link, NavLink } from "react-router-dom";
 import "./index.css";
 import Error404 from "./Error404";
 import Header from "./Header";
+import Service from "./Service/Service";
+import BikeService from "./Service/BikeService";
+import CarService from "./Service/CarService";
+import Products from "../Products";
+import ProductPage from "../ProductPage";
 
 export default function Router() {
   return (
@@ -26,8 +31,15 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" Component={ContactUs} />
+          <Route path="/contact/:name" Component={ContactUs} />
+          <Route path="/service">
+            <Route index Component={Service} />
+            <Route path="bike" Component={BikeService} />
+            <Route path="car" Component={CarService} />
+          </Route>
           <Route path="*" Component={Error404} />
+          <Route path="/product" Component={Products} />
+          <Route path="/product/:id" Component={ProductPage} />
         </Routes>
       </BrowserRouter>
     </div>

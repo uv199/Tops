@@ -28,3 +28,13 @@ export default function Props() {
     </div>
   );
 }
+
+let arr = [1, 2, 3, 4];
+
+arr.filter((e) => e !== 3);
+
+let arrObj = [{ no: 1, no2: 90 }, { no: 2 }, { no: 3 }, { no: 4 }];
+
+let x = 3;
+arrObj.filter((e) => x === e.no2);
+[{ no: 1, no2: 90 }, { no: 2 }, { no: 4 }];

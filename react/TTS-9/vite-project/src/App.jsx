@@ -39,6 +39,7 @@ import Router from "./10.Router/Router";
 import AppPro from "./11.ProtectedRoute/AppPro";
 import RouterSimple from "./12.Protected-2/Router";
 import SimpleInput from "./8.Input/revise/SimpleInput";
+import ToDoList from "./8.Input/revise/ToDoList";
 
 function App() {
   return (
@@ -94,7 +95,8 @@ function App() {
         {/* <SingleInputRev /> */}
         {/* <MultipleInput /> */}
         {/* <MultiUpdate /> */}
-        <SimpleInput />
+        {/* <SimpleInput /> */}
+        <ToDoList />
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}

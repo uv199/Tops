@@ -46,6 +46,7 @@ export default function SimpleApi() {
       console.log("-----------  res----------->", res.data);
     });
   };
+
   return (
     <div>
       <Button color="danger" onClick={callApi}>
@@ -57,3 +58,17 @@ export default function SimpleApi() {
     </div>
   );
 }
+
+let obj = {
+  title: "zara update",
+  description:
+    "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
+  brand: "Zara",
+  gender: "female", //radio
+  price: 120,
+  thumbnail: "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
+  discountPercentage: 15.6, //range
+  category: ["formal", "casual", "shose"], // select multi
+  color: ["red", "black", "white"], // multi checkbox
+  size: ["42", "43"], // multi chekbox
+};

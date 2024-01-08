@@ -9,6 +9,8 @@ import MapProject from "./5.Map-Key/MapProject";
 import ClassState from "./6.State/Class/ClassState";
 import StatePro from "./6.State/StatePro";
 import FunState from "./6.State/functional/FunState";
+import ConRendaring from "./7.Conditional-rendaring/ConRendaring";
+import Conditoin2 from "./7.Conditional-rendaring/Conditoin2";
 import "./App.css";
 
 function App() {
@@ -33,7 +35,11 @@ function App() {
       {/* <---------------------FUNSTATE------------------------> */}
       {/* <FunState /> */}
       {/* <ClassState /> */}
-      <StatePro />
+      {/* <StatePro /> */}
+
+      {/* <---------------------CONTIDIONAL RENDARING------------------------> */}
+      {/* <ConRendaring /> */}
+      <Conditoin2 />
     </div>
   );
 }

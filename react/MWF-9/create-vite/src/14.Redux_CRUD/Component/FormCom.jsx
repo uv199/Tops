@@ -1,36 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Button, Col, Form, FormGroup, Input, Label, Row } from "reactstrap";
-import { addUser } from "../redux/feature/formSlice";
+import {
+  Button,
+  Col,
+  Form,
+  FormFeedback,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+} from "reactstrap";
+import { addUser, updateUser } from "../redux/feature/formSlice";
+import { toast } from "react-toastify";
 
-export default function FormCom() {
-  let [user, setUser] = useState({
-    email: "",
-    password: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    gender: "",
-  });
+let initialData = {
+  email: "",
+  password: "",
+  address: "",
+  city: "",
+  state: "",
+  zip: "",
+  gender: "",
+};
+export default function FormCom({ updateData }) {
+  console.log("-----------  updateData----------->", updateData);
+  let [user, setUser] = useState(updateData);
+
+  useEffect(() => {
+    setUser(updateData);
+  }, [updateData]);
 
   const dispatch = useDispatch();
   const submitHandler = () => {
-    dispatch(addUser(user));
-    setUser({
-      email: "",
-      password: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: "",
-      gender: "",
-    });
+    let arr = Object.values(user);
+
+    if (arr.includes("")) {
+      // find index || object.keys()
+      toast.error("Please fill the data");
+    } else {
+      dispatch(addUser(user));
+      setUser(initialData);
+    }
   };
 
+  const updateHandler = () => {
+    dispatch(updateUser(user))
+  }
+
   return (
-    <div>
-      <Form className="border border-dark p-4 mt-4 rounded-4 ">
+    <div className="d-flex justify-content-center ">
+      <Form className=" w-75 border border-dark p-4 mt-4 rounded-4 ">
         <Row>
           <Col md={6}>
             <FormGroup>
@@ -132,6 +151,9 @@ export default function FormCom() {
         <Row className="mt-3">
           <Button className="w-100" color="danger" onClick={submitHandler}>
             Sign Up
+          </Button>
+          <Button className="w-100" color="danger" onClick={updateHandler}>
+            Update
           </Button>
         </Row>
       </Form>

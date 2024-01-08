@@ -1,13 +1,27 @@
-const handleCheck = (x) => {
-  // if value available in array then remove from array
-  // and if not available in array then add it
+import axios from "axios";
 
-  let arr = [1, 2, 3, 10];
-  if (arr.includes(x)) {
-    arr = arr.filter((e) => e !== x);
-  } else {
-    arr = [...arr, x];
-  }
-};
-handleCheck(3);
-handleCheck(4);
+axios({
+  method: "post",
+  url: "http://localhost:9999/user/signin",
+  data: {
+    email: "gy@gmail.com",
+    password: "123456",
+  },
+})
+  .then((res) => {
+    console.log("-----------  res----------->", res.data);
+  })
+  .catch((err) => {
+    console.log("-----------  err----------->", err.response);
+  });
+// axios
+//   .post("http://localhost:9999/user/signin", {
+//     email: "gr@gmail.com",
+//     password: "123456",
+//   })
+//   .then((res) => {
+//     console.log("-----------  res ----------->", res.data);
+//   })
+//   .catch((err) => {
+//     console.log("-----------  err ----------->", err.response.data.error);
+//   });

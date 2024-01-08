@@ -11,7 +11,6 @@ export default function StyleHome() {
         <Body />
         <Body />
       </div>
-
       <Footer />
     </div>
   );
