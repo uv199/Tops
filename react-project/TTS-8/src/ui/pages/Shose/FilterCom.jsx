@@ -43,6 +43,7 @@ export default function FilterCom({
   };
 
   const applyFilter = () => {
+    console.log(filter)
     allShoseSetFilter(filter);
   };
   return (

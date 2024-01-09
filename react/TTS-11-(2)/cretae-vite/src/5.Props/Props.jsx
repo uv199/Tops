@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import FunProps from "./functional/FunProps";
 import ClassProps from "./class/ClassProps";
-import PropsPro1 from "./PropsPro1";
 import { Button } from "reactstrap";
+import PropsPro2 from "./PropsPro2";
+import PropsPro1 from "./PropsPro1";
 
 // props are immutable/readonly - means can't chnage value of props
 // we can only pass data parant to chinld by using props
@@ -25,6 +26,9 @@ export default function Props() {
 
       <PropsPro1 color={color[index]} />
       <Button onClick={() => setIndex(index + 1)}>Change Color</Button>
+
+      {/* // chnage props value */}
+      <PropsPro2 color={"green"} />
     </div>
   );
 }

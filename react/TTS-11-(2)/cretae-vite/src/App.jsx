@@ -4,6 +4,7 @@ import FunctionalCom2 from "./2.Componenet/functional/FunctionalCom2";
 import Home from "./3.style/Home";
 import State from "./4.State/State";
 import Props from "./5.Props/Props";
+import MapKey from "./6.Map-key/MapKey";
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
       {/* <State /> */}
 
       {/* <----------------------PROPS-----------------------> */}
-      <Props />
+      {/* <Props /> */}
+
+      {/* <----------------------MAP-KEY-----------------------> */}
+      <MapKey />
     </div>
   );
 }

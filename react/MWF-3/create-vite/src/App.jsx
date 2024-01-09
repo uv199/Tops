@@ -31,7 +31,8 @@ import UpdateData from "./9.input/UpdateData";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import CheckBox from "./10.multipleInput/CheckBox";
-import SimpleApi from "./14.API/SimpleApi";
+import Product from "./14.API/ui/page/product/Product";
+import ProductRoute from "./14.API/router/Router";
 
 function App() {
   return (
@@ -86,7 +87,7 @@ function App() {
       {/* <FullCrud /> */}
       {/* <MultipleInput /> */}
       {/* <CheckBox /> */}
-      <FullCrud />
+      {/* <FullCrud /> */}
 
       {/* ------------------------------ROUTER------------------------- */}
       {/* <Router /> */}
@@ -95,7 +96,7 @@ function App() {
       {/* <AppProtect /> */}
 
       {/* ------------------------------API------------------------- */}
-      {/* <SimpleApi/> */}
+      <ProductRoute />
       <ToastContainer />
     </div>
   );

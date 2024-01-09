@@ -15,24 +15,29 @@ export default function AllShose() {
     color: [],
     size: [],
     gender: "",
+    brand: "", // take single select
     price: {
-      lt: "",
-      gt: "",
+      lt: 10000,
+      gt: 0,
     },
+    // isAvailable: false,
   });
-  console.log("-----------  filter----------->", filter);
+
+  let [searchText, setSearchText] = useState("");
 
   useEffect(() => {
+    console.log("---=-=-=->");
     axios({
+      method: "get",
       url: `${BE_URL}/product/getAll`,
-      data:filter
+      params: { ...filter, ...(searchText && { search: searchText }) },
     })
       .then((res) => {
         console.log("-----------  res.data----------->", res.data);
         setAllProduct(res?.data?.data);
       })
-      .catch((error) => toast.error(error.message));
-  }, [filter]);
+      .catch((error) => toast.error(error.res?.data.message));
+  }, [filter, searchText]);
 
   const handleCanvas = () => {
     console.log("----->");

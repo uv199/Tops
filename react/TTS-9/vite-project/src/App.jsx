@@ -40,6 +40,7 @@ import AppPro from "./11.ProtectedRoute/AppPro";
 import RouterSimple from "./12.Protected-2/Router";
 import SimpleInput from "./8.Input/revise/SimpleInput";
 import ToDoList from "./8.Input/revise/ToDoList";
+import CheckBox from "./8.Input/revise/CheckBox";
 
 function App() {
   return (
@@ -96,7 +97,8 @@ function App() {
         {/* <MultipleInput /> */}
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
-        <ToDoList />
+        {/* <ToDoList /> */}
+        <CheckBox />
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}
