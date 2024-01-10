@@ -14,16 +14,16 @@ let formSlice = createSlice({
       localStorage?.setItem("userArr", JSON?.stringify?.(state.users));
     },
     deleteUser: (state, action) => {
-      state.users = state.users.filter((e, i) =>{
+      state.users = state.users.filter((i) =>{
          return  i !== action.payload
       })
       localStorage?.setItem("userArr", JSON?.stringify?.(state.users));      
     },
 
     updateUser:(state, action) =>{
-      let newdata = state.users.splice( inx, 1 ,action.payload);
-      console.log(newdata);
-      state.users(...newdata)
+      let {data,index}=action.payload;
+      state.users.splice( index, 1 ,data);
+      localStorage?.setItem("userArr", JSON?.stringify?.(state.users));      
       
     }
   },

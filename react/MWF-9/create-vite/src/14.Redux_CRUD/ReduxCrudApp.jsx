@@ -7,11 +7,12 @@ import UserTable from "./Component/UserTable";
 export default function ReduxCrudApp() {
   let [updateData, setUpdateData] = useState({});
   let [index, setIndex] = useState("")
+  
   return (
     <div>
       <Provider store={store}>
-        <FormCom updateData={updateData}  />
-        <UserTable setUpdateData={setUpdateData} />
+        <FormCom updateData={updateData} index={index}  />
+        <UserTable setUpdateData={setUpdateData} setIndex={setIndex} />
       </Provider>
     </div>
   );

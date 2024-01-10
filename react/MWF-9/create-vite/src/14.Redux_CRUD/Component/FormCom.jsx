@@ -22,7 +22,7 @@ let initialData = {
   zip: "",
   gender: "",
 };
-export default function FormCom({ updateData }) {
+export default function FormCom({ updateData, index}) {
   console.log("-----------  updateData----------->", updateData);
   let [user, setUser] = useState(updateData);
 
@@ -44,7 +44,7 @@ export default function FormCom({ updateData }) {
   };
 
   const updateHandler = () => {
-    dispatch(updateUser(user))
+    dispatch(updateUser({data:user,index}))
   }
 
   return (

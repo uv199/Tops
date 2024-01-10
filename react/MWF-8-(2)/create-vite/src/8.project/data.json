@@ -1,0 +1,57 @@
+[
+  {
+    "city": "Delhi",
+    "state_name": "Delhi",
+    "population": "32226001"
+  },
+  {
+    "city": "Mumbai",
+    "state_name": "Mahārāshtra",
+    "population": "24973000"
+  },
+  {
+    "city": "Kolkāta",
+    "state_name": "West Bengal",
+    "population": "18502000"
+  },
+  {
+    "city": "Bangalore",
+    "state_name": "Karnātaka",
+    "population": "15386000"
+  },
+  {
+    "city": "Chennai",
+    "state_name": "Tamil Nādu",
+    "population": "12395000"
+  },
+  {
+    "city": "Hyderābād",
+    "state_name": "Telangāna",
+    "population": "10494000"
+  },
+  {
+    "city": "Pune",
+    "state_name": "Mahārāshtra",
+    "population": "8231000"
+  },
+  {
+    "city": "Ahmedabad",
+    "state_name": "Gujarāt",
+    "population": "8009000"
+  },
+  {
+    "city": "Sūrat",
+    "state_name": "Gujarāt",
+    "population": "6538000"
+  },
+  {
+    "city": "Prayagraj",
+    "state_name": "Uttar Pradesh",
+    "population": "5954391"
+  },
+  {
+    "city": "Lucknow",
+    "state_name": "Uttar Pradesh",
+    "population": "3382000"
+  }
+]

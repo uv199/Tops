@@ -40,6 +40,14 @@ just for try = 9 you are not elige
     join ["hari","ram"] with our array
     want sub array of ["rajni","sid"] 
   
+// 10-01-2024
 
-
+ - find method which not chnage in main array but it return expected outout (splice,sort,revers)
+ - sorting proper not work so how can handle it
+ - sorting in object of array
+ - sort give array of object
+ - total age by use map
+ - total of all aray ele by use reduce [1,2,43,6,7,8]
+ - "Hello World Urvish" => "Urvish World Hello"
+ - explain Array.isArray(value)
 */

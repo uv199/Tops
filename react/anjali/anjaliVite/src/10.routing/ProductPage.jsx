@@ -20,6 +20,7 @@ export default function ProductPage() {
         console.log("err", err.message);
       });
   }, []);
+
   return (
     <div className="d-flex" style={{ width: "100vw" }}>
       <div className=" border border-dark" style={{ width: "30%" }}>

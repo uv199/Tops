@@ -11,6 +11,7 @@ import StatePro from "./6.State/StatePro";
 import FunState from "./6.State/functional/FunState";
 import ConRendaring from "./7.Conditional-rendaring/ConRendaring";
 import Conditoin2 from "./7.Conditional-rendaring/Conditoin2";
+import Home from "./8.project/Home";
 import "./App.css";
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
 
       {/* <---------------------CONTIDIONAL RENDARING------------------------> */}
       {/* <ConRendaring /> */}
-      <Conditoin2 />
+      {/* <Conditoin2 /> */}
+      <Home />
     </div>
   );
 }

@@ -18,6 +18,7 @@ import UseEffectPro1 from "./7.Hooks/useEffect/UseEffectPro1";
 import Home from "./8.Crud/Home";
 import MultiInput from "./8.Crud/MultiInput";
 import SingleInput from "./8.Crud/SingleInput";
+import TodoList from "./9.api/TodoList";
 
 // export default "test test"
 // import TEST from ""
@@ -74,7 +75,10 @@ export default function App() {
       {/* <FetchData /> */}
 
       {/* -----------ROUTER--------------- */}
-      <Router />
+      {/* <Router /> */}
+
+      {/* -----------API--------------- */}
+      <TodoList />
     </div>
   );
 }

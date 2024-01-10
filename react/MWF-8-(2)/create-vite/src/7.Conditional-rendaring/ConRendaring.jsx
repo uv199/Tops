@@ -27,7 +27,12 @@ export default function ConRendaring() {
         )}
       </div>
       <hr />
-
     </div>
   );
 }
+
+// if(show){
+// hide
+// }else{
+// show
+// }

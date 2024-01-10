@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, intialData } from "../redux/feature/formSlice";
 import { Edit, Trash } from "lucide-react";
 
-export default function UserTable({ setUpdateData }) {
+export default function UserTable({ setUpdateData, setIndex}) {
   let [data, setData] = useState([]);
 
   let userData = useSelector((state) => state?.formReducer.users);
@@ -18,6 +18,10 @@ export default function UserTable({ setUpdateData }) {
     setData(userData);
   }, [userData]);
 
+  const update =(user,index)=>{
+    setUpdateData(user);
+    setIndex(index);
+  }
   return (
     <div className="text-center">
       {data?.length > 0 ? (
@@ -50,7 +54,7 @@ export default function UserTable({ setUpdateData }) {
                   <td>
                     <Edit
                       role="button"
-                      onClick={() => setUpdateData(user)}
+                      onClick={() => update(user,i)}
                       color="#463D3D"
                       className="me-3"
                     />
