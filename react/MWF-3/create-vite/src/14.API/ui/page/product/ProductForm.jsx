@@ -1,77 +1,87 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
 
 const initialData = {
   title: "",
   description: "",
   brand: "",
-  category: [""],
+  category: [],
   price: "",
   gender: "",
   discountPercentage: "0",
-  color: [""],
-  size: [""],
+  color: [],
+  size: [],
 };
-export default function ProductForm() {
+
+const formFeild = [
+  { key: "title", type: "text" },
+  { key: "description", type: "text" },
+  { key: "brand", type: "text" },
+  { key: "price", type: "number" },
+];
+export default function ProductForm({ toggle }) {
   let [product, setProduct] = useState(initialData);
   // do logic for check
   // do map for all size, chatagory gender
   // on submit par log form data
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e?.preventDefault();
     console.log(product);
+    axios({
+      method: "post",
+      url: `http://localhost:9999/product/create`,
+      data: product,
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res);
+        toast.success("product added");
+        setProduct(initialData);
+        toggle();
+      })
+      .catch((err) => {
+        console.log(
+          "-----------  err.response.error----------->",
+          err.response.error
+        );
+        toast.error(err.response.error);
+      });
   };
 
-  const colorCheck = (i, color) => {
-    let available = product?.color?.includes(i);
+  const checkHandler = (i, ele, key) => {
+    console.log("------>");
+    let available = product?.[key]?.includes(ele);
+    console.log("-----------  available----------->", available);
     if (available) {
-      let data = product?.color?.filter((e, i) => e !== color);
-      setProduct({ ...product, color: data });
+      let data = product?.[key]?.filter((e, i) => e !== ele);
+      setProduct({ ...product, [key]: data });
     } else {
-      setProduct({ ...product, color: [...product?.color, e] });
+      setProduct({ ...product, [key]: [...product?.[key], ele] });
     }
   };
   return (
     <div>
       <Form onSubmit={submitHandler}>
-        <FormGroup>
-          <Label for="exampleEmail">Title</Label>
-          <Input
-            id="exampleEmail"
-            name="title"
-            value={product.title}
-            placeholder="Title"
-            type="text"
-            onChange={(e) => {
-              setProduct({ ...product, title: e?.target?.value });
-            }}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleEmail">Description</Label>
-          <Input
-            id="exampleEmail"
-            name="description"
-            placeholder="Description"
-            type="text"
-            value={product.description}
-            onChange={(e) => {
-              setProduct({ ...product, description: e?.target?.value });
-            }}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleEmail">Brand</Label>
-          <Input
-            id="exampleEmail"
-            name="brand"
-            placeholder="Brand"
-            type="text"
-            value={product.brand}
-            onChange={(e) => {
-              setProduct({ ...product, brand: e?.target?.value });
-            }}
-          />
-        </FormGroup>
+        {formFeild.map(({ key, type }) => {
+          return (
+            <FormGroup>
+              <Label for="exampleEmail" className="text-capitalize ">
+                {key}
+              </Label>
+              <Input
+                id="exampleEmail"
+                value={product[key]}
+                placeholder={`Enter your ${key}`}
+                type={type}
+                onChange={(e) => {
+                  setProduct({ ...product, [key]: e?.target?.value });
+                }}
+              />
+            </FormGroup>
+          );
+        })}
+
         <FormGroup>
           <Label for="exampleSelect">Category</Label>
           <Input
@@ -88,18 +98,6 @@ export default function ProductForm() {
             <option>Casual</option>
             <option>Shoe</option>
           </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelect">Price</Label>
-          <Input
-            id="examplenumber"
-            name="number"
-            type="number"
-            value={product.price}
-            onChange={(e) => {
-              setProduct({ ...product, price: e?.target?.value });
-            }}
-          />
         </FormGroup>
         <FormGroup tag="fieldset">
           <Label>Gender :</Label>
@@ -157,40 +155,65 @@ export default function ProductForm() {
         </FormGroup>
         <FormGroup>
           <Label for="exampleSelect">Color</Label>
-          {["red", "white", "black", "green", "yellow", "orange"].map(
-            (e, i) => {
+          <div className="row">
+            {["red", "white", "black", "green", "yellow", "orange"].map(
+              (e, i) => {
+                return (
+                  <div className="d-flex col-4 align-items-center gap-1">
+                    <Input
+                      id="exampleSelect"
+                      name="select"
+                      type="checkbox"
+                      value="red"
+                      checked={product.color.includes(e)}
+                      onChange={() => checkHandler(i, e, "color")}
+                      className="ms-2 me-2"
+                    />
+                    <div
+                      style={{
+                        width: "10px",
+                        height: "10px",
+                        borderRadius: "5px",
+                        backgroundColor: e,
+                        border: "1px solid black",
+                      }}
+                    ></div>
+                    <label className="text-capitalize">{e}</label>
+                  </div>
+                );
+              }
+            )}
+          </div>
+        </FormGroup>
+        <FormGroup className="d-flex flex-column ">
+          <Label for="size">Size</Label>
+          <div className="d-flex gap-3">
+            {["41", "42", "43", "44", "45"].map((e, i) => {
               return (
-                <>
+                <div>
                   <Input
-                    id="exampleSelect"
-                    name="select"
+                    id="size"
                     type="checkbox"
-                    value="red"
-                    checked={product.color.includes(i)}
-                    onChange={() => colorCheck(i, e)}
-                    className="ms-2"
+                    checked={product.size.includes(e)}
+                    onChange={() => checkHandler(i, e, "size")}
+                    className="ms-2 me-2"
                   />
                   <Label className="text-capitalize">{e}</Label>
-                </>
+                </div>
               );
-            }
-          )}
-
-          <Label>42</Label>
-          <Input
-            id="exampleSelect"
-            name="select"
-            type="checkbox"
-            value="43"
-            checked={product.size === "43"}
-            onChange={(e) => {
-              setProduct({ ...product, size: e?.target?.value });
-            }}
-            className="ms-2"
-          ></Input>
-          <Label>43</Label>
+            })}
+          </div>
         </FormGroup>
+        <Button color="danger">Add Product</Button>
       </Form>
     </div>
   );
 }
+
+// http://localhost:9999/user/signin
+// {
+// 	"email":"admin@admin.com",
+// 	"password": "123456"
+// }
+
+// token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJUeXBlIjoiYWRtaW4iLCJpYXQiOjE3MDQ4ODEzNDh9.qL2JfA0fIPPivl-OH41ZWrPtgo3869KdEm2ggLjOVSc

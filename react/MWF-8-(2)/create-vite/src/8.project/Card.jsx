@@ -12,9 +12,9 @@ export default function Card({ details }) {
   return (
     <div>
       <StrapCard
-        style={{
-          width: "18rem",
-        }}
+        // style={{
+        //   width: "18rem",
+        // }}
       >
         {/* <img alt="Sample" src="https://picsum.photos/300/200" /> */}
         <CardBody>

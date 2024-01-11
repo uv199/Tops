@@ -14,7 +14,7 @@ export default function Modal({ modal, toggle }) {
       <ReactModal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <ProductForm />
+          <ProductForm toggle={toggle} />
         </ModalBody>
       </ReactModal>
     </div>

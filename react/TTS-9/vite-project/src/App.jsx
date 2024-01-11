@@ -96,9 +96,9 @@ function App() {
         {/* <SingleInputRev /> */}
         {/* <MultipleInput /> */}
         {/* <MultiUpdate /> */}
-        {/* <SimpleInput /> */}
+        <SimpleInput />
         {/* <ToDoList /> */}
-        <CheckBox />
+        {/* <CheckBox /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}

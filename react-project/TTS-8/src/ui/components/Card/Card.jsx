@@ -1,5 +1,7 @@
+import axios from "axios";
 import { Heart, ShoppingCart } from "lucide-react";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   Card as StrapCard,
@@ -9,6 +11,8 @@ import {
   CardText,
   CardTitle,
 } from "reactstrap";
+import { BE_URL } from "../../../config";
+import { toast } from "react-toastify";
 
 export default function Card({ product }) {
   const navigate = useNavigate();
@@ -18,6 +22,33 @@ export default function Card({ product }) {
   };
   const wichListHandler = () => {
     console.log("-----------  wichListHandler----------->");
+  };
+  const token = useSelector((state) => state?.authReducer?.token);
+  const addToCart = () => {
+    console.log("-----------  token----------->", token);
+    if (token) {
+      axios
+        .post(
+          `${BE_URL}/cart/create/${product?._id}`,
+          {},
+          {
+            headers: {
+              "Content-Type": "application/json",
+              authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          toast.success("product added succesfully");
+        })
+        .catch((err) => {
+          console.log("-----------  err----------->", err);
+          toast.error(err.response.error);
+        });
+    } else {
+      //  open login popup
+      toast.warn("Please do login");
+    }
   };
 
   return (
@@ -38,7 +69,7 @@ export default function Card({ product }) {
             <CardText>{product?.description}</CardText>
           </div>
           <div className="d-flex gap-2">
-            <Button color="danger" className="w-100">
+            <Button color="danger" className="w-100" onClick={addToCart}>
               <ShoppingCart color="#ffffff" />
             </Button>
             <Button onClick={wichListHandler} color="danger" className="w-100">
@@ -50,3 +81,10 @@ export default function Card({ product }) {
     </>
   );
 }
+
+// axios.post(url,{},header,query)
+
+// axios({
+//   url:"",
+//   headers:""
+// })

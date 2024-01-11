@@ -1,36 +1,50 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 
 export default function DataTable() {
+  let [data, setData] = useState([]);
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: "http://localhost:9999/product/getAll",
+    })
+      .then((res) => {
+        setData(res?.data?.data);
+      })
+      .catch((err) => {
+        console.log(
+          "-----------  err.response.error----------->",
+          err.response.error
+        );
+        toast.error(err.response.error);
+      });
+  }, []);
   return (
     <Table striped>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Sr.</th>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {data.map((e, i) => {
+          return (
+            <tr key={e?._id}>
+              <th scope="row">{i + 1}</th>
+              <td>
+                <img style={{width:"100px"}} src={e?.thumbnail} />
+              </td>
+              <td>{e?.title}</td>
+              <td>{e?.description}</td>
+              <td>{e?.price}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </Table>
   );
