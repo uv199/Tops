@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import ClassCom from "./2.Componenet/class/ClassCom";
 import FunctionalCom from "./2.Componenet/functional/FunctionalCom";
 import FunctionalCom2 from "./2.Componenet/functional/FunctionalCom2";
@@ -5,6 +6,7 @@ import Home from "./3.style/Home";
 import State from "./4.State/State";
 import Props from "./5.Props/Props";
 import MapKey from "./6.Map-key/MapKey";
+import LifeCycleCom from "./7.lifeCycle/LifeCycleCom";
 
 function App() {
   return (
@@ -23,7 +25,11 @@ function App() {
       {/* <Props /> */}
 
       {/* <----------------------MAP-KEY-----------------------> */}
-      <MapKey />
+      {/* <MapKey /> */}
+
+      {/* <----------------------LIFE-CYCLE-METHOD-----------------------> */}
+      <LifeCycleCom />
+      <ToastContainer />
     </div>
   );
 }

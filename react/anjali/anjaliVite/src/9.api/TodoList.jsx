@@ -6,16 +6,6 @@ export default function TodoList() {
   let [allTask, setAllTask] = useState([]);
   let [index, setIndex] = useState(null);
 
-  //   localStorage.setItem("userData", JSON?.stringify([10, 20, 30, 40])); // set
-  //   localStorage.setItem("userData", JSON?.stringify([10, 20, 30, 40, 50, 60])); // update
-  //   localStorage.setItem("userData2", JSON?.stringify([10, 20, 30, 40]));
-  //   localStorage.clear() // remove all key
-  //   localStorage.removeItem("userData"); // remove only given key
-
-  //   let jsonData = localStorage.getItem("userData");
-  //   let normalData = JSON.parse(jsonData);
-  //   console.log("-----------  jsonData----------->", normalData);\
-
   useEffect(() => {
     let jsonData = localStorage.getItem("allTask");
     let normalData = JSON.parse(jsonData) || [];

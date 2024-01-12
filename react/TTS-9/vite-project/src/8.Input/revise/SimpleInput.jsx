@@ -72,13 +72,13 @@ export default function SimpleInput() {
         </div>
         <div>
           {/* {true ? ( */}
-            <Button onClick={addTask} className="ms-2">
-              Add Task
-            </Button>
+          <Button onClick={addTask} className="ms-2">
+            Add Task
+          </Button>
           {/* ) : ( */}
-            <Button onClick={updateData} className="ms-2">
-              Update
-            </Button>
+          <Button onClick={updateData} className="ms-2">
+            Update
+          </Button>
           {/* )} */}
         </div>
       </div>

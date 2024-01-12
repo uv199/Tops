@@ -11,6 +11,7 @@ export default function LoginForm({ toggle }) {
   let [user, setUser] = useState({
     email: "",
     password: "",
+    img: "1704967957152.jpg",
   });
 
   const dispatch = useDispatch();

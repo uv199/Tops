@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import ClassCom from "./2.Componenets/class/ClassCom";
 import FunctionalCom from "./2.Componenets/functional/FunctionalCom";
 import StyleHome from "./3.Styling/StyleHome";
@@ -12,6 +13,8 @@ import FunState from "./6.State/functional/FunState";
 import ConRendaring from "./7.Conditional-rendaring/ConRendaring";
 import Conditoin2 from "./7.Conditional-rendaring/Conditoin2";
 import Home from "./8.project/Home";
+import LifeCycleCom from "./9.LifeCycleMethod/LifeCycleCom";
+import LoginPopUp from "./9.LifeCycleMethod/LoginPopUp";
 import "./App.css";
 
 function App() {
@@ -41,7 +44,13 @@ function App() {
       {/* <---------------------CONTIDIONAL RENDARING------------------------> */}
       {/* <ConRendaring /> */}
       {/* <Conditoin2 /> */}
-      <Home />
+      {/* <Home /> */}
+
+      {/* <---------------------LIFECYCLE METHOD------------------------> */}
+      {/* <LifeCycleCom /> */}
+      <LoginPopUp />
+
+      <ToastContainer />
     </div>
   );
 }

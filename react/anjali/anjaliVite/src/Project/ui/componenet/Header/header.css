@@ -1,0 +1,27 @@
+.header_div {
+  width: 100vw;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  .list_div {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+
+    li {
+      font-weight: 600;
+      a {
+        color: black !important;
+      }
+    }
+    li:hover {
+      font-weight: 700;
+      a {
+        color: rgb(255, 255, 255) !important;
+      }
+    }
+  }
+}
+

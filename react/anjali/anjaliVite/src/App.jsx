@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import FetchData from "./00.Practicle/FetchData";
 import FunCom2 from "./1.Componenets/FunCom2";
 import FunctionalCom from "./1.Componenets/FunctionalCom";
@@ -19,6 +20,7 @@ import Home from "./8.Crud/Home";
 import MultiInput from "./8.Crud/MultiInput";
 import SingleInput from "./8.Crud/SingleInput";
 import TodoList from "./9.api/TodoList";
+import AppPro from "./Project/AppPro";
 
 // export default "test test"
 // import TEST from ""
@@ -78,7 +80,11 @@ export default function App() {
       {/* <Router /> */}
 
       {/* -----------API--------------- */}
-      <TodoList />
+      {/* <TodoList /> */}
+
+      {/* -----------PROJECT--------------- */}
+      <AppPro />
+      <ToastContainer />
     </div>
   );
 }
