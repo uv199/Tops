@@ -41,6 +41,7 @@ import RouterSimple from "./12.Protected-2/Router";
 import SimpleInput from "./8.Input/revise/SimpleInput";
 import ToDoList from "./8.Input/revise/ToDoList";
 import CheckBox from "./8.Input/revise/CheckBox";
+import MultiRevise from "./8.Input/revise/MultiRevise";
 
 function App() {
   return (
@@ -96,9 +97,10 @@ function App() {
         {/* <SingleInputRev /> */}
         {/* <MultipleInput /> */}
         {/* <MultiUpdate /> */}
-        <SimpleInput />
+        {/* <SimpleInput /> */}
+        {/* <MultiRevise /> */}
         {/* <ToDoList /> */}
-        {/* <CheckBox /> */}
+        <CheckBox />
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}

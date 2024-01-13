@@ -18,6 +18,7 @@ export default function CheckBox() {
   console.log("---->", selectIndex);
   return (
     <div>
+      <Input onChange={(e) => console.log(e?.target.checked)} type="checkbox" />
       {alfabet?.map((e, i) => {
         return (
           <div className="d-flex gap-2 align-items-center ">
@@ -47,3 +48,7 @@ export default function CheckBox() {
 // onChange={() => selectHandler(1)} - B
 // onChange={() => selectHandler(2)} - C
 // onChange={() => selectHandler(3)} - D
+
+// p=[1,2,3,4,5]
+// true => selectAll => selectState= [0,1,2,3,4]
+// false => unsselct => selectState[]

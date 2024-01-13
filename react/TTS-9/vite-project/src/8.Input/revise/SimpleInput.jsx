@@ -13,12 +13,18 @@ export default function SimpleInput() {
     let inputValue = eleDetails?.target?.value;
     setTask(inputValue);
   };
-
+  // convert both string into same case(lower/upper) while comparing
   const addTask = () => {
     if (task.length > 0) {
-      let allData = [...taskArray, task]; // combine old + new data
-      setTaskArray(allData);
-      setTask(""); // to empty input value after add task
+      let isavailable = taskArray.some((e) => e === task);
+      console.log("-----------  isavailable----------->", isavailable);
+      if (isavailable) {
+        toast.error(`${task} is already available`);
+      } else {
+        let allData = [...taskArray, task]; // combine old + new data
+        setTaskArray(allData);
+        setTask(""); // to empty input value after add task
+      }
     } else {
       toast.error("Please feild data");
     }
@@ -71,15 +77,15 @@ export default function SimpleInput() {
           />
         </div>
         <div>
-          {/* {true ? ( */}
-          <Button onClick={addTask} className="ms-2">
-            Add Task
-          </Button>
-          {/* ) : ( */}
-          <Button onClick={updateData} className="ms-2">
-            Update
-          </Button>
-          {/* )} */}
+          {index || index === 0 ? (
+            <Button onClick={updateData} className="ms-2">
+              Update
+            </Button>
+          ) : (
+            <Button onClick={addTask} className="ms-2">
+              Add Task
+            </Button>
+          )}
         </div>
       </div>
       <div
