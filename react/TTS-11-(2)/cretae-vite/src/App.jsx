@@ -7,6 +7,8 @@ import State from "./4.State/State";
 import Props from "./5.Props/Props";
 import MapKey from "./6.Map-key/MapKey";
 import LifeCycleCom from "./7.lifeCycle/LifeCycleCom";
+import ConditionalRender from "./8.ConditionalRender/ConditionalRender";
+import UseEffectCom from "./9.Hook/useEffect/UseEffectCom";
 
 function App() {
   return (
@@ -28,7 +30,13 @@ function App() {
       {/* <MapKey /> */}
 
       {/* <----------------------LIFE-CYCLE-METHOD-----------------------> */}
-      <LifeCycleCom />
+      {/* <LifeCycleCom /> */}
+
+      {/* <----------------------CONDITIONALRENDER-----------------------> */}
+      {/* <ConditionalRender /> */}
+
+      {/* <----------------------HOOK-----------------------> */}
+      <UseEffectCom />
       <ToastContainer />
     </div>
   );

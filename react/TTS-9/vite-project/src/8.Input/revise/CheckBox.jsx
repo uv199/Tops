@@ -15,7 +15,6 @@ export default function CheckBox() {
       setSelectIndex([...selectIndex, index]);
     }
   };
-  console.log("---->", selectIndex);
   return (
     <div>
       <Input onChange={(e) => console.log(e?.target.checked)} type="checkbox" />

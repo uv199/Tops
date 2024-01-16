@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import { Button } from "reactstrap";
+import UnmountCom from "./UnmountCom";
 
 export default class LifeCycleCom extends Component {
   constructor() {
@@ -8,6 +9,7 @@ export default class LifeCycleCom extends Component {
     super();
     this.state = {
       count: 1000,
+      show: true,
     };
     console.log("--------CONSTRUCTOR--------");
   }
@@ -19,7 +21,6 @@ export default class LifeCycleCom extends Component {
 
   componentDidUpdate(oldProps, oldState) {
     console.log(this.state.count - oldState?.counts);
-    console.log("--------COMPONENTDIDUPDATE--------");
     if (this.state.count - oldState?.count === 5) {
       toast.info("Count is incremented by 5");
     } else if (this.state.count === oldState?.count) {
@@ -53,6 +54,14 @@ export default class LifeCycleCom extends Component {
           onClick={() => this.setState({ count: this.state?.count })}
         >
           SAME INC
+        </Button>
+        <hr />
+        {this.state.show && <UnmountCom />}
+        <Button onClick={() => this.setState({ show: false })} color="danger">
+          Hide
+        </Button>
+        <Button onClick={() => this.setState({ show: true })} color="danger">
+          Show
         </Button>
       </div>
     );

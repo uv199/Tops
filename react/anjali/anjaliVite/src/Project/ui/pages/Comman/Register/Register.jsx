@@ -135,7 +135,6 @@ export default function App() {
       <input type="number" {...register("number")} />
       <input {...register("exampleRequired", { required: true })} />
       {errors.exampleRequired && <span>This field is required</span>}
-
       <input type="submit" />
     </form>
   );

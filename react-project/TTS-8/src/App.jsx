@@ -45,8 +45,9 @@
 
 import React from "react";
 import "./App.css";
+import { Key } from "lucide-react";
 
-export default() => {
+export default () => {
   return (
     <div className="macbook-air">
       <div className="div">

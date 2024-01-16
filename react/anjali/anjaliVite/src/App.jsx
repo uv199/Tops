@@ -21,6 +21,11 @@ import MultiInput from "./8.Crud/MultiInput";
 import SingleInput from "./8.Crud/SingleInput";
 import TodoList from "./9.api/TodoList";
 import AppPro from "./Project/AppPro";
+import UseRefCom from "./7.Hooks/useRef/UseRefCom";
+import ReducerCom from "./7.Hooks/useReducer/ReducerCom";
+import MainContext from "./7.Hooks/useContaxt/MainContext";
+import UseMemo from "./7.Hooks/useMemo/UseMemo";
+import CallBackCom from "./7.Hooks/useCallBack/CallBackCom";
 
 // export default "test test"
 // import TEST from ""
@@ -68,6 +73,11 @@ export default function App() {
       {/* -----------HOOK--------------- */}
       {/* <UseEffectCom /> */}
       {/* <UseEffectPro1 /> */}
+      {/* <UseRefCom /> */}
+      {/* <ReducerCom /> */}
+      {/* <MainContext /> */}
+      <UseMemo />
+      {/* <CallBackCom /> */}
 
       {/* -----------INPUT--------------- */}
       {/* <SingleInput /> */}
@@ -83,7 +93,7 @@ export default function App() {
       {/* <TodoList /> */}
 
       {/* -----------PROJECT--------------- */}
-      <AppPro />
+      {/* <AppPro /> */}
       <ToastContainer />
     </div>
   );
