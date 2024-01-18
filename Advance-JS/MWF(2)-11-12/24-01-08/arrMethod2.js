@@ -10,6 +10,8 @@ let arr = [
   { population: "3999", city: "Cawnpore", state_name: "Uttar Pradesh" },
 ];
 
+
+
 let person = [
   { name: "uv", age: 23 },
   { name: "nayan", age: 25 },

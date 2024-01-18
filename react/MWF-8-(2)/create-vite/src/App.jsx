@@ -16,6 +16,8 @@ import Home from "./8.project/Home";
 import LifeCycleCom from "./9.LifeCycleMethod/LifeCycleCom";
 import LoginPopUp from "./9.LifeCycleMethod/LoginPopUp";
 import "./App.css";
+import UseEffect from "./10.Hook/useEffect/UseEffect";
+import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
 
 function App() {
   return (
@@ -48,8 +50,11 @@ function App() {
 
       {/* <---------------------LIFECYCLE METHOD------------------------> */}
       {/* <LifeCycleCom /> */}
-      <LoginPopUp />
+      {/* <LoginPopUp /> */}
 
+      {/* <---------------------HOOK------------------------> */}
+      {/* <UseEffect /> */}
+      <UseEffectPro />
       <ToastContainer />
     </div>
   );
