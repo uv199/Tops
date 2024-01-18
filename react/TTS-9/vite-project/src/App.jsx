@@ -42,6 +42,8 @@ import SimpleInput from "./8.Input/revise/SimpleInput";
 import ToDoList from "./8.Input/revise/ToDoList";
 import CheckBox from "./8.Input/revise/CheckBox";
 import MultiRevise from "./8.Input/revise/MultiRevise";
+import SimpleApi from "./13.api/SimpleApi";
+import ProductPage from "./13.api/ProductPage";
 
 function App() {
   return (
@@ -99,7 +101,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        <ToDoList />
+        {/* <ToDoList /> */}
         {/* <CheckBox /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
@@ -111,6 +113,10 @@ function App() {
         {/* <Router /> */}
         {/* <AppPro /> */}
         {/* <RouterSimple /> */}
+
+        {/*-----------------------API--------------------------  */}
+        {/* <SimpleApi /> */}
+        <ProductPage />
       </div>
       <ToastContainer />
     </>
