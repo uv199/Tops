@@ -12,17 +12,14 @@ Object
 Array
 */
 
-
 // let str1 = '""'
-let str2 = "''"
-let str =`"'"'
+let str2 = "''";
+let str = `"'"'
 
 
 
-`
+`;
 
+let name = "User";
 
-
-let name = "Urvish"
-
-console.log("my name is name")
+console.log(`my name is ${name} ${5 + 5}`);
