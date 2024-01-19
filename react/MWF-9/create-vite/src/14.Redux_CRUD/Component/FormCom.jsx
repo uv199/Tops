@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
   Col,
@@ -31,16 +31,22 @@ export default function FormCom({ updateData, index}) {
   }, [updateData]);
 
   const dispatch = useDispatch();
+
   const submitHandler = () => {
     let arr = Object.values(user);
 
     if (arr.includes("")) {
       // find index || object.keys()
       toast.error("Please fill the data");
-    } else {
+     }
+     
+    else{
       dispatch(addUser(user));
       setUser(initialData);
     }
+
+    
+    
   };
 
   const updateHandler = () => {

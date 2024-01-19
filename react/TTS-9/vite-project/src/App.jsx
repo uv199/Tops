@@ -101,7 +101,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        {/* <ToDoList /> */}
+        <ToDoList />
         {/* <CheckBox /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
@@ -116,7 +116,7 @@ function App() {
 
         {/*-----------------------API--------------------------  */}
         {/* <SimpleApi /> */}
-        <ProductPage />
+        {/* <ProductPage /> */}
       </div>
       <ToastContainer />
     </>

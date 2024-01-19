@@ -18,6 +18,8 @@ import LoginPopUp from "./9.LifeCycleMethod/LoginPopUp";
 import "./App.css";
 import UseEffect from "./10.Hook/useEffect/UseEffect";
 import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
+import InputCom from "./11.Input/InputCom";
+import NavBarCom from "./3.Styling/NavBArCom";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
 
       {/* <---------------------STYLE------------------------> */}
       {/* <StyleHome /> */}
+      <NavBarCom />
 
       {/* <---------------------PROPS------------------------> */}
       {/* <FunProps name={"Happy User"} /> */}
@@ -54,7 +57,10 @@ function App() {
 
       {/* <---------------------HOOK------------------------> */}
       {/* <UseEffect /> */}
-      <UseEffectPro />
+      {/* <UseEffectPro /> */}
+
+      {/* <---------------------INPUT------------------------> */}
+      {/* <InputCom /> */}
       <ToastContainer />
     </div>
   );

@@ -26,6 +26,7 @@ export default function ReducerCom() {
     <>
       <h1>Count is {count}</h1>
       <div className="d-flex gap-3">
+        {/* TODO -> input ma value and that value pluse in state */}
         <Button color="danger" onClick={() => dispatch("inc-1")}>
           inc-1
         </Button>

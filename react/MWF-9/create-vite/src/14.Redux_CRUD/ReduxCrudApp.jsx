@@ -5,7 +5,19 @@ import store from "./redux/App/store";
 import UserTable from "./Component/UserTable";
 
 export default function ReduxCrudApp() {
-  let [updateData, setUpdateData] = useState({});
+  let [updateData, setUpdateData] = useState({
+    email: "",
+    password: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    gender: "",
+
+  });
+
+
+
   let [index, setIndex] = useState("")
   
   return (
