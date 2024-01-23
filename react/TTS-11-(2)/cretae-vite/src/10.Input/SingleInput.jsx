@@ -1,10 +1,13 @@
-import { Plus } from "lucide-react";
+import { Edit, Plus, Trash } from "lucide-react";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
 
 export default function SingleInput() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
+  let [index, setIndex] = useState(null);
+  let [updateMode, setUpdateMode] = useState(false);
 
   const getData = (e) => {
     // e.targte => input tage details
@@ -14,12 +17,48 @@ export default function SingleInput() {
   };
 
   const addData = () => {
-    console.log("---->s", task);
-    console.log("---oldArr->", taskArr);
-    // ... for old array copy and add new element
-    setTaskArr([...taskArr, task]);
-    // to clear input value
+    console.log("---task----", task);
+
+    // task is avilable or not in array if available then throw erro otherwise add it
+    if (task !== "") {
+      // ... for old array copy and add new element
+      setTaskArr([...taskArr, task]);
+      // to clear input value
+      setTask("");
+    } else {
+      toast.warn("Please fill the data");
+    }
+  };
+
+  // delete handler
+  const deleteHandler = (index) => {
+    console.log("-----------  index----------->", index);
+    let filterData = taskArr.filter((e, i) => i !== index);
+    console.log("-----------  filterData----------->", filterData);
+    setTaskArr(filterData);
+  };
+
+  // edit handler
+  const editHandler = (data, index) => {
+    console.log("-----------  data----------->", data);
+    setTask(data);
+    setIndex(index);
+    setUpdateMode(true);
+  };
+
+  //  update handler
+
+  const updateHandler = () => {
+    let newArr = taskArr.map((e, i) => {
+      if (i === index) {
+        return task;
+      } else {
+        return e;
+      }
+    });
+    setTaskArr(newArr);
     setTask("");
+    setUpdateMode(false);
   };
   return (
     <>
@@ -36,14 +75,22 @@ export default function SingleInput() {
           // to controll input value
           value={task}
         />
-        <Button
-          onClick={() => addData()}
-          className="shadow-none rounded-0"
-          color="danger"
-        >
-          <Plus />
-        </Button>
+
+        {updateMode ? (
+          <Button color="danger" onClick={() => updateHandler()}>
+            Update
+          </Button>
+        ) : (
+          <Button
+            onClick={() => addData()}
+            className="shadow-none rounded-0"
+            color="danger"
+          >
+            <Plus />
+          </Button>
+        )}
       </div>
+
       <div
         style={{ minWidth: "300px" }}
         className="w-50 border rounded-1 p-3 mt-4"
@@ -52,20 +99,33 @@ export default function SingleInput() {
         <hr
           style={{ width: "100%", height: "5px", backgroundColor: "black" }}
         />
-        <ol>
-          {taskArr.map((e, i) => {
-            return (
-              <>
-                <li className="m-0" key={i}>
-                  {e}
-                </li>
-                <hr className="mt-0" />
-              </>
-            );
-          })}
-        </ol>
+        {taskArr.length > 0 ? (
+          <ol>
+            {taskArr.map((e, i) => {
+              return (
+                <>
+                  <li className="m-0" key={i}>
+                    {e}
+                  </li>
+                  <Trash
+                    onClick={() => deleteHandler(i)}
+                    color="red"
+                    role="button"
+                  />
+                  <Edit
+                    onClick={() => editHandler(e, i)}
+                    color="gray"
+                    role="button"
+                  />
+                  <hr className="mt-0" />
+                </>
+              );
+            })}
+          </ol>
+        ) : (
+          <p className="text-center">!.....Data not Available....!</p>
+        )}
       </div>
-      <h1>Data not Available</h1>
     </>
   );
 }

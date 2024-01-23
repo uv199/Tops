@@ -23,3 +23,5 @@ let str = `"'"'
 let name = "User";
 
 console.log(`my name is ${name} ${5 + 5}`);
+
+

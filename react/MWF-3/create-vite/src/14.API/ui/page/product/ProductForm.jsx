@@ -1,19 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Button, Form, FormGroup, FormText, Input, Label } from "reactstrap";
-
-const initialData = {
-  title: "",
-  description: "",
-  brand: "",
-  category: [],
-  price: "",
-  gender: "",
-  discountPercentage: "0",
-  color: [],
-  size: [],
-};
 
 const formFeild = [
   { key: "title", type: "text" },
@@ -21,32 +9,24 @@ const formFeild = [
   { key: "brand", type: "text" },
   { key: "price", type: "number" },
 ];
-export default function ProductForm({ toggle }) {
-  let [product, setProduct] = useState(initialData);
-  // do logic for check
-  // do map for all size, chatagory gender
-  // on submit par log form data
-  const submitHandler = (e) => {
-    e?.preventDefault();
-    console.log(product);
-    axios({
-      method: "post",
-      url: `http://localhost:9999/product/create`,
-      data: product,
-    })
-      .then((res) => {
-        console.log("-----------  res----------->", res);
-        toast.success("product added");
-        setProduct(initialData);
-        toggle();
-      })
-      .catch((err) => {
-        console.log(
-          "-----------  err.response.error----------->",
-          err.response.error
-        );
-        toast.error(err.response.error);
-      });
+export default function ProductForm({
+  productData,
+  updateHandler,
+  submitHandler,
+}) {
+  let [product, setProduct] = useState(productData);
+
+  useEffect(() => {
+    setProduct(productData);
+  }, [productData]);
+
+  const updateData = () => {
+    updateHandler(product);
+  };
+
+  const submitData = (e) => {
+    e.preventDefault();
+    submitHandler(product);
   };
 
   const checkHandler = (i, ele, key) => {
@@ -60,9 +40,10 @@ export default function ProductForm({ toggle }) {
       setProduct({ ...product, [key]: [...product?.[key], ele] });
     }
   };
+
   return (
     <div>
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitData}>
         {formFeild.map(({ key, type }) => {
           return (
             <FormGroup>
@@ -205,6 +186,9 @@ export default function ProductForm({ toggle }) {
           </div>
         </FormGroup>
         <Button color="danger">Add Product</Button>
+        <Button color="danger" onClick={() => updateData()}>
+          update
+        </Button>
       </Form>
     </div>
   );

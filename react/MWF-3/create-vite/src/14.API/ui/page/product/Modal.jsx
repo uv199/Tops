@@ -8,13 +8,24 @@ import {
 } from "reactstrap";
 import ProductForm from "./ProductForm";
 
-export default function Modal({ modal, toggle }) {
+export default function Modal({
+  modal,
+  toggle,
+  productData,
+  updateHandler,
+  submitHandler,
+}) {
   return (
     <div>
       <ReactModal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <ProductForm toggle={toggle} />
+          <ProductForm
+            updateHandler={updateHandler}
+            productData={productData}
+            toggle={toggle}
+            submitHandler={submitHandler}
+          />
         </ModalBody>
       </ReactModal>
     </div>

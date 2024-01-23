@@ -22,7 +22,7 @@ let initialData = {
   zip: "",
   gender: "",
 };
-export default function FormCom({ updateData, index}) {
+export default function FormCom({ updateData, index }) {
   console.log("-----------  updateData----------->", updateData);
   let [user, setUser] = useState(updateData);
 
@@ -35,23 +35,46 @@ export default function FormCom({ updateData, index}) {
   const submitHandler = () => {
     let arr = Object.values(user);
 
+    if (user?.email == "") {
+      toast.error("please enter email");
+    }
+
+    if (user?.password == "") {
+      toast.error("please enter password");
+    }
+
+    if (user?.address == "") {
+      toast.error("please enter address");
+    }
+
+    if (user?.city == "") {
+      toast.error("please enter city");
+    }
+
+    if (user?.state == "") {
+      toast.error("please enter state");
+    }
+
+    if (user?.zip == "") {
+      toast.error("please enter zip");
+    }
+
+    if (user?.gender == "") {
+      toast.error("select Gender");
+    }
+
     if (arr.includes("")) {
       // find index || object.keys()
       toast.error("Please fill the data");
-     }
-     
-    else{
+    } else {
       dispatch(addUser(user));
       setUser(initialData);
     }
-
-    
-    
   };
 
   const updateHandler = () => {
-    dispatch(updateUser({data:user,index}))
-  }
+    dispatch(updateUser({ data: user, index }));
+  };
 
   return (
     <div className="d-flex justify-content-center ">

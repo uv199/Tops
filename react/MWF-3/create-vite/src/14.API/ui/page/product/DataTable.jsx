@@ -1,44 +1,20 @@
 import axios from "axios";
-import { Trash2 } from "lucide-react";
+import { Edit, Trash2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Table } from "reactstrap";
 
-export default function DataTable() {
+export default function DataTable({
+  productData,
+  deleteHandler,
+  reFetchData,
+  editHandler,
+}) {
   let [data, setData] = useState([]);
-  let [call, setCall] = useState(true);
 
   useEffect(() => {
-    axios({
-      method: "get",
-      url: "http://localhost:9999/product/getAll",
-    })
-      .then((res) => {
-        setData(res?.data?.data);
-      })
-      .catch((err) => {
-        console.log(
-          "-----------  err.response.error----------->",
-          err.response.error
-        );
-        toast.error(err.response.error);
-      });
-  }, [call]);
-
-  const deleteData = (id) => {
-    console.log("----------->", id);
-    axios({
-      method: "delete",
-      url: `http://localhost:9999/product/delete/${id}`,
-    })
-      .then((res) => {
-        toast.success("Product deleted....!");
-        setCall(!call);
-      })
-      .catch((err) => {
-        toast.error(err.response.error);
-      });
-  };
+    setData(productData);
+  }, [productData]);
 
   return (
     <Table striped>
@@ -58,8 +34,9 @@ export default function DataTable() {
             <tr key={e?._id}>
               <th scope="row">{i + 1}</th>
               <th>
+                <Edit role="button" onClick={() => editHandler(e)} />
                 <Trash2
-                  onClick={() => deleteData(e?._id)}
+                  onClick={() => deleteHandler(e?._id)}
                   role="button"
                   color="red"
                 />
