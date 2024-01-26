@@ -31,7 +31,7 @@ export default function FormCom({ updateData, index }) {
   }, [updateData]);
 
   const dispatch = useDispatch();
-
+  const existingUsers = useSelector((state) => state.formReducer);
   const submitHandler = () => {
     let arr = Object.values(user);
 
@@ -67,11 +67,19 @@ export default function FormCom({ updateData, index }) {
       // find index || object.keys()
       toast.error("Please fill the data");
     } else {
+      const emailExists = existingUsers.users.some(
+        (existingUser) => existingUser.email === user?.email
+      );
+    
+    if (emailExists) {
+      toast.error("email already exist");
+    } else {
       dispatch(addUser(user));
       setUser(initialData);
+      toast.success("registration successfully");
     }
   };
-
+  }
   const updateHandler = () => {
     dispatch(updateUser({ data: user, index }));
   };

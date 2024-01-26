@@ -33,6 +33,7 @@ import "react-toastify/dist/ReactToastify.css";
 import CheckBox from "./10.multipleInput/CheckBox";
 import Product from "./14.API/ui/page/product/Product";
 import ProductRoute from "./14.API/router/Router";
+import AppRedux from "./15.Redux/AppRedux";
 
 function App() {
   return (
@@ -96,7 +97,11 @@ function App() {
       {/* <AppProtect /> */}
 
       {/* ------------------------------API------------------------- */}
-      <ProductRoute />
+      {/* <ProductRoute /> */}
+
+      {/* ------------------------------REDUX------------------------- */}
+      <AppRedux />
+      
       <ToastContainer />
     </div>
   );

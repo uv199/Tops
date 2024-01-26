@@ -30,7 +30,7 @@ function App() {
 
       {/* <---------------------STYLE------------------------> */}
       {/* <StyleHome /> */}
-      <NavBarCom />
+      {/* <NavBarCom /> */}
 
       {/* <---------------------PROPS------------------------> */}
       {/* <FunProps name={"Happy User"} /> */}
@@ -60,7 +60,7 @@ function App() {
       {/* <UseEffectPro /> */}
 
       {/* <---------------------INPUT------------------------> */}
-      {/* <InputCom /> */}
+      <InputCom />
       <ToastContainer />
     </div>
   );

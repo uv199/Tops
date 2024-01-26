@@ -19,31 +19,23 @@ import {
 } from "reactstrap";
 
 function NavBarCom(args) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
-        
-<div>
-  <Button
-    color="primary"
-    onClick={function noRefCheck(){}}
-  >
-    Open
-  </Button>
-  <Offcanvas toggle={function noRefCheck(){}}>
-    <OffcanvasHeader toggle={function noRefCheck(){}}>
-      Offcanvas
-    </OffcanvasHeader>
-    <OffcanvasBody>
-      <strong>
-        This is the Offcanvas body.
-      </strong>
-    </OffcanvasBody>
-  </Offcanvas>
-</div> 
+      <div>
+        <Button color="primary" onClick={toggle}>
+          Open
+        </Button>
+        <Offcanvas isOpen={isOpen}>
+          <OffcanvasHeader toggle={toggle}>Offcanvas</OffcanvasHeader>
+          <OffcanvasBody>
+            <strong>This is the Offcanvas body.</strong>
+          </OffcanvasBody>
+        </Offcanvas>
+      </div>
       {/* <Navbar expand="lg" {...args}>
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggle} />
