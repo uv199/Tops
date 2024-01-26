@@ -40,6 +40,9 @@ export default function HeaderCom() {
           <li>
             <NavLink to={"shop"}>Shop</NavLink>
           </li>
+          <li>
+            <NavLink to={"redux"}>Redux</NavLink>
+          </li>
         </div>
       )}
 

@@ -1,12 +1,5 @@
+import { useState } from "react";
 import "./App.css";
-import HomeCom from "./ui/pages/home/HomeCom";
+import Router from "./Router/Router";
 
-function App() {
-  return (
-    <>
-      <HomeCom />
-    </>
-  );
-}
-
-export default App;
+export default () => <Router />;

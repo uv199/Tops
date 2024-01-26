@@ -76,7 +76,7 @@ export default function App() {
       {/* <UseRefCom /> */}
       {/* <ReducerCom /> */}
       {/* <MainContext /> */}
-      <UseMemo />
+      {/* <UseMemo /> */}
       {/* <CallBackCom /> */}
 
       {/* -----------INPUT--------------- */}
@@ -93,7 +93,7 @@ export default function App() {
       {/* <TodoList /> */}
 
       {/* -----------PROJECT--------------- */}
-      {/* <AppPro /> */}
+      <AppPro />
       <ToastContainer />
     </div>
   );

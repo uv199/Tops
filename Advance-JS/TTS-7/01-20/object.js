@@ -25,9 +25,11 @@ let obj = {
 };
 
 console.log("----->", obj[1]);
+obj[1];
+obj["first name"];
 console.log("----->", obj["first name"]);
 
-let x = 2;
+let x = "2";
 
 console.log("---color is ----", obj[x]);
 
@@ -52,16 +54,29 @@ let abc = {
   discountPercentage: 8,
   category: ["smartphones", "3g", "4g"],
   color: ["red", "black", "white"],
-  size: ["44", "45", "42", "43"],
+  size: ["44", "45", "42", "43", 600, 200],
   isAvailable: true,
   availableStock: 54,
   rating: 485,
   totalRaters: 123,
   totalSoldUnit: 0,
 };
+600/200
+
+let avarage = abc.rating / abc.totalRaters;
+console.log("-----------  avarage----------->", avarage);
+
+let avg = abc.size[4] / abc.size[5];
+console.log("-----------  avg----------->", avg);
 
 // print description
 // print white color
 // print "45" size
-// avrage rating for display start
-// get real price after discount 
+// avrage rating for display star
+// get real price after discount
+
+let amount = (abc.discountPercentage * 100) / abc.price;
+console.log("-----------  amount----------->", amount);
+
+let finalPrice = abc.price - amount;
+console.log("-----------  finalPrice----------->", finalPrice);
