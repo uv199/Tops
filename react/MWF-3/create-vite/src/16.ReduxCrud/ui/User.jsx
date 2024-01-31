@@ -1,14 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
-export default function Counter() {
+
+export default function User() {
   let data = useSelector((store) => {
-    return store?.countReducer?.count;
+    return store?.userReducer;
   });
 
   console.log("-----------  data----------->", data);
   return (
     <div>
-      <h1>Counter is {data}</h1>
+      {data.user.map((e) => {
+        return <li>{e}</li>;
+      })}
     </div>
   );
 }

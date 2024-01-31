@@ -34,6 +34,7 @@ import CheckBox from "./10.multipleInput/CheckBox";
 import Product from "./14.API/ui/page/product/Product";
 import ProductRoute from "./14.API/router/Router";
 import AppRedux from "./15.Redux/AppRedux";
+import AppReduxCrud from "./16.ReduxCrud/AppReduxCrud";
 
 function App() {
   return (
@@ -101,7 +102,8 @@ function App() {
 
       {/* ------------------------------REDUX------------------------- */}
       <AppRedux />
-      
+      {/* <AppReduxCrud /> */}
+
       <ToastContainer />
     </div>
   );

@@ -1,15 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import countReducer from "../features/counter";
+import UReducer from "../fetures/user";
 
 export const store = configureStore({
   reducer: {
-    countReducer: countReducer,
+    userReducer: UReducer,
   },
 });
 
 // store = {
-//   countReducer: {
-//     count: 900,
-//   },
+//   userReducer: { user: [] },
 // };

@@ -44,6 +44,7 @@ import CheckBox from "./8.Input/revise/CheckBox";
 import MultiRevise from "./8.Input/revise/MultiRevise";
 import SimpleApi from "./13.api/SimpleApi";
 import ProductPage from "./13.api/ProductPage";
+import ApiRevise from "./13.api/ApiRevise";
 
 function App() {
   return (
@@ -101,7 +102,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        <ToDoList />
+        {/* <ToDoList /> */}
         {/* <CheckBox /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
@@ -117,6 +118,7 @@ function App() {
         {/*-----------------------API--------------------------  */}
         {/* <SimpleApi /> */}
         {/* <ProductPage /> */}
+        <ApiRevise />
       </div>
       <ToastContainer />
     </>

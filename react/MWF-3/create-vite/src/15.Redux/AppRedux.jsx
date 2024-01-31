@@ -1,7 +1,7 @@
 import React from "react";
-import Counter from "./Redux/ui/pages/Counter";
 import { Provider } from "react-redux";
 import { store } from "./Redux/app/store";
+import Counter from "./ui/pages/Counter";
 
 export default function AppRedux() {
   return (
