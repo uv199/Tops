@@ -100,28 +100,32 @@ export default function SingleInput() {
           style={{ width: "100%", height: "5px", backgroundColor: "black" }}
         />
         {taskArr.length > 0 ? (
-          <ol>
-            {taskArr.map((e, i) => {
-              return (
-                <>
+          taskArr.map((e, i) => {
+            return (
+              <>
+                <div className="d-flex justify-content-between">
                   <li className="m-0" key={i}>
                     {e}
                   </li>
-                  <Trash
-                    onClick={() => deleteHandler(i)}
-                    color="red"
-                    role="button"
-                  />
-                  <Edit
-                    onClick={() => editHandler(e, i)}
-                    color="gray"
-                    role="button"
-                  />
-                  <hr className="mt-0" />
-                </>
-              );
-            })}
-          </ol>
+                  <div className="d-flex">
+                    <Trash
+                      onClick={() => deleteHandler(i)}
+                      color="red"
+                      role="button"
+                      className="me-2"
+                    />
+
+                    <Edit
+                      onClick={() => editHandler(e, i)}
+                      color="gray"
+                      role="button"
+                    />
+                  </div>
+                </div>
+                <hr className="mt-0" />
+              </>
+            );
+          })
         ) : (
           <p className="text-center">!.....Data not Available....!</p>
         )}

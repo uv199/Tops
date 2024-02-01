@@ -45,6 +45,7 @@ import MultiRevise from "./8.Input/revise/MultiRevise";
 import SimpleApi from "./13.api/SimpleApi";
 import ProductPage from "./13.api/ProductPage";
 import ApiRevise from "./13.api/ApiRevise";
+import Product from "./13.api/Product/Product";
 
 function App() {
   return (
@@ -118,7 +119,8 @@ function App() {
         {/*-----------------------API--------------------------  */}
         {/* <SimpleApi /> */}
         {/* <ProductPage /> */}
-        <ApiRevise />
+        {/* <ApiRevise /> */}
+        <Product />
       </div>
       <ToastContainer />
     </>
