@@ -1,14 +1,48 @@
-/* .container{
-    background-color: aqua;
-    height: 100%;
-    width: 100%;
-} */
-
-h1{
-    text-align: center;
+body{
+    background-color: rgb(40,25,25);
+    color: white;
+    overflow: hidden;
 }
-/* .header{
-    background-color:coral;
+.todo-wrapper{
+    background-color: #353434;
+    padding: 2%;
+    width: fit-content;
     height: 50vh;
-    width: 100%;
-} */
+    width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 5px 7px rgb(28,28,28);
+}
+h1{
+    color: aqua;
+}
+.todo-input{
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+}
+h3{
+    color: red;
+}
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.todo-list-item{
+    background-color: rgb(27, 27, 27);
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom:10px;
+    box-shadow: 0px 5px 5px rgb(43,42,42);
+}
+.todo-list-item h4{
+    font-size: 25px;
+    color: aqua;
+    font-weight: 700;
+    margin-right: 60%;
+}
+
+

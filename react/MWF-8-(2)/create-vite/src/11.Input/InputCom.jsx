@@ -1,4 +1,4 @@
-import { Plus, Trash } from "lucide-react";
+import { Edit, Plus, Trash } from "lucide-react";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
@@ -6,6 +6,7 @@ import { Button, Input } from "reactstrap";
 export default function InputCom() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
+  let [index, setIndex] = useState(null);
 
   // to get data from input
   const getData = (ele) => {
@@ -26,15 +27,26 @@ export default function InputCom() {
 
   // handle delete
   const deleteHandler = (index) => {
-    console.log("----->", index);
     let filterData = taskArr.filter((e, i) => i !== index);
-    console.log("-----------  filterData----------->", filterData);
     setTaskArr(filterData);
   };
 
+  const updateHandler = (data, index) => {
+    setTask(data);
+    setIndex(index);
+  };
+
+  const updateData = () => {
+    // newData=task , array=taskArr , index=index
+    taskArr.splice(index, 1, task);
+    setTask([...taskArr]);
+    setTask("");
+    setIndex(null);
+  };
   return (
     <div className="d-flex flex-column align-content-center">
       {/* <h1>task is {task}</h1> */}
+      <h1>index : {index}</h1>
       <div className="w-100 d-flex   justify-content-center ">
         <Input
           name="nameInput"
@@ -44,13 +56,24 @@ export default function InputCom() {
           // we take task in value to controll input value
           value={task}
         />
-        <Button
-          color="danger"
-          className="rounded-start-0"
-          onClick={() => addData()}
-        >
-          <Plus />
-        </Button>
+        {/* index => null/0/undfinde/false */}
+        {index || index === 0 ? (
+          <Button
+            color="danger"
+            className="rounded-start-0"
+            onClick={() => updateData()}
+          >
+            Update
+          </Button>
+        ) : (
+          <Button
+            color="danger"
+            className="rounded-start-0"
+            onClick={() => addData()}
+          >
+            <Plus />
+          </Button>
+        )}
       </div>
       <div className="w-100 d-flex justify-content-center pt-4">
         <div className="w-25 border rounded-2">
@@ -69,13 +92,20 @@ export default function InputCom() {
                 <>
                   <div className="d-flex justify-content-between m-2">
                     <li key={i}>
-                      {i + 1}. {e}{" "}
+                      {i + 1}. {e}
                     </li>
-                    <Trash
-                      color="red"
-                      role="button"
-                      onClick={() => deleteHandler(i)}
-                    />
+                    <div className="d-flex gap-2">
+                      <Edit
+                        color="#8fb5f2"
+                        role="button"
+                        onClick={() => updateHandler(e, i)}
+                      />
+                      <Trash
+                        color="red"
+                        role="button"
+                        onClick={() => deleteHandler(i)}
+                      />
+                    </div>
                   </div>
                   <hr />
                 </>

@@ -37,10 +37,6 @@ console.log("-----------  match----------->", match);
 let matchAll = person?.filter?.((e) => e.age > 20);
 console.log("-----------  matchAll----------->", matchAll);
 
-
-
-
-
 // arr.indexOf(); => index = only find by value
 // arr.findIndex(); => index = find by condition
 
@@ -79,3 +75,15 @@ console.log("-----------  arr----------->", arr);
 // arr.sort((a, b) => a.population - b.population);
 // console.log("-----------  arr----------->", arr);
 console.log("----", "a" > "A");
+
+
+
+
+function findByLength(x) {
+  
+  let data = arr.filter((e)=> e.city.length>x)
+  return data 
+}
+
+let moreThen6=findByLength(6)
+let moreThen7=findByLength(7)
