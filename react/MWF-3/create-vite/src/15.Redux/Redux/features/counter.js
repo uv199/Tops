@@ -11,6 +11,17 @@ const countSlice = createSlice({
       state.count += 10;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase("amount/incAmt5", (state, action) => {
+        state.count++;
+      })
+      .addCase("amount/incAmount", (state, action) => {
+        // get
+        console.log("--->", state.amount);
+        state.count++;
+      });
+  },
 });
 
 export default countSlice.reducer;

@@ -1,0 +1,9 @@
+{
+  "name": "uv",
+  "age": 23,
+  "add": {
+    "city": "surat",
+    "pin": 395007
+  },
+  "hooby": ["reading"]
+}
