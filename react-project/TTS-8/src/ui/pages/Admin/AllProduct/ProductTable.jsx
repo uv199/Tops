@@ -8,7 +8,8 @@ import { Eye, Trash } from "lucide-react";
 import axios from "axios";
 import { BE_URL } from "../../../../config";
 import { useSearchParams } from "react-router-dom";
-
+import PaginationCom from "../../../components/Pagination/PaginationCom";
+import { Product } from "../../../api/product";
 const StyleRow = ({ arr1, ele }) => {
   let available = arr1?.includes?.(`${ele}`) ? "black" : "gray";
   return (
@@ -25,8 +26,7 @@ const StyleRow = ({ arr1, ele }) => {
     </span>
   );
 };
-import PaginationCom from "../../../components/Pagination/PaginationCom";
-
+const callApi = new Product();
 export default function ProductTable({ toggle, pagination, setTotalCount }) {
   let [allProduct, setAllProduct] = useState([]);
 
@@ -50,23 +50,27 @@ export default function ProductTable({ toggle, pagination, setTotalCount }) {
   }, [data]);
 
   // delete logic
-  const deleteHandler = (id) => {
+  const deleteHandler = async (id) => {
     console.log("-----------  id----------->", id);
-
-    axios({
-      method: "delete",
-      url: `${BE_URL}/product/delete/${id}`,
-      headers: {
-        authorization: `Berer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    })
-      .then((res) => {
-        toast.success("product Deleted");
-        dispatch(fetchProduct({ page: pagination?.page, limit: 10 }));
-      })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+    let { data, error } = await callApi.deletProduct(id);
+    if (error) {
+      console.log("-----------  data----------->", data);
+    } else {
+    }
+    // axios({
+    //   method: "delete",
+    //   url: `${BE_URL}/product/delete/${id}`,
+    //   headers: {
+    //     authorization: `Berer ${JSON.parse(localStorage.getItem("token"))}`,
+    //   },
+    // })
+    //   .then((res) => {
+    //     toast.success("product Deleted");
+    //     dispatch(fetchProduct({ page: pagination?.page, limit: 10 }));
+    //   })
+    //   .catch((err) => {
+    //     toast.error(err.message);
+    //   });
   };
 
   const updateHandler = (data) => {
@@ -115,9 +119,10 @@ export default function ProductTable({ toggle, pagination, setTotalCount }) {
                       })}
                     </td>
                     <td>
-                      {e?.color?.map?.((col,i) => {
+                      {e?.color?.map?.((col, i) => {
                         return (
-                          <span key={i}
+                          <span
+                            key={i}
                             style={{
                               border: "1px solid darkgray",
                               display: "inline-block",

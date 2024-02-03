@@ -1,3 +1,4 @@
+/*
 // let obj = [
 //   {
 //     a: 20,
@@ -47,3 +48,17 @@ pending = p;
 done = d;
 console.log("-----------  pending----------->", pending);
 console.log("-----------  done----------->", done);
+*/
+let arr = ["red", "yellow", "blue"];
+
+let value = [
+  { value: "red", label: "red" },
+  { value: "yellow", label: "yellow" },
+  { value: "blue", label: "blue" },
+];
+
+let newArr = arr.map((e) => {
+  console.log("e", e);
+  return { value: e, label: e };
+});
+console.log("-----------  newArr----------->", newArr);

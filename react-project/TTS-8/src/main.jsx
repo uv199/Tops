@@ -12,11 +12,11 @@ import ChildHoc2 from "../concepts/HOC/ChildHoc2.jsx";
 import LazyLoad from "../revise/lazy/LazyLoad.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <FileUploaderMultiple /> */}
     {/* <ComA /> */}
     {/* <ChildHoc /> */}
     {/* <ChildHoc2 /> */}
-    <LazyLoad />
+    {/* <LazyLoad /> */}
   </React.StrictMode>
 );
