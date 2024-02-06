@@ -20,6 +20,7 @@ import UseEffect from "./10.Hook/useEffect/UseEffect";
 import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
 import InputCom from "./11.Input/InputCom";
 import NavBarCom from "./3.Styling/NavBArCom";
+import MultiInput from "./11.Input/MultiInput";
 
 function App() {
   return (
@@ -60,7 +61,8 @@ function App() {
       {/* <UseEffectPro /> */}
 
       {/* <---------------------INPUT------------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
+      <MultiInput />
       <ToastContainer />
     </div>
   );

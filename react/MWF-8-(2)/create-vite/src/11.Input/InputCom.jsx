@@ -52,7 +52,8 @@ export default function InputCom() {
           name="nameInput"
           className="w-25 rounded-end-0 "
           placeholder="Enter Your Task Here"
-          onChange={(e) => getData(e)}
+          // onChange={(e) => getData(e)}
+          onChange={(e) => setTask(e?.target?.value)}
           // we take task in value to controll input value
           value={task}
         />

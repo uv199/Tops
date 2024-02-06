@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Edit, Trash } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { toast } from "react-toastify";
@@ -59,9 +60,11 @@ let obj2 = {
 
 export default function Product() {
   const [product, setProduct] = useState(intialProduct);
+
   let [allProduct, setAllProduct] = useState([]);
   const [modal, setModal] = useState(false);
   const [refetch, setRefetch] = useState(true);
+  const [updateMode, setUpdateMode] = useState(false);
 
   const refetchData = () => setRefetch(!refetch);
   useEffect(() => {
@@ -77,7 +80,10 @@ export default function Product() {
         toast.error(err);
       });
   }, [refetch]);
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    setModal(!modal);
+    setUpdateMode(false);
+  };
 
   let submitHandler = (e) => {
     e.preventDefault();
@@ -112,6 +118,45 @@ export default function Product() {
     } else {
       setProduct({ ...product, size: [...product?.size, e] });
     }
+  };
+
+  const deleteHandler = (id) => {
+    console.log("-----------  id----------->", id);
+
+    axios({
+      method: "delete",
+      url: `http://localhost:9999/product/delete/${id}`,
+    })
+      .then((res) => {
+        toast.success("Product deleted...!");
+        refetchData();
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
+  const editHandler = (data) => {
+    console.log("-----------  data----------->", data);
+    toggle();
+    setProduct(data);
+    setUpdateMode(true);
+  };
+
+  const updateData = () => {
+    axios({
+      method: "put",
+      url: `http://localhost:9999/product/update/${product?._id}`,
+      data: product,
+    })
+      .then((res) => {
+        toast.success("Data updated..!");
+        setProduct(intialProduct);
+        toggle();
+        refetchData();
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
   };
   return (
     <div>
@@ -292,9 +337,19 @@ export default function Product() {
                 );
               })}
             </FormGroup>
-            <Button color="danger" className="w-100">
-              Submit
-            </Button>
+            {updateMode ? (
+              <Button
+                color="danger"
+                className="w-100"
+                onClick={() => updateData()}
+              >
+                Update
+              </Button>
+            ) : (
+              <Button color="danger" className="w-100">
+                Submit
+              </Button>
+            )}
           </Form>
         </ModalBody>
       </Modal>
@@ -348,6 +403,18 @@ export default function Product() {
                       );
                     })}
                   </div>
+                </td>
+                <td>
+                  <Edit
+                    role="button"
+                    color="#81adef"
+                    onClick={() => editHandler(e)}
+                  />
+                  <Trash
+                    role="button"
+                    color="#f22b2b"
+                    onClick={() => deleteHandler(e?._id)}
+                  />
                 </td>
               </tr>
             );
