@@ -25,7 +25,7 @@ function App() {
       {/* <Props /> */}
 
       {/* <----------------------MAP-KEY-----------------------> */}
-      {/* <MapKey /> */}
+      <MapKey />
 
       {/* <----------------------LIFE-CYCLE-METHOD-----------------------> */}
       {/* <LifeCycleCom /> */}
@@ -37,7 +37,7 @@ function App() {
       {/* <UseEffectCom /> */}
 
       {/* <----------------------INPUT-----------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
 
       <ToastContainer />
     </div>

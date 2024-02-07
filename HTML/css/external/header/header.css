@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header_div {
+  height: 50px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  align-items: center;
+}
+
+.input_search {
+  width: 60%;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.pages {
+  display: flex;
+  gap: 30px;
+}
+
+.list {
+  list-style: none;
+}
+
+
+.login_btn{
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
