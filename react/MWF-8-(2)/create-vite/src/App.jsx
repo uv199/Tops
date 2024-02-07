@@ -21,6 +21,8 @@ import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
 import InputCom from "./11.Input/InputCom";
 import NavBarCom from "./3.Styling/NavBArCom";
 import MultiInput from "./11.Input/MultiInput";
+import Radio from "./11.Input/Radio";
+import CheckBox from "./11.Input/CheckBox";
 
 function App() {
   return (
@@ -62,7 +64,9 @@ function App() {
 
       {/* <---------------------INPUT------------------------> */}
       {/* <InputCom /> */}
-      <MultiInput />
+      {/* <MultiInput /> */}
+      {/* <Radio /> */}
+      <CheckBox />
       <ToastContainer />
     </div>
   );

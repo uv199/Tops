@@ -1,22 +1,33 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { Button, Form, FormGroup, Input, Label, Table } from "reactstrap";
 
+let intialData = {
+  name: "",
+  email: "",
+  password: "",
+};
+
 export default function MultiInput() {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [user, setUser] = useState(intialData);
 
   const [userArr, setUserArr] = useState([]);
   const addUser = (e) => {
     e.preventDefault();
-    setUserArr([user, ...userArr]);
-    setUser({
-      name: "",
-      email: "",
-      password: "",
-    });
+    console.log("----data--->", user);
+    // user = {email:"test",pass:"123"}
+    // userArr = [ {email:"test",pass:"123"}]
+    // some
+    let valueArr = Object.values(user);
+
+    let empty = valueArr.includes("");
+    // if (user.email !== "" && user.password !== "" && user.name !== "") {
+    if (!empty) {
+      setUserArr([user, ...userArr]);
+      setUser(intialData);
+    } else {
+      toast.warn("Please fill all data");
+    }
   };
   console.log("-----------  userArr----------->", userArr);
 
