@@ -30,9 +30,23 @@ function fun1(callBack) {
 // fun1(fun2);
 
 fun1((name) => {
-  console.log("-----------  name----------->", name)
+  console.log("-----------  name----------->", name);
   console.log("patel");
   return 12345;
 });
+
+
+[1,2,3].map((e)=>{})
+
+
+let obj = {city :"surat"}
+
+
+let person1 = obj
+let person2 = obj
+
+obj.city = "vapi"
+
+
 
 

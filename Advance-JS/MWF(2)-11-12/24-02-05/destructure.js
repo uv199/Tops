@@ -47,13 +47,12 @@ function print({ name, age }, id) {
 
 //  array
 
-
-// mnake in object 
+// make in object
 function dataReturn() {
   return [1, 2, 3];
 }
 
 let [x, y] = dataReturn(1);
-console.log("-----------  x----------->", x)
-console.log("-----------  y----------->", y)
+// console.log("-----------  x----------->", x);
+// console.log("-----------  y----------->", y);
 // console.log("-----------  arr2----------->", arr2);
