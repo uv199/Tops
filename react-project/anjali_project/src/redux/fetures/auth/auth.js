@@ -9,10 +9,8 @@ let authSlice = createSlice({
     loginUser: (state, { payload }) => {
       state.user = payload?.data;
       state.token = payload?.token;
-      console.log("---->1");
       localStorage?.setItem("token", JSON?.stringify(payload?.token));
       localStorage?.setItem("loginUser", JSON?.stringify(payload?.data));
-      console.log("---->2");
     },
     logOut: (state, action) => {
       state.user = {};

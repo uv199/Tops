@@ -46,6 +46,9 @@ import SimpleApi from "./13.api/SimpleApi";
 import ProductPage from "./13.api/ProductPage";
 import ApiRevise from "./13.api/ApiRevise";
 import Product from "./13.api/Product/Product";
+import UseCallBack from "./4.Hook/useCallBack-Memo/UseCallBack";
+import UseMemo from "./4.Hook/useCallBack-Memo/UseMemo";
+import InputDataPost from "./13.api/InputDataPost";
 
 function App() {
   return (
@@ -95,6 +98,8 @@ function App() {
         {/* <UseRedeucerCom /> */}
         {/* <ManoharRecucer /> */}
         {/* <ReducerWithPayload /> */}
+        {/* <UseMemo /> */}
+        {/* <UseCallBack /> */}
 
         {/*-----------------------INPUT--------------------------  */}
         {/* <SingleInput /> */}
@@ -120,7 +125,8 @@ function App() {
         {/* <SimpleApi /> */}
         {/* <ProductPage /> */}
         {/* <ApiRevise /> */}
-        <Product />
+        {/* <Product /> */}
+        <InputDataPost />
       </div>
       <ToastContainer />
     </>

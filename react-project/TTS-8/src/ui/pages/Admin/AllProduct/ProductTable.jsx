@@ -29,9 +29,7 @@ const StyleRow = ({ arr1, ele }) => {
 const callApi = new Product();
 export default function ProductTable({ toggle, pagination, setTotalCount }) {
   let [allProduct, setAllProduct] = useState([]);
-
   let [searchParams, setSearchParams] = useSearchParams();
-
   const dispatch = useDispatch();
 
   useEffect(() => {
