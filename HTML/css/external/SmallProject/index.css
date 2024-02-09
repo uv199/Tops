@@ -1,0 +1,15 @@
+.instra {
+  font-size: 100px;
+}
+
+
+li a{
+    text-decoration: none;
+}
+
+
+.out_line{
+    width: 100px;
+    height: 100px;
+    outline: red dotted 2px ;
+}

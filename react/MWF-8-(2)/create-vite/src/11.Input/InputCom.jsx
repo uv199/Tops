@@ -29,6 +29,7 @@ export default function InputCom() {
   const deleteHandler = (index) => {
     let filterData = taskArr.filter((e, i) => i !== index);
     setTaskArr(filterData);
+
   };
 
   const updateHandler = (data, index) => {

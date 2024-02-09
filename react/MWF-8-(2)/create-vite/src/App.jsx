@@ -23,6 +23,8 @@ import NavBarCom from "./3.Styling/NavBArCom";
 import MultiInput from "./11.Input/MultiInput";
 import Radio from "./11.Input/Radio";
 import CheckBox from "./11.Input/CheckBox";
+import MultiUser from "./11.Input/MultiUser";
+import LocalStorageCom from "./12.localStorage/LocalStorageCom";
 
 function App() {
   return (
@@ -66,7 +68,11 @@ function App() {
       {/* <InputCom /> */}
       {/* <MultiInput /> */}
       {/* <Radio /> */}
-      <CheckBox />
+      {/* <CheckBox /> */}
+      <MultiUser />
+
+      {/* <---------------------LOCALSTORAGE------------------------> */}
+      {/* <LocalStorageCom /> */}
       <ToastContainer />
     </div>
   );

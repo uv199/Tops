@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap');
+
+.head_font {
+  /* font-family: "Protest Riot"; */
+  font-family: "Protest Revolution";
+}
+
+
+.user_icon{
+    color: red;
+    font-size: 50px;
+}

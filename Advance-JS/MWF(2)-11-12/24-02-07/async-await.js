@@ -1,4 +1,4 @@
-// ptomisification
+// promisification
 function fun1(params) {
   return new Promise((resolve, reject) => {
     throw new Error("Somthing is wrong");
