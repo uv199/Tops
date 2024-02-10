@@ -39,3 +39,10 @@ stu1.login();
 const tech1 = new Teacher("uv", "english");
 tech1.printTeacherDetails();
 tech1.login();
+
+
+const user = new User("test")
+console.log("-----------  user----------->", user)
+
+
+user.login()
