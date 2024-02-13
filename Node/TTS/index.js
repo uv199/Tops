@@ -38,8 +38,8 @@ app.post("/test-params/:id", (req, res) => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/tts8")
-  // .connect("mongodb://127.0.0.1:27017/tts8")
+  // .connect("mongodb://localhost:27017/tts8")
+  .connect("mongodb://127.0.0.1:27017/tts8")
   .then(() => {
     console.log("database conncetion successfully");
   })
@@ -47,26 +47,30 @@ mongoose
     console.log("-----connection error--->", err);
   });
 
-let userSchema = mongoose.Schema({
-  name: String,
-  age: Number,
-});
+let userSchema = mongoose.Schema(
+  {
+    name: String,
+    age: Number,
+  },
+  { timestamps: true }
+);
 
 let User = mongoose.model("user", userSchema);
 
 app.post("/add-user", (req, res) => {
-  User.create({ Name: "manish", age: 24 }, (err, res) => {
-    if (err) err;
-    else return res;
-  });
-  // User.create({ Name: "manish", age: 24 })
-  //   .then((resData) => {
-  //     console.log("-----------  resData----------->", resData);
-  //     res.send(resData);
-  //   })
-  //   .catch((err) => {
-  //     console.log("-----------  err----------->", err);
-  //   });
+  // User.create({ Name: "hello ----kashyap", age: 24 }, (err, res) => {
+  //   if (err) err;
+  //   else return res;
+  // });
+
+  User.create({ name: "hello ----kashyap", age: 10 })
+    .then((resData) => {
+      console.log("-----------  resData----------->", resData);
+      res.send(resData);
+    })
+    .catch((err) => {
+      console.log("-----------  err----------->", err);
+    });
 });
 
 app.listen(3000, () => {

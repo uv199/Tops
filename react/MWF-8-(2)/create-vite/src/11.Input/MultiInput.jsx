@@ -6,6 +6,7 @@ let intialData = {
   name: "",
   email: "",
   password: "",
+  color: [],
 };
 
 export default function MultiInput() {
@@ -21,7 +22,7 @@ export default function MultiInput() {
     let valueArr = Object.values(user);
 
     let empty = valueArr.includes("");
-    // if (user.email !== "" && user.password !== "" && user.name !== "") {
+
     if (!empty) {
       setUserArr([user, ...userArr]);
       setUser(intialData);
@@ -29,7 +30,15 @@ export default function MultiInput() {
       toast.warn("Please fill all data");
     }
   };
-  console.log("-----------  userArr----------->", userArr);
+
+  const checkHandler = (clr, e) => {
+    if (e?.target?.checked) {
+      setUser({ ...user, color: [...user.color, clr] });
+    } else {
+      let filterData = user.color.filter((e) => e !== clr);
+      setUser({ ...user, color: filterData });
+    }
+  };
 
   return (
     <div className="d-flex align-items-center flex-column">
@@ -71,6 +80,38 @@ export default function MultiInput() {
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </FormGroup>
+        <FormGroup>
+          <Input
+            type="checkbox"
+            checked={user.color.includes("red")}
+            onChange={(e) => checkHandler("red", e)}
+          />
+          <Label>red</Label>
+        </FormGroup>
+        <FormGroup>
+          <Input
+            type="checkbox"
+            checked={user.color.includes("green")}
+            onChange={(e) => checkHandler("green", e)}
+          />
+          <Label>green</Label>
+        </FormGroup>
+        <FormGroup>
+          <Input
+            type="checkbox"
+            checked={user.color.includes("yellow")}
+            onChange={(e) => checkHandler("yellow", e)}
+          />
+          <Label>yellow</Label>
+        </FormGroup>
+        <FormGroup>
+          <Input
+            type="checkbox"
+            checked={user.color.includes("black")}
+            onChange={(e) => checkHandler("black", e)}
+          />
+          <Label>black</Label>
+        </FormGroup>
         <Button className="w-100" color="danger">
           Submit
         </Button>
@@ -84,6 +125,7 @@ export default function MultiInput() {
             <th>NAME</th>
             <th>EMAIL</th>
             <th>PASSWORD</th>
+            <th>COLOR</th>
           </tr>
         </thead>
         <tbody>
@@ -95,6 +137,7 @@ export default function MultiInput() {
                 <td>{e?.name}</td>
                 <td>{e?.email}</td>
                 <td>{e?.password}</td>
+                <td>{e?.color.join("-")}</td>
               </tr>
             );
           })}
@@ -113,4 +156,8 @@ user = { email:"", password:""}
 array = [
     {email:"",password:""}
 ]
+let color = []
+let usre = {
+  color:[]
+}
 */

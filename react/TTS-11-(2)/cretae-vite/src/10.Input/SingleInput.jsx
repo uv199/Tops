@@ -61,7 +61,7 @@ export default function SingleInput() {
     setUpdateMode(false);
   };
   return (
-    <>
+    <div className="d-flex flex-column">
       {/* <h1>{task}</h1> */}
       <div
         style={{ minWidth: "300px" }}
@@ -130,6 +130,6 @@ export default function SingleInput() {
           <p className="text-center">!.....Data not Available....!</p>
         )}
       </div>
-    </>
+    </div>
   );
 }

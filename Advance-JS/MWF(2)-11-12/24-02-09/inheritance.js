@@ -46,3 +46,8 @@ console.log("-----------  user----------->", user)
 
 
 user.login()
+
+
+// car => color, price , horsePower, speed // printCarDetails  // printComman() 
+// phone => color, price , ram , camaraPerfomance
+

@@ -49,6 +49,7 @@ import Product from "./13.api/Product/Product";
 import UseCallBack from "./4.Hook/useCallBack-Memo/UseCallBack";
 import UseMemo from "./4.Hook/useCallBack-Memo/UseMemo";
 import InputDataPost from "./13.api/InputDataPost";
+import AppRedux from "./14.redux/AppRedux";
 
 function App() {
   return (
@@ -126,7 +127,10 @@ function App() {
         {/* <ProductPage /> */}
         {/* <ApiRevise /> */}
         {/* <Product /> */}
-        <InputDataPost />
+        {/* <InputDataPost /> */}
+
+        {/*-----------------------REDUX--------------------------  */}
+        <AppRedux />
       </div>
       <ToastContainer />
     </>

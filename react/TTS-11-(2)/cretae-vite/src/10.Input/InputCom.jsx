@@ -7,10 +7,10 @@ import CheckBox from "./CheckBox";
 export default function InputCom() {
   return (
     <>
-      {/* <SingleInput /> */}
+      <SingleInput />
       {/* <MultipleInput /> */}
       {/* <RadioCom /> */}
-      <CheckBox />
+      {/* <CheckBox /> */}
     </>
   );
 }
