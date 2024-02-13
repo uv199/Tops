@@ -8,6 +8,7 @@ import ConditionalRender from "./8.ConditionalRender/ConditionalRender";
 import UseEffectCom from "./9.Hook/useEffect/UseEffectCom";
 import InputCom from "./10.Input/InputCom";
 import Component from "./2.Componenet/Component";
+import SimpleRouter from "./11.router/simpeRouter/SimpleRouter";
 
 function App() {
   return (
@@ -37,8 +38,10 @@ function App() {
       {/* <UseEffectCom /> */}
 
       {/* <----------------------INPUT-----------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
 
+      {/* <----------------------ROUTER-----------------------> */}
+      <SimpleRouter />
       <ToastContainer />
     </div>
   );
