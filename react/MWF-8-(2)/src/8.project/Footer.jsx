@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import data from "../../../../../JS-assignment/data.json"
+import data from "../../../../JS-assignment/data.json"
 import { Button, Input } from "reactstrap";
 export default function Footer() {
   return (

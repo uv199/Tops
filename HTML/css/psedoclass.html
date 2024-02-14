@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        color: black;
+        background-color: gray;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        color: white;
+        padding: 7px;
+      }
+
+      .btn:active {
+        color: rgb(198, 45, 45);
+      }
+
+      .link_fig:visited {
+        color: red;
+      }
+      .name_input:focus {
+        width: 200px;
+        /* border: 5px solid red; */
+      }
+      .name_input:invalid {
+        border: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Hello world</button>
+    <br />
+    <a class="link_fig" target="_blank" href="https://www.figma.com/"
+      ><h1>Figma</h1></a
+    >
+    <hr />
+    <input class="name_input" type="email" placeholder="please enter name" />
+  </body>
+</html>

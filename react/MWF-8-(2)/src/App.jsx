@@ -26,6 +26,7 @@ import CheckBox from "./11.Input/CheckBox";
 import MultiUser from "./11.Input/MultiUser";
 import LocalStorageCom from "./12.localStorage/LocalStorageCom";
 import SelectCom from "./11.Input/SelectCom";
+import SearchInput from "./11.Input/SearchInput";
 
 function App() {
   return (
@@ -71,7 +72,8 @@ function App() {
       {/* <Radio /> */}
       {/* <CheckBox /> */}
       {/* <MultiUser /> */}
-      <SelectCom />
+      {/* <SelectCom /> */}
+      <SearchInput />
 
       {/* <---------------------LOCALSTORAGE------------------------> */}
       {/* <LocalStorageCom /> */}
