@@ -1,5 +1,5 @@
 import React from "react";
-import DATA from "../../../../../JS-assignment/product.json";
+import DATA from "../../../../JS-assignment/product.json";
 import CardCom from "./CardCom";
 
 export default function PropPro1() {
