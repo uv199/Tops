@@ -35,6 +35,7 @@ import Product from "./14.API/ui/page/product/Product";
 import ProductRoute from "./14.API/router/Router";
 import AppRedux from "./15.Redux/AppRedux";
 import AppReduxCrud from "./16.ReduxCrud/AppReduxCrud";
+import UseMemoCom from "./11.Hooks/useMemo/UseMemoCom";
 
 function App() {
   return (
@@ -81,6 +82,7 @@ function App() {
       {/* <UseRef /> */}
       {/* <UseContaxtCom /> */}
       {/* <UseReducerCom /> */}
+      <UseMemoCom />
 
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
@@ -101,7 +103,7 @@ function App() {
       {/* <ProductRoute /> */}
 
       {/* ------------------------------REDUX------------------------- */}
-      <AppRedux />
+      {/* <AppRedux /> */}
       {/* <AppReduxCrud /> */}
 
       <ToastContainer />

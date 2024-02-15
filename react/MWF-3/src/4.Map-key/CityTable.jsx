@@ -1,5 +1,5 @@
 import React from "react";
-import DATA from "../../../../../JS-assignment/data.json";
+import DATA from "../../../../JS-assignment/data.json";
 import { Table } from "reactstrap";
 let d = [];
 export default function CityTable() {

@@ -19,16 +19,16 @@ function proFun(params) {
 }
 
 // async function main(params) {
-const main = async (params) => {
-  try {
-    let res = await p1;
-    console.log("-----------  res----------->", res);
-    let msg = await proFun();
-    console.log("-----------  msg----------->", msg);
-    print();
-  } catch (error) {
-    console.log("-----------  error----------->", error);
-  }
-};
+  const main = async (params) => {
+    try {
+      let res = await p1;
+      console.log("-----------  res----------->", res);
+      let msg = await proFun();
+      console.log("-----------  msg----------->", msg);
+      print();
+    } catch (error) {
+      console.log("-----------  error----------->", error);
+    }
+  };
 
 main();
