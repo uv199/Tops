@@ -11,6 +11,11 @@ const countSlice = createSlice({
     incTen: (state, action) => {
       state.count += 10;
     },
+    incByInput: (state, action) => {
+      console.log("-----------  action----------->", action);
+
+      state.count += +action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase("amount/incAmt", (state, action) => {
@@ -20,7 +25,7 @@ const countSlice = createSlice({
 });
 
 export default countSlice.reducer;
-export const { incOne, incTen } = countSlice.actions;
+export const { incOne, incTen, incByInput } = countSlice.actions;
 
 // x = 10
 

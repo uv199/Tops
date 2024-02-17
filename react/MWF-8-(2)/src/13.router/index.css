@@ -1,0 +1,18 @@
+.navDiv {
+  color: black;
+  background-color: lightgray;
+  margin: 0px 30px;
+  border-radius: 20px;
+  height: 60px;
+  li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.704);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.active {
+  color: rgb(0, 0, 0) !important;
+  font-weight: 900;
+}

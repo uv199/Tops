@@ -86,5 +86,4 @@ export default function SearchInput() {
 // let all = ["abc","uv","test","sinu"]
 // d = all.filter((e)=>e.includes(""))
 // let d = [,"uv","sinu"]
-
 // d.map()

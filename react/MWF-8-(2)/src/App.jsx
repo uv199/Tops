@@ -27,6 +27,7 @@ import MultiUser from "./11.Input/MultiUser";
 import LocalStorageCom from "./12.localStorage/LocalStorageCom";
 import SelectCom from "./11.Input/SelectCom";
 import SearchInput from "./11.Input/SearchInput";
+import Router from "./13.router/Router";
 
 function App() {
   return (
@@ -73,10 +74,13 @@ function App() {
       {/* <CheckBox /> */}
       {/* <MultiUser /> */}
       {/* <SelectCom /> */}
-      <SearchInput />
+      {/* <SearchInput /> */}
 
       {/* <---------------------LOCALSTORAGE------------------------> */}
       {/* <LocalStorageCom /> */}
+
+      {/* <---------------------ROUTER------------------------> */}
+      <Router />
       <ToastContainer />
     </div>
   );
