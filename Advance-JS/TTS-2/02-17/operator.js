@@ -28,8 +28,8 @@ if (true && true) {
  t && t = t
 */
 
-let x = "test"; // "" / null / undefined / 0 /false
-if (x || x === 0) {
+let x = "urvish"; // "" / null / undefined / 0 /false
+if (x && x !== "test") {
   console.log("-----------  x----------->", x);
 } else {
   console.log("nothing have x");
