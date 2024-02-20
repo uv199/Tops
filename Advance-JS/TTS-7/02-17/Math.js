@@ -29,3 +29,16 @@ console.log("----Math.random----->", Math.random());
 
 console.log("----Math.trunc----->", Math.trunc(12.3453));
 console.log("----Math.trunc----->", Math.trunc(12.0));
+
+let str = "";
+for (let i = 0; i < 9; i++) {
+  for (let j = 0; j < 9; j++) {
+    if (true) {
+      str += "*";
+    } else {
+      str += " ";
+    }
+  }
+  str.log(str);
+  str = "";
+}
