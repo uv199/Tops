@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.7](https://github.com/inspect-js/available-typed-arrays/compare/v1.0.6...v1.0.7) - 2024-02-19
+
+### Commits
+
+- [Refactor] use `possible-typed-array-names` [`ac86abf`](https://github.com/inspect-js/available-typed-arrays/commit/ac86abfd64c4b633fd6523cc4193f1913fd22666)
+
 ## [v1.0.6](https://github.com/inspect-js/available-typed-arrays/compare/v1.0.5...v1.0.6) - 2024-01-31
 
 ### Commits

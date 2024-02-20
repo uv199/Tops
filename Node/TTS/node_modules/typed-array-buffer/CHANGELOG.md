@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.2](https://github.com/ljharb/typed-array-buffer/compare/v1.0.1...v1.0.2) - 2024-02-19
+
+### Commits
+
+- add types [`23c6fba`](https://github.com/ljharb/typed-array-buffer/commit/23c6fba167dbc8c1e9291eed3f68e64a5651075a)
+- [Deps] update `available-typed-arrays` [`5f68ba1`](https://github.com/ljharb/typed-array-buffer/commit/5f68ba1fdcd004af46d529fbb08220de2254cf43)
+- [Deps] update `call-bind` [`54a92ce`](https://github.com/ljharb/typed-array-buffer/commit/54a92ce4caf023c8680ffe64534ba881b78cdc17)
+- [Dev Deps] update `tape` [`b0b3342`](https://github.com/ljharb/typed-array-buffer/commit/b0b3342bcbefae5f3dff01b0e3734b08ca927f58)
+
 ## [v1.0.1](https://github.com/ljharb/typed-array-buffer/compare/v1.0.0...v1.0.1) - 2024-02-06
 
 ### Commits

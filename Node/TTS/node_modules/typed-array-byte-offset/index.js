@@ -8,7 +8,7 @@ var typedArrays = require('available-typed-arrays')();
 var getters = {};
 var hasProto = require('has-proto')();
 
-var gOPD = Object.getOwnPropertyDescriptor;
+var gOPD = require('gopd');
 var oDP = Object.defineProperty;
 if (gOPD) {
 	var getByteOffset = function (x) {

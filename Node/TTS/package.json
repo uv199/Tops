@@ -1,26 +1,22 @@
 {
-  "name": "tts_be",
+  "name": "tts-8",
   "version": "1.0.0",
   "description": "just for teaching",
   "main": "index.js",
   "scripts": {
-    "start": "node --exec babel-node ./index.js",
-    "dev": "nodemon --exec babel-node ./index.js",
+    "start": "babel-node ./src/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "urvish",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
-    "mongoose": "^8.1.1",
-    "pm2": "^5.3.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3",
-    "@babel/core": "^7.22.10",
-    "@babel/node": "^7.22.10",
-    "@babel/preset-env": "^7.22.10"
+    "mongoose": "^8.1.3"
   }
 }

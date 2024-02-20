@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.1](https://github.com/inspect-js/typed-array-byte-offset/compare/v1.0.0...v1.0.1) - 2024-02-17
+
+### Commits
+
+- [Dev Deps] update `aud`, `npmignore`, `object-inspect`, `tape` [`ffe7494`](https://github.com/inspect-js/typed-array-byte-offset/commit/ffe7494826fbb6d6bd11c40e03619b12a4ec2266)
+- [Deps] update `available-typed-arrays`, `call-bind`, `is-typed-array` [`3006bd7`](https://github.com/inspect-js/typed-array-byte-offset/commit/3006bd7e343d191093802473277801d12bfdc7b2)
+- [Refactor] use `gopd` [`45827ea`](https://github.com/inspect-js/typed-array-byte-offset/commit/45827ea7d9709cb1b3a9f2313eed76b71052b9c5)
+- [Dev Deps] update `tape` [`e33d080`](https://github.com/inspect-js/typed-array-byte-offset/commit/e33d080ef6488b5f15afe1078a9e5711d9656538)
+- [meta] add `sideEffects` flag [`f1dc0db`](https://github.com/inspect-js/typed-array-byte-offset/commit/f1dc0db73c1c4b93c15076602a3e30353878312c)
+
 ## v1.0.0 - 2023-06-06
 
 ### Commits
