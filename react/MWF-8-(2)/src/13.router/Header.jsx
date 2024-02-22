@@ -13,6 +13,9 @@ export default function Header() {
       <li>
         <NavLink to={"/service"}>Service</NavLink>
       </li>
+      <li>
+        <NavLink to={"/product"}>Product</NavLink>
+      </li>
     </div>
   );
 }

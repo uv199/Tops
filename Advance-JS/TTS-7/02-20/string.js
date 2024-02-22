@@ -64,3 +64,6 @@ console.log("-----------  isAvailable----------->", isAvailable)
 
 // console.log("urvish".toLowerCase().includes("U".toLowerCase()))
 
+
+
+// "urvish" => "Urvish"  => 

@@ -9,6 +9,9 @@ import "./index.css";
 import Car from "./service/Car";
 import Bike from "./service/Bike";
 import Header from "./Header";
+import BikeServicePage from "./service/BikeServicePage";
+import Product from "./product/Product";
+import ProductDetailPage from "./product/ProductDetailPage";
 
 export default function Router() {
   return (
@@ -29,10 +32,13 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product/:productId" element={<ProductDetailPage />} />
           <Route path="/service">
             <Route index element={<Service />} />
             <Route path="car" element={<Car />} />
             <Route path="bike" element={<Bike />} />
+            <Route path="bike/:type" element={<BikeServicePage />} />
           </Route>
           <Route path="*" element={<Error404 />} />
         </Routes>

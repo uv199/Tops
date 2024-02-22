@@ -18,3 +18,6 @@ app.listen(port, () => {
   connectDB();
   console.log(`server is running on http://localhost:${port}`);
 });
+
+
+// [1,2,3] => [[1],[2],[3]]
