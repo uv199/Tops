@@ -8,3 +8,15 @@ for (let i = 0; i < arr.length; i++) {
 }
 console.log("---->", max);
 
+let marks = 50;
+switch (true) {
+  case marks <= 33:
+    console.log("0000000");
+    break;
+  case marks <= 50:
+    console.log("111111");
+    break;
+  default:
+    console.log("222222");
+    break;
+}

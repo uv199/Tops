@@ -27,6 +27,7 @@ console.log("-----------  arr----------->", arr)
 let arr2 = [6, 7, 8, 9];
 let arr3 = [10, 11];
 let concatArr = arr.concat(arr2, arr3);
+// let arr3 = [...arr2,...arr3]
 console.log("-----------  concatArr----------->", concatArr);
 
 
@@ -63,6 +64,7 @@ console.log("-----------  isAvailable----------->", isAvailable);
 let sliceArr = arr.slice(0, -3);
 // let sliceArr = arr.slice(0, 3);
 console.log("-----------  sliceArr----------->", sliceArr);
+
 */
 
 // splice(pos, deleteCount, ...items) – at index pos deletes deleteCount elements and inserts items.
