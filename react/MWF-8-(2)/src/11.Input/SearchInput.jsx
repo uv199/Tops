@@ -12,7 +12,7 @@ export default function SearchInput() {
     let jsonData = localStorage.getItem("todos") || "[]";
     let normalData = JSON.parse(jsonData);
     // ["urvish","jaymin","jay","sinu"]
-    let data = normalData.filter((e) => e.includes(""));
+    let data = normalData.filter((e) => e.includes(searchTxt));
     setTaskArr(data);
   }, [searchTxt]);
 

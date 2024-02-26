@@ -11,6 +11,7 @@ export default function UseMemoCom() {
     for (let i = 0; i < 1000000000; i++) {}
     return [count + 1, count + 2, count + 3];
   };
+  
   let arr = useMemo(() => {
     return arrayGenerate(count);
   }, [count]);

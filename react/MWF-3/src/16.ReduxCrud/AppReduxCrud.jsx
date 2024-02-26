@@ -7,8 +7,8 @@ import Product from "./ui/Product";
 export default function AppReduxCrud() {
   return (
     <Provider store={store}>
-      {/* <User /> */}
-      <Product />
+      <User />
+      {/* <Product /> */}
     </Provider>
   );
 }

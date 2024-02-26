@@ -82,7 +82,7 @@ function App() {
       {/* <UseRef /> */}
       {/* <UseContaxtCom /> */}
       {/* <UseReducerCom /> */}
-      <UseMemoCom />
+      {/* <UseMemoCom /> */}
 
       {/* ------------------------------INPUT------------------------- */}
       {/* <InputData /> */}
@@ -104,7 +104,7 @@ function App() {
 
       {/* ------------------------------REDUX------------------------- */}
       {/* <AppRedux /> */}
-      {/* <AppReduxCrud /> */}
+      <AppReduxCrud />
 
       <ToastContainer />
     </div>

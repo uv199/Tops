@@ -28,6 +28,7 @@ import LocalStorageCom from "./12.localStorage/LocalStorageCom";
 import SelectCom from "./11.Input/SelectCom";
 import SearchInput from "./11.Input/SearchInput";
 import Router from "./13.router/Router";
+import LocalStorageMultiInputs2 from "./11.Input/LocalStorageMultiInputs2";
 
 function App() {
   return (
@@ -75,12 +76,13 @@ function App() {
       {/* <MultiUser /> */}
       {/* <SelectCom /> */}
       {/* <SearchInput /> */}
+      <LocalStorageMultiInputs2 />
 
       {/* <---------------------LOCALSTORAGE------------------------> */}
       {/* <LocalStorageCom /> */}
 
       {/* <---------------------ROUTER------------------------> */}
-      <Router />
+      {/* <Router /> */}
       <ToastContainer />
     </div>
   );
