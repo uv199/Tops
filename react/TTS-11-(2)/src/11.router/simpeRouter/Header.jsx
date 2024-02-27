@@ -11,6 +11,8 @@ export default function Header() {
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"about"}>About</NavLink>
         <NavLink to={"service"}>Service</NavLink>
+        <NavLink to={"user"}>User</NavLink>
+        <NavLink to={"product"}>Product</NavLink>
       </div>
       <div>
         <Input className="input_tag" placeholder="Search your text here.." />
