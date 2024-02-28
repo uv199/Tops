@@ -29,7 +29,7 @@ import SelectCom from "./11.Input/SelectCom";
 import SearchInput from "./11.Input/SearchInput";
 import Router from "./13.router/Router";
 import LocalStorageMultiInputs2 from "./11.Input/LocalStorageMultiInputs2";
-
+import ProtectedRouter from "./14.ProtectedRoute/Router";
 function App() {
   return (
     <div className="appDiv">
@@ -76,13 +76,14 @@ function App() {
       {/* <MultiUser /> */}
       {/* <SelectCom /> */}
       {/* <SearchInput /> */}
-      <LocalStorageMultiInputs2 />
+      {/* <LocalStorageMultiInputs2 /> */}
 
       {/* <---------------------LOCALSTORAGE------------------------> */}
       {/* <LocalStorageCom /> */}
 
       {/* <---------------------ROUTER------------------------> */}
       {/* <Router /> */}
+      <ProtectedRouter />
       <ToastContainer />
     </div>
   );
