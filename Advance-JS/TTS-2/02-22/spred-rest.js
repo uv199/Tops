@@ -40,5 +40,7 @@ function printName(p1, p2, p3) {
 let nameArr = ["Urvish", "Vinita", "disha"];
 
 // printName(nameArr[0], nameArr[1], nameArr[2]);
-printName(...nameArr);
-console.log("-----------  ...nameArr----------->", ...nameArr)
+printName();
+console.log("-----------  ...nameArr----------->", ...nameArr);
+
+
