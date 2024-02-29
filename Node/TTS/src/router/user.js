@@ -1,4 +1,5 @@
 import express from "express";
+import bcrypt from "bcryptjs";
 import { User } from "../model/user";
 
 const router = new express.Router();
@@ -38,12 +39,35 @@ router.put("/update/:id", (req, res) => {
 });
 router.put("/password-reset/:id", async (req, res) => {
   let matchUser = await User.findById(req?.params?.id);
-  console.log("-----------  matchUser----------->", matchUser);
   if (!matchUser) return new Error("user not found");
   else {
-    matchUser.save();
+    if (req?.body?.password) {
+      console.log("----->");
+      matchUser.password = req.body.password;
+      matchUser.age = 1000;
+    }
+    await matchUser.save();
     res.send("password chnaged");
   }
+});
+
+router.post("/login", (req, res) => {
+  let { email, password } = req?.body;
+
+  // const user = User.findOne({email})
+  // user.validatePassword
+  User.findOne({ email })
+    .then(async (userRes) => {
+      // let match = await bcrypt.compare(password, userRes?.password);
+      let match = await userRes.validatePassword(password);
+      console.log("-----------  match----------->", match);
+      if (match) {
+        res.send(userRes);
+      } else {
+        res.status(404).send("password not match");
+      }
+    })
+    .catch((err) => res.send(err.message));
 });
 
 router.post("/delete/:id", (req, res) => {

@@ -6,7 +6,6 @@ const userSchema = mongoose.Schema(
     name: String,
     email: String,
     age: Number,
-    age: Number,
     dob: Date,
     image: String,
     userType: String,
@@ -23,16 +22,24 @@ const userSchema = mongoose.Schema(
   { timestamps: true }
 );
 
+// model.create model.save()
 userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
-  this.password = await bcrypt.hash(this.password, 12);
-  next();
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 12);
+  }
 });
-userSchema.pre("findOneAndUpdate", async function (next) {
-  console.log("-=-=-==0=-0=-0=-0=-");
-  // if (!this.isModified("password")) return next();
-  // this.password = await bcrypt.hash(this.password, 12);
-  // next();
-});
+
+userSchema.methods.validatePassword = async function (password) {
+  console.log(this.password);
+  console.log(password);
+  return await bcrypt.compare(password, this.password);
+};
+
+// userSchema.pre("findOneAndUpdate", async function (next) {
+//   console.log("-=-=-==0=-0=-0=-0=-");
+//   // if (!this.isModified("password")) return next();
+//   // this.password = await bcrypt.hash(this.password, 12);
+//   // next();
+// });
 
 export const User = mongoose.model("user", userSchema);
