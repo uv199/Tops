@@ -9,6 +9,7 @@ import UseEffectCom from "./9.Hook/useEffect/UseEffectCom";
 import InputCom from "./10.Input/InputCom";
 import Component from "./2.Componenet/Component";
 import SimpleRouter from "./11.router/simpeRouter/SimpleRouter";
+import ProtectedRoute from "./11.router/protectedRouter/ProtectedRoute";
 
 function App() {
   return (
@@ -41,7 +42,8 @@ function App() {
       {/* <InputCom /> */}
 
       {/* <----------------------ROUTER-----------------------> */}
-      <SimpleRouter />
+      {/* <SimpleRouter /> */}
+      <ProtectedRoute />
       <ToastContainer />
     </div>
   );

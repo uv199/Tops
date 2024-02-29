@@ -1,0 +1,44 @@
+.active {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.708) !important;
+}
+
+.head_container a {
+  text-decoration: none;
+  color: rgb(69, 65, 65);
+  transition: 0.3s all ease-in-out;
+}
+
+.navi a:hover {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.head_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px;
+  height: 70px;
+  background-color: rgba(211, 148, 124, 0.766);
+}
+
+.list_div {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .btn {
+    margin-left: 10px;
+  }
+}
