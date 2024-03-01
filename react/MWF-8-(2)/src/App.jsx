@@ -30,6 +30,9 @@ import SearchInput from "./11.Input/SearchInput";
 import Router from "./13.router/Router";
 import LocalStorageMultiInputs2 from "./11.Input/LocalStorageMultiInputs2";
 import ProtectedRouter from "./14.ProtectedRoute/Router";
+import ProtectedProject from "./15.ProtectedProject/Router";
+import UeRefCom from "./10.Hook/useRef/UeRefCom";
+
 function App() {
   return (
     <div className="appDiv">
@@ -67,6 +70,7 @@ function App() {
       {/* <---------------------HOOK------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
+      <UeRefCom />
 
       {/* <---------------------INPUT------------------------> */}
       {/* <InputCom /> */}
@@ -83,7 +87,8 @@ function App() {
 
       {/* <---------------------ROUTER------------------------> */}
       {/* <Router /> */}
-      <ProtectedRouter />
+      {/* <ProtectedRouter /> */}
+      {/* <ProtectedProject /> */}
       <ToastContainer />
     </div>
   );

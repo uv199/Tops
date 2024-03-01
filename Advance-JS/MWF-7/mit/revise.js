@@ -36,10 +36,16 @@ let arr = [1, 2, 3, 4, 5];
 // console.log("-----------  key----------->", obj["first name"]);
 // console.log("-----------  key----------->", obj[1]);
 
-function fun(a, b, c) {
+const test = function fun(a, b, c) {
   console.log("-----------  c----------->", c);
   console.log("-----------  b----------->", b);
   console.log("-----------  a----------->", a);
 }
 
+
 fun(null, null, 10);
+
+
+const print = ()=>{
+    
+}
