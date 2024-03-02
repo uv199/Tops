@@ -57,3 +57,5 @@ function funArr([a, b, c]) {
 }
 
 funArr([1000, 3000]);
+
+

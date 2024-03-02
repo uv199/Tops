@@ -4,7 +4,23 @@ import { Button, Input } from "reactstrap";
 export default function UeRefCom() {
   const divRef = useRef();
   const inputRef = useRef();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error, {
+      enableHighAccuracy: true,
+    });
+  } else {
+    console.log("Geolocation not supported");
+  }
 
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+  }
+
+  function error() {
+    console.log("Unable to retrieve your location");
+  }
   const handler = () => {
     divRef.current.style.color = "red";
     divRef.current.innerText = "hello ma'am";
