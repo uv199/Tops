@@ -7,19 +7,23 @@ import Error404 from "../ui/pages/Error404/Error404";
 import SignUp from "../ui/pages/common/SignUp/SignUp";
 import Header from "../ui/component/Header/Header";
 import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
+import store from "../redux/app/store";
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="" element={<Home />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-        <Footer />
-        <ToastContainer />
+        <Provider store={store}>
+          <Header />
+          <Routes>
+            <Route path="" element={<Home />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+          <Footer />
+          <ToastContainer />
+        </Provider>
       </BrowserRouter>
     </>
   );

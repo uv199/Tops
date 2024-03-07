@@ -4,6 +4,8 @@ import About from "./About";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import "./index.css";
 import Header from "./Header";
+import Profile from "./Profile";
+import AuthRoute from "./AuthRoute";
 
 export default function ProtectedRoute() {
   return (
@@ -14,6 +16,10 @@ export default function ProtectedRoute() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route
+            path="/profile"
+            element={<AuthRoute componenet={<Profile />} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

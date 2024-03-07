@@ -19,7 +19,7 @@ const ALL_DATA = require("./data.json");
 // -----product-----
 1. product by brand name
 2. product by price lover then equel to
-3. top 5 rduct rating wise
+3. top 5 porduct rating wise
 4. give a products which have available size which give user
 5. give top 5 chipest product (consider price after discount)
 6. total values product available

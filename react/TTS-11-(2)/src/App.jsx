@@ -43,11 +43,11 @@ function App() {
       {/* <InputCom /> */}
 
       {/* <----------------------LOCAL STORAGE-----------------------> */}
-      <Localstorage />
+      {/* <Localstorage /> */}
 
       {/* <----------------------ROUTER-----------------------> */}
       {/* <SimpleRouter /> */}
-      {/* <ProtectedRoute /> */}
+      <ProtectedRoute />
       <ToastContainer />
     </div>
   );
