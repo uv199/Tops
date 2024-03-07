@@ -49,16 +49,38 @@ done = d;
 console.log("-----------  pending----------->", pending);
 console.log("-----------  done----------->", done);
 */
-let arr = ["red", "yellow", "blue"];
+// let arr = ["red", "yellow", "blue"];
 
-let value = [
-  { value: "red", label: "red" },
-  { value: "yellow", label: "yellow" },
-  { value: "blue", label: "blue" },
-];
+// let value = [
+//   { value: "red", label: "red" },
+//   { value: "yellow", label: "yellow" },
+//   { value: "blue", label: "blue" },
+// ];
 
-let newArr = arr.map((e) => {
-  console.log("e", e);
-  return { value: e, label: e };
-});
-console.log("-----------  newArr----------->", newArr);
+// let newArr = arr.map((e) => {
+//   console.log("e", e);
+//   return { value: e, label: e };
+// });
+// console.log("-----------  newArr----------->", newArr);
+var coinChange = function (coins, amount) {
+  var dp = Array(amount + 1).fill(amount + 1);
+
+  if (amount < 0) return -1;
+  if (amount === 0) return 0;
+
+  dp[0] = 0;
+
+  for (var i = 1; i <= amount; i++) {
+    for (var j = 0; j < coins.length; j++) {
+      if (i >= coins[j]) {
+        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+      }
+    }
+  }
+
+  return dp[amount] > amount ? -1 : dp[amount];
+};
+let coin = [2000, 500, 400, 100, 50, 20, 10, 5, 1];
+let amount = 1200;
+let data = coinChange(coin, amount);
+console.log("-----------  data----------->", data)

@@ -10,6 +10,7 @@ import InputCom from "./10.Input/InputCom";
 import Component from "./2.Componenet/Component";
 import SimpleRouter from "./11.router/simpeRouter/SimpleRouter";
 import ProtectedRoute from "./11.router/protectedRouter/ProtectedRoute";
+import Localstorage from "./12.localstorage/Localstorage";
 
 function App() {
   return (
@@ -41,9 +42,12 @@ function App() {
       {/* <----------------------INPUT-----------------------> */}
       {/* <InputCom /> */}
 
+      {/* <----------------------LOCAL STORAGE-----------------------> */}
+      <Localstorage />
+
       {/* <----------------------ROUTER-----------------------> */}
       {/* <SimpleRouter /> */}
-      <ProtectedRoute />
+      {/* <ProtectedRoute /> */}
       <ToastContainer />
     </div>
   );
