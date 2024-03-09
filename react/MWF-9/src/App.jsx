@@ -38,6 +38,7 @@ import AppRedux from "./13.Redux/AppRedux.jsx";
 import ReduxCrudApp from "./14.Redux_CRUD/ReduxCrudApp.jsx";
 import { ToastContainer } from "react-toastify";
 import HeaderCom1 from "./Abhishek/Todo/HeaderCom1.jsx";
+import InputDataPost from "./15.API/InputDataPost.jsx";
 
 function App() {
   let x = "urvish";
@@ -94,7 +95,10 @@ function App() {
       {/* <AppRedux /> */}
       {/* <ReduxCrudApp /> */}
       {/* <ToastContainer /> */}
-    <HeaderCom1/>
+
+      {/* <-------------------------API---------------------------------> */}
+      <InputDataPost />
+      {/* <HeaderCom1 /> */}
     </div>
   );
 }

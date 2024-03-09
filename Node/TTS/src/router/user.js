@@ -1,13 +1,19 @@
 import express from "express";
-import bcrypt from "bcryptjs";
 import { User } from "../model/user";
+import jwt from "jsonwebtoken";
+import { auth } from "../auth/auth";
 
 const router = new express.Router();
 
-router.get("/getAll", (req, res) => {
+const generateToken = (resData) => {
+  let token = jwt.sign({ email: resData.email, _id: resData?._id }, "131231");
+  return token;
+};
+
+router.get("/getAll", auth, (req, res) => {
   User.find({})
     .then((resData) => {
-      console.log("resData", resData);
+      // console.log("resData", resData);
       res.send(resData);
     })
     .catch((err) => {
@@ -19,7 +25,8 @@ router.post("/signup", async (req, res) => {
   let input = req?.body;
   User.create(input)
     .then((resData) => {
-      res.send(resData);
+      let token = generateToken(resData);
+      res.send({ data: resData, token });
     })
     .catch((err) => {
       res.send(err);
@@ -37,7 +44,7 @@ router.put("/update/:id", (req, res) => {
       res.send(err);
     });
 });
-router.put("/password-reset/:id", async (req, res) => {
+router.put("/password-reset/:id", auth, async (req, res) => {
   let matchUser = await User.findById(req?.params?.id);
   if (!matchUser) return new Error("user not found");
   else {
@@ -58,9 +65,7 @@ router.post("/login", (req, res) => {
   // user.validatePassword
   User.findOne({ email })
     .then(async (userRes) => {
-      // let match = await bcrypt.compare(password, userRes?.password);
       let match = await userRes.validatePassword(password);
-      console.log("-----------  match----------->", match);
       if (match) {
         res.send(userRes);
       } else {
