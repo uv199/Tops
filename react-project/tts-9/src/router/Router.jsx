@@ -9,6 +9,10 @@ import Header from "../ui/component/Header/Header";
 import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
 import store from "../redux/app/store";
+import Login from "../ui/pages/common/Login/Login";
+import Dashboard from "../ui/pages/admin/Dashboard/Dashboard";
+import Profile from "../ui/pages/common/Profile/Profile";
+import Product from "../ui/pages/admin/Product/Product";
 
 export default function Router() {
   return (
@@ -18,7 +22,18 @@ export default function Router() {
           <Header />
           <Routes>
             <Route path="" element={<Home />} />
+
+            {/* --------Common--------- */}
             <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+            <Route path="profile" element={<Profile />} />
+
+            {/* --------Admin-------- */}
+
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/admin-product" element={<Product />} />
+
+            {/* --------Error-------- */}
             <Route path="*" element={<Error404 />} />
           </Routes>
           <Footer />

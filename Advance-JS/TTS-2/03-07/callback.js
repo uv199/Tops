@@ -14,7 +14,7 @@ fun1(function () {
   console.log("-----fun2-----");
 });
 
-// call back hell -> more nested call back 
+// call back hell -> more nested call back
 // fun1(() => {
 //   () => {
 //     () => {};

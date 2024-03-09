@@ -7,7 +7,7 @@ export default function Error404() {
   return (
     <div
       className="d-flex justify-content-center align-items-center "
-      style={{ width: "100%", height: "100vh" }}
+      style={{ width: "100%" }}
     >
       <div
         className="d-flex justify-content-center align-items-center "

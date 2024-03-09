@@ -174,7 +174,16 @@ export default function SignUp() {
             type="number"
           />
         </FormGroup>
-
+        <p>
+          Already have account{" "}
+          <span
+            onClick={() => navigate("/login")}
+            role="button"
+            style={{ color: "blue", textDecoration: "underline" }}
+          >
+            login...!
+          </span>
+        </p>
         <Button color="danger" className="w-100">
           Submit
         </Button>
