@@ -7,7 +7,7 @@ const b = 300;
 // console.log("-----------  c----------->", c)
 var c = 400;
 
-normalFunction();
+// normalFunction();
 function normalFunction(params) {
   console.log("-----------  normalFunction----------->");
 }

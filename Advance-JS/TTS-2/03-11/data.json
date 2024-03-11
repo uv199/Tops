@@ -1,0 +1,6 @@
+[
+  {
+    "name": "urvish",
+    "arr": ["hello", { "a": 20 }]
+  }
+]

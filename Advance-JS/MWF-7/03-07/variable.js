@@ -6,7 +6,7 @@ var a = 300; // can use same name for multiple varibale - redeclier
 var a2 = 900; // suport hoisting
 // console.log("-----------  a----------->", a);
 
-// global scop
+// globle scop
 {
   var a3 = 300;
 }
@@ -42,6 +42,6 @@ const c = 200;
   const c3 = 500;
   {
     const c3 = 0;
+    console.log("-----------  c3----------->", c3);
   }
 }
-console.log("-----------  c3----------->", c3);
