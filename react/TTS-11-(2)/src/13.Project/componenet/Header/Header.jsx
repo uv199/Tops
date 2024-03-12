@@ -15,7 +15,11 @@ export default function Header() {
         <NavLink to={"contact"}>Contact</NavLink>
       </div>
       <div>
-        <User className="me-3" role="button" />
+        <User
+          className="me-3"
+          role="button"
+          onClick={() => navigate("/profile")}
+        />
 
         <Button color="danger" onClick={() => navigate("/login")}>
           Login

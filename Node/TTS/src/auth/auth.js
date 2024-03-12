@@ -6,6 +6,7 @@ export const auth = async (req, res, next) => {
   if (!token) return res.status(500).send("Session is invalid");
   let data = jwt?.verify?.(token, "131231");
   let matchUser = await User.findById(data._id);
+  req.loginUser = matchUser;
   if (!matchUser) return res.status(500).send("session is invalid");
   else next();
 };

@@ -58,3 +58,7 @@ let newData = data.map((e) => {
 
 newData.sort((a, b) => a.avj - b.avj);
 console.log("-----------  newData----------->", newData);
+
+// 1.23597 = 3 => 1.236
+
+// 1 = 5 => 1.00000

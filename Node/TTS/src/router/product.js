@@ -14,7 +14,7 @@ router.get("/getAll", (req, res) => {
     });
 });
 
-router.post("/signup", (req, res) => {
+router.post("/create", (req, res) => {
   let input = req?.body;
   Product.create(input)
     .then((resData) => {

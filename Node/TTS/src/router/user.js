@@ -44,6 +44,7 @@ router.put("/update/:id", (req, res) => {
       res.send(err);
     });
 });
+
 router.put("/password-reset/:id", auth, async (req, res) => {
   let matchUser = await User.findById(req?.params?.id);
   if (!matchUser) return new Error("user not found");
@@ -66,8 +67,9 @@ router.post("/login", (req, res) => {
   User.findOne({ email })
     .then(async (userRes) => {
       let match = await userRes.validatePassword(password);
+      let token = generateToken(userRes);
       if (match) {
-        res.send(userRes);
+        res.send({ data: userRes, token });
       } else {
         res.status(404).send("password not match");
       }
@@ -88,11 +90,3 @@ router.post("/delete/:id", (req, res) => {
 });
 
 export default router;
-
-// let obj = { password:"123"}
-
-// // obj.password = convert 1
-// obj
-
-// $2a$12$rMvdsItusbIEypw42OWwOuy24kHfn/7kBLkp5CgSJBmr6gv83ZuRm
-// $2a$12$/GK/neeTmoVc43/s0l1gpuzHDjXbD.P6jj2l1jroIB1p3Za635h9i

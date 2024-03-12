@@ -1,8 +1,12 @@
+// const env = require("dotenv")
+// env.config()
 import "dotenv/config";
 import bodyParser from "body-parser";
 import express from "express";
 import { connectDB } from "./db";
 import userRouter from "./router/user";
+import orderRouter from "./router/order";
+import productRouter from "./router/product";
 import { env } from "../config";
 
 const app = express();
@@ -13,6 +17,8 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/user", userRouter);
+app.use("/order", orderRouter);
+app.use("/product", productRouter);
 app.get("/", (req, res) => {
   res.send("------>");
 });
