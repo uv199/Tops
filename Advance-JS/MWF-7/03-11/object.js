@@ -28,6 +28,6 @@ let obj = {
   },
 };
 // obj.printFunction();
-
-console.log("----", "string" in obj);
-console.log("----", "name" in obj);
+// console.log("-----------  obj.name----------->", obj.object.name);
+// console.log("----", "string" in obj);
+// console.log("----", "name" in obj);

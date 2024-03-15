@@ -3,6 +3,10 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export default function Login() {
   let [user, setUser] = useState({ email: "", password: "" });
+
+  const submitHandler = () => {
+    localStorage.setItem("login-user", JSON.stringify(user));
+  };
   return (
     <div style={{ marginTop: "50px" }}>
       <div
@@ -16,26 +20,28 @@ export default function Login() {
           <h1 className="text-center">Login</h1>
           <hr />
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
+            <Label for="email">Email</Label>
             <Input
-              id="exampleEmail"
-              name="email"
+              id="email"
               placeholder="Enter Your Email"
               type="email"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              value={user.email}
             />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Password</Label>
+            <Label for="password">Password</Label>
             <Input
-              id="examplePassword"
-              name="password"
-              placeholder="password placeholder"
+              id="password"
+              placeholder="Enter Your password"
               type="password"
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              value={user.password}
             />
           </FormGroup>
 
           <Button className="w-100" color="danger">
-            Submit
+            Login
           </Button>
         </Form>
       </div>
