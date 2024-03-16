@@ -32,14 +32,6 @@ let data = {
   userType: "customer",
   email: "uvpatel199@gmail.com",
   number: "1213",
-  password: "$2b$12$PacRV2/uM1tGVoEO.sZYNOtawyRhRcKMF1Blf9Y8WijRA9DJnO.IK",
-  age: 12,
-  address: [
-    {
-      add: "wefwsdvwfe",
-      city: "surat",
-      state: "gujarat",
-      pinCode: "395007",
-    },
-  ],
+  password: "123456", 
 };
+
