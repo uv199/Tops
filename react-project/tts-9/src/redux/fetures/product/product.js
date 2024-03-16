@@ -5,6 +5,7 @@ import { BE_URL } from "../../../config";
 export const getAllProduct = createAsyncThunk("fetchProduct", () => {
   return axios({ method: "get", url: BE_URL + "/product/getAll" }).then(
     (resData) => {
+      console.log("-----------  resData----------->", resData.data.data);
       return resData.data;
     }
   );

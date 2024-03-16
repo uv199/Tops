@@ -1,57 +1,75 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import Select from "react-select";
-
-import { Edit, Eye, Slash, Trash } from "lucide-react";
-import ProductFullDetails from "./ProductFullDetails";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProduct } from "../../../../redux/fetures/product/product";
-import TableCome from "./TableCome";
-import ProductForm from "./ProductForm";
-import { intialProduct } from "../../../../utils/intialState";
+import React, { useState } from "react";
+import ProducttModal from "./ProducttModal";
+import ProducttTable from "./ProducttTable";
+import { Button, Input } from "reactstrap";
+const intialProduct = {
+  title: "",
+  description: "",
+  brand: "",
+  gender: "",
+  price: "",
+  discountPercentage: "",
+  availableStock: "",
+  category: [],
+  thumbnail: "",
+  color: [],
+  size: [],
+};
 
 export default function Product() {
-  const [defaultProduct, setDefaultProduct] = useState(intialProduct);
-
   const [modal, setModal] = useState(false);
-  const [refetch, setRefetch] = useState(true);
-  const refetchData = () => setRefetch(!refetch);
-  const [updateMode, setUpdateMode] = useState(false);
-  const [detailModal, setDetailModal] = useState(false);
-  const [selectedProductDetails, setSelectedProductDetails] = useState(null);
+  let [product, setProduct] = useState(intialProduct);
+  let [updatemode, setUpdatemode] = useState(false);
+  let [refresh, setRefresh] = useState(true);
+  let [previewdata, setPreviewData] = useState([]);
+  let [chek, setCheck] = useState(false);
 
   const toggle = () => {
     setModal(!modal);
-    setUpdateMode(false);
     setProduct(intialProduct);
+    setUpdatemode(false);
+    setCheck(false);
   };
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllProduct());
-  }, []);
+  const refresHandler = () => {
+    setRefresh(!refresh);
+  };
 
+  const UpdateHandler = () => {
+    setUpdatemode(true);
+  };
 
+  const Preview = (e) => {
+    setPreviewData([e]);
+    toggle();
+    setCheck(true);
+  };
   return (
     <>
-      <div className="d-flex align-items-center mb-4">
-        <div style={{ flex: "1", textAlign: "center" }}>
-          <h1 className="m-0 ps-5 ms-5">Product</h1>
-        </div>
-
-        <div>
-          <Button color="danger" onClick={toggle}>
-            Add Product
-          </Button>
-        </div>
+      <div className="d-flex gap-2 justify-content-end mx-4 mt-2 mb-3">
+        <Button color="danger" onClick={toggle}>
+          New Product
+        </Button>
       </div>
-      <ProductForm />
-      <TableCome />
-      <ProductFullDetails
-        isOpen={detailModal}
-        toggle={() => setDetailModal(false)}
-        productDetails={selectedProductDetails}
+      <ProducttModal
+        modal={modal}
+        toggle={toggle}
+        refresHandler={refresHandler}
+        produc={product}
+        updatemod={updatemode}
+        setProduc={setProduct}
+        intialProduc={intialProduct}
+        setUpdatemod={setUpdatemode}
+        previewdata={previewdata}
+        chek={chek}
+      />
+      <ProducttTable
+        refresh={refresh}
+        refresHandler={refresHandler}
+        setProduct={setProduct}
+        toggle={toggle}
+        UpdateHandler={UpdateHandler}
+        Preview={Preview}
       />
     </>
   );

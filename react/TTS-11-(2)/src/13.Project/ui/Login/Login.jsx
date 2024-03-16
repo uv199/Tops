@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 export default function Login() {
   let [user, setUser] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
     localStorage.setItem("login-user", JSON.stringify(user));
+    navigate("/");
   };
+
   return (
     <div style={{ marginTop: "50px" }}>
       <div
@@ -35,12 +40,16 @@ export default function Login() {
               id="password"
               placeholder="Enter Your password"
               type="password"
-              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
               value={user.password}
             />
           </FormGroup>
 
-          <Button className="w-100" color="danger">
+          <Button
+            onClick={(e) => submitHandler(e)}
+            className="w-100"
+            color="danger"
+          >
             Login
           </Button>
         </Form>
