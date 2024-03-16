@@ -1,7 +1,8 @@
 import express from "express";
 import { User } from "../model/user";
 import jwt from "jsonwebtoken";
-import { auth } from "../auth/auth";
+import { adminAuth, auth } from "../auth/auth";
+import { sendMail } from "../functions/emailHandler";
 
 const router = new express.Router();
 
@@ -26,6 +27,7 @@ router.post("/signup", async (req, res) => {
   User.create(input)
     .then((resData) => {
       let token = generateToken(resData);
+      sendMail();
       res.send({ data: resData, token });
     })
     .catch((err) => {
@@ -77,7 +79,7 @@ router.post("/login", (req, res) => {
     .catch((err) => res.send(err.message));
 });
 
-router.post("/delete/:id", (req, res) => {
+router.post("/delete/:id", adminAuth, (req, res) => {
   let input = req?.body;
   User.findByIdAndRemove(req?.params?.id, input)
     .then((resData) => {
@@ -90,3 +92,5 @@ router.post("/delete/:id", (req, res) => {
 });
 
 export default router;
+
+//

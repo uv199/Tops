@@ -32,3 +32,23 @@ router.post("/create", auth, (req, res) => {
 });
 
 export default router;
+
+/*
+name
+email
+DOB
+password
+classRoom
+contactNo
+address
+rollNo
+classTeacher
+subject
+salary
+isClassTEacher
+userType: teacher/student
+
+
+
+
+*/

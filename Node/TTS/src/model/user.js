@@ -5,13 +5,16 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const userSchema = mongoose.Schema(
   {
     name: String,
-    email: String,
+    email: {
+      type: String,
+    },
+
     age: Number,
     dob: Date,
     image: String,
     userType: String,
     password: String,
-    gender: String,
+    gender: { type: String, require: [true, "please give gender"] },
     adminId: {
       type: ObjectId,
       ref: "user",

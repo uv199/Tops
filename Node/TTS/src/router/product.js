@@ -51,3 +51,15 @@ router.post("/delete/:id", (req, res) => {
 });
 
 export default router;
+
+/*
+
+product -> userId 
+...productData ,
+userId:{
+  ...userData,
+  adminId:{
+    ...userData
+  }
+}
+*/
