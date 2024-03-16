@@ -62,3 +62,30 @@ console.log("-----------  newData----------->", newData);
 // 1.23597 = 3 => 1.236
 
 // 1 = 5 => 1.00000
+
+let school = [
+  {
+    name: "student-1",
+    markSheet: [
+      { subject: "hindi", marks: 58 },
+      { subject: "english", marks: 85 },
+      { subject: "maths", marks: 82 },
+    ],
+  },
+  {
+    name: "student-2",
+    markSheet: [
+      { subject: "hindi", marks: 77 },
+      { subject: "english", marks: 91 },
+      { subject: "maths", marks: 38 },
+    ],
+  },
+  {
+    name: "student-3",
+    markSheet: [
+      { subject: "hindi", marks: 77 },
+      { subject: "english", marks: 65 },
+      { subject: "maths", marks: 66 },
+    ],
+  },
+];
