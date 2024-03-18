@@ -32,6 +32,7 @@ import LocalStorageMultiInputs2 from "./11.Input/LocalStorageMultiInputs2";
 import ProtectedRouter from "./14.ProtectedRoute/Router";
 import ProtectedProject from "./15.ProtectedProject/Router";
 import UeRefCom from "./10.Hook/useRef/UeRefCom";
+import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
 
 function App() {
   return (
@@ -70,7 +71,8 @@ function App() {
       {/* <---------------------HOOK------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
-      <UeRefCom />
+      {/* <UeRefCom /> */}
+      <UseContaxtCom />
 
       {/* <---------------------INPUT------------------------> */}
       {/* <InputCom /> */}

@@ -37,14 +37,13 @@ import Urvish from "./2.component/urvish.jsx";
 import AppRedux from "./13.Redux/AppRedux.jsx";
 import ReduxCrudApp from "./14.Redux_CRUD/ReduxCrudApp.jsx";
 import { ToastContainer } from "react-toastify";
-import HeaderCom1 from "./Abhishek/Todo/HeaderCom1.jsx";
 import InputDataPost from "./15.API/InputDataPost.jsx";
 
 function App() {
   let x = "urvish";
 
   return (
-    <div>
+    <div className="w-100">
       {/* <-------------------------Components---------------------------------> */}
       {/* <FunCom1 /> */}
       {/* <ClassCom /> */}

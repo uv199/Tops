@@ -1,14 +1,18 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Button, Table } from "reactstrap";
+import UserForm from "./UserForm";
 
 {
   /* http://localhost:9999/user/getAll */
 }
 export default function InputDataPost() {
   let [user, setUser] = useState([]);
-  function callApi(params) {
+  let [refresh, setrefresh] = useState(true);
+
+  const refreshData = () => setrefresh(!refresh);
+  useEffect(() => {
     axios({
       method: "get",
       url: "http://localhost:9999/user/getAll",
@@ -21,11 +25,11 @@ export default function InputDataPost() {
       .catch((error) => {
         console.log("-----------  error----------->", error);
       });
-  }
+  }, [refresh]);
+
   return (
-    <div>
-      call api
-      <Button onClick={() => callApi()}>Call Api</Button>
+    <div className="w-100">
+      <UserForm refreshData={refreshData} />
       <Table hover>
         <thead>
           <tr>
@@ -68,3 +72,7 @@ let data = {
     },
   ],
 };
+
+
+// endpoint- baseURL/user/signin 
+//  data : email,password -> admin@admin.com - 123456
