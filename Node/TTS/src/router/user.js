@@ -2,7 +2,7 @@ import express from "express";
 import { User } from "../model/user";
 import jwt from "jsonwebtoken";
 import { adminAuth, auth } from "../auth/auth";
-import { sendMail } from "../functions/emailHandler";
+import { sendMail, sendOtp } from "../functions/emailHandler";
 
 const router = new express.Router();
 
@@ -91,6 +91,42 @@ router.post("/delete/:id", adminAuth, (req, res) => {
     });
 });
 
+router.post("/sendOtp", async (req, res) => {
+  try {
+    const matchUser = await User.findOne({ email: req?.body?.email });
+    if (!matchUser) res.status(400).send("user not found with this email");
+    let otp = sendOtp(matchUser.email);
+    matchUser.code = otp;
+    await matchUser.save();
+    res.status(200).send("otp sent to your email");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+router.post("/otp-login", async (req, res) => {
+  try {
+    const matchUser = await User.findOne({ code: req?.body?.otp });
+    if (!matchUser) res.status(400).send("Otp is incorrect");
+    matchUser.code = "";
+    await matchUser.save();
+    res.status(200).send({ data: matchUser, token: generateToken(matchUser) });
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
 export default router;
 
-//
+/*
+findById(id,projection) => User.findById("1223",{name:-1}) => {}
+findOne(filter,projection) => User.findOne({name:"urvish",...etc},{}) => {} 
+find(filter,projection) => User.find({name:"urvish",...etc},{}) =[]
+updateMany(filter,updatedData,options) 
+findOneAndUpdate(filter,updatedData,options)
+findByIdAndUpdate(id,updatedData,options) 
+findByIdAndUpdate(id,updatedData,options)
+findByIdAndRemove(id)
+findByIdAndDelete(id)
+
+
+*/

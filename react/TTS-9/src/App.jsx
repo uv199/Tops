@@ -109,7 +109,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        <ToDoList />
+        {/* <ToDoList /> */}
         {/* <CheckBox /> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
@@ -130,7 +130,7 @@ function App() {
         {/* <InputDataPost /> */}
 
         {/*-----------------------REDUX--------------------------  */}
-        {/* <AppRedux /> */}
+        <AppRedux />
       </div>
       <ToastContainer />
     </>

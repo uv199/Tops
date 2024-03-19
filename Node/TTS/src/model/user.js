@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema(
       pinCode: Number,
       state: String,
     },
-    siblings: [{ name: String, age: Number }],
+    code: String,
   },
   { timestamps: true }
 );

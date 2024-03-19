@@ -5,9 +5,14 @@ const amountSlice = createSlice({
   initialState: { amount: 100 },
   reducers: {
     incAmt: (state, action) => {
-      console.log("-----------  action----------->", action)
+      console.log("-----------  action----------->", action);
       state.amount++;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase("userLogin/fulfilled", (state, action) => {
+      state.amount++;
+    });
   },
 });
 
