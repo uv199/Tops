@@ -33,6 +33,7 @@ import ProtectedRouter from "./14.ProtectedRoute/Router";
 import ProtectedProject from "./15.ProtectedProject/Router";
 import UeRefCom from "./10.Hook/useRef/UeRefCom";
 import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
+import ToDoList from "./00.task/todo/ToDoList";
 
 function App() {
   return (
@@ -72,7 +73,7 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
       {/* <UeRefCom /> */}
-      <UseContaxtCom />
+      {/* <UseContaxtCom /> */}
 
       {/* <---------------------INPUT------------------------> */}
       {/* <InputCom /> */}
@@ -91,6 +92,10 @@ function App() {
       {/* <Router /> */}
       {/* <ProtectedRouter /> */}
       {/* <ProtectedProject /> */}
+
+      {/* <---------------------TASK------------------------> */}
+      <ToDoList />
+
       <ToastContainer />
     </div>
   );

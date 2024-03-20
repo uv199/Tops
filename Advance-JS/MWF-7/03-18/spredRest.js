@@ -14,4 +14,22 @@ let arr2 = [...arr, ...arr3, 1000];
 
 let obj3 = { c: 90 };
 let obj2 = { ...obj, ...obj3, d: 900 };
-console.log("-----------  obj2----------->", obj2);
+// console.log("-----------  obj2----------->", obj2);
+
+let data = {
+  x: 10,
+  y: 20,
+  z: 30,
+  m: 50,
+};
+
+let { x, y, ...num } = data;
+// console.log("-----------  num----------->", num);
+// console.log("-----------  x----------->", x);
+// console.log("-----------  y----------->", y);
+
+let numbers = [1, 2, 3, 4, 5, 6, 7];
+let [j, k, ...l] = numbers;
+console.log("-----------  l----------->", l);
+console.log("-----------  k----------->", k);
+console.log("-----------  j----------->", j);
