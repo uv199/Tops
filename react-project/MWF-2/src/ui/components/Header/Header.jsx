@@ -25,12 +25,12 @@ export default function Header() {
       <div className="header_con">
         <h2>JustinTime</h2>
         <div className="link_div">
-          {user.userType === "admin" ? (
+          {user?.userType === "admin" ? (
             <>
-              <NavLink to={"dashbord"}>dashbord</NavLink>
-              <NavLink to={"user"}>User</NavLink>
-              <NavLink to={"product"}>Product</NavLink>
-              <NavLink to={"order"}>Order</NavLink>
+              <NavLink to={"/admin-dashbord"}>dashbord</NavLink>
+              <NavLink to={"/admin-user"}>User</NavLink>
+              <NavLink to={"/admin-product"}>Product</NavLink>
+              <NavLink to={"/admin-order"}>Order</NavLink>
             </>
           ) : (
             <>

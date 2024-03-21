@@ -12,8 +12,6 @@ import {
 } from "reactstrap";
 import { BE_URL } from "../../../config";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { login } from "../../../redux/features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 const initialUser = {
@@ -204,7 +202,7 @@ export default function RegisterModal({ modal, toggle, loginToggle }) {
               </span>
             </p>
             <Button color="danger" className="w-100">
-              Submit
+              SignUp
             </Button>
           </Form>
         </ModalBody>
