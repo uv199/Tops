@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Nike airJordan-199",
+    "description": "zxcvxzdcvzxc",
+    "price": 12,
+    "subCategory": [],
+    "image": [],
+    "color": ["red", "green", "black"],
+    "isAvailable": true,
+    "size": ["41", "42", "43"],
+    "rating": "0",
+    "gender": "male"
+  },
+
+  {
+    "title": "table",
+    "description": "good table",
+    "price": 9999,
+    "subCategory": [],
+    "image": [],
+    "color": ["yellow"],
+    "isAvailable": true,
+    "size": ["41"],
+    "rating": "0",
+    "gender": "male"
+  }
+]

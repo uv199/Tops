@@ -1,33 +1,35 @@
 // const env = require("dotenv")
 // env.config()
 import "dotenv/config";
-import bodyParser from "body-parser";
+import bodyParser, { json } from "body-parser";
 import express from "express";
 import { connectDB } from "./db";
 import userRouter from "./router/user";
 import orderRouter from "./router/order";
 import productRouter from "./router/product";
 import { env } from "../config";
+import { addPreData } from "./db/addPredefineData/addPreData";
 
 const app = express();
 
 const port = env.port || 3000;
-
+app.use("/", json());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.raw({ type: "*" }));
+
 app.use("/user", userRouter);
 app.use("/order", orderRouter);
 app.use("/product", productRouter);
-app.get("/", (req, res) => {
+
+app.post("/", (req, res) => {
   res.send("------>");
 });
 app.listen(port, () => {
   connectDB();
+  addPreData();
   console.log(`server is running on http://localhost:${port}`);
 });
-
-// [1,2,3] => [[1],[2],[3]]
 
 /*
 user 
