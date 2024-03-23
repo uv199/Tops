@@ -44,6 +44,7 @@ export const signUp = (req, res) => {
 export const update = (req, res) => {
   let input = req?.body;
   modal?.User.findOneAndUpdate({ _id: req?.params?.id }, input)
+    .lean()
     .then((resData) => {
       console.log("resData", resData);
       res.send(resData);

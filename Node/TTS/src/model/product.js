@@ -2,10 +2,17 @@ import mongoose from "mongoose";
 
 const productSchema = mongoose.Schema(
   {
-    title: String,
-    description: String,
+    title: {
+      type: String,
+      required: [true, "please enter title"],
+    },
+    description: { type: String, minLength: 10, lowercase: true, trim: true },
     price: Number,
-    discount: Number,
+    discount: {
+      type: Number,
+      min: [200, "Please enter value above 200"],
+      max: 500,
+    },
     category: String,
     subCategory: [String],
     image: [String],
@@ -16,7 +23,7 @@ const productSchema = mongoose.Schema(
     size: [String],
     rating: String,
     offer: String,
-    gender: String,
+    gender: { type: String, enum: ["male", "female"] },
   },
   { timestamps: true }
 );

@@ -1,14 +1,17 @@
-import { useState } from "react";
+import FunCom from "./2.component/FunCom";
+import ClassCom from "./2.component/ClassCom";
 import "./App.css";
+import MainStyle from "./3.style/MainStyle";
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
   return (
-    <>
-      <h1>hello world</h1>
-      <head>test</head>
-    </>
+    <div>
+      {/* -------------COMPONENETS------------- */}
+      {/* <FunCom /> */}
+      {/* <ClassCom /> */}
+
+      {/* -------------STYLE------------- */}
+      <MainStyle />
+    </div>
   );
 }
-
-export default App;

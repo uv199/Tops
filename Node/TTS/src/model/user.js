@@ -1,12 +1,25 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
+import validator from "validator";
+
+const emailValidate = (email) => {
+  // return validator.isEmail(email);
+  return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
+};
 
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const userSchema = mongoose.Schema(
   {
     name: String,
     email: {
+      unique:true,
       type: String,
+      validate: {
+        validator: emailValidate,
+        message: (props) => `${props.value} email is not proper`,
+      },
     },
 
     age: Number,

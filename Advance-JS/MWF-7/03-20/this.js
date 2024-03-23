@@ -9,6 +9,7 @@ let obj = {
     console.log("fat arrow ====>", this);
   },
 };
+
 obj.print();
 
 obj.print2();

@@ -16,6 +16,7 @@ import AllProduct from "../ui/pages/Admin/AllProduct/AllProduct";
 import { AuthRoute } from "./ProtectedRoute";
 import AllShose from "../ui/pages/Shose/AllShose";
 import ShoseDetail from "../ui/pages/Shose/ShoseDetail";
+import Header from "../ui/components/Header/Header";
 
 export default function Router() {
   return (

@@ -162,3 +162,17 @@ export default function ProducttTable({
     </div>
   );
 }
+let data = {
+  title: "pavan", //
+  description: "popcorn shirt", //*
+  brand: "patil", // 
+  gender: "male", // male female kids
+  price: 500, // 
+  thumbnail: "url image", //
+  discountPercentage: 15, 
+  mainCategory:"human",
+  category: ["Casual"], //
+  color: ["red"], //
+  size: ["41", "42"], //
+  availableStock: 0, //*
+};

@@ -1,8 +1,8 @@
-import { Button, Table } from "reactstrap";
+import { Button, Table, Input } from "reactstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Eye, PencilRuler, Trash } from "lucide-react";
+import { Eye, PencilRuler, Search, Trash } from "lucide-react";
 let sizeOptions = ["41", "42", "43", "44", "45"];
 import ReactPaginate from "react-paginate";
 export default function ProducttTable({
@@ -19,8 +19,8 @@ export default function ProducttTable({
     page: 1,
     totalProduct: 0,
   });
+  let [search, setSearch] = useState("");
 
-  console.log("-----------  paginate----------->", paginate)
   useEffect(() => {
     console.log("--=-=-=-=-=->");
     axios({
@@ -29,9 +29,9 @@ export default function ProducttTable({
       params: {
         limit: paginate.limit,
         page: paginate.page,
+        search,
       },
     }).then((res) => {
-      console.log("-----------  res----------->", res.data);
       setData(res.data.data);
       setPeginate({ ...paginate, totalProduct: res.data.count });
     });
@@ -61,6 +61,10 @@ export default function ProducttTable({
       });
   };
 
+  const searchHandler = (e) => {
+    setSearch(e?.target?.value);
+    refresHandler();
+  };
   const handlePageClick = (e) => {
     setPeginate({ ...paginate, page: e?.selected + 1 });
     refresHandler();
@@ -69,7 +73,16 @@ export default function ProducttTable({
     <div
       style={{ margin: "10px 50px", border: "1px solid gray", padding: "20px" }}
     >
-      <h1>Product Table </h1>
+      <div className="d-flex justify-content-between">
+        <h1>Product Table </h1>
+        <div className="d-flex align-items-center">
+          <Input
+            placeholder="search your text heare"
+            onChange={(e) => searchHandler(e)}
+          />
+          <Search />
+        </div>
+      </div>
       <hr />
       <Table>
         <thead>

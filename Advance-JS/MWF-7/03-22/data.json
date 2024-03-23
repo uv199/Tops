@@ -1,0 +1,7 @@
+[
+  {
+    "name": "urvish",
+    "age": 23,
+    "hobby": ["reading", { "a": 20 }]
+  }
+]
