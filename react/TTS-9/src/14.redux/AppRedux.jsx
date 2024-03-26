@@ -5,7 +5,7 @@ import store from "./redux/app/store";
 import Amount from "./ui/amount/Amount";
 import User from "./ui/User/User";
 
-export default function AppRedux() {
+export default function AppRedux() { 
   return (
     <div>
       <Provider store={store}>

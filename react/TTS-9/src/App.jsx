@@ -50,6 +50,7 @@ import UseCallBack from "./4.Hook/useCallBack-Memo/UseCallBack";
 import UseMemo from "./4.Hook/useCallBack-Memo/UseMemo";
 import InputDataPost from "./13.api/InputDataPost";
 import AppRedux from "./14.redux/AppRedux";
+import Crud from "./Curd/Crud";
 
 function App() {
   return (
@@ -111,6 +112,7 @@ function App() {
         {/* <MultiRevise /> */}
         {/* <ToDoList /> */}
         {/* <CheckBox /> */}
+        <Crud/>
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}
@@ -130,7 +132,7 @@ function App() {
         {/* <InputDataPost /> */}
 
         {/*-----------------------REDUX--------------------------  */}
-        <AppRedux />
+        {/* <AppRedux /> */}
       </div>
       <ToastContainer />
     </>
