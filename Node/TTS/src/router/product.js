@@ -1,18 +1,10 @@
 import express from "express";
 import { Product } from "../model/product";
+import { getAll } from "../controller/product";
 
 const router = new express.Router();
 
-router.get("/getAll", (req, res) => {
-  Product.find({})
-    .then((resData) => {
-      console.log("resData", resData);
-      res.send(resData);
-    })
-    .catch((err) => {
-      res.send(err);
-    });
-});
+router.get("/getAll", getAll);
 
 router.post("/create", (req, res) => {
   let input = req?.body;

@@ -21,3 +21,19 @@ let arr = [10, 20, 30, 40];
 arr.map((element) => {
   console.log("-----------  element----------->", element);
 });
+
+setTimeout(() => {
+  setTimeout(() => {
+    setTimeout(() => {});
+  });
+}, 1000);
+
+() => {
+  // kjdfkjsdf
+  () => {
+    // qgfugugf
+    () => {
+      () => {};
+    };
+  };
+};

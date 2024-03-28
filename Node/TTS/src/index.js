@@ -9,6 +9,7 @@ import orderRouter from "./router/order";
 import productRouter from "./router/product";
 import { env } from "../config";
 import { addPreData } from "./db/addPredefineData/addPreData";
+import path from "path";
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use(bodyParser.raw({ type: "*" }));
 app.use("/user", userRouter);
 app.use("/order", orderRouter);
 app.use("/product", productRouter);
+
+app.use(express.static(path.join(__dirname, "..", "\\")));
 
 app.post("/", (req, res) => {
   res.send("------>");

@@ -13,13 +13,18 @@ import {
   signUp,
   update,
 } from "../controller/user";
+import multer from "multer";
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/data/uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
 const router = new express.Router();
-
-const generateToken = (resData) => {
-  let token = jwt.sign({ email: resData.email, _id: resData?._id }, "131231");
-  return token;
-};
+const upload = multer({ storage });
 
 router.get("/getAll", getAll);
 
@@ -36,6 +41,10 @@ router.post("/delete/:id", adminAuth, deleteUser);
 router.post("/sendOtp", sendOTP);
 
 router.post("/otp-login", otpSignin);
+
+router.post("/uploads", upload.single("profile"), (req, res) => {
+  res.status(200).send(req.file);
+});
 
 export default router;
 
