@@ -17,6 +17,7 @@ import Conatct from "../ui/pages/comman/ContactUs/Conatct";
 import Profile from "../ui/pages/comman/Profile/Profile";
 import SingleProduct from "../ui/pages/user/Product/SingleProduct";
 import Order from "../ui/pages/admin/Order/Order";
+import MenProduct from "../ui/pages/user/Men/MenProduct";
 
 export default function Router() {
   return (
@@ -36,6 +37,7 @@ export default function Router() {
               <Route path="/product" element={<Product />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/order" element={<UserOrders />} />
+              <Route path="/men-product" element={<MenProduct />} />
 
               {/* --------ADMIN-------- */}
               <Route path="/admin-dashbord" element={<Dashboard />} />

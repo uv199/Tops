@@ -10,6 +10,7 @@ import productRouter from "./router/product";
 import { env } from "../config";
 import { addPreData } from "./db/addPredefineData/addPreData";
 import path from "path";
+import fs from "fs-extra";
 
 const app = express();
 
@@ -18,7 +19,6 @@ app.use("/", json());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.raw({ type: "*" }));
-
 app.use("/user", userRouter);
 app.use("/order", orderRouter);
 app.use("/product", productRouter);

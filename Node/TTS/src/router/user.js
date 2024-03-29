@@ -14,13 +14,21 @@ import {
   update,
 } from "../controller/user";
 import multer from "multer";
+import fs from "fs-extra";
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./public/data/uploads/");
+  destination: async (req, file, cb) => {
+    let isExist = await fs.pathExists("./public/data/uploads/");
+    if (isExist) {
+      cb(null, "./public/data/uploads/");
+    } else {
+      await fs.mkdirp("./public/data/uploads/");
+      cb(null, "./public/data/uploads/");
+    }
   },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    console.log("-----------  file----------->", file);
+    cb(null, Date.now().toString());
   },
 });
 const router = new express.Router();

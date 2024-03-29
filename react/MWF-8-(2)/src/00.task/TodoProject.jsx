@@ -1,5 +1,5 @@
-import { BadgeCheck, Pencil, Plus, Trash2 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { BadgeCheck, Pencil, Plus, Search, Trash2 } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import {
@@ -20,6 +20,8 @@ export default function TodoProject() {
   const [completedTaskArr, setCompletedTaskArr] = useState([]);
   const [index, setIndex] = useState(null);
   const [pendingSelectedTasks, setPendingSelectedTasks] = useState([]);
+
+  const inputRef = useRef(null);
   const [completedSelectedTasks, setCompletedSelectedTasks] = useState([]);
 
   useEffect(() => {
@@ -47,11 +49,7 @@ export default function TodoProject() {
       toast.warn("Please add task");
     }
   };
-  // console.log("taskArr: ", taskArr);
-
   const addPendingTaskToCompletedTask = (e, index) => {
-    // console.log("e, index", e, index);
-
     setCompletedTaskArr([e, ...completedTaskArr]);
     localStorage.setItem(
       "CompletedTask",
@@ -198,6 +196,120 @@ export default function TodoProject() {
     }
   };
 
+  const completedSelectAll = (e) => {
+    if (e?.target?.checked) {
+      let allCompletedSelectedIndex = completedTaskArr.map((e, i) => i);
+      setCompletedSelectedTasks(allCompletedSelectedIndex);
+    } else {
+      setCompletedSelectedTasks([]);
+    }
+  };
+
+  const deletePendingTask = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this task!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          let restPendingTasks = taskArr.filter((e, i) => {
+            return !pendingSelectedTasks.includes(i);
+          });
+          setTaskArr(restPendingTasks);
+          localStorage.setItem("PendingTask", JSON.stringify(restPendingTasks));
+          setPendingSelectedTasks([]);
+
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Your task has been deleted.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your task is safe.",
+            icon: "error",
+          });
+        }
+      });
+  };
+
+  const deleteCompletedTask = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this task!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          let restCompletedTasks = completedTaskArr.filter((e, i) => {
+            return !completedSelectedTasks.includes(i);
+          });
+          setCompletedTaskArr(restCompletedTasks);
+          localStorage.setItem(
+            "CompletedTask",
+            JSON.stringify(restCompletedTasks)
+          );
+          setCompletedSelectedTasks([]);
+
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Your task has been deleted.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your task is safe.",
+            icon: "error",
+          });
+        }
+      });
+  };
+
+  const searchData = () => {
+    const searchText = inputRef?.current.value;
+    const allData = JSON.parse(localStorage.getItem("CompletedTask") || "[]");
+    setCompletedTaskArr(allData.filter((e) => e.includes(searchText)));
+  };
+  const searchHandler = () => {
+    const searchText = inputRef?.current.value;
+    if (searchText.length === 0) {
+      const allData = JSON.parse(localStorage.getItem("CompletedTask") || "[]");
+      setCompletedTaskArr(allData);
+    }
+  };
   return (
     <section className="p-5">
       <div className="container">
@@ -232,8 +344,20 @@ export default function TodoProject() {
             <ReactCard>
               <CardBody>
                 <div className="row">
-                  <div className="col-md-3"></div>
                   <div className="col-md-6">
+                    <FormGroup>
+                      <div className="d-flex align-items-center gap-2">
+                        <Label for="pendingSearch" className="mb-0">
+                          Search:
+                        </Label>
+                        <Input
+                          id="pendingSearch"
+                          placeholder="Search Pending Task..."
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div className="col-md-3">
                     <CardTitle tag="h5" className="text-center">
                       Pending Task
                     </CardTitle>
@@ -244,7 +368,7 @@ export default function TodoProject() {
                         id="pendingTaskCheckbox"
                         type="checkbox"
                         checked={
-                          taskArr.lenght &&
+                          taskArr.length > 0 &&
                           taskArr.length === pendingSelectedTasks.length
                         }
                         onChange={(e) => pendingSelectAll(e)}
@@ -298,11 +422,18 @@ export default function TodoProject() {
                   </ListGroup>
                 </ReactCard>
                 <Button
-                  className="w-100 mt-3"
+                  className="w-50 me-2 mt-3"
                   color="primary"
                   onClick={() => addSelectedPendingTaskToCompletedTask()}
                 >
                   Move to Completed Task
+                </Button>
+                <Button
+                  className="ms-2 mt-3"
+                  color="danger"
+                  onClick={() => deletePendingTask()}
+                >
+                  Delete Pending Task
                 </Button>
               </CardBody>
             </ReactCard>
@@ -310,65 +441,100 @@ export default function TodoProject() {
 
           <div className="col-md-6">
             <ReactCard>
-              <CardBody>
-                <div className="row">
-                  <div className="col-md-3"></div>
-                  <div className="col-md-6">
-                    <CardTitle tag="h5" className="text-center">
-                      Completed Task
-                    </CardTitle>
+              {/* <CardBody> */}
+              <div className="row">
+                <div className="col-md-6">
+                  {/* <FormGroup> */}
+                  <div className="d-flex align-items-center gap-2">
+                    <Label for="completedSearch" className="mb-0">
+                      Search:
+                    </Label>
+                    <Input
+                      innerRef={inputRef}
+                      id="completedSearch"
+                      placeholder="Search Completed Task..."
+                      onChange={() => searchHandler()}
+                    />
+                    <hr />
+                    <Button color="primary" onClick={() => searchData()}>
+                      <Search />
+                    </Button>
                   </div>
-                  <div className="col-md-3 d-flex justify-content-end">
-                    <FormGroup check>
-                      <Input id="completedTaskCheckbox" type="checkbox" />
-                      <Label for="completedTaskCheckbox">Select All</Label>
-                    </FormGroup>
-                  </div>
+                  {/* </FormGroup> */}
                 </div>
-                <ReactCard>
-                  <ListGroup flush>
-                    {completedTaskArr?.map?.((e, i) => {
-                      return (
-                        <ListGroupItem
-                          className="d-flex align-items-center justify-content-between"
-                          key={i}
-                        >
-                          <div className="d-flex align-items-center gap-2">
-                            <Input
-                              type="checkbox"
-                              checked={completedSelectedTasks.includes(i)}
-                              onChange={(e) =>
-                                handleCompletedTaskSelection(
-                                  i,
-                                  e?.target?.checked
-                                )
-                              }
-                            />
-                            <span>
-                              {i + 1}. {e}
-                            </span>
-                          </div>
-                          <div className="d-flex align-items-center gap-2">
-                            <Trash2
-                              role="button"
-                              size={20}
-                              color="#ff0000"
-                              onClick={() => deleteHandler(i)}
-                            />
-                          </div>
-                        </ListGroupItem>
-                      );
-                    })}
-                  </ListGroup>
-                </ReactCard>
-                <Button
-                  className="w-100 mt-3"
-                  color="primary"
-                  onClick={() => addSelectedCompletedTaskToPendingTask()}
-                >
-                  Move to Pending Task
-                </Button>
-              </CardBody>
+                <div className="col-md-3">
+                  {/* <CardTitle tag="h5" className="text-center">
+                      Completed Task
+                    </CardTitle> */}
+                </div>
+                <div className="col-md-3 d-flex justify-content-end">
+                  <FormGroup check>
+                    <Input id="completedTaskCheckbox" type="checkbox" />
+                    <Input
+                      id="completedTaskCheckbox"
+                      type="checkbox"
+                      checked={
+                        completedTaskArr.length > 0 &&
+                        completedTaskArr.length ===
+                          completedSelectedTasks.length
+                      }
+                      onChange={(e) => completedSelectAll(e)}
+                    />
+                    <Label for="completedTaskCheckbox">Select All</Label>
+                  </FormGroup>
+                </div>
+              </div>
+              <ReactCard>
+                <ListGroup flush>
+                  {completedTaskArr?.map?.((e, i) => {
+                    return (
+                      <ListGroupItem
+                        className="d-flex align-items-center justify-content-between"
+                        key={i}
+                      >
+                        <div className="d-flex align-items-center gap-2">
+                          <Input
+                            type="checkbox"
+                            checked={completedSelectedTasks.includes(i)}
+                            onChange={(e) =>
+                              handleCompletedTaskSelection(
+                                i,
+                                e?.target?.checked
+                              )
+                            }
+                          />
+                          <span>
+                            {i + 1}. {e}
+                          </span>
+                        </div>
+                        <div className="d-flex align-items-center gap-2">
+                          <Trash2
+                            role="button"
+                            size={20}
+                            color="#ff0000"
+                            onClick={() => deleteHandler(i)}
+                          />
+                        </div>
+                      </ListGroupItem>
+                    );
+                  })}
+                </ListGroup>
+              </ReactCard>
+              <Button
+                className="w-50 me-2 mt-3"
+                color="primary"
+                onClick={() => addSelectedCompletedTaskToPendingTask()}
+              >
+                Move to Pending Task
+              </Button>
+              <Button
+                className="ms-2 mt-3"
+                color="danger"
+                onClick={() => deleteCompletedTask()}
+              >
+                Delete Completed Task
+              </Button>
+              {/* </CardBody> */}
             </ReactCard>
           </div>
         </div>
