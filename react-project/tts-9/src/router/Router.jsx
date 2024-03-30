@@ -13,6 +13,7 @@ import Login from "../ui/pages/common/Login/Login";
 import Dashboard from "../ui/pages/admin/Dashboard/Dashboard";
 import Profile from "../ui/pages/common/Profile/Profile";
 import Product from "../ui/pages/admin/Product/Product";
+import MenShose from "../ui/pages/user/MenShose";
 
 export default function Router() {
   return (
@@ -35,6 +36,9 @@ export default function Router() {
 
             {/* --------Error-------- */}
             <Route path="*" element={<Error404 />} />
+
+            {/* --------User-------- */}
+            <Route path="/men-shose" element={<MenShose />} />data
           </Routes>
           <Footer />
           <ToastContainer />

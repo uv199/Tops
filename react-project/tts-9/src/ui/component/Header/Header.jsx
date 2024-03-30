@@ -34,8 +34,8 @@ export default () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="m-2" to="/shose-all">
-                  Shose
+                <NavLink className="m-2" to="/men-shose">
+                  Men Shose
                 </NavLink>
               </NavItem>
               <NavItem>
