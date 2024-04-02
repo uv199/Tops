@@ -16,11 +16,18 @@ export default function FunState() {
       <hr />
 
       <h1>Amount is {amount.amount}</h1>
-      <Button onClick={() => setAmount({ amount: amount.amount + 1 })}>
+      <Button
+        onClick={() => setAmount({ ...amount, amount: amount.amount + 1 })}
+      >
         INC
       </Button>
       <hr />
       <h1>Number is {amount.number}</h1>
+      <Button
+        onClick={() => setAmount({ ...amount, number: amount.number + 1 })}
+      >
+        INC
+      </Button>
     </div>
   );
 }
@@ -36,4 +43,7 @@ x = count
 
 
 setCount(500)
+
+
+
 */

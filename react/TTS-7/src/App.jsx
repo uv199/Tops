@@ -3,6 +3,7 @@ import ClassCom from "./2.component/ClassCom";
 import "./App.css";
 import MainStyle from "./3.style/MainStyle";
 import State from "./4.State/State";
+import LifeCycle from "./5.lifeCycleMethod/LifeCycle";
 
 export default function App() {
   return (
@@ -15,7 +16,10 @@ export default function App() {
       {/* <MainStyle /> */}
 
       {/* -------------STATE------------- */}
-      <State />
+      {/* <State /> */}
+
+      {/* -------------LIFE CYCLE------------- */}
+      <LifeCycle />
     </div>
   );
 }
