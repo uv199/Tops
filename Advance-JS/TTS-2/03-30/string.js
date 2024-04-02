@@ -66,15 +66,13 @@ let arr = "urvish patel".split();
 console.log("-----------  arr----------->", arr)
 */
 
-
 // urvish => hsivru
 
-let name = 'urvish' 
-let arr = name.split("")
-console.log("-----------  arr----------->", arr)
-arr.reverse()
-console.log("-----------  arr----------->", arr)
+let name = "urvish";
+let arr = name.split("");
+console.log("-----------  arr----------->", arr);
+arr.reverse();
+console.log("-----------  arr----------->", arr);
 // let revStr = arr.toString()
-let revStr = arr.join()
-console.log("-----------  revStr----------->", revStr)
-
+let revStr = arr.join();
+console.log("-----------  revStr----------->", revStr);

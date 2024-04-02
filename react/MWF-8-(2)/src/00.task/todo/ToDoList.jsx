@@ -316,8 +316,6 @@ export default function TodoProject() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-5">
-            <h6>Task: {task}</h6>
-            <h6>Index: {index}</h6>
             <div className="d-flex align-items-center gap-2">
               <Input
                 placeholder="Add Task Here"
@@ -342,6 +340,8 @@ export default function TodoProject() {
         </div>
         <div className="row mt-5">
           <div className="col-md-6">
+            <h1>Pending Tasks</h1>
+            <hr />
             <ReactCard>
               <CardBody>
                 <div className="row">
@@ -422,13 +422,12 @@ export default function TodoProject() {
                     })}
                   </ListGroup>
                 </ReactCard>
-                <Button
-                  className="w-50 me-2 mt-3"
-                  color="primary"
+                <button
+                  className="w-50 me-2 mt-3 !bg-black hover"
                   onClick={() => addSelectedPendingTaskToCompletedTask()}
                 >
                   Move to Completed Task
-                </Button>
+                </button>
                 <Button
                   className="ms-2 mt-3"
                   color="danger"
@@ -441,101 +440,104 @@ export default function TodoProject() {
           </div>
 
           <div className="col-md-6">
+            <h1>Done Tasks</h1>
+            <hr />
             <ReactCard>
-              {/* <CardBody> */}
-              <div className="row">
-                <div className="col-md-6">
-                  {/* <FormGroup> */}
-                  <div className="d-flex align-items-center gap-2">
-                    <Label for="completedSearch" className="mb-0">
-                      Search:
-                    </Label>
-                    <Input
-                      innerRef={inputRef}
-                      id="completedSearch"
-                      placeholder="Search Completed Task..."
-                      onChange={(e) => searchHandler(e)}
-                    />
-                    <hr />
-                    <Button color="primary" onClick={() => searchData()}>
-                      <Search />
-                    </Button>
+              <CardBody>
+                <div className="row">
+                  <div className="col-md-6">
+                    <FormGroup>
+                      <div className="d-flex align-items-center gap-2">
+                        <Label for="completedSearch" className="mb-0">
+                          Search:
+                        </Label>
+                        <Input
+                          innerRef={inputRef}
+                          id="completedSearch"
+                          placeholder="Search Completed Task..."
+                          onChange={(e) => searchHandler(e)}
+                        />
+                        <hr />
+                        <Button color="primary" onClick={() => searchData()}>
+                          <Search />
+                        </Button>
+                      </div>
+                    </FormGroup>
                   </div>
-                  {/* </FormGroup> */}
-                </div>
-                <div className="col-md-3">
-                  {/* <CardTitle tag="h5" className="text-center">
+                  <div className="col-md-3">
+                    {/* <CardTitle tag="h5" className="text-center">
                       Completed Task
                     </CardTitle> */}
+                  </div>
+                  <div className="col-md-3 d-flex justify-content-end">
+                    <FormGroup check>
+                      <Input id="completedTaskCheckbox" type="checkbox" />
+                      <Input
+                        id="completedTaskCheckbox"
+                        type="checkbox"
+                        checked={
+                          completedTaskArr.length > 0 &&
+                          completedTaskArr.length ===
+                            completedSelectedTasks.length
+                        }
+                        onChange={(e) => completedSelectAll(e)}
+                      />
+                      <Label for="completedTaskCheckbox">Select All</Label>
+                    </FormGroup>
+                  </div>
                 </div>
-                <div className="col-md-3 d-flex justify-content-end">
-                  <FormGroup check>
-                    <Input id="completedTaskCheckbox" type="checkbox" />
-                    <Input
-                      id="completedTaskCheckbox"
-                      type="checkbox"
-                      checked={
-                        completedTaskArr.length > 0 &&
-                        completedTaskArr.length ===
-                          completedSelectedTasks.length
-                      }
-                      onChange={(e) => completedSelectAll(e)}
-                    />
-                    <Label for="completedTaskCheckbox">Select All</Label>
-                  </FormGroup>
-                </div>
-              </div>
-              <ReactCard>
-                <ListGroup flush>
-                  {completedTaskArr?.map?.((e, i) => {
-                    return (
-                      <ListGroupItem
-                        className="d-flex align-items-center justify-content-between"
-                        key={i}
-                      >
-                        <div className="d-flex align-items-center gap-2">
-                          <Input
-                            type="checkbox"
-                            checked={completedSelectedTasks.includes(i)}
-                            onChange={(e) =>
-                              handleCompletedTaskSelection(
-                                i,
-                                e?.target?.checked
-                              )
-                            }
-                          />
-                          <span>
-                            {i + 1}. {e}
-                          </span>
-                        </div>
-                        <div className="d-flex align-items-center gap-2">
-                          <Trash2
-                            role="button"
-                            size={20}
-                            color="#ff0000"
-                            onClick={() => deleteHandler(i)}
-                          />
-                        </div>
-                      </ListGroupItem>
-                    );
-                  })}
-                </ListGroup>
-              </ReactCard>
-              <Button
-                className="w-50 me-2 mt-3"
-                color="primary"
-                onClick={() => addSelectedCompletedTaskToPendingTask()}
-              >
-                Move to Pending Task
-              </Button>
-              <Button
-                className="ms-2 mt-3"
-                color="danger"
-                onClick={() => deleteCompletedTask()}
-              >
-                Delete Completed Task
-              </Button>
-              {/* </CardBody> */}
+                <ReactCard>
+                  <ListGroup flush>
+                    {completedTaskArr?.map?.((e, i) => {
+                      return (
+                        <ListGroupItem
+                          className="d-flex align-items-center justify-content-between"
+                          key={i}
+                        >
+                          <div className="d-flex align-items-center gap-2">
+                            <Input
+                              type="checkbox"
+                              checked={completedSelectedTasks.includes(i)}
+                              onChange={(e) =>
+                                handleCompletedTaskSelection(
+                                  i,
+                                  e?.target?.checked
+                                )
+                              }
+                            />
+                            <span>
+                              {i + 1}. {e}
+                            </span>
+                          </div>
+                          <div className="d-flex align-items-center gap-2">
+                            <Trash2
+                              role="button"
+                              size={20}
+                              color="#ff0000"
+                              onClick={() => deleteHandler(i)}
+                            />
+                          </div>
+                        </ListGroupItem>
+                      );
+                    })}
+                  </ListGroup>
+                </ReactCard>
+                <Button
+                  className="w-50 me-2 mt-3"
+                  color="primary"
+                  onClick={() => addSelectedCompletedTaskToPendingTask()}
+                >
+                  Move to Pending Task
+                </Button>
+                <Button
+                  className="ms-2 mt-3"
+                  color="danger"
+                  onClick={() => deleteCompletedTask()}
+                >
+                  Delete Completed Task
+                </Button>
+                {/* </CardBody> */}
+              </CardBody>
             </ReactCard>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Contact from "../13.Project/ui/Contact/Contact";
-import About from "../13.Project/ui/About/About";
-import Home from "../13.Project/ui/Home/Home";
-import Header from "../13.Project/componenet/Header/Header";
-import Login from "../13.Project/ui/Login/Login";
-import Profile from "../13.Project/ui/Profile/Profile";
+import Contact from "../ui/Contact/Contact";
+import About from "../ui/About/About";
+import Home from "../ui/Home/Home";
+import Header from "../componenet/Header/Header";
+import Login from "../ui/Login/Login";
+import Profile from "../ui/Profile/Profile";
 import AuthRoute from "./AuthRoute";
 
 export default function Router() {
