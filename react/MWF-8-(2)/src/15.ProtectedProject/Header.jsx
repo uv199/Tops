@@ -1,20 +1,37 @@
 import { PersonStanding, User } from "lucide-react";
 import React, { Component, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import LoginModal from "./LoginModal";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
+import RegisterModal from "./RegisterModal";
 
 export default () => {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+  const [regModal, setRegModal] = useState(false);
+
+  const regToggle = () => setRegModal(!regModal);
 
   const navigate = useNavigate();
   const loginHandler = () => {
     localStorage.setItem("isLogin", "yes");
   };
+
   return (
     <>
       <LoginModal modal={modal} toggle={toggle} />
+      <RegisterModal modal={regModal} toggle={regToggle} />
       <div
         style={{
           width: "100%",
@@ -39,6 +56,9 @@ export default () => {
           <User role="button" onClick={() => navigate("/profile")} />
           <Button color="danger" onClick={() => toggle()}>
             Login
+          </Button>
+          <Button color="danger" onClick={regToggle}>
+            Register
           </Button>
         </div>
       </div>

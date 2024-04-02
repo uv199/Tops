@@ -91,10 +91,10 @@ function App() {
       {/* <---------------------ROUTER------------------------> */}
       {/* <Router /> */}
       {/* <ProtectedRouter /> */}
-      {/* <ProtectedProject /> */}
+      <ProtectedProject />
 
       {/* <---------------------TASK------------------------> */}
-      <ToDoList />
+      {/* <ToDoList /> */}
 
       <ToastContainer />
     </div>

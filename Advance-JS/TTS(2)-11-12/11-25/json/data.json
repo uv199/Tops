@@ -1,7 +1,0 @@
-[
-  {
-    "name": "urvish",
-    "age": 12,
-    "arr": [1, true, 3, "test", { "a": "test" }]
-  }
-]

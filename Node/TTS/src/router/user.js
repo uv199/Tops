@@ -18,17 +18,13 @@ import fs from "fs-extra";
 
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
-    let isExist = await fs.pathExists("./public/data/uploads/");
-    if (isExist) {
-      cb(null, "./public/data/uploads/");
-    } else {
-      await fs.mkdirp("./public/data/uploads/");
-      cb(null, "./public/data/uploads/");
-    }
+    let isAvailable = await fs.exists("./public/data/uploads/");
+    if (!isAvailable) await fs.mkdirp("./public/data/uploads/");
+    cb(null, "./public/data/uploads/");
   },
   filename: (req, file, cb) => {
-    console.log("-----------  file----------->", file);
-    cb(null, Date.now().toString());
+    let extension = file.originalname.split(".").pop();
+    cb(null, Date.now().toString() + `.${extension}`);
   },
 });
 const router = new express.Router();

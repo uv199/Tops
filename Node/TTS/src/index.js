@@ -79,7 +79,21 @@ product
 - gender
 
 
+ {
+        $group: {
+            _id: "$brand",
+            "total": { $sum: 1 },
+            totalPrice :{$sum:"$price"}
+        }
+    }
 
+
+    {
+         $match: {
+             brand: "Amazon",
+             price: 599 ...etc
+         }
+     },
 
 
 

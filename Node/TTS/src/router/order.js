@@ -4,11 +4,21 @@ import { auth } from "../auth/auth";
 let router = express.Router();
 
 router.get("/getAll", (req, res) => {
-  Order.find({})
-    .populate([
-      { path: "productId", select: "title price" },
-      { path: "userId" },
-    ])
+  Order.aggregate([
+    {
+      $lookup: {
+        from: "products",
+        localField: "productId",
+        foreignField: "_id",
+        as: "productId",
+      },
+    },
+  ])
+
+    // .populate([
+    //   { path: "productId", select: "title price" },
+    //   { path: "userId" },
+    // ])
     .then((resData) => {
       res.status(200).send(resData);
     })
