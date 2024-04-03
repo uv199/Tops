@@ -3,7 +3,7 @@ console.log("-----------  str----------->", str);
 
 /*
 // concat()	It provides a combination of two or more strings.
-
+// test
 let name = " urvish";
 let surname = " patel";
 let str2 = str.concat(name, surname, "...!");
