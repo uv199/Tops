@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Button } from "reactstrap";
+import { Button, Table } from "reactstrap";
+import ComUnmount from "./ComUnmount";
 
 export default class LifeCycleCom extends Component {
   constructor() {
     super();
     console.log("-----------  constructor----------->");
-    this.state = { count: 1, productData: {} };
+    this.state = { count: 1, productData: {}, isRemove: false };
   }
 
   componentDidMount() {
@@ -34,6 +35,14 @@ export default class LifeCycleCom extends Component {
     console.log("-----------  render----------->");
     return (
       <div>
+        {!this.state.isRemove ? <ComUnmount /> : null}
+        <Button
+          color="danger"
+          onClick={() => this.setState({ isRemove: true })}
+        >
+          Remove
+        </Button>
+        <hr />
         <h1>LifeCycleCom</h1>
         <h2>Count is {this.state.count}</h2>
         <Button
@@ -42,10 +51,8 @@ export default class LifeCycleCom extends Component {
         >
           Inc
         </Button>
-
         <hr />
         <h4>{this.state.productData.title}</h4>
-        <img src={this.state.productData.image} style={{ height: "100px" }} />
       </div>
     );
   }

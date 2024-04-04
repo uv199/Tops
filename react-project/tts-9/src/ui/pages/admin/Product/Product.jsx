@@ -14,6 +14,7 @@ const intialProduct = {
   thumbnail: "",
   color: [],
   size: [],
+  mainCategorie: "",
 };
 
 export default function Product() {

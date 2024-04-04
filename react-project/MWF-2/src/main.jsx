@@ -4,9 +4,11 @@ import App from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import Topics from "./00.topics/Topics.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Topics />
   </React.StrictMode>
 );
