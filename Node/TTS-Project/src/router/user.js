@@ -9,7 +9,7 @@ router.post("/signup", async (req, res) => {
     const match = modals.findOne({
       $or: [{ email: input.email }, { contactNo: input.contactNo }],
     });
-    
+
     if (match) return new Error({ message: "email or password are used" });
 
     let user = await modals.User.create(input);

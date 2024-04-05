@@ -69,3 +69,6 @@ let arr = str.split();
 console.log("-----------  arr----------->", arr);
 
 */
+
+let availbale = str.includes("world");
+console.log("-----------  availbale----------->", availbale);
