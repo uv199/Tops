@@ -31,7 +31,7 @@ export default () => {
   return (
     <>
       <LoginModal modal={modal} toggle={toggle} />
-      <RegisterModal modal={regModal} toggle={regToggle} />
+      <RegisterModal modal={regModal} toggle={regToggle} loginToggle={toggle} />
       <div
         style={{
           width: "100%",

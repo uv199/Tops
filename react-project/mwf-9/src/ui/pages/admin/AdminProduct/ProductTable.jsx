@@ -20,6 +20,23 @@ export default function ProductTable() {
       });
   }, []);
 
+  const deleteHandler = (id) => {
+    axios({
+      method: "delete",
+      url: `http://localhost:9999/product/delete/${id}`,
+      headers: {
+        Authorization: `bearer ${cookies.token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res.data);
+      
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
   return (
     <div>
       <Table className="border" striped>
