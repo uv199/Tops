@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
-
+import bcrypt from "bcryptjs";
 let userSchema = mongoose.Schema(
   {
     firstName: {
@@ -52,16 +52,16 @@ let userSchema = mongoose.Schema(
         message: "Password is not propers",
       },
     },
-    coordinates: {
-      type: {
-        type: "Point",
-        required: true,
-      },
-      coordinates: {
-        type: [Number],
-        required: true,
-      },
-    },
+    // coordinates: {
+    //   type: {
+    //     type: ["Point"],
+    //     required: true,
+    //   },
+    //   coordinates: {
+    //     type: [Number],
+    //     required: true,
+    //   },
+    // },
     address: {
       line: String,
       city: String,
@@ -69,15 +69,26 @@ let userSchema = mongoose.Schema(
       country: String,
       pinCode: String,
     },
-    followers: Number,
-    postCount: Number,
-    following: Number,
+    followers: { type: Number, default: 0 },
+    postCount: { type: Number, default: 0 },
+    following: { type: Number, default: 0 },
     caption: String,
     profilePic: String,
   },
   { timestamps: true }
 );
 
-locationSchema.index({ coordinates: "2dsphere" });
+// userSchema.index({ coordinates: "2dsphere" });
+
+userSchema.pre("save", async function () {
+  if (this.isModified("password")) {
+    console.log("----->");
+    this.password = await bcrypt.hash(this.password, 12);
+  }
+});
+
+userSchema.methods.validatePassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 export const User = mongoose.model("user", userSchema);

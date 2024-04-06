@@ -41,3 +41,10 @@ export default function UseEffect() {
     </div>
   );
 }
+
+let fun = () => {
+  console.log("----with [] dependancy ------>");
+  return () => {
+    console.log("---return func---->");
+  };
+};

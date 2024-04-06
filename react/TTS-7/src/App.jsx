@@ -5,6 +5,7 @@ import MainStyle from "./3.style/MainStyle";
 import State from "./4.State/State";
 import LifeCycle from "./5.lifeCycleMethod/LifeCycle";
 import Hook from "./6.Hooks/Hook";
+import Props from "./7.Props/Props";
 
 export default function App() {
   return (
@@ -23,7 +24,11 @@ export default function App() {
       {/* <LifeCycle /> */}
 
       {/* -------------HOOK------------- */}
-      <Hook />
+      {/* <Hook /> */}
+
+      {/* -------------PROPS------------- */}
+      <Props />
+
     </div>
   );
 }
