@@ -51,11 +51,14 @@ import UseMemo from "./4.Hook/useCallBack-Memo/UseMemo";
 import InputDataPost from "./13.api/InputDataPost";
 import AppRedux from "./14.redux/AppRedux";
 import Crud from "./Curd/Crud";
+import Home from "./000.task/router/Home";
 
 function App() {
   return (
     <>
       <div className="appContainer">
+        {/*-----------------------TASK--------------------------  */}
+        <Home />
         {/*-----------------------COMPONENT--------------------------  */}
         {/* <FunCom /> */}
         {/* <ClassCom /> */}
@@ -112,7 +115,7 @@ function App() {
         {/* <MultiRevise /> */}
         {/* <ToDoList /> */}
         {/* <CheckBox /> */}
-        <Crud/>
+        {/* <Crud/> */}
 
         {/*-----------------------LOCALSTORAGE--------------------------  */}
         {/* <LocalStorage /> */}

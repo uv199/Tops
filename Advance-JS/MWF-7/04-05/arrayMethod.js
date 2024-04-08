@@ -79,3 +79,5 @@ console.log("-----------  arr----------->", arr)
 arr.splice(1, 2, 20, 30); // update
 
 console.log("-----------  arr----------->", arr);
+
+

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import Home from "./Home";
 import Contact from "./Contact";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
