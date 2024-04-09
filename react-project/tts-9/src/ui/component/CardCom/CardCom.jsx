@@ -1,6 +1,7 @@
+import axios from "axios";
 import React from "react";
 import {
-  Button,
+
   Card,
   CardBody,
   CardSubtitle,
@@ -9,6 +10,23 @@ import {
 } from "reactstrap";
 
 export default function CardCom({ product }) {
+  const addCardHandler = () => {
+    axios({
+      method: "post",
+      url: `http://localhost:9999/cart/create/${product._id}`,
+      headers: {
+        authorization: "Bearer token",// one space
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res.data);
+        toast.success("product added");
+      })
+      .catch((err) => {
+        toast.error("not found");
+      });
+  };
   return (
     <div>
       <Card
@@ -28,7 +46,7 @@ export default function CardCom({ product }) {
               <b>Price : </b> {product?.price}
             </p>
           </CardText>
-          <Button>Button</Button>
+          <Button onClick={addCardHandler}>Add Card</Button>
         </CardBody>
       </Card>
     </div>
