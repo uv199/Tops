@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Edit, Trash } from "react-feather";
 import { Table } from "reactstrap";
+import { useCookies } from "react-cookie";
 
-export default function ProductTable() {
+export default function ProductTable({ setEditData, toggle }) {
   let [allProduct, setAllProduct] = useState([]);
+  let [cookies] = useCookies(["token"]);
+  let [refetch, setRefetch] = useState(true);
+  const refresh = () => setRefetch(!refetch);
 
-  // http://localhost:9999/product/getAll
   useEffect(() => {
     axios({
       method: "get",
@@ -18,7 +22,7 @@ export default function ProductTable() {
       .catch((err) => {
         console.log("err", err);
       });
-  }, []);
+  }, [refetch]);
 
   const deleteHandler = (id) => {
     axios({
@@ -31,11 +35,17 @@ export default function ProductTable() {
     })
       .then((res) => {
         console.log("-----------  res----------->", res.data);
-      
+        refresh();
+        //  show message
       })
       .catch((err) => {
         console.log("err", err);
       });
+  };
+
+  const updateHandler = (data) => {
+    setEditData(data);
+    toggle();
   };
   return (
     <div>
@@ -95,7 +105,14 @@ export default function ProductTable() {
                     })}
                   </div>
                 </td>
-                <td>Otto</td>
+                <td>
+                  <Trash
+                    color="red"
+                    role="button"
+                    onClick={() => deleteHandler(e._id)}
+                  />
+                  <Edit role="button" onClick={() => updateHandler(e)} />
+                </td>
               </tr>
             );
           })}

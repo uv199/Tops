@@ -1,5 +1,5 @@
 import { PersonStanding, User } from "lucide-react";
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 // import { Button } from "reactstrap";
 import LoginModal from "./LoginModal";
@@ -20,17 +20,17 @@ export default () => {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
   const [regModal, setRegModal] = useState(false);
+  console.log("--=-=-=-=-=>");
 
   const regToggle = () => setRegModal(!regModal);
 
+  let jsonData = localStorage.getItem("user") || "{}";
+  let user = JSON.parse(jsonData);
   const navigate = useNavigate();
-  const loginHandler = () => {
-    localStorage.setItem("isLogin", "yes");
-  };
 
   return (
     <>
-      <LoginModal modal={modal} toggle={toggle} />
+      <LoginModal modal={modal} toggle={toggle} regToggle={regToggle} />
       <RegisterModal modal={regModal} toggle={regToggle} loginToggle={toggle} />
       <div
         style={{
@@ -53,13 +53,13 @@ export default () => {
           </li>
         </div>
         <div className="w-25 gap-4 align-items-center d-flex justify-content-end pe-4">
-          <User role="button" onClick={() => navigate("/profile")} />
-          <Button color="danger" onClick={() => toggle()}>
-            Login
-          </Button>
-          <Button color="danger" onClick={regToggle}>
-            Register
-          </Button>
+          {Object.keys(user).length === 0 ? (
+            <Button color="danger" onClick={() => toggle()}>
+              Login
+            </Button>
+          ) : (
+            <User role="button" onClick={() => navigate("/profile")} />
+          )}
         </div>
       </div>
     </>

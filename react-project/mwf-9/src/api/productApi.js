@@ -7,7 +7,7 @@ export class ProductApi {
       url: "http://localhost:9999/product/create",
       data,
       headers: {
-        // Authorization: `bearer ${token}`,
+        Authorization: `bearer ${token}`,
         "Content-Type": "application/json",
       },
     })

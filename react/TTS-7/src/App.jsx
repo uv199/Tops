@@ -6,6 +6,8 @@ import State from "./4.State/State";
 import LifeCycle from "./5.lifeCycleMethod/LifeCycle";
 import Hook from "./6.Hooks/Hook";
 import Props from "./7.Props/Props";
+import ConditionalRender from "./8.CondRender-Fragment/ConditionalRender";
+import FragmentCom from "./8.CondRender-Fragment/FragmentCom";
 
 export default function App() {
   return (
@@ -27,8 +29,13 @@ export default function App() {
       {/* <Hook /> */}
 
       {/* -------------PROPS------------- */}
-      <Props />
+      {/* <Props /> */}
 
+      {/* -------------CONDITIONAL RENDER------------- */}
+      {/* <ConditionalRender /> */}
+
+      {/* -------------FRAGMENT------------- */}
+      <FragmentCom />
     </div>
   );
 }

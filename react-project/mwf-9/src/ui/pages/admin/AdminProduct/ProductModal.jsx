@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Modal,
@@ -13,7 +13,6 @@ import Select from "react-select";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { ProductApi } from "../../../../api/productApi";
 
 const colorOptions = [
   { value: "red", label: "Red" },
@@ -30,33 +29,34 @@ const categoryOptions = [
   { value: "formal", label: "formal" },
   { value: "party-Wear", label: "party Wear" },
 ];
-let Product = new ProductApi();
-export default function ProductModal({ modal, toggle }) {
+
+export default function ProductModal({ modal, toggle, editData }) {
   let [product, setProduct] = useState({});
   let [cookies] = useCookies(["token"]);
-  console.log("-----------  cookies----------->", cookies);
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log("--->", product);
-    let data = await Product.create(product, cookies.token);
-    console.log("-----------  data----------->", data);
-    // axios({
-    //   method: "post",
-    //   url: "http://localhost:9999/product/create",
-    //   data: product,
-    //   headers: {
-    //     Authorization: `bearer ${cookies.token}`,
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    // .then((res) => {
-    //   console.log("-----------  res----------->", res.data);
-    //   toggle();
-    // })
-    // .catch((err) => {
-    //   console.log("err", err);
-    // });
+
+    axios({
+      method: "post",
+      url: "http://localhost:9999/product/create",
+      data: product,
+      headers: {
+        Authorization: `bearer ${cookies.token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res.data);
+        toggle();
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
   };
+
+  useEffect(() => {
+    setProduct(editData);
+  }, [editData]);
 
   let selectHandler = (e, type) => {
     if (type === "color") {
@@ -71,6 +71,29 @@ export default function ProductModal({ modal, toggle }) {
     } else {
       setProduct({ ...product, size: [...product.size, ee] });
     }
+  };
+
+  const updateHandler = (e) => {
+    e.preventDefault();
+
+    axios({
+      method: "post",
+      url: `http://localhost:9999/product/update/${product?._id}`,
+      data: product,
+      headers: {
+        Authorization: `bearer ${cookies.token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("-----------  res----------->", res.data);
+        toggle();
+        //  message tost
+        
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
   };
   return (
     <div>
@@ -244,10 +267,19 @@ export default function ProductModal({ modal, toggle }) {
                 );
               })}
             </FormGroup>
-
-            <Button color="danger" className="w-100">
-              Submit
-            </Button>
+            {Object?.keys?.(editData)?.length > 0 ? (
+              <Button
+                onClick={(e) => updateHandler(e)}
+                color="danger"
+                className="w-100"
+              >
+                Update
+              </Button>
+            ) : (
+              <Button color="danger" className="w-100">
+                Submit
+              </Button>
+            )}
           </Form>
         </ModalBody>
       </Modal>

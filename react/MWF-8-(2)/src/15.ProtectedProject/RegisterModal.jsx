@@ -11,6 +11,7 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import { useNavigation } from "react-router-dom";
 
 const initialUser = {
   name: "",
@@ -31,7 +32,6 @@ const initialAddress = {
 export default function RegisterModal({ toggle, modal, loginToggle }) {
   let [user, setUser] = useState(initialUser);
   let [address, setAddress] = useState(initialAddress);
-
   const submitHandler = (e) => {
     e.preventDefault();
     let data = { ...user, address: [address] };
@@ -43,12 +43,12 @@ export default function RegisterModal({ toggle, modal, loginToggle }) {
       data: data,
     })
       .then((res) => {
-        console.log("-----------  res----------->", res.data);
         toast.success("sign up succesfully..!");
         toggle();
         localStorage.setItem("user", JSON.stringify(res.data.data));
         setUser(initialUser);
         setAddress(initialAddress);
+        navigate("/");
       })
       .catch((err) => {
         console.log("-----------  err----------->", err);
@@ -254,3 +254,39 @@ export default function RegisterModal({ toggle, modal, loginToggle }) {
         ...state1,address:[state2]
       } 
 */
+
+/*
+    title: String,
+    description: String,
+    brand: String,
+    gender:  String ["male", "female", "kids","unisex"],
+    price: Number,
+    thumbnail: String imag url ,
+    discountPercentage: Number,
+    mainCategory: String,
+    category: [String] ,
+    color: [String],
+    size: [String],
+    availableStock: Number,
+    rating: Number,
+    totalRaters: Number,
+    totalSoldUnit: Number,
+     */
+
+let data = {
+  title: "gold ring",
+  description: "have marrige gold rring with dimond etc...",
+  brand: "tanisk",
+  gender: "male",
+  price: 12000,
+  thumbnail: "image url",
+  discountPercentage: 20,
+  mainCategory: "ring",
+  category: ["gold", "dimond"],
+  color: ["gold"],
+  size: ["15mm", "20mm"],
+  availableStock: 200,
+  rating: 10,
+  totalRaters: 5,
+  totalSoldUnit: 12,
+};

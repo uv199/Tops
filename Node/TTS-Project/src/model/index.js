@@ -1,4 +1,6 @@
 import { User } from "./user";
-console.log("-----------  User----------->", User)
+import { Post } from "./post";
+import { Like } from "./like";
+import { SavePost } from "./savedPost";
 
-export const modals = { User };
+export const modals = { User, Post, Like, SavePost };

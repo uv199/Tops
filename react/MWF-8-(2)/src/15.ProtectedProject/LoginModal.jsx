@@ -14,9 +14,13 @@ import {
 } from "reactstrap";
 
 const intialData = { email: "", password: "" };
-export default function LoginModal({ toggle, modal }) {
+export default function LoginModal({ toggle, modal, regToggle }) {
   let [credential, setCredentials] = useState(intialData);
 
+  const toggleHandler = () => {
+    toggle();
+    regToggle();
+  };
   const loginHandler = (e) => {
     e.preventDefault();
     axios({
@@ -70,6 +74,7 @@ export default function LoginModal({ toggle, modal }) {
             <p>
               Create account{" "}
               <span
+                onClick={toggleHandler}
                 role="button"
                 style={{ color: "blue", textDecoration: "underline" }}
               >
