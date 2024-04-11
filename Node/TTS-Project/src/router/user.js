@@ -17,4 +17,15 @@ router.post("/forget-password", forgetPassword);
 
 router.post("/reset-password", auth, resetPassword);
 
+// cookies
+router.post("/cookies", (req, res) => {
+  res.clearCookie("auth");
+  // res.cookie("auth", "hello cookies");
+  res.send("cokies set...!");
+});
+router.get("/get-cookies", (req, res) => {
+  console.log("---->", req.cookies);
+  res.send("cokies set...!");
+});
+
 export default router;

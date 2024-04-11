@@ -8,10 +8,15 @@ import Hook from "./6.Hooks/Hook";
 import Props from "./7.Props/Props";
 import ConditionalRender from "./8.CondRender-Fragment/ConditionalRender";
 import FragmentCom from "./8.CondRender-Fragment/FragmentCom";
+import Task from "./000.task/Task";
+import MapKey from "./8.CondRender-Fragment/MapKey";
 
 export default function App() {
   return (
     <div className="d-flex justify-content-center">
+      {/* -------------TASK------------- */}
+      {/* <Task /> */}
+
       {/* -------------COMPONENETS------------- */}
       {/* <FunCom /> */}
       {/* <ClassCom /> */}
@@ -35,7 +40,10 @@ export default function App() {
       {/* <ConditionalRender /> */}
 
       {/* -------------FRAGMENT------------- */}
-      <FragmentCom />
+      {/* <FragmentCom /> */}
+
+      {/* -------------MAP-KEY------------- */}
+      <MapKey />
     </div>
   );
 }

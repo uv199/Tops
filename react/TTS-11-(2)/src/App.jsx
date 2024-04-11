@@ -13,10 +13,14 @@ import ProtectedRoute from "./11.router/protectedRouter/ProtectedRoute";
 import Localstorage from "./12.localstorage/Localstorage";
 import UseRefCom from "./9.Hook/useRef/UseRefCom";
 import ProjectApp from "./13.Project/ProjectApp";
+import Todo from "./000.projects/Todo/Todo";
 
 function App() {
   return (
-    <div className="w-100 d-flex justify-content-center align-items-center">
+    <div className="d-flex justify-content-center align-items-center">
+      {/* <----------------------TASK-----------------------> */}
+      <Todo />
+
       {/* <----------------------COMPONENT-----------------------> */}
       {/* <Component /> */}
 
@@ -53,7 +57,7 @@ function App() {
       {/* <ProtectedRoute /> */}
 
       {/* <----------------------PROJECT-----------------------> */}
-      <ProjectApp />
+      {/* <ProjectApp /> */}
 
       <ToastContainer />
     </div>

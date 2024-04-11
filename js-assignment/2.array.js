@@ -13,15 +13,15 @@
 9. remove 1 element from end of array
 10. do sum of all value of an array with use of map, reduce and for-loop
 11. sort a array in acending decending
-12. reverce an array with use of method [1,2,3] => [3,2,1]
-13. reverce an array with use of for-loop
+12. reverse an array with use of method [1,2,3] => [3,2,1]
+13. reverse an array with use of for-loop
 
 ___________________________________________________________________________________
 
 task-2
 [1,2,3,6,7,9,3,56,8]
 
-1. give all value which can devided by 2 - not use filter
+1. give all value which can devided by 2 use filter
 2. give all value above 3 by use of filter
 3. give index of 56
 4. give true/false result when check given value is exists in array or not
@@ -40,29 +40,3 @@ task-4
 by use of loop
 
 */
-
-function replaceValue(arr, index, value) {
-  arr[index] = value;
-  // change a value of 6th index with 100
-  return arr;
-}
-function sumOfAllArrEle(arr) {
-  let sum = 0;
-  arr.map((e) => {
-    sum += e;
-  });
-  return sum;
-}
-
-let x = [1, 2, 3, 4, 5];
-let total = sumOfAllArrEle(x);
-
-// dta = {
-//   name,
-//   age,
-//   adderess: {
-//     city,
-//     state,
-//     pincode,
-//   },
-// };

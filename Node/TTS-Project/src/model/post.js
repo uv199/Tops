@@ -8,7 +8,7 @@ const postSchema = mongoose.Schema(
       type: String,
       enum: {
         values: ["post", "reel"],
-        message: '{VALUE} is not supported',
+        message: "{VALUE} is not supported",
       },
     },
     post: [String],
@@ -31,7 +31,11 @@ const postSchema = mongoose.Schema(
     //     type: [Number],
     //     required: true,
     //   },
-    // },s
+    // },
+    likeCount: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
