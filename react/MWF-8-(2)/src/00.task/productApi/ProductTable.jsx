@@ -1,79 +1,39 @@
 import { Button, Table, Input } from "reactstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { Eye, PencilRuler, Search, Trash } from "lucide-react";
 let sizeOptions = ["41", "42", "43", "44", "45"];
-import ReactPaginate from "react-paginate";
-export default function ProducttTable({
-  refresh,
-  refresHandler,
-  setProduct,
-  toggle,
-  UpdateHandler,
-  Preview,
-}) {
+export default function ProductTable({ refresh, refetch }) {
   let [data, setData] = useState(null);
-  let [paginate, setPeginate] = useState({
-    limit: 10,
-    page: 1,
-    totalProduct: 0,
-  });
-  let [search, setSearch] = useState("");
 
   useEffect(() => {
-    console.log("--=-=-=-=-=->");
     axios({
       method: "get",
-      url: "http://localhost:9999/product/getAllPaginate",
-      params: {
-        limit: paginate.limit,
-        page: paginate.page,
-        search,
-      },
+      url: "http://localhost:9999/product/getAll",
     }).then((res) => {
       setData(res.data.data);
-      setPeginate({ ...paginate, totalProduct: res.data.count });
     });
   }, [refresh]);
 
-  const updateHandler = (e) => {
-    toggle();
-    setProduct(e);
-    UpdateHandler();
-  };
-
-  const deletHandler = (e) => {
+  const deletHandler = (id) => {
     axios({
       method: "delete",
-      url: `http://localhost:9999/product/delete/${e?._id}`,
-      data: data,
+      url: "http://localhost:9999/product/delete/" + id,
     })
       .then((res) => {
-        toast.success("delet succesfully");
-        if (data.length === 1) {
-          setPeginate({ ...paginate, page: paginate.page - 1 });
-        }
-        refresHandler();
+        refetch();
+        alert("deleted...!");
       })
       .catch((err) => {
-        toast.error("somthing wrong");
+        console.log("-----------  err----------->", err);
       });
   };
 
-  const searchHandler = (e) => {
-    setSearch(e?.target?.value);
-    refresHandler();
-  };
-  const handlePageClick = (e) => {
-    setPeginate({ ...paginate, page: e?.selected + 1 });
-    refresHandler();
-  };
   return (
     <div
       style={{ margin: "10px 50px", border: "1px solid gray", padding: "20px" }}
     >
-      <div className="d-flex justify-content-between">
+      {/* <div className="d-flex justify-content-between">
         <h1>Product Table </h1>
         <div className="d-flex align-items-center">
           <Input
@@ -82,12 +42,12 @@ export default function ProducttTable({
           />
           <Search />
         </div>
-      </div>
+      </div> */}
       <hr />
       <Table>
         <thead>
           <tr>
-            {["Sr", "Image", "Name", "Price", "Color", "Size", "Action"]?.map?.(
+            {["Sr", "Image", "Name", "Price", "Color", "Size", "Action"].map(
               (e, i) => {
                 return <th key={i}>{e}</th>;
               }
@@ -155,7 +115,7 @@ export default function ProducttTable({
                     <Trash
                       role="button"
                       color="red"
-                      onClick={() => deletHandler(e)}
+                      onClick={() => deletHandler(e._id)}
                     />
                   </div>
                 </td>
@@ -165,17 +125,6 @@ export default function ProducttTable({
         </tbody>
       </Table>
       <hr />
-
-      <ReactPaginate
-        className="d-flex gap-3"
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={paginate.totalProduct / paginate.limit}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
     </div>
   );
 }

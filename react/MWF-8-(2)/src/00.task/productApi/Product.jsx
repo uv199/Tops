@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import ProductTable from "./ProductTable";
 
 export default function Product() {
-  return <div>Product</div>;
+  let [refresh, setRefresh] = useState(true);
+
+  let refetch = () => setRefresh(!refresh);
+  return (
+    <div>
+      <ProductTable refetch={refetch} refresh={refresh} />
+    </div>
+  );
 }
 
 let data = {

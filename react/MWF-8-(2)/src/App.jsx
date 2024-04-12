@@ -34,6 +34,7 @@ import ProtectedProject from "./15.ProtectedProject/Router";
 import UeRefCom from "./10.Hook/useRef/UeRefCom";
 import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
 import ToDoList from "./00.task/todo/ToDoList";
+import Product from "./00.task/productApi/Product";
 
 function App() {
   return (
@@ -91,9 +92,10 @@ function App() {
       {/* <---------------------ROUTER------------------------> */}
       {/* <Router /> */}
       {/* <ProtectedRouter /> */}
-      <ProtectedProject />
+      {/* <ProtectedProject /> */}
 
       {/* <---------------------TASK------------------------> */}
+      <Product />
       {/* <ToDoList /> */}
 
       <ToastContainer />

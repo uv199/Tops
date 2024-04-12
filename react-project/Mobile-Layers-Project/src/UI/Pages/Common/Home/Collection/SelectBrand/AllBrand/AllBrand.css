@@ -1,0 +1,55 @@
+.apple{
+    border-top: 1px solid #00000014;
+    border-bottom: 1px solid #00000014;
+}
+.apple .apple_grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.apple .apple_grid .apple_box{
+    border-right: 1px solid #00000014;
+    border-bottom: 1px solid #00000014;
+    overflow: hidden;
+}
+.apple .apple_grid .apple_box .apple_image{
+    text-align: center;
+    transition: 1s all ease-in-out;
+    height: calc(100% - 90px);
+}
+.apple .apple_grid .apple_box:hover .apple_image{
+    transform: scale(1.05);
+    transition: 1s all ease-in-out;
+}
+.apple .apple_grid .apple_box .apple_text{
+    position: relative;
+}
+.apple .apple_grid .apple_box .apple_text::before{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    display: block;
+    transform: scale(0);
+    transform-origin: 0% 100%;
+    transition: 0.4s all ease-in-out;
+    position: absolute;
+    bottom: -1px;
+}
+.apple .apple_grid .apple_box:hover .apple_text::before{
+    transform: scale(1);
+}
+.bx-viewport {
+    height: 604px !important;
+}
+.bx-wrapper {
+    width: 50% !important;
+    border: none;
+    margin-bottom: 0px;
+}
+.bx-wrapper img {
+    width: 100% !important;
+    height: 604px;
+}
+.bx-wrapper .bx-controls-direction a{
+    z-index: 0 !important;
+}

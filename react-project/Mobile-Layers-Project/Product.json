@@ -1,0 +1,572 @@
+[
+    {
+        "title": "Macbook Air 15-inch M2 Model A2941",
+        "description": "Pashmina",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Final_MacBook_Air_15_inch_M2_2023_Vinyl_Skin_Design_Mockup_Top_View.jpg?v=1687244249&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/MacBook_Air_15_inch_M2_pashmina_ce87faeb-ed05-40a1-a2da-804dc434a0b8.png?v=1701679228&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook_Air_15_inch_M2_bulbul_a92b5d0b-80bc-40f9-b667-5756cd5d7528.png?v=1701679205&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook_Air_15_inch_rangoli_6784062c-1885-4552-9848-0b6b5e074ee0.png?v=1701679197&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-15-m2-spiderman-monogram--top.jpg?v=1687244266&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-15-m2-space-blueprint--top.jpg?v=1687244266&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 15 Inch 2017",
+        "description": "Beige Camo",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0000_MacBookPro15-inch2017.jpg?v=1677050290&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-air-m1-13-inch-2020-concrete-rock--top.jpg?v=1676535360&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-m1-13-inch-2020-spaceboy--top.jpg?v=1676535360&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-m1-13-inch-2020-space-blueprint--top.jpg?v=1676535356&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-m1-13-inch-2020-grafitti--top.jpg?v=1676535344&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-15-inch-2017-universe--top.jpg?v=1686051683&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Air M1 13 inch 2020",
+        "description": "Grafitti",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0000_MacBook-Air-13-inch-M1-2020.jpg?v=1677050232&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-15-inch-2017-beige-camo-fluid--top.png?v=1692254789&width=1080",
+            "https://www.layers.shop/cdn/shop/files/macbook-pro-15-inch-2017-x-men-memo--top_d9f794b2-1e6c-44cd-9344-65ab733ea56e.png?v=1691157523&width=1080",
+            "https://www.layers.shop/cdn/shop/files/macbook-pro-15-inch-2017-the-x-men--top_345cc0e9-31e7-431a-b296-96e94c54db85.png?v=1691157374&width=1080",
+            "https://www.layers.shop/cdn/shop/files/macbook-pro-15-inch-2017-x-men-in-action--top_021cc57c-2c5f-4dca-9996-ddf6f055a78f.png?v=1691157260&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-m1-13-inch-2020-concrete-rock--top.jpg?v=1676535360&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook 12 Inch 2015",
+        "description": "Bulbul",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0003_MacBook12inch2015.jpg?v=1677050051&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/MacBook_12_2015_bulbul.png?v=1701679313&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook_12_2015_pashmina.png?v=1701679306&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook_12_2015_rangoli.png?v=1701679285&width=1080",
+            "https://www.layers.shop/cdn/shop/files/macbook-12-2015-x-men-in-action--top_b2a59f4b-6568-4b79-a29f-4b5cbb06e432.png?v=1691158121&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-12-2015-x-men-memo--top.png?v=1691036139&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 13 inch 2014",
+        "description": "Jedi attack",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0001_MacBookPro13-inch2014.jpg?v=1677050154&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2014-jedi-attack--top.jpg?v=1685796848&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2014-droids--top.jpg?v=1685789489&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2014-machina-hud--top.jpg?v=1685176600&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2014-cybermind--top.jpg?v=1685096488&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-18-magma--top.jpg?v=1682503260&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 16 inch 2021",
+        "description": "Oceanic",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0004_MacBookPro16-Inch2021.jpg?v=1677049928&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-2021-oceanic--top.jpg?v=1676535527&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-2021-moulder--top.jpg?v=1676535525&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-2021-cranberry-abstract--top.jpg?v=1676535513&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-2021-baby-pink--top.jpg?v=1676535505&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-2021-baby-pink--top.jpg?v=1676535505&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 14 Inch 2021",
+        "description": "Space Buddies",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0005_MacBookPro14-Inch2021.jpg?v=1677049843&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-14-inch-2021-space-buddies--top.png?v=1692254824&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-14-inch-2021-beige-camo-fluid--top.png?v=1692254801&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-14-inch-2021-x-men-memo--top.png?v=1691036180&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-14-inch-2021-the-x-men--top.png?v=1691036164&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-14-inch-2021-x-men-in-action--top.png?v=1691036121&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Air 13 M2 2022",
+        "description": "Concrete Rock",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0006_MacBookAir13-inchM2.jpg?v=1677049781&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/MacBook-13-inch-m2-concrete-rock--top_d2403ca4-873e-445b-a813-2638128cccf5.jpg?v=1681735023&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook-13-inch-m2-black-smoke--top_5ebaab2c-1a0f-4111-9cee-ae20dc079329.jpg?v=1681735019&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook-13-inch-m2-black-crack--top_5e1f590b-dcb6-44a1-8736-bfb787a5d425.jpg?v=1681735019&width=1080",
+            "https://www.layers.shop/cdn/shop/products/MacBook-13-inch-m2-hellgate-red--top.jpg?v=1681735026&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-m2-machina-hud--top.jpg?v=1685176599&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Air 13 inch 2011",
+        "description": "Florescence",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0002_MacBookAir13-inch2011.jpg?v=1677049584&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-inch-2011-florescence--top.jpg?v=1676535273&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-inch-2011-wolfgang--top.jpg?v=1676535292&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-inch-2011-space-blueprint--top.jpg?v=1676535286&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-inch-2011-black-leather--top.jpg?v=1676535264&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-inch-2011-escaping-earth--top.jpg?v=1676535273&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 17 inch Early 2011",
+        "description": "Thor Silhouette",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0007_MacBookPro17-inchEarly2011.jpg?v=1677049410&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-17-inch-early-2011-thor-silhouette--top.jpg?v=1676535605&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-17-inch-early-2011-ca-shield-monogram--top.jpg?v=1679989424&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-17-inch-early-2011-wolverine-on-bike--top.jpg?v=1676535608&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-17-inch-early-2011-thor-attack--top.jpg?v=1676535604&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-17-inch-early-2011-thor-monogram--top.jpg?v=1676535605&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 16 Inch Touchbar 2019",
+        "description": "Hulk Silhouette",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0008_MacbookPro16-InchTouchBar2019.jpg?v=1677049327&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-touchbar-2019-ironman-for-duty--top.jpg?v=1676535555&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-touchbar-2019-hulk-silhouette--top.jpg?v=1676535554&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-touchbar-2019-ironman-silhouette--top.jpg?v=1676535557&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-touchbar-2019-spiderman-silhouette--top.jpg?v=1676535568&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-16-inch-touchbar-2019-thor-silhouette--top.jpg?v=1676535571&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Pro 13 inch 2016 2018",
+        "description": "Iron Man Suit",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0009_MacbookPro13_2016-2018.jpg?v=1677049248&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-2018-ironman-suit--top.jpg?v=1676535419&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-2018-ironman-silhouette--top.jpg?v=1676535419&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-2018-ironman-gaze--top.jpg?v=1676535419&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-2018-dr-strange--top.jpg?v=1676535412&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-pro-13-inch-2016-2018-spiderman-silhouette--top.jpg?v=1676535428&width=1080"
+        ]
+    },
+    {
+        "title": "Macbook Air 13 2018",
+        "description": "Spaceboy",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Apple Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0010_MacbookAir13_2018.jpg?v=1677049140&width=480",
+        "images": [
+            "https://cdn.shopify.com/s/files/1/0694/8310/2491/files/Frame_1.png?v=1673525502",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-2018-concrete-rock--top.jpg?v=1676535236&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-2018-spaceboy--top.jpg?v=1676535252&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-2018-astro-rainbow--top.jpg?v=1676535226&width=1080",
+            "https://www.layers.shop/cdn/shop/products/macbook-air-13-2018-all-aboard--top.jpg?v=1676535225&width=1080"
+        ]
+    },
+    {
+        "title": "Asus VivoBook 14 2019",
+        "description": "X Men Memo",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0019_AsusVivoBook142019.jpg?v=1677046998&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/asus-vivobook-14-2019-x-men-memo--top.png?v=1691066854&width=1080",
+            "https://www.layers.shop/cdn/shop/products/asus-vivobook-14-2019-x-men-in-action--top.png?v=1691066839&width=1080",
+            "https://www.layers.shop/cdn/shop/products/asus-vivobook-14-2019-the-x-men--top.png?v=1691066821&width=1080",
+            "https://www.layers.shop/cdn/shop/products/asus-vivobook-14-2019-universe--top.jpg?v=1686051672&width=1080",
+            "https://www.layers.shop/cdn/shop/products/asus-vivobook-14-2019-droids--top.jpg?v=1685789479&width=1080"
+        ]
+    },
+    {
+        "title": "Dell Inspiron 15 7000 (2017)",
+        "description": "Captain America",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0018_DellInspiron157000GamingLaptop.jpg?v=1677048225&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/dell-inspiron-15-7567-gaming-laptop-captain-america-silhouette--top.jpg?v=1676535140&width=1080",
+            "https://www.layers.shop/cdn/shop/products/dell-inspiron-15-7567-gaming-laptop-hulk-silhouette--top.jpg?v=1676535148&width=1080",
+            "https://www.layers.shop/cdn/shop/products/dell-inspiron-15-7567-gaming-laptop-thor-silhouette--top.jpg?v=1676535159&width=1080",
+            "https://www.layers.shop/cdn/shop/products/dell-inspiron-15-7567-gaming-spiderman-silhouette--top.jpg?v=1679985023&width=1080",
+            "https://www.layers.shop/cdn/shop/products/dell-inspiron-15-7567-gaming-laptop-thor-attack--top.jpg?v=1676535159&width=1080"
+        ]
+    },
+    {
+        "title": "Lenovo Ideapad Gaming 3",
+        "description": "Pashmina",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0017_LenovoIdeapadGaming3.jpg?v=1677048313&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/Lenovo_Ideapad_Gaming_3_pashmina_f4dab483-f0e4-426d-a21a-4bb4f897a1b9.png?v=1701679244&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Lenovo_Ideapad_Gaming_3_rangoli_92806e0c-4315-45bf-b5e0-3231e9c4b27a.png?v=1701679191&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Lenovo_Ideapad_Gaming_3_bulbul_ef831f41-ce05-4d54-817a-98237fb3205e.png?v=1701679165&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Lenovo_Ideapad_Gaming_3_bulbul_ef831f41-ce05-4d54-817a-98237fb3205e.png?v=1701679165&width=1080",
+            "https://www.layers.shop/cdn/shop/products/lenovo-ideapad-gaming-3-magma--top.jpg?v=1682503260&width=1080"
+        ]
+    },
+    {
+        "title": "Mi Notebook Ultra 15.6 inch",
+        "description": "Rangoli",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0012_MiNotebookUltra15.6inch.jpg?v=1677048740&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/Mi_Notebook_Ultra_15.6_inch_bulbul_666c193a-a806-4c29-8c38-4a75c0eecb61.png?v=1701679173&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Mi_Notebook_Ultra_15.6_inch_pashmina_1c020565-126a-4aa2-bb5f-d09903cb4d15.png?v=1701679168&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-ultra-x-men-in-action--top.png?v=1691066804&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Mi_Notebook_Ultra_15.6_inch_rangoli_8daa4922-3fa4-4c44-84ab-cd709ef02b84.png?v=1701679140&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-ultra-15.6-inch-space-blueprint--top.jpg?v=1677310172&width=1080"
+        ]
+    },
+    {
+        "title": "Mi NoteBook 14",
+        "description": "Oceanic",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0016_MiNoteBook14.jpg?v=1677048373&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-14-oceanic--top.jpg?v=1676535630&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-14-moulder--top.jpg?v=1676535629&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-14-golden-swirl--top.jpg?v=1676535622&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-14-cranberry-abstract--top.jpg?v=1676535619&width=1080",
+            "https://www.layers.shop/cdn/shop/products/mi-notebook-14-baby-pink--top.jpg?v=1676535611&width=1080"
+        ]
+    },
+    {
+        "title": "Microsoft Surface Pro 5",
+        "description": "Golden Swirl",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0014_MicrosoftSurfacePro5.jpg?v=1677048643&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-5-golden-swirl--top.jpg?v=1676535713&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-5-cranberry-abstract--top.jpg?v=1676535710&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-5-baby-pink--top.jpg?v=1676535700&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-5-black-crack--top.jpg?v=1676535702&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-5-black-fluid--top.jpg?v=1676535702&width=1080"
+        ]
+    },
+    {
+        "title": "Microsoft Surface Pro 4",
+        "description": "Oceanic",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Menu__0015_MicrosoftSurfacePro4.jpg?v=1677048582&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-4-oceanic--top.jpg?v=1676535690&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-4-moulder--top.jpg?v=1676535689&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-4-grafitti--top.jpg?v=1676535681&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-4-concrete-rock--top.jpg?v=1676535676&width=1080",
+            "https://www.layers.shop/cdn/shop/products/microsoft-surface-pro-4-cranberry-abstract--top.jpg?v=1676535677&width=1080"
+        ]
+    },
+    {
+        "title": "Realme Book",
+        "description": "Oceanic",
+        "price": 1299,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "window Laptop",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/realme-book-oceanic--top.jpg?v=1676535757&width=1080",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/realme-book-moulder--top.jpg?v=1676535756&width=1080",
+            "https://www.layers.shop/cdn/shop/products/realme-book-golden-swirl--top.jpg?v=1676535747&width=1080",
+            "https://www.layers.shop/cdn/shop/products/realme-book-cranberry-abstract--top.jpg?v=1676535744&width=1080",
+            "https://www.layers.shop/cdn/shop/products/realme-book-concrete-rock--top.jpg?v=1676535743&width=1080",
+            "https://www.layers.shop/cdn/shop/products/realme-book-charcoal-black--top.jpg?v=1676535742&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S23 Plus",
+        "description": "Grafitti",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-plus.jpg?v=1677165207&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-plus-grafitti--back.jpg?v=1677077163&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-plus-chromatic-chaos--back.jpg?v=1682503960&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-plus-concrete-rock--back.jpg?v=1677077169&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-plus-black-leather--back.jpg?v=1677077174&width=1080",
+            "https://www.layers.shop/cdn/shop/files/samsung-galaxy-s23-plus-cyberhud--back.jpg?v=1688967157&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S23",
+        "description": "Spaceboy",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23.jpg?v=1677165223&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-spaceboy--back.jpg?v=1677077250&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-chromatic-chaos--back.jpg?v=1682503958&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-before-sunset--back.jpg?v=1692697649&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-cybermind--back.jpg?v=1685096549&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s23-black-smoke--back.jpg?v=1677077261&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S23 FE",
+        "description": "Quantum Weave",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/files/galaxys23fedevice.jpg?v=1698239849&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/files/Galaxy_S23_FE_Quantum_Weave_12c42925-a0dd-44ff-bc4f-50f853616b8d.png?v=1712228864&width=1080",
+            "hhttps://www.layers.shop/cdn/shop/files/Galaxy_S23_FE_Cybernetic_Charge_e8a1bb76-91af-4f39-8149-f21352948a78.png?v=1712228795&width=1080",
+            "https://www.layers.shop/cdn/shop/files/Galaxy_S23_FE_Vector_Velocity_e37ca24f-5c21-4242-8025-389bc671cec5.png?v=1712228756&width=1080",
+            "https://www.layers.shop/cdn/shop/files/Galaxy_S23_FE_Cyber_Sapphire_a1a48843-dd50-46db-8371-ecbd880999e7.png?v=1712228689&width=1080",
+            "https://www.layers.shop/cdn/shop/files/SamsungGalaxyS23FEUntethered.png?v=1710161404&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy Z Flip 5",
+        "description": "Graffiti",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/files/Galaxy_Z_Flip_5_0cca955e-92f7-4a8a-bac0-9d9cd196f699.jpg?v=1695624921&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-flip-5-grafitti--back.jpg?v=1695386185&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-flip-5-chaos--back.jpg?v=1695386210&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-flip-5-florescence--back.jpg?v=1695386194&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-flip-5-black-smoke--back.jpg?v=1695386103&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-flip-5-escaping-earth--back.jpg?v=1695386136&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy Z Fold 5",
+        "description": "Black Leather",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/files/Galaxy_Z_Fold_5_cd4e65f2-da79-4f83-a7c5-ef69ad4019a5.jpg?v=1695633792&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-fold-5-black-leather--back.jpg?v=1695385761&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-fold-5-black-crack--back.jpg?v=1695385740&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-fold-5-charcoal-black--back.jpg?v=1695385898&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-fold-5-chaos--back.jpg?v=1695386043&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-z-fold-5-hellgate-red--back.jpg?v=1695385734&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S22 Ultra",
+        "description": "Cranberry Abstract",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Copy-of-Final-Galaxy-s22-Ultra.jpg?v=1677140824&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-Ultra-cranberry-abstract--back.jpg?v=1675326713&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-Ultra-oceanic--back.jpg?v=1675328554&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-Ultra-baby-pink--back.jpg?v=1675325982&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-Ultra-black-smoke--back.jpg?v=1675326226&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-Ultra-black-smoke--back.jpg?v=1675326226&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S22 Plus",
+        "description": "Purple River",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s22-plus.jpg?v=1677141745&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s22-ultra-purple-river--back.jpg?v=1692612991&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung_Galaxy_S22_Ultra_Turnstile.jpg?v=1696318158&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung_Galaxy_S22_Ultra_Mountain_Pulse.jpg?v=1696318173&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung_Galaxy_S22_Ultra_Shikara.jpg?v=1696318163&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s22-ultra-before-sunset--back.jpg?v=1692697633&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S22",
+        "description": "Spaceboy",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/Copy-of-Final-Galaxy-s22.jpg?v=1677142895&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-5G-spaceboy--back_4ad43207-a24b-425d-94dd-5cc12d4797d1.jpg?v=1677048845&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s22-chaos--back.jpg?v=1682503958&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-5G-astro-rainbow--back_31ecd92a-cf21-4966-a6e6-3f160e7f28ad.jpg?v=1677046791&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s22-space-buddies--back_fcd44247-40dd-43a3-8e7d-866b8513f9c5.jpg?v=1692260306&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Samsung-Galaxy-S22-5G-space-blueprint--back_117c038e-479d-4e04-9030-31ce19e03ad4.jpg?v=1677048844&width=1080"
+        ]
+    },
+    {
+        "title": "Samsung Galaxy S21 Ultra 5G",
+        "description": "Space Blueprint",
+        "price": 699,
+        "discountPercentage": 100,
+        "stock": 1199,
+        "brand": "Samsung",
+        "gender": "male",
+        "color": ["Red", "Black", "Orangered"],
+        "size": [41, 42, 43, 44, 45],
+        "thumbnail": "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s21-ultra.jpg?v=1676532439&width=480",
+        "images": [
+            "https://www.layers.shop/cdn/shop/products/Galaxy-S21-Ultra-5G-space-blueprint--back.jpg?v=1679037290&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Galaxy-S21-Ultra-5G-grafitti--back.jpg?v=1679037284&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Galaxy-S21-Ultra-5G-concrete-rock--back.jpg?v=1679037282&width=1080",
+            "https://www.layers.shop/cdn/shop/products/Galaxy-S21-Ultra-5G-space-blueprint--back.jpg?v=1679037290&width=1080",
+            "https://www.layers.shop/cdn/shop/products/samsung-galaxy-s21-ultra-cybermind--back.jpg?v=1685096547&width=1080"
+        ]
+    }
+]

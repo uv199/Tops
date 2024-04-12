@@ -1,0 +1,70 @@
+.heading {
+  font-size: 50px;
+  padding: 30px 0px;
+  font-weight: 400 !important;
+}
+.txt[type="email"],
+[type="password"] {
+  padding: 15px !important;
+  border-width: 2px !important;
+}
+.txt[type="text"]{
+  padding: 15px;
+}
+.txt:focus {
+  border: 2px solid black !important;
+  box-shadow: none !important;
+}
+.txt:hover {
+  border: 2px solid black !important;
+}
+.forgot,
+.signup {
+  position: relative;
+  color: black;
+}
+.forgot::before, .signup::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  display: block;
+  transform: scale(0);
+  transform-origin: 0% 100%;
+  transition: 0.4s all ease-in-out;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+}
+.forgot:hover::before, .signup:hover::before {
+  transform: scale(1);
+}
+.signin {
+  width: 100%;
+  background: #000000 !important;
+  padding: 15px !important;
+  margin: 0px 0px 20px 0px;
+}
+.or {
+  position: relative;
+  color: black;
+}
+.or::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  background-color: #e1e6eb;
+  display: block;
+  width: 37%;
+  top: 50%;
+}
+.or::before {
+  content: "";
+  height: 1px;
+  position: absolute;
+  background-color: #e1e6eb;
+  display: block;
+  width: 37%;
+  right: 0px;
+  top: 50%;
+}

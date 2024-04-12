@@ -1,0 +1,43 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+#slider-boxes {
+  display: flex !important;
+}
+.slick-slide div {
+  margin: 10px;
+}
+.slick-arrow::before {
+  color: #bcb7b7;
+  font-size: 35px;
+}
+.slick-arrow:hover {
+  color: #f02424 !important;
+}
+.slick-prev {
+  top: -60px;
+  left: 1126px;
+}
+.slick-prev:hover {
+  color: red !important;
+}
+
+.slick-next {
+  right: 47px;
+  top: -60px;
+}
+@media only screen and (max-width: 600px) {
+  slick-prev {
+    top: -200px;
+    left: -30px;
+  }
+  .slick-next {
+    right: -25px;
+    top: 200px;
+  }
+} */

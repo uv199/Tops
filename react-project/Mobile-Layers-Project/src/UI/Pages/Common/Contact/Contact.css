@@ -1,0 +1,39 @@
+.contact {
+  display: flex;
+}
+.contact .contact_head {
+  flex: 4;
+  border-right: 1px solid #dee2e6;
+}
+.contact .contact_head h1 {
+  padding: 160px 0px 10px 50px;
+}
+.contact .contact_us {
+  flex: 4;
+  padding: 100px;
+}
+.contact .contact_us h3 {
+  font-weight: 400;
+  font-size: 25px;
+  padding: 0px 0px 20px 0px;
+}
+.contact input:focus-visible {
+  box-shadow: none;
+  border: 1px solid black !important;
+}
+.contact button {
+  border-radius: 40px;
+  background-color: black;
+  color: white;
+  padding: 10px 30px;
+  margin: 05px 0px 0px 0px;
+}
+.contact textarea.form-control {
+  padding: 20px;
+  border: 3px solid #dee2e6;
+}
+.contact .form-control:focus {
+  box-shadow: none;
+  border: 3px solid black !important;
+  padding: 20px;
+}

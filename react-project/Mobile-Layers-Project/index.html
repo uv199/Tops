@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="icon" href="public/favicon-icon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layers Shop</title>
+    <!-- jquery_owl_carousel_css cdn -->
+    <link
+      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- owl_Carousel script cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- bootstrap js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          nav: false,
+          loop: true,
+          autoplay: true,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            500: {
+              items: 2,
+            },
+            750: {
+              items: 3,
+            },
+            1000: {
+              items: 4,
+            },
+            1200: {
+              items: 7,
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

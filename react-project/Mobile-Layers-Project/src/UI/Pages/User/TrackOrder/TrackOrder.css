@@ -1,0 +1,25 @@
+.heading {
+  font-size: 50px;
+  padding: 30px 0px;
+  font-weight: 400 !important;
+}
+.text[type="text"] {
+  padding: 15px !important;
+  border-width: 2px !important;
+}
+.text:focus {
+  border: 2px solid black !important;
+  box-shadow: none !important;
+}
+.text:hover {
+  border: 2px solid black !important;
+}
+.checkbox:focus {
+  box-shadow: none !important;
+  background-color: black !important;
+  border: black;
+}
+.checkbox:checked {
+  background-color: black !important;
+  border-color: black !important;
+}
