@@ -33,7 +33,7 @@ export default function CardCom({ data }) {
       <div className="bg-white group-hover:-translate-y-12 transition-all duration-500 flex flex-col items-center">
         <h7>{data.rating}</h7>
         <h6 className="text-black font-normal">{data.title}</h6>
-        <div class="flex m-0 space-x-2">
+        <div className="flex m-0 space-x-2">
           <h6 className="text-red-600 ">Rs.{data.price} </h6>
           <h6 className="text-black text-sm line-through ">
             Rs.{data.old_price}

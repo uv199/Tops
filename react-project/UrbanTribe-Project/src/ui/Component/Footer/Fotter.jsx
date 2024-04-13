@@ -15,7 +15,7 @@ export default function Fotter() {
         <div className="flex flex-wrap justify-between sm:flex-nowrap md:flex-wrap py-36 mx-40">
           <div style={{ flex: "0.50" }}>
             <FooterTitle
-              class="text-red-600 text-lg"
+              className="text-red-600 text-lg"
               title="Customer Service"
             />
             <FooterLinkGroup col className="p-0">
@@ -31,7 +31,7 @@ export default function Fotter() {
             </FooterLinkGroup>
           </div>
           <div className="flex-1  ">
-            <FooterTitle class="text-red-600 text-lg" title="Contact Us" />
+            <FooterTitle className="text-red-600 text-lg" title="Contact Us" />
             <FooterLinkGroup col className="p-0 [&>*]:!m-0">
               <p className="max-w-80 ">
                 <span className="text-black font-bold leading-loose">
@@ -50,7 +50,7 @@ export default function Fotter() {
               </p>
               <p>
                 <span className="text-black font-bold"> E-mail:</span>
-                <span class="text-red-600  hover:text-black ring-0	">
+                <span className="text-red-600  hover:text-black ring-0	">
                   support@urbantribe.in
                 </span>
               </p>
@@ -58,7 +58,7 @@ export default function Fotter() {
           </div>
           <div className="flex-1">
             <FooterTitle
-              class="text-red-600 text-lg"
+              className="text-red-600 text-lg"
               title="NEWSLETTER SIGNUP"
             />
             <p>

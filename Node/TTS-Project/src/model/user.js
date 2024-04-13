@@ -74,6 +74,10 @@ let userSchema = mongoose.Schema(
     following: { type: Number, default: 0 },
     caption: String,
     profilePic: String,
+    isPrivate: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

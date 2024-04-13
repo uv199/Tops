@@ -26,7 +26,7 @@ export default function Header() {
   const [cookies] = useCookies(["token"]);
   return (
     <>
-      {cookies.user.userType !== "admin" && (
+      {cookies?.user?.userType !== "admin" && (
         <div>
           <p className=" text-center py-2.5 text-sm m-0 text-white bg-red-600">
             <marquee>

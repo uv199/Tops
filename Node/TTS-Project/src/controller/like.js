@@ -3,6 +3,7 @@
 // get likes by post => count and userData(populate)
 
 import { modals } from "../model";
+import { SavePost } from "../model/savedPost";
 
 export const getByUser = (req, res) => {
   modals.Post.find({ userId: req?.me?._id })

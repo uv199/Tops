@@ -9,6 +9,7 @@ export default function SingleInput() {
   const getInputData = (ele) => {
     setTask(ele.target.value);
   };
+  ``;
 
   const addTask = () => {
     setTaskArr([...taskArr, task]);

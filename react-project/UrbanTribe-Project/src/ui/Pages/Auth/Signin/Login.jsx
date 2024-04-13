@@ -7,7 +7,7 @@ export default function Login() {
         ALREADY REGISTERED?
       </h1>
       <div className="flex px-24 justify-center">
-        <div class="border py-9 px-5 mr-2 flex-1">
+        <div className="border py-9 px-5 mr-2 flex-1">
           <h3 className="mb-2 font-medium text-xl">NEW CUSTOMER</h3>
           <p className="text-slate-400 text-sm">
             By creating an account with our store, you will be able to move
@@ -27,32 +27,32 @@ export default function Login() {
             <p className="text-slate-400 my-3 text-sm	">
               If you have an account with us, please log in.
             </p>
-            <div class="mb-5">
+            <div className="mb-5">
               <label
                 for="email"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 E-MAIL *
               </label>
               <input
                 type="email"
                 id="email"
-                class="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
+                className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
                 placeholder="Enter E-mail"
                 required
               />
             </div>
-            <div class="mb-5">
+            <div className="mb-5">
               <label
                 for="password"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 PASSWORD *
               </label>
               <input
                 type="password"
                 id="password"
-                class="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
+                className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
                 placeholder="Enter Password"
                 required
               />
