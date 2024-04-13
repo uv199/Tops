@@ -1,12 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export default function ReactHookFrom() {
+export default function ReactForm2() {
   let { register, handleSubmit, formState } = useForm();
 
   let { errors } = formState;
-  const submit = (data) => {
-  };
+  const submit = (data) => {};
   return (
     <div className="d-flex justify-content-center ">
       <form

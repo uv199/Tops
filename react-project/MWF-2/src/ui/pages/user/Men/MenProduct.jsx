@@ -8,7 +8,7 @@ export default function MenProduct() {
   let [filter, setFilter] = useState({
     gender: "male",
     brand: "",
-    mainCategory: "test",
+    mainCategory: "",
     color: [],
     // price: {
     //   lt: 5000,

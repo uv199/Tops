@@ -8,7 +8,7 @@ import Topics from "./00.topics/Topics.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Topics />
+    <App />
+    {/* <Topics /> */}
   </React.StrictMode>
 );
