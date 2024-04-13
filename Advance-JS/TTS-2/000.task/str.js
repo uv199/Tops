@@ -1,5 +1,5 @@
 let str = "urvishu";
-let arr = ["a", "e", "i", "o", "u","h"];
+let arr = ["a", "e", "i", "o", "u", "h"];
 
 let str2 = "";
 // console.log("-----------  str2----------->", str.length);
