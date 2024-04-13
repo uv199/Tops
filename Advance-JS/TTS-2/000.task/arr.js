@@ -64,3 +64,8 @@ const result = arr.reduce((acc, curr, index) => {
 // 3
 
 // console.log(result);
+
+//  a,e,i,o,u =>0
+// "urvish" => "0rv0sh"
+// "test" => "t0st"
+// "needhi" => "n00dh0"
