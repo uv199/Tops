@@ -31,7 +31,7 @@ ________________________________________________________________________________
 task-3
 1. ['i','am', 'urvish'] ==> want ['urvish','am','i']
 by use of map and loop
-2. want "i am urvish" without use join method
+2. ['i','am', 'urvish'] want "i am urvish" without use join method
 ___________________________________________________________________________________
 
 task-4
