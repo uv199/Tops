@@ -24,6 +24,8 @@ const menuItem = [
 ];
 export default function Header() {
   const [cookies] = useCookies(["token"]);
+
+  const navigate = useNavigate();
   return (
     <>
       {cookies?.user?.userType !== "admin" && (
@@ -62,26 +64,31 @@ export default function Header() {
           </div>
         </div>
       )}
+
       <div className=" border-b border-gray-200 flex  items-center justify-between px-8 py-3">
         <div className="cursor-pointer" onClick={() => navigate("/")}>
           <img src={logo} alt="" className="h-16" />
         </div>
-        <ul className="flex [&_*]:mx-3">
-          <li>
-            <NavLink to={"/admin-product"}>Product</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/admin-user"}>User</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/admin-order"}>Order</NavLink>
-          </li>
-        </ul>
+        {cookies?.user?.userType === "admin" && (
+          <ul className="flex [&_*]:mx-3">
+            <li>
+              <NavLink to={"/admin-product"}>Product</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin-user"}>User</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin-order"}>Order</NavLink>
+            </li>
+          </ul>
+        )}
         <div className=" flex gap-6 items-center">
           {cookies?.token ? (
-            <div>
-              <User role="button" color="red" />
-            </div>
+            <User
+              onClick={() => navigate("/profile")}
+              role="button"
+              color="red"
+            />
           ) : (
             <div className="text-decoration-none text-red-500 ">
               <p className="text-gray-400 cursor-pointer m-0">

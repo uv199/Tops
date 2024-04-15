@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   Table,
   TableBody,
@@ -6,103 +7,117 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
-export default function ProductTable() {
+const defaultImage =
+  "https://qph.cf2.quoracdn.net/main-qimg-1a4bafe2085452fdc55f646e3e31279c-lq";
 
-    
+const size = ["s", "m", "l", "xl"];
+
+export default function ProductTable({ isRefresh, refetch }) {
+  let [data, setData] = useState([]);
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: "http://localhost:9999/product/getAll",
+    })
+      .then((res) => {
+        setData(res?.data?.data);
+      })
+      .catch((err) => {
+        console.log("-----------  err----------->", err);
+      });
+  }, [isRefresh]);
+
+  const deleteHandler = (id) => {
+    axios({
+      method: "delete",
+      url: "http://localhost:9999/product/delete/" + id,
+    })
+      .then((res) => {
+        toast.success("Product deleted..");
+        refetch();
+      })
+      .catch((err) => {
+        toast.error("Somthing went wrong..");
+        console.log("-----------  err----------->", err);
+      });
+  };
+
   return (
-    <div className="overflow-x-auto">
-      <Table striped>
-        <TableHead>
-          <TableHeadCell>Product name</TableHeadCell>
-          <TableHeadCell>Color</TableHeadCell>
-          <TableHeadCell>Category</TableHeadCell>
+    <div className="m-10">
+      <Table striped className="border">
+        <TableHead className="[&_*]:!bg-slate-300">
+          <TableHeadCell>Image</TableHeadCell>
+          <TableHeadCell>Titel</TableHeadCell>
           <TableHeadCell>Price</TableHeadCell>
+          <TableHeadCell>Color</TableHeadCell>
+          <TableHeadCell>Size</TableHeadCell>
+          <TableHeadCell>Action</TableHeadCell>
           <TableHeadCell>
             <span className="sr-only">Edit</span>
           </TableHeadCell>
         </TableHead>
         <TableBody className="divide-y">
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'Apple MacBook Pro 17"'}
-            </TableCell>
-            <TableCell>Sliver</TableCell>
-            <TableCell>Laptop</TableCell>
-            <TableCell>$2999</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Microsoft Surface Pro
-            </TableCell>
-            <TableCell>White</TableCell>
-            <TableCell>Laptop PC</TableCell>
-            <TableCell>$1999</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Magic Mouse 2
-            </TableCell>
-            <TableCell>Black</TableCell>
-            <TableCell>Accessories</TableCell>
-            <TableCell>$99</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Google Pixel Phone
-            </TableCell>
-            <TableCell>Gray</TableCell>
-            <TableCell>Phone</TableCell>
-            <TableCell>$799</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Apple Watch 5
-            </TableCell>
-            <TableCell>Red</TableCell>
-            <TableCell>Wearables</TableCell>
-            <TableCell>$999</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
+          {data.map((product) => {
+            return (
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell>
+                  <img
+                    className="h-[70px]"
+                    src={product.thumbnail || defaultImage}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = defaultImage;
+                    }}
+                  />
+                </TableCell>
+                <TableCell>{product.title}</TableCell>
+                <TableCell>{product.price}</TableCell>
+                <TableCell>
+                  <div className="flex">
+                    {product?.color?.map?.((e, i) => {
+                      return (
+                        <div
+                          key={i}
+                          style={{ backgroundColor: e }}
+                          className="mr-1 rounded-xl w-[15px] h-[15px] border border-black "
+                        ></div>
+                      );
+                    })}
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="flex">
+                    {size.map((e, i) => {
+                      return (
+                        <div
+                          key={i}
+                          style={{}}
+                          className="grid place-content-center mr-1 rounded-xl w-[25px] h-[25px] border border-black text-black "
+                        >
+                          {e}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="flex gap-3 [&>p]:cursor-pointer">
+                    <p className="underline text-green-500">Preview</p>
+                    <p className="underline text-blue-800">Edit</p>
+                    <p
+                      onClick={() => deleteHandler(product?._id)}
+                      className="underline text-red-800"
+                    >
+                      Delete
+                    </p>
+                  </div>
+                </TableCell>
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </div>

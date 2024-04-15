@@ -13,6 +13,7 @@ import Register from "../ui/Pages/Auth/Register/Register";
 import Product from "../ui/Pages/Admin/Product/Product";
 import User from "../ui/Pages/Admin/User/User";
 import Order from "../ui/Pages/Admin/Order/Order";
+import Profile from "../ui/Pages/Common/Profile/Profile";
 
 export default function Router() {
   return (
@@ -25,6 +26,7 @@ export default function Router() {
             <Route path="/login" Component={Login} />
             <Route path="/register" Component={Register} />
             <Route path="/addtocart" Component={AddToCart} />
+            <Route path="/profile" Component={Profile} />
 
             {/* --------ADMIN--------- */}
             <Route path="/admin-product" element={<Product />} />

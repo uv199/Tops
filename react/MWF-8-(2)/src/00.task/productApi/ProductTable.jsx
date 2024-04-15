@@ -3,7 +3,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Eye, PencilRuler, Search, Trash } from "lucide-react";
 let sizeOptions = ["41", "42", "43", "44", "45"];
-export default function ProductTable({ refresh, refetch }) {
+export default function ProductTable({
+  refresh,
+  refetch,
+  toggle,
+  setDefaultData,
+  setUpdateMode,
+}) {
   let [data, setData] = useState(null);
 
   useEffect(() => {
@@ -29,6 +35,12 @@ export default function ProductTable({ refresh, refetch }) {
       });
   };
 
+  const updateHandler = (e) => {
+    setDefaultData(e);
+    console.log("updateHandler");
+    toggle();
+    setUpdateMode(true);
+  };
   return (
     <div
       style={{ margin: "10px 50px", border: "1px solid gray", padding: "20px" }}

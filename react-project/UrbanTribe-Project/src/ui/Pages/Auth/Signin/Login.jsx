@@ -1,6 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Login() {
+  let [credential, setCredential] = useState({ email: "", password: "" });
+  let [cookie, setCookie] = useCookies([]);
+  const navigate = useNavigate();
+  const loginHandler = (e) => {
+    e.preventDefault();
+    axios({
+      method: "post",
+      url: "http://localhost:9999/user/signin",
+      data: credential,
+    })
+      .then((res) => {
+        toast.success("Login successfully");
+        setCookie("user", res.data.data);
+        setCookie("token", res.data.token);
+        window.scrollTo(0, 0);
+        navigate("/")
+      })
+      .catch((err) => {
+        toast.error("Somthing went wrong");
+      });
+  };
   return (
     <div className="flex flex-col py-9 justify-center">
       <h1 className="text-center pb-10 font-medium text-3xl">
@@ -17,6 +42,7 @@ export default function Login() {
           <button
             type="submit"
             className=" text-sm mt-6 transition-colors duration-500 hover:text-white border-2 border-[#d11e33] py-1 px-3 rounded-md hover:!bg-[#d11e33]	 !bg-white text-[#d11e33] me-4"
+            onClick={() => navigate("/register")}
           >
             CREATE AN ACCOUNT
           </button>
@@ -35,6 +61,9 @@ export default function Login() {
                 E-MAIL *
               </label>
               <input
+                onChange={(e) =>
+                  setCredential({ ...credential, email: e.target.value })
+                }
                 type="email"
                 id="email"
                 className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
@@ -50,6 +79,9 @@ export default function Login() {
                 PASSWORD *
               </label>
               <input
+                onChange={(e) =>
+                  setCredential({ ...credential, password: e.target.value })
+                }
                 type="password"
                 id="password"
                 className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
@@ -59,12 +91,15 @@ export default function Login() {
             </div>
             <div className="flex justify-between items-end">
               <button
+                onClick={(e) => loginHandler(e)}
                 type="submit"
                 className=" text-sm mt-6 transition-colors duration-500 hover:text-white border-2 border-[#d11e33] py-2 px-12 rounded-md hover:!bg-[#d11e33]	 !bg-white text-[#d11e33] me-4"
               >
                 Login
               </button>
-              <p className="text-red-600 cursor-pointer hover:text-gray-800">Lost your password?</p>
+              <p className="text-red-600 cursor-pointer hover:text-gray-800">
+                Lost your password?
+              </p>
             </div>
           </form>
         </div>
