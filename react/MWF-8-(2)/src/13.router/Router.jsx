@@ -32,7 +32,7 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product" Component={Product} />
           <Route path="/product/:productId" element={<ProductDetailPage />} />
           <Route path="/service">
             <Route index element={<Service />} />

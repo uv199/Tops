@@ -3,8 +3,9 @@ import {
   sendRequest,
   requestHandler,
   getPendingRequest,
+  getFollower,
 } from "../controller/follower";
-import { auth } from "../middleware/auth";
+import { adminAuth, auth } from "../middleware/auth";
 
 const router = express.Router();
 
@@ -14,6 +15,6 @@ router.get("/accept-reject", auth, requestHandler);
 
 router.post("/send-request", auth, sendRequest);
 
-// router.delete("/delete/:id", auth, remove);
+router.get("/get-follower", getFollower);
 
 export default router;

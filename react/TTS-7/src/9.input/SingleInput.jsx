@@ -1,24 +1,44 @@
 import React, { useState } from "react";
 import { Plus } from "react-feather";
+import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
 
 export default function SingleInput() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
+  let [index, setIndex] = useState(null);
 
   const getInputData = (ele) => {
     setTask(ele.target.value);
   };
-  ``;
 
   const addTask = () => {
     setTaskArr([...taskArr, task]);
     setTask("");
   };
 
+  const deleteHandler = (index) => {
+    let filterData = taskArr.filter((e, i) => i !== index);
+    setTaskArr(filterData);
+    toast.success("Task Deleted");
+  };
+
+  const editHandler = (value, index) => {
+    setTask(value);
+    setIndex(index);
+  };
+
+  const updateHandler = () => {
+    taskArr.splice(index, 1, task);
+    setTaskArr([...taskArr]);
+    setTask("");
+    setIndex(null);
+    toast.success("Task Updated")
+  };
+
   return (
-    <div className="mt-5">
-      <h4>{task}</h4>
+    <div className="w-1/3 mt-5">
+      <h2>{index}</h2>
       <p className="mb-1">Enter a Task</p>
       <div className="d-flex">
         <Input
@@ -27,23 +47,48 @@ export default function SingleInput() {
           value={task}
           onChange={(e) => getInputData(e)}
         />
-        <Button
-          color="danger"
-          className="rounded-start-0"
-          onClick={() => addTask()}
-        >
-          <Plus />
-        </Button>
+        {index || index === 0 ? (
+          <Button
+            color="danger"
+            className="rounded-start-0"
+            onClick={() => updateHandler()}
+          >
+            Edit
+          </Button>
+        ) : (
+          <Button
+            color="danger"
+            className="rounded-start-0"
+            onClick={() => addTask()}
+          >
+            <Plus />
+          </Button>
+        )}
       </div>
-      <div className="border border-1 mt-4 p-4 rounded-1">
+
+      <div className="w-full border border-1 mt-4 p-4 rounded-1">
         <h1 className="text-center mb-0">Task</h1>
         <hr className="mt-0" />
         {taskArr.map((e, i) => {
           return (
             <div className="d-flex">
-              <div className="border mt-2 px-2 py-1 rounded-2">{i + 1}.</div>
-              <div className=" w-100 border mt-2 px-2 py-1 rounded-2">
+              <div className=" border mt-2 px-2 py-1 rounded-2">{i + 1}.</div>
+              <div className="flex justify-between w-100 border mt-2 px-2 py-1 rounded-2">
                 <h5>{e}</h5>
+                <div className="[&_*]:underline">
+                  <button
+                    className="mr-2 hover:!text-red-500"
+                    onClick={() => editHandler(e, i)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="hover:!text-red-500"
+                    onClick={() => deleteHandler(i)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </div>
           );

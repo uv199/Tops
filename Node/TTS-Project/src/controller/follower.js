@@ -1,5 +1,36 @@
 import modals from "../model";
 
+export const getFollower = async (req, res) => {
+  let { id } = req?.params;
+  try {
+    const follower = await modals.Follower.find({
+      reciverId: id,
+      status: "accept",
+    });
+
+    res.status(200).send({ message: "", data: follower, success: true });
+  } catch (error) {
+    res
+      .status(400)
+      .send({ message: error.message, data: null, success: false });
+  }
+};
+export const getFollowing = async (req, res) => {
+  let { id } = req?.params;
+  try {
+    const following = await modals.Follower.find({
+      senderId: id,
+      status: "accept",
+    });
+
+    res.status(200).send({ message: "", data: follower, success: true });
+  } catch (error) {
+    res
+      .status(400)
+      .send({ message: error.message, data: null, success: false });
+  }
+};
+
 export const getPendingRequest = async (req, res) => {
   modals.Follower.find({ reciverId: req.me._id, status: "pending" })
     .then(async (resData) => {

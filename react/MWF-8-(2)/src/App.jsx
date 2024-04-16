@@ -95,7 +95,7 @@ function App() {
       {/* <ProtectedProject /> */}
 
       {/* <---------------------TASK------------------------> */}
-      <Product />
+      {/* <Product /> */}
       {/* <ToDoList /> */}
 
       <ToastContainer />

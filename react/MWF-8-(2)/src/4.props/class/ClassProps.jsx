@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import ClassCard from "./ClassCard";
 
 export default class ClassProps extends Component {
-
-
-
   render() {
     return (
       <div>

@@ -4,9 +4,7 @@ import { auth } from "../middleware/auth";
 
 const router = express.Router();
 
-// router.get("/get-all", getAll);
-
-// router.get("/getByUser", auth, getByUser);
+// router.route("/like").get(getAll).post(LikeDisLike).delete().put();
 
 router.post("/like-dislike", auth, LikeDisLike);
 

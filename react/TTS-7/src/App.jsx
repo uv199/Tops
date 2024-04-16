@@ -11,6 +11,7 @@ import FragmentCom from "./8.CondRender-Fragment/FragmentCom";
 import Task from "./000.task/Task";
 import MapKey from "./8.CondRender-Fragment/MapKey";
 import InputCom from "./9.input/InputCom";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   return (
@@ -48,6 +49,7 @@ export default function App() {
 
       {/* -------------INPUT------------- */}
       <InputCom />
+      <ToastContainer/>
     </div>
   );
 }

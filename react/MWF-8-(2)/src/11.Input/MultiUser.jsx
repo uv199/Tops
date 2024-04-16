@@ -23,10 +23,9 @@ export default function MultiUser() {
   }, []);
 
   const addUser = (e) => {
-    console.log("-----------  user----------->", user);
+    console.log("-----------user----------->", user);
     e.preventDefault();
     let valueArr = Object.values(user);
-
     let empty = valueArr.includes("");
     if (!empty) {
       setUserArr([user, ...userArr]);
