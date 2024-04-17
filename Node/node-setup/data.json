@@ -1,0 +1,27 @@
+{
+  "status": 204,
+  "url": "https://api.github.com/user/starred/neel0402/homepage",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+    "content-security-policy": "default-src 'none'",
+    "date": "Wed, 17 Apr 2024 09:50:25 GMT",
+    "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+    "server": "GitHub.com",
+    "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+    "vary": "Accept-Encoding, Accept, X-Requested-With",
+    "x-accepted-oauth-scopes": "public_repo, repo",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "deny",
+    "x-github-api-version-selected": "2022-11-28",
+    "x-github-media-type": "github.v3; format=json",
+    "x-github-request-id": "DEC4:11CFD6:1F224E6:1FFCABA:661F9B61",
+    "x-oauth-scopes": "admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete:packages, project, repo, user, workflow, write:packages",
+    "x-ratelimit-limit": "5000",
+    "x-ratelimit-remaining": "4986",
+    "x-ratelimit-reset": "1713350518",
+    "x-ratelimit-resource": "core",
+    "x-ratelimit-used": "14",
+    "x-xss-protection": "0"
+  }
+}

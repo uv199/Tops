@@ -15,7 +15,12 @@ const defaultImage =
 
 const size = ["s", "m", "l", "xl"];
 
-export default function ProductTable({ isRefresh, refetch }) {
+export default function ProductTable({
+  isRefresh,
+  refetch,
+  setUpdatedData,
+  toggle,
+}) {
   let [data, setData] = useState([]);
   useEffect(() => {
     axios({
@@ -45,6 +50,10 @@ export default function ProductTable({ isRefresh, refetch }) {
       });
   };
 
+  const updateHandler = (product) => {
+    toggle();
+    setUpdatedData(product);
+  };
   return (
     <div className="m-10">
       <Table striped className="border">
@@ -106,7 +115,12 @@ export default function ProductTable({ isRefresh, refetch }) {
                 <TableCell>
                   <div className="flex gap-3 [&>p]:cursor-pointer">
                     <p className="underline text-green-500">Preview</p>
-                    <p className="underline text-blue-800">Edit</p>
+                    <p
+                      className="underline text-blue-800"
+                      onClick={() => updateHandler(product)}
+                    >
+                      Edit
+                    </p>
                     <p
                       onClick={() => deleteHandler(product?._id)}
                       className="underline text-red-800"

@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import Select from "react-select";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { toast } from "react-toastify";
 let initalState = {
   title: "",
   description: "",
@@ -34,8 +37,41 @@ const mainCategoryOptions = [
   { value: "corporate", label: "corporate" },
 ];
 
-export default function ProductForm({ modal, toggle }) {
-  const [product, setProduct] = useState(initalState);
+export default function ProductForm({ modal, toggle, updatedData, refetch }) {
+  const [product, setProduct] = useState(updatedData);
+
+  const [cookies] = useCookies([]);
+
+  useEffect(() => {
+    let arr = Object.keys(updatedData);
+    if (arr.length > 0) {
+      setProduct(updatedData);
+    } else {
+      setProduct(initalState);
+    }
+  }, [updatedData]);
+
+  const submitHandler = () => {
+    axios({
+      method: "post",
+      url: "http://localhost:9999/product/create",
+      data: product,
+      headers: {
+        authorization: "Bearer " + cookies.token,
+      },
+    })
+      .then((res) => {
+        toast.success("Product added successfully");
+        toggle();
+        refetch();
+      })
+      .catch((err) => {
+        toast.error("Somthing went wrong");
+      });
+  };
+  const updateHandler = () => {
+    console.log("updateHandler");
+  };
 
   return (
     <>
@@ -56,7 +92,10 @@ export default function ProductForm({ modal, toggle }) {
               <TextInput
                 id="titel"
                 placeholder="Enter a title"
-                onChange={(event) => {}}
+                onChange={(e) =>
+                  setProduct({ ...product, title: e?.target.value })
+                }
+                value={product.title}
                 required
               />
             </div>
@@ -67,6 +106,10 @@ export default function ProductForm({ modal, toggle }) {
                 placeholder="Enter a discription"
                 type="text"
                 required
+                onChange={(e) =>
+                  setProduct({ ...product, description: e?.target.value })
+                }
+                value={product.description}
               />
             </div>
             <div>
@@ -96,6 +139,12 @@ export default function ProductForm({ modal, toggle }) {
                 options={colorOptions}
                 placeholder="Select colors"
                 isMulti
+                onChange={(e) =>
+                  setProduct({ ...product, color: e.map((obj) => obj.value) })
+                }
+                value={product?.color?.map((e) => {
+                  return { value: e, label: e };
+                })}
               />
             </div>
             <div>
@@ -103,6 +152,13 @@ export default function ProductForm({ modal, toggle }) {
               <Select
                 options={mainCategoryOptions}
                 placeholder="Select chatagory"
+                onChange={(e) =>
+                  setProduct({ ...product, mainCategorie: e.value })
+                }
+                value={{
+                  value: product.mainCategorie,
+                  label: product.mainCategorie,
+                }}
               />
             </div>
             <div>
@@ -112,6 +168,10 @@ export default function ProductForm({ modal, toggle }) {
                 type="number"
                 placeholder="Enter a price"
                 required
+                onChange={(e) =>
+                  setProduct({ ...product, price: e?.target.value })
+                }
+                value={product.price}
               />
             </div>
             <div>
@@ -121,6 +181,10 @@ export default function ProductForm({ modal, toggle }) {
                 type="text"
                 required
                 placeholder="Enter a imageURL"
+                onChange={(e) =>
+                  setProduct({ ...product, thumbnail: e?.target.value })
+                }
+                value={product.thumbnail}
               />
             </div>
             <div>
@@ -130,6 +194,10 @@ export default function ProductForm({ modal, toggle }) {
                 type="number"
                 required
                 placeholder="Enter a available stock"
+                onChange={(e) =>
+                  setProduct({ ...product, availableStock: e?.target.value })
+                }
+                value={product.availableStock}
               />
             </div>
             <div>
@@ -139,17 +207,60 @@ export default function ProductForm({ modal, toggle }) {
                 type="number"
                 required
                 placeholder="Enter a discount"
+                onChange={(e) =>
+                  setProduct({
+                    ...product,
+                    discountPercentage: e?.target.value,
+                  })
+                }
+                value={product.discountPercentage}
               />
             </div>
-            <Button
-              className="focus:ring-0 w-[100%] rounded-md border !border-red-600 bg-white text-red-600 hover:text-white hover:!bg-red-600 "
-              onClick={() => setOpenModal(true)}
-            >
-              SUBMIT
-            </Button>
+
+            {Object.keys(updatedData).length > 0 ? (
+              <Button
+                className="focus:ring-0 w-[100%] rounded-md border !border-red-600 bg-white text-red-600 hover:text-white hover:!bg-red-600 "
+                onClick={() => updateHandler()}
+              >
+                UPDATE
+              </Button>
+            ) : (
+              <Button
+                className="focus:ring-0 w-[100%] rounded-md border !border-red-600 bg-white text-red-600 hover:text-white hover:!bg-red-600 "
+                onClick={() => submitHandler()}
+              >
+                SUBMIT
+              </Button>
+            )}
           </div>
         </Modal.Body>
       </Modal>
     </>
   );
 }
+
+let e = [
+  { a: 10, b: 30 },
+  { a: 100, b: 30 },
+  { a: 1000, b: 30 },
+];
+let arr = e.map((e) => e.a);
+
+/*
+product.color = [10,100,1000] 
+// convert 
+[
+  { value: 10, lable: 10 },
+  { value: 100, lable: 100 },
+  { value: 1000, lable: 1000 },
+]
+
+product.color.map((e)=>{value:e,lable:e})
+
+product.mainCh = "ring"
+
+e = {lable:"ring",value:"ring"}
+e.value
+
+{lable.product.mainCh,lable :product.mainCh}
+*/
