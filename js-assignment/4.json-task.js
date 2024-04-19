@@ -13,15 +13,12 @@ ask for
 5. acending decending population wise
 6. top 5 city population wise [only name of city]
 7. give total populatin of state which give by user 
-ans will be in formate 
+8. give top 5 state name population wise ans will be in formate 
 [
   { statName: "", population: 123 },
   { statName: "", population: 123 },
   // ...
 ];
-
-8. give top 5 state name population wise 
-
 */
 
 const ALL_DATA = require("./data.json");
