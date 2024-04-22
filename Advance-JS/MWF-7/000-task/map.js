@@ -8,3 +8,5 @@ let newArr = arr.map((e, i) => {
 });
 console.log("total = ", sum);
 console.log("-----------  newArr----------->", newArr);
+// test--test2
+//  2nd line chnage
