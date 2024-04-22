@@ -6,6 +6,7 @@ import cors from "cors";
 import userRouter from "./router/user";
 import likeRouter from "./router/like";
 import postRouter from "./router/post";
+import messageRouter from "./router/message";
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/post", postRouter);
 app.use("/like", likeRouter);
+app.use("/message", messageRouter);
 
 app.get("/", (_, res) => {
   res.send("hello world..!");
