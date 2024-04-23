@@ -11,6 +11,9 @@ import { env } from "../config";
 import { addPreData } from "./db/addPredefineData/addPreData";
 import path from "path";
 import fs from "fs-extra";
+import { Server } from "socket.io";
+import { createServer } from "http";
+import { log } from "console";
 
 const app = express();
 
@@ -25,10 +28,27 @@ app.use("/product", productRouter);
 
 app.use(express.static(path.join(__dirname, "..", "\\")));
 
-app.post("/", (req, res) => {
-  res.send("------>");
+app.get("/", (req, res) => {
+  res.send("Server is running");
 });
-app.listen(port, () => {
+
+app.get("/msg", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "index.html"));
+});
+
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {});
+
+io.on("connection", (socket) => {
+  console.log("-----------  socket----------->", socket.id);
+  console.log("socket is connected ");
+  socket.on("disconnect", () => {
+    console.log("socket is dis-connected ");
+  });
+});
+
+httpServer.listen(port, () => {
   connectDB();
   addPreData();
   console.log(`server is running on http://localhost:${port}`);

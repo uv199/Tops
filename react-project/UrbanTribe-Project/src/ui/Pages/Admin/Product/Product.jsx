@@ -17,7 +17,6 @@ let initalState = {
 };
 export default function Product() {
   const [updatedData, setUpdatedData] = useState(initalState);
-  console.log("-----------  updatedData----------->", updatedData);
   const [modal, setModal] = useState(false);
   let [isRefresh, setIsRefresh] = useState(true);
 

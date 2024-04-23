@@ -5,3 +5,13 @@ export default function User() {
     <div>User</div>
   )
 }
+
+// {{BE_URL}}/user/getAll
+
+
+/*
+name
+cityname
+email
+mobile
+ */

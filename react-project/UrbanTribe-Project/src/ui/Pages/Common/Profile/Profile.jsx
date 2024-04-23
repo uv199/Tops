@@ -6,12 +6,10 @@ export default function Account() {
   let [cookie, setCookie, removeCookie] = useCookies([]);
   const navigate = useNavigate();
   const logoutHandler = () => {
-    console.log("---test");
     removeCookie("token");
     removeCookie("user");
     navigate("/");
     window.scrollTo(0, 0);
-    console.log("---test");
   };
   return (
     <div className="ml-36 mr-36">

@@ -4,11 +4,13 @@ import Select from "react-select";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
+import { size } from "lodash";
+import PreviewData from "./PreviewData";
 let initalState = {
   title: "",
   description: "",
   brand: "",
-  gender: "", // [male,female,kids]
+  // gender: "", // [male,female,kids]
   price: "",
   discountPercentage: "",
   availableStock: "",
@@ -16,7 +18,7 @@ let initalState = {
   thumbnail: "",
   color: [],
   size: [],
-  mainCategorie: "",
+  mainCategory: "",
 };
 
 const colorOptions = [
@@ -39,7 +41,6 @@ const mainCategoryOptions = [
 
 export default function ProductForm({ modal, toggle, updatedData, refetch }) {
   const [product, setProduct] = useState(updatedData);
-
   const [cookies] = useCookies([]);
 
   useEffect(() => {
@@ -69,8 +70,33 @@ export default function ProductForm({ modal, toggle, updatedData, refetch }) {
         toast.error("Somthing went wrong");
       });
   };
+
   const updateHandler = () => {
-    console.log("updateHandler");
+    axios({
+      method: "put",
+      url: "http://localhost:9999/product/update/" + product?._id,
+      data: product,
+      headers: {
+        authorization: "Bearer " + cookies.token,
+      },
+    })
+      .then((res) => {
+        toast.success("Product update successfully");
+        toggle();
+        refetch();
+      })
+      .catch((err) => {
+        toast.error("Somthing went wrong");
+      });
+  };
+
+  const checkboxHandler = (value, isChecked) => {
+    if (isChecked) {
+      setProduct({ ...product, size: [...product?.size, value] });
+    } else {
+      const restSize = product.size.filter((e) => e !== value);
+      setProduct({ ...product, size: restSize });
+    }
   };
 
   return (
@@ -116,19 +142,39 @@ export default function ProductForm({ modal, toggle, updatedData, refetch }) {
               <Label htmlFor="TextInput" value="Size" />
               <div className="grid grid-cols-8">
                 <div className=" flex items-center gap-2 ">
-                  <Checkbox id="s" className="focus:ring-0" />
+                  <Checkbox
+                    onChange={(e) => checkboxHandler("S", e.target.checked)}
+                    checked={product?.size.includes("S")}
+                    id="s"
+                    className="focus:ring-0"
+                  />
                   <Label htmlFor="s">S</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Checkbox id="m" className="focus:ring-0" />
+                  <Checkbox
+                    onChange={(e) => checkboxHandler("M", e.target.checked)}
+                    checked={product?.size.includes("M")}
+                    id="m"
+                    className="focus:ring-0"
+                  />
                   <Label htmlFor="m">M</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Checkbox id="l" className="focus:ring-0" />
+                  <Checkbox
+                    onChange={(e) => checkboxHandler("L", e.target.checked)}
+                    checked={product?.size.includes("L")}
+                    id="l"
+                    className="focus:ring-0"
+                  />
                   <Label htmlFor="l">L</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Checkbox id="xl" className="focus:ring-0" />
+                  <Checkbox
+                    onChange={(e) => checkboxHandler("XL", e.target.checked)}
+                    checked={product?.size.includes("XL")}
+                    id="xl"
+                    className="focus:ring-0"
+                  />
                   <Label htmlFor="xl">XL</Label>
                 </div>
               </div>
@@ -153,11 +199,11 @@ export default function ProductForm({ modal, toggle, updatedData, refetch }) {
                 options={mainCategoryOptions}
                 placeholder="Select chatagory"
                 onChange={(e) =>
-                  setProduct({ ...product, mainCategorie: e.value })
+                  setProduct({ ...product, mainCategory: e.value })
                 }
                 value={{
-                  value: product.mainCategorie,
-                  label: product.mainCategorie,
+                  value: product?.mainCategory,
+                  label: product?.mainCategory,
                 }}
               />
             </div>

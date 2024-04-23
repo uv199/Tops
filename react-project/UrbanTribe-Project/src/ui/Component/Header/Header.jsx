@@ -70,15 +70,15 @@ export default function Header() {
           <img src={logo} alt="" className="h-16" />
         </div>
         {cookies?.user?.userType === "admin" && (
-          <ul className="flex [&_*]:mx-3">
+          <ul className="text-gray-400 flex [&_*]:mx-3 text-lg font-semibold">
             <li>
-              <NavLink to={"/admin-product"}>Product</NavLink>
+              <NavLink to={"/admin-product"}>PRODUCT</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin-user"}>User</NavLink>
+              <NavLink to={"/admin-user"}>USER</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin-order"}>Order</NavLink>
+              <NavLink to={"/admin-order"}>ORDER</NavLink>
             </li>
           </ul>
         )}
@@ -108,48 +108,53 @@ export default function Header() {
               </p>
             </div>
           )}
-          <div className="flex items-center cursor-pointer">
-            <FontAwesomeIcon
-              icon={faHeart}
-              className="text-2xl text-red-600 hover:text-black"
-            />
-            <span
-              style={{
-                fontSize: "14px",
-                lineHeight: "15px",
-                fontWeight: "400",
-                marginLeft: "4px",
-              }}
-            >
-              WISHLIST
-            </span>
-          </div>
-          <Tooltip
-            content="cart"
-            placement="bottom"
-            animation="duration-500"
-            // className="text-gray-800 !border !border-gray-500"
-            style="light"
-          >
-            <NavLink to={"/addtocart"}>
-              <div className="flex items-center">
+
+          {cookies?.user?.userType !== "admin" && (
+            <>
+              <div className="flex items-center cursor-pointer">
                 <FontAwesomeIcon
-                  icon={faBagShopping}
-                  className=" text-2xl text-red-600 hover:text-black"
+                  icon={faHeart}
+                  className="text-2xl text-red-600 hover:text-black"
                 />
                 <span
                   style={{
                     fontSize: "14px",
                     lineHeight: "15px",
                     fontWeight: "400",
-                    marginLeft: "10px",
+                    marginLeft: "4px",
                   }}
                 >
-                  MY CART
+                  WISHLIST
                 </span>
               </div>
-            </NavLink>
-          </Tooltip>
+              <Tooltip
+                content="cart"
+                placement="bottom"
+                animation="duration-500"
+                // className="text-gray-800 !border !border-gray-500"
+                style="light"
+              >
+                <NavLink to={"/addtocart"}>
+                  <div className="flex items-center">
+                    <FontAwesomeIcon
+                      icon={faBagShopping}
+                      className=" text-2xl text-red-600 hover:text-black"
+                    />
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        lineHeight: "15px",
+                        fontWeight: "400",
+                        marginLeft: "10px",
+                      }}
+                    >
+                      MY CART
+                    </span>
+                  </div>
+                </NavLink>
+              </Tooltip>
+            </>
+          )}
         </div>
       </div>
     </>

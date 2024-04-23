@@ -29,6 +29,7 @@
     "node-cache": "^5.1.2",
     "nodemailer": "^6.9.12",
     "path": "^0.12.7",
+    "socket.io": "^4.7.5",
     "twilio": "^5.0.2",
     "validator": "^13.11.0"
   }
