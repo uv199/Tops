@@ -9,18 +9,18 @@ import { useCookies } from "react-cookie";
 import { Tooltip } from "flowbite-react";
 
 const menuItem = [
-  { label: "Track Order" },
-  { label: "All Products" },
-  { label: "Casual Backpacks" },
-  { label: "Professional" },
-  { label: "Travel" },
-  { label: "Sports" },
-  { label: "School Bags" },
-  { label: "Corporate gifting" },
-  { label: "Best Offer" },
-  { label: "Lunch Bags" },
-  { label: "Blogs" },
-  { label: "Contact Us" },
+  { label: "Track Order", redirect: "" },
+  { label: "All Products", redirect: "/product/all" },
+  { label: "Casual Backpacks", redirect: "" },
+  { label: "Professional", redirect: "" },
+  { label: "Travel", redirect: "" },
+  { label: "Sports", redirect: "" },
+  { label: "School Bags", redirect: "" },
+  { label: "Corporate gifting", redirect: "" },
+  { label: "Best Offer", redirect: "" },
+  { label: "Lunch Bags", redirect: "" },
+  { label: "Blogs", redirect: "" },
+  { label: "Contact Us", redirect: "" },
 ];
 export default function Header() {
   const [cookies] = useCookies(["token"]);
@@ -41,7 +41,10 @@ export default function Header() {
                 return (
                   <>
                     <li key={index}>
-                      <NavLink className="text-decoration-none text-black hover:!text-red-600">
+                      <NavLink
+                        to={menuItem.redirect}
+                        className="text-decoration-none text-black hover:!text-red-600"
+                      >
                         {menuItem?.label}
                       </NavLink>
                     </li>
