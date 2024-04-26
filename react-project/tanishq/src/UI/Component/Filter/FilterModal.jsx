@@ -8,7 +8,7 @@ export default function FilterModal({ isOpen, toggle }) {
   
   return (
     <div>
-       <div className={` inset-0 z-[1] flex items-center flex-col w-[20rem] bg-red-50 h-[100%] justify-center ${isOpen ? '' : 'hidden'} ` }  
+       <div className={` inset-0 z-[1] flex items-center flex-col w-[20rem] bg-red-100 h-[100%] justify-center ${isOpen ? '' : 'hidden'} ` }  
        style={{ position: "fixed",
                   top: "0px",
                   bottom: "0px",

@@ -3,29 +3,14 @@ import { TextInput } from "flowbite-react";
 import { GiDropEarrings } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import { LiaStoreAltSolid } from "react-icons/lia";
-import { FaRegUser } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useState } from "react";
-import Account from "../Modal/Account";
+import { CiLogin, CiHeart, CiUser, CiShoppingCart } from "react-icons/ci";
 
-export default function TopHeader(modal,toggle) {
-  const navigate=useNavigate();
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
+export default function TopHeader() {
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <div>
-      
-      <Account data-modal-target="default-modal" data-modal-toggle="default-modal"/>
-      </div>
-
-      <div className="w-[100%] bg-red-50 py-2 px-4">
-        <div className=" py-2 px-4 items-center flex justify-center gap-2 w-[100%] ">
+      <div className="w-[100%] bg-red-100 py-2 ">
+        <div className="py-2 pr-4 items-center flex justify-around gap-2 w-[100%] ">
           <span>
             <img
               src="../../../../public/logo/logo.png"
@@ -43,29 +28,38 @@ export default function TopHeader(modal,toggle) {
             />
           </span>
           <div className="flex  py-3 mt-3 gap-4 justify-center">
-            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out ">
-              <GiDropEarrings  className="text-2xl text-[#832729]" />
-              <p className="text-xm text-[#832729]" >DAILYWEAR</p>
-            </span>
-            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out">
-              <LiaStoreAltSolid  className="text-2xl text-[#832729]"/>
+            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out">
+              <LiaStoreAltSolid className="text-2xl text-[#832729]" />
               <p className="text-xm text-[#832729]">STORE</p>
             </span>
-            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out">
-              <FaRegUser className="text-2xl text-[#832729]" />
-              <p className="text-xm text-[#832729]" >ACCOUNT</p>
-            </span>
-            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out">
-              <FaRegHeart className="text-2xl text-[#832729]" />
+
+            <span
+              onClick={() => navigate("/wishlist")}
+              className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
+            >
+              <CiHeart className="text-2xl text-[#832729]" />
               <p className="text-xm text-[#832729]">WISHLIST</p>
             </span>
-            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out">
-              <AiOutlineShoppingCart  className="text-2xl text-[#832729]"/>
+            <span className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out">
+              <CiShoppingCart className="text-2xl text-[#832729]" />
               <p className="text-xm text-[#832729]">CART</p>
+            </span>
+            <span
+              onClick={() => navigate("/profile")}
+              className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
+            >
+              <CiUser className="text-2xl text-[#832729]" />
+              <p className="text-xm text-[#832729]">ACCOUNT</p>
+            </span>
+            <span
+              onClick={() => navigate("/profile")}
+              className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
+            >
+              <CiLogin className="text-2xl text-[#832729]" />
+              <p className="text-xm text-[#832729]">LOGIN</p>
             </span>
           </div>
         </div>
       </div>
-    </div>
   );
 }
