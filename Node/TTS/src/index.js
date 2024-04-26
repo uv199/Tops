@@ -24,9 +24,12 @@ passport.use(
     {
       clientID: "738291599028-s61qkm9uc91s1phgoniutfbf9j4dbhpu.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: "https://d582-106-214-150-8.ngrok-free.app/auth/google/callback",
+      callbackURL: "https://bbf6-106-214-150-8.ngrok-free.app/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
+      console.log("-----------  refreshToken----------->", refreshToken)
+      console.log("-----------  accessToken----------->", accessToken)
+      console.log("-----------  profile----------->", profile)
       // Here you can handle user creation and save profile to database
       return done(null, profile);
     }
@@ -57,7 +60,7 @@ app.get(
   passport.authenticate("google", { failureRedirect: "/login" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/");
+    res.redirect("/profile");
   }
 );
 
@@ -65,6 +68,7 @@ app.get(
 app.get("/profile", ensureAuthenticated, function (req, res) {
   res.send("Welcome, " + req.user.displayName + "!");
 });
+
 
 // Middleware to ensure user is authenticated
 function ensureAuthenticated(req, res, next) {
