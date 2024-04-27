@@ -1,84 +1,54 @@
+// const env = require("dotenv")
+// env.config()
+import "dotenv/config";
+import bodyParser, { json } from "body-parser";
 import express from "express";
-import passport from "passport";
-import session from "express-session";
-import OAuth2Strategy from "passport-google-oauth";
-let GoogleStrategy = OAuth2Strategy.OAuth2Strategy;
+import { connectDB } from "./db";
+import userRouter from "./router/user";
+import orderRouter from "./router/order";
+import productRouter from "./router/product";
+import { env } from "../config";
+import { addPreData } from "./db/addPredefineData/addPreData";
+import path from "path";
+import fs from "fs-extra";
+import { Server } from "socket.io";
+import { createServer } from "http";
+import { log } from "console";
+
 const app = express();
 
-// Express session middleware
-app.use(
-  session({
-    secret: "your_secret_key",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+const port = env.port || 3000;
+app.use("/", json());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.raw({ type: "*" }));
+app.use("/user", userRouter);
+app.use("/order", orderRouter);
+app.use("/product", productRouter);
 
-// Passport initialization middleware
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(express.static(path.join(__dirname, "..", "\\")));
 
-// Google OAuth configuration
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: "738291599028-s61qkm9uc91s1phgoniutfbf9j4dbhpu.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "https://bbf6-106-214-150-8.ngrok-free.app/auth/google/callback",
-    },
-    function (accessToken, refreshToken, profile, done) {
-      console.log("-----------  refreshToken----------->", refreshToken)
-      console.log("-----------  accessToken----------->", accessToken)
-      console.log("-----------  profile----------->", profile)
-      // Here you can handle user creation and save profile to database
-      return done(null, profile);
-    }
-  )
-);
-
-// Serialize user
-passport.serializeUser(function (user, done) {
-  done(null, user);
+app.get("/", (req, res) => {
+  res.send("Server is running");
 });
 
-// Deserialize user
-passport.deserializeUser(function (obj, done) {
-  done(null, obj);
+app.get("/msg", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "index.html"));
 });
 
-// Route for Google authentication
-app.get(
-  "/auth/google",
-  passport.authenticate("google", {
-    scope: ["https://www.googleapis.com/auth/plus.login"],
-  })
-);
+const httpServer = createServer(app);
 
-// Callback route after Google authentication
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/profile");
-  }
-);
+const io = new Server(httpServer, {});
 
-// Example protected route
-app.get("/profile", ensureAuthenticated, function (req, res) {
-  res.send("Welcome, " + req.user.displayName + "!");
+io.on("connection", (socket) => {
+  console.log("socket is connected ");
+  socket.on("disconnect", () => {
+    console.log("socket is dis-connected ");
+  });
 });
 
-
-// Middleware to ensure user is authenticated
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect("/login");
-}
-
-// Start server
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+httpServer.listen(port, () => {
+  connectDB();
+  addPreData();
+  console.log(`server is running on http://localhost:${port}`);
 });
