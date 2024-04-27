@@ -39,9 +39,13 @@ app.get("/msg", (req, res) => {
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {});
-
 io.on("connection", (socket) => {
-  console.log("socket is connected ");
+  io.emit("userConnected", `welcome user`);
+  socket.on("msgSend", (msg) => {
+    // logic to add msg in database
+    io.emit("msgCreated", msg);
+  });
+
   socket.on("disconnect", () => {
     console.log("socket is dis-connected ");
   });
