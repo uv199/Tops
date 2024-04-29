@@ -15,8 +15,11 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "axios": "^1.6.8",
     "flowbite-react": "^0.8.0",
+    "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.22.3",
+    "react-toastify": "^10.0.5",
     "styled-components": "^6.1.8",
     "swiper": "^11.1.1"
   },

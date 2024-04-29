@@ -52,7 +52,7 @@ export default function TopHeader() {
               <p className="text-xm text-[#832729]">ACCOUNT</p>
             </span>
             <span
-              onClick={() => navigate("/profile")}
+              onClick={() => navigate("/login")}
               className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
             >
               <CiLogin className="text-2xl text-[#832729]" />

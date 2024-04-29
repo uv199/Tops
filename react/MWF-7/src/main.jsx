@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <h1>{5 + 5}</h1>
     {head}
 
-    <hr />
+    <hr />``
 
     <h1>name : {user.name}</h1>
     <h1>age : {user.name}</h1>
