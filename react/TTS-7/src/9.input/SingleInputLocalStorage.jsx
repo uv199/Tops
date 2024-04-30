@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Plus } from "react-feather";
 import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
 
-export default function SingleInput() {
+export default function SingleInputLocalStorage() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
   let [index, setIndex] = useState(null);
 
-  const getInputData = (ele) => {
-    setTask(ele.target.value);
-  };
+  useEffect(() => {
+    let jsonData = localStorage.getItem("taskArr");
+    let normalData = JSON.parse(jsonData);
+    setTaskArr(normalData);
+  }, []);
 
   const addTask = () => {
     setTaskArr([...taskArr, task]);
+    localStorage.setItem("taskArr", JSON.stringify([...taskArr, task]));
     setTask("");
   };
 
   const deleteHandler = (index) => {
     let filterData = taskArr.filter((e, i) => i !== index);
     setTaskArr(filterData);
+    localStorage.setItem("taskArr", JSON.stringify(filterData));
     toast.success("Task Deleted");
   };
 
@@ -31,6 +35,8 @@ export default function SingleInput() {
   const updateHandler = () => {
     taskArr.splice(index, 1, task);
     setTaskArr([...taskArr]);
+    localStorage.setItem("taskArr", JSON.stringify([...taskArr]));
+
     setTask("");
     setIndex(null);
     toast.success("Task Updated");
@@ -44,7 +50,7 @@ export default function SingleInput() {
           className="shadow-none rounded-end-0"
           placeholder="Enter a Task"
           value={task}
-          onChange={(e) => getInputData(e)}
+          onChange={(e) => setTask(e.target.value)}
         />
         {index || index === 0 ? (
           <Button
@@ -70,7 +76,7 @@ export default function SingleInput() {
         <hr className="mt-0" />
         {taskArr.map((e, i) => {
           return (
-            <div className="d-flex">
+            <div className="d-flex" key={i}>
               <div className=" border mt-2 px-2 py-1 rounded-2">{i + 1}.</div>
               <div className="flex justify-between w-100 border mt-2 px-2 py-1 rounded-2">
                 <h5>{e}</h5>
