@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import FunctionalCom from "./1.componenet/FunctionalCom";
+import HeaderCom from "./1.componenet/HeaderCom";
+import FunctionalState from "./2.State/FunctionalState";
+import Page from "./3.style/Page";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
+    <div>
+      {/* <HeaderCom /> */}
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        {/* <FunctionalCom /> */}
+        {/* <FunctionalState /> */}
 
-export default App
+        {/* ---------------------style------------------ */}
+        <Page />
+      </div>
+    </div>
+  );
+}

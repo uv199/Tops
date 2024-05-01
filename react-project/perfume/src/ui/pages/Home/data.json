@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "image_url": "https://in.ajmal.com/media/catalog/product/l/e/leather-noir_edp_100ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "EAU DE PARFUM / 100 ML / MALE ",
+        "details": "Artisan - Leather Noir 100ml: ",
+        "price": "₹ 499",
+        "cardcolor": "#cdfefe"
+    },
+    {
+        "id": "2",
+        "image_url": "https://in.ajmal.com/media/catalog/product/c/u/currant-crush_edp_100ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "EAU DE PARFUM / 100 ML / FEMALE ",
+        "details": "Artisan - Currant Crush 100ml:",
+        "price": "₹ 499",
+        "cardcolor": "#dbe4ff"
+    },
+    {
+        "id": "3",
+        "image_url": "https://in.ajmal.com/media/catalog/product/p/a/patchouli-haze_edp_100ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "EAU DE PARFUM / 100 ML / UNISEX ",
+        "details": "Artisan - Patchouli Haze 100ml",
+        "price": "₹ 499",
+        "cardcolor": "#dbe4ff"
+    },
+    {
+        "id": "4",
+        "image_url": "https://in.ajmal.com/media/catalog/product/s/u/summer-sage_edp_100ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "EAU DE PARFUM / 100 ML / MALE ",
+        "details": "Artisan - Summer Sage 100ml : L",
+        "price": "₹ 499",
+        "cardcolor": "#ecf8f8"
+    },
+    {
+        "id": "5",
+        "image_url": "https://in.ajmal.com/media/catalog/product/f/l/fleur-silk_edp_100ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "Eau De Parfum / 100 ml / FEMALE ",
+        "details": "Artisan - Fleur Silk 100ml: Lo",
+        "price": "₹ 499",
+        "cardcolor": "#fecdfe"
+    }
+]

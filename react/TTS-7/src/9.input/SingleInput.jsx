@@ -33,12 +33,11 @@ export default function SingleInput() {
     setTaskArr([...taskArr]);
     setTask("");
     setIndex(null);
-    toast.success("Task Updated")
+    toast.success("Task Updated");
   };
 
   return (
     <div className="w-1/3 mt-5">
-      <h2>{index}</h2>
       <p className="mb-1">Enter a Task</p>
       <div className="d-flex">
         <Input

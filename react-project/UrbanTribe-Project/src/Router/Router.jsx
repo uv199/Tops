@@ -14,6 +14,7 @@ import Product from "../ui/Pages/Admin/Product/Product";
 import User from "../ui/Pages/Admin/User/User";
 import Order from "../ui/Pages/Admin/Order/Order";
 import Profile from "../ui/Pages/Common/Profile/Profile";
+import CommonProduct from "../ui/Pages/Common/Product/CommonProduct";
 
 export default function Router() {
   return (
@@ -32,7 +33,10 @@ export default function Router() {
             <Route path="/admin-product" element={<Product />} />
             <Route path="/admin-user" element={<User />} />
             <Route path="/admin-order" element={<Order />} />
-            
+
+            {/* --------COMMON--------- */}
+
+            <Route path="/product/:type" element={<CommonProduct />} />
           </Routes>
           <Footer />
           <ToastContainer />

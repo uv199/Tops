@@ -1,6 +1,7 @@
 const data = require("../../../JS-assignment/data.json");
 // console.log("-----------  data----------->", data)
 
+/*
 function getCityByStateName(stateName) {
   let filterData = data.filter((e) => {
     // return e.state_name === stateName;
@@ -36,9 +37,10 @@ function getPopulationByStateName(stateName) {
   // return responseData;
 }
 // getPopulationByStateName("Delhi");
-
+*/
 // last task top 5 state by popu
 
+/*
 function getTopStateByPopulation() {
   let arr = [];
 
@@ -48,7 +50,7 @@ function getTopStateByPopulation() {
       arr.push({ stateName: e.state_name, population: 0 });
     }
   });
-
+  console.log("-----------  arr----------->", arr);
   data.map((e) => {
     let index = arr.findIndex((ele) => ele.stateName === e.state_name);
     // console.log(
@@ -64,29 +66,35 @@ function getTopStateByPopulation() {
   return top5;
 }
 
-getTopStateByPopulation();
-
+// getTopStateByPopulation();
+*/
 // [{stateName:"Delhi"},{stateName:"Maharashtra"}]
 
-let arr = [
-  {
-    city: "Delhi",
-    state_name: "Delhi",
-    population: 32226000,
-  },
-  {
-    city: "Mumbai",
-    state_name: "Maharashtra",
-    population: 24973002,
-  },
-  {
-    city: "Delhi",
-    state_name: "Delhi",
-    population: 32226000,
-  },
-  {
-    city: "Kolkata",
-    state_name: "West Bengal",
-    population: 18502000,
-  },
-];
+// --------------------------------------
+
+function getStatePopulation(stateName) {
+  let filterData = data.filter((e) => {
+    return e.state_name === stateName;
+  });
+  let total = 0;
+  filterData.map((e) => {
+    total = total + e.population;
+  });
+  return total;
+}
+
+function getTopStateByPopulation() {
+  let arr = [];
+
+  data.map((e) => {
+    let available = arr.some((ele) => ele.stateName === e.state_name);
+    if (!available) {
+      arr.push({ stateName: e.state_name, population: 0 });
+    }
+  });
+  arr.map((e, i) => {
+    let population = getStatePopulation(e.stateName);
+    arr[i].population = population;
+  });
+}
+getTopStateByPopulation();
