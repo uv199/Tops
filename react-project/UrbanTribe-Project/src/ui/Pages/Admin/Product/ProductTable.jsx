@@ -1,11 +1,14 @@
 import axios from "axios";
 import {
+  Dropdown,
+  Pagination,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeadCell,
   TableRow,
+  TextInput,
 } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -24,20 +27,45 @@ export default function ProductTable({
 }) {
   let [data, setData] = useState([]);
   const [modal, setModal] = useState(false);
+  const [search, setSearch] = useState("");
   const [previewData, setPreviewData] = useState({});
+  const [paginate, setPaginate] = useState({
+    totalProduct: 0,
+    page: 0,
+    limit: 10,
+  });
+  let id;
+  const onPageChange = (page) => {
+    clearTimeout(id);
+    id = setTimeout(() => {
+      setPaginate({ ...paginate, page: page - 1 });
+    }, 200);
+  };
+
+  const getSearchInput = (e) => {
+    setSearch(e?.target?.value);
+    setPaginate({ page: 0, limit: 10 });
+  };
 
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:9999/product/getAll",
+      url: "http://localhost:9999/product/getAllPaginate",
+      params: {
+        page: paginate.page || 1,
+        limit: paginate.limit,
+        search: search,
+      },
     })
       .then((res) => {
+        console.log("-----------  res?.data----------->", res?.data);
         setData(res?.data?.data);
+        setPaginate({ ...paginate, totalProduct: res?.data?.count });
       })
       .catch((err) => {
         console.log("-----------  err----------->", err);
       });
-  }, [isRefresh]);
+  }, [isRefresh, paginate.page, paginate.limit, search]);
 
   const deleteHandler = (id) => {
     axios({
@@ -65,6 +93,16 @@ export default function ProductTable({
   };
   return (
     <div className="m-10">
+      <div className="flex justify-end">
+        <TextInput
+          onChange={(e) => getSearchInput(e)}
+          type="email"
+          value={search}
+          placeholder="Search your text hear..."
+          className="w-1/3 mb-4"
+          required
+        />
+      </div>
       <PreviewData
         setModal={setModal}
         modal={modal}
@@ -73,6 +111,7 @@ export default function ProductTable({
 
       <Table striped className="border">
         <TableHead className="[&_*]:!bg-slate-300">
+          <TableHeadCell>Sr. no.</TableHeadCell>
           <TableHeadCell>Image</TableHeadCell>
           <TableHeadCell>Titel</TableHeadCell>
           <TableHeadCell>Price</TableHeadCell>
@@ -84,12 +123,13 @@ export default function ProductTable({
           </TableHeadCell>
         </TableHead>
         <TableBody className="divide-y">
-          {data.map((product) => {
+          {data.map((product, i) => {
             return (
               <TableRow
                 key={product?._id}
                 className="bg-white dark:border-gray-700 dark:bg-gray-800"
               >
+                <TableCell>{i + 1 + paginate.page * 10}</TableCell>
                 <TableCell>
                   <img
                     className="h-[70px]"
@@ -119,7 +159,6 @@ export default function ProductTable({
                   <div className="flex">
                     {size.map((e, i) => {
                       let include = product.size.includes(e);
-                      console.log("-----------  include----------->", include);
                       return (
                         <div
                           key={i}
@@ -167,6 +206,32 @@ export default function ProductTable({
           })}
         </TableBody>
       </Table>
+      <div className="flex justify-end my-4 items-end gap-3">
+        <div className="border-2 rounded-lg overflow-hidden max-h-[40px]">
+          <Dropdown
+            color={"white"}
+            outline={true}
+            label={`Page ${paginate?.limit}`}
+            className="border hover:bg-gray-400"
+            placement="top"
+          >
+            {[10, 20, 50, 100]?.map?.((e, i) => {
+              return (
+                <Dropdown.Item
+                  onClick={() => setPaginate({ ...paginate, limit: e })}
+                >
+                  {e}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown>
+        </div>
+        <Pagination
+          currentPage={paginate?.page || 1}
+          totalPages={Math.ceil(paginate?.totalProduct / paginate?.limit) || 10}
+          onPageChange={onPageChange}
+        />
+      </div>
     </div>
   );
 }

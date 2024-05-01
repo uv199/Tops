@@ -74,7 +74,7 @@ export default function SingleInputLocalStorage() {
       <div className="w-full border border-1 mt-4 p-4 rounded-1">
         <h1 className="text-center mb-0">Task</h1>
         <hr className="mt-0" />
-        {taskArr.map((e, i) => {
+        {taskArr?.map?.((e, i) => {
           return (
             <div className="d-flex" key={i}>
               <div className=" border mt-2 px-2 py-1 rounded-2">{i + 1}.</div>

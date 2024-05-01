@@ -43,7 +43,7 @@ export default function ProductTable() {
                     {i + 1}
                   </td>
                   <td>
-                    <img src={e.thumbnail} />
+                    <img className="h-[50px]" src={e.thumbnail} />
                   </td>
                   <td>{e.brand}</td>
                   <td>{e.gender}</td>

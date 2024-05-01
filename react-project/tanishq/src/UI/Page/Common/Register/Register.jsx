@@ -17,7 +17,7 @@ export default function Register() {
 
   const registerHandler = (data) => {
     console.log("-----------  data----------->", data);
-    // api call
+     //  TODO have to call api 
   };
 
   return (

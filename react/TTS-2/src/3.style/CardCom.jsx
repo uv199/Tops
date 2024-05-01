@@ -11,9 +11,7 @@ import {
 export default function CardCom() {
   return (
     <div>
-        <Button color="success">
-    success
-  </Button>
+      <Button color="success">success</Button>
 
       <Card
         style={{

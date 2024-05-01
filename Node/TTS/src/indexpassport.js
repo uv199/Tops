@@ -22,14 +22,15 @@ app.use(passport.session());
 passport.use(
   new GoogleStrategy(
     {
-      clientID: "738291599028-s61qkm9uc91s1phgoniutfbf9j4dbhpu.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "https://bbf6-106-214-150-8.ngrok-free.app/auth/google/callback",
+      clientID: "",
+      clientSecret: "",
+      callbackURL:
+        "https://bbf6-106-214-150-8.ngrok-free.app/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
-      console.log("-----------  refreshToken----------->", refreshToken)
-      console.log("-----------  accessToken----------->", accessToken)
-      console.log("-----------  profile----------->", profile)
+      console.log("-----------  refreshToken----------->", refreshToken);
+      console.log("-----------  accessToken----------->", accessToken);
+      console.log("-----------  profile----------->", profile);
       // Here you can handle user creation and save profile to database
       return done(null, profile);
     }
@@ -68,7 +69,6 @@ app.get(
 app.get("/profile", ensureAuthenticated, function (req, res) {
   res.send("Welcome, " + req.user.displayName + "!");
 });
-
 
 // Middleware to ensure user is authenticated
 function ensureAuthenticated(req, res, next) {
