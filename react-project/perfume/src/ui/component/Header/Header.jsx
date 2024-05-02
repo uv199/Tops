@@ -1,9 +1,15 @@
 import { Navbar, NavbarBrand, NavbarCollapse } from "flowbite-react";
 import logo from "../../../assets/logo.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { LogIn, Search, ShoppingCart, Truck } from "react-feather";
+import { useCookies } from "react-cookie";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  let [cookie, setCookie] = useCookies(["token"]);
+  console.log("-----------  cookie----------->", cookie);
+
   return (
     <Navbar fluid rounded className="m-0  py-4 border-b">
       <NavbarBrand className="pl-10">
@@ -21,25 +27,29 @@ export default function Header() {
             <Search className="text-gray-400 rounded-r-3xl" />
           </div>
           <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500">
-            <NavLink to="#" active>
+            <NavLink to="/" active>
               Home
             </NavLink>
-            <NavLink to="#">About</NavLink>
-            <NavLink to="#">Services</NavLink>
-            <NavLink to="#">Pricing</NavLink>
-            <NavLink to="#">Contact</NavLink>
+            <NavLink to="/">About</NavLink>
+            <NavLink to="/">Services</NavLink>
+            <NavLink to="/">Pricing</NavLink>
+            <NavLink to="/">Contact</NavLink>
           </div>
         </div>
       </NavbarCollapse>
       <div className="flex items-center [&_*]:mr-5 text-gray-400">
-        <img
-          src={logo}
-          alt=""
-          className=" w-[30px] h-[30px] rounded-3xl  border border-gray-500"
-        />
-        <LogIn/>
-        <ShoppingCart/>
-        <Truck/>
+        {cookie?.token ? (
+          <img
+            src={logo}
+            alt=""
+            onClick={() => navigate("/profile")}
+            className="cursor-pointer w-[30px] h-[30px] rounded-3xl  border border-gray-500"
+          />
+        ) : (
+          <LogIn onClick={() => navigate("/login")} />
+        )}
+        <ShoppingCart />
+        <Truck />
       </div>
     </Navbar>
   );

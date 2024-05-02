@@ -5,6 +5,7 @@ export default function MultiInput() {
   let [user, setUser] = useState({
     email: "",
     password: "",
+    hobby:[]
   });
   let [userArray, setUserArray] = useState([]);
 

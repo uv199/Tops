@@ -3,6 +3,8 @@ import SingleInput from "./SingleInput";
 import MultiInput from "./MultiInput";
 import LocalStorage from "./LocalStorage";
 import SingleInputLocalStorage from "./SingleInputLocalStorage";
+import RadioInput from "./RadioInput";
+import CheckBoxInput from "./CheckBoxInput";
 
 export default function InputCom() {
   return (
@@ -10,7 +12,9 @@ export default function InputCom() {
       {/* <SingleInput /> */}
       {/* <MultiInput /> */}
       {/* <LocalStorage /> */}
-      <SingleInputLocalStorage />
+      {/* <SingleInputLocalStorage /> */}
+      {/* <RadioInput /> */}
+      <CheckBoxInput />
     </>
   );
 }
