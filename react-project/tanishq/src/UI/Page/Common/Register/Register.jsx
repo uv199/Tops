@@ -2,9 +2,12 @@ import { TextInput } from "flowbite-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import { registerApi } from "../../../api/auth";
+import { useCookies } from "react-cookie";
 
 export default function Register() {
   const navigate = useNavigate();
+  const [cookies, setCookie] = useCookies(["token"]);
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
@@ -15,9 +18,15 @@ export default function Register() {
     },
   });
 
-  const registerHandler = (data) => {
-    console.log("-----------  data----------->", data);
-     //  TODO have to call api 
+  const registerHandler = async (cred) => {
+    let { data, error } = await registerApi(cred);
+    if (error) toast.error("somthing went wrong");
+    else {
+      await setCookie("token", data.token);
+      await setCookie("user", data.data);
+      if (data.data.userType === "admin") navigate("/admin-product");
+      else navigate("/");
+    }
   };
 
   return (

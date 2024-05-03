@@ -31,9 +31,9 @@ export default function Giftedslider({ data }) {
           modules={[Navigation]}
           className="mySwiper"
         >
-          {data?.map?.((e) => {
+          {data?.map?.((e, i) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={i}>
                 <CardCom />
               </SwiperSlide>
             );

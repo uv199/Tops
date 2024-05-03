@@ -6,9 +6,9 @@ export default function CollectionCard({ data = [1, 2, 3] }) {
   return (
     <div>
       <div className="mt-[2rem] mb-[4rem] px-20 flex gap-4">
-        {data?.map(() => {
+        {data?.map((e, i) => {
           return (
-            <span className="w-[80%]">
+            <span className="w-[80%]" key={i}>
               <Card
                 className=" hover:shadow-lg hover:shadow-[#E1CCD1] rounded-1 [&>img]:rounded-1"
                 imgSrc="../../../../public/Gender/Men.jpg"

@@ -6,9 +6,12 @@ import { toast } from "react-toastify";
 
 // -----------------file import------------------
 import { loginApi } from "../../../api/auth";
+import { useCookies } from "react-cookie";
 
 export default function Login() {
   const navigate = useNavigate();
+
+  const [cookies, setCookie] = useCookies(["token"]);
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
@@ -18,12 +21,12 @@ export default function Login() {
   });
 
   const loginHandler = async (cred) => {
-    console.log("-----------  cred----------->", cred);
     let { data, error } = await loginApi(cred);
-    console.log("-----------  data----------->", data.data.userType);
     if (error) toast.error("somthing went wrong");
     else {
       //  TODO have to store cookies
+      setCookie("token", data.token);
+      setCookie("user", data.data);
       if (data.data.userType === "admin") navigate("/admin-product");
       else navigate("/");
     }

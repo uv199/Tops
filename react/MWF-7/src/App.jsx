@@ -1,16 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import FunCome from "./2.componenet/functional/FunCome";
+import ClassCom from "./2.componenet/class/ClassCom";
+import Home from "./3.style/Home";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <h1>hello world</h1>
-    </>
+    <div>
+      {/* --------------COMPONENET------------ */}
+      {/* <FunCome /> */}
+      {/* <ClassCom /> */}
+      {/* -------------STYLE------------- */}
+      <Home />
+    </div>
   );
 }
-
-export default App;
