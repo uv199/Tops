@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   Dropdown,
+  Flowbite,
   Pagination,
   Table,
   TableBody,
@@ -13,6 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import PreviewData from "./PreviewData";
+import "./index.css";
 
 const defaultImage =
   "https://qph.cf2.quoracdn.net/main-qimg-1a4bafe2085452fdc55f646e3e31279c-lq";
@@ -90,6 +92,14 @@ export default function ProductTable({
   const previewHandler = (data) => {
     setModal(true);
     setPreviewData(data);
+  };
+
+  const customTheme = {
+    pages: {
+      selector: {
+        active: "bg-blue-500 hover:bg-red-600",
+      },
+    },
   };
   return (
     <div className="m-10">
@@ -226,11 +236,17 @@ export default function ProductTable({
             })}
           </Dropdown>
         </div>
-        <Pagination
-          currentPage={paginate?.page || 1}
-          totalPages={Math.ceil(paginate?.totalProduct / paginate?.limit) || 10}
-          onPageChange={onPageChange}
-        />
+        <Flowbite theme={{ theme: customTheme }}>
+          <Pagination
+            currentPage={paginate?.page || 1}
+            totalPages={
+              Math.ceil(paginate?.totalProduct / paginate?.limit) || 10
+            }
+            onPageChange={onPageChange}
+            showIcons
+            // active="bg-red-500 font-bold"
+          />
+        </Flowbite>
       </div>
     </div>
   );

@@ -15,33 +15,37 @@ import User from "../ui/Pages/Admin/User/User";
 import Order from "../ui/Pages/Admin/Order/Order";
 import Profile from "../ui/Pages/Common/Profile/Profile";
 import CommonProduct from "../ui/Pages/Common/Product/CommonProduct";
+import { Provider } from "react-redux";
+import { store } from "../Redux/app";
 
 export default function Router() {
   return (
     <>
-      <CookiesProvider defaultSetOptions={{ path: "/" }}>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/login" Component={Login} />
-            <Route path="/register" Component={Register} />
-            <Route path="/addtocart" Component={AddToCart} />
-            <Route path="/profile" Component={Profile} />
+      <Provider store={store}>
+        <CookiesProvider defaultSetOptions={{ path: "/" }}>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/login" Component={Login} />
+              <Route path="/register" Component={Register} />
+              <Route path="/addtocart" Component={AddToCart} />
+              <Route path="/profile" Component={Profile} />
 
-            {/* --------ADMIN--------- */}
-            <Route path="/admin-product" element={<Product />} />
-            <Route path="/admin-user" element={<User />} />
-            <Route path="/admin-order" element={<Order />} />
+              {/* --------ADMIN--------- */}
+              <Route path="/admin-product" element={<Product />} />
+              <Route path="/admin-user" element={<User />} />
+              <Route path="/admin-order" element={<Order />} />
 
-            {/* --------COMMON--------- */}
+              {/* --------COMMON--------- */}
 
-            <Route path="/product/:type" element={<CommonProduct />} />
-          </Routes>
-          <Footer />
-          <ToastContainer />
-        </BrowserRouter>
-      </CookiesProvider>
+              <Route path="/product/:type" element={<CommonProduct />} />
+            </Routes>
+            <Footer />
+            <ToastContainer />
+          </BrowserRouter>
+        </CookiesProvider>
+      </Provider>
     </>
   );
 }
