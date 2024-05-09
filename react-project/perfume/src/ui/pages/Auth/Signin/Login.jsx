@@ -1,35 +1,15 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 export default function Login() {
   let [credential, setCredential] = useState({ email: "", password: "" });
-  let [cookie, setCookie] = useCookies([]);
 
   const navigate = useNavigate();
-  const loginHandler = (e) => {
-    setCookie("token","123")
-    navigate("/");
 
+  const loginHandler = (e) => {
     e.preventDefault();
-    axios({
-      method: "post",
-      url: "http://localhost:9999/user/signin",
-      data: credential,
-    })
-      .then((res) => {
-        toast.success("Login successfully");
-        setCookie("user", res.data.data);
-        setCookie("token", res.data.token);
-        window.scrollTo(0, 0);
-        navigate("/");
-      })
-      .catch((err) => {
-        toast.error("Somthing went wrong");
-      });
   };
+
   return (
     <div className="flex flex-col py-9 justify-center">
       <h1 className="text-center pb-10 font-medium text-3xl">

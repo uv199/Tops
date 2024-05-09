@@ -10,52 +10,52 @@ import postRouter from "./router/post";
 import messageRouter from "./router/message";
 import session from "express-session";
 
-const GOOGLE_CLIENT_ID = "";
-const GOOGLE_CLIENT_SECRET = "";
+// const GOOGLE_CLIENT_ID = "";
+// const GOOGLE_CLIENT_SECRET = "";
 
-var GoogleStrategy = require("passport-google-oauth20").Strategy;
+// var GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL:
-        "https://2ade-106-214-150-8.ngrok-free.app/auth/google/callback",
-      scope: [
-        "https://www.googleapis.com/auth/userinfo.profile",
-        "https://www.googleapis.com/auth/userinfo.email",
-      ],
-    },
-    async function (accessToken, refreshToken, profile, cb) {
-      console.log("-----------  accessToken----------->", accessToken);
-      console.log("-----------  refreshToken----------->", refreshToken);
-      console.log("-----------  profile----------->", profile);
-      // create or not in db
-      // call api - https://www.googleapis.com/auth/userinfo.profile
+// passport.use(
+//   new GoogleStrategy(
+//     {
+//       clientID: GOOGLE_CLIENT_ID,
+//       clientSecret: GOOGLE_CLIENT_SECRET,
+//       callbackURL:
+//         "https://2ade-106-214-150-8.ngrok-free.app/auth/google/callback",
+//       scope: [
+//         "https://www.googleapis.com/auth/userinfo.profile",
+//         "https://www.googleapis.com/auth/userinfo.email",
+//       ],
+//     },
+//     async function (accessToken, refreshToken, profile, cb) {
+//       console.log("-----------  accessToken----------->", accessToken);
+//       console.log("-----------  refreshToken----------->", refreshToken);
+//       console.log("-----------  profile----------->", profile);
+//       // create or not in db
+//       // call api - https://www.googleapis.com/auth/userinfo.profile
 
-      let data = await axios.get(
-        "https://www.googleapis.com/oauth2/v3/userinfo",
-        {
-          headers: {
-            Authorization: "Bearer " + accessToken,
-          },
-        }
-      );
-      console.log("-----------  data----------->", data.data);
-      return cb(null, profile);
-    }
-  )
-);
+//       let data = await axios.get(
+//         "https://www.googleapis.com/oauth2/v3/userinfo",
+//         {
+//           headers: {
+//             Authorization: "Bearer " + accessToken,
+//           },
+//         }
+//       );
+//       console.log("-----------  data----------->", data.data);
+//       return cb(null, profile);
+//     }
+//   )
+// );
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-passport.deserializeUser((user, done) => {
-  // User.findById(id, function(err, user) {
-  done(err, user);
-  // });
-});
+// passport.serializeUser((user, done) => {
+//   done(null, user.id);
+// });
+// passport.deserializeUser((user, done) => {
+//   // User.findById(id, function(err, user) {
+//   done(err, user);
+//   // });
+// });
 const app = express();
 
 app.use(

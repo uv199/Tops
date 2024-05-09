@@ -8,7 +8,6 @@ export default function Header() {
   const navigate = useNavigate();
 
   let [cookie, setCookie] = useCookies(["token"]);
-  console.log("-----------  cookie----------->", cookie);
 
   return (
     <Navbar fluid rounded className="m-0  py-4 border-b">
@@ -27,9 +26,7 @@ export default function Header() {
             <Search className="text-gray-400 rounded-r-3xl" />
           </div>
           <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500">
-            <NavLink to="/" active>
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/">About</NavLink>
             <NavLink to="/">Services</NavLink>
             <NavLink to="/">Pricing</NavLink>
@@ -46,10 +43,13 @@ export default function Header() {
             className="cursor-pointer w-[30px] h-[30px] rounded-3xl  border border-gray-500"
           />
         ) : (
-          <LogIn onClick={() => navigate("/login")} />
+          <LogIn
+            className="cursor-pointer"
+            onClick={() => navigate("/login")}
+          />
         )}
-        <ShoppingCart />
-        <Truck />
+        <ShoppingCart className="cursor-pointer" />
+        <Truck className="cursor-pointer" />
       </div>
     </Navbar>
   );

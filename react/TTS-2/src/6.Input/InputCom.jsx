@@ -1,37 +1,34 @@
 import React, { useState } from "react";
+import { Button, Input } from "reactstrap";
 
 export default function InputCom() {
-  let [name, setName] = useState("");
-  let [nameArr, setNameArr] = useState([]);
-  console.log("-----------  nameArr----------->", nameArr);
+  let [task, setTask] = useState("");
+  let [arr, setArr] = useState([]);
 
-  const getData = (e) => {
-    setName(e.target.value);
+  const getInputData = (e) => {
+    setTask(e.target.value);
   };
 
-  const addNameHandler = () => {
-    console.log("-=-=-=-=");
-    setNameArr([...nameArr, name]);
-    setName("");
+  const addDataIntoArr = () => {
+    setArr([...arr, task]); // ... for copy old data
+    setTask(""); // blank a input after click
   };
-
   return (
-    <div>
-      <h1>name : {name}</h1>
-      <input
-        value={name}
-        placeholder="Enter your name"
-        onChange={(e) => getData(e)}
+    <div className="d-flex flex-column align-items-center m-3">
+      <h2>input : {task}</h2>
+      <Input
+        value={task} // to controll input value
+        className="w-25"
+        onChange={(e) => getInputData(e)}
       />
-      <button onClick={() => addNameHandler()}>Submit</button>
-      <hr />
-      {nameArr?.map((e) => {
-        return (
-          <div>
-            <h1>{e}</h1>
-          </div>
-        );
-      })}
+      <Button onClick={() => addDataIntoArr()}>Add Task</Button>
+      <div>
+        <ul>
+          {arr.map((e, i) => {
+            return <li key={i}>{e}</li>;
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

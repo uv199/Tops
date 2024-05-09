@@ -5,7 +5,7 @@ export default function PopularCat() {
 
 
 
-    <div class="mt-5 pt-5 pb-5 mb-5">
+    <div className="mt-5 pt-5 pb-5 mb-5">
       <div><i className="text-5xl title italic self-start block text-left mb-5 pb-3">Popular Categories</i></div>
 
 

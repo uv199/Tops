@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Rating } from "flowbite-react";
 import React from "react";
 
-export default function CardCom({ data, addProduct }) {
+export default function CardCom({ data, addToCart }) {
   let discountedPrice = (data.price * data.discountPercentage) / 100;
 
   return (
@@ -44,7 +44,7 @@ export default function CardCom({ data, addProduct }) {
           <h6 className="text-black text-sm line-through ">Rs.{data?.price}</h6>
         </div>
         <button
-          onClick={() => addProduct(data?._id)}
+          onClick={() => addToCart(data?._id)}
           className="bg-[#d11e33] text-white rounded-md py-2 px-5  hidden group-hover:block hover:bg-white hover:border-2 hover:border-red-600 hover:text-red-600"
         >
           Add to Cart

@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 export default function Account() {
   let [cookie, setCookie, removeCookie] = useCookies([]);
+  console.log("-----------  cookie----------->", cookie)
   const navigate = useNavigate();
   const logoutHandler = () => {
     removeCookie("token");
     removeCookie("user");
     navigate("/");
-    window.scrollTo(0, 0);
   };
+
   return (
     <div className="ml-36 mr-36">
       <h1 className="text-center mb-14 text-4xl font-semibold">ACCOUNT</h1>

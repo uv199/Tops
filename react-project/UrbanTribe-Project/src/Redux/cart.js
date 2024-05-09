@@ -35,3 +35,11 @@ const cartSlice = createSlice({
 
 export default cartSlice.reducer;
 export const { refetch } = cartSlice.actions;
+
+let n = 7;
+let arr = [1, 2, 1, 2, 1, 3, 2];
+//  [[1,1,1],[2,2],[3]] 
+
+for (let i = 0; i < arr.length; i++) {
+  const element = arr[i];
+}

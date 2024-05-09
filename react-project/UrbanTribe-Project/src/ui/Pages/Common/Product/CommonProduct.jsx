@@ -26,7 +26,7 @@ export default function CommonProduct() {
     })();
   }, []);
 
-  const addProduct = async (productId) => {
+  const addToCart = async (productId) => {
     console.log("-----------  cookies?.token----------->", cookies?.token);
     if (!cookies?.token) return navigate("/login");
     try {
@@ -63,7 +63,7 @@ export default function CommonProduct() {
       <hr />
       <div className={gridCols} style={{ padding: "20px" }}>
         {product?.map?.((e) => {
-          return <CardCom data={e} key={e._id} addProduct={addProduct} />;
+          return <CardCom data={e} key={e._id} addToCart={addToCart} />;
         })}
       </div>
     </div>

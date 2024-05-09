@@ -32,10 +32,10 @@ console.log("-----------  str----------->", str);
 
 // print()
 function print(params) {
-  console.log("-----------  print----------->");
+  console.log("----------- print ----------->");
 }
 
 print2();
 const print2 = (params) => {
-  console.log("-----------  print-2 ----------->");
+  console.log("----------- print-2 ----------->");
 };

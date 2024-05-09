@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Cardcom({ item }) {
   return (
-    <div class="p-1 mt-5">
+    <div className="p-1 mt-5">
       <div
         className=" p-4 mt-5 rounded-lg"
         style={{ backgroundColor: item.cardcolor }}
       >
-        <card className="cursor-pointer">
+        <div className="cursor-pointer">
           <a
             style={{
               width: "32px",
@@ -31,7 +31,7 @@ export default function Cardcom({ item }) {
             <img
               src={item?.image_url}
               alt=""
-              srcset=""
+              srcSet=""
               className="m-auto h-[300px]  content-center  "
             />
           </div>
@@ -48,10 +48,10 @@ export default function Cardcom({ item }) {
               <del className="mr-2  text-gray-500">₹ 1800 </del>{" "}
               <b className="text-[20px]">{item.price}</b>
             </p>
-            <a class="btn">Buy Now</a>
-            <a class="btn">Buy Now</a>
+            <a className="btn">Buy Now</a>
+            <a className="btn">Buy Now</a>
           </div>
-        </card>
+        </div>
       </div>
     </div>
   );

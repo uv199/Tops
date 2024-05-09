@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 const initialUser = {
   name: "",
   email: "",
@@ -21,34 +18,7 @@ export default function SignUp() {
   let [user, setUser] = useState(initialUser);
   let [address, setAddress] = useState(initialAddress);
 
-  // cookies
-  const [cookies, setCookie, removeCookie] = useCookies([]);
-
-  // navigation
-  const navigate = useNavigate();
-
-  const registerHandler = async () => {
-    if (user.password !== user.conPassword) {
-      toast.error("Confirm password not match");
-      setUser({ ...user, conPassword: "" });
-    } else {
-      let mainData = { ...user, address: [address] };
-      try {
-        let response = await axios({
-          method: "post",
-          url: "http://localhost:9999/user/signup",
-          data: mainData,
-        });
-        if (data) {
-          setCookie("user", response.data.data);
-          setCookie("token", response.data.token);
-        }
-        navigate("/");
-      } catch (error) {
-        toast.error(error.message);
-      }
-    }
-  };
+  const registerHandler = async () => {};
 
   return (
     <>
@@ -58,8 +28,8 @@ export default function SignUp() {
           <h3 className="font-medium mb-5 text-xl">PERSONAL INFORMATION</h3>
           <label htmlFor="name" className=" w-[100%] flex justify-between">
             <span>Name*</span>{" "}
-            <span className="text-gray-400">*Required Fields</span>
-          *</label>
+            <span className="text-gray-400">*Required Fields</span>*
+          </label>
           <input
             onChange={(e) => setUser({ ...user, name: e?.target?.value })}
             value={user.name}
@@ -205,4 +175,25 @@ let data = {
       pinCode: "city name",
     },
   ],
+};
+
+let user = {
+  name: "mr. gray",
+  userType: "customer",
+  email: "gray@gmail.com",
+  number: "7895461230",
+  password: "$2b$12$XjY0awULd6KWNX1aQ3fKGeEv6I2nDbTyeKYlVnY5ZAq.Qho5Y/d8O",
+  age: 23,
+};
+
+let address = {
+  add: "01",
+  city: "city name",
+  state: "state name",
+  pinCode: "city name",
+};
+
+let finalObj = {
+  ...user,
+  address: [address],
 };

@@ -28,12 +28,11 @@ console.log("-----------  No----------->", No);
 
 */
 
-
 // function print(obj) {
 //     console.log("name", obj.name);
 //     console.log("age", obj.age);
 //   }
-  
+
 function print({ name, age }) {
   console.log("name", name);
   console.log("age", age);
