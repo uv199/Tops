@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardCom from "../../../Component/Card/CardCom";
 import bag1 from "../../../../../public/bag1.webp";
 import { Grid3x3GapFill, GridFill } from "react-bootstrap-icons";
-import icon4x4 from "../../../../assets/4x4.png";
+// import icon4x4 from "../../../../assets/4x4.png";
 import { API } from "../../../api/axiosConfig";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
@@ -53,12 +53,12 @@ export default function CommonProduct() {
           className="text-xl text-gray-400 "
           onClick={() => setGridCols("grid grid-cols-3")}
         />
-        <img
+        {/* <img
           src={icon4x4}
           className="h-[20px] !fill-gray-400"
           alt=""
           onClick={() => setGridCols("grid grid-cols-4")}
-        />
+        /> */}
       </div>
       <hr />
       <div className={gridCols} style={{ padding: "20px" }}>

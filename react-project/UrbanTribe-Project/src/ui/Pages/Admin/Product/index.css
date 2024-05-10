@@ -1,4 +1,4 @@
-/* Assuming .active-page is the class applied to the active page */
+/* Assuming .active-page is the className applied to the active page */
 .pagination .active-page button:focus {
     /* Add your custom styles here */
     background-color: #007bff; /* Example background color */
