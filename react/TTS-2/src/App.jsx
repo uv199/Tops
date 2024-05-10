@@ -10,7 +10,7 @@ import InputCom from "./6.Input/InputCom";
 
 export default function App() {
   return (
-    <div className="appDiv">
+    <div className="d-flex justify-content-center">
       {/* <HeaderCom /> */}
 
       {/* ---------------------COMPONENET------------------ */}

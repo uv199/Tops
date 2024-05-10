@@ -1,14 +1,19 @@
 import { Table } from "flowbite-react";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
-
+import ReactPaginate from "react-paginate";
 const sizeData = ["1.5", "2", "3", "4"];
 
 export default function ProductTable({
   updateHandler,
   deleteHandler,
   productdata,
+  setPagination,
+  pagination,
 }) {
+  const handlePageClick = (event) => {
+    setPagination({ ...pagination, page: event?.selected + 1 });
+  };
   return (
     <div>
       <div className="mx-3 my-9  px-8 ">
@@ -17,6 +22,7 @@ export default function ProductTable({
             <tr className="text-2xl text-black bg-[#d6b8b9e2] ">
               <th>Sr.No</th>
               <th>Image</th>
+              <th>Title</th>
               <th>Brand </th>
               <th>Gender</th>
               <th>Price</th>
@@ -31,6 +37,9 @@ export default function ProductTable({
                 <tr key={i} className="border-b-[2px] ">
                   <td scope="row" className="px-[2rem] py-4">
                     {i + 1}
+                  </td>
+                  <td scope="row" className="px-[2rem] py-4">
+                    {e?.title + 1}
                   </td>
                   <td>
                     <img src={e.thumbnail} className="h-[50px]" />
@@ -85,6 +94,16 @@ export default function ProductTable({
           </tbody>
         </Table>
       </div>
+      <ReactPaginate
+        className="flex gap-[10px]"
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pagination?.totalProduct / pagination?.limit}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+      />
     </div>
   );
 }

@@ -7,21 +7,21 @@ let arr3 = [8, 9];
 
 // let concatArr = arr.concat(arr2);
 let concatArr = arr.concat(arr2, 0, arr3, 10, 12);
-console.log("-----------  concatArr----------->", concatArr);
+console.log("-----------concatArr----------->", concatArr);
 
 
 // splice(start index,count to remove,new element value...) -->  you can add and remove element by using splice
 // arr.splice(1,2,20,30); // add and remove -> like update
 // arr.splice(1,2); // only remove -> like delete
 arr.splice(1,0,1.5); // only add -> like add
-console.log("-----------  arr----------->", arr)
+console.log("-----------arr----------->", arr)
 
 
 //  slice(startIndex,endIndex) --> return a piece of array according given index 
 // let sliceArr = arr.slice(1,3)
 // let sliceArr = arr.slice(1,-1)
 let sliceArr = arr.slice(2,-4)
-console.log("-----------  sliceArr----------->", sliceArr)
+console.log("-----------sliceArr----------->", sliceArr)
 
 
 // indexOf => find a index of element by passing value
@@ -54,6 +54,7 @@ let ans = arr2.some((e) => {
     return e.a === 300;
 });
 console.log("-----------  ans----------->", ans);
+
 
 //  sort -> sorting a array
 
