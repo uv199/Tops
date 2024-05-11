@@ -10,6 +10,18 @@ import postRouter from "./router/post";
 import messageRouter from "./router/message";
 import session from "express-session";
 
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: "dec6sfy4i",
+  api_key: "936994176136521",
+  api_secret: "B8vM0GoPoQg1emY5XaQOMTiEmMc",
+});
+
+cloudinary.uploader
+  .upload("./src/images/download.jpg")
+  .then((result) => console.log(result));
+
 // const GOOGLE_CLIENT_ID = "";
 // const GOOGLE_CLIENT_SECRET = "";
 

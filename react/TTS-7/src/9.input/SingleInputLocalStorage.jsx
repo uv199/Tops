@@ -7,12 +7,22 @@ export default function SingleInputLocalStorage() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
   let [index, setIndex] = useState(null);
+  let [searchText, setSearchText] = useState("");
+
+  // useEffect(() => {
+  //   let jsonData = localStorage.getItem("taskArr");
+  //   let normalData = JSON.parse(jsonData) || [];
+  //   setTaskArr(normalData);
+  // }, []);
 
   useEffect(() => {
     let jsonData = localStorage.getItem("taskArr");
-    let normalData = JSON.parse(jsonData);
-    setTaskArr(normalData);
-  }, []);
+    let normalData = JSON.parse(jsonData) || [];
+    let filterData = normalData.filter((e) => {
+      return e.includes(searchText);
+    });
+    setTaskArr(filterData);
+  }, [searchText]);
 
   const addTask = () => {
     setTaskArr([...taskArr, task]);
@@ -74,6 +84,12 @@ export default function SingleInputLocalStorage() {
       <div className="w-full border border-1 mt-4 p-4 rounded-1">
         <h1 className="text-center mb-0">Task</h1>
         <hr className="mt-0" />
+        <Input
+          className="shadow-none"
+          placeholder="Search your text here..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
         {taskArr?.map?.((e, i) => {
           return (
             <div className="d-flex" key={i}>

@@ -1,15 +1,27 @@
-let arr = [1, 2, 3, 4];
-// console.log("-----------  arr.includes(3)----------->", arr.includes(3));
+/*
 
-let arr2 = [{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }];
+let e = ["chocolate", "strawberry"];
 
-// console.log(
-//   "-----------  arr2.includes({ a: 1 })----------->",
-//   arr2.includes({ a: 1 })
-// );
+// [
+//     { value: "chocolate", label: "Chocolate" },
+//     { value: "strawberry", label: "Strawberry" },
+// ];
 
-let ans = arr2.some((e) => {
-  console.log("-----------  e----------->", e);
-  return e.a === 20;
+let data = e.map((obj) => {
+  console.log("----", obj);
+  return { value: obj, lable: obj };
 });
-console.log("-----------  ans----------->", ans)
+console.log("-----------  data----------->", data);
+
+*/
+
+let arr = ["uv0", "uj", "jay", "latesh", "sid"];
+
+let serahcText = "j";
+
+let taskArr = [];
+
+taskArr = arr.filter((e) => {
+  return e.includes(serahcText);
+});
+console.log("-----------  taskArr----------->", taskArr);
