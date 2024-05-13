@@ -4,6 +4,7 @@ import { Button } from "reactstrap";
 let count = { a: 90 };
 count = 91;
 count = { a: count.a + 1 };
+count = { b: count.b + 1 };
 
 export default function FunComState() {
   // let [ state, method to chnage state] = useState(inital value)

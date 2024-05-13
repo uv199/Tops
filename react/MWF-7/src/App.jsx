@@ -4,6 +4,8 @@ import ClassCom from "./2.componenet/class/ClassCom";
 import Home from "./3.style/Home";
 import FunComState from "./4.state/FunComState";
 import ClassComState from "./4.state/ClassComState";
+import MapKeyCom from "./5.MapKey-Fragment/MapKeyCom";
+import HomePage from "./3.style/Project/HomePage";
 
 export default function App() {
   return (
@@ -16,8 +18,12 @@ export default function App() {
       {/* <Home /> */}
 
       {/* -------------STATE------------- */}
-      <FunComState />
+      {/* <FunComState /> */}
       {/* <ClassComState /> */}
+      <HomePage />
+
+      {/* -------------MAPKEY------------- */}
+      {/* <MapKeyCom /> */}
     </div>
   );
 }

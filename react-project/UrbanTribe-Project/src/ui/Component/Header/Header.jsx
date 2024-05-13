@@ -9,18 +9,14 @@ import { useCookies } from "react-cookie";
 import { Tooltip } from "flowbite-react";
 
 const menuItem = [
-  { label: "Track Order", redirect: "" },
   { label: "All Products", redirect: "/product/all" },
-  { label: "Casual Backpacks", redirect: "" },
-  { label: "Professional", redirect: "" },
-  { label: "Travel", redirect: "" },
-  { label: "Sports", redirect: "" },
-  { label: "School Bags", redirect: "" },
-  { label: "Corporate gifting", redirect: "" },
-  { label: "Best Offer", redirect: "" },
-  { label: "Lunch Bags", redirect: "" },
-  { label: "Blogs", redirect: "" },
-  { label: "Contact Us", redirect: "" },
+  { label: "Casual Backpacks", redirect: "/product/casual" },
+  { label: "Professional", redirect: "/product/professional" },
+  { label: "Travel", redirect: "/product/travel" },
+  { label: "Sports", redirect: "/product/sports" },
+  { label: "School Bags", redirect: "/product/school" },
+  { label: "Lunch Bags", redirect: "/product/lunchBag" },
+  { label: "Contact Us", redirect: "/contact" },
 ];
 export default function Header() {
   const [cookies] = useCookies(["token"]);
@@ -36,11 +32,11 @@ export default function Header() {
             </marquee>
           </p>
           <div className="bg-[#f7f8fa] border-b border-gray-200 text-[#777777] flex px-2 py-1 justify-around">
-            <ul className="flex gap-3 text-sm py-2 m-0 items-center">
+            <ul className="flex gap-5 text-sm py-2 m-0 items-center">
               {menuItem?.map((menuItem, index) => {
                 return (
                   <>
-                    <li key={index}>
+                    <li key={index} className="">
                       <NavLink
                         to={menuItem.redirect}
                         className="text-decoration-none text-black hover:!text-red-600"

@@ -7,6 +7,7 @@ import FunProps from "./4.Props/FunProps";
 import MapKeyCom from "./5.MapKey/MapKeyCom";
 import FragmentCom from "./5.MapKey/FragmentCom";
 import InputCom from "./6.Input/InputCom";
+import ConditonalCom from "./7.ConditionalRender/ConditonalCom";
 
 export default function App() {
   return (
@@ -30,7 +31,10 @@ export default function App() {
       {/* <FragmentCom /> */}
 
       {/* ---------------------INPUT------------------ */}
-      <InputCom />
+      {/* <InputCom /> */}
+
+      {/* ---------------------CONDITIONAL RENDARING------------------ */}
+      <ConditonalCom />
     </div>
   );
 }
