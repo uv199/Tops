@@ -18,11 +18,13 @@ export const signup = async (req, res) => {
     if (match) throw new Error("email or password are used");
 
     let user = await modals.User.create(input);
+    let token = createToken(user);
+    await modals.Token.create({ token, userId: user?._id });
 
     res.status(200).send({
       success: true,
       data: user,
-      token: "",
+      token,
       message: "User create successfully",
     });
   } catch (error) {
@@ -43,10 +45,25 @@ export const signin = async (req, res) => {
     let match = await matchUser.validatePassword(password);
     if (!match) throw new Error("Email of password not match");
 
+    let token = createToken(matchUser);
+    let matchTokendData = await modals.Token.findOne({
+      userId: matchUser?._id,
+    });
+    console.log("-----------  matchTokendData----------->", matchTokendData);
+
+    if (matchTokendData?.token?.length < 2) {
+      matchTokendData.token.push(token);
+      matchTokendData.save();
+    } else {
+      matchTokendData.token.shift();
+      matchTokendData.token.push(token);
+      matchTokendData.save();
+    }
+
     res.status(200).send({
       success: true,
       data: matchUser,
-      token: createToken(matchUser),
+      token,
       message: "User create successfully",
     });
   } catch (error) {

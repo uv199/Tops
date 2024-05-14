@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "image_url": "https://in.ajmal.com/media/catalog/product/b/a/bastion_edp_100ml.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "35%",
+        "brand": " 100 ML / MALE ",
+        "details": "Bastion Edp 100ml Long Lasting ",
+        "dprice": "₹ 1500",
+        "price": "₹ 975",
+        "cardcolor": "#fdfdce"
+    },
+    {
+        "id": "2",
+        "image_url": "https://in.ajmal.com/media/catalog/product/b/o/bombaydreams_edp_100ml1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "58%",
+        "brand": " 100 ML / FEMALE  ",
+        "details": "Bombay Dreams Edp 100ml Long L",
+        "dprice": "₹ 799",
+        "price": "₹ 559",
+        "cardcolor": "#efebff"
+    },
+    {
+        "id": "3",
+        "image_url": "https://in.ajmal.com/media/catalog/product/f/a/facin8_edp_100ml.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "30%",
+        "brand": " 100 ML / MALE  ",
+        "details": "Facin8 Edp Perfume 100ml Long ",
+        "dprice": "₹ 999",
+        "price": "₹ 699",
+        "cardcolor": "#f8ffdb"
+    },
+    {
+        "id": "4",
+        "image_url": "https://in.ajmal.com/media/catalog/product/c/u/currant_crush_concentrated10ml.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "56%",
+        "brand": " 10 ML / FEMALE  ",
+        "details": "Facin8 Edp Perfume 100ml Long ",
+        "dprice": "₹ 799",
+        "price": "₹ 349",
+        "cardcolor": "#fdfdce"
+    },
+    {
+        "id": "5",
+        "image_url": "https://in.ajmal.com/media/catalog/product/j/u/juniper_bloom_concentrated10ml1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "56%",
+        "brand": "10 ML / MALE  ",
+        "details": "Artisan - Juniper Bloom Concen",
+        "dprice": "₹ 799",
+        "price": "₹ 349",
+        "cardcolor": "#ecf8f8"
+    },
+    {
+        "id": "6",
+        "image_url": "https://in.ajmal.com/media/catalog/product/m/u/musky_wood_concentrated_10ml1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "56%",
+        "brand": " 10 ML / MALE  ",
+        "details": "Artisan - Musky Wood Concentra",
+        "dprice": "₹ 799",
+        "price": "₹ 349",
+        "cardcolor": "#cffcfc"
+    },
+    {
+        "id": "7",
+        "image_url": "https://in.ajmal.com/media/catalog/product/o/u/oudh_smear_concentrated_10ml.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "56%",
+        "brand": " 10 ML / MALE  ",
+        "details": "Artisan - Oudh Smear Concentra",
+        "dprice": "₹ 799",
+        "price": "₹ 349",
+        "cardcolor": "#f5f5cc"
+    },
+    {
+        "id": "8",
+        "image_url": "https://in.ajmal.com/media/catalog/product/w/i/wisaldhahab_edp_50ml._1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "brand": " 50 ML / MALE  ",
+        "details": "Wisal Dhahab Edp Woody 50ml Lo",
+        "dprice": "₹ 4000",
+        "price": "₹ 3000",
+        "cardcolor": "#ccffff"
+    },
+    {
+        "id": "9",
+        "image_url": "https://in.ajmal.com/media/catalog/product/y/e/yearn_edp_50ml.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "60%",
+        "brand": "50 ML / UNISEX  ",
+        "details": "Yearn Eau De Perfume Oriental ",
+        "dprice": "₹ 1000",
+        "price": "₹ 399",
+        "cardcolor": "#fecdfe"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "image_url": "https://in.ajmal.com/media/catalog/product/s/h/shadesofme_giftpack1_250ml_1__1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "47%",
+        "brand": "GIFT SET / 250 ML / FEMALE ",
+        "details": "And Ethereal Dreamer Eau De Pe ",
+        "dprice": "₹ 1500",
+        "price": "₹ 799",
+        "cardcolor": "#deecff"
+    },
+    {
+        "id": "2",
+        "image_url": "https://in.ajmal.com/media/catalog/product/i/l/illusion_giftpack1_250ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "58%",
+        "brand": "GIFT SET / 250 ML / FEMALE  ",
+        "details": "Global Desi Dreamy Daze Eau De",
+        "dprice": "₹ 1200",
+        "price": "₹ 499",
+        "cardcolor": "#edc7e0"
+    },
+    {
+        "id": "3",
+        "image_url": "https://in.ajmal.com/media/catalog/product/i/l/illusion_giftpack2_250ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "58%",
+        "brand": "GIFT SET / 250 ML / FEMALE  ",
+        "details": "Global Desi Cosmic Charm Eau D",
+        "dprice": "₹ 1200",
+        "price": "₹ 499",
+        "cardcolor": "#ebe5ab"
+    },
+    {
+        "id": "4",
+        "image_url": "https://in.ajmal.com/media/catalog/product/r/o/romanceset_giftpack_300ml_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "35%",
+        "brand": "GIFT SET / 300 ML / MALE  ",
+        "details": "Ajmal Gift Set Of Yearn Edp 10",
+        "dprice": "₹ 1500",
+        "price": "₹ 975",
+        "cardcolor": "#f2b1c0"
+    },
+    {
+        "id": "5",
+        "image_url": "https://in.ajmal.com/media/catalog/product/r/o/romanceset_giftpack_300ml_1__1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "35%",
+        "brand": "GIFT SET / 300 ML / FEMALE  ",
+        "details": "Ajmal Gift Set Of Neea Edp 100",
+        "dprice": "₹ 1500",
+        "price": "₹ 975",
+        "cardcolor": "#f2b1c0"
+    },
+    {
+        "id": "6",
+        "image_url": "https://in.ajmal.com/media/catalog/product/d/i/discover_gift_set_1_.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "72%",
+        "brand": "GIFT SET / 100 ML / UNISEX  ",
+        "details": "Ajmal Discovery Set Of 5 Eau D",
+        "dprice": "₹ 2500",
+        "price": "₹ 699",
+        "cardcolor": "#00ffff"
+    }
+]

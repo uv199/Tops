@@ -7,6 +7,11 @@ export const auth = async (req, res, next) => {
     let token = req?.headers?.["x-token"];
     if (!token) throw new Error("Session invalid or expire");
     else {
+      //
+      const matchToken = await modals?.Token?.findOne({
+        token: { $in: [token] },
+      });
+      if (!matchToken) throw new Error("Session invalid or expire");
       let data = jwt.verify(token, config.secret_key);
       const user = await modals.User.findById(data?.id);
       req.me = user;

@@ -1,0 +1,21 @@
+.mainDiv {
+  position: relative;
+  padding: 3px;
+}
+
+.roundDiv {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  top: 0;
+  right: 0;
+  background-color: rgb(234, 41, 41);
+  color: white;
+}

@@ -1,0 +1,18 @@
+.ribbon {
+    background-color: #832729;
+    color: white;
+    padding: 5px 15px;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    z-index: 1;
+    width: 120px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .zoom-preview {
+    background-repeat: no-repeat;
+    background-position: top left;
+    cursor: zoom-in;
+  }

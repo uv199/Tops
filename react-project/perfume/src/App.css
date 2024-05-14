@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;500;600;700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.title {
+  font-family: "Bona Nova", serif;
+}
+
+.card-title {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.product-img {
+  margin: -120px 0 10px 0;
+}
+
+a.btn {
+  padding: 8px 20px;
+  background-color: #9e6e3b;
+  color: #fff !important;
+  display: inline-block;
+  margin: 3px;
+  border-radius: 100px;
+}
+
+a.btn:hover {
+  opacity: 0.9;
+}
+
+.single-line-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-product .center-box {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.popularImg_img {
+  transition: background-image 0.5s linear, transform 0.5s linear;
+  transition-timing-function: cubic-bezier(0.35, 0, 0, 1);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.popularImg_img--img1 {
+  background-image: url("https://in.ajmal.com/public/images/shop-women.jpg");
+  transform: scale(1);
+}
+
+.popularImg:hover .popularImg_img--img1 {
+  background-image: url("https://in.ajmal.com/public/images/shop-women-hover.jpg");
+  transform: scale(1.15);
+}
+
+.popularImg_img--img2 {
+  background-image: url("https://in.ajmal.com/public/images/shop-men.jpg");
+  transform: scale(1);
+}
+
+.popularImg:hover .popularImg_img--img2 {
+  background-image: url("https://in.ajmal.com/public/images/shop-men-hover.jpg");
+  transform: scale(1.15);
+}
+
+.popularCategoriesSec_top .popularImg_img {
+  transition: background-image 0.5s linear, transform 0.5s linear;
+  transition-timing-function: cubic-bezier(0.35, 0, 0, 1);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.popularImg_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  text-align: center;
+}
+
+.popularImg .popularImg_txt {
+  display: none;
+}
+
+.popularImg {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.popularImg_txt ul li:not(:last-child) {
+  margin-right: 24px;
+}
+
+.popularImg_txt ul li {
+  margin-right: 24px;
+  display: initial;
+}
+
+.popularImg_txt ul li a {
+  font-size: 20px;
+  line-height: 28px;
+  color: #fff;
+  white-space: nowrap;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.popularImg:hover {
+  transition: all 0.4s;
+}
+
+.popularImg:hover .popularImg_txt {
+  transition: all 0.4s;
+  transform: translate(-50%, -50px);
+  top: 140px;
+  left: 50%;
+  width: 100%;
+  display: block;
+  padding-top: 35px;
+}
+
+.popularImg:hover .popularImg_txt {
+  transition: all 0.4s;
+  top: 45%;
+  left: 50%;
+  width: 100%;
+  padding-top: 35px;
+  display: block !important;
+  text-align: center;
+}

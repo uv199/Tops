@@ -21,7 +21,6 @@ const userSchema = mongoose.Schema(
         message: (props) => `${props.value} email is not proper`,
       },
     },
-
     age: Number,
     dob: Date,
     image: String,

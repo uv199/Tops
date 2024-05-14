@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      body {
+        margin: 10px;
+        padding: 30px;
+        border: 1px solid black;
+        padding-bottom: 3rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      #form {
+        background: rgba(0, 0, 0, 0.15);
+        padding: 0.25rem;
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 3rem;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+      #input {
+        border: none;
+        padding: 0 1rem;
+        flex-grow: 1;
+        border-radius: 2rem;
+        margin: 0.25rem;
+      }
+      #input:focus {
+        outline: none;
+      }
+      #form > button {
+        background: #333;
+        border: none;
+        padding: 0 1rem;
+        margin: 0.25rem;
+        border-radius: 3px;
+        outline: none;
+        color: #fff;
+      }
+
+      #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      #messages > li {
+        padding: 0.5rem 1rem;
+      }
+      #messages > li:nth-child(odd) {
+        background: #efefef;
+      }
+    </style>
+  </head>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <body>
+    <h1 id="countUser"></h1>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+  </body>
+  <!-- <script src="./script.js">
+  </script> -->
+
+  <script>
+    var socket = io();
+
+    var form = document.getElementById("form");
+    var input = document.getElementById("input");
+    var ul = document.getElementById("messages");
+    var h1 = document.getElementById("countUser");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("msgSend", input.value);
+        input.value = "";
+      }
+    });
+
+    socket.on("userConnected",(msg)=>{
+      console.log("----->")
+      const li = document.createElement("li");
+      li.innerHTML = msg;
+      ul.appendChild(li);
+    });
+
+    socket.on("msgCreated", (msg) => {
+      console.log("-----------  msg----------->", msg);
+      const li = document.createElement("li");
+      li.innerHTML = msg;
+      ul.appendChild(li);
+    });
+  </script>
+</html>

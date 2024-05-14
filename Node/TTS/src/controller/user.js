@@ -70,13 +70,26 @@ export const passwordReset = async (req, res) => {
 
 export const login = (req, res) => {
   let { email, password } = req?.body;
-
-  // const user = modal?.User.findOne({email})
-  // user.validatePassword
+  console.log("-----------  email----------->", email)
   modal?.User.findOne({ email })
     .then(async (userRes) => {
-      let match = await userRes.validatePassword(password);
-      let token = generateToken(userRes);
+      console.log("-----------  userRes----------->", userRes)
+      // let match = await userRes.validatePassword(password);
+      let matchtoken = await modal.Token.findOne({ userId: userRes._id });
+
+      if (matchtoken) {
+        if (matchtoken.token.length < 2) {
+          let token = generateToken(userRes);
+          res.send({ data: userRes, token });
+        } else {
+          matchtoken.token.shift();
+        }
+      } else {
+        let token = generateToken(userRes);
+        await modal.Token.create({ token: token, userId: userRes?._id });
+        res.send({ data: userRes, token });
+      }
+
       if (match) {
         res.send({ data: userRes, token });
       } else {
