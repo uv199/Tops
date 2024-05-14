@@ -1,0 +1,56 @@
+key word to decler variable
+
+var 
+let 
+const
+
+
+let  variable name  = value
+
+let x = 20
+
+
+let --> keyword
+x --> variable name
+= --> assignment operator
+20 --> value
+
+
+
+variable naming rule 
+
+1. can't use  number 
+like  let 12 = 12 --> give error
+
+2. can't start with number
+like let 1stName = 12 --> give error
+
+3. can't use special charactor
+like let @Name = ---> give error 
+
+
+
+console.log(variable name/value)
+let x = 100
+console.log(x) ==> 100
+
+
+console.log(x,"test") ==> 100 test
+
+
+data type in js
+
+
+1.string  => 'urvish" patel' || "Urvish patel's" || `Urvish " ' Patel`
+2.Number => 1 || -1 || 1.5
+3.null => khali value  || null
+4.undefined  => not defined yet || undefined
+5.boolean => true || false 
+6.Array  => [1,2,3,4,5]
+7.Object => {name : "urvish", age :23 }
+
+
+
+
+
+

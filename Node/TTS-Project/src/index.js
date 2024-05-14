@@ -1,6 +1,6 @@
-import app from "./app";
-import { config } from "./config";
-import { dbConnect } from "./db/db";
+import app from "./app.js";
+import { config } from "./config.js";
+import { dbConnect } from "./db/db.js";
 
 const port = config.port || 8000;
 

@@ -6,7 +6,7 @@ export default function ProtectedRoute({ component }) {
   useEffect(() => {
     const data = localStorage.getItem("isLogin");
     console.log("-----------  data----------->", data);
-    if (!data) {
+    if (data) {
       navigate("/");
     }
   });
