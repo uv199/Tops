@@ -1,0 +1,37 @@
+[
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "user"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "employee"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "admin"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "user"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "admin"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "user"
+  },
+  {
+    "email": "ubv@gmail.com",
+    "password": "12345",
+    "userType": "employees"
+  }
+]
