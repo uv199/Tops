@@ -1,9 +1,9 @@
 import { APIinstance } from "./axiosConfig";
 
-export const fetchAllProduct = async ({ limit, page }) => {
+export const fetchAllProduct = async ({ limit, page, search }) => {
   try {
     let response = await APIinstance.get("/product/getAllPaginate", {
-      params: { page, limit },
+      params: { page, limit, search },
     });
     return { error: null, data: response.data };
   } catch (error) {

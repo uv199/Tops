@@ -31,17 +31,25 @@ export default function TopHeader() {
           />
         </span>
         <div className="flex  py-3 mt-3 gap-4 justify-center">
-          <span
-            onClick={() => navigate("/wishlist")}
-            className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
-          >
-            <CiHeart className="text-2xl text-[#832729]" />
-            <p className="text-xm text-[#832729]">WISHLIST</p>
-          </span>
-          <span   onClick={() => navigate("/cart")} className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out">
-            <CiShoppingCart className="text-2xl text-[#832729]" />
-            <p className="text-xm text-[#832729]">CART</p>
-          </span>
+          {cookies.user?.userType !== "admin" && (
+            <>
+              <span
+                onClick={() => navigate("/wishlist")}
+                className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
+              >
+                <CiHeart className="text-2xl text-[#832729]" />
+                <p className="text-xm text-[#832729]">WISHLIST</p>
+              </span>
+              <span
+                onClick={() => navigate("/cart")}
+                className=" px-2  flex flex-col justify-center items-center hover:scale-110  transition duration-700 ease-in-out"
+              >
+                <CiShoppingCart className="text-2xl text-[#832729]" />
+                <p className="text-xm text-[#832729]">CART</p>
+              </span>{" "}
+            </>
+          )}
+
           {cookies.token ? (
             <span
               onClick={() => navigate("/profile")}

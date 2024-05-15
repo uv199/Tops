@@ -1,6 +1,7 @@
 let arr = [1, 2, 3, 4, 5];
 
 /*
+
 let arr2 = [1, 2, 3, 22, 33, 4, 25, 1.2, 0, 0.4, -1];
 let newArr = arr2.toSorted((a, b) => a - b);
 console.log("-----------  newArr----------->", newArr)

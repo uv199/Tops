@@ -1,4 +1,4 @@
-import { Table } from "flowbite-react";
+import { Dropdown, Select, Table } from "flowbite-react";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import ReactPaginate from "react-paginate";
@@ -14,6 +14,7 @@ export default function ProductTable({
   const handlePageClick = (event) => {
     setPagination({ ...pagination, page: event?.selected + 1 });
   };
+
   return (
     <div>
       <div className="mx-3 my-9  px-8 ">
@@ -33,16 +34,24 @@ export default function ProductTable({
           </thead>
           <tbody className="text-lg ">
             {productdata?.map?.((e, i) => {
+              console.log("---->", i * pagination.page);
+              console.log("---->===>", i + 1);
+              {
+                pagination.limit * pagination?.page + (i + 1);
+              }
               return (
                 <tr key={i} className="border-b-[2px] ">
                   <td scope="row" className="px-[2rem] py-4">
-                    {i + 1}
+                    {pagination.limit * pagination?.page +
+                      (i + 1) -
+                      pagination.limit}
+                  </td>
+
+                  <td>
+                    <img src={e.thumbnail} className="h-[50px]" />
                   </td>
                   <td scope="row" className="px-[2rem] py-4">
                     {e?.title + 1}
-                  </td>
-                  <td>
-                    <img src={e.thumbnail} className="h-[50px]" />
                   </td>
                   <td className="capitalize">{e.brand}</td>
                   <td className="capitalize">{e.gender}</td>
@@ -104,6 +113,17 @@ export default function ProductTable({
         previousLabel="< previous"
         renderOnZeroPageCount={null}
       />
+      <Select
+        id="countries"
+        onChange={(e) =>
+          setPagination({ ...pagination, limit: e?.target.value, page: 1 })
+        }
+      >
+        <option>10</option>
+        <option>25</option>
+        <option>50</option>
+        <option>100</option>
+      </Select>
     </div>
   );
 }
