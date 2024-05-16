@@ -8,6 +8,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   let [cookie, setCookie] = useCookies(["token"]);
+  console.log("-----------  cookie----------->", cookie?.user?.userType);
 
   return (
     <Navbar fluid rounded className="m-0  py-4 border-b">
@@ -17,20 +18,33 @@ export default function Header() {
 
       <NavbarCollapse>
         <div className="w-[500px] ">
-          <div className="flex justify-center focus-within:border-gray-400 text-gray-400 border-2 border-gray-300 items-center p-0 m-0 bg-white rounded-3xl px-3 overflow-hidden  mb-3 ">
-            <input
-              type="text"
-              placeholder="search your fragrance here..."
-              className="placeholder-gray-300 focus:ring-0 border-none w-full p-1 rounded-l-3xl"
-            />
-            <Search className="text-gray-400 rounded-r-3xl" />
-          </div>
+          {cookie?.user?.userType !== "admin" && (
+            <div className="flex justify-center focus-within:border-gray-400 text-gray-400 border-2 border-gray-300 items-center p-0 m-0 bg-white rounded-3xl px-3 overflow-hidden  mb-3 ">
+              <input
+                type="text"
+                placeholder="search your fragrance here..."
+                className="placeholder-gray-300 focus:ring-0 border-none w-full p-1 rounded-l-3xl"
+              />
+              <Search className="text-gray-400 rounded-r-3xl" />
+            </div>
+          )}
+
           <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/">About</NavLink>
-            <NavLink to="/">Services</NavLink>
-            <NavLink to="/">Pricing</NavLink>
-            <NavLink to="/">Contact</NavLink>
+            {cookie?.user?.userType === "admin" ? (
+              <>
+                <NavLink to="/admin-product">Product</NavLink>
+                <NavLink to="/admin-order">Order</NavLink>
+                <NavLink to="/admin-user">User</NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/">About</NavLink>
+                <NavLink to="/">Services</NavLink>
+                <NavLink to="/">Pricing</NavLink>
+                <NavLink to="/">Contact</NavLink>
+              </>
+            )}
           </div>
         </div>
       </NavbarCollapse>
@@ -48,8 +62,12 @@ export default function Header() {
             onClick={() => navigate("/login")}
           />
         )}
-        <ShoppingCart className="cursor-pointer" />
-        <Truck className="cursor-pointer" />
+        {cookie?.user?.userType !== "admin" && (
+          <>
+            <ShoppingCart className="cursor-pointer" />
+            <Truck className="cursor-pointer" />
+          </>
+        )}
       </div>
     </Navbar>
   );

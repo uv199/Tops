@@ -1,13 +1,30 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { instanceApi } from "../../../Api/axiosConfig";
 
 export default function Login() {
   let [credential, setCredential] = useState({ email: "", password: "" });
 
   const navigate = useNavigate();
+  const [cookie, setCookie] = useCookies(["token", "user"]);
 
-  const loginHandler = (e) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
+    try {
+      let Response = await instanceApi.post("/user/signin", credential);
+      setCookie("user", Response.data.data);
+      setCookie("token", Response.data.token);
+      if (Response?.data?.data?.userType === "admin") {
+        navigate("/admin-product");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("-----------  error----------->", error);
+      toast.error("Somthing went wrong");
+    }
   };
 
   return (

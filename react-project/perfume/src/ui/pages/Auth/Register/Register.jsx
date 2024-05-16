@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { instanceApi } from "../../../Api/axiosConfig";
+import { toast } from "react-toastify";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 const initialUser = {
   name: "",
   email: "",
@@ -18,7 +22,28 @@ export default function SignUp() {
   let [user, setUser] = useState(initialUser);
   let [address, setAddress] = useState(initialAddress);
 
-  const registerHandler = async () => {};
+  const [cookie, setCookie] = useCookies(["token", "user"]);
+  const navigate = useNavigate();
+  const registerHandler = async () => {
+    if (user.password !== user.conPassword) {
+      toast.error("Confirm password not match");
+    } else {
+      let mainData = {
+        ...user,
+        address: [address],
+      };
+      try {
+        let data = await instanceApi.post("/user/signup", mainData);
+        console.log("---->", data.data.data);
+        console.log("---->", data.data.token);
+        setCookie("user", data.data.data);
+        setCookie("token", data.data.token);
+        navigate("/");
+      } catch (error) {
+        toast.error("Somthing went wrong");
+      }
+    }
+  };
 
   return (
     <>
