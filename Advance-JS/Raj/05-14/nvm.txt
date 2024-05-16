@@ -1,0 +1,19 @@
+nvm - node version manager
+- to manage all node version in single sysytem
+
+
+comands 
+
+nvm -v ----> to check nvm version
+nvm list ----> to show all installed node versions
+nvm install (node version) ----> toinstall node version
+nvm uninstall (node version) ----> to uninstall node version
+nvm use (node version) ----> to chnage node version
+
+
+node -v ----> to check node version
+node filename ----> to run file in terminal
+
+mode to folder in terminal  --> cd ./folder path
+back to directory --> cd ..
+to clear terminal --> cls
