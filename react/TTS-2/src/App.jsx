@@ -8,6 +8,7 @@ import MapKeyCom from "./5.MapKey/MapKeyCom";
 import FragmentCom from "./5.MapKey/FragmentCom";
 import InputCom from "./6.Input/InputCom";
 import ConditonalCom from "./7.ConditionalRender/ConditonalCom";
+import MultiInput from "./6.Input/MultiInput";
 
 export default function App() {
   return (
@@ -32,9 +33,10 @@ export default function App() {
 
       {/* ---------------------INPUT------------------ */}
       {/* <InputCom /> */}
+      <MultiInput/>
 
       {/* ---------------------CONDITIONAL RENDARING------------------ */}
-      <ConditonalCom />
+      {/* <ConditonalCom /> */}
     </div>
   );
 }

@@ -12,12 +12,13 @@ import Task from "./000.task/Task";
 import MapKey from "./8.CondRender-Fragment/MapKey";
 import InputCom from "./9.input/InputCom";
 import { ToastContainer } from "react-toastify";
+import RouterTopic from "./10.Router/RouterTopic";
 
 export default function App() {
   return (
     <div className="d-flex justify-content-center">
       {/* -------------TASK------------- */}
-      <Task />
+      {/* <Task /> */}
 
       {/* -------------COMPONENETS------------- */}
       {/* <FunCom /> */}
@@ -49,6 +50,9 @@ export default function App() {
 
       {/* -------------INPUT------------- */}
       {/* <InputCom /> */}
+
+      {/* -------------ROUTER------------- */}
+      <RouterTopic />
 
       <ToastContainer />
     </div>
