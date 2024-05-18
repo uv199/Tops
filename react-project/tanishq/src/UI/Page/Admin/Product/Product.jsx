@@ -1,45 +1,62 @@
 import React, { useEffect, useState } from "react";
 import ProductTable from "./ProductTable";
-import { useCookies } from "react-cookie";
-import { deleteProduct, fetchAllProduct } from "../../../api/product";
+import {
+  createProduct,
+  deleteProduct,
+  fetchAllProduct,
+} from "../../../api/product";
 import { toast } from "react-toastify";
-import { TextInput } from "flowbite-react";
-import { Search } from "@mui/icons-material";
+import { useCookies } from "react-cookie";
+import { Button, TextInput } from "flowbite-react";
+import { ProductModal } from "./ProductModal";
 
-export default function Product() {
+export default function ProductCom() {
+  // Refetch Flag/ReFresh Page State And Function
   const [refetchFlag, setRefetchFlag] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const [viewopenModal, setViewOpenModal] = useState(false);
+  let [allProducts, setAllProduct] = useState({});
   let [productdata, setProductData] = useState([]);
-  let [pagination, setPagination] = useState({
+  let [updateMode, setUpdateMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pagination, setPagination] = useState({
     totalProduct: 10,
     limit: 10,
     page: 1,
-    search: "",
   });
+
   const refetch = () => setRefetchFlag(!refetchFlag);
+  // Set Cookie
+  const [cookie] = useCookies(["token","user"]);
 
-  const [cookie] = useCookies([]);
-
+  // GetData From API
   useEffect(() => {
     (async function getData() {
-      let { data, error } = await fetchAllProduct(pagination);
-      if (error) toast.error("somthing went wrong");
+      let { data, error } = await fetchAllProduct({
+        ...pagination,
+        searchQuery,
+      });
+      if (error) toast.error("Something went wrong");
       else {
-        setProductData(data.data);
-        // last all and new 10
-        // setProductData([...productdata, ...data.data]);
-        // for last 5 and new 10
-        // let dataArr = productdata.slice(
-        //   productdata.length - 5,
-        //   productdata.length + 1
-        // );
-        // setProductData([...dataArr, ...data.data]);
+        setAllProduct(data.data);
         setPagination({ ...pagination, totalProduct: data.count });
       }
     })();
-  }, [refetchFlag, pagination.limit, pagination.page, pagination?.search]);
+  }, [refetchFlag, pagination.limit, pagination.page, searchQuery]);
 
-  const updateHandler = () => {};
+  // Update Data In API
+  const updateHandler = (productData) => {
+    console.log("-----------  productData----------->", productData);
+    setOpenModal(true);
+    setProductData(productData);
+    setUpdateMode(true);
+  };
 
+  const viewHandler = () => {
+    setViewOpenModal(true);
+  };
+
+  // Delete Data In API
   const deleteHandler = async (productId) => {
     const { error, data } = await deleteProduct(productId, cookie?.token);
     if (error) {
@@ -50,27 +67,50 @@ export default function Product() {
     }
   };
 
+  // Add Product in API
+  const addProduct = async (newProduct) => {
+    let { data, error } = await createProduct(newProduct);
+    if (error) toast.error("somthing went wrong");
+    else refetch();
+  };
+
   return (
-    <div>
-      <div className="flex justify-end mr-4">
+    <div className="px-[3rem] flex flex-col py-6">
+      <div className="flex justify-end  flex-col items-end gap-4">
+        <Button
+          onClick={() => setOpenModal(true)}
+          className="bg-[#822729] hover:bg-sky-700"
+        >
+          Add Product
+        </Button>
+
         <TextInput
-          onChange={(e) =>
-            setPagination({ ...pagination, search: e?.target?.value })
-          }
-          className="w-1/3"
-          placeholder="Search by title and description"
-          required
+          type="text"
+          placeholder="Search For Product..."
+          className="searchbar w-[45%] "
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
-      <div>
-        <ProductTable
-          setPagination={setPagination}
-          pagination={pagination}
-          productdata={productdata}
-          deleteHandler={deleteHandler}
-          updateHandler={updateHandler}
-        />
-      </div>
+
+      <ProductModal
+        refetch={refetch}
+        productdata={productdata}
+        openModal={openModal}
+        setProductData={setProductData}
+        setUpdateMode={setUpdateMode}
+        setOpenModal={setOpenModal}
+        addProduct={addProduct}
+        updateMode={updateMode}
+      />
+      <ProductTable
+        allProducts={allProducts}
+        deleteHandler={deleteHandler}
+        updateHandler={updateHandler}
+        pagination={pagination}
+        setPagination={setPagination}
+        searchQuery={searchQuery}
+        viewHandler={viewHandler}
+      />
     </div>
   );
 }

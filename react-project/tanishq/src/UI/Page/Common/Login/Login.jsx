@@ -11,7 +11,7 @@ import { useCookies } from "react-cookie";
 export default function Login() {
   const navigate = useNavigate();
 
-  const [cookies, setCookie] = useCookies(["token"]);
+  const [cookies, setCookie] = useCookies(["token","user"]);
 
   const { control, handleSubmit } = useForm({
     defaultValues: {

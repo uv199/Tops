@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import FilterCom from "../../../Component/Filter/FilterCom";
 import { Filter } from "lucide-react";
+import axios from "axios";
 
 export default function CommonProduct() {
   const [modal, setModal] = useState(false);
@@ -43,7 +44,7 @@ export default function CommonProduct() {
   useEffect(() => {
     (async function getData(params) {
       try {
-        let { data } = await API.get("/product/getAll", {
+        let { data } = await axios.get("http://localhost:9999/product/getAll", {
           params: filter,
         });
         setProduct(data.data);

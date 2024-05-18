@@ -6,6 +6,8 @@ import FunComState from "./4.state/FunComState";
 import ClassComState from "./4.state/ClassComState";
 import MapKeyCom from "./5.MapKey-Fragment/MapKeyCom";
 import HomePage from "./3.style/Project/HomePage";
+import PropsFunCom from "./6.Props/PropsFunCom";
+import Parent from "./6.Props/propdDrilling/Parent";
 
 export default function App() {
   return (
@@ -20,10 +22,14 @@ export default function App() {
       {/* -------------STATE------------- */}
       {/* <FunComState /> */}
       {/* <ClassComState /> */}
-      <HomePage />
+      {/* <HomePage /> */}
 
       {/* -------------MAPKEY------------- */}
       {/* <MapKeyCom /> */}
+
+      {/* -------------PROPS------------- */}
+      {/* <PropsFunCom /> */}
+      <Parent />
     </div>
   );
 }

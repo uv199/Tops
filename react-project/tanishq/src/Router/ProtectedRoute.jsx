@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export function ProtectedRoute({ Component }) {
-  const [cookies, setCookie] = useCookies(["token"]);
+  const [cookies, setCookie] = useCookies(["token", "user"]);
   const navigate = useNavigate();
   useEffect(() => {
     if (!cookies.token) return navigate("/login");
@@ -12,7 +12,7 @@ export function ProtectedRoute({ Component }) {
 }
 
 export function LoginProtected({ Component }) {
-  const [cookies, setCookie] = useCookies(["token"]);
+  const [cookies, setCookie] = useCookies(["token", "user"]);
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies.token) return navigate(-1);

@@ -6,7 +6,7 @@ export default function FunCome() {
     <div>
       <h1>FunCome</h1>
       {[1, 2, 3].map((e) => {
-        return <ClassCom/>;
+        return <ClassCom />;
       })}
       <hr />
     </div>

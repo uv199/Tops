@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import { NavLink } from "react-router-dom";
 
 export default function BottomHeader() {
-  const [cookie] = useCookies(["user"]);
+  const [cookie] = useCookies(["user","token"]);
   return (
     <div className=" d-flex justify-content-centerflex-column align-items-center">
       {cookie?.user?.userType === "admin" ? (

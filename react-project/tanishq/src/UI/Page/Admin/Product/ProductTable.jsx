@@ -1,30 +1,33 @@
-import { Dropdown, Select, Table } from "flowbite-react";
+import React from "react";
+import { Select, Table } from "flowbite-react";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import ReactPaginate from "react-paginate";
-const sizeData = ["1.5", "2", "3", "4"];
-
+import { FaEye } from "react-icons/fa";
 export default function ProductTable({
   updateHandler,
   deleteHandler,
-  productdata,
+  allProducts,
+  openModal,
   setPagination,
   pagination,
+  searchQuery,
+  viewHandler,
 }) {
+  const sizeData = ["1.5", "2", "3", "4"];
   const handlePageClick = (event) => {
     setPagination({ ...pagination, page: event?.selected + 1 });
   };
 
   return (
     <div>
-      <div className="mx-3 my-9  px-8 ">
+      <div className="py-8">
         <Table responsive>
           <thead>
             <tr className="text-2xl text-black bg-[#d6b8b9e2] ">
               <th>Sr.No</th>
               <th>Image</th>
-              <th>Title</th>
-              <th>Brand </th>
+              <th>Title </th>
               <th>Gender</th>
               <th>Price</th>
               <th>category</th>
@@ -33,33 +36,26 @@ export default function ProductTable({
             </tr>
           </thead>
           <tbody className="text-lg ">
-            {productdata?.map?.((e, i) => {
-              console.log("---->", i * pagination.page);
-              console.log("---->===>", i + 1);
-              {
-                pagination.limit * pagination?.page + (i + 1);
-              }
+            {allProducts?.map?.((e, i) => {
               return (
                 <tr key={i} className="border-b-[2px] ">
-                  <td scope="row" className="px-[2rem] py-4">
-                    {pagination.limit * pagination?.page +
-                      (i + 1) -
-                      pagination.limit}
+                  <td scope="row" className="px-[2rem] py-8">
+                    {pagination.page === 1
+                      ? i + 1
+                      : pagination.limit * pagination?.page +
+                        (i + 1) -
+                        pagination.limit}
                   </td>
-
                   <td>
-                    <img src={e.thumbnail} className="h-[50px]" />
+                    <img src={e?.thumbnail} className="w-[70px] h-[70px]" />
                   </td>
-                  <td scope="row" className="px-[2rem] py-4">
-                    {e?.title + 1}
-                  </td>
-                  <td className="capitalize">{e.brand}</td>
-                  <td className="capitalize">{e.gender}</td>
-                  <td>{e.price}</td>
+                  <td className="capitalize">{e?.title}</td>
+                  <td className="capitalize">{e?.gender}</td>
+                  <td>{e?.price}</td>
 
                   <td className="">
                     <div className="grid  text-uppercase">
-                      {e?.category?.map((category, i) => (
+                      {e?.category?.map?.((category, i) => (
                         <th key={i} className="capitalize">
                           {category}
                         </th>
@@ -69,31 +65,34 @@ export default function ProductTable({
 
                   <td className="">
                     <div className="flex gap-2">
-                      {sizeData?.map?.((size, i) => {
-                        return (
-                          <span
-                            key={i}
-                            className={
-                              e.size.includes(size)
-                                ? `border border-black rounded-3xl h-[40px] w-[40px] flex justify-center items-center p-3 font-semibold text-black `
-                                : "border border-gray-500 rounded-3xl h-[40px] w-[40px] flex justify-center items-center p-3 font-semibold text-gray-400"
-                            }
-                          >
-                            {size}
-                          </span>
-                        );
-                      })}
+                      {sizeData?.map((size, i) => (
+                        <span
+                          key={i}
+                          className={
+                            e?.size?.includes(size)
+                              ? ` rounded-3xl h-[40px] w-[40px] flex justify-center items-center p-3 font-semibold text-black bg-gray-200`
+                              : " rounded-3xl h-[40px] w-[40px] flex justify-center items-center p-3 font-semibold text-gray-400 bg-gray-100"
+                          }
+                        >
+                          {size}
+                        </span>
+                      ))}
                     </div>
                   </td>
+
                   <td>
                     <div className="flex gap-3">
+                      <FaEye
+                        className="text-2xl cursor-pointer text-green-500"
+                        onClick={viewHandler}
+                      />
                       <FaRegEdit
-                        className="cursor-pointer text-blue-700 text-2xl "
-                        onClick={() => updateHandler()}
+                        className="text-blue-700 text-2xl cursor-pointer "
+                        onClick={() => updateHandler(e)}
                       />
                       <RiDeleteBin5Line
-                        className="cursor-pointer text-danger text-2xl text-red-600"
-                        onClick={() => deleteHandler(e?._id)}
+                        className="text-danger text-2xl text-red-600 cursor-pointer"
+                        onClick={() => deleteHandler(e._id)}
                       />
                     </div>
                   </td>
@@ -103,27 +102,34 @@ export default function ProductTable({
           </tbody>
         </Table>
       </div>
-      <ReactPaginate
-        className="flex gap-[10px]"
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pagination?.totalProduct / pagination?.limit}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
-      <Select
-        id="countries"
-        onChange={(e) =>
-          setPagination({ ...pagination, limit: e?.target.value, page: 1 })
-        }
-      >
-        <option>10</option>
-        <option>25</option>
-        <option>50</option>
-        <option>100</option>
-      </Select>
+      <div className="flex justify-center gap-4">
+        <ReactPaginate
+          className="flex items-center  gap-2 "
+          pageLinkClassName="border p-3"
+          nextLinkClassName="border bg-blue-600 text-white  p-3 text-xl"
+          previousLinkClassName="border bg-blue-600 text-white text-xl  p-3"
+          activeLinkClassName="bg-red-500 text-white  "
+          disabledLinkClassName="bg-blue-400"
+          breakLabel="..."
+          nextLabel=">"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pagination.totalProduct / pagination?.limit}
+          previousLabel="< "
+          renderOnZeroPageCount={null}
+        />
+        <Select
+          onChange={(e) =>
+            setPagination({ ...pagination, limit: e?.target?.value, page: 1 })
+          }
+        >
+          <option defaultChecked>10</option>
+          <option>15</option>
+          <option>25</option>
+          <option>35</option>
+          <option>50</option>
+        </Select>
+      </div>
     </div>
   );
 }

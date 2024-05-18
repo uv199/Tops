@@ -8,7 +8,7 @@ import { useCookies } from "react-cookie";
 
 export default function TopHeader() {
   const navigate = useNavigate();
-  const [cookies, setCookie] = useCookies(["token"]);
+  const [cookies, setCookie] = useCookies(["token","user"]);
   console.log("-----------  123 cookies----------->", cookies);
 
   return (

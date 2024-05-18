@@ -17,7 +17,6 @@ export default function MapKeyCom() {
     <div>
       <ShoppingCart />
       <h1>MY DAILY RUTINE </h1>
-
       <hr />
       <ul>
         {array?.map((e, i) => {
