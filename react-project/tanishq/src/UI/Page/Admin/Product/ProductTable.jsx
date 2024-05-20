@@ -7,7 +7,7 @@ import { FaEye } from "react-icons/fa";
 export default function ProductTable({
   updateHandler,
   deleteHandler,
-  allProducts,
+  allProduct,
   openModal,
   setPagination,
   pagination,
@@ -18,7 +18,6 @@ export default function ProductTable({
   const handlePageClick = (event) => {
     setPagination({ ...pagination, page: event?.selected + 1 });
   };
-
   return (
     <div>
       <div className="py-8">
@@ -36,7 +35,7 @@ export default function ProductTable({
             </tr>
           </thead>
           <tbody className="text-lg ">
-            {allProducts?.map?.((e, i) => {
+            {allProduct?.map?.((e, i) => {
               return (
                 <tr key={i} className="border-b-[2px] ">
                   <td scope="row" className="px-[2rem] py-8">
@@ -109,7 +108,7 @@ export default function ProductTable({
           nextLinkClassName="border bg-blue-600 text-white  p-3 text-xl"
           previousLinkClassName="border bg-blue-600 text-white text-xl  p-3"
           activeLinkClassName="bg-red-500 text-white  "
-          disabledLinkClassName="bg-blue-400"
+          disabledLinkClassName="!bg-blue-200"
           breakLabel="..."
           nextLabel=">"
           onPageChange={handlePageClick}

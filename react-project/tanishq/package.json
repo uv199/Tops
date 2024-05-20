@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "axios": "^1.6.8",
     "flowbite-react": "^0.8.0",
+    "js-cookie": "^3.0.5",
     "react-cookie": "^7.1.4",
     "react-hook-form": "^7.51.3",
     "react-paginate": "^8.2.0",

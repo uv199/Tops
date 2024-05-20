@@ -11,34 +11,42 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation } from "swiper/modules";
-import CardCom from "../../../../../Component/Card/CardCom";
+import GiftCard from "../../../../../Component/Card/GiftCard";
+import { CardData } from "../../../../../Component/Card/Data";
 
-export default function Giftedslider({ data }) {
+
+
+
+export default function Giftedslider() {
   const [swiperRef, setSwiperRef] = useState(null);
+
 
   return (
     <>
       <div className=" my-[1rem] px-20">
-        <Swiper
-          onSwiper={setSwiperRef}
-          slidesPerView={4}
-          // centeredSlides={true}
-          spaceBetween={10}
-          pagination={{
-            type: "fraction",
-          }}
-          navigation={true}
-          modules={[Navigation]}
-          className="mySwiper"
-        >
-          {data?.map?.((e, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <CardCom />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+      <Swiper
+  onSwiper={setSwiperRef}
+  slidesPerView={4}
+  // centeredSlides={true}
+  spaceBetween={10}
+  pagination={{
+    type: "fraction",
+  }}
+  navigation={true}
+  modules={[Navigation]}
+  className="mySwiper"
+>
+  {CardData.map((gift, index) => (
+    <SwiperSlide key={index}>
+      <GiftCard
+        title={gift.title}
+        img={gift.img}
+        price={gift.price}
+      />
+    </SwiperSlide>
+  ))}
+</Swiper>
+
       </div>
     </>
   );

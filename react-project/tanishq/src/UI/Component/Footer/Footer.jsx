@@ -8,7 +8,7 @@ import { FaFacebookF } from "react-icons/fa";
 export default function Footer() {
   return (
     <div>
-      <div className="w-[100%] bg-red-100 flex justify-around gap-4 p-[3rem]">
+      <div className="w-[100%] bg-red-50 flex justify-around gap-4 p-[3rem]">
         <div>
           <p className="pb-[3rem]  text-2xl font-semibold text-[#832729]">
             UseFull Links

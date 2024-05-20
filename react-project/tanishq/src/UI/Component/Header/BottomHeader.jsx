@@ -3,49 +3,57 @@ import { useCookies } from "react-cookie";
 import { NavLink } from "react-router-dom";
 
 export default function BottomHeader() {
-  const [cookie] = useCookies(["user","token"]);
+  const [cookies] = useCookies(["user"]);
+  // "ring",
+  //   "earrings",
+  //   "menKada",
+  //   "bracelet",
+  //   "goldChain",
+  //   "necklace",
+  //   "gifting",
+  //   "goldCoin",
   return (
-    <div className=" d-flex justify-content-centerflex-column align-items-center">
-      {cookie?.user?.userType === "admin" ? (
-        <div className="flex justify-center  [&_*]:px-3 px-5 py-3 ">
-          <NavLink className="hover:font-semibold" to={"admin-product"}>
-            PRODUCT
+    <div className=" d-flex justify-content-center gap-5  flex-column align-items-center">
+      {cookies?.user?.userType !== "admin" ? (
+        <div className="flex justify-center gap-4 px-5 py-3 ">
+          <NavLink to={"/jewellery/all"} className="hover:font-semibold ">
+            ALL JEWELLERY
           </NavLink>
-          <NavLink className="hover:font-semibold" to="admin-user">
-            USER
+          <NavLink to="/jewellery/ring" className="hover:font-semibold ">
+            RING
           </NavLink>
-          <NavLink className="hover:font-semibold" to={"admin-order"}>
-            ORDER
+          <NavLink to={"/jewellery/menKada"} className="hover:font-semibold ">
+            MENS KADA
+          </NavLink>
+          <NavLink to={"/jewellery/earrings"} className="hover:font-semibold ">
+            ERRINGS
+          </NavLink>
+          <NavLink to={"/jewellery/bracelet"} className="hover:font-semibold ">
+            BRACELET
+          </NavLink>
+          <NavLink to={"/jewellery/goldChain"} className="hover:font-semibold ">
+            GOLD CHAIN
+          </NavLink>
+          <NavLink to={"/jewellery/necklace"} className="hover:font-semibold ">
+            NECKLACE
+          </NavLink>
+          <NavLink to={"/jewellery/gifting"} className="hover:font-semibold ">
+            GIFTING
+          </NavLink>
+          <NavLink to={"/jewellery/goldCoin"} className="hover:font-semibold ">
+            GOLD COIN
           </NavLink>
         </div>
       ) : (
-        <div className="flex justify-center  [&_*]:px-3 px-5 py-3 ">
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            ALL JEWELLERY
+        <div className="flex justify-center gap-4 px-5 py-3 ">
+          <NavLink to="/Userlist" className="hover:font-semibold ">
+            USER
           </NavLink>
-          <NavLink className="hover:font-semibold" to="jewellery">
-            BRACELET
+          <NavLink to={"/product"} className="hover:font-semibold ">
+            PRODUCT
           </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            DIAMOND
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            EARRINGS
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            RINGS
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            NECKLACE
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            MEN KADA
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            GOLD CHAINS
-          </NavLink>
-          <NavLink className="hover:font-semibold" to={"jewellery"}>
-            GIFTING
+          <NavLink to={"Gold"} className="hover:font-semibold ">
+            ORDER
           </NavLink>
         </div>
       )}

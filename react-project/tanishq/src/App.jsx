@@ -1,8 +1,16 @@
-import "./App.css";
-import Router from "./Router/Router";
+import { ToastContainer } from 'react-toastify'
+import './App.css'
+import Router from './Router/Router'
+
 
 function App() {
-  return <Router />;
+
+  return (
+    <>
+        <Router/>
+        <ToastContainer />
+    </>
+  )
 }
 
-export default App;
+export default App
