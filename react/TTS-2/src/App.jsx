@@ -9,6 +9,9 @@ import FragmentCom from "./5.MapKey/FragmentCom";
 import InputCom from "./6.Input/InputCom";
 import ConditonalCom from "./7.ConditionalRender/ConditonalCom";
 import MultiInput from "./6.Input/MultiInput";
+import LocalStorage from "./6.Input/LocalStorage";
+import UseEffectCom from "./8.hook/UseEffectCom";
+import InputLocal from "./6.Input/InputLocal";
 
 export default function App() {
   return (
@@ -33,10 +36,15 @@ export default function App() {
 
       {/* ---------------------INPUT------------------ */}
       {/* <InputCom /> */}
-      <MultiInput/>
+      {/* <MultiInput/> */}
+      {/* <LocalStorage /> */}
+      <InputLocal />
 
       {/* ---------------------CONDITIONAL RENDARING------------------ */}
       {/* <ConditonalCom /> */}
+
+      {/* ---------------------HOOK------------------ */}
+      {/* <UseEffectCom /> */}
     </div>
   );
 }
