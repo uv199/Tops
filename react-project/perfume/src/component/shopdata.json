@@ -1,0 +1,218 @@
+[
+    {
+        "id": "1",
+        "image_url": "https://in.ajmal.com/media/catalog/product/n/e/neutron_titanium_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Neutron Edp Perfume 100ml For Men And Titanium Edp Perfume 100ml For Men",
+        "dprice": "₹ 3000",
+        "price": "₹ 2250",
+        "cardcolor": "#cffcfc"
+    },
+    {
+        "id": "2",
+        "image_url": "https://in.ajmal.com/media/catalog/product/n/e/neutron_blu_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Neutron Edp Perfume 100ml For Men And Blu Edp Aquatic Perfume 90ml For Men",
+        "dprice": "₹ 4500",
+        "price": "₹ 3375",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "3",
+        "image_url": "https://in.ajmal.com/media/catalog/product/w/i/wisald_aristocrat_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Wisal Dhahab Edp Perfume 50ml For Men And Aristocrat Edp Perfume 75ml For Men",
+        "dprice": "₹ 9000",
+        "price": "₹ 6750",
+        "cardcolor": "#ffccff"
+    },
+    {
+        "id": "4",
+        "image_url": "https://in.ajmal.com/media/catalog/product/r/a/raindrops-raindrops-wisaldeo_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "63%",
+        "details": "Raindrops & Raindrops & Wisal Deodorant - For Women (200 Ml, Pack Of 3) ",
+        "dprice": "₹ 1197",
+        "price": "₹ 442",
+        "cardcolor": "#d1ebfa"
+    },
+    {
+        "id": "5",
+        "image_url": "https://in.ajmal.com/media/catalog/product/t/i/titanium_wisald_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Titanium Edp Perfume 100ml For Men And Wisal Dhahab Edp Perfume 50ml For Men ",
+        "dprice": "₹ 5500",
+        "price": "₹ 4125",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "6",
+        "image_url": "https://in.ajmal.com/media/catalog/product/w/i/wisal_dessert-r_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Titanium Edp Perfume 100ml For Men And Wisal Dhahab Edp Perfume 50ml For Men ",
+        "dprice": "₹ 3999",
+        "price": "₹ 2802",
+        "cardcolor": "#f8ffdb"
+    },
+    {
+        "id": "7",
+        "image_url": "https://in.ajmal.com/media/catalog/product/t/i/titanium_shiro_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Titanium Edp Perfume 100ml For Men And Shiro Edp Perfume 90ml For Men",
+        "dprice": "₹ 5000",
+        "price": "₹ 3750",
+        "cardcolor": "#f8d3df"
+    },
+    {
+        "id": "8",
+        "image_url": "https://in.ajmal.com/media/catalog/product/t/i/titanium_kuro_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Titanium Edp Perfume 100ml For Men And Kuro Edp Perfume 90ml For Men",
+        "dprice": "₹ 4500",
+        "price": "₹ 3375",
+        "cardcolor": "#ece5ff"
+    },
+    {
+        "id": "9",
+        "image_url": "https://in.ajmal.com/media/catalog/product/z/e/zeal_titanium_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Zeal Edp Aquatic Perfume 100ml For Men And Titanium Edp Perfume 100ml For Men",
+        "dprice": "₹ 3500",
+        "price": "₹ 2625",
+        "cardcolor": "#cde5fe"
+    },
+    {
+        "id": "10",
+        "image_url": "https://in.ajmal.com/media/catalog/product/s/e/senora_shine_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "28%",
+        "details": "Senora Edp Perfume 75ml For Women And Shine Edp Powdery Perfume 75ml For Women",
+        "dprice": "₹ 5500",
+        "price": "₹ 3563",
+        "cardcolor": "#f5f5cc"
+    },
+    {
+        "id": "11",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/u/aurum-aurum-wisaldeo_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "63%",
+        "details": "Aurum & Aurum & Wisal Deodorant - For Women (200 Ml, Pack Of 3)",
+        "dprice": "₹ 1197",
+        "price": "₹ 442",
+        "cardcolor": "#cffcfc"
+    },
+    {
+        "id": "12",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/u/aurum_shine_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Aurum Edp Perfume 75ml For Women And Shine Edp Powdery Perfume 75ml For Women",
+        "dprice": "₹ 7000",
+        "price": "₹ 5250",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "13",
+        "image_url": "https://in.ajmal.com/media/catalog/product/z/e/zeal_silvershd_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "28%",
+        "details": "Zeal Edp Aquatic Perfume 100ml For Men And Silver Shade Edp Perfume 100ml For Men",
+        "dprice": "₹ 4000",
+        "price": "₹ 2850",
+        "cardcolor": "#fcd8cf"
+    },
+    {
+        "id": "14",
+        "image_url": "https://in.ajmal.com/media/catalog/product/w/i/wildspeed_deucehom_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "46%",
+        "details": "Maryaj Wild Speed Eau De Perfume Perfume 100ml For Men And Maryaj Deuce Homme Eau De Perfume Perfume 100ml For Men",
+        "dprice": "₹ 2988",
+        "price": "₹ 1613",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "15",
+        "image_url": "https://in.ajmal.com/media/catalog/product/d/e/dessert-r_shine_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "29%",
+        "details": "Desert Rose Edp Perfume 100ml For Women And Shine Edp Powdery Perfume 75ml For Women",
+        "dprice": "₹ 3999",
+        "price": "₹ 2802",
+        "cardcolor": "#ffccff"
+    },
+    {
+        "id": "16",
+        "image_url": "https://in.ajmal.com/media/catalog/product/e/t/etherld_sereneb_edp50_mist_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "50%",
+        "details": "And Ethereal Dreamer Eau De Perfume 50ml & Serene Bliss Body Mist 200ml Pack Of 2 For Women Crafted By ",
+        "dprice": "₹ 1600",
+        "price": "₹ 799",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "17",
+        "image_url": "https://in.ajmal.com/media/catalog/product/d/e/dessert-r_wisal_edp_deo_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "47%",
+        "details": "Desert Rose Edp Perfume 100ml For Women And Wisal Deodorant Fragrance 200ml For Women ",
+        "dprice": "₹ 1397",
+        "price": "₹ 731",
+        "cardcolor": "#f8ffdb"
+    },
+    {
+        "id": "18",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/r/aristocrat_blu_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Aristocrat Edp Perfume 75ml For Men And Blu Edp Aquatic Perfume 90ml For Men ",
+        "dprice": "₹ 8000",
+        "price": "₹ 6000",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "19",
+        "image_url": "https://in.ajmal.com/media/catalog/product/d/e/dessert-r_shine_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "47%",
+        "details": "Desert Rose Edp Perfume 100ml For Women And Sacred Love Deodorant Fragrance 200ml For Women ",
+        "dprice": "₹ 1397",
+        "price": "₹ 731",
+        "cardcolor": "#f8ffdb"
+    },
+    {
+        "id": "20",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/r/aristocrat_kuro_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Aristocrat Edp Perfume 75ml For Men And Kuro Edp Perfume 90ml For Men",
+        "dprice": "₹ 8000",
+        "price": "₹ 6000",
+        "cardcolor": "#e6e4fa"
+    },
+    {
+        "id": "21",
+        "image_url": "https://in.ajmal.com/media/catalog/product/b/l/blaze_directioneast_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "56%",
+        "details": "Maryaj Blaze Eau De Perfume Perfume 100ml For Men And Maryaj Direction East Eau De Perfume Perfume 100ml For Men",
+        "dprice": "₹ 3368",
+        "price": "₹ 1470",
+        "cardcolor": "#fdfdce"
+    },
+    {
+        "id": "22",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/r/aristocrat_carbon_edp_deo_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Aristocrat Edp Perfume 75ml For Men And Carbon Homme Deodorant Fragrance 200ml For Men",
+        "dprice": "₹ 5400",
+        "price": "₹ 4000",
+        "cardcolor": "#cde5fe"
+    },
+    {
+        "id": "23",
+        "image_url": "https://in.ajmal.com/media/catalog/product/s/t/starg_magicm_mist_200ml_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "57%",
+        "details": "Global Desi Star Gazer & Magical Maze Pack Of 2 Body Mist 200ml Each Gift For Women Perfume Crafted By Ajmal",
+        "dprice": "₹ 700",
+        "price": "₹ 299",
+        "cardcolor": "#ffffff"
+    },
+    {
+        "id": "24",
+        "image_url": "https://in.ajmal.com/media/catalog/product/a/u/aurum_viola_edp_1.png?auto=webp&format=png&width=160&height=200&fit=cover",
+        "percentage": "25%",
+        "details": "Aurum Edp Perfume 75ml For Women And Viola Edp Perfume 75ml For Women",
+        "dprice": "₹ 6000",
+        "price": "₹ 4500",
+        "cardcolor": "#fce5fc"
+    }
+]
