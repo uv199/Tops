@@ -6,19 +6,19 @@ import { useSearchParams } from "react-router-dom";
 
 export default function Home() {
   let [product, setProduct] = useState([]);
+  console.log("-----------  product----------->", product)
 
   let [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(async () => {
-    // async function fetchData(params) {
-    try {
-      let response = await axios.get("https://fakestoreapi.com/products");
-      setProduct(response.data);
-    } catch (error) {
-      toast.error("somthing went wrong");
-    }
-    // }
-    // fetchData();
+  useEffect(() => {
+    (async function fetchData(params) {
+      try {
+        let response = await axios.get("https://fakestoreapi.com/products");
+        setProduct(response.data);
+      } catch (error) {
+        toast.error("somthing went wrong");
+      }
+    })();
   }, []);
 
   return (
