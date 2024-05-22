@@ -74,11 +74,11 @@ x = 400; // give error
 
 // scope  -> same as let
 {
-    const y = 199;
-    {
-        const y = 8000;
-        console.log("🚀 ~ y:", y);
-        const z = 300;
-        console.log("🚀 ~ z:", z);
-     }
+  const y = 199;
+  {
+    const y = 8000;
+    console.log("🚀 ~ y:", y);
+    const z = 300;
+    console.log("🚀 ~ z:", z);
+  }
 }

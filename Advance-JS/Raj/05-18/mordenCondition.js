@@ -28,6 +28,5 @@ if (!x) {
 
 // Default Parameters
 // object method - keys, values, entries
-// date object method
 // destructuring
 // spred - rest
