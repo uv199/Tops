@@ -13,6 +13,7 @@ export const fetchAllProduct = async ({ limit, page, searchQuery }) => {
 };
 
 export const getAllProduct = async (filter) => {
+  console.log("---filter-->",filter)
   try {
     let response = await APIinstance.get("/product/getAll", {
       params: filter,

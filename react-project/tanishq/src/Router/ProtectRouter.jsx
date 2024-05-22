@@ -13,7 +13,7 @@ export function ProtectRouter({ Component }) {
 
 export function LoginProtected({ Component }) {
   const [cookies, setCookie] = useCookies(["token"]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   useEffect(() => {
     if (cookies.token) return navigate(-1);
   });
@@ -25,15 +25,12 @@ export function AdminProtected({ Component }) {
   // console.log("===========================>", cookies.user.userType)
   const navigate = useNavigate();
   useEffect(() => {
-    if (cookies?.user?.userType !== "admin")
-      {
-        navigate("/UnauthorisePage");
-     removeCookie("token");
-     removeCookie("user");
-      } 
-      return;
-
+    if (cookies?.user?.userType !== "admin") {
+      navigate("/UnauthorisePage");
+      removeCookie("token");
+      removeCookie("user");
+    }
+    return;
   });
   return <div>{Component}</div>;
 }
-

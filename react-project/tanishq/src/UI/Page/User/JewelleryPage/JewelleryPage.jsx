@@ -13,7 +13,7 @@ export default function JewelleryPage() {
   let [filter, setFilter] = useState({
     mainCategory: "",
     price: { gt: 0, lt: 1500000 },
-    discountPercentage: { gt: 0, lt: 100 },
+    discountPercentage: { gt: 0, lt: 10 },
     brand: "",
     size: [],
   });
@@ -35,7 +35,6 @@ export default function JewelleryPage() {
   useEffect(() => {
     async function getAll(params) {
       let { data, error } = await getAllProduct(filter);
-      console.log("-----------  data----------->", data.count);
       setAllProduct(data.data);
       setCount(data.count);
     }
@@ -45,7 +44,12 @@ export default function JewelleryPage() {
   return (
     <div>
       <div>
-        <FilterModal isOpen={modalOpen} toggle={toggleModal} />
+        <FilterModal
+          filter={filter}
+          setFilter={setFilter}
+          isOpen={modalOpen}
+          toggle={toggleModal}
+        />
       </div>
 
       <div className="w-100 flex justify-between bg-[#FCF9F9] px-20 py-3 my-3 position-relative ">

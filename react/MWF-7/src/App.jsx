@@ -9,12 +9,13 @@ import HomePage from "./3.style/Project/HomePage";
 import PropsFunCom from "./6.Props/PropsFunCom";
 import Parent from "./6.Props/propdDrilling/Parent";
 import HomeAssignMent1 from "./000.task/Assignment1/Home";
+import LifeCycleMethod from "./7.LifeCycleMethod/LifeCycleMethod";
 
 export default function App() {
   return (
     <div className="flex items-center justify-center">
       {/* --------------TASK------------ */}
-      <HomeAssignMent1 />
+      {/* <HomeAssignMent1 /> */}
 
       {/* --------------COMPONENET------------ */}
       {/* <FunCome /> */}
@@ -34,6 +35,9 @@ export default function App() {
       {/* -------------PROPS------------- */}
       {/* <PropsFunCom /> */}
       {/* <Parent /> */}
+
+      {/* -------------LIFECYCLE METHOD------------- */}
+      <LifeCycleMethod />
     </div>
   );
 }
