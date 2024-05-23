@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { instanceApi } from "../../../Api/axiosconfig";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -8,90 +7,81 @@ import {
   TableHeadCell,
   TableRow,
 } from "flowbite-react";
+import { instanceApi } from "../../../Api/axiosconfig";
 
 export default function ProductTable() {
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    async function fetchProduct(params) {
-      let { data } = await instanceApi("/product/getAll");
-      console.log("-----------  data----------->", data.data);
+    async function fetchProducts() {
+      try {
+        let { data } = await instanceApi.get("/product/getAll");
+        setProducts(data?.data || []);
+        // console.log('Fetched products:', data?.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     }
-    fetchProduct();
+    fetchProducts();
   }, []);
+
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mt-10">
       <Table>
         <TableHead>
-          <TableHeadCell>Product name</TableHeadCell>
-          <TableHeadCell>Color</TableHeadCell>
-          <TableHeadCell>Category</TableHeadCell>
-          <TableHeadCell>Price</TableHeadCell>
-          <TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Sr.no</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Image</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Product name</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Category</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Gender</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Price</TableHeadCell>
+          <TableHeadCell className="bg-gray-200">Rating</TableHeadCell>
+
+          <TableHeadCell className="bg-gray-200">
             <span className="sr-only">Edit</span>
           </TableHeadCell>
         </TableHead>
         <TableBody className="divide-y">
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'Apple MacBook Pro 17"'}
-            </TableCell>
-            <TableCell>Sliver</TableCell>
-            <TableCell>Laptop</TableCell>
-            <TableCell>$2999</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Microsoft Surface Pro
-            </TableCell>
-            <TableCell>White</TableCell>
-            <TableCell>Laptop PC</TableCell>
-            <TableCell>$1999</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
-          <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-            <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Magic Mouse 2
-            </TableCell>
-            <TableCell>Black</TableCell>
-            <TableCell>Accessories</TableCell>
-            <TableCell>$99</TableCell>
-            <TableCell>
-              <a
-                href="#"
-                className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Edit
-              </a>
-            </TableCell>
-          </TableRow>
+          {products.map((product, index) => (
+            <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <TableCell>{index + 1}</TableCell>
+              <TableCell>
+                <img
+                  src={product.thumbnail}
+                  alt={product.title}
+                  className="w-16 h-16 object-cover"
+                />
+              </TableCell>
+
+              <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                {product.title}
+              </TableCell>
+              <TableCell>
+                {product?.category.map((e) => {
+                  return (
+                    <span className="bg-gray-300 px-2 py-1 m-1 rounded-sm">
+                      {e}
+                    </span>
+                  );
+                })}
+              </TableCell>
+              <TableCell>{product?.gender}</TableCell>
+              <TableCell>
+                ${product.price} ({product.discountPercentage}% off)
+              </TableCell>
+              <TableCell>{product.rating}</TableCell>
+              <TableCell>
+                <a
+                  href="#"
+                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
+                >
+                  Edit
+                </a>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
   );
 }
-
-
-/*
-1. img - thumbnail
-2. title - title
-2. color - color
-2. size - size
-2. price - price -> discount -> after discount price 
-2. chetegory - mainCategory
-3. rating =>  if rating two -> * *
-
-*/

@@ -11,6 +11,7 @@ import AjmalStudio from "../component/Header/AjmalStudio";
 import Product from "../ui/Admin/Product/Product";
 import User from "../ui/Admin/User/User";
 import Order from "../ui/Admin/Order/Order";
+import ProductForm from "../ui/Admin/Product/ProductForm";
 
 export default function Router() {
   return (
@@ -28,6 +29,7 @@ export default function Router() {
 
           {/* ----------- admin page ---------- */}
           <Route path="/admin-product" element={<Product />} />
+          <Route path="/admin-product-form" element={<ProductForm />} />
           <Route path="/admin-user" element={<User />} />
           <Route path="/admin-order" element={<Order />} />
         </Routes>
