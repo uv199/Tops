@@ -18,22 +18,43 @@ app.get("/chat", (req, res) => {
     "C:\\Users\\admin\\Desktop\\Urvish_JS\\Tops\\Node\\node-test\\src\\chat.html"
   );
 });
+app.get("/login", (req, res) => {
+  res.sendFile(
+    "C:\\Users\\admin\\Desktop\\Urvish_JS\\Tops\\Node\\node-test\\src\\login.html"
+  );
+});
 
 let http = Server(app);
+let roomId = () => Math.trunc(Math.random() * 1000000);
 
 const io = new socket(http);
 io.on("connection", (socket) => {
-  console.log("User connected....!");
+  // console.log("id----->", socket.id);
+
+  let id = roomId().toString();
+  console.log("-----------  id----------->", id);
+  socket.join(id);
+
+  socket.emit("welcome_user");
+  socket.on("new_User", (name) => {
+    io.emit("welcome_msg", name);
+  });
+
+  // console.log("User connected....!");
 
   socket.on("send-msg", (data) => {
     console.log("-----------  data----------->", data);
     // store to data base
     // io for all connected user
     // socket for only user which call event
-    io.emit("receive-msg", data.message);
+    if (data.roomId) {
+      socket.to(data.roomId).emit("receive-msg", data.message);
+    } else {
+      io.emit("receive-msg", data.message);
+    }
   });
   socket.on("disconnect", () => {
-    console.log("user disconnected...!");
+    // console.log("user disconnected...!");
   });
 });
 

@@ -19,6 +19,7 @@ export default function InputLocal() {
     console.log("-----------  normalData----------->", normalData);
     setArr(normalData);
   }, []);
+
   const addDataIntoArr = () => {
     setArr([...arr, task]);
     localStorage.setItem("data", JSON.stringify([...arr, task]));

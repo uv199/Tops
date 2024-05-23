@@ -12,6 +12,8 @@ import MultiInput from "./6.Input/MultiInput";
 import LocalStorage from "./6.Input/LocalStorage";
 import UseEffectCom from "./8.hook/UseEffectCom";
 import InputLocal from "./6.Input/InputLocal";
+import ProjectUseEffect from "./8.hook/ProjectUseEffect";
+import ApiCall from "./6.Input/ApiCall";
 
 export default function App() {
   return (
@@ -38,13 +40,17 @@ export default function App() {
       {/* <InputCom /> */}
       {/* <MultiInput/> */}
       {/* <LocalStorage /> */}
-      <InputLocal />
+      {/* <InputLocal /> */}
+      <ApiCall />
 
       {/* ---------------------CONDITIONAL RENDARING------------------ */}
       {/* <ConditonalCom /> */}
 
       {/* ---------------------HOOK------------------ */}
       {/* <UseEffectCom /> */}
+      {/* <ProjectUseEffect /> */}
     </div>
   );
 }
+
+/* */

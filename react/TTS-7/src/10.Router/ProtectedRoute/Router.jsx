@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./Home";
 import About from "./About";
 import Profile from "./Profile";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
 import Login from "./Login";

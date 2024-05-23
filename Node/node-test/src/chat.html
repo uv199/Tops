@@ -21,9 +21,20 @@
     let ul = document.getElementById("msg-container");
 
     button.addEventListener("click", () => {
-      socket.emit("send-msg", { message: input.value });
+      socket.emit("send-msg", { message: input.value, roomId: "245522" });
     });
 
+    socket.on("welcome_user", () => {
+      let li = document.createElement("li");
+      li.innerText = "welcome...!";
+      ul.appendChild(li);
+    });
+    socket.on("welcome_msg", (name) => {
+      console.log("-=-=-=>");
+      let li = document.createElement("li");
+      li.innerText = name + " is join group";
+      ul.appendChild(li);
+    });
     socket.on("receive-msg", (msg) => {
       let li = document.createElement("li");
       li.innerText = msg;
