@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
+import ChildComponent from "./ChildComponent";
 
 let cityArr = [
   {
@@ -9,10 +10,6 @@ let cityArr = [
   {
     state: 1,
     city: "ahemdabad",
-  },
-  {
-    state: 1,
-    city: "vadodara",
   },
   {
     state: 2,
@@ -77,6 +74,9 @@ export default class LifeCycleMethod extends Component {
             );
           })}
         </ul>
+        <hr />
+
+        {this.state.count < 5 ? <ChildComponent /> : null}
       </div>
     );
   }

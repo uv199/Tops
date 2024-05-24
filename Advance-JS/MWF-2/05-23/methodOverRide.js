@@ -8,8 +8,16 @@ class User {
 }
 
 class Teacher extends User {
+  constructor(name, salary) {
+    super(name);
+    this.salary = salary;
+  }
   printTeacher() {
     console.log("I am a teacher", this.name);
+  }
+  login() {
+    super.login();
+    console.log("User is login from child");
   }
 }
 
@@ -19,11 +27,9 @@ class Student extends User {
   }
 }
 
-let t = new Teacher("urvish");
-// console.log("-----------  t----------->", t);
-t.printTeacher();
-// t.login();
-let s = new Student("jatin");
-s.printStudent();
-// console.log("-----------  s----------->", s);
-// s.login();
+let t = new Teacher("urvish", 30000);
+
+t.login();
+t.printTeacher()
+// let s = new Student("jatin");
+// s.printStudent();

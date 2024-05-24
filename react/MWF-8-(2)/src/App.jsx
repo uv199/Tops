@@ -35,6 +35,7 @@ import UeRefCom from "./10.Hook/useRef/UeRefCom";
 import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
 import ToDoList from "./00.task/todo/ToDoList";
 import Product from "./00.task/productApi/Product";
+import ProductRedux from "./16.Redux/ProductRedux";
 
 function App() {
   return (
@@ -98,6 +99,9 @@ function App() {
       {/* <Product /> */}
       {/* <ToDoList /> */}
 
+      {/* <---------------------REDUX------------------------> */}
+      {/* <ProductRedux /> */}
+      <h1 className="text-red-500">hets</h1>
       <ToastContainer />
     </div>
   );

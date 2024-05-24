@@ -10,34 +10,42 @@ import PropsFunCom from "./6.Props/PropsFunCom";
 import Parent from "./6.Props/propdDrilling/Parent";
 import HomeAssignMent1 from "./000.task/Assignment1/Home";
 import LifeCycleMethod from "./7.LifeCycleMethod/LifeCycleMethod";
-
+import ConditionalRendaring from "./8.ConditionalRendering/ConditionalRendaring";
+import LoginCondition from "./8.ConditionalRendering/LoginCondition";
+import { ThemeProvider } from "@material-tailwind/react";
 export default function App() {
   return (
-    <div className="flex items-center justify-center">
-      {/* --------------TASK------------ */}
-      {/* <HomeAssignMent1 /> */}
+    <ThemeProvider>
+      <div className="flex items-center justify-center">
+        {/* --------------TASK------------ */}
+        {/* <HomeAssignMent1 /> */}
 
-      {/* --------------COMPONENET------------ */}
-      {/* <FunCome /> */}
-      {/* <ClassCom /> */}
+        {/* --------------COMPONENET------------ */}
+        {/* <FunCome /> */}
+        {/* <ClassCom /> */}
 
-      {/* -------------STYLE------------- */}
-      {/* <Home /> */}
+        {/* -------------STYLE------------- */}
+        {/* <Home /> */}
 
-      {/* -------------STATE------------- */}
-      {/* <FunComState /> */}
-      {/* <ClassComState /> */}
-      {/* <HomePage /> */}
+        {/* -------------STATE------------- */}
+        {/* <FunComState /> */}
+        {/* <ClassComState /> */}
+        {/* <HomePage /> */}
 
-      {/* -------------MAPKEY------------- */}
-      {/* <MapKeyCom /> */}
+        {/* -------------MAPKEY------------- */}
+        {/* <MapKeyCom /> */}
 
-      {/* -------------PROPS------------- */}
-      {/* <PropsFunCom /> */}
-      {/* <Parent /> */}
+        {/* -------------PROPS------------- */}
+        {/* <PropsFunCom /> */}
+        {/* <Parent /> */}
 
-      {/* -------------LIFECYCLE METHOD------------- */}
-      <LifeCycleMethod />
-    </div>
+        {/* -------------LIFECYCLE METHOD------------- */}
+        {/* <LifeCycleMethod /> */}
+
+        {/* -------------CONDITIONAL RENDARING------------- */}
+        {/* <ConditionalRendaring /> */}
+        <LoginCondition />
+      </div>
+    </ThemeProvider>
   );
 }
