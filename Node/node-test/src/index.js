@@ -3,6 +3,7 @@ import express from "express";
 import { connectDB } from "./db/db.js";
 import { Server } from "http";
 import { Server as socket } from "socket.io";
+import { modal } from "./modals/index.js";
 
 const app = express();
 
@@ -40,17 +41,21 @@ io.on("connection", (socket) => {
     io.emit("welcome_msg", name);
   });
 
-  // console.log("User connected....!");
-
-  socket.on("send-msg", (data) => {
-    console.log("-----------  data----------->", data);
+  socket.on("send-msg", async (data) => {
     // store to data base
     // io for all connected user
     // socket for only user which call event
     if (data.roomId) {
+      // create message
       socket.to(data.roomId).emit("receive-msg", data.message);
     } else {
-      io.emit("receive-msg", data.message);
+      let room = await modal.Room.create({
+        admin: "",
+        userIds: [userId, adminId],
+        roomId: roomId(),
+      });
+      // create Msg
+      socket.to(room.roomId).emit("receive-msg", data.message);
     }
   });
   socket.on("disconnect", () => {

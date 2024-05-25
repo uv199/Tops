@@ -125,12 +125,60 @@ userHOC(greetGenerator);
 userHOC(askQustion);
 userHOC(work);
 
-*/
 
+function Parent(user) {
+  let name = user;
+  return (greet) => {
+    console.log("hello ", name, greet);
+  };
+}
 
+// case one
+// let user = Parent("user")
+let user = (greet) => {
+  console.log("hello ", "user", greet);
+};
+// case one
+// let user = Parent("user-2")
+let user2 = (greet) => {
+  console.log("hello ", "user-2", greet);
+};
 
+user("good Morning");
+let urvish = Parent("urvish");
 
+// let urvish =  (greet) => {
+  //   console.log("hello ", "urvish", greet);
+  // };
+  
+  urvish("morning");
+  urvish("afternoon");
+  
+  let manoj = Parent("manoj");
+  // let manoj =  (greet) => {
+    //   console.log("hello ", "manoj", greet);
+    // };
+    
+    manoj("morning");
+    */
 
+// function Parent2(user, greet) {
+//   console.log("hello ", user, greet);
+// }
 
+// Parent2("urvish", "morning");
+// Parent2("urvish", "afternoon");
+// Parent2("urvish", "night");
 
+function setUserName(name) {
+  const user = name;
+  return function (greet) {
+    console.log("hello ", user, greet);
+  };
+}
 
+let urvishUser = setUserName("urvish");
+
+urvishUser("morning");
+urvishUser("afternoon");
+urvishUser("night");

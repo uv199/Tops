@@ -14,6 +14,7 @@ import UseEffectCom from "./8.hook/UseEffectCom";
 import InputLocal from "./6.Input/InputLocal";
 import ProjectUseEffect from "./8.hook/ProjectUseEffect";
 import ApiCall from "./6.Input/ApiCall";
+import UseRefCom from "./8.hook/UseRefCom";
 
 export default function App() {
   return (
@@ -41,7 +42,7 @@ export default function App() {
       {/* <MultiInput/> */}
       {/* <LocalStorage /> */}
       {/* <InputLocal /> */}
-      <ApiCall />
+      {/* <ApiCall /> */}
 
       {/* ---------------------CONDITIONAL RENDARING------------------ */}
       {/* <ConditonalCom /> */}
@@ -49,6 +50,7 @@ export default function App() {
       {/* ---------------------HOOK------------------ */}
       {/* <UseEffectCom /> */}
       {/* <ProjectUseEffect /> */}
+      <UseRefCom />
     </div>
   );
 }

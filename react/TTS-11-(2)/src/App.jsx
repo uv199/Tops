@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="d-flex justify-content-center align-items-center">
       {/* <----------------------TASK-----------------------> */}
-      <Todo />
+      {/* <Todo /> */}
 
       {/* <----------------------COMPONENT-----------------------> */}
       {/* <Component /> */}
@@ -47,7 +47,7 @@ function App() {
       {/* <UseRefCom /> */}
 
       {/* <----------------------INPUT-----------------------> */}
-      {/* <InputCom /> */}
+      <InputCom />
 
       {/* <----------------------LOCAL STORAGE-----------------------> */}
       {/* <Localstorage /> */}

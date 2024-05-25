@@ -20,6 +20,7 @@
     "react-feather": "^2.0.10",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.23.0",
+    "react-select": "^5.8.0",
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {

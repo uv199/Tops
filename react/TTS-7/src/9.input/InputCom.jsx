@@ -7,6 +7,7 @@ import RadioInput from "./RadioInput";
 import CheckBoxInput from "./CheckBoxInput";
 import MultiPleInput2 from "./MultiPleInput2";
 import SelectInput from "./SelectInput";
+import CarCrud from "./CarCrud";
 
 export default function InputCom() {
   return (
@@ -14,11 +15,12 @@ export default function InputCom() {
       {/* <SingleInput /> */}
       {/* <MultiInput /> */}
       {/* <LocalStorage /> */}
-      <SingleInputLocalStorage />
+      {/* <SingleInputLocalStorage /> */}
       {/* <RadioInput /> */}
       {/* <CheckBoxInput /> */}
       {/* <MultiPleInput2 /> */}
       {/* <SelectInput /> */}
+      <CarCrud />
     </>
   );
 }

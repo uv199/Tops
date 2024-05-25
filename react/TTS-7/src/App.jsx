@@ -49,10 +49,10 @@ export default function App() {
       {/* <MapKey /> */}
 
       {/* -------------INPUT------------- */}
-      {/* <InputCom /> */}
+      <InputCom />
 
       {/* -------------ROUTER------------- */}
-      <RouterTopic />
+      {/* <RouterTopic /> */}
 
       <ToastContainer />
     </div>
