@@ -13,6 +13,8 @@ import LifeCycleMethod from "./7.LifeCycleMethod/LifeCycleMethod";
 import ConditionalRendaring from "./8.ConditionalRendering/ConditionalRendaring";
 import LoginCondition from "./8.ConditionalRendering/LoginCondition";
 import { ThemeProvider } from "@material-tailwind/react";
+import UseRefCom from "./9.HOOK/useRef/UseRefCom";
+import UseEffect from "./9.HOOK/useEffect/UseEffect";
 export default function App() {
   return (
     <ThemeProvider>
@@ -44,7 +46,11 @@ export default function App() {
 
         {/* -------------CONDITIONAL RENDARING------------- */}
         {/* <ConditionalRendaring /> */}
-        <LoginCondition />
+        {/* <LoginCondition /> */}
+
+        {/* -------------HOOK------------- */}
+        {/* <UseRefCom /> */}
+        <UseEffect />
       </div>
     </ThemeProvider>
   );
