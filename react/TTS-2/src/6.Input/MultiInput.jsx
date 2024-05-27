@@ -5,7 +5,8 @@ export default function MultiInput() {
   let [user, setUser] = useState({ email: "", password: "" });
   let [userArr, setUserArr] = useState([]);
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault()
     setUserArr([...userArr, user]);
     setUser({ email: "", password: "" });
   };
@@ -26,9 +27,10 @@ export default function MultiInput() {
           onChange={(e) => setUser({ ...user, password: e.target?.value })}
         />
         <Button
-          onClick={() => submitHandler()}
+          onClick={(e) => submitHandler(e)}
           className="mt-3 w-full"
           color="danger"
+          type="submit"
         >
           Submit
         </Button>

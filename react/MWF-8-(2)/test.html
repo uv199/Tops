@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<body>
-    <div class="header_div">
-        <h1 class="text-light">Puma</h1>
-        <div class="list_div">
-            <li>Home</li>
-            <li>Shose</li>
-            <li>Contact</li>
-            <li>About</li>
-        </div>
-        <div class="d-flex align-items-center">
-            <input style="max-width: 20vw" placeholder="Search Your Text.." />
-        </div>
+  <body>
+    <div class="flex justify-between">
+      <h1 class="">Puma</h1>
+      <div class="flex list-none gap-3">
+        <li>Home</li>
+        <li>Shose</li>
+        <li>Contact</li>
+        <li>About</li>
+      </div>
+      <div class="border flex">
+        <input class="focus:outline-none placeholder-shown:border-2
+        placeholder:text-red-500 active:!ring-0" placeholder="Search Your Text.." />
+        <img class="max-h-5 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQKJ_NLGFiFfwcMbro9z-jfbFI1YiHkjYaJdlYDdHRQ&s" alt="">
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex flex-col justify-center">
+    <!-- 
+        setup -> put a link in head tag
+        Pseudo-class reference : https://tailwindcss.com/docs/hover-focus-and-other-states#pseudo-class-reference
+
+        - hover (:hover)
+        - focus (:focus)
+        - focus-within (:focus-within)
+        - focus-visible (:focus-visible)
+        - active (:active)
+        - visited (:visited)
+        - first (:first-child)
+        - last (:last-child)
+        - odd (:nth-child(odd))
+        - even (:nth-child(even))
+        - valid (:valid)
+        - invalid (:invalid)
+        - in-range (:in-range)
+        - out-of-range (:out-of-range)
+        - placeholder-shown (:placeholder-shown)
+     -->
+    <h1>hellow world</h1>
+    <div class="text-red-500">
+      <h1>hello div</h1>
+
+      <h1 class="bg-red-500 text-black">black</h1>
+      <div class="bg-[#5d3f51]">test</div>
+    </div>
+
+    <button class="border-2">click me</button>
+
+    <div
+      class="flex flex-col items-center justify-center border p-3 [&>div]:border"
+    >
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+    </div>
+
+    <!-- hover:!text-green-500  -->
+    <button
+      class="bg-red-500 text-white border border-red-900 max-w-[70px] hover:scale-110 hover:text-red-500 hover:bg-white active:bg-yellow-500 active:text-white"
+    >
+      Hover
+    </button>
+
+    <div>
+      <label for="1">email</label>
+      <input
+        placeholder="enter your text"
+        type="text"
+        class="border-2 max-w-48 outline-none border-red-500 focus:border-green-500 placeholder:text-red-500 focus:placeholder:text-green-500"
+      />
+    </div>
+    <div>
+      <label for="1">email</label>
+      <input
+        placeholder="enter your text"
+        type="text"
+        class="border border-black outline-none placeholder-shown:!border-red-500 placeholder-shown:border-2"
+      />
+    </div>
+
+    <hr />
+    <!-- [&>*:nth-child(odd)]:bg-blue-500 -->
+
+    <ul class="[&>*:nth-child(odd)]:bg-red-500">
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+      <div>test</div>
+    </ul>
+  </body>
+</html>
