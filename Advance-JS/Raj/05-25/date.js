@@ -28,6 +28,8 @@ console.log("getTime", day.getTime());
 // today is 25, may 2024 - saturday 7:11 pm
 // make one function which print date in above mention formate excluding time which date user will pass in paramas
 // example - today is 25, may 2024 - saturday
-// find how to i will set time after 2 day - use take 30 day plan so i want to calculate at wich date their plan will be expire
+
+
+// find how to i will set time after 7 day - use take 30 day plan so i want to calculate at wich date their plan will be expire
 // example - today is 25, may i am subscribe plan at 6:19 pm, i subscribe plan of weekly basis so i want to print " YOUR PLAN WILL BE EXPIRE ON 1 JUNE 2024 AT 6:19"..
  // NOTE - user give length of plan 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-[50px]">
+    <h1 class="text-red-500 text-5xl font-bold font-serif italic underline">
+      test
+    </h1>
+    <h2 class="text-3xl tracking-wider">hello world</h2>
+    <h2 class="text-3xl tracking-tighter">hello world</h2>
+
+    <div class="w-[32px] h-9 border border-r-4 border-x-8 border-black"></div>
+
+    <ul>
+      <li class="line-through">test-1</li>
+      <li class="text-[#6a9180]">test-1</li>
+      <li class="bg-red-500">test-1</li>
+      <li class="bg-[#6a9180]">test-1</li>
+    </ul>
+    <button
+      class="bg-black text-white m-2 px-[20px] py-1 rounded-lg border border-black hover:bg-white hover:text-black hover:scale-110 active:bg-gray-600"
+    >
+      Click me
+    </button>
+    <hr />
+    <input
+      type="email"
+      class="border outline-none focus:border-2 focus:border-red-200"
+    />
+
+    <div class="bg-red-400 py-4 focus-within:bg-gray-300">
+      <input
+        placeholder="enter your email"
+        type="email"
+        class="placeholder:text-red-400 placeholder-shown:border-black border outline-none focus:border-2 focus:border-red-200"
+      />
+    </div>
+    <hr />
+    <input
+      min="1"
+      max="5"
+      class="border border-green outline-none out-of-range:border-red-500"
+      type="number"
+    />
+    <div class="bg-red-500 !bg-green-500">
+      test
+    </div>
+  </body>
+</html>

@@ -4,8 +4,10 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import UserForm from "./000.task/task/UserForm";
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <App />
+  // <App />
+  <UserForm />
   // </React.StrictMode>
 );
