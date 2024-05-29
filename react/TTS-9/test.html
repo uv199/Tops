@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+      corePlugins: {},
+      components: {
+        ".btn-blue": {
+          "@apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded":
+            {},
+        },
+      },
+    };
+  </script>
+  <body>
+    <label class="block">
+      <span
+        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700"
+      >
+        Email
+      </span>
+      <input
+        type="email"
+        name="email"
+        class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+        placeholder="you@example.com"
+      />
+    </label>
+
+    <hr />
+    <blockquote
+      class="text-2xl font-semibold italic text-center text-slate-900"
+    >
+      When you look
+      <span
+        class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block"
+      >
+        <span class="relative text-white">annoyed</span>
+      </span>
+      all the time, people think that you're busy.
+    </blockquote>
+    <hr />
+
+    <div class="odd:text-[rgb(250,230,21)] even:text-[rgb(189,188,176)]">
+      <div>manoj</div>
+      <div>manoj</div>
+      <div>manoj</div>
+      <div>manoj</div>
+    </div>
+
+    <hr />
+    <button class="btn-blue">click me</button>
+  </body>
+</html>
