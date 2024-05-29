@@ -52,13 +52,15 @@ import InputDataPost from "./13.api/InputDataPost";
 import AppRedux from "./14.redux/AppRedux";
 import Crud from "./Curd/Crud";
 import Home from "./000.task/router/Home";
+import ReduxCrud from "./000.task/redux/ReduxCrud";
 
 function App() {
   return (
     <>
       <div className="appContainer">
         {/*-----------------------TASK--------------------------  */}
-        <Home />
+        {/* <Home /> */}
+        {/* <ReduxCrud/> */}
         {/*-----------------------COMPONENT--------------------------  */}
         {/* <FunCom /> */}
         {/* <ClassCom /> */}
@@ -113,7 +115,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        {/* <ToDoList /> */}
+        <ToDoList />
         {/* <CheckBox /> */}
         {/* <Crud/> */}
 

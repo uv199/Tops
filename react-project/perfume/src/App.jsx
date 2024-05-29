@@ -1,17 +1,17 @@
-import "./App.css";
+import './App.css'
 import "react-multi-carousel/lib/styles.css";
-import Router from "./router/Router";
-import { ToastContainer } from "react-toastify";
+import Router from './router/Router';
+
+
+
 
 function App() {
-  return (
-    <div>
-      <Router />
-      
 
-      <ToastContainer />
-    </div>
-  );
+  return (
+    <div >
+      <Router />
+    </div >
+  )
 }
 
-export default App;
+export default App

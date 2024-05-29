@@ -3,12 +3,6 @@ var m, y;
 // console.log("x is", x);
 let x = 200;
 
-/*
-
-
-
-
-*/
 console.log("y is", y);
 y = 200;
 

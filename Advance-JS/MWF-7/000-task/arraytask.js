@@ -32,3 +32,14 @@ for (let i = 0; i < ans.length; i++) {
 }
 
 console.log("-----------  ans----------->", ans);
+
+const data = [
+  {
+    name: "urvish",
+    marks: [
+      { subject: "English", marks: 50 },
+      { subject: "Hindi", marks: 80 },
+      { subject: "Maths", marks: 90 },
+    ],
+  },
+];

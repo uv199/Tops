@@ -4,7 +4,7 @@
 
 @layer components {
   .btn-blue {
-    @apply bg-blue-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded;
+    @apply bg-black hover:bg-red-500 text-white font-bold py-2 px-4 rounded;
   }
 
   .heading {

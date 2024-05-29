@@ -9,6 +9,9 @@ export default withMT({
   ],
   theme: {
     extend: {},
+    colors: {
+      "theme-color": "#231ed4",
+    },
   },
   plugins: [],
 });

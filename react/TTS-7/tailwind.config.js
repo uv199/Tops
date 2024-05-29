@@ -6,5 +6,19 @@ export default {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      // backgroundColor: ["active"],
+      // // ...
+      borderColor: ["odd", "even"],
+      // // ...
+      textColor: ["odd", "even"],
+    },
+  },
+  // variants: {
+  //   extend: {
+  //     textColor: ["odd"],
+  //   },
+  // },
   plugins: [flowbite.plugin()],
 };

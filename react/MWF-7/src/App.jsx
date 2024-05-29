@@ -15,12 +15,15 @@ import LoginCondition from "./8.ConditionalRendering/LoginCondition";
 import { ThemeProvider } from "@material-tailwind/react";
 import UseRefCom from "./9.HOOK/useRef/UseRefCom";
 import UseEffect from "./9.HOOK/useEffect/UseEffect";
+import UseEffectProject from "./9.HOOK/useEffect/UseEffectProject";
+import Tailwind from "./000.task/Tailwind";
 export default function App() {
   return (
     <ThemeProvider>
       <div className="flex items-center justify-center">
         {/* --------------TASK------------ */}
         {/* <HomeAssignMent1 /> */}
+        <Tailwind />
 
         {/* --------------COMPONENET------------ */}
         {/* <FunCome /> */}
@@ -50,7 +53,8 @@ export default function App() {
 
         {/* -------------HOOK------------- */}
         {/* <UseRefCom /> */}
-        <UseEffect />
+        {/* <UseEffect /> */}
+        {/* <UseEffectProject /> */}
       </div>
     </ThemeProvider>
   );

@@ -18,7 +18,7 @@ export default function App() {
   return (
     <div className="d-flex justify-content-center">
       {/* -------------TASK------------- */}
-      {/* <Task /> */}
+      <Task />
 
       {/* -------------COMPONENETS------------- */}
       {/* <FunCom /> */}
@@ -49,7 +49,7 @@ export default function App() {
       {/* <MapKey /> */}
 
       {/* -------------INPUT------------- */}
-      <InputCom />
+      {/* <InputCom /> */}
 
       {/* -------------ROUTER------------- */}
       {/* <RouterTopic /> */}
