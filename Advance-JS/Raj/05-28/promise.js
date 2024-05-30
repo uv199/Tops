@@ -38,8 +38,7 @@ let fetchDataTwo = new Promise((resolve, reject) => {
 let response = fetchDataTwo;
 console.log("🚀 ~ response:", response);
 
-
-//  promisification 
-//  try catch 
+//  promisification
+//  try catch
 //  async await
 //  optional chaining
