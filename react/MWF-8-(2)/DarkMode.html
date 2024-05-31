@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    };
+  </script>
+
+  <script>
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+  <body class="grid place-content-center">
+    <button
+      id="dark_btn"
+      class="border bg-blue-950 text-white px-3 py-1 rounded-md"
+    >
+      Click to turn on Dark mode
+    </button>
+    <button id="light_btn" class="border border-blue-950 px-3 py-1 rounded-md">
+      Click to turn on light mode
+    </button>
+    <div
+      class="m-2 flex justify-center items-center border rounded-sm h-[100px] w-[100px] dark:bg-blue-950"
+    >
+      <h1 class="font-bold dark:text-white">Hello world</h1>
+    </div>
+    <script>
+      const lightBtn = document.getElementById("light_btn");
+      const darkBtn = document.getElementById("dark_btn");
+
+      lightBtn.addEventListener("click", () => {
+        localStorage.setItem("color-theme", "light");
+        document.documentElement.classList.remove("dark");
+      });
+      darkBtn.addEventListener("click", () => {
+        localStorage.setItem("color-theme", "dark");
+        document.documentElement.classList.add("dark");
+      });
+    </script>
+  </body>
+</html>

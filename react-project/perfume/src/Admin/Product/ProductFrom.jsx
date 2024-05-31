@@ -36,6 +36,7 @@ export default function ProductForm() {
   };
 
   const locationData = useLocation();
+  console.log("-----------  locationData----------->", locationData.state);
 
   useEffect(() => {
     setFormData(locationData?.state);
@@ -131,7 +132,7 @@ export default function ProductForm() {
                 id="price"
                 name="price"
                 type="text"
-                value={formData.price}
+                value={formData?.price}
                 onChange={(e) =>
                   setFormData({ ...formData, price: e?.target?.value })
                 }
@@ -143,7 +144,7 @@ export default function ProductForm() {
                 id="discountPercentage"
                 name="discountPercentage"
                 type="text"
-                value={formData.discountPercentage}
+                value={formData?.discountPercentage}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
@@ -158,7 +159,7 @@ export default function ProductForm() {
                 id="availableStock"
                 name="availableStock"
                 type="text"
-                value={formData.availableStock}
+                value={formData?.availableStock}
                 onChange={(e) =>
                   setFormData({ ...formData, availableStock: e?.target?.value })
                 }
@@ -170,7 +171,7 @@ export default function ProductForm() {
                 id="brand"
                 name="brand"
                 type="text"
-                value={formData.brand}
+                value={formData?.brand}
                 onChange={(e) =>
                   setFormData({ ...formData, brand: e?.target?.value })
                 }
@@ -195,7 +196,7 @@ export default function ProductForm() {
               <Select
                 id="mainCategorie"
                 name="mainCategorie"
-                value={formData.mainCategorie}
+                value={formData?.mainCategorie}
                 onChange={(e) =>
                   setFormData({ ...formData, mainCategorie: e?.target?.value })
                 }
@@ -260,7 +261,7 @@ export default function ProductForm() {
                     name="size"
                     type="checkbox"
                     value="50ml"
-                    checked={formData.size.includes("50ml")}
+                    checked={formData?.size?.includes?.("50ml")}
                     onChange={(e) => CheckboxHandler("50ml", e)}
                   />
                   <Label check>50ml</Label>
@@ -270,7 +271,7 @@ export default function ProductForm() {
                     name="size"
                     type="checkbox"
                     value="100ml"
-                    checked={formData.size.includes("100ml")}
+                    checked={formData?.size?.includes?.("100ml")}
                     onChange={(e) => CheckboxHandler("100ml", e)}
                   />
                   <Label check>100ml</Label>
@@ -280,7 +281,7 @@ export default function ProductForm() {
                     name="size"
                     type="checkbox"
                     value="150ml"
-                    checked={formData.size.includes("150ml")}
+                    checked={formData?.size?.includes?.("150ml")}
                     onChange={(e) => CheckboxHandler("150ml", e)}
                   />
                   <Label check>150ml</Label>
@@ -293,27 +294,30 @@ export default function ProductForm() {
                 id="thumbnail"
                 name="thumbnail"
                 type="text"
-                value={formData.thumbnail}
+                value={formData?.thumbnail}
                 onChange={(e) =>
                   setFormData({ ...formData, thumbnail: e?.target?.value })
                 }
               />
             </FormGroup>
             <div className="flex justify-center">
-              <Button
-                onClick={(e) => submitHandler(e)}
-                type="submit"
-                className="w-[50%] mt-2"
-              >
-                Submit
-              </Button>
-              <Button
-                onClick={(e) => updateHandler(e)}
-                type="submit"
-                className="w-[50%] mt-2"
-              >
-                Update
-              </Button>
+              {locationData?.state ? (
+                <Button
+                  onClick={(e) => updateHandler(e)}
+                  type="submit"
+                  className="w-[50%] mt-2"
+                >
+                  Update
+                </Button>
+              ) : (
+                <Button
+                  onClick={(e) => submitHandler(e)}
+                  type="submit"
+                  className="w-[50%] mt-2"
+                >
+                  Submit
+                </Button>
+              )}
             </div>
           </Form>
         </div>

@@ -11,24 +11,34 @@ import { instanceApi } from "../../Ui/Api/axiosconfig";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import { Input } from "reactstrap";
 
 export default function ProductTable() {
   const [products, setProducts] = useState([]);
   let [apiFlag, setApiFlag] = useState(true);
+  let [pagination, setPagination] = useState({
+    page: 1,
+    limit: 10,
+  });
+  let [totalProductCount, setTotalProductCount] = useState(10);
+  let [searchText, setSearchText] = useState("");
 
   const refetch = () => setApiFlag(!apiFlag);
   useEffect(() => {
     async function fetchProducts() {
       try {
-        let { data } = await instanceApi.get("/product/getAll");
+        let { data } = await instanceApi.get("/product/getAllPaginate", {
+          params: { ...pagination, search: searchText },
+        });
+        setTotalProductCount(data?.count);
         setProducts(data?.data || []);
-        // console.log('Fetched products:', data?.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     }
     fetchProducts();
-  }, [apiFlag]);
+  }, [apiFlag, pagination, searchText]);
 
   const [cookies] = useCookies(["token"]);
 
@@ -39,17 +49,11 @@ export default function ProductTable() {
       let response = await instanceApi.delete(
         "/product/delete/" + product?._id,
         null,
-        {
-          headers: {
-            authorization:
-              "bearer " +
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InV2QGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTY4Nzk1Nzd9.J5vvAR9BiK57CuFWtiXZvBuoVAqbqFRBoD08StfyX80",
-          },
-        }
+        { headers: { authorization: "bearer " + cookies?.token } }
       );
       refetch();
     } catch (error) {
-      console.log("-----------  error----------->", error)
+      console.log("-----------  error----------->", error);
       toast.error("somthing went wrong");
     }
   };
@@ -58,8 +62,28 @@ export default function ProductTable() {
     navigate("/admin-product-form", { state: data });
   };
 
+  const handlePageChnage = (e) => {
+    console.log("-----------  e----------->", e);
+    setPagination({ ...pagination, page: e?.selected + 1 });
+  };
+
   return (
     <div className="overflow-x-auto mt-10">
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageChnage}
+        pageRangeDisplayed={5}
+        pageCount={totalProductCount / pagination?.limit}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+        pageClassName="border border-black p-2"
+        className="flex"
+      />
+      <Input
+        onChange={(e) => setSearchText(e?.target?.value)}
+        placeholder="Serach by title and description.."
+      />
       <Table>
         <TableHead>
           <TableHeadCell>Sr.no</TableHeadCell>
@@ -67,7 +91,6 @@ export default function ProductTable() {
           <TableHeadCell>Product name</TableHeadCell>
           <TableHeadCell>Description</TableHeadCell>
           <TableHeadCell>Category</TableHeadCell>
-          <TableHeadCell>Color</TableHeadCell>
           <TableHeadCell>Gender</TableHeadCell>
           <TableHeadCell>Price</TableHeadCell>
           <TableHeadCell>Rating</TableHeadCell>
@@ -94,7 +117,6 @@ export default function ProductTable() {
               </TableCell>
               <TableCell>{product.description}</TableCell>
               <TableCell>{product?.category?.join?.(", ")}</TableCell>
-              <TableCell>{product?.color?.join?.(", ")}</TableCell>
               <TableCell>{product.gender}</TableCell>
               <TableCell>
                 ${product.price} ({product.discountPercentage}% off)
@@ -123,3 +145,12 @@ export default function ProductTable() {
     </div>
   );
 }
+
+
+/*
+
+10
+25
+50
+100
+*/

@@ -115,7 +115,7 @@ function App() {
         {/* <MultiUpdate /> */}
         {/* <SimpleInput /> */}
         {/* <MultiRevise /> */}
-        <ToDoList />
+        {/* <ToDoList /> */}
         {/* <CheckBox /> */}
         {/* <Crud/> */}
 
@@ -125,7 +125,7 @@ function App() {
         {/* <MultipleInputRiya /> */}
 
         {/*-----------------------ROUTER--------------------------  */}
-        {/* <Router /> */}
+        <Router />
         {/* <AppPro /> */}
         {/* <RouterSimple /> */}
 

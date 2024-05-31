@@ -12,9 +12,11 @@ export default function PropsFunCom() {
       {/* <ProfilePage name={"Parash"} age={34} /> */}
 
       {/* ----------------------------------- */}
-      {/* <Profile2 user={user1} />
-      <Profile2 user={user2} />
-      <Profile2 /> */}
+      {/* 
+        <Profile2 user={user1} />
+        <Profile2 user={user2} />
+        <Profile2 /> 
+      */}
     </div>
   );
 }

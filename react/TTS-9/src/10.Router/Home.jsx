@@ -6,6 +6,8 @@ let nameArr = ["saif", "urvish", "kajal", "nimesh"];
 export default function Home() {
   const navigate = useNavigate();
 
+  for (let i = 0; i < 1000000000; i++) {}
+
   return (
     <div className="d-flex flex-column ">
       <h1>Home</h1>

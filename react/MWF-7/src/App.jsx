@@ -17,13 +17,14 @@ import UseRefCom from "./9.HOOK/useRef/UseRefCom";
 import UseEffect from "./9.HOOK/useEffect/UseEffect";
 import UseEffectProject from "./9.HOOK/useEffect/UseEffectProject";
 import Tailwind from "./000.task/Tailwind";
+import UseReducer from "./9.HOOK/useReducer/UseReducer";
 export default function App() {
   return (
     <ThemeProvider>
       <div className="flex items-center justify-center">
         {/* --------------TASK------------ */}
         {/* <HomeAssignMent1 /> */}
-        <Tailwind />
+        {/* <Tailwind /> */}
 
         {/* --------------COMPONENET------------ */}
         {/* <FunCome /> */}
@@ -55,6 +56,7 @@ export default function App() {
         {/* <UseRefCom /> */}
         {/* <UseEffect /> */}
         {/* <UseEffectProject /> */}
+        <UseReducer />
       </div>
     </ThemeProvider>
   );

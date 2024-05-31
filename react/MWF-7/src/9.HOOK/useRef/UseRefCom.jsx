@@ -14,12 +14,14 @@ export default function UseRefCom() {
     inputRef.current.type = "password";
   };
 
+  // nostelgia 
+
   const chnageColor = () => {
     divRef.current.style.backgroundColor = "red";
   };
 
   const chnageshape = () => {
-    if (div2Ref.current.className === "rectangle") {
+    if (div2Ref?.current?.className === "rectangle") {
       div2Ref.current.className = "round";
     } else {
       div2Ref.current.className = "rectangle";

@@ -58,11 +58,14 @@ export default function UserForm() {
 
   return (
     <>
-      <button className="btn-blue">click me</button>
+      {/* <button className="btn-blue">click me</button>
       <h1 className="heading sm:text-green-500 md:text-yellow-400">texxtt </h1>
-      <h1 className="heading tablet:text-green-500 laptop:text-yellow-500 desktop:text-red-500"> hello world</h1>
-      <h1 className="text-3xl text-theam-color" >color base</h1>
-      {/* <div className="flex justify-center mb-5">
+      <h1 className="heading tablet:text-green-500 laptop:text-yellow-500 desktop:text-red-500">
+        {" "}
+        hello world
+      </h1>
+      <h1 className="text-3xl text-theam-color">color base</h1> */}
+      <div className="flex justify-center mb-5">
         <Form className="w-50 border border-gray-500 p-4">
           <FormGroup>
             <Label for="firstName">First Name</Label>
@@ -199,9 +202,7 @@ export default function UserForm() {
           </FormGroup>
 
           {index || index === 0 ? (
-            <Button onClick={updateHandler}>
-              Update
-            </Button>
+            <Button onClick={updateHandler}>Update</Button>
           ) : (
             <Button onClick={submitHandler}>Submit</Button>
           )}
@@ -209,7 +210,7 @@ export default function UserForm() {
       </div>
       <div>
         <UserTable data={data} editData={editData} deleteData={deleteData} />
-      </div> */}
+      </div>
     </>
   );
 }

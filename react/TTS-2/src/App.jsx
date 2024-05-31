@@ -16,6 +16,7 @@ import ProjectUseEffect from "./8.hook/ProjectUseEffect";
 import ApiCall from "./6.Input/ApiCall";
 import UseRefCom from "./8.hook/UseRefCom";
 import UseReducer from "./8.hook/UseReducer";
+import MainCom from "./8.hook/usecontext/MainCom";
 
 export default function App() {
   return (
@@ -52,7 +53,8 @@ export default function App() {
       {/* <UseEffectCom /> */}
       {/* <ProjectUseEffect /> */}
       {/* <UseRefCom /> */}
-      <UseReducer />
+      {/* <UseReducer /> */}
+      <MainCom />
     </div>
   );
 }

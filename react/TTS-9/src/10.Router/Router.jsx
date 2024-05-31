@@ -1,6 +1,8 @@
-import React, { lazy } from "react";
-import Home from "./Home";
-import Contact from "./Contact";
+import React, { Suspense, lazy } from "react";
+const Home = lazy(() => import("./Home"));
+const Contact = lazy(() => import("./Contact"));
+// import Home from "./Home";
+// import Contact from "./Contact";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
@@ -12,6 +14,7 @@ import NormalBike from "./Service/Bike/NormalBike";
 import HeaderRS from "./HeaderRS";
 import User from "./User/User";
 import Profile from "./User/ProfileModal";
+import LoadingPage from "./LoadingPage";
 
 export default function Router() {
   return (
@@ -27,22 +30,24 @@ export default function Router() {
           }}
           className="d-flex justify-content-center align-items-center "
         >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/service">
-              <Route index Component={Service} />
-              <Route path="bike">
-                <Route index Component={BikeService} />
-                <Route path="sports" element={<SportsBike />} />
-                <Route path="normal" element={<NormalBike />} />
+          <Suspense fallback={<LoadingPage />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/service">
+                <Route index Component={Service} />
+                <Route path="bike">
+                  <Route index Component={BikeService} />
+                  <Route path="sports" element={<SportsBike />} />
+                  <Route path="normal" element={<NormalBike />} />
+                </Route>
+                <Route path="car" Component={CarService} />
               </Route>
-              <Route path="car" Component={CarService} />
-            </Route>
-            <Route path="*" element={<Error404 />} />
-            <Route path="/user/:name/:id" element={<User />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
+              <Route path="*" element={<Error404 />} />
+              <Route path="/user/:name/:id" element={<User />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </Suspense>
         </div>
       </BrowserRouter>
     </>
