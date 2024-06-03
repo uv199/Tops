@@ -8,6 +8,15 @@ let amountslice = createSlice({
       state.amount++;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase("count/incrementByUser", (state, action) => {
+      console.log("-----------Extra reducer----------->");
+      state.amount++;
+    });
+    builder.addCase("count/decrementCount", (state, action) => {
+      state.amount += 10;
+    });
+  },
 });
 
 export default amountslice.reducer;

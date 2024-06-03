@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .theme-btn {
+    @apply bg-blue-950 mt-3 py-1 px-3 border border-black hover:bg-white rounded-md;
+  }
+}
