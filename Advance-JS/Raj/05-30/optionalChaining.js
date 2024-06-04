@@ -5,6 +5,8 @@ let obj = {
   // },
 };
 
+// obj?.address?.city = "surat"
+
 obj?.["name"];
 
 let name = obj.name;
@@ -24,3 +26,5 @@ let data = null;
 data?.map?.((e) => {
   console.log("e:", e);
 });
+
+
