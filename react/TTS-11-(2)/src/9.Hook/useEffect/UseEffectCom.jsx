@@ -5,6 +5,7 @@ export default function UseEffectCom() {
   let [count, setCount] = useState(0);
   let [count2, setCount2] = useState(0);
   let [count3, setCount3] = useState(0);
+  
   useEffect(() => {
     console.log("-----with [] dependancy-----");
     alert("--->");

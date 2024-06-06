@@ -94,6 +94,7 @@ export default function ProductTable() {
           <TableHeadCell>Gender</TableHeadCell>
           <TableHeadCell>Price</TableHeadCell>
           <TableHeadCell>Rating</TableHeadCell>
+          <TableHeadCell>Sizes</TableHeadCell>
           <TableHeadCell>Actions</TableHeadCell>
 
           <TableHeadCell>
@@ -123,6 +124,24 @@ export default function ProductTable() {
               </TableCell>
               <TableCell>{product.rating}</TableCell>
               <TableCell>
+                <div className="flex gap-2">
+                  {["10ml", "50ml", "100ml", "150ml"].map((e) => {
+                    let available = product.size.includes(e);
+                    return (
+                      <span
+                        className={
+                          available
+                            ? "border-2 border-black px-2 py-1 rounded-md"
+                            : "border-2 border-gray-400 text-gray-400 px-2 py-1 rounded-md"
+                        }
+                      >
+                        {e}
+                      </span>
+                    );
+                  })}
+                </div>
+              </TableCell>
+              <TableCell>
                 <div className="flex gap-2 h-full items-center">
                   <p
                     className="font-medium cursor-pointer text-cyan-600 hover:underline "
@@ -146,11 +165,15 @@ export default function ProductTable() {
   );
 }
 
-
 /*
 
 10
 25
 50
 100
+let product.size = [2,3]
+let arr = [1,2,3,4,5]
+arr.map((e)=>{
+let ans = size.include(e)
+})
 */

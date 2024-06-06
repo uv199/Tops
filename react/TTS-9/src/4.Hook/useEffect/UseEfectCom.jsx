@@ -11,7 +11,6 @@ export default function UseEfectCom() {
   //     console.log("-----WITHOUT DEPENDENCY--- ");
   //   });
 
-  //
   useEffect(() => {
     console.log("-----WITH BLANCK ARRAY DEPENDENCY--- ");
   }, []);

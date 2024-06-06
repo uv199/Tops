@@ -14,6 +14,8 @@ import Localstorage from "./12.localstorage/Localstorage";
 import UseRefCom from "./9.Hook/useRef/UseRefCom";
 import ProjectApp from "./13.Project/ProjectApp";
 import Todo from "./000.projects/Todo/Todo";
+import UseContaxt from "./9.Hook/UseContaxt/UseContaxt";
+import UseReducer from "./9.Hook/UseReducer/UseReducer";
 
 function App() {
   return (
@@ -45,9 +47,11 @@ function App() {
       {/* <----------------------HOOK-----------------------> */}
       {/* <UseEffectCom /> */}
       {/* <UseRefCom /> */}
+      {/* <UseContaxt /> */}
+      <UseReducer />
 
       {/* <----------------------INPUT-----------------------> */}
-      <InputCom />
+      {/* <InputCom /> */}
 
       {/* <----------------------LOCAL STORAGE-----------------------> */}
       {/* <Localstorage /> */}
