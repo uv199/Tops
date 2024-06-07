@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import User from "./redux/User";
+import Component1 from "./Component1";
+import Component2 from "./Component2";
 
 export default function Home() {
   return (
     <div className=" flex flex-col justify-center items-center">
-      <Header />
-      <User />
+      <Component1 />
+      <Component2 />
     </div>
   );
 }

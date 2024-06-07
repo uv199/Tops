@@ -19,6 +19,7 @@ import UseEffectProject from "./9.HOOK/useEffect/UseEffectProject";
 import Tailwind from "./000.task/Tailwind";
 import UseReducer from "./9.HOOK/useReducer/UseReducer";
 import InputCom from "./10.Input/InputCom";
+import LocalStorageInput from "./10.Input/LocalStorageInput";
 export default function App() {
   return (
     <ThemeProvider>
@@ -60,7 +61,8 @@ export default function App() {
         {/* <UseReducer /> */}
 
         {/* -------------INPUT------------- */}
-        <InputCom />
+        {/* <InputCom /> */}
+        <LocalStorageInput />
       </div>
     </ThemeProvider>
   );
