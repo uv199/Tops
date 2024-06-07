@@ -47,4 +47,4 @@ let random = Math.random() * 1000000;
 console.log("🚀 ~ random:", Math.trunc(random));
 */
 
-// generate a random number between 1  to 6, 1 and 6 both are inclusive 
+// TODO generate a random number between 1  to 6, 1 and 6 both are inclusive 
