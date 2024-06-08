@@ -42,3 +42,8 @@ export default function CheckBoxCom() {
     </div>
   );
 }
+
+let data = {
+  packageName: "",
+  sponser: [{ name: "" }],
+};
