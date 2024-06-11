@@ -20,6 +20,7 @@ import MainCom from "./8.hook/usecontext/MainCom";
 import RadioCom from "./6.Input/RadioCom";
 import CheckBoxCom from "./6.Input/CheckBoxCom";
 import SelectData from "./6.Input/SelectData";
+import Router from "./9.Routing/Router";
 
 export default function App() {
   return (
@@ -50,7 +51,7 @@ export default function App() {
       {/* <ApiCall /> */}
       {/* <RadioCom /> */}
       {/* <CheckBoxCom /> */}
-      <SelectData />
+      {/* <SelectData /> */}
 
       {/* ---------------------CONDITIONAL RENDARING------------------ */}
       {/* <ConditonalCom /> */}
@@ -61,6 +62,9 @@ export default function App() {
       {/* <UseRefCom /> */}
       {/* <UseReducer /> */}
       {/* <MainCom /> */}
+
+      {/* ---------------------ROUTER------------------ */}
+      <Router />
     </div>
   );
 }

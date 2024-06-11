@@ -25,7 +25,6 @@ taskArr = arr.filter((e) => {
   return e.includes(serahcText);
 });
 console.log("-----------  taskArr----------->", taskArr);
-*/
 
 // let model = [1, 2, 3, 4];
 let car = { model: [1, 2, 3, 4] };
@@ -34,15 +33,22 @@ let car = { model: [1, 2, 3, 4] };
 
 let filter = car.model.filter((e) => e !== 2);
 // model = filter;
-car = {...car,mode:filter}
+car = { ...car, mode: filter };
 console.log("-----------  filter----------->", filter);
 
+const color = ["red", "green"];
 
-const color = ["red","green"]
+let neededDataType = color.map((e) => {
+  return { value: e, label: e };
+  });
+  console.log("-----------  neededDataType----------->", neededDataType);
+  */
 
-let neededDataType = color.map((e)=>{
-  return {value:e,label:e}
-})
-console.log("-----------  neededDataType----------->", neededDataType)
-
-
+function totalSum(num) {
+  let total = 0;
+  for (let i = 1; i <= num; i++) {
+    total += i;
+  }
+  console.log("🚀 ~ totalSum ~ :", total);
+}
+totalSum(115);

@@ -1,5 +1,5 @@
 import { Plus, Trash } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Input } from "reactstrap";
 
 export default function LocalStorageInput() {
@@ -9,6 +9,12 @@ export default function LocalStorageInput() {
   const getData = (input) => {
     setTask(input.target.value);
   };
+
+  useEffect(() => {
+    let jsonData = localStorage.getItem("task") || "[]";
+    let normalData = JSON.parse(jsonData);
+    setTaskArr(normalData);
+  }, []);
 
   const addData = () => {
     setTaskArr([...taskArr, task]);
@@ -21,6 +27,7 @@ export default function LocalStorageInput() {
       return i !== index;
     });
     setTaskArr(filterData);
+    localStorage.setItem("task", JSON.stringify(filterData));
   };
 
   return (

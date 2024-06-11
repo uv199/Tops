@@ -22,7 +22,6 @@ export default function CarCrud() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("====>", car);
     setCar({
       name: "",
       color: [],

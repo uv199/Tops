@@ -8,6 +8,7 @@ export default function StatePro1() {
   const indexHandler = () => {
     setIndex(index + 1);
   };
+
   return (
     <div>
       <div

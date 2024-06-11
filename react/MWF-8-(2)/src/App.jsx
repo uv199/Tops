@@ -37,6 +37,7 @@ import ToDoList from "./00.task/todo/ToDoList";
 import Product from "./00.task/productApi/Product";
 import AppRedux from "./16.Redux/SimpleRedux copy/AppRedux";
 import AppProduct from "./16.Redux/Project/AppProduct";
+import MultiUserFilter from "./11.Input/MultiUserFilter";
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
       {/* <SelectCom /> */}
       {/* <SearchInput /> */}
       {/* <LocalStorageMultiInputs2 /> */}
+      <MultiUserFilter />
 
       {/* <---------------------LOCALSTORAGE------------------------> */}
       {/* <LocalStorageCom /> */}
@@ -101,7 +103,7 @@ function App() {
       {/* <ToDoList /> */}
 
       {/* <---------------------REDUX------------------------> */}
-      <AppProduct />
+      {/* <AppProduct /> */}
       {/* <AppRedux /> */}
       <ToastContainer />
     </div>
