@@ -94,7 +94,7 @@ let available = arr.includes(2);
 console.log("🚀 ~ available:", available);
 
 let arrayOfObject = [{ a: 20 }, { a: 30 }, { a: 40 }, { a: 50 }];
-//  a = 50
+//  a = 50.
 let available2 = arrayOfObject.includes({ a: 50 });
 // TODO if there is any object have a key and that keys have 50 value then i want ans true and if not give and ans false
 console.log("🚀 ~ available2:", available2);
