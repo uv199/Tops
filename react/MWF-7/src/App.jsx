@@ -21,6 +21,7 @@ import UseReducer from "./9.HOOK/useReducer/UseReducer";
 import InputCom from "./10.Input/InputCom";
 import LocalStorageInput from "./10.Input/LocalStorageInput";
 import UseContext from "./9.HOOK/useContext/UseContext";
+import InputRevise from "./10.Input/InputRevise";
 export default function App() {
   return (
     <ThemeProvider>
@@ -60,11 +61,12 @@ export default function App() {
         {/* <UseEffect /> */}
         {/* <UseEffectProject /> */}
         {/* <UseReducer /> */}
-        <UseContext />
+        {/* <UseContext /> */}
 
         {/* -------------INPUT------------- */}
         {/* <InputCom /> */}
         {/* <LocalStorageInput /> */}
+        <InputRevise />
       </div>
     </ThemeProvider>
   );
