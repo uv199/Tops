@@ -16,6 +16,8 @@ import ProjectApp from "./13.Project/ProjectApp";
 import Todo from "./000.projects/Todo/Todo";
 import UseContaxt from "./9.Hook/UseContaxt/UseContaxt";
 import UseReducer from "./9.Hook/UseReducer/UseReducer";
+import UseMemo from "./9.Hook/UseMemo/UseMemo";
+import AppRedux from "./14.Redux/AppRedux";
 
 function App() {
   return (
@@ -48,7 +50,8 @@ function App() {
       {/* <UseEffectCom /> */}
       {/* <UseRefCom /> */}
       {/* <UseContaxt /> */}
-      <UseReducer />
+      {/* <UseReducer /> */}
+      {/* <UseMemo /> */}
 
       {/* <----------------------INPUT-----------------------> */}
       {/* <InputCom /> */}
@@ -63,6 +66,8 @@ function App() {
       {/* <----------------------PROJECT-----------------------> */}
       {/* <ProjectApp /> */}
 
+      {/* <----------------------REDUX-----------------------> */}
+      <AppRedux />
       <ToastContainer />
     </div>
   );
