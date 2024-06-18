@@ -22,6 +22,8 @@ import InputCom from "./10.Input/InputCom";
 import LocalStorageInput from "./10.Input/LocalStorageInput";
 import UseContext from "./9.HOOK/useContext/UseContext";
 import InputRevise from "./10.Input/InputRevise";
+import MultipleInput from "./10.Input/MultipleInput";
+import RadioInput from "./10.Input/RadioInput";
 export default function App() {
   return (
     <ThemeProvider>
@@ -66,7 +68,9 @@ export default function App() {
         {/* -------------INPUT------------- */}
         {/* <InputCom /> */}
         {/* <LocalStorageInput /> */}
-        <InputRevise />
+        {/* <InputRevise /> */}
+        <MultipleInput />
+        {/* <RadioInput /> */}
       </div>
     </ThemeProvider>
   );

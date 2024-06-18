@@ -15,9 +15,11 @@ const messageSchema = mongoose.Schema(
     message: {
       type: String,
       minLength: 1,
+      unique: true,
     },
   },
   { timestamps: true }
 );
+// mySchema.index({field1: 1, field2: 1}, {unique: true});
 
 export const Message = mongoose.model("message", messageSchema);

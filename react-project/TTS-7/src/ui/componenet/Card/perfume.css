@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img{
+  
+    height: 350px;
+    width: 350px;
+  
+  }
+
+  .imgsmain{
+   position: relative;
+  }
+.img1{
+    position: absolute;
+    opacity: 0;
+    transition: 0.3s ease-in-out all;
+  
+  }
+  
+  .imgsmain{
+    padding: 10px;
+    border: 1px solid black;
+    width: 20%;
+  }
+  
+  .img1:hover{
+    opacity: 1;
+  }
+  
+  .textRs{
+    display: flex;
+    justify-content: space-around;
+   align-items: center;
+   margin-bottom: 50px;
+  }
+  
+  .textRs p{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(223, 49, 49);
+    
+  }
+  
+  .textRs strike{
+    
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  
+  .text p{
+    text-align: center;
+    font-size:18px;
+    font-weight: 600;
+    color: rgba(63, 56, 56, 0.824);
+    letter-spacing: 1px;
+    font-family: Jost, sans-serif;
+    text-transform: uppercase;
+    margin-top: 10px;
+    
+    
+    }
+    .text p:hover{
+      color: black;
+      }
+      
+      .Rate{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-top: 15px;
+      }
+  
+  .rating{
+    font-size: 22px;
+    padding-left: 40px;
+    font-weight: 600;
+  }
+  .veryfie p{
+    font-size: 14px;
+    font-weight: 600;
+    color:  rgb(223, 49, 49);
+  }
+  .btn{
+    border: none;
+    height: 45px ;
+    width: 150px;
+   align-items: center;
+   background-color: black;
+   color: aliceblue;
+   font-size: 17px;
+   margin-bottom: 10px;
+  }
+  
+  /* .eye_cartbtn{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .eye_cartbtn Button{
+    width: 130px;
+  } */
+  .eye_cartbtn  {
+    display: flex;
+    align-items: center;
+    gap:10px;
+    justify-content: center;
+  }
+  
+  .center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .center-content span {
+    margin-right: 5px; 
+  }
+  .eye_cartbtn Button {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .eye_cartbtn Button:hover {
+    transform: translateY(-10px);
+  }
+  
+  .center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .center-content span {
+    margin-right: 5px; /* Adjust spacing between text and icon as needed */
+  }
+
+  .em5_txt{
+    font-size: 25px;
+    color: rgba(33, 30, 30, 0.824);
+    font-family:Jost,sans-serif ;
+    line-height: 40px;
+    font-weight: 500;
+
+  }
+
+  .rating-p {
+    display: flex;
+    /* gap: 20px; */
+    margin-top: 15px;
+    align-items: center;
+  }
+  .ratenum{
+    font-size: 16px;
+    padding-left: 10px;
+    padding-bottom: 6px;
+  }
+  .verify-1{
+    font-size: 14px;
+    font-weight: 600;
+    color:  rgb(223, 49, 49);
+    padding-left: 45px;
+    padding-bottom: 6px;
+
+  }
+  .price{
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  .price h3{
+    color: black;
+  }
+  .price .strike-1{
+    color: grey;
+    font-weight: 600;
+  }
+  .perfume-btn{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+   .perfume-btn Button{
+    width: 250px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-weight: 500;
+    box-shadow: 1px 1px 3px ;
+    
+   }
+   .logos{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+   }
+   .logos img{
+    height: 100px;
+    width: 100px;
+   }
+
+   .count-btn{
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+   }
+   .counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .counter button {
+    background-color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    height: 20px;
+  }
+  
+  .counter span {
+    font-size: 22px;
+  }
+  .addCart button{
+    /* width: 350px; */
+    height: 60px;
+    background-color: rgb(27, 24, 24);
+    color: white;
+    font-size: 18px;
+  }
+
+  .details{
+     font-size: 18px;
+     line-height: 45px;
+  }
+  
+  .details strong{
+    font-weight: 600;
+    color: black;
+  }
+  .perfume-imgs{
+    max-height: 800px;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+  }
+  /* .perfume-imgs::-webkit-scrollbar{
+    max-height: 100%; height: 100%;
+  } */
+
+  .rowSliderimgs{
+    border: 1px solid black;
+    height: 205px;
+    /* width: 155px; */
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .rowSliderimgs img{
+    transition: 0.5s ease-in-out all !important;
+
+  }
+
+  .rowSliderimgs:hover img{
+      transform: scale(1.2);
+  }
+
+  
+
+  
+  
+  
+  

@@ -8,6 +8,7 @@ import CheckBoxInput from "./CheckBoxInput";
 import MultiPleInput2 from "./MultiPleInput2";
 import SelectInput from "./SelectInput";
 import CarCrud from "./CarCrud";
+import Nirali from "./Nirali";
 
 export default function InputCom() {
   return (
@@ -20,7 +21,8 @@ export default function InputCom() {
       {/* <CheckBoxInput /> */}
       {/* <MultiPleInput2 /> */}
       {/* <SelectInput /> */}
-      <CarCrud />
+      {/* <CarCrud /> */}
+      <Nirali/>
     </>
   );
 }

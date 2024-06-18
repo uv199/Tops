@@ -34,7 +34,7 @@ export default function App() {
       {/* <LifeCycle /> */}
 
       {/* -------------HOOK------------- */}
-      <Hook />
+      {/* <Hook /> */}
 
       {/* -------------PROPS------------- */}
       {/* <Props /> */}
@@ -49,7 +49,7 @@ export default function App() {
       {/* <MapKey /> */}
 
       {/* -------------INPUT------------- */}
-      {/* <InputCom /> */}
+      <InputCom />
 
       {/* -------------ROUTER------------- */}
       {/* <RouterTopic /> */}
