@@ -24,6 +24,8 @@ import UseContext from "./9.HOOK/useContext/UseContext";
 import InputRevise from "./10.Input/InputRevise";
 import MultipleInput from "./10.Input/MultipleInput";
 import RadioInput from "./10.Input/RadioInput";
+import CheckBox from "./10.Input/CheckBox";
+import SelectReact from "./10.Input/SelectReact";
 export default function App() {
   return (
     <ThemeProvider>
@@ -69,8 +71,10 @@ export default function App() {
         {/* <InputCom /> */}
         {/* <LocalStorageInput /> */}
         {/* <InputRevise /> */}
-        <MultipleInput />
+        {/* <MultipleInput /> */}
         {/* <RadioInput /> */}
+        {/* <CheckBox /> */}
+        <SelectReact />
       </div>
     </ThemeProvider>
   );

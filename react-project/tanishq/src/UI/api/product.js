@@ -13,15 +13,12 @@ export const fetchAllProduct = async ({ limit, page, searchQuery }) => {
 };
 
 export const getAllProduct = async (filter) => {
-  console.log("---filter-->",filter)
   try {
     let response = await APIinstance.get("/product/getAll", {
       params: filter,
     });
-    console.log("response:", response);
     return { error: null, data: response.data };
   } catch (error) {
-    console.log("error:", error);
     return { error: error, data: null };
   }
 };
@@ -42,10 +39,8 @@ export const deleteProduct = async (id, token) => {
 
 // =================Crete Product API===========================
 export const createProduct = async (data) => {
-  console.log("🚀 ~ file: Product.js:47 ~ createProduct ~ data:", data);
   try {
     let response = await APIinstance.post("/product/create", data);
-    console.log("Createe Product", response);
     return { error: null, data: response.data };
   } catch (error) {
     return { error: error, data: null };
@@ -56,7 +51,6 @@ export const createProduct = async (data) => {
 export const updateProduct = async (data, id) => {
   try {
     let response = await APIinstance.put("/product/update/" + id, data);
-    console.log("Createe Product", response);
     return { error: null, data: response.data };
   } catch (error) {
     return { error: error, data: null };

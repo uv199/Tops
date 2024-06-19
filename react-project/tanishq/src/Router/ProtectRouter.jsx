@@ -22,7 +22,6 @@ export function LoginProtected({ Component }) {
 
 export function AdminProtected({ Component }) {
   const [cookies, setCookie, removeCookie] = useCookies(["token", "user"]);
-  // console.log("===========================>", cookies.user.userType)
   const navigate = useNavigate();
   useEffect(() => {
     if (cookies?.user?.userType !== "admin") {

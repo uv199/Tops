@@ -16,7 +16,7 @@ function App(params) {
 
       {/* ------------STYLE------------ */}
 
-      {/* <Home /> */}
+      <Home />
 
       {/* ------------STATE------------ */}
 
@@ -25,7 +25,7 @@ function App(params) {
 
       {/* ------------MAP-KEY------------ */}
       {/* <MapKeyCom /> */}
-      <FragmentCom />
+      {/* <FragmentCom /> */}
     </div>
   );
 }

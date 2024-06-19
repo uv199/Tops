@@ -1,6 +1,9 @@
 import React from "react";
 import Counter from "./Counter";
+import { useSelector } from "react-redux";
 export default function CartPage() {
+  let data = useSelector((store)=>store.cartSlice)
+  console.log("-----------  data----------->", data)
   return (
     <div className="container flex flex-row">
       <div className="w-2/3">

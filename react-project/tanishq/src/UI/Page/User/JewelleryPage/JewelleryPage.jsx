@@ -5,6 +5,10 @@ import FilterModal from "../../../Modal/FilterModal";
 import { getAllProduct } from "../../../Api/Product";
 import { useParams } from "react-router-dom";
 import { colors } from "@mui/material";
+import { APIinstance } from "../../../Api/axiosConfig";
+import { useCookies } from "react-cookie";
+import { useDispatch } from "react-redux";
+import { fetchCartApi } from "../../../../redux/cart/cartSlice";
 
 export default function JewelleryPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -17,6 +21,8 @@ export default function JewelleryPage() {
     brand: "",
     size: [],
   });
+
+  let [cookie] = useCookies(["token"]);
 
   const toggleModal = () => {
     setModalOpen(!modalOpen);
@@ -31,6 +37,17 @@ export default function JewelleryPage() {
       setFilter({ ...filter, mainCategory: data.type });
     }
   }, [data]);
+  let dispatch = useDispatch();
+  const addToCartHandler = (id) => {
+    console.log("-----------  id----------->", id);
+    APIinstance.post(`/cart/create/${id}`, null, {
+      headers: {
+        authorization: "bearer " + cookie.token,
+      },
+    }).then((res) => {
+      dispatch(fetchCartApi(cookie.token));
+    });
+  };
 
   useEffect(() => {
     async function getAll(params) {
@@ -83,7 +100,10 @@ export default function JewelleryPage() {
                 </span>
                 <span className="text-lime-400 font-bold text-xs"></span>
                 <p className="text-neutral-800 text-lg">₹ {item.price}</p>
-                <button className=" border-[1px] border-black mt-2 px-3.5 font-com text-lg  capitalize text-black shadow hover:shadow-black/100 ">
+                <button
+                  className=" border-[1px] border-black mt-2 px-3.5 font-com text-lg  capitalize text-black shadow hover:shadow-black/100 "
+                  onClick={() => addToCartHandler(item._id)}
+                >
                   Add To Card
                 </button>
               </div>
