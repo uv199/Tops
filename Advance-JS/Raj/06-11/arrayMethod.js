@@ -2,7 +2,6 @@ let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
 /*
 
-
 // findIndex is like find, but returns the index instead of a value.
 //  return index
 let arrayOfObject = [{ a: 20 }, { a: 30 }, { a: 40 }, { a: 50 }];
@@ -80,7 +79,6 @@ console.log("🚀 ~ newArr ~ newArr:", newArr);
 // TODO do sum of all array element using map
 
 
-*/
 // split/join – convert a string to array and back.
 
 // let str = arr.join("--");
@@ -101,3 +99,12 @@ console.log("🚀 ~ lastStep:", lastStep)
 // TODO : " Urvish V. Patel" => "Patel V. Urvish"
 // TODO : " Urvish V. Patel" => "hsivrU .V letaP"
 
+*/
+
+let arr2 = [10, 20, 30, 40, 50];
+
+let total = arr2.reduce((LRV, ele, i) => {
+  console.log("🚀 ~ arr2.reduce ~ LRV,ele,i:", LRV, ele, i);
+  return ele + LRV;
+}, 50);
+console.log("🚀 ~ total ~ total:", total);
