@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    font-weight: bolder;
+}
+.maindiv{
+display: flex;
+}

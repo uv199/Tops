@@ -16,6 +16,7 @@ export default function Home() {
     dispatch(incByValue(no));
     setNo("");
   };
+  
   return (
     <div>
       <h1>Count is {data.count}</h1>

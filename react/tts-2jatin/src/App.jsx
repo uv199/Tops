@@ -2,6 +2,7 @@
 import ClassCom from "./2.componenet/ClassCom";
 import FunctionCom from "./2.componenet/FunctionCom";
 import Home from "./3.Style/Home";
+import MainFile from "./3.Style/project/MainFile";
 import ClassComState from "./4.state/ClassComState";
 import FunctionalState from "./4.state/FunctionalState";
 import FragmentCom from "./5.Map-Key/FragmentCom";
@@ -16,7 +17,8 @@ function App(params) {
 
       {/* ------------STYLE------------ */}
 
-      <Home />
+      {/* <Home /> */}
+      <MainFile />
 
       {/* ------------STATE------------ */}
 

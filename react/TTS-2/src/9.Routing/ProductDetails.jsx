@@ -6,7 +6,7 @@ export default function ProductDetails() {
   let [data, setData] = useState({});
 
   let paramsData = useParams();
-  console.log("-----------  paramsData----------->", paramsData);
+  
   useEffect(() => {
     const getData = async () => {
       let response = await axios.get(
@@ -16,6 +16,7 @@ export default function ProductDetails() {
     };
     getData();
   }, []);
+
   return (
     <div>
       <img className="w-[100px]" src={data.image} alt="" />

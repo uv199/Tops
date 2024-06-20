@@ -14,6 +14,7 @@ export default function User() {
     dispatch(addUser(name));
     setName("");
   };
+  
   return (
     <div>
       <input
