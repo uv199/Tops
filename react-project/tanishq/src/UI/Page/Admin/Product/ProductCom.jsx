@@ -52,6 +52,8 @@ let [updateMode,setUpdateMode]=useState(false);
 
   // ==========================Update Data In API========================
   const updateHandler = (productdata) => {
+    console.log(
+      "🚀 ~ file: ProductCom.jsx:48 ~ updateHandler ~ updateproductdata:",productdata);
     setOpenModal(true);
     setProductData(productdata)
     setUpdateMode(true);
@@ -75,6 +77,10 @@ let [updateMode,setUpdateMode]=useState(false);
 
   // ====================Add Product in API==================
   const addProduct = async (newProduct) => {
+    console.log(
+      "🚀 ~ file: ProductCom.jsx:57 ~ addProduct ~ newProduct:",
+      newProduct
+    );
     let { data, error } = await createProduct(newProduct);
     if (error) toast.error("somthing went wrong");
     else {

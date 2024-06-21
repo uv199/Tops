@@ -20,7 +20,7 @@ export function ProductModal({
   setProductData,
   updateMode,
   setUpdateMode,
-  refetch
+  refetch,
 }) {
   const sizeData = ["1.5", "2", "3", "4"];
   const { control, handleSubmit, setValue, getValues, reset } = useForm({
@@ -32,7 +32,6 @@ export function ProductModal({
     reset();
     setOpenModal(false);
     setUpdateMode(false);
-
   };
 
   useEffect(() => {
@@ -56,17 +55,17 @@ export function ProductModal({
     setUpdateMode(false);
   };
 
-  const updateHandler= async (inputdata) => {
-   let {data,error}= await updateProduct(inputdata,inputdata?._id);
-   if(error) toast.error("Somthing Went Wrong");
-   else{
-    toast.success("Data Updated");
-   }
-   setOpenModal(false);
-   reset({});
-   setProductData({});
-   refetch()
-  }
+  const updateHandler = async (inputdata) => {
+    let { data, error } = await updateProduct(inputdata, inputdata?._id);
+    if (error) toast.error("Somthing Went Wrong");
+    else {
+      toast.success("Data Updated");
+    }
+    setOpenModal(false);
+    reset({});
+    setProductData({});
+    refetch();
+  };
   return (
     <>
       <Modal show={openModal} onClose={() => closeHandler()}>
@@ -114,21 +113,21 @@ export function ProductModal({
                 <div className="flex items-center gap-2">
                   <Radio
                     id="male"
-                    value="MALE"
+                    value="male"
                     name="gender"
                     onChange={() => setValue("gender", "male")}
                   />
                   <Label>Male</Label>
                   <Radio
                     id="female"
-                    value="FEMALE"
+                    value="female"
                     name="gender"
                     onChange={() => setValue("gender", "female")}
                   />
                   <Label>Female</Label>
                   <Radio
                     id="kids"
-                    value="KIDS"
+                    value="kids"
                     name="gender"
                     onChange={() => setValue("gender", "kids")}
                   />
@@ -218,7 +217,7 @@ export function ProductModal({
                         } else {
                           setValue(
                             "size",
-                            currentValues.filter((s) => s !== size)
+                            currentValues.filter((e) => e !== size)
                           );
                         }
                       }}
@@ -228,7 +227,9 @@ export function ProductModal({
                 ))}
               </div>
               {updateMode ? (
-                <Button onClick={handleSubmit(updateHandler)}>Update Product</Button>
+                <Button onClick={handleSubmit(updateHandler)}>
+                  Update Product
+                </Button>
               ) : (
                 <Button type="submit">Add Product</Button>
               )}

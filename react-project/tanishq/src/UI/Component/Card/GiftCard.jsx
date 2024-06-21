@@ -20,7 +20,7 @@ export default function GiftCard({img,title,price}) {
           }}
           className="p-1 bg-white h-8 rounded-full drop-shadow-md "
         >
-          <CiHeart className="text-gray-400 text-2xl " />
+          <CiHeart className="text-[#832729] text-2xl " />
         </span>
         <span>
           <p className="text-start font-semibold h-[3rem]" style={{ fontSize: "13px" }}>

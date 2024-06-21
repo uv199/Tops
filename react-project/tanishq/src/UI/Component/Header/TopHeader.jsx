@@ -10,14 +10,17 @@ import { useSelector } from "react-redux";
 export default function TopHeader(modal, toggle) {
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies(["token", "user"]);
+  // console.log(" cookiesdata ========>", cookies);
   let cartData = useSelector((store) => store.cartSlice);
-  console.log("-----------  cartData----------->", cartData);
+  console.log("===>cartData:", cartData)
+  
   return (
     <div>
       <div className="w-[100%] bg-red-50 py-2 px-4">
         <div className=" py-2 px-4 items-center flex justify-center gap-2 w-[100%] ">
           <span>
             <img
+              src="../../../../public/logo/logo.png"
               alt=""
               className="w-30 h-14 cursor-pointer"
               onClick={() => navigate("/")}
@@ -32,13 +35,7 @@ export default function TopHeader(modal, toggle) {
             />
           </span>
           <div className="flex  py-3 mt-3 gap-4 justify-center">
-            {/* <span
-              className=" px-2  flex flex-col justify-center items-center hover:scale-110 transiti transition duration-700 ease-in-out cursor-pointer"
-              
-            >
-              <LiaStoreAltSolid className="text-2xl text-[#832729]" />
-              <p className="text-xm text-[#832729]">STORE</p>
-            </span> */}
+            
             {cookies?.user?.userType !== "admin" && (
               <>
                 <span

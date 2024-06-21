@@ -12,6 +12,7 @@ let [registerData,setRegisterData]=useState();
 const [cookies, setCookie ] = useCookies(["token"]);
 
   const registerHandler =async (regdata) => {
+      console.log("🚀 ~ file: Register.jsx:13 ~ registerHandler ~ regdata:", regdata)
       let { data, error } = await registerApi(regdata);
     if (error) toast.error("somthing went wrong");
     else {
@@ -34,6 +35,7 @@ const [cookies, setCookie ] = useCookies(["token"]);
       <div className="border-[1px] border-gray-300 w-[50%] m-8 ">
         <p className="text-2xl m-5">Register</p>
         <p className="text-gray-400 m-5">
+          If you have an account with us, please log in.
         </p>
 
         <form

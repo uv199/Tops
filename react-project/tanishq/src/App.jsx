@@ -2,7 +2,7 @@ import { ToastContainer } from "react-toastify";
 import "./App.css";
 import Router from "./Router/Router";
 import { Provider } from "react-redux";
-import { store } from "./redux/app";
+import { store } from "./Redux/app";
 
 function App() {
   return (

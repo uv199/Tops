@@ -2,15 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../UI/Component/Header/Header";
 import Home from "../UI/Page/User/Home/Home";
-import Gold from "../UI/Page/User/Gold/Gold";
-import Diamond from "../UI/Page/User/Diamond/Diamond";
-import Errings from "../UI/Page/User/Errings/Errings";
-import Rings from "../UI/Page/User/Rings/Rings";
-import Collection from "../UI/Page/User/Collections/Collection";
-import Wedding from "../UI/Page/User/Wedding/Wedding";
-import Gifting from "../UI/Page/User/Gifting/Gifting";
-import GoldenHarvest from "../UI/Page/User/GoldenHarvest/GoldenHarvest";
-import More from "../UI/Page/User/More/More";
 import JewelleryPage from "../UI/Page/User/JewelleryPage/JewelleryPage";
 import Footer from "../UI/Component/Footer/Footer";
 import PageNotFound from "./PageNotFound";
@@ -20,9 +11,10 @@ import Login from "../UI/Page/User/Login/Login";
 import Register from "../UI/Page/User/Register/Register";
 import CartPage from "../UI/Page/User/Cart/CartPage";
 import { CookiesProvider } from "react-cookie";
-import { AdminProtected, LoginProtected, ProtectRouter } from "./ProtectRouter";
+import { AdminProtected, LoginProtected, ProtectRouter, UserProtected } from "./ProtectRouter";
 import ProductCom from "../UI/Page/Admin/Product/ProductCom";
 import UserCom from "../UI/Page/Admin/User/UserCom";
+import UnauthorisePage from "./UnauthorisePage";
 
 export default function Router() {
   return (
@@ -32,7 +24,8 @@ export default function Router() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/jewellery/:type" element={<JewelleryPage />} />
+            <Route path="/jewellery/:type" 
+            element={<JewelleryPage />}/>
 
             <Route
               path="/profilePage"
@@ -50,15 +43,17 @@ export default function Router() {
               path="/register"
               element={<LoginProtected Component={<Register />} />}
             />
-            <Route path="/cartpage" element={<CartPage />} />
+            <Route path="/cartpage"  element={<ProtectRouter Component={<CartPage />}/>}/>
+
             <Route
               path="/product"
               element={<AdminProtected Component={<ProductCom />} />}
             />
             <Route
-              path="/Userlist"
+              path="/userlist"
               element={<AdminProtected Component={<UserCom />} />}
             />
+            <Route path="/unauthorisePage" element={<UnauthorisePage />} />
 
             <Route path="*" element={<PageNotFound />} />
           </Routes>
