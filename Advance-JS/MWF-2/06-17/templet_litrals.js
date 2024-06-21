@@ -19,3 +19,16 @@ for (let ele of nameArr) {
   //   console.log("hello " + ele + " good morning", ", how are you ", ele);
   console.log(`hello ${ele} good morning, how are you ${ele}`);
 }
+
+let x = 60000
+let str ='""'
+let str2 ="'"
+let str3 =`
+
+' "
+
+no is ${x}
+
+
+`
+console.log("-----------  str3----------->", str3)

@@ -26,6 +26,8 @@ import MultipleInput from "./10.Input/MultipleInput";
 import RadioInput from "./10.Input/RadioInput";
 import CheckBox from "./10.Input/CheckBox";
 import SelectReact from "./10.Input/SelectReact";
+import SearchCom from "./10.Input/SearchCom";
+import FilterCom from "./10.Input/FilterCom";
 export default function App() {
   return (
     <ThemeProvider>
@@ -74,7 +76,9 @@ export default function App() {
         {/* <MultipleInput /> */}
         {/* <RadioInput /> */}
         {/* <CheckBox /> */}
-        <SelectReact />
+        {/* <SelectReact /> */}
+        {/* <SearchCom /> */}
+        <FilterCom />
       </div>
     </ThemeProvider>
   );

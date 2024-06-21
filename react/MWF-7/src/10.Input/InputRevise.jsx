@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export default function InputRevise() {
   let [task, setTask] = useState("");
   let [taskArr, setTaskArr] = useState([]);
-  console.log("-----------  taskArr----------->", taskArr);
 
   const getData = (e) => {
     setTask(e.target.value);
