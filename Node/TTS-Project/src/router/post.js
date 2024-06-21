@@ -5,13 +5,13 @@ import multer from "multer";
 
 const upload = multer({ dest: "./public/data/uploads/" });
 
-app.post(
-  "/upload-profile",
-  upload.single("uploaded_file"),
-  function (req, res) {
-    console.log(req.file, req.body);
-  }
-);
+// app.post(
+//   "/upload-profile",
+//   upload.single("uploaded_file"),
+//   function (req, res) {
+//     console.log(req.file, req.body);
+//   }
+// );
 
 const router = express.Router();
 

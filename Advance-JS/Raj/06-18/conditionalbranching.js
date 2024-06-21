@@ -8,7 +8,7 @@ let a = x ? x : y > z ? y : z;
 console.log("🚀 ~ a:", a);
 
 /*
-4 - [R, Y ,G ,B]
+4 - [R, Y, G, B]
 13
 
 1. R
