@@ -1,0 +1,103 @@
+
+ 
+element.style {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;
+    transform: translate3d(0%, 0px, 0px);
+}
+.imgsec{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.imgsec img{
+    width: 325px;
+}
+.imgsec2 {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.imgsec2 img{
+    width: 325px;
+}
+
+.img-child{
+    position: relative;
+}
+.img-child:after,.img-child:before{
+    content:'';
+    position: absolute;
+    background-color: #fff;
+    /* width: 100%; */
+    height: 1px;
+    left: 10px;
+    right: 10px;
+    transition: all .5s ease-in-out;
+    transform: scaleX(0);
+    z-index: 1;
+
+}
+.img-child img:after,.img-child img:before{
+    content:'';
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    height: 2px;
+    top: 10px;
+    bottom: 10px;
+    transform: scaleY(0);
+}
+.img-child:after{
+    bottom: 10px;
+}
+.img-child:before{
+    top: 10px;
+}
+.img-child:hover:after,.img-child:hover:before{
+    transform: scaleX(1);
+}
+/* -------------------Horizontal hover effect ----------------- */
+.img-child{
+    position: relative;
+}
+.img-child:after,.img-child:before{
+    content:'';
+    position: absolute;
+    background-color: #fff;
+    /* width: 100%; */
+    height: 1px;
+    left: 10px;
+    right: 10px;
+    transition: all .5s ease-in-out;
+    transform: scaleX(0);
+    z-index: 1;
+
+}
+.img-child img:after,.img-child img:before{
+    content:'';
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    height: 2px;
+    top: 10px;
+    bottom: 10px;
+    transform: scaleY(0);
+}
+.img-child:after{
+    bottom: 10px;
+}
+.img-child:before{
+    top: 10px;
+}
+.img-child:hover:after,.img-child:hover:before{
+    transform: scaleX(1);
+}
+
+

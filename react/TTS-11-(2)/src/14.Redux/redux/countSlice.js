@@ -11,7 +11,6 @@ let countSlice = createSlice({
       state.count = state.count + +action.payload;
     },
   },
-
   extraReducers: (builder) => {
     builder.addCase("user/addUser", (state, action) => {
       state.count++;

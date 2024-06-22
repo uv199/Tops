@@ -1,0 +1,36 @@
+.box{
+  position: relative;
+}
+.box::after{
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 326px;
+  display: block;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  top :12px;
+  left: 10px;
+  transition: 1s ease-in-out;
+  transform: scaleX(0);
+}
+.box:hover::after{
+  transform: scaleX(1);
+}
+.box::before{
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 326px;
+  display: block;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  top :12px;
+  left: 10px;
+  rotate: 180deg;
+  transition: 1s ease-in-out;
+  transform: scaleY(0);
+}
+.box:hover::before{
+  transform: scaleY(1);
+}

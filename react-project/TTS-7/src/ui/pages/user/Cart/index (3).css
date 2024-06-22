@@ -1,0 +1,90 @@
+.mainDiv {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+
+.progress-bar {
+    background: #f0f0f0;
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.progress {
+    background: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+}
+
+
+.product-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+
+.item-controls {
+    display: flex;
+    align-items: center;
+}
+
+.item-controls button {
+    background: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.item-controls span {
+    margin: 0 10px;
+}
+
+
+.order-message {
+    background: #d4f5d4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: green;
+}
+
+.checkout-btn,
+.continue-shopping {
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.secure-checkout {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
