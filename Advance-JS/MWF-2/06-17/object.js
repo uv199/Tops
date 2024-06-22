@@ -58,5 +58,3 @@ console.log("----->", user.subObj.b.b2);
 console.log("----->", user.arr[3][2].c[0][3].student.city);
 
 user.print();
-
-

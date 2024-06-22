@@ -7,6 +7,7 @@ import ClassComState from "./4.state/ClassComState";
 import FunctionalState from "./4.state/FunctionalState";
 import FragmentCom from "./5.Map-Key/FragmentCom";
 import MapKeyCom from "./5.Map-Key/MapKeyCom";
+import UseEffect from "./6.HOOK/useEffect/UseEffect";
 function App(params) {
   return (
     <div className="flex justify-center items-center">
@@ -18,7 +19,7 @@ function App(params) {
       {/* ------------STYLE------------ */}
 
       {/* <Home /> */}
-      <MainFile />
+      {/* <MainFile /> */}
 
       {/* ------------STATE------------ */}
 
@@ -28,6 +29,9 @@ function App(params) {
       {/* ------------MAP-KEY------------ */}
       {/* <MapKeyCom /> */}
       {/* <FragmentCom /> */}
+
+      {/* ------------HOOK------------ */}
+      <UseEffect />
     </div>
   );
 }
