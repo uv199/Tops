@@ -1,17 +1,15 @@
-import './App.css'
+import "./App.css";
 import "react-multi-carousel/lib/styles.css";
-import Router from './router/Router';
-
-
-
+import Router from "./router/Router";
+import AppRedux from "./Redux/AppRedux";
 
 function App() {
-
   return (
-    <div >
+    <div>
       <Router />
-    </div >
-  )
+      <AppRedux />
+    </div>
+  );
 }
 
-export default App
+export default App;

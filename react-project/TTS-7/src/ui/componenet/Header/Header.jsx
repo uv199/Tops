@@ -1,203 +1,223 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../images/logo.png";
 import { NavLink } from "react-router-dom";
-import { ArrowDown, ChevronDownIcon } from "lucide-react";
+import {
+  ArrowDown,
+  ChevronDownIcon,
+  Menu,
+  Search,
+  ShoppingBag,
+} from "lucide-react";
+import img1 from "../images/menu1.png";
+import img2 from "../images/menu2.png";
+import img3 from "../images/menu3.png";
+import img4 from "../images/menu4.png";
+import img5 from "../images/menu5.png";
+import img6 from "../images/menu6.png";
+import img7 from "../images/menu7.png";
+import img8 from "../images/menu8.png";
+import img9 from "../images/menu9.png";
+import img10 from "../images/menu10.png";
+
 export default function Header() {
+  let [login_menu, setLogin_menu] = useState(false);
+  let [collectionMenu, setCollectionMenu] = useState(false);
+  const loginMenuHandler = () => {
+    setLogin_menu(!login_menu);
+  };
+  const collectionHandler = () => {
+    setCollectionMenu(!collectionMenu);
+  };
   return (
-    <header class="bg-white">
+    <header className="bg-white relative">
       <nav
-        class="mx-auto flex max-w-full items-center justify-between p-6 lg:px-4"
+        className="mx-auto flex max-w-full items-center justify-between p-6 lg:px-[80px]"
         aria-label="Global"
       >
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src={logo} alt="" />
+        <div className="flex lg:flex-1">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <img className="h-8 w-auto" src={logo} alt="" />
           </a>
         </div>
-        <div class="flex lg:hidden">
+        <div className="flex lg:hidden">
           <button
             type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <span class="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
-              class="h-6 w-6"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               aria-hidden="true"
               data-slot="icon"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
           </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <NavLink to="/" className="">
+        <div className="hidden lg:flex lg:gap-x-6">
+          <NavLink
+            to="/"
+            className="text-sm py-3 font-semibold leading-6 text-gray-900 "
+          >
             Home
           </NavLink>
-          <NavLink to="/" className="flex items-center">
-            Collection <ChevronDownIcon />
-          </NavLink>
-          <NavLink to="/" className="">
-            New Arrivals
-          </NavLink>
-          <NavLink to="/" className="">
-            Yearly Sample Subscription
-          </NavLink>
-          <NavLink to="/" className="">
-            Order Samples
-          </NavLink>
-          <NavLink to="/" className="">
-            My Custom Gift Box
-          </NavLink>
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </nav>
 
-      <div class="lg:hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 z-10"></div>
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img
-                class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Close menu</span>
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
+          <div className="group">
+            <button className="text-sm py-3 font-semibold leading-6 text-gray-900 flex">
+              Collection <ChevronDownIcon />
             </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <div class="-mx-3">
-                  <button
-                    type="button"
-                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    aria-controls="disclosure-1"
-                    aria-expanded="false"
-                  >
-                    Product
-                    <svg
-                      class="h-5 w-5 flex-none"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      data-slot="icon"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                        clip-rule="evenodd"
+            <div className="absolute w-full z-10 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
+              <div className="flex p-4 px-10">
+                <div className="w-[20%]">
+                  <h6 className="font-semibold mb-4">COLLECTIONS</h6>
+                  <ul>
+                    <li>Perfume Sprays</li>
+                    <li>Mist</li>
+                    <li>Solid Perfume</li>
+                    <li>Perfume Creme</li>
+                    <li>Beard Balm</li>
+                    <li>Candles</li>
+                    <li>Reed Diffuser</li>
+                    <li>Gift Packs</li>
+                    <li>My Custom Gift Box</li>
+                    <li>Foot Spray</li>
+                  </ul>
+                </div>
+                <div className="w-[80%]">
+                  <div className="grid grid-cols-5 gap-4">
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img1}
+                        className="hover:scale-110 transition-transform duration-500"
                       />
-                    </svg>
-                  </button>
-
-                  <div class="mt-2 space-y-2" id="disclosure-1">
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Analytics
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Engagement
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Security
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Integrations
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Automations
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Watch demo
-                    </a>
-                    <a
-                      href="#"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Contact sales
-                    </a>
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img2}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img3}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img4}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img5}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img6}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img7}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img8}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img9}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="overflow-hidden border border-gray-300">
+                      <img
+                        src={img10}
+                        className="hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
-              </div>
-              <div class="py-6">
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
               </div>
             </div>
           </div>
+          <NavLink
+            to="/"
+            className="text-sm py-3 font-semibold leading-6 text-gray-900 "
+          >
+            New Arrivals
+          </NavLink>
+          <NavLink
+            to="/"
+            className="text-sm py-3 font-semibold leading-6 text-gray-900 "
+          >
+            Yearly Sample Subscription
+          </NavLink>
+          <NavLink
+            to="/"
+            className="text-sm py-3 font-semibold leading-6 text-gray-900 "
+          >
+            Order Samples
+          </NavLink>
+          <NavLink
+            to="/"
+            className="text-sm py-3 font-semibold leading-6 text-gray-900 "
+          >
+            My Custom Gift Box
+          </NavLink>
         </div>
-      </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Search className="w-5" />
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <ShoppingBag className="w-5" />
+          </a>
+          <div className="relative">
+            <button className="text-sm mt-1.5 font-semibold leading-6 text-gray-900">
+              <Menu onClick={loginMenuHandler} className="w-5" />
+            </button>
+            <ul
+              className={`absolute right-[-15px] mt-2 space-y-2 bg-white shadow-lg rounded-lg ${login_menu ? "block" : "hidden"}`}
+            >
+              <li>
+                <NavLink
+                  to="/login"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/register"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  Register
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }

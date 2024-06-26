@@ -4,6 +4,6 @@
 
 @layer components {
   .btn {
-    @apply hover:bg-black hover:text-white rounded-sm;
+    @apply hover:bg-white hover:text-black border border-black;
   }
 }

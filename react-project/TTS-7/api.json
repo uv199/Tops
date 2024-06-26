@@ -1,0 +1,44 @@
+[
+  {
+    "api-name": "login",
+    "API-type": "post",
+    "endPoint": "user/signin",
+    "body-data": {
+      "email": "uvpatel199@gmail.com",
+      "password": "123"
+    }
+  },
+  {
+    "api-name": "signup",
+    "API-type": "post",
+    "endPoint": "user/signup",
+    "body-data": {
+      "name": "urvish",
+      "email": "uvpatel199@gmail.com",
+      "number": "209",
+      "password": "123",
+      "age": 1212,
+      "address": [
+        {
+          "add": "adasda",
+          "city": "surat",
+          "state": "gujarat",
+          "pinCode": "395007"
+        }
+      ]
+    }
+  },
+  {
+    "api-name": "get All product",
+    "API-type": "get",
+    "endPoint": "product/getAll",
+    "body-data": {}
+  },
+  {
+    "api-name": "Add product",
+    "API-type": "post",
+    "endPoint": "product/create",
+    "header": "admin token",
+    "body-data": {}
+  }
+]
