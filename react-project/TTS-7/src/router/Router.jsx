@@ -11,6 +11,7 @@ import Footer from "../ui/componenet/Footer/Footer";
 import Home from "../ui/pages/user/Home/Home";
 import Login from "../ui/pages/auth/Login/Login";
 import Register from "../ui/pages/auth/Register/Register";
+import DataForm from "../ui/pages/auth/Register/DataForm";
 
 export default function Router() {
   return (
@@ -27,6 +28,7 @@ export default function Router() {
             {/* ---------AUTH-------- */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/react-form" element={<DataForm />} />
 
             {/* ---------USER-------- */}
           </Routes>
