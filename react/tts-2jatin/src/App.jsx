@@ -9,6 +9,8 @@ import FragmentCom from "./5.Map-Key/FragmentCom";
 import MapKeyCom from "./5.Map-Key/MapKeyCom";
 import UseEffect from "./6.HOOK/useEffect/UseEffect";
 import UseEffectPro1 from "./6.HOOK/useEffect/demoProject/UseEffectPro1";
+import UseRefCom from "./6.HOOK/userRef/UseRefCom";
+import Parent from "./7.Props/Parent";
 function App(params) {
   return (
     <div className="flex justify-center items-center">
@@ -33,7 +35,11 @@ function App(params) {
 
       {/* ------------HOOK------------ */}
       {/* <UseEffect /> */}
-      <UseEffectPro1 />
+      {/* <UseEffectPro1 /> */}
+      {/* <UseRefCom /> */}
+
+      {/* ------------PROPS------------ */}
+      <Parent />
     </div>
   );
 }

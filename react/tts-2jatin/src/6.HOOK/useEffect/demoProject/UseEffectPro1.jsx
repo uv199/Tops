@@ -11,8 +11,7 @@ export default function UseEffectPro1() {
       alert("please login");
     }, 5000);
   }, []);
-  
-  
+
   useEffect(() => {
     console.log("every time");
   });

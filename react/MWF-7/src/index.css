@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 @layer components {
   .base-btn {
     @apply bg-[#1d1978] text-white border border-[#141259] hover:text-[#141259] hover:bg-white rounded-md px-2 py-1;

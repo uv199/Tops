@@ -28,6 +28,7 @@ import CheckBox from "./10.Input/CheckBox";
 import SelectReact from "./10.Input/SelectReact";
 import SearchCom from "./10.Input/SearchCom";
 import FilterCom from "./10.Input/FilterCom";
+import Router from "./11.router/simpleRouter/Router";
 export default function App() {
   return (
     <ThemeProvider>
@@ -78,7 +79,10 @@ export default function App() {
         {/* <CheckBox /> */}
         {/* <SelectReact /> */}
         {/* <SearchCom /> */}
-        <FilterCom />
+        {/* <FilterCom /> */}
+
+        {/* -------------ROUTER------------- */}
+        <Router />
       </div>
     </ThemeProvider>
   );

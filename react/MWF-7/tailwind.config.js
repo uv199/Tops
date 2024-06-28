@@ -11,6 +11,9 @@ export default withMT({
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      themeFont: ["IBM Plex Sans", "sans-serif"],
+    },
     colors: {
       "theme-color": "#231ed4",
     },
