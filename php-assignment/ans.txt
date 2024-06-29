@@ -1,0 +1,29 @@
+Q-1 What will be the values of $a and $b after the code below is executed ? Explain your answer.
+    $a = '1';
+    $b = &$a;
+    $b = "2$b";
+answer : $a = 21 $b = 21
+
+Q-2 How can you tell if a number is even or odd without using any Condition orloop? 
+answer : !(40 & 1);
+
+Q-3 How can you tell if a number is even or odd without using any Condition or
+answer - 
+$indexedArray2 = [40, 50, 60];
+$jsonString = '{"a": "asa", "b": 30, "c": "dsd"}';
+// Convert JSON string to PHP array
+$arrayFromJson = json_decode($jsonString, true);
+
+// Access elements of the array
+echo "Name: " . $arrayFromJson['name'] . "<br>";
+echo "Age: " . $arrayFromJson['age'] . "<br>";
+echo "City: " . $arrayFromJson['city'] . "<br>";
+
+
+Q-3 Declare a Multi Dimensioned array of floats called balances having Three rows and five columns.
+
+$arr = [
+    [0.0, 0.0, 0.0, 0.0, 0.0],  
+    [0.0, 0.0, 0.0, 0.0, 0.0],   
+    [0.0, 0.0, 0.0, 0.0, 0.0],  
+];
