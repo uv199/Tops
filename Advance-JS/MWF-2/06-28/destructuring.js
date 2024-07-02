@@ -27,7 +27,7 @@ function print({ name, age }) {
 }
 
 print({ name: "urvish", age: 23 });
-*/
+
 function giveData() {
   return { name: "urvish", age: 23 };
 }
@@ -38,3 +38,16 @@ function giveData() {
 
 let { name, age } = giveData();
 console.log(`my name is ${name}, i am ${age} yeras old`);
+
+
+*/
+let arr = [10, 20, 30];
+
+// let x = arr[0];
+// let y = arr[1];
+// let z = arr[2];
+
+let [x, z, y, a] = arr;
+console.log("-----------  x----------->", x);
+console.log("-----------  y----------->", y);
+console.log("-----------  z----------->", z);

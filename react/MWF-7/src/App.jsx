@@ -29,6 +29,7 @@ import SelectReact from "./10.Input/SelectReact";
 import SearchCom from "./10.Input/SearchCom";
 import FilterCom from "./10.Input/FilterCom";
 import Router from "./11.router/simpleRouter/Router";
+import { ToastContainer } from "react-toastify";
 export default function App() {
   return (
     <ThemeProvider>
@@ -84,6 +85,7 @@ export default function App() {
         {/* -------------ROUTER------------- */}
         <Router />
       </div>
+      <ToastContainer />
     </ThemeProvider>
   );
 }

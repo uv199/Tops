@@ -5,6 +5,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Error404 from "./Error404";
 import Header from "./Header";
+import Product from "./product/Product";
 export default function Router() {
   return (
     <div>
@@ -20,6 +21,7 @@ export default function Router() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" Component={Contact} />
+          <Route path="/product" Component={Product} />
           <Route path="*" Component={Error404} />
         </Routes>
       </BrowserRouter>
