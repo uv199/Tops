@@ -5,4 +5,6 @@ export default function ProductTable() {
    <div>Table</div>
   );
 }
-//  /product/getAll
+
+// page path - /admin/product
+//  /product/getAll -> show all product data 

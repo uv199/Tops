@@ -30,6 +30,7 @@ import SearchCom from "./10.Input/SearchCom";
 import FilterCom from "./10.Input/FilterCom";
 import Router from "./11.router/simpleRouter/Router";
 import { ToastContainer } from "react-toastify";
+import UberTask from "./000.task/UberTask";
 export default function App() {
   return (
     <ThemeProvider>
@@ -37,40 +38,32 @@ export default function App() {
         {/* --------------TASK------------ */}
         {/* <HomeAssignMent1 /> */}
         {/* <Tailwind /> */}
-
+        <UberTask />
         {/* --------------COMPONENET------------ */}
         {/* <FunCome /> */}
         {/* <ClassCom /> */}
-
         {/* -------------STYLE------------- */}
         {/* <Home /> */}
-
         {/* -------------STATE------------- */}
         {/* <FunComState /> */}
         {/* <ClassComState /> */}
         {/* <HomePage /> */}
-
         {/* -------------MAPKEY------------- */}
         {/* <MapKeyCom /> */}
-
         {/* -------------PROPS------------- */}
         {/* <PropsFunCom /> */}
         {/* <Parent /> */}
-
         {/* -------------LIFECYCLE METHOD------------- */}
         {/* <LifeCycleMethod /> */}
-
         {/* -------------CONDITIONAL RENDARING------------- */}
         {/* <ConditionalRendaring /> */}
         {/* <LoginCondition /> */}
-
         {/* -------------HOOK------------- */}
         {/* <UseRefCom /> */}
         {/* <UseEffect /> */}
         {/* <UseEffectProject /> */}
         {/* <UseReducer /> */}
         {/* <UseContext /> */}
-
         {/* -------------INPUT------------- */}
         {/* <InputCom /> */}
         {/* <LocalStorageInput /> */}
@@ -81,9 +74,8 @@ export default function App() {
         {/* <SelectReact /> */}
         {/* <SearchCom /> */}
         {/* <FilterCom /> */}
-
         {/* -------------ROUTER------------- */}
-        <Router />
+        {/* <Router /> */}
       </div>
       <ToastContainer />
     </ThemeProvider>

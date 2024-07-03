@@ -24,7 +24,7 @@ function App(params) {
       {/* ------------STYLE------------ */}
 
       {/* <Home /> */}
-      {/* <MainFile /> */}
+      <MainFile />
 
       {/* ------------STATE------------ */}
 
@@ -40,7 +40,7 @@ function App(params) {
       {/* <UseEffectPro1 /> */}
       {/* <UseRefCom /> */}
       {/* <UseReducer /> */}
-      <UseContaxt />
+      {/* <UseContaxt /> */}
 
       {/* ------------PROPS------------ */}
       {/* <Parent /> */}
