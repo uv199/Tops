@@ -1,15 +1,22 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Button, Input } from 'reactstrap'
 
-const alldata = { name: "", email: "", number: "", age: "", gender: "", address: "", city: "", state: "", pincode: "", password: "", cpassword: "" }
+const alldata = { name: "", email: "", number: "", password: "", age: "", address: "", city: "", state: "", pincode: "", cpassword: "" }
 
 export default function Registration() {
     let [data, setdata] = useState(alldata)
 
-    const Submithandler = (e) => {
+    const Submithandler = async (e) => {
         e.preventDefault()
-        setdata(alldata);
-        console.log("🚀 ~ Login ~ data:", data)
+        try {
+            let response = await axios.post("http://localhost:9999/user/signup", data)
+            console.log("🚀 ~ Submithandler ~ response:", response.data)
+            setdata(alldata);
+            console.log("🚀 ~ Login ~ data:", data)
+        } catch (error) {
+            console.log("🚀 ~ Submithandler ~ error:", error)
+        }
     }
 
     return (
@@ -25,34 +32,30 @@ export default function Registration() {
             <label>Number*</label>
             <Input value={data.number} type="text" placeholder='Enter your number' className='bg-slate-100' onChange={(e) => setdata({ ...data, number: e.target?.value })} />
 
+            <label>Password*</label>
+            <Input value={data.password} type="password" placeholder='Enter your Password' className='bg-slate-100' onChange={(e) => setdata({ ...data, password: e.target?.value })} />
+
             <label>Age*</label>
             <Input value={data.age} type="number" placeholder='Enter your age' className='bg-slate-100' onChange={(e) => setdata({ ...data, age: e.target?.value })} />
 
-            <h1>Gender*</h1>
-            <Input type='radio' />Male
-            <Input type='radio' />Female
-
-            <br />
             <label>Address-1*</label>
-            <Input type="text" placeholder='Enter your address' className='bg-slate-100' onChange={(e) => setdata({ ...data, address: e.target?.value })} />
+            <Input value={data.address} type="text" placeholder='Enter your address' className='bg-slate-100' onChange={(e) => setdata({ ...data, address: e.target?.value })} />
 
             <label>City*</label>
-            <Input type="text" placeholder='Enter your city' className='bg-slate-100' onChange={(e) => setdata({ ...data, city: e.target?.value })} />
+            <Input value={data.city} type="text" placeholder='Enter your city' className='bg-slate-100' onChange={(e) => setdata({ ...data, city: e.target?.value })} />
 
             <label>State*</label>
-            <Input type="text" placeholder='Enter your state' className='bg-slate-100' onChange={(e) => setdata({ ...data, state: e.target?.value })} />
+            <Input value={data.state} type="text" placeholder='Enter your state' className='bg-slate-100' onChange={(e) => setdata({ ...data, state: e.target?.value })} />
 
             <label>Pincode*</label>
-            <Input type="text" placeholder='Enter your picode' className='bg-slate-100' onChange={(e) => setdata({ ...data, pincode: e.target?.value })} />
+            <Input value={data.pincode} type="text" placeholder='Enter your pincode' className='bg-slate-100' onChange={(e) => setdata({ ...data, pincode: e.target?.value })} />
 
-            <label>Password*</label>
-            <Input value={data.password} type="password" placeholder='Password' className='bg-slate-100' onChange={(e) => setdata({ ...data, password: e.target?.value })} />
 
-            <label>Confirm Password*</label>
-            <Input value={data.password} type="password" placeholder='Enter your confirm password' className='bg-slate-100' onChange={(e) => setdata({ ...data, cpassword: e.target?.value })} />
+            {/* <label>Confirm Password*</label>
+            <Input value={data.cpassword} type="password" placeholder='Enter your confirm password' className='bg-slate-100' onChange={(e) => setdata({ ...data, cpassword: e.target?.value })} /> */}
 
             <div className='text-center mt-3'>
-                <Button className='border-2 border-red-600 text-red-600 bg-white' onClick={(e) => Submithandler(e)}>REGISTER</Button>
+                <Button className='border-2 border-red-600 text-red-600 bg-white hover:text-red-600 hover:border-red-600' onClick={(e) => Submithandler(e)}>REGISTER</Button>
             </div>
         </div>
     )

@@ -10,6 +10,7 @@ import Home from "../ui/page/Home";
 import Footer from "../ui/components/Footer";
 import Login from "../ui/page/Login";
 import Registration from "../ui/page/Registration";
+import ProductForm from "../ui/page/ProductForm";
 
 export default function Router() {
   return (
@@ -25,6 +26,7 @@ export default function Router() {
           <Route path="/Merchandise" element={<Merchandise />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<Registration />} />
+          <Route path="/ProductForm" element={<ProductForm />} />
         </Routes>
         <Footer />
       </BrowserRouter>

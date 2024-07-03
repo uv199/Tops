@@ -15,11 +15,10 @@ export default function UberTask() {
   const reverseHandler = () => {
     let copyIndex = [...index];
     let copyArr = [...arr];
-    let id = null;
-    id = setInterval(async () => {
+    let id = setInterval(() => {
       let i = copyIndex.pop();
-      copyArr[i] = 1;
-      await setArr([...copyArr]);
+      copyArr[i] = 0;
+      setArr([...copyArr]);
       if (copyIndex.length === 0) {
         clearInterval(id);
       }

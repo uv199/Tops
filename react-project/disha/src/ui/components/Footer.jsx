@@ -4,11 +4,14 @@ import { Button, Table } from "reactstrap";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-500 p-3 mt-5">
+    <footer className="bg-green-500 py-5 px-12 mt-5">
       <div className="flex justify-between">
-        <h1 className="font-bold text-white text-2xl">JOIN OUR VEIRDO FAM</h1>
-        <div className="border rounded bg-white p-1">
-          <input className="font-thin h-full" placeholder="veirdo@yahoo.com" />
+        <div className="flex flex-col drop-shadow-lg">
+          <h1 className="font-bold text-white text-5xl">JOIN OUR </h1>
+          <h1 className="font-bold text-white text-5xl">VEIRDO FAM</h1>
+        </div>
+        <div className="border rounded bg-white p-1 h-full shadow-[1px_2px_0_0_black]">
+          <input className="font-thin h-full w-[400px]" placeholder="veirdo@yahoo.com" />
           <Button className="bg-purple-600">SUBSCRIBE</Button>
         </div>
       </div>
@@ -16,11 +19,11 @@ export default function Footer() {
         <p className="font-bold">SPOT US ON</p>
       </div>
       <div>
-        <Table className="">
+        <Table className="shadow-md">
           <thead>
-            <tr className="border border-black">
-              <th className=" !bg-green-500 border-r p-3 cursor-pointer hover:bg-green-950">
-                <div className="flex gap-2 items-center ">
+            <tr className="border border-black hover:bg-[#c0d3cc]">
+              <th className=" !bg-green-500 border-r p-3 cursor-pointer">
+                <div className="flex gap-2 items-center">
                   <Instagram />
                   INSTAGRAM
                 </div>
@@ -86,7 +89,7 @@ export default function Footer() {
           className="text-yellow-400 font-bold text-[150px]"
           scrollamount="20">
           <span>FIND YOUR FLIP SIDE</span>
-          <span>FIND YOUR FLIP SIDE</span>
+          <span className="ml-[15vw]">FIND YOUR FLIP SIDE</span>
         </marquee>
       </div>
       <p className="text-sm">Copyright © VEIRDO 2023</p>

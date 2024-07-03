@@ -2,9 +2,20 @@ import React from "react";
 import logoImg from "../../Images/logo.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Heart, Search, ShoppingCart, User } from "lucide-react";
+import { useCookies } from "react-cookie";
 
 export default function Header() {
   const navigate = useNavigate();
+
+  let [cookies, setCookies, removeCookies] = useCookies(["token", "user"]);
+  console.log("-----------  cookies----------->", cookies);
+
+  const logoutHandler = () => {
+    removeCookies("user");
+    removeCookies("token");
+    navigate("/");
+  };
+
   return (
     <>
       <div className="bg-blue-500 text-white text-center py-1">
@@ -19,43 +30,71 @@ export default function Header() {
               onClick={() => navigate("/")}
             />
           </p>
-          <div className="flex gap-4 text-sm ">
-            <NavLink className="hover:text-gray-400" to={"Best_Sellers"}>
-              Best Sellers
-            </NavLink>
-            <NavLink className="hover:text-gray-400" to={"New_arrivals"}>
-              New arrivals
-            </NavLink>
-            <NavLink className="hover:text-gray-400" to={"Oversized_tshirts"}>
-              Oversized tshirts
-            </NavLink>
-            <NavLink className="hover:text-gray-400" to={"All_categories"}>
-              All categories
-            </NavLink>
-            <NavLink className="hover:text-gray-400" to={"Merchandise"}>
-              Merchandise
-            </NavLink>
-          </div>
+          {cookies?.user?.userType === "admin" ? (
+            <div className="flex gap-4 text-sm ">
+              <NavLink className="hover:text-gray-400" to={"Best_Sellers"}>
+                Product
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"New_arrivals"}>
+                User
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"Oversized_tshirts"}>
+                Order
+              </NavLink>
+            </div>
+          ) : (
+            <div className="flex gap-4 text-sm ">
+              <NavLink className="hover:text-gray-400" to={"Best_Sellers"}>
+                Best Sellers
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"New_arrivals"}>
+                New arrivals
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"Oversized_tshirts"}>
+                Oversized tshirts
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"All_categories"}>
+                All categories
+              </NavLink>
+              <NavLink className="hover:text-gray-400" to={"Merchandise"}>
+                Merchandise
+              </NavLink>
+            </div>
+          )}
         </div>
         <div className="flex gap-3 items-center">
-          <div className="flex items-center py-2 rounded-lg overflow-hidden pr-2 border-b-[3px] border-r-[3px] border-t border-l  border-purple-400">
-            <input
-              type="text"
-              placeholder="Try searching “T-shirts”"
-              className="rounded-md font-medium text-sm h-full px-2 focus:outline-none focus:border-none "
-            />
-            <Search className="text-purple-400" />
-          </div>
-          {false ? (
-            <User className="cursor-pointer" />
+          {cookies?.user?.userType !== "admin" && (
+            <div className="flex items-center py-2 rounded-lg overflow-hidden pr-2 border-b-[3px] border-r-[3px] border-t border-l  border-purple-400">
+              <input
+                type="text"
+                placeholder="Try searching “T-shirts”"
+                className="rounded-md font-medium text-sm h-full px-2 focus:outline-none focus:border-none "
+              />
+              <Search className="text-purple-400" />
+            </div>
+          )}
+          {cookies?.token ? (
+            <button onClick={() => logoutHandler()} className="mr-5">
+              Logout
+            </button>
           ) : (
             <button onClick={() => navigate("/login")}>Login</button>
           )}
-          <Heart />
-          <ShoppingCart />
+          {cookies?.user?.userType !== "admin" && (
+            <div className="flex gap-3">
+              <Heart />
+              <ShoppingCart />
+            </div>
+          )}
         </div>
       </div>
       <hr />
     </>
   );
 }
+
+/*
+ condition ? true : false => like if else
+ condition && true 
+
+*/
