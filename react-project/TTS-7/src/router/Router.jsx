@@ -24,6 +24,7 @@ export default function Router() {
             <Route path="/" element={<Home />} />
 
             {/* ---------ADMIN-------- */}
+            <Route path="/admin-product" element={<Product />} />
 
             {/* ---------AUTH-------- */}
             <Route path="/login" element={<Login />} />

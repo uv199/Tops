@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../images/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   ArrowDown,
   ChevronDownIcon,
@@ -18,15 +18,19 @@ import img7 from "../images/menu7.png";
 import img8 from "../images/menu8.png";
 import img9 from "../images/menu9.png";
 import img10 from "../images/menu10.png";
+import { useCookies } from "react-cookie";
 
 export default function Header() {
   let [login_menu, setLogin_menu] = useState(false);
   let [collectionMenu, setCollectionMenu] = useState(false);
-  const loginMenuHandler = () => {
-    setLogin_menu(!login_menu);
-  };
-  const collectionHandler = () => {
-    setCollectionMenu(!collectionMenu);
+  let [cookies, setCookies, removeCookie] = useCookies(["token", "user"]);
+  let navigate = useNavigate();
+  
+  const loginMenuHandler = () => setLogin_menu(!login_menu);
+
+  const logoutHadler = () => {
+    removeCookie("token");
+    removeCookie("user");
   };
   return (
     <header className="bg-white relative">
@@ -72,7 +76,10 @@ export default function Header() {
           </NavLink>
 
           <div className="group">
-            <button className="text-sm py-3 font-semibold leading-6 text-gray-900 flex">
+            <button
+              onClick={() => navigate("/collection")}
+              className="text-sm py-3 font-semibold leading-6 text-gray-900 flex"
+            >
               Collection <ChevronDownIcon />
             </button>
             <div className="absolute w-full z-10 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
@@ -94,66 +101,30 @@ export default function Header() {
                 </div>
                 <div className="w-[80%]">
                   <div className="grid grid-cols-5 gap-4">
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img1}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img2}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img3}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img4}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img5}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img6}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img7}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img8}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img9}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="overflow-hidden border border-gray-300">
-                      <img
-                        src={img10}
-                        className="hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
+                    {[
+                      img1,
+                      img2,
+                      img3,
+                      img4,
+                      img5,
+                      img6,
+                      img7,
+                      img8,
+                      img9,
+                      img10,
+                    ].map((e, i) => {
+                      return (
+                        <div
+                          key={i}
+                          className="overflow-hidden border border-gray-300"
+                        >
+                          <img
+                            src={e}
+                            className="hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -198,22 +169,37 @@ export default function Header() {
             <ul
               className={`absolute right-[-15px] mt-2 space-y-2 bg-white shadow-lg rounded-lg ${login_menu ? "block" : "hidden"}`}
             >
-              <li>
-                <NavLink
-                  to="/login"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/register"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Register
-                </NavLink>
-              </li>
+              {!cookies?.token ? (
+                <>
+                  <li>
+                    <NavLink
+                      to="/login"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/register"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      Register
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink
+                      onClick={() => logoutHadler()}
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      Logout
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

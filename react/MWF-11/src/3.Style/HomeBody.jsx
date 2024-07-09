@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Card from "./Card";
+import CardCom from "./CardCom";
 
 export default function HomeBody() {
   return (
@@ -14,10 +14,10 @@ export default function HomeBody() {
       </div>
       <Footer />
       <div className="flex gap-3 p-4 border">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <CardCom />
+        <CardCom />
+        <CardCom />
+        <CardCom />
       </div>
     </div>
   );

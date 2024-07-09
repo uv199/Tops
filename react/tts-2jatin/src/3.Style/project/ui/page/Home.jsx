@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../../../../public/headphone.png";
 import CardCom from "../components/CardCom";
 import axios from "axios";
 import { Button } from "@material-tailwind/react";
+import { toast } from "react-toastify";
 
 export default function Home() {
   let [data, setData] = useState([]);
-  const callApi = async () => {
-    try {
-      let response = await axios.get("https://fakestoreapi.com/products");
-      console.log("-----------  response----------->");
-      setData(response.data);
-    } catch (error) {
-      alert("Somthing went wrong");
-    }
-  };
+  const callApi = async () => {};
 
+  useEffect(() => {
+    console.log("----use effect---");
+    (async function fetch(params) {
+      console.log("----fun---");
+      try {
+        let response = await axios.get("https://fakestoreapi.com/products");
+        toast.success("Api call successfully");
+        console.log("-----------  response----------->");
+        setData(response.data);
+      } catch (error) {
+        alert("Somthing went wrong");
+      }
+    })();
+  }, []);
   return (
     <div>
       <div className="bg-purple-50 flex items-center justify-around">

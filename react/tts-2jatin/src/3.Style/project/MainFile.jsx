@@ -7,7 +7,6 @@ export default function MainFile() {
     <div className="w-[100vw]">
       <Header />
       <Home />
-
     </div>
   );
 }

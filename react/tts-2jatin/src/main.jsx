@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "@material-tailwind/react";
 import "./index.css";
 import App from "./App";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
@@ -23,3 +24,11 @@ root.render(
   </div>
 );
 */
+
+async function api (params) {
+  
+  async function test(params) {
+    
+    await AbortController.mno()
+  }
+}

@@ -1,4 +1,8 @@
+
+import { ToastContainer } from "react-toastify";
 // functional componenet
+
+
 import ClassCom from "./2.componenet/ClassCom";
 import FunctionCom from "./2.componenet/FunctionCom";
 import Home from "./3.Style/Home";
@@ -13,7 +17,10 @@ import UseEffectPro1 from "./6.HOOK/useEffect/demoProject/UseEffectPro1";
 import UseReducer from "./6.HOOK/useReducer/UseReducer";
 import UseRefCom from "./6.HOOK/userRef/UseRefCom";
 import Parent from "./7.Props/Parent";
+
+
 function App(params) {
+  console.log("---->")
   return (
     <div className="flex justify-center items-center">
       {/* ------------COMPONENT------------ */}
@@ -24,7 +31,7 @@ function App(params) {
       {/* ------------STYLE------------ */}
 
       {/* <Home /> */}
-      <MainFile />
+      {/* <MainFile /> */}
 
       {/* ------------STATE------------ */}
 
@@ -44,6 +51,8 @@ function App(params) {
 
       {/* ------------PROPS------------ */}
       {/* <Parent /> */}
+
+      <ToastContainer />
     </div>
   );
 }
