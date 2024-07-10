@@ -6,9 +6,10 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 export default function CardDefault({ data }) {
-  console.log("-----------  data----------->", data);
+  const navigate = useNavigate();
   return (
     <Card className="mt-6">
       <CardHeader color="blue-gray" className="relative ">
@@ -19,12 +20,21 @@ export default function CardDefault({ data }) {
         />
       </CardHeader>
       <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2 truncate text-inherit">
+        <Typography
+          variant="h5"
+          color="blue-gray"
+          className="mb-2 truncate text-inherit"
+        >
           {data.title}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button>Read More</Button>
+        <Button
+          onClick={() => navigate(`/product-details/${data.id}`)}
+          className="w-full"
+        >
+          View
+        </Button>
       </CardFooter>
     </Card>
   );

@@ -38,7 +38,7 @@ export default function App() {
         {/* --------------TASK------------ */}
         {/* <HomeAssignMent1 /> */}
         {/* <Tailwind /> */}
-        <UberTask />
+        {/* <UberTask /> */}
         {/* --------------COMPONENET------------ */}
         {/* <FunCome /> */}
         {/* <ClassCom /> */}
@@ -75,7 +75,7 @@ export default function App() {
         {/* <SearchCom /> */}
         {/* <FilterCom /> */}
         {/* -------------ROUTER------------- */}
-        {/* <Router /> */}
+        <Router />
       </div>
       <ToastContainer />
     </ThemeProvider>

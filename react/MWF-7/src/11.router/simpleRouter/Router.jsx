@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Error404 from "./Error404";
 import Header from "./Header";
 import Product from "./product/Product";
+import ProductDetailPage from "./product/ProductDetailPage";
 export default function Router() {
   return (
     <div>
@@ -22,6 +23,7 @@ export default function Router() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" Component={Contact} />
           <Route path="/product" Component={Product} />
+          <Route path="/product-details/:id" Component={ProductDetailPage} />
           <Route path="*" Component={Error404} />
         </Routes>
       </BrowserRouter>

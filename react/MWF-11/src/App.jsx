@@ -16,7 +16,7 @@ export default function App() {
 
       {/* --------------MAP-KEY--------------- */}
       {/* <MapKeyCom /> */}
-      <FragmentCom />
+      {/* <FragmentCom /> */}
     </div>
   );
 }
