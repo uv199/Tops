@@ -6,7 +6,7 @@ import { Button } from "reactstrap";
 import "./perfume.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CardComponent() {
+export default function CardComponent({ product }) {
   const navigate = useNavigate();
 
   const selectOption = () => {
@@ -21,7 +21,9 @@ export default function CardComponent() {
       <div className="relative overflow-hidden">
         <div className="group/imgDiv relative">
           <img
-            src=" https://www.houseofem5.com/cdn/shop/files/Don-Notes_360x.jpg?v=1706772321"
+            src={
+              " https://www.houseofem5.com/cdn/shop/files/Don-Notes_360x.jpg?v=1706772321"
+            }
             alt=""
             srcSet=""
             className="absolute top-0 img-fluid opacity-0 group-hover/imgDiv:opacity-100 transition-opacity duration-700  ease-in-out"
@@ -30,9 +32,9 @@ export default function CardComponent() {
           <img
             onClick={() => navigate()}
             alt=""
-            src="https://www.houseofem5.com/cdn/shop/files/Don_800x.jpg?v=1706772320"
+            src={product?.thumbnail}
             srcSet=""
-            className="top-0 img-fluid group-hover/imgDiv:opacity-0 transition-opacity duration-700 ease-in-out"
+            className="top-0  h-[250px] img-fluid group-hover/imgDiv:opacity-0 transition-opacity duration-700 ease-in-out"
           />
         </div>
         <div className="absolute bottom-0 mt-3 eye_cartbtn d-flex align-items-center w-full justify-content-center ">

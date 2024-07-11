@@ -3,7 +3,7 @@ import { APIinstance } from "../../../api/axiosConfig";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
 import ReactSelect from "react-select";
-
+import ReactPaginate from "react-paginate";
 let limitOptions = [
   { label: 5, value: 5 },
   { label: 10, value: 10 },
@@ -14,7 +14,7 @@ let limitOptions = [
 export default function ProductTable({ flag, refetch }) {
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState({ limit: 10, page: 1 });
-
+  let [count, setCount] = useState(10);
   const [cookies] = useCookies(["token"]);
 
   useEffect(() => {
@@ -23,10 +23,12 @@ export default function ProductTable({ flag, refetch }) {
         let { data } = await APIinstance.get("/product/getAllPaginate", {
           params: {
             limit: pagination.limit,
-            page: 1,
+            page: pagination.page,
           },
         });
         setProducts(data?.data);
+        setCount(data?.count);
+        console.log("-----------  data----------->", data);
       } catch (error) {
         console.log("======error===", error);
       }
@@ -49,16 +51,19 @@ export default function ProductTable({ flag, refetch }) {
     }
   };
 
+  const pageChnage = (e) => {
+    console.log("-----------  e----------->", e);
+    setPagination({ ...pagination, page: e.selected + 1 });
+  };
+
   return (
     <div className="p-4">
       <div className="flex justify-between">
-        <h1 className="text-4xl text-center fw-bold p-2">
-          ApiTable {products.length}
-        </h1>
-        <h1>{pagination.limit}</h1>
+        <h1 className="text-4xl text-center fw-bold p-2">Products</h1>
+
         <ReactSelect
           className="w-[100px]"
-          onChange={(e) => setPagination({ ...pagination, limit: e.value })}
+          onChange={(e) => setPagination({ page: 1, limit: e.value })}
           options={limitOptions}
         />
       </div>
@@ -67,24 +72,18 @@ export default function ProductTable({ flag, refetch }) {
         <table className="min-w-full bg-white">
           <thead>
             <tr>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Sr.no
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Image{" "}
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Title
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Price
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Size
-              </th>
-              <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">
-                Action
-              </th>
+              {["Sr.no", "Image", "Title", "Price", "Size", "Action"]?.map(
+                (e, i) => {
+                  return (
+                    <th
+                      key={i}
+                      className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider"
+                    >
+                      {e}
+                    </th>
+                  );
+                }
+              )}
             </tr>
           </thead>
           <tbody>
@@ -102,11 +101,16 @@ export default function ProductTable({ flag, refetch }) {
                 </td>
                 <td className="px-6 border-b border-gray-300 ">
                   <div className="flex gap-2">
-                    {["10ml", "50ml", "100ml", "150ml"].map?.((e) => {
+                    {["10ml", "50ml", "100ml", "150ml"].map?.((e, index) => {
                       return (
                         <div
-                          className={`border px-2 py-1 rounded-md ${false ? "border-black" : "border-gray-300 text-gray-300"}`}
+                          className={`border px-2 py-1 rounded-md ${
+                            product?.size?.includes(e)
+                              ? "border-black"
+                              : "border-gray-300 text-gray-300"
+                          }`}
                           style={{ backgroundColor: e }}
+                          key={index}
                         >
                           {e}
                         </div>
@@ -135,6 +139,17 @@ export default function ProductTable({ flag, refetch }) {
           </tbody>
         </table>
       </div>
+      <ReactPaginate
+        className="flex gap-2 "
+        pageClassName="border border-black py-1 px-3 flex justify-center items-center rounded-full"
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={pageChnage}
+        pageRangeDisplayed={3}
+        pageCount={Math.ceil(count / pagination.limit)}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+      />
     </div>
   );
 }

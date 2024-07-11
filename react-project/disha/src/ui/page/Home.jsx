@@ -5,6 +5,15 @@ import video from "../../Images/video.mp4";
 import CardCom from "../components/CardCom";
 import CardCom2 from "../components/CardCom2";
 import Slider from "react-slick";
+import image1 from "../../Images/spot_img1.jpg"
+import image2 from "../../Images/spot_img2.jpg"
+import image3 from "../../Images/spot_img3.jpg"
+import image4 from "../../Images/spot_img4.jpg"
+import image5 from "../../Images/spot_img5.jpg"
+import image6 from "../../Images/spot_img6.jpg"
+import image7 from "../../Images/spot_img7.jpg"
+
+
 export default function Home() {
   var settings = {
     infinite: true,
@@ -62,7 +71,7 @@ export default function Home() {
         <div className="text-center my-4">
           <h1 className="font-bold m-3">TOP CATEGORIES</h1>
         </div>
-        <div className="flex gap-4 mx-16">
+        <div className="flex gap-3 mx-16">
           {[1, 2, 3, 4].map((e) => {
             return (
               <Card>
@@ -240,52 +249,59 @@ export default function Home() {
               use #veirdo with your fits on insta to get spotted here
             </p>
           </div>
-          <div className="absolute top-48 grid grid-cols-5 mx-16 gap-2">
-            <img
-              className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer hover:bg-red-50"
-              src="https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/449045442_1392952914751626_3387352276175751009_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=TanCxyPRLH8Q7kNvgFRwMHN&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYAD0mEacMmRotGAefxBgvm6sKQIP5N5pzVNij8z-djsmQ&oe=66803308"
-              alt=""
-            />
+
+          <div className="group relative w-[100px]">
+
+            <img className="peer absolute group-hover:opacity-70 top-0" src={image1} alt="" />
+            <div className="absolute bg-red-600 group-hover:!bg-black w-full h-full opacity-0 group-hover:!opacity-100">
+
+              <p className=" top-0   text-white "> test test</p>
+            </div>
+          </div>
+          <div className=" absolute top-48 grid grid-cols-5 mx-16 gap-2">
+            <div className="relative border-4 border-white rounded">
+              <img
+                className="peer h-[200px] w-[200px] cursor-pointer"
+                src={image1}
+              />
+              {/* <div className="absolute top-0 z-10 opacity-0 group-hover:opacity-100"> */}
+              <p className="absolute top-0  bg-black opacity-0 z-40 !peer-hover:opacity-100 text-white text-center mt-10">Enter the flipside where fashion is fearless and style</p>
+              {/* </div> */}
+            </div>
             <img
               className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer"
-              src="https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/448984927_492569776752804_3822322047097936278_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=dhxDReDeaCEQ7kNvgEh0E05&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYCNTHHCAzA-i2bd7aobWg2NWIj4w13msMBjPUcUKkqJiw&oe=66803221"
-              alt=""
+              src={image2}
             />
             <img
               className="h-[400px] w-[350px] border-4 border-white rounded cursor-pointer row-span-2 col-span-2 m-2"
-              src="https://scontent-lhr6-2.cdninstagram.com/v/t51.29350-15/448592835_978084507109046_4228273149635069310_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=3jTLhhiqQu8Q7kNvgEZJCuO&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYBQO0O7ZLMxJ15c-C1PTKzLlZkaOVZ43MgtenfhduIdDQ&oe=66803554"
-              alt=""
+              src={image3}
             />
             <img
               className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer"
-              src="https://scontent-lhr8-2.cdninstagram.com/v/t51.29350-15/448729701_3151024335028540_7443953967061308871_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=9am_GI8cSB8Q7kNvgFYhCXj&_nc_ht=scontent-lhr8-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYBE-T3SLfR2Wf3tMUJj549ukJ3CjBGc-OBEVxyzCfsqNg&oe=66802C03"
-              alt=""
+              src={image4}
             />
             <img
               className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer"
-              src="https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/448598417_450084904443578_4861402862608863476_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=90A3H6jT_kUQ7kNvgFL-mzy&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYCj2xJ3clwOV0OgRsodkkYMIcPhpvy7qJMTiASoAdFdeA&oe=66801901"
-              alt=""
+              src={image5}
             />
             <img
               className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer"
-              src="https://scontent-lhr8-2.cdninstagram.com/v/t51.29350-15/448366781_1471309933516084_4547370761441212893_n.heic?stp=dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=ecSOixLqGlIQ7kNvgFZ0RtG&_nc_ht=scontent-lhr8-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYBWaDNSzhkGE25L4DM2Z9U7zU1j7R0vyj9IyIA8HGUC8g&oe=66803F2F"
-              alt=""
+              src={image6}
             />
             <img
               className="h-[200px] w-[200px] border-4 border-white rounded cursor-pointer"
-              src="https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/448221076_1159299345119937_6268007413555023300_n.heic?stp=dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=18de74&_nc_ohc=yU5bIpReubEQ7kNvgFS6_St&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AYDqWs5tYegRq7mp-q96GGXigDN5NrRZT2D3atENbacLfA&oe=66803401"
-              alt=""
+              src={image7}
             />
           </div>
         </div>
 
         <h1 className="font-bold text-center my-4">VEIRDO FEATURED ON</h1>
-        <div>
+        <div className="mb-5">
           <marquee className="" behavior="" direction="">
-            <div className="flex">
+            <div className="flex gap-5">
               {[1, 2, 3, 4].map(() => {
                 return (
-                  <div className="flex gap-3">
+                  <>
                     <img
                       src="https://veirdo.in/cdn/shop/files/Screenshot_2023-12-12_at_4.14_2.png?v=1706600616"
                       alt=""
@@ -302,7 +318,7 @@ export default function Home() {
                       src="https://veirdo.in/cdn/shop/files/Screenshot_2023-12-12_at_4.14_4.png?v=1706600616"
                       alt=""
                     />
-                  </div>
+                  </>
                 );
               })}
 
@@ -310,6 +326,7 @@ export default function Home() {
 
           </marquee>
         </div>
+
       </div>
     </div>
   );

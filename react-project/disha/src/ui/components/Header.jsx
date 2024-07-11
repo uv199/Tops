@@ -1,14 +1,14 @@
 import React from "react";
 import logoImg from "../../Images/logo.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Heart, Search, ShoppingCart, User } from "lucide-react";
+import { Heart, Search, ShoppingCart } from "lucide-react";
 import { useCookies } from "react-cookie";
 
 export default function Header() {
   const navigate = useNavigate();
 
-  let [cookies, setCookies, removeCookies] = useCookies(["token", "user"]);
-  console.log("-----------  cookies----------->", cookies);
+  let [cookies, setCookies, removeCookies] = useCookies(["token", "user"])
+  console.log("🚀 ~ Header ~ cookies:", cookies)
 
   const logoutHandler = () => {
     removeCookies("user");
@@ -32,13 +32,13 @@ export default function Header() {
           </p>
           {cookies?.user?.userType === "admin" ? (
             <div className="flex gap-4 text-sm ">
-              <NavLink className="hover:text-gray-400" to={"Best_Sellers"}>
+              <NavLink className="hover:text-gray-400" to={"Product"}>
                 Product
               </NavLink>
-              <NavLink className="hover:text-gray-400" to={"New_arrivals"}>
+              <NavLink className="hover:text-gray-400" to={"User"}>
                 User
               </NavLink>
-              <NavLink className="hover:text-gray-400" to={"Oversized_tshirts"}>
+              <NavLink className="hover:text-gray-400" to={"Order"}>
                 Order
               </NavLink>
             </div>
@@ -73,28 +73,25 @@ export default function Header() {
               <Search className="text-purple-400" />
             </div>
           )}
+
           {cookies?.token ? (
-            <button onClick={() => logoutHandler()} className="mr-5">
-              Logout
-            </button>
+            <button onClick={() => logoutHandler()}>Logout</button>
           ) : (
+
             <button onClick={() => navigate("/login")}>Login</button>
           )}
+
+
           {cookies?.user?.userType !== "admin" && (
-            <div className="flex gap-3">
+            <>
               <Heart />
               <ShoppingCart />
-            </div>
+            </>
           )}
+
         </div>
       </div>
       <hr />
     </>
   );
 }
-
-/*
- condition ? true : false => like if else
- condition && true 
-
-*/

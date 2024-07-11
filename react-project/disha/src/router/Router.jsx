@@ -10,7 +10,11 @@ import Home from "../ui/page/Home";
 import Footer from "../ui/components/Footer";
 import Login from "../ui/page/Login";
 import Registration from "../ui/page/Registration";
-import ProductForm from "../ui/page/ProductForm";
+import ProductForm from "../ui/page/Adminpages/ProductForm";
+import Product from "../ui/page/Adminpages/Product";
+import User from "../ui/page/Adminpages/User";
+import Order from "../ui/page/Adminpages/Order";
+import Error404 from "../ui/page/Error404";
 
 export default function Router() {
   return (
@@ -25,8 +29,12 @@ export default function Router() {
           <Route path="/All_categories" element={<All_categories />} />
           <Route path="/Merchandise" element={<Merchandise />} />
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<Registration />} />
-          <Route path="/ProductForm" element={<ProductForm />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/Product" element={<Product />} />
+          <Route path="/product-form" element={<ProductForm />} />
+          <Route path="/User" element={<User />} />
+          <Route path="/Order" element={<Order />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </BrowserRouter>

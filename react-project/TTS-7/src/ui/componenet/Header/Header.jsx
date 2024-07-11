@@ -7,6 +7,7 @@ import {
   Menu,
   Search,
   ShoppingBag,
+  User,
 } from "lucide-react";
 import img1 from "../images/menu1.png";
 import img2 from "../images/menu2.png";
@@ -25,20 +26,16 @@ export default function Header() {
   let [collectionMenu, setCollectionMenu] = useState(false);
   let [cookies, setCookies, removeCookie] = useCookies(["token", "user"]);
   let navigate = useNavigate();
-  
+
   const loginMenuHandler = () => setLogin_menu(!login_menu);
 
-  const logoutHadler = () => {
-    removeCookie("token");
-    removeCookie("user");
-  };
   return (
     <header className="bg-white relative">
       <nav
-        className="mx-auto flex max-w-full items-center justify-between p-6 lg:px-[80px]"
+        className="mx-auto flex max-w-full items-center justify-between p-6 lg:px-[40px]"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img className="h-8 w-auto" src={logo} alt="" />
@@ -82,7 +79,7 @@ export default function Header() {
             >
               Collection <ChevronDownIcon />
             </button>
-            <div className="absolute w-full z-10 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
+            <div className="absolute w-full z-9 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
               <div className="flex p-4 px-10">
                 <div className="w-[20%]">
                   <h6 className="font-semibold mb-4">COLLECTIONS</h6>
@@ -155,53 +152,13 @@ export default function Header() {
             My Custom Gift Box
           </NavLink>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            <Search className="w-5" />
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            <ShoppingBag className="w-5" />
-          </a>
-          <div className="relative">
-            <button className="text-sm mt-1.5 font-semibold leading-6 text-gray-900">
-              <Menu onClick={loginMenuHandler} className="w-5" />
-            </button>
-            <ul
-              className={`absolute right-[-15px] mt-2 space-y-2 bg-white shadow-lg rounded-lg ${login_menu ? "block" : "hidden"}`}
-            >
-              {!cookies?.token ? (
-                <>
-                  <li>
-                    <NavLink
-                      to="/login"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Login
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/register"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Register
-                    </NavLink>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li>
-                    <NavLink
-                      onClick={() => logoutHadler()}
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      Logout
-                    </NavLink>
-                  </li>
-                </>
-              )}
-            </ul>
-          </div>
+        <div className="hidden lg:flex items-center gap-6">
+          <Search className="w-5 cursor-pointer" />
+          <ShoppingBag
+            className="w-5 cursor-pointer"
+            onClick={() => navigate("/cart")}
+          />
+          <User onClick={() => navigate("/profile")} />
         </div>
       </nav>
     </header>

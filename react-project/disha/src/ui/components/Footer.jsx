@@ -4,7 +4,7 @@ import { Button, Table } from "reactstrap";
 
 export default function Footer() {
   return (
-    <footer className="bg-green-500 py-5 px-12 mt-5">
+    <footer className="bg-green-500 py-5 px-12">
       <div className="flex justify-between">
         <div className="flex flex-col drop-shadow-lg">
           <h1 className="font-bold text-white text-5xl">JOIN OUR </h1>

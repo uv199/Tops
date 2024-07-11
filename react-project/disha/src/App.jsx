@@ -5,7 +5,7 @@ import Router from "./router/Router";
 export default function App() {
   return (
     <div>
-      <CookiesProvider defaultSetOptions={{ path: "/" }}>
+      <CookiesProvider defaultSetOptions={{ path: '/' }}>
         <Router />
       </CookiesProvider>
     </div>
