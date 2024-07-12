@@ -15,7 +15,7 @@ export default function ProductDetailPage() {
   const paramsData = useParams();
 
   useEffect(() => {
-    (async function fetchData(params) {
+    (async function fetchData() {
       try {
         let { data } = await axios.get(
           `https://fakestoreapi.com/products/${paramsData.id}`

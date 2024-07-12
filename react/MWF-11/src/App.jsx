@@ -5,6 +5,10 @@ import FragmentCom from "./4.mapKey/FragmentCom";
 import MapKeyCom from "./4.mapKey/MapKeyCom";
 import ClassState from "./5.state/ClassState";
 import FunState from "./5.state/FunState";
+import BGColorChnage from "./5.state/Project/BGColorChnage";
+import ParentCom from "./6.Props/ParentCom";
+import CityPage from "./6.Props/Project/CityPage";
+import MainPage from "./6.Props/Project2/MainPage";
 
 export default function App() {
   return (
@@ -22,7 +26,13 @@ export default function App() {
 
       {/* --------------STATE--------------- */}
       {/* <FunState /> */}
-      <ClassState />
+      {/* <ClassState /> */}
+      {/* <BGColorChnage /> */}
+
+      {/* --------------PROPS--------------- */}
+      {/* <ParentCom /> */}
+      {/* <CityPage /> */}
+      <MainPage/>
     </div>
   );
 }

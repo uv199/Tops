@@ -1,0 +1,150 @@
+[
+  {
+    "title": "Key Holder",
+    "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 30,
+    "discountPercentage": 2.92,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 54,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+  {
+    "title": "Handcraft Chinese style",
+    "description": "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 60,
+    "discountPercentage": 15.34,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 7,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "3D Embellishment Art Lamp",
+    "description": "3D led lamp sticker Wall sticker 3d wall art light on/off button  cell operated (included)",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 20,
+    "discountPercentage": 16.49,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 54,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "Flying Wooden Bird",
+    "description": "Package Include 6 Birds with Adhesive Tape Shape: 3D Shaped Wooden Birds Material: Wooden MDF, Laminated 3.5mm",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 51,
+    "discountPercentage": 15.58,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 17,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "Plant Hanger For Home",
+    "description": "Boho Decor Plant Hanger For Home Wall Decoration Macrame Wall Hanging Shelf",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 41,
+    "discountPercentage": 17.86,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 131,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "Gulab Powder 50 Gram",
+    "description": "Dry Rose Flower Powder Gulab Powder 50 Gram • Treats Wounds",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 70,
+    "discountPercentage": 13.58,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 47,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "cereals muesli fruit nuts",
+    "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 46,
+    "discountPercentage": 16.8,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 113,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "Orange Essence Food Flavou",
+    "description": "Specifications of Orange Essence Food Flavour For Cakes and Baking Food Item",
+    "brand": "Oppo",
+    "gender": "male",
+    "price": 14,
+    "discountPercentage": 8.04,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 26,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "Elbow Macaroni - 400 gm",
+    "description": "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
+    "brand": "Oppo",
+    "gender": "kids",
+    "price": 14,
+    "discountPercentage": 15.58,
+    "category": ["smartphones", "3g", "4g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 146,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  },
+
+  {
+    "title": "- Daal Masoor 500 grams",
+    "description": "Fine quality Branded Product Keep in a cool and dry place",
+    "brand": "Samsung",
+    "gender": "kids",
+    "price": 20,
+    "discountPercentage": 4.81,
+    "category": ["smartphones", "5g"],
+    "color": ["red", "black", "white"],
+    "size": ["44", "45", "42", "43"],
+    "isAvailable": true,
+    "availableStock": 133,
+    "image": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"
+  }
+]

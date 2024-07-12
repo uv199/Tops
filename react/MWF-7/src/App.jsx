@@ -31,6 +31,7 @@ import FilterCom from "./10.Input/FilterCom";
 import Router from "./11.router/simpleRouter/Router";
 import { ToastContainer } from "react-toastify";
 import UberTask from "./000.task/UberTask";
+import ProtectedRoute from "./11.router/AuthRoute/ProtectedRoute";
 export default function App() {
   return (
     <ThemeProvider>
@@ -75,7 +76,8 @@ export default function App() {
         {/* <SearchCom /> */}
         {/* <FilterCom /> */}
         {/* -------------ROUTER------------- */}
-        <Router />
+        {/* <Router /> */}
+        <ProtectedRoute />
       </div>
       <ToastContainer />
     </ThemeProvider>
