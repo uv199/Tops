@@ -3,7 +3,11 @@ import { APIinstance } from "../../../api/axiosConfig";
 import { useCookies } from "react-cookie";
 import { toast } from "react-toastify";
 import ReactSelect from "react-select";
+import ModalPreview from "./ModalPreview";
 import ReactPaginate from "react-paginate";
+import { useNavigate } from "react-router-dom";
+// import Modalview from "./ModalView";
+
 let limitOptions = [
   { label: 5, value: 5 },
   { label: 10, value: 10 },
@@ -11,11 +15,15 @@ let limitOptions = [
   { label: 50, value: 50 },
 ];
 
-export default function ProductTable({ flag, refetch }) {
+export default function ProductTable({ flag, refetch, args }) {
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState({ limit: 10, page: 1 });
-  let [count, setCount] = useState(10);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  let [count, setCount] = useState(0);
   const [cookies] = useCookies(["token"]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const tableProduct = async () => {
@@ -28,7 +36,6 @@ export default function ProductTable({ flag, refetch }) {
         });
         setProducts(data?.data);
         setCount(data?.count);
-        console.log("-----------  data----------->", data);
       } catch (error) {
         console.log("======error===", error);
       }
@@ -36,6 +43,7 @@ export default function ProductTable({ flag, refetch }) {
     tableProduct();
   }, [flag, pagination]);
 
+  //  ==================== Delete Product =================
   const deleteHandler = (id) => {
     try {
       let { data } = APIinstance.delete("/product/delete/" + id, {
@@ -51,53 +59,97 @@ export default function ProductTable({ flag, refetch }) {
     }
   };
 
-  const pageChnage = (e) => {
-    console.log("-----------  e----------->", e);
+  // =================== Preview ====================
+  const handlePreviewClick = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+  };
+
+  // ======================= Pagination ===================
+  const handlePageClick = (e) => {
     setPagination({ ...pagination, page: e.selected + 1 });
+  };
+
+  const editHandler = (data) => {
+    console.log("-----------  data----------->", data);
+    navigate("/admin-product/create", { state: data });
   };
 
   return (
     <div className="p-4">
       <div className="flex justify-between">
         <h1 className="text-4xl text-center fw-bold p-2">Products</h1>
+        <div>
+          <ReactSelect
+            className="w-[300px] mb-3"
+            onChange={(e) => setPagination({ page: 1, limit: e.value })}
+            options={limitOptions}
+          />
 
-        <ReactSelect
-          className="w-[100px]"
-          onChange={(e) => setPagination({ page: 1, limit: e.value })}
-          options={limitOptions}
-        />
+          <ReactPaginate
+            className="flex gap-2 mb-3"
+            pageClassName="border border-black bg-blue-200 py-1 px-5 flex justify-center items-center rounded-full hover:bg-blue-300"
+            activeClassName="bg-blue-500  text-white text-lg font-bold"
+            previousClassName="border border-black bg-gray-200 py-1 px-4 flex justify-center items-center rounded-full hover:bg-gray-300 text-lg font-bold"
+            nextClassName="border border-black bg-gray-200 py-1 px-4 flex justify-center items-center rounded-full hover:bg-gray-300 text-lg font-bold"
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            pageCount={Math.ceil(count / pagination.limit)}
+            previousLabel="< previous "
+            renderOnZeroPageCount={null}
+          />
+        </div>
       </div>
       <hr className="h-2 bg-red-600" />
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className="min-w-full bg-white p-3">
           <thead>
             <tr>
-              {["Sr.no", "Image", "Title", "Price", "Size", "Action"]?.map(
-                (e, i) => {
-                  return (
-                    <th
-                      key={i}
-                      className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider"
-                    >
-                      {e}
-                    </th>
-                  );
-                }
-              )}
+              {[
+                "Sr.no",
+
+                "Image",
+                "Title",
+                "Price",
+                "DiscountPrize",
+                "Size",
+                "Action",
+              ]?.map((e, i) => {
+                return (
+                  <th
+                    key={i}
+                    className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider"
+                  >
+                    {e}
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
             {products.map((product, index) => (
-              <tr key={index}>
+              <tr key={index} className="p-4">
                 <td className="px-6 border-b border-gray-300">{index + 1}</td>
                 <td className="px-6 border-b border-gray-300">
-                  <img src={product.thumbnail} className="w-[50px]" alt="" />
+                  <img
+                    src={product.thumbnail}
+                    className="w-[150px] p-3"
+                    alt=""
+                  />
                 </td>
-                <td className="px-6 border-b border-gray-300">
+                <td className="px-6 border-b  border-gray-300">
                   {product.title}
                 </td>
                 <td className="px-6 border-b border-gray-300">
                   {product.price}
+                </td>
+                <td className="px-6 py-4 border-b border-gray-300">
+                  {product.discountPercentage
+                    ? product.price -
+                      (product.discountPercentage / 100) * product.price
+                    : product.price}
                 </td>
                 <td className="px-6 border-b border-gray-300 ">
                   <div className="flex gap-2">
@@ -120,10 +172,17 @@ export default function ProductTable({ flag, refetch }) {
                 </td>
                 <td className="px-6 border-b border-gray-300">
                   <div className="flex gap-2">
-                    <p className="text-gray-500 bg-gray-200 py-1 px-2 border border-gray-500 rounded-md cursor-pointer hover:bg-gray-300">
+                    <p
+                      className="text-blue-500 bg-blue-200 py-1 px-2 border border-blue-500 rounded-md cursor-pointer hover:bg-blue-300"
+                      onClick={() => handlePreviewClick(product)}
+                    >
                       Preview
                     </p>
-                    <p className="text-blue-500 bg-blue-200 py-1 px-2 border border-blue-500 rounded-md cursor-pointer hover:bg-blue-300">
+
+                    <p
+                      onClick={() => editHandler(product)}
+                      className="text-blue-500 bg-blue-200 py-1 px-2 border border-blue-500 rounded-md cursor-pointer hover:bg-blue-300"
+                    >
                       Edit
                     </p>
                     <p
@@ -139,17 +198,13 @@ export default function ProductTable({ flag, refetch }) {
           </tbody>
         </table>
       </div>
-      <ReactPaginate
-        className="flex gap-2 "
-        pageClassName="border border-black py-1 px-3 flex justify-center items-center rounded-full"
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={pageChnage}
-        pageRangeDisplayed={3}
-        pageCount={Math.ceil(count / pagination.limit)}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
+
+      {showModal && (
+        <ModalPreview
+          product={selectedProduct}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 }

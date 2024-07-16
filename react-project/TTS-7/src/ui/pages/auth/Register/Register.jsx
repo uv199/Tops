@@ -1,9 +1,13 @@
-import { Card, Typography } from "@material-tailwind/react";
+import {
+  Card,
+  Input,
+  Checkbox,
+  Button,
+  Typography,
+} from "@material-tailwind/react";
 import axios from "axios";
-import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { Button, Input } from "reactstrap";
 import { APIinstance } from "../../../api/axiosConfig";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
@@ -34,6 +38,7 @@ export default function Register() {
       number: data?.number,
       password: data?.password,
       gender: data?.gender,
+      userType:"admin",
       address: [
         {
           add: data?.add,
@@ -55,13 +60,12 @@ export default function Register() {
 
   return (
     <div className="flex justify-center">
-      <form onSubmit={handleSubmit(submitHandler)}>
-        <Card color="transparent" shadow={false}>
-          <Typography variant="h4" className="text-center" color="blue-gray">
-            Sign Up
-          </Typography>
-          <hr className="mt-3 h-1 bg-red-500" />
-
+      <Card color="transparent" shadow={false}>
+        <Typography variant="h4" className="text-center" color="blue-gray">
+          Sign Up
+        </Typography>
+        <hr className="mt-3 h-1 bg-red-500" />
+        <form onSubmit={handleSubmit(submitHandler)}>
           <div className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
             <div className="mb-1 flex flex-col gap-6">
               {/* ------------name--------- */}
@@ -251,8 +255,8 @@ export default function Register() {
               </span>
             </Typography>
           </div>
-        </Card>
-      </form>
+        </form>
+      </Card>
     </div>
   );
 }

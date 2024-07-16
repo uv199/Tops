@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import ReactPaginate from "react-paginate";
 import { useNavigate } from "react-router-dom";
 import ReactSelect from "react-select";
-import { Button, Table } from "reactstrap";
+import { Button, Input, Table } from "reactstrap";
 
 export default function Product() {
   let [flag, setFlag] = useState(true);
@@ -12,6 +12,8 @@ export default function Product() {
   let [limit, setLimit] = useState(10);
   let [count, setCount] = useState(10);
   let [page, setPage] = useState(1);
+  let [searchText, setSearchText] = useState("");
+  
   console.log("-----------  count----------->", count);
 
   const refetch = () => setFlag(!flag);
@@ -27,6 +29,7 @@ export default function Product() {
           params: {
             limit: limit,
             page: page,
+            search:searchText
           },
         }
       );
@@ -39,7 +42,7 @@ export default function Product() {
 
   useEffect(() => {
     callApiHandler();
-  }, [flag, limit, page]);
+  }, [flag, limit, page,searchText]);
 
   const deleteHandler = async (id) => {
     try {
@@ -59,10 +62,9 @@ export default function Product() {
 
   return (
     <div>
-      <h1>{limit}</h1>
-      <h1>{page}</h1>
       <div className="d-flex justify-between my-3 px-3">
         <h1>Product count : {count}</h1>
+        <Input placeholder="Search your text here...." onChange={(e)=>setSearchText(e.target.value)}/>
         <div className="flex gap-3">
           <ReactSelect
             options={[

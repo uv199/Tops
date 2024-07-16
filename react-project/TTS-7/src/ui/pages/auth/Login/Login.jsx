@@ -24,13 +24,12 @@ export default function Login() {
       email: data?.email,
       password: data?.password,
     };
-    console.log("🚀 ~ signinHandler ~ userData:", userData);
     try {
       const { data } = await APIinstance.post("/user/signin", userData);
       if (!data) {
         toast.error("Please enter valid credential");
       } else {
-        setCookies("user", data.data);
+        setCookies("user", data.data);        
         setCookies("token", data.token);
         if (data.data.userType === "admin") {
           navigate("/admin-product");

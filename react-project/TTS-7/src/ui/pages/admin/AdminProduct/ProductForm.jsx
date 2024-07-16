@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactSelect from "react-select";
+import { APIinstance } from "../../../api/axiosConfig";
+import { useCookies } from "react-cookie";
+import { useLocation } from "react-router-dom";
 
 // perfume",
 //   "attar",
@@ -18,16 +21,40 @@ const catOptions = [
 ];
 
 export default function ProductForm() {
-  let { register, handleSubmit, setValue } = useForm();
+  let { register, handleSubmit, setValue, reset } = useForm();
+  let [updateMode, setUpdateMode] = useState(false);
 
-  const submitHandler = (data) => {
-    console.log("🚀 ~ submitHandler ~ data:", data);
+  const [cookies] = useCookies(["token"]);
+
+  const productData = useLocation();
+
+  useEffect(() => {
+    console.log("-----------  productData----------->", productData);
+    if (productData) {
+      setUpdateMode(true);
+      reset(productData.state);
+    }
+  }, []);
+
+  const submitHandler = async (data) => {
+    try {
+      let response = await APIinstance.post("/product/create", data, {
+        headers: {
+          authorization: "bearer " + cookies.token,
+        },
+      });
+    } catch (err) {}
+  };
+
+  const upadteHandler = (data) => {
+    console.log("-=-=-=->", data);
   };
 
   const multiSelect = (selectOptions) => {
     let values = selectOptions?.map((e) => e.value);
     setValue("maincatagory", values);
   };
+
   return (
     <div className=" max-w-2xl border m-auto mt-10 p-6 border-gray-300 bg-white shadow-md rounded-md">
       <form onSubmit={handleSubmit(submitHandler)}>
@@ -68,7 +95,7 @@ export default function ProductForm() {
           </label>
           <input
             type="text"
-            {...register("Price", { required: "This Field Is Required" })}
+            {...register("price", { required: "This Field Is Required" })}
             className=" w-full rounded-md "
           />
         </div>
@@ -82,7 +109,9 @@ export default function ProductForm() {
           </label>
           <input
             type="text"
-            {...register("discount", { required: "This Field Is Required" })}
+            {...register("discountPercentage", {
+              required: "This Field Is Required",
+            })}
             className=" w-full rounded-md "
           />
         </div>
@@ -115,7 +144,7 @@ export default function ProductForm() {
           />
         </div>
 
-        <div className="m-4">
+        {/* <div className="m-4">
           <label
             htmlFor=""
             className="block text-gray-700 font-bold text-md mb-2"
@@ -123,9 +152,9 @@ export default function ProductForm() {
             Catagory
           </label>
           <ReactSelect
-            {...register("catagory", { required: "This Field Is Required" })}
+            {...register("category", { required: "This Field Is Required" })}
             options={catOptions}
-            onChange={(e) => setValue("catagory", e.value)}
+            onChange={(e) => setValue("category", e.value)}
           />
         </div>
 
@@ -138,13 +167,13 @@ export default function ProductForm() {
           </label>
           <ReactSelect
             isMulti
-            {...register("maincatagory", {
+            {...register("mainCatagory", {
               required: "This Field Is Required",
             })}
             options={catOptions}
             onChange={multiSelect}
           />
-        </div>
+        </div> */}
 
         <div className="m-4">
           <label
@@ -154,7 +183,7 @@ export default function ProductForm() {
             Gender
           </label>
           <div className=" flex gap-3">
-            {["male", "female", "Kids"].map((e,i) => {
+            {["male", "female", "Kids"].map((e, i) => {
               return (
                 <div className=" flex items-center gap-1" key={i}>
                   <label htmlFor={`gender${e}`}>{e}</label>
@@ -211,13 +240,21 @@ export default function ProductForm() {
           />
         </div>
         <div className="flex justify-center m-4">
-          <button
-            type="submit"
-            className="w-[50%] bg-blue-500 p-2  border rounded-md text-xl text-white font-bold "
-          >
-            {" "}
-            Submit
-          </button>
+          {updateMode ? (
+            <button
+              onClick={handleSubmit(upadteHandler)}
+              className="w-[50%] bg-blue-500 p-2  border rounded-md text-xl text-white font-bold "
+            >
+              Update
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="w-[50%] bg-blue-500 p-2  border rounded-md text-xl text-white font-bold "
+            >
+              Submit
+            </button>
+          )}
         </div>
       </form>
     </div>

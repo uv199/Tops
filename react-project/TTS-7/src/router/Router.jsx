@@ -1,55 +1,65 @@
-import React, { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CookiesProvider } from "react-cookie";
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CookiesProvider, useCookies } from "react-cookie";
 
-// Files
-import Product from "../ui/pages/admin/AdminProduct/Product";
-import Collection from "../ui/pages/user/Collection/Collection";
-import QuickView from "../ui/componenet/QuickView/QuickView";
-import Header from "../ui/componenet/Header/Header";
-import Footer from "../ui/componenet/Footer/Footer";
-import Login from "../ui/pages/auth/Login/Login";
-import Register from "../ui/pages/auth/Register/Register";
-import DataForm from "../ui/pages/auth/Register/DataForm";
-import ProductForm from "../ui/pages/admin/AdminProduct/ProductForm";
-const Profile = lazy(() => import("../ui/pages/user/Profile/Profile"));
-const Home = lazy(() => import("../ui/pages/user/Home/Home"));
-import Cart from "../ui/pages/user/Cart/Cart";
-import { AuthRoute } from "./Protected";
+// Components
+import Header from "@component/Header/Header";
+import Footer from "@component/Footer/Footer";
+import {
+  AdminAuth,
+  AuthRoute,
+} from "../ui/pages/auth/ProtectedRoute/Auth";
+import AdminHeader from "@component/Header/AdminHeader";
+import RoutesArray from "./App";
+import Error from "../ui/pages/Error/Error"; // Assuming you have an Error component
 
-export default function Router() {
+export default function AppRouter() {
+  const [cookies] = useCookies(["token", "user"]);
+
   return (
-    <>
-      <BrowserRouter>
-        <CookiesProvider>
-          <Header />
-          <Suspense fallback={<h1>Loading...!</h1>}>
-            <Routes>
-              {/* ---------COMMONN-------- */}
-              <Route path="/" element={<Home />} />
-              <Route path="/collection" element={<Collection />} />
-
-
-              {/* ---------ADMIN-------- */}
-              <Route path="/admin-product" element={<Product />} />
-              <Route path="/admin-product/create" element={<ProductForm />} />
-
-              {/* ---------AUTH-------- */}
-              {/* <Route path="/cart" element={<Cart />} /> */}
-              <Route path="/login" element={<Login />} />
-              <Route
-                path="/profile"
-                element={<AuthRoute Component={<Profile />} />}
-              />
-              <Route path="/register" element={<Register />} />
-              <Route path="/react-form" element={<DataForm />} />
-
-              {/* ---------USER-------- */}
-            </Routes>
-          </Suspense>
+    <BrowserRouter>
+      <CookiesProvider>
+        <Suspense fallback="Loading">
+          {cookies?.user?.userType === "admin" ? <AdminHeader /> : <Header />}
+          <Routes>
+            {RoutesArray.map((route, index) => {
+              switch (route.type) {
+                case "unauth":
+                  return (
+                    <Route
+                      key={"route" + index}
+                      path={route.path}
+                      element={<route.component />}
+                      exact={true}
+                    />
+                  );
+                case "auth":
+                  return (
+                    <Route
+                      key={"route" + index}
+                      path={route.path}
+                      element={<AuthRoute Component={route.component} />}
+                      exact={true}
+                    />
+                  );
+                case "admin":
+                  return (
+                    <Route
+                      key={"route" + index}
+                      path={route.path}
+                      element={<AdminAuth Component={route.component} />}
+                      exact={true}
+                    />
+                  );
+                default:
+                  return null; // Handle other cases if necessary
+              }
+            })}
+            <Route path="*" element={<Error />} />
+          </Routes>
           <Footer />
-        </CookiesProvider>
-      </BrowserRouter>
-    </>
+        </Suspense>
+      </CookiesProvider>
+    </BrowserRouter>
   );
 }

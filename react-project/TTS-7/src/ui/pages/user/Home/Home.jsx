@@ -3,31 +3,31 @@ import SimpleImageSlider from "react-simple-image-slider";
 import "./homepage.css";
 import CardComponent from "../../../componenet/Card/CardComponent";
 
-const images = [
-  {
-    url: "'https://www.houseofem5.com/cdn/shop/files/6_8afb9bf7-e051-485d-8af2-6a7267f20a59_1512x.png?v=1666160114'",
-  },
-  {
-    url: "https://www.houseofem5.com/cdn/shop/files/3_b6dff324-5af8-4a3c-bcb6-8dcb3795083b_1512x.png?v=1664549555",
-  },
-  {
-    url: "https://www.houseofem5.com/cdn/shop/files/House_Of_EM5_2e00956d-bbda-4c55-bd24-c5e1b885df32_1512x.png?v=1674485980",
-  },
-];
-
-const scroll = [
-  {
-    url: "'https://www.houseofem5.com/cdn/shop/files/Nomade_-_Box_2b703f66-4f4a-412b-ad8a-82e9048e5d0e_360x.png?v=1718109037'",
-  },
-  {
-    url: "https://www.houseofem5.com/cdn/shop/files/RedTob-Box_360x.png?v=1718109460",
-  },
-  {
-    url: "https://www.houseofem5.com/cdn/shop/files/Rocks-Notes_360x.jpg?v=1694518329",
-  },
-];
-
 export default function Home() {
+  const images = [
+    {
+      url: "'https://www.houseofem5.com/cdn/shop/files/6_8afb9bf7-e051-485d-8af2-6a7267f20a59_1512x.png?v=1666160114'",
+    },
+    {
+      url: "https://www.houseofem5.com/cdn/shop/files/3_b6dff324-5af8-4a3c-bcb6-8dcb3795083b_1512x.png?v=1664549555",
+    },
+    {
+      url: "https://www.houseofem5.com/cdn/shop/files/House_Of_EM5_2e00956d-bbda-4c55-bd24-c5e1b885df32_1512x.png?v=1674485980",
+    },
+  ];
+
+  const scroll = [
+    {
+      url: "'https://www.houseofem5.com/cdn/shop/files/Nomade_-_Box_2b703f66-4f4a-412b-ad8a-82e9048e5d0e_360x.png?v=1718109037'",
+    },
+    {
+      url: "https://www.houseofem5.com/cdn/shop/files/RedTob-Box_360x.png?v=1718109460",
+    },
+    {
+      url: "https://www.houseofem5.com/cdn/shop/files/Rocks-Notes_360x.jpg?v=1694518329",
+    },
+  ];
+
   return (
     <div className="main section ">
       <SimpleImageSlider
@@ -86,8 +86,8 @@ export default function Home() {
             <h2>NEW ARRIVALE</h2>
           </div>
           <div className="grid grid-cols-5 gap-[10px] p-3">
-            {[1, 2, 3, 4, 5].map((e) => {
-              return <CardComponent />;
+            {[1, 2, 3, 4, 5].map((e,i) => {
+              return <CardComponent key={i}/>;
             })}
           </div>
         </div>
@@ -117,8 +117,8 @@ export default function Home() {
             <h2>BEST SELLERS</h2>
           </div>
           <div className="grid grid-cols-5 gap-[10px] p-3">
-            {[1, 2, 3, 4, 5].map((e) => {
-              return <CardComponent />;
+          {[1, 2, 3, 4, 5].map((e,i) => {
+              return <CardComponent key={i}/>;
             })}
           </div>
         </div>
@@ -133,9 +133,9 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-5 gap-[10px] p-3">
-        {[1, 2, 3, 4, 5].map((e) => {
-          return <CardComponent />;
-        })}
+      {[1, 2, 3, 4, 5].map((e,i) => {
+              return <CardComponent key={i}/>;
+            })}
       </div>
       <div className="w-screen ">
         <img

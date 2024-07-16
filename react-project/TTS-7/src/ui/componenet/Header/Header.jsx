@@ -27,8 +27,7 @@ export default function Header() {
   let [cookies, setCookies, removeCookie] = useCookies(["token", "user"]);
   let navigate = useNavigate();
 
-  const loginMenuHandler = () => setLogin_menu(!login_menu);
-
+  const loginMenuHandler = () => setLogin_menu(!login_menu);  
   return (
     <header className="bg-white relative">
       <nav
@@ -79,7 +78,7 @@ export default function Header() {
             >
               Collection <ChevronDownIcon />
             </button>
-            <div className="absolute w-full z-9 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
+            <div className="absolute w-full z-10 hidden left-0 mt-0 px-5 py-4 space-y-2 bg-white shadow-lg rounded-lg group-hover:block">
               <div className="flex p-4 px-10">
                 <div className="w-[20%]">
                   <h6 className="font-semibold mb-4">COLLECTIONS</h6>
@@ -153,11 +152,8 @@ export default function Header() {
           </NavLink>
         </div>
         <div className="hidden lg:flex items-center gap-6">
-          <Search className="w-5 cursor-pointer" />
-          <ShoppingBag
-            className="w-5 cursor-pointer"
-            onClick={() => navigate("/cart")}
-          />
+          <Search className="w-5" />
+          <ShoppingBag onClick={() => navigate("/cart")} className="w-5" />
           <User onClick={() => navigate("/profile")} />
         </div>
       </nav>
