@@ -26,14 +26,14 @@ export default function SingleInput() {
   const editHandler = (i, value) => {
     setTodo(value);
     setIndex(i);
-    setUpdateMode(true)
+    setUpdateMode(true);
   };
 
   const updateHandler = () => {
     todoArr.splice(index, 1, todo);
     setTodoArr([...todoArr]);
     setTodo("");
-    setUpdateMode(false)
+    setUpdateMode(false);
   };
 
   return (
@@ -59,39 +59,44 @@ export default function SingleInput() {
 
       <hr />
       <div className="border p-4 rounded-lg border-black">
-        <h1 className="text-center">Todo List</h1>
-        <hr className="h-1 bg-black mb-2" />
-        <div className="flex flex-col gap-2 min-w-[250px]">
-          {todoArr.map((e, i) => {
-            return (
-              <div className="flex justify-between border list-none px-2 border-gray-500 rounded-md py-1">
-                <div className="flex gap-1">
-                  <CircleCheckBig />
-                  <li key={i}>{e}</li>
-                </div>
-                <div className="flex gap-2">
-                  <p
-                    className="cursor-pointer text-blue-500 underline"
-                    onClick={() => editHandler(i, e)}
-                  >
-                    Edit
-                  </p>
-                  <p
-                    className="cursor-pointer text-red-500 underline"
-                    onClick={() => deleteHandler(i)}
-                  >
-                    Delete
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {todoArr.length > 0 ? (
+          <>
+            <h1 className="text-center">Todo List</h1>
+            <hr className="h-1 bg-black mb-2" />
+            <div className="flex flex-col gap-2 min-w-[250px]">
+              {todoArr.map((e, i) => {
+                return (
+                  <div className="flex justify-between border list-none px-2 border-gray-500 rounded-md py-1">
+                    <div className="flex gap-1">
+                      <CircleCheckBig />
+                      <li key={i}>{e}</li>
+                    </div>
+                    <div className="flex gap-2">
+                      <p
+                        className="cursor-pointer text-blue-500 underline"
+                        onClick={() => editHandler(i, e)}
+                      >
+                        Edit
+                      </p>
+                      <p
+                        className="cursor-pointer text-red-500 underline"
+                        onClick={() => deleteHandler(i)}
+                      >
+                        Delete
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <h1 className="text-2xl">Data not available..!</h1>
+        )}
       </div>
     </div>
   );
 }
-
 
 // conditional rendering
 // life cycle

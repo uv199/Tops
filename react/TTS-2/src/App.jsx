@@ -21,6 +21,7 @@ import RadioCom from "./6.Input/RadioCom";
 import CheckBoxCom from "./6.Input/CheckBoxCom";
 import SelectData from "./6.Input/SelectData";
 import Router from "./9.Routing/Router";
+import AppRedux from "./10.redux/AppRedux";
 
 export default function App() {
   return (
@@ -64,7 +65,10 @@ export default function App() {
       {/* <MainCom /> */}
 
       {/* ---------------------ROUTER------------------ */}
-      <Router />
+      {/* <Router /> */}
+      
+      {/* ---------------------REDUX------------------ */}
+      <AppRedux />
     </div>
   );
 }

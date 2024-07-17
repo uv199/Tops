@@ -16,6 +16,7 @@ import UseReducer from "./6.HOOK/useReducer/UseReducer";
 import UseRefCom from "./6.HOOK/userRef/UseRefCom";
 import Parent from "./7.Props/Parent";
 import SingleInput from "./8.input/SingleInput";
+import ConditionCom from "./9.conditionalRender/ConditionCom";
 
 function App(params) {
   console.log("---->");
@@ -52,6 +53,9 @@ function App(params) {
 
       {/* ------------INPUT------------ */}
       <SingleInput />
+
+      {/* ------------CONTIONAL RENDERING------------ */}
+      {/* <ConditionCom /> */}
       <ToastContainer />
     </div>
   );
