@@ -13,6 +13,7 @@ import MapKey from "./8.CondRender-Fragment/MapKey";
 import InputCom from "./9.input/InputCom";
 import { ToastContainer } from "react-toastify";
 import RouterTopic from "./10.Router/RouterTopic";
+import AppRedux from "./11.Redux/AppRedux";
 
 export default function App() {
   return (
@@ -49,11 +50,14 @@ export default function App() {
       {/* <MapKey /> */}
 
       {/* -------------INPUT------------- */}
-      <InputCom />
+      {/* <InputCom /> */}
 
       {/* -------------ROUTER------------- */}
       {/* <RouterTopic /> */}
 
+      {/* -------------REDUX------------- */}
+      <AppRedux />
+      
       <ToastContainer />
     </div>
   );
