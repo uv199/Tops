@@ -3,14 +3,16 @@ import Count from "./Count";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import Amount from "./Amount";
+import TodoPage from "./TodoPage";
 
 export default function AppRedux() {
   return (
-    <div>
+    <>
       <Provider store={store}>
-        <Count />
-        <Amount />
+        {/* <Count /> */}
+        {/* <Amount /> */}
+        <TodoPage />
       </Provider>
-    </div>
+    </>
   );
 }
