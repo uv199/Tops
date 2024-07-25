@@ -9,6 +9,9 @@ import BGColorChnage from "./5.state/Project/BGColorChnage";
 import ParentCom from "./6.Props/ParentCom";
 import CityPage from "./6.Props/Project/CityPage";
 import MainPage from "./6.Props/Project2/MainPage";
+import UseEffectCom from "./7.Hook/useEffect/UseEffectCom";
+import UseRef from "./7.Hook/userRef/UseRef";
+import LifeCycleMethod from "./8.LifeCycleMethod/LifeCycleMethod";
 
 export default function App() {
   return (
@@ -32,7 +35,14 @@ export default function App() {
       {/* --------------PROPS--------------- */}
       {/* <ParentCom /> */}
       {/* <CityPage /> */}
-      <MainPage/>
+      {/* <MainPage /> */}
+
+      {/* --------------LIFE CYCLE METHOD--------------- */}
+      {/* <LifeCycleMethod /> */}
+
+      {/* --------------HOOKS--------------- */}
+      {/* <UseEffectCom /> */}
+      <UseRef />
     </div>
   );
 }

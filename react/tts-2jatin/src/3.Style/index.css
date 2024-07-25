@@ -8,3 +8,20 @@
   align-items: center;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 8px 0;
+}
+
+div {
+  color: blue;
+  cursor: pointer;
+}
+
+div:hover {
+  text-decoration: underline;
+}
