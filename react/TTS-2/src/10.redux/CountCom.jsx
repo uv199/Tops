@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "reactstrap";
 // import { counterAction } from "./counterSlice";
+
 import { dec, inc } from "./counterSlice";
 export default function CountCom() {
   let counterSlice = useSelector((store) => {
