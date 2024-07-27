@@ -5,16 +5,19 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const headData = ["Email", "Password","Action"];
+const headData = ["Email", "Password", "GENDER", "Action"];
 
 export default function MultiPleInput() {
   let [user, setUser] = useState({
     email: "",
     password: "",
+    gender: "",
   });
   let [userArr, setUserArr] = useState([]);
+
+  let [gender, setGender] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,7 +27,12 @@ export default function MultiPleInput() {
       password: "",
     });
   };
-  
+
+  useEffect(() => {
+    // const filterData =  normalData.filter((e)=>e.gender===gender)
+    // setUserArr(filterData)
+  }, [gender]);
+
   const deleteHandler = (index) => {
     let filterData = userArr.filter((e, i) => i !== index);
     setUserArr(filterData);
@@ -65,7 +73,36 @@ export default function MultiPleInput() {
               }}
             />
           </div>
-
+          {/* let [user, setUser] = useState({
+    email: "",
+    password: "",
+    gender: "",
+  }); */}
+          <div>
+            <h1>gender : {user.gender}</h1>
+            <div>
+              <input
+                checked={user.gender === "male"}
+                type="radio"
+                onClick={() => setUser({ ...user, gender: "male" })}
+              />
+              male
+              <br />
+              <input
+                checked={user.gender === "female"}
+                type="radio"
+                onClick={() => setUser({ ...user, gender: "female" })}
+              />
+              female
+              <br />
+              <input
+                checked={user.gender === "other"}
+                type="radio"
+                onClick={() => setUser({ ...user, gender: "other" })}
+              />
+              other
+            </div>
+          </div>
           <Button
             type="submit"
             onClick={(e) => submitHandler(e)}
@@ -76,6 +113,18 @@ export default function MultiPleInput() {
           </Button>
         </form>
       </Card>
+
+      <div>
+        <select
+          className="border border-black py-1 px-3 rounded-md"
+          onChange={(e) => setGender(e.target.value)}
+          value={gender}
+        >
+          <option value="male">MALE</option>
+          <option value="female">FEMALE</option>
+          <option value="other">OTHER</option>
+        </select>
+      </div>
       {/* -------------------table start-------------- */}
       <Card className="h-full w-full overflow-scroll">
         <table className="w-full min-w-max table-auto text-left">
@@ -124,10 +173,19 @@ export default function MultiPleInput() {
                       {e.password}
                     </Typography>
                   </td>
-                 
                   <td className={classes}>
                     <Typography
-                    onClick={()=>deleteHandler(index)}
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {e.gender}
+                    </Typography>
+                  </td>
+
+                  <td className={classes}>
+                    <Typography
+                      onClick={() => deleteHandler(index)}
                       as="a"
                       href="#"
                       variant="small"
@@ -146,9 +204,4 @@ export default function MultiPleInput() {
     </div>
   );
 }
-
-
-// select
-// checkbox
-// radio
 

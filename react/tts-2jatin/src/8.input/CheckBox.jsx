@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 export default function CheckBox() {
-  let [hobby, setHobby] = useState(["reading","dancing"]);
+  let [hobby, setHobby] = useState(["reading", "dancing"]);
 
   const checkHandler = (e, value) => {
     if (e.target.checked) {
       setHobby([...hobby, value]);
+      // setUser({...User,hobby:[...user.hobby,,value]})
     } else {
       let filterData = hobby.filter((e) => e !== value);
       setHobby(filterData);
@@ -47,7 +48,6 @@ export default function CheckBox() {
     </div>
   );
 }
-
 
 /*
   let [user, setHobby] = useState({hobby: ["reading","dancing"]});

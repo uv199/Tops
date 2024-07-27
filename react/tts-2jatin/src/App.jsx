@@ -22,6 +22,8 @@ import Dropdown from "./3.Style/Dropdown";
 import RadioInput from "./8.input/RadioInput";
 import CheckBox from "./8.input/CheckBox";
 import SelectInput from "./8.input/SelectInput";
+import Localstorage from "./10.localstorage/Localstorage";
+import SingleInputLocalStorage from "./8.input/SingleInputLocalStorage";
 
 const data = [
   {
@@ -115,10 +117,12 @@ function App(params) {
 
       {/* ------------INPUT------------ */}
       {/* <SingleInput /> */}
-      {/* <MultiPleInput /> */}
+      <MultiPleInput />
       {/* <RadioInput /> */}
       {/* <CheckBox /> */}
-      <SelectInput />
+      {/* <SelectInput /> */}
+      {/* <Localstorage /> */}
+      {/* <SingleInputLocalStorage /> */}
 
       {/* ------------CONTIONAL RENDERING------------ */}
       {/* <ConditionCom /> */}

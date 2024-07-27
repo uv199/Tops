@@ -1,26 +1,32 @@
 import { Button, Input } from "@material-tailwind/react";
 import { CircleCheckBig } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function SingleInput() {
+export default function SingleInputLocalStorage() {
   let [todo, setTodo] = useState("");
+  let [searchText, setSearchText] = useState("");
   let [todoArr, setTodoArr] = useState([]);
   let [index, setIndex] = useState(null);
   let [updateMode, setUpdateMode] = useState(false);
 
-  const getData = (e) => {
-    setTodo(e.target.value);
-  };
-
   const addData = () => {
     // ... because need to copy old data
     setTodoArr([...todoArr, todo]);
+    localStorage.setItem("todo", JSON.stringify([...todoArr, todo]));
     setTodo("");
   };
+
+  useEffect(() => {
+    let jsonData = localStorage.getItem("todo");
+    let normalData = JSON.parse(jsonData);
+    let filterData = normalData.filter((e) => e.includes(searchText));
+    setTodoArr(filterData);
+  }, [searchText]);
 
   const deleteHandler = (index) => {
     let filterData = todoArr.filter((e, i) => i !== index);
     setTodoArr(filterData);
+    localStorage.setItem("todo", JSON.stringify(filterData));
   };
 
   const editHandler = (i, value) => {
@@ -32,6 +38,7 @@ export default function SingleInput() {
   const updateHandler = () => {
     todoArr.splice(index, 1, todo);
     setTodoArr([...todoArr]);
+    localStorage.setItem("todo", JSON.stringify([...todoArr]));
     setTodo("");
     setUpdateMode(false);
   };
@@ -43,7 +50,7 @@ export default function SingleInput() {
           value={todo}
           className="rounded-e-none"
           label="ADD TODO"
-          onChange={(e) => getData(e)}
+          onChange={(e) => setTodo(e.target.value)}
         />
 
         {updateMode ? (
@@ -56,8 +63,12 @@ export default function SingleInput() {
           </Button>
         )}
       </div>
-
+      <Input
+        label="Search your text..."
+        onChange={(e) => setSearchText(e.target.value)}
+      />
       <hr />
+
       <div className="border p-4 rounded-lg border-black">
         {todoArr.length > 0 ? (
           <>
@@ -97,5 +108,4 @@ export default function SingleInput() {
     </div>
   );
 }
-
 

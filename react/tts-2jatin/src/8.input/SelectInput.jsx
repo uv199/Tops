@@ -17,9 +17,3 @@ export default function SelectInput() {
     </div>
   );
 }
-
-
-// local storage
-// cookies
-// search
-// filter
