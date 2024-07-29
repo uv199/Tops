@@ -25,7 +25,6 @@ export default function TaskTodo() {
         onChange={(e) => setValue(e.target.value)}
       />
       <Button onClick={addTaskToRedux}>AddTask</Button>
-
       <hr />
       <div>
         {data?.task?.map((e,i) => {

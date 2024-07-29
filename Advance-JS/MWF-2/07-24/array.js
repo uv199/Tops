@@ -1,12 +1,34 @@
+let arr = [1, 2, 3, 4, 5];
+console.log("-----------  arr----------->", arr);
+/*
 // push(...items) – adds items to the end,
+arr.push(6)
+console.log("-----------  arr----------->", arr)
 
 // pop() – extracts an item from the end,
+arr.pop()
+console.log("-----------  arr----------->", arr)
 
 // shift() – extracts an item from the beginning,
+arr.shift()
+console.log("-----------  arr----------->", arr)
 
 // unshift(...items) – adds items to the beginning.
+// arr.unshift(0)
+// arr.unshift(0, 0.5);
+console.log("-----------  arr----------->", arr);
 
+*/
 // indexOf/lastIndexOf(item, pos) – look for item starting from position pos, and return the index or -1 if not found.
+let arr2 = [1, 2, 3, 1, 4, 5, { a: 20 }];
+
+// let index = arr2.indexOf(1);
+// let indexLast = arr2.lastIndexOf(1);
+// console.log("-----------  indexLast----------->", indexLast);
+// console.log("-----------  index----------->", index);
+
+let index = arr2.indexOf({ a: 20 });
+console.log("-----------  index----------->", index)
 
 // concat(...items) – returns a new array: copies all members of the current one and adds items to it. If any of items is an array, then its elements are taken.
 
@@ -35,4 +57,3 @@
 // split/join – convert a string to array and back.
 
 // reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
-

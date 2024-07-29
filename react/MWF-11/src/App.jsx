@@ -1,3 +1,7 @@
+import CheckBoxCom from "./10.input/CheckBoxCom";
+import MultiInput from "./10.input/MultiInput";
+import RadioInput from "./10.input/RadioInput";
+import SelectInput from "./10.input/SelectInput";
 import SingleInput from "./10.input/SingleInput";
 import ClassCom from "./2.Component/ClassCom";
 import FunctionCom from "./2.Component/FunctionCom";
@@ -50,9 +54,13 @@ export default function App() {
 
       {/* --------------CONDITIONAL RENDERING--------------- */}
       {/* <Condition /> */}
-      
+
       {/* --------------INPUT--------------- */}
-      <SingleInput />
+      {/* <SingleInput /> */}
+      <MultiInput />
+      {/* <RadioInput /> */}
+      {/* <CheckBoxCom /> */}
+      {/* <SelectInput/> */}
     </div>
   );
 }

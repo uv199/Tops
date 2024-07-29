@@ -11,10 +11,11 @@ radio
 select
 
 // 3. 
+// multi - checkbox
 // localstorage
-// cookies
 // useReducer
 // search
+// filter
 
 
 
