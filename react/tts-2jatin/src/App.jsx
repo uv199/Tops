@@ -24,6 +24,7 @@ import CheckBox from "./8.input/CheckBox";
 import SelectInput from "./8.input/SelectInput";
 import Localstorage from "./10.localstorage/Localstorage";
 import SingleInputLocalStorage from "./8.input/SingleInputLocalStorage";
+import Router from "./11.Router/Router";
 
 const data = [
   {
@@ -117,7 +118,7 @@ function App(params) {
 
       {/* ------------INPUT------------ */}
       {/* <SingleInput /> */}
-      <MultiPleInput />
+      {/* <MultiPleInput /> */}
       {/* <RadioInput /> */}
       {/* <CheckBox /> */}
       {/* <SelectInput /> */}
@@ -127,6 +128,10 @@ function App(params) {
       {/* ------------CONTIONAL RENDERING------------ */}
       {/* <ConditionCom /> */}
       {/* <Dropdown items={data} /> */}
+
+      {/* ------------ROUTER------------ */}
+      <Router />
+
       <ToastContainer />
     </div>
   );
