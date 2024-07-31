@@ -1,4 +1,4 @@
-let arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5, 1, 2];
 console.log("-----------  arr----------->", arr);
 /*
 // push(...items) – adds items to the end,
@@ -59,30 +59,106 @@ let arr2 = [20, 30];
 arr.splice(1, 2, ...arr2); // update
 console.log("-----------  arr----------->", arr);
 
-*/
 // Array.isArray(value) checks value for being an array, if so returns true, otherwise false.
 let x = 50;
 let ans = Array.isArray(x);
 console.log("-----------  ans----------->", ans);
 
+*/
 // ************************** end **************************
+/*
+// sort(func) – sorts the array in-place, then returns it.
+let arr2 = [1, 5, 3, 4, 2, 6, 2, 22, 33]; // proper sorting
+arr2.sort();
+ console.log("-----------  arr2----------->", arr2);
+
+// reverse() – reverses the array in-place, then returns it.
+arr2.reverse()
+console.log("-----------  arr2----------->", arr2)
+
+// forEach(func) – calls func for every element, does not return anything.
+arr.forEach((element, index) => {
+  console.log("-----------  element,index----------->", element, index);
+});
 
 // find/filter(func) – filter elements through the function, return first/all values that make it return true.
 
-// findIndex is like find, but returns the index instead of a value.
+// let find = arr.find((e, i) => {
+  //   console.log("-----------  e,i----------->", e, i);
+  //   return e >= 3;
+  // });
+  // console.log("-----------  find----------->", find);
+  
+  let filter = arr.filter((e, i) => {
+    console.log("-----------  e,i----------->", e, i);
+    return e >= 3;
+  });
+  console.log("-----------  filter----------->", filter);
+  
+  // findIndex is like find, but returns the index instead of a value.
+  
+  // let index = arr.findIndex((e, i) => {
+    //   console.log("-----------  e, i----------->", e, i)
+    //   return e >= 30;
+    // });
+    // console.log("-----------  index----------->", index)
+    
+    let arrObj = [
+      { name: "sunita", age: 10 },
+      { name: "ravi", age: 23 },
+      { name: "manoj", age: 16 },
+      { name: "mohini", age: 26 },
+    ];
+    
+    let index = arrObj.findIndex((e, i) => {
+      console.log(e);
+      return e.name === "mohini";
+    });
+    console.log("-----------  index----------->", index)
+    */
 
-// forEach(func) – calls func for every element, does not return anything.
+// arrObj.some((e, i) => {});
 
 // map(func) – creates a new array from results of calling func for every element.
 
-// sort(func) – sorts the array in-place, then returns it.
+// let newArr = arr.map((e, i) => {
+//   return e + 10;
+// });
+// console.log("-----------  newArr----------->", newArr);
 
-// reverse() – reverses the array in-place, then returns it.
+// arr.map((e) => {
+//   console.log("-----------  e----------->", e);
+// });
+
+let arrObj = [
+  { name: "sunita", age: 10 },
+  { name: "ravi", age: 23 },
+  { name: "manoj", age: 16 },
+  { name: "mohini", age: 26 },
+];
+
+let names = ["sunita", "ravi", "manoj", "mohini"];
+
+// i want
+let ans = [
+  { name: "sunita" },
+  { name: "ravi" },
+  { name: "manoj" },
+  { name: "mohini" },
+];
+
+let nameArr = arrObj.map((e) => {
+  return e.name;
+});
+console.log("-----------  nameArr----------->", nameArr);
 
 // split/join – convert a string to array and back.
 
+
+
 // reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
 
+/*
 function getOTP(params) {
   let otp = "";
   while (true) {
@@ -103,3 +179,4 @@ getOTP();
 getOTP();
 getOTP();
 getOTP();
+*/

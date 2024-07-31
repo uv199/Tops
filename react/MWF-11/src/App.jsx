@@ -56,8 +56,8 @@ export default function App() {
       {/* <Condition /> */}
 
       {/* --------------INPUT--------------- */}
-      {/* <SingleInput /> */}
-      <MultiInput />
+      <SingleInput />
+      {/* <MultiInput /> */}
       {/* <RadioInput /> */}
       {/* <CheckBoxCom /> */}
       {/* <SelectInput/> */}

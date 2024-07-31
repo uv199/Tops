@@ -11,11 +11,13 @@ export default function Router() {
   return (
     <div className="flex flex-col">
       <BrowserRouter>
-        {/* <div className="flex gap-3">
+          {/*
+          <div className="flex gap-3">
           <Link to={"/home"}>Home</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/contact"}>Contact</Link>
-          </div> */}
+          </div> 
+          */}
         <Header />
         <Routes>
           <Route path="/home" element={<Home />} />

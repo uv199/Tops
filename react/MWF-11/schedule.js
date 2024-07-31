@@ -10,7 +10,7 @@ checkbox
 radio
 select
 
-// 3. 
+// 3.
 // multi - checkbox
 // localstorage
 // useReducer
