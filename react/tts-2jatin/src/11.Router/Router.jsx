@@ -5,6 +5,8 @@ import Login from "./Login";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Error404 from "./Error404";
 import Header from "./Header";
+import Profile from "./Profile";
+import AuthRoute from "./AuthRoute";
 
 export default function Router() {
   return (
@@ -20,8 +22,12 @@ export default function Router() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AuthRoute Component={<About />} />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/profile"
+            element={<AuthRoute Component={<Profile />} />}
+          />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
