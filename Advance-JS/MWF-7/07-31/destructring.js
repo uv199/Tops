@@ -88,11 +88,21 @@ let obj = {
 
 // with destructring
 
-function printUser({ name, age }) {
-  console.log(`My name is ${name} and i am ${age} years old`);
+function printUser({ name, age, address }) {
+  console.log(
+    `My name is ${name} and i am ${age} years old ${address.pincode}`
+  );
 }
 
-printUser(obj);
+let obj2 = {
+  name: "urvish",
+  age: 23,
+  address: {
+    city: "surat",
+    pincode: "395007",
+  },
+};
+printUser(obj2);
 
 // ek function return kar raha he obj {name,age,address:{city,pincode}}
 

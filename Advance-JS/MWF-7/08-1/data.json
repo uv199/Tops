@@ -1,0 +1,10 @@
+[
+  {
+    "name": "urvish",
+    "age": 20,
+    "address": {
+      "pincode": "395007"
+    },
+    "hobby": ["reading"]
+  }
+]
