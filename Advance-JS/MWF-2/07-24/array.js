@@ -119,17 +119,20 @@ arr.forEach((element, index) => {
 
 // arrObj.some((e, i) => {});
 
+/*
 // map(func) – creates a new array from results of calling func for every element.
 
-// let newArr = arr.map((e, i) => {
-//   return e + 10;
-// });
-// console.log("-----------  newArr----------->", newArr);
+let newArr = arr.map((e, i) => {
+  return e + 10;
+});
+console.log("-----------  newArr----------->", newArr);
 
-// arr.map((e) => {
-//   console.log("-----------  e----------->", e);
-// });
+arr.map((e) => {
+  console.log("-----------  e----------->", e);
+});
+*/
 
+/*
 let arrObj = [
   { name: "sunita", age: 10 },
   { name: "ravi", age: 23 },
@@ -152,11 +155,51 @@ let nameArr = arrObj.map((e) => {
 });
 console.log("-----------  nameArr----------->", nameArr);
 
+*/
+
+/*
 // split/join – convert a string to array and back.
 
+let joinStr = arr.join("---");
+console.log("-----------  joinStr----------->", joinStr);
+let toString = arr.toString("-0");
+console.log("-----------  toString----------->", toString);
 
+let name = "urvish"; // => "hsivru"
 
-// reduce/reduceRight(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
+// "urvish v patel" -> "patel v urvish"
+// "urvish v patel" -> "urvish_v_patel"
+// "urvish v patel"/3 -> "urVisH v paTel"
+
+// str->array->reverse->string
+
+let step1 = name.split("");
+console.log("-----------  step1----------->", step1);
+let step2 = step1.reverse();
+console.log("-----------  step2----------->", step2)
+let step3 = step2.join("")
+console.log("-----------  step3----------->", step3)
+
+let reverseString = name.split("").reverse().join("").toUpperCase()
+console.log("-----------  reverseString----------->", reverseString)
+
+*/
+
+// reduce(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
+
+let reduceArr = [1, 2, 3, 4];
+console.log("-----------  reduceArr----------->", reduceArr);
+let lastTimeReturn = reduceArr.reduce((LRV, e, i) => {
+  console.log("-----------  LRV,e,i----------->", LRV, e);
+  return LRV + e;
+});
+console.log("-----------  lastTimeReturn----------->", lastTimeReturn);
+
+let sum = 0;
+reduceArr.map((e) => {
+  sum += e;
+});
+console.log("-----------  sum----------->", sum)
 
 /*
 function getOTP(params) {

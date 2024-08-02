@@ -1,0 +1,9 @@
+.active {
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(199, 196, 196);
+  height: 100% !important;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
