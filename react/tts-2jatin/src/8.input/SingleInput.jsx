@@ -98,5 +98,4 @@ export default function SingleInput() {
   );
 }
 
-// conditional rendering
-// life cycle
+

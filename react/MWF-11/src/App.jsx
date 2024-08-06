@@ -1,3 +1,10 @@
+import CheckBoxCom from "./10.input/CheckBoxCom";
+import MultiInput from "./10.input/MultiInput";
+import RadioInput from "./10.input/RadioInput";
+import SelectInput from "./10.input/SelectInput";
+import SingleInput from "./10.input/SingleInput";
+import UserCrud from "./10.input/UserCrud";
+import Router from "./11.Router/Router";
 import ClassCom from "./2.Component/ClassCom";
 import FunctionCom from "./2.Component/FunctionCom";
 import HomeBody from "./3.Style/HomeBody";
@@ -9,6 +16,11 @@ import BGColorChnage from "./5.state/Project/BGColorChnage";
 import ParentCom from "./6.Props/ParentCom";
 import CityPage from "./6.Props/Project/CityPage";
 import MainPage from "./6.Props/Project2/MainPage";
+import UseContextCom from "./7.Hook/useContaxt/UseContextCom";
+import UseEffectCom from "./7.Hook/useEffect/UseEffectCom";
+import UseRef from "./7.Hook/userRef/UseRef";
+import LifeCycleMethod from "./8.LifeCycleMethod/LifeCycleMethod";
+import Condition from "./9.ConditionalRender/Condition";
 
 export default function App() {
   return (
@@ -32,7 +44,28 @@ export default function App() {
       {/* --------------PROPS--------------- */}
       {/* <ParentCom /> */}
       {/* <CityPage /> */}
-      <MainPage/>
+      {/* <MainPage /> */}
+
+      {/* --------------LIFE CYCLE METHOD--------------- */}
+      {/* <LifeCycleMethod /> */}
+
+      {/* --------------HOOKS--------------- */}
+      {/* <UseEffectCom /> */}
+      {/* <UseRef /> */}
+      {/* <UseContextCom /> */}
+
+      {/* --------------CONDITIONAL RENDERING--------------- */}
+      {/* <Condition /> */}
+
+      {/* --------------INPUT--------------- */}
+      {/* <SingleInput /> */}
+      {/* <MultiInput /> */}
+      {/* <RadioInput /> */}
+      {/* <CheckBoxCom /> */}
+      {/* <SelectInput/> */}
+      {/* <UserCrud /> */}
+      {/* --------------ROUTER--------------- */}
+      <Router />
     </div>
   );
 }

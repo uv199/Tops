@@ -22,6 +22,7 @@ import CheckBoxCom from "./6.Input/CheckBoxCom";
 import SelectData from "./6.Input/SelectData";
 import Router from "./9.Routing/Router";
 import AppRedux from "./10.redux/AppRedux";
+import LifeCycleMethod from "./11.LifeCycleMethod/LifeCycleMethod";
 
 export default function App() {
   return (
@@ -66,9 +67,12 @@ export default function App() {
 
       {/* ---------------------ROUTER------------------ */}
       {/* <Router /> */}
-      
+
       {/* ---------------------REDUX------------------ */}
-      <AppRedux />
+      {/* <AppRedux /> */}
+      
+      {/* ---------------------LIFE CYCLE METHOD------------------ */}
+      <LifeCycleMethod />
     </div>
   );
 }
