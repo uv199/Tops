@@ -6,6 +6,10 @@ import Profile from "./Profile";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Header from "./Header";
 import Error404 from "./Error404";
+import AuthRoute from "./AuthRoute";
+import Cart from "./Cart";
+import Product from "./product/Product";
+import ProductDetail from "./product/ProductDetail";
 
 export default function Router() {
   return (
@@ -30,7 +34,13 @@ export default function Router() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" Component={Login} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/cart" element={<AuthRoute Component={<Cart />}/>} />
+          <Route
+            path="/profile"
+            element={<AuthRoute Component={<Profile />} />}
+          />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

@@ -12,6 +12,7 @@ export default function Header() {
         <div className="flex justify-evenly w-[65%]">
           <NavLink to={"/"}>Home </NavLink>
           <NavLink to={"/about"}>About</NavLink>
+          <NavLink to={"/product"}>Product</NavLink>
           {data === "false" || !data ? (
             <NavLink to={"/login"}>Login</NavLink>
           ) : null}

@@ -3,7 +3,13 @@ let obj = {
   name: "urvish",
   12: 23,
   "last name": "patel",
+
 };
+
+function (params=10) {
+  
+}
+
 
 let key = "name";
 
