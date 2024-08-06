@@ -4,7 +4,7 @@ import userRouter from "./router/user.js";
 
 const app = express();
 
-app.use("/user/", userRouter);
+app.use("/user", userRouter);
 
 connectDB()
   .then(() => {
