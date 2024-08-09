@@ -13,7 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "hbs": "^4.2.0",
     "mongoose": "^8.5.1",
-    "nodemon": "^3.1.4"
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "twilio": "^5.2.2"
   }
 }
