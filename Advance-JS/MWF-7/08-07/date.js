@@ -37,7 +37,11 @@ let weekDay = date.getDay();
 console.log("-----------  weekDay----------->", weekDay);
 console.log(`today is ${arr[weekDay]}`);
 
-
 // today is 7 auguest, 2024 , wednesDay it is working day
 // today is 4 auguest, 2024 , Sunday it is weekend
- 
+
+let getTimeD1 = new Date().getTime();
+let getTimeD2 = new Date("2024-08-07").getTime();
+
+let diffrence = getTimeD1 - getTimeD2;
+let dayDif = diffrence / (3600 * 1000 * 24); // =>

@@ -6,6 +6,7 @@ const amountSlice = createSlice({
   reducers: {
     incrementAmt: (state) => {
       state.amount++;
+      
     },
   },
 });

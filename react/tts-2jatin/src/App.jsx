@@ -26,6 +26,7 @@ import Localstorage from "./10.localstorage/Localstorage";
 import SingleInputLocalStorage from "./8.input/SingleInputLocalStorage";
 import Router from "./11.Router/Router";
 import ReduxApp from "./12.Redux/ReduxApp";
+import UseMemo from "./6.HOOK/useMemo/UseMemo";
 
 const data = [
   {
@@ -113,6 +114,7 @@ function App(params) {
       {/* <UseRefCom /> */}
       {/* <UseReducer /> */}
       {/* <UseContaxt /> */}
+      {/* <UseMemo /> */}
 
       {/* ------------PROPS------------ */}
       {/* <Parent /> */}
