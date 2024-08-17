@@ -1,15 +1,25 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
+// Define the API endpoint and options
+const apiUrl = 'https://type.fit/api/quotes';
+const options = {
+    method: 'GET', // or 'POST', 'PUT', 'DELETE', etc.
+    headers: {
+        'Content-Type': 'application/json',
+        // Add any other necessary headers
+    }
+};
 
-/** @type {import('tailwindcss').Config} */
-export default withMT({
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
-    "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-});
+// Make the AJAX call
+fetch(apiUrl, options)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the JSON from the response
+    })
+    .then(data => {
+        console.log(data); // Handle the data from the API
+        // You can update the UI with the data here
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });

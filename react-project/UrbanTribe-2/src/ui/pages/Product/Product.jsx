@@ -1,16 +1,43 @@
 import { Button } from "@material-tailwind/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export default function Product() {
+  let [product, setProduct] = useState([]);
+  let [searchText, setSearchText] = useState("");
+  let [count, setCount] = useState(0);
+  useEffect(() => {
+    async function fetchData(params) {
+      try {
+        const response = await axios.get(
+          "http://localhost:9999/product/getAll",
+          {
+            params: {
+              search: searchText,
+            },
+          }
+        );
+        console.log("-----------  response----------->", response.data);
+        setCount(response.data.count);
+        setProduct(response.data.data);
+      } catch (error) {
+        console.log("-----------  error----------->", error);
+      }
+    }
+    fetchData();
+  }, [searchText]);
+
   return (
     <div>
       <div className="flex justify-end p-4">
+        <h1>Count : {count}</h1>
         <Button className="text-red-500 bg-white border border-gray-500">
           Add Product
         </Button>
       </div>
       <div className="flex justify-end p-4">
         <input
+          onChange={(e) => setSearchText(e.target.value)}
           type="text"
           placeholder="Search your text here..."
           className="bg-gray-100 border border-gray-300 rounded-md h-10 w-96 pl-4"
@@ -30,81 +57,84 @@ export default function Product() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b">
-              <td className="border border-gray-300 p-4 text-center">1</td>
-              <td className="border border-gray-300 p-4 text-center">
-                <img src="" alt="" className="w-16 h-16 " />
-              </td>
-              <td className="border border-gray-300 p-4 ">Nike Air Jordan</td>
-              <td className="border border-gray-300 p-4 ">19991</td>
-              <td className="border border-gray-300 p-4 ">
-                <div className="flex gap-2">
-                  <div className=" w-4 h-4 rounded-full bg-red-500"></div>
-                  <div className=" w-4 h-4 rounded-full bg-black ml-2"></div>
-                  <div className=" w-4 h-4 rounded-full bg-white border border-gray-300 ml-2"></div>
-                </div>
-              </td>
-              <td className=" flex gap-2  border-gray-300 p-4  ">
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  S
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  M
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  L
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  Xl
-                </div>
-              </td>
-              <td className="border border-gray-300 p-4   ">
-                <div className=" flex gap-2">
-                  <p className="text-green-500 hover:underline ">Preview</p>|
-                  <p className="text-blue-500 hover:underline">Edit</p>|
-                  <p className="text-red-500 hover:underline">Delete</p>
-                </div>
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td className="border border-gray-300 p-4 text-center">2</td>
-              <td className="border border-gray-300 p-4 ">
-                <img src="" alt="" className="w-16 h-16 " />
-              </td>
-              <td className="border border-gray-300 p-4 ">Rose Attar</td>
-              <td className="border border-gray-300 p-4 ">6743</td>
-              <td className="border border-gray-300 p-4 ">
-                <div className="flex gap-2">
-                  <div className=" w-4 h-4 rounded-full bg-red-500"></div>
-                  <div className=" w-4 h-4 rounded-full bg-black ml-2"></div>
-                  <div className=" w-4 h-4 rounded-full bg-white border border-gray-300 ml-2"></div>
-                </div>
-              </td>
-              <td className=" flex gap-2  border-gray-300 p-4 ">
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  S
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  M
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  L
-                </div>
-                <div className="border border-gray-400 rounded-full h-6 w-6 text-center">
-                  Xl
-                </div>
-              </td>
-              <td className="border border-gray-300 p-4   ">
-                <div className=" flex gap-2">
-                  <p className="text-green-500 hover:underline">Preview</p>|
-                  <p className="text-blue-500 hover:underline">Edit</p>|
-                  <p className="text-red-500 hover:underline">Delete</p>
-                </div>
-              </td>
-            </tr>
+            {product.map((e, i) => {
+              return (
+                <tr className="border-b">
+                  <td className="border border-gray-300 p-4 text-center">
+                    {i + 1}
+                  </td>
+                  <td className="border border-gray-300 p-4 text-center">
+                    <img src={e?.thumbnail} alt="" className="w-16 h-16 " />
+                  </td>
+                  <td className="border border-gray-300 p-4 ">{e.title}</td>
+                  <td className="border border-gray-300 p-4 ">19991</td>
+                  <td className="border border-gray-300 p-4 ">
+                    <div className="flex gap-2">
+                      {e.color.map((eColor) => {
+                        return (
+                          <div
+                            className="border border-black w-4 h-4 rounded-full"
+                            style={{ backgroundColor: eColor }}
+                          ></div>
+                        );
+                      })}
+                    </div>
+                  </td>
+                  <td className="border-gray-300 p-4  ">
+                    <div className="flex justify-center gap-2 ">
+                      <p className="border border-gray-400 rounded-full h-6 w-6 text-center">
+                        S
+                      </p>
+                      <p className="border border-gray-400 rounded-full h-6 w-6 text-center">
+                        M
+                      </p>
+                      <p className="border border-gray-400 rounded-full h-6 w-6 text-center">
+                        L
+                      </p>
+                      <p className="border border-gray-400 rounded-full h-6 w-6 text-center">
+                        Xl
+                      </p>
+                    </div>
+                  </td>
+                  <td className="border border-gray-300 p-4   ">
+                    <div className=" flex gap-2">
+                      <p className="text-green-500 hover:underline ">Preview</p>
+                      |<p className="text-blue-500 hover:underline">Edit</p>|
+                      <p className="text-red-500 hover:underline">Delete</p>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
     </div>
   );
 }
+
+/*
+axios.post(url, data, {
+  headers: {
+    authorization: "bearer " + token,
+  },
+});
+*/
+/*
+create 
+type = post
+url = http://localhost:9999/product/create
+data = body
+auth = true
+
+delete 
+type = delete
+url = http://localhost:9999/product/delete/665ead7c75869eeae5d3f64d
+auth = true
+
+update
+type = put
+url = http://localhost:9999/product/update/665ead7c75869eeae5d3f64d
+data = body
+auth = true
+*/

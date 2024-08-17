@@ -1,6 +1,37 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  let [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  let [cookies, setCookie, removeCookie] = useCookies([]);
+  const navigate = useNavigate();
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await axios.post(
+        "http://localhost:9999/user/signin",
+        user
+      );
+      console.log("--->", response.data);
+      setCookie("token", response.data.token);
+      setCookie("user", response.data.data);
+
+      if (response?.data?.data?.userType === "admin") {
+        navigate("/admin-product");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log("-----------  error----------->", error);
+    }
+  };
+
   return (
     <div className="flex flex-col py-9 justify-center">
       <h1 className="text-center pb-10 font-medium text-3xl">
@@ -15,6 +46,7 @@ export default function Login() {
             addresses, view and track your orders in your account and more.
           </p>
           <button
+            onClick={() => navigate("/register")}
             type="submit"
             className=" text-sm mt-6 transition-colors duration-500 hover:text-white border-2 border-[#d11e33] py-1 px-3 rounded-md hover:!bg-[#d11e33]	 !bg-white text-[#d11e33] me-4"
           >
@@ -35,6 +67,8 @@ export default function Login() {
                 E-MAIL *
               </label>
               <input
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
                 type="email"
                 id="email"
                 className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
@@ -50,6 +84,8 @@ export default function Login() {
                 PASSWORD *
               </label>
               <input
+                value={user.password}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
                 type="password"
                 id="password"
                 className="bg-gray-100 border-none text-gray-900 text-sm rounded-lg focus:ring-red-600  block w-full p-2.5 "
@@ -59,6 +95,7 @@ export default function Login() {
             </div>
             <div className="flex justify-between items-end">
               <button
+                onClick={(e) => loginHandler(e)}
                 type="submit"
                 className=" text-sm mt-6 transition-colors duration-500 hover:text-white border-2 border-[#d11e33] py-2 px-12 rounded-md hover:!bg-[#d11e33]	 !bg-white text-[#d11e33] me-4"
               >

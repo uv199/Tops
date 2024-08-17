@@ -3,6 +3,22 @@ import { Minus, Plus } from "lucide-react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { increment, decrement } from "./redux/Slice/countSlice";
+/*
+url
+method
+data
+
+*/
+useEffect(() => {
+  async function fetch(params) {
+    try {
+      let response = await axios.get(url);
+    } catch (error) {
+      console.log("-----------  error----------->", error);
+    }
+  }
+  fetch()
+}, []);
 
 export default function Count() {
   let data = useSelector((store) => {

@@ -8,7 +8,6 @@ import OurCollection from "./OurCollection";
 import BestSeller from "./BestSeller";
 
 export default function Home() {
-  for (let i = 0; i < 1000000000; i++) {}
   return (
     <>
       {/* slider section */}

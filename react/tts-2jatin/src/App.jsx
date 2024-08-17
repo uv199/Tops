@@ -27,6 +27,7 @@ import SingleInputLocalStorage from "./8.input/SingleInputLocalStorage";
 import Router from "./11.Router/Router";
 import ReduxApp from "./12.Redux/ReduxApp";
 import UseMemo from "./6.HOOK/useMemo/UseMemo";
+import LifeCycle from "./13.LifeCycle/LifeCycle";
 
 const data = [
   {
@@ -136,8 +137,10 @@ function App(params) {
       {/* <Router /> */}
 
       {/* ------------REDUX------------ */}
-      <ReduxApp />
+      {/* <ReduxApp /> */}
 
+      {/* ------------LIFE CYCLE METHOD------------ */}
+      <LifeCycle />
       <ToastContainer />
     </div>
   );
